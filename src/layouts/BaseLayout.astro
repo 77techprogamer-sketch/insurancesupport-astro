@@ -4,10 +4,7 @@ export interface Props {
   description?: string;
 }
 
-const {
-  title,
-  description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor in Bengaluru. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.",
-} = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts." } = Astro.props;
 
 const siteName = "Insurance Support - Hari Kotian";
 const siteUrl = "https://insurancesupport.online";
@@ -19,27 +16,17 @@ const ogImage = `${siteUrl}/og-default.png`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- Primary Meta Tags -->
     <title>{title ? `${title} | ${siteName}` : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`}</title>
     <meta name="title" content={title ? `${title} | ${siteName}` : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`} />
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="insurance advisor Bengaluru, IRDAI certified insurance agent, life insurance India, health insurance advisor, motor insurance, car insurance renewal, claim settlement expert, insurance agent Jalahalli, Hari Kotian insurance, insurance support Bengaluru, term insurance advisor, family floater health plan, NCB motor insurance, personal accident insurance, corporate group insurance"
-    />
+    <meta name="keywords" content="insurance advisor Bengaluru, IRDAI certified insurance agent, life insurance India, health insurance advisor, motor insurance, claim settlement expert, Hari Kotian insurance" />
     <meta name="author" content="Hari Kotian" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={Astro.url.href} />
-
-    <!-- Geo Tags -->
     <meta name="geo.region" content="IN-KA" />
     <meta name="geo.placename" content="Bengaluru" />
     <meta name="geo.position" content="13.0159;77.5522" />
     <meta name="ICBM" content="13.0159, 77.5522" />
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title ? `${title} | ${siteName}` : siteName} />
@@ -47,152 +34,24 @@ const ogImage = `${siteUrl}/og-default.png`;
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="en_IN" />
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url.href} />
     <meta property="twitter:title" content={title ? `${title} | ${siteName}` : siteName} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
-    <meta property="twitter:site" content="@insurancesupport" />
-
-    <!-- Verification Codes -->
     <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
-    <meta name="msvalidate.01" content="B2F8A3C5D7E9F1G2H3I4J5K6L7M8N9O0" />
-
-    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#1e40af" />
-
-    <!-- Fonts: Inter + Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Google Tag Manager -->
-    <script is:inline>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-P8DZ6MRQ");
-    </script>
-
-    <!-- Google Analytics 4 -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-JP67H399V2"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-JP67H399V2");
-    </script>
-
-    <!-- LocalBusiness JSON-LD -->
-    <script is:inline type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "InsuranceAgency",
-        "name": "Insurance Support - Hari Kotian",
-        "description": "IRDAI-certified independent insurance advisor with 25+ years of experience in life, health, motor, and all insurance types in Bengaluru.",
-        "url": "https://insurancesupport.online",
-        "telephone": "+91-9986634506",
-        "email": "contact@insurancesupport.online",
-        "founder": {
-          "@type": "Person",
-          "name": "Hari Kotian",
-          "jobTitle": "IRDAI Certified Insurance Advisor"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Bahubali Nagar, Jalahalli",
-          "addressLocality": "Bengaluru",
-          "addressRegion": "Karnataka",
-          "postalCode": "560013",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 13.0159,
-          "longitude": 77.5522
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "21:00"
-          }
-        ],
-        "priceRange": "$$",
-        "areaServed": {
-          "@type": "City",
-          "name": "Bengaluru"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Insurance Advisory Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Life Insurance" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Health Insurance" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motor Insurance" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Term Insurance" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Claim Recovery" } }
-          ]
-        },
-        "sameAs": [
-          "https://www.instagram.com/insurancesupport",
-          "https://www.facebook.com/insurancesupport",
-          "https://twitter.com/insurancesupport"
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.2",
-          "reviewCount": "23",
-          "bestRating": "5"
-        }
-      }
-    </script>
-
-    <style is:global>
-      @import "../styles/globals.css";
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP67H399V2"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-JP67H399V2");</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-P8DZ6MRQ");</script>
   </head>
-  <body class="font-sans antialiased bg-slate-50 text-slate-800 min-h-screen">
-    <!-- GTM noscript fallback -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-P8DZ6MRQ"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe>
-    </noscript>
-
-    <!-- Background Decorations -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div
-        class="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-blue-100/60 to-indigo-100/40 blur-3xl">
-      </div>
-      <div
-        class="absolute top-1/3 -left-40 h-96 w-96 rounded-full bg-gradient-to-br from-sky-100/40 to-cyan-100/30 blur-3xl">
-      </div>
-      <div
-        class="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-gradient-to-br from-blue-50/50 to-indigo-50/30 blur-3xl">
-      </div>
-    </div>
-
+  <body class="font-inter antialiased">
     <slot />
+    <script src="/scripts/reveal.js" is:inline></script>
   </body>
 </html>

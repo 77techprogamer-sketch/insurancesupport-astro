@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import allPosts from '../../data/blogs.json';
+import posts from '../../data/blogs.json';
 
-const posts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-const allCategories = [...new Set(posts.flatMap(p => p.categories))].sort();
-const latestPost = posts[0];
-const recentPosts = posts.slice(0, 6);
+const sorted = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+const allCategories = [...new Set(sorted.flatMap(p => p.categories))].sort();
+const latestPost = sorted[0];
+const recentPosts = sorted.slice(0, 6);
 ---
 
 <BaseLayout title="Insurance Blog | Expert Guides & Tips | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience.">
