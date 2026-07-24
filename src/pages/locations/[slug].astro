@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import cities from '../../data/cities.json';
+
+export function getStaticPaths() {
+  return cities.map(city => ({
+    params: { slug: city.slug },
+    props: { city }
+  }));
+}
+
+const { city } = Astro.props;
+const cityName = city.name;
+const stateName = city.state;
+const description = city.desc;
+const phone = city.phone;
+const areas = city.areas;
+const nearby = city.nearby;
+const itFocus = city.it_focus;
+const seniorFocus = city.senior_focus;
+const branchDets = city.branch_dets;
+const localFaqs = city.local_faqs;
+---
+
+<BaseLayout title={`${cityName} | Insurance Support - Hari Kotian`} description={description}>
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white">
+        <p class="text-blue-200 text-sm font-medium uppercase tracking-wider mb-2">{stateName}</p>
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Insurance Support in {cityName}</h1>
+        <p class="text-lg text-blue-100 max-w-3xl">{description}</p>
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
+            Book Free Consultation
+          </a>
+          <a href="tel:{phone.replace(/\s/g, '')}" class="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+            Call {phone}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Areas Served -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Areas We Serve in {cityName}</h2>
+      <div class="flex flex-wrap gap-3">
+        {areas.map(a => <span class="inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">{a}</span>)}
+      </div>
+    </section>
+
+    <!-- Hub Content -->
+    {itFocus && <section class="mb-8 bg-blue-50 rounded-xl p-6 md:p-8"><h3 class="text-xl font-bold text-blue-900 mb-3">For IT Professionals</h3><p class="text-slate-700 leading-relaxed">{itFocus}</p></section>}
+    {seniorFocus && <section class="mb-8 bg-emerald-50 rounded-xl p-6 md:p-8"><h3 class="text-xl font-bold text-emerald-900 mb-3">For Senior Citizens</h3><p class="text-slate-700 leading-relaxed">{seniorFocus}</p></section>}
+    {branchDets && <section class="mb-12 bg-purple-50 rounded-xl p-6 md:p-8"><h3 class="text-xl font-bold text-purple-900 mb-3">Local Branch Details</h3><p class="text-slate-700 leading-relaxed">{branchDets}</p></section>}
+
+    <!-- Local FAQs -->
+    {localFaqs.length > 0 && <section class="mb-16"><h2 class="text-2xl font-bold text-slate-900 mb-6">Local FAQs for {cityName}</h2><div class="space-y-4 max-w-3xl">
+      {localFaqs.map(faq => <details class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm"><summary class="p-4 md:p-6 cursor-pointer font-semibold text-slate-900 hover:bg-slate-50 transition-colors">{faq[0]}</summary><div class="px-4 md:px-6 pb-4 md:pb-6"><p class="text-slate-600 leading-relaxed">{faq[1]}</p></div></details>)}
+    </div></section>}
+
+    <!-- LIC Office -->
+    {city.lic_name && <section class="mb-16 bg-slate-50 rounded-xl p-6 md:p-8"><h2 class="text-xl font-bold text-slate-900 mb-4">LIC Office</h2><p class="text-slate-700 font-medium">{city.lic_name}</p><p class="text-slate-500 text-sm">{city.lic_addr}</p></section>}
+
+    <!-- Nearby Cities -->
+    {nearby.length > 0 && <section class="mb-16"><h2 class="text-xl font-bold text-slate-900 mb-6">Nearby Cities</h2><div class="flex flex-wrap gap-3">
+      {nearby.map(n => <a href={`/locations/${n}`} class="px-4 py-2 bg-slate-50 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">{n}</a>)}
+    </div></section>}
+
+    <!-- Contact CTA -->
+    <section class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-white text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Need Help with Insurance in {cityName}?</h2>
+      <p class="text-lg text-slate-300 mb-6 max-w-2xl mx-auto">Get personalized advice from an IRDAI certified advisor with 25+ years of experience.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors">Book Free Consultation</a>
+        <a href="tel:+919986634506" class="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-colors">Call Now</a>
+      </div>
+      <p class="text-sm text-slate-400 mt-4">IRDAI Reg No: 0149161D</p>
+    </section>
+  </main>
+</BaseLayout>
