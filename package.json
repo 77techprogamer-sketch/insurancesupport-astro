@@ -8,12 +8,13 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "postbuild": "node ./scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@astrojs/node": "^8.3.4",
     "@astrojs/react": "^6.0.1",
-    "@astrojs/sitemap": "^3.1.0",
+    "@astrojs/sitemap": "^3.7.3",
     "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.14",
     "astro": "^4.11.0",
@@ -21,6 +22,7 @@
     "lucide-react": "^0.400.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sitemap": "^9.0.1",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.0"
