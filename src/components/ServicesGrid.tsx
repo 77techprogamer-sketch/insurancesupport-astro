@@ -11,14 +11,25 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
       {services.map((s, i) => (
-        <a href={s.href} key={i} class="group block bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 card-tilt reveal" style={{ transitionDelay: `${i * 0.08}s` }}>
-          <div class={`w-14 h-14 ${s.bg} ${s.text} rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+        <a href={s.href} key={i} className="group block bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 card-hover card-shine reveal" style={{ transitionDelay: `${i * 0.08}s` }}>
+          {/* Icon with gradient background */}
+          <div className={`w-14 h-14 ${s.bg} ${s.text} rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm`}>
             {s.icon}
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{s.title}</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+
+          {/* Title */}
+          <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{s.title}</h3>
+
+          {/* Description */}
+          <p className="text-sm text-slate-600 leading-relaxed mb-4">{s.desc}</p>
+
+          {/* Learn more link */}
+          <div className="flex items-center gap-1 text-sm font-medium text-blue-600 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all duration-300">
+            Learn more
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </div>
         </a>
       ))}
     </div>
