@@ -1,0 +1,77 @@
+---
+// src/components/sections/FeaturesSection.astro
+import { Star, Briefcase, Users, ShieldCheck } from 'lucide-react';
+
+// Simplified translation helper (will be replaced by actual i18n logic if needed)
+const t = (key) => key; 
+---
+
+<section id="features" class="py-20 sm:py-32 bg-blue-900 text-white overflow-hidden relative">
+    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left Content -->
+            <div class="space-y-8 reveal" data-animation="slide-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-sm font-semibold mb-2 backdrop-blur-sm animate-pulse">
+                    <Star class="h-4 w-4 fill-amber-400" />
+                    <span>Veteran Advantage</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1]">
+                    Strategic <i>Protection</i> for Your Family
+                </h2>
+                <p class="text-xl text-blue-100/70 max-w-xl leading-relaxed">
+                    Over 25 years of independent expertise, providing tailored insurance solutions to navigate complex claims and secure your legacy.
+                </p>
+                <div class="grid grid-cols-2 gap-8 pt-4">
+                    <div class="space-y-2 group">
+                        <div class="text-4xl sm:text-5xl font-black text-amber-400 group-hover:scale-110 transition-transform duration-300 inline-block">1000+</div>
+                        <div class="text-xs text-blue-100/60 uppercase tracking-[0.2em] font-bold">Portfolios Managed</div>
+                    </div>
+                    <div class="space-y-2 group">
+                        <div class="text-4xl sm:text-5xl font-black text-amber-400 group-hover:scale-110 transition-transform duration-300 inline-block">High</div>
+                        <div class="text-xs text-blue-100/60 uppercase tracking-[0.2em] font-bold">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="relative group reveal" data-animation="pop-up">
+                <div class="absolute inset-0 bg-amber-500/20 blur-[100px] rounded-full -z-10 animate-pulse group-hover:bg-amber-500/30 transition-colors"></div>
+                <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-10 flex flex-col justify-center gap-10 relative overflow-hidden shadow-2xl transition-all duration-500 group-hover:border-white/20 group-hover:translate-y-[-10px]">
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl"></div>
+                    
+                    <div class="flex gap-6 items-start">
+                        <div class="h-14 w-14 rounded-2xl bg-amber-500/20 flex items-center justify-center shrink-0 shadow-lg shadow-amber-500/20 group-hover:rotate-12 transition-transform duration-500">
+                            <Briefcase class="h-7 w-7 text-amber-400" />
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Strategic Advisory</h3>
+                            <p class="text-blue-100/70 text-base leading-relaxed">Tailored plans to meet your specific financial goals and risk profile.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-6 items-start">
+                        <div class="h-14 w-14 rounded-2xl bg-amber-500/20 flex items-center justify-center shrink-0 shadow-lg shadow-amber-500/20 group-hover:rotate-12 transition-transform duration-500">
+                            <Users class="h-7 w-7 text-amber-400" />
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Legacy Planning</h3>
+                            <p class="text-blue-100/70 text-base leading-relaxed">Ensure your wealth and assets are passed down to your family exactly as planned.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-6 items-start">
+                        <div class="h-14 w-14 rounded-2xl bg-amber-500/20 flex items-center justify-center shrink-0 shadow-lg shadow-amber-500/20 group-hover:rotate-12 transition-transform duration-500">
+                            <ShieldCheck class="h-7 w-7 text-amber-400" />
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Claim Support</h3>
+                            <p class="text-blue-100/70 text-base leading-relaxed">Dedicated expert assistance to recover even the most complex rejected claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
