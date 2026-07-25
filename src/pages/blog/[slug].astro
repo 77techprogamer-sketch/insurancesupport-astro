@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import posts from '../../data/blogs.json';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { marked } from 'marked';
 
 export function getStaticPaths() {
   return posts.map(post => ({
@@ -11,28 +14,228 @@ export function getStaticPaths() {
 
 const { post } = Astro.props;
 
-function parseContent(content) {
-  if (!content) return '';
-  return content.replace(/^## (.*)$/gm, '<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">$1</h2>')
-                .replace(/^### (.*)$/gm, '<h3 class="text-xl font-bold text-slate-900 mt-8 mb-3">$1</h3>')
-                .replace(/^\*\*([^*]+)\*\*/gm, '<p class="text-slate-600 leading-relaxed mb-4 font-bold">$1</p>')
-                .replace(/^(?!<)(.*)$/gm, '<p class="text-slate-600 leading-relaxed mb-4">$1</p>');
-}
+// Configure marked for clean server-side rendering
+marked.setOptions({
+  gfm: true,
+  breaks: false,
+});
+
+const renderer = new marked.Renderer();
+
+// Tables
+renderer.table = function({ header, rows }) {
+  const ths = header.map(cell => `<th class="px-4 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider bg-slate-50 border-b border-slate-200">${cell.text}</th>`).join('');
+  const trs = rows.map(row => {
+    const tds = row.map(cell => `<td class="px-4 py-3 text-sm text-slate-700 border-b border-slate-100">${cell.text}</td>`).join('');
+    return `<tr class="hover:bg-slate-50/50 transition-colors">${tds}</tr>`;
+  }).join('');
+  return `<div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm"><table class="min-w-full"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
+};
+
+// Blockquotes
+renderer.blockquote = function({ raw, text }) {
+  return `<blockquote class="border-l-4 border-blue-500 bg-blue-50/50 rounded-r-xl px-6 py-4 my-6 text-slate-700 italic leading-relaxed">${text}</blockquote>`;
+};
+
+// Code
+renderer.code = function({ text, lang }) {
+  return `<pre class="bg-slate-900 text-slate-100 rounded-xl p-5 my-6 overflow-x-auto text-sm leading-relaxed"><code>${text}</code></pre>`;
+};
+renderer.codespan = function({ text }) {
+  return `<code class="bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-sm font-mono">${text}</code>`;
+};
+
+// Links
+renderer.link = function({ href, title, text }) {
+  const t = title ? ` title="${title}"` : '';
+  return `<a href="${href}"${t} class="text-blue-600 hover:text-blue-800 underline decoration-blue-300/50 hover:decoration-blue-500 transition-colors">${text}</a>`;
+};
+
+// Images
+renderer.image = function({ href, title, text }) {
+  const t = title ? ` title="${title}"` : '';
+  return `<figure class="my-8"><img src="${href}" alt="${text || ''}"${t} class="w-full rounded-xl shadow-md" loading="lazy" />${text ? `<figcaption class="text-center text-sm text-slate-500 mt-2">${text}</figcaption>` : ''}</figure>`;
+};
+
+// Headings
+renderer.heading = function({ text, depth }) {
+  const cls = {
+    1: 'text-3xl font-extrabold text-slate-900 mt-12 mb-5 leading-tight',
+    2: 'text-2xl font-bold text-slate-900 mt-12 mb-4 pb-3 border-b border-slate-100',
+    3: 'text-xl font-bold text-slate-900 mt-8 mb-3',
+    4: 'text-lg font-bold text-slate-900 mt-6 mb-2',
+  };
+  return `<h${depth} class="${cls[depth] || cls[4]}">${text}</h${depth}>`;
+};
+
+// Lists
+renderer.list = function({ ordered, items }) {
+  const tag = ordered ? 'ol' : 'ul';
+  const style = ordered ? 'list-decimal' : 'list-disc';
+  const lis = items.map(item => `<li class="pl-1">${item.text}</li>`).join('');
+  return `<${tag} class="${style} pl-6 my-5 space-y-2 text-slate-600 leading-relaxed text-[15px]">${lis}</${tag}>`;
+};
+
+// HR
+renderer.hr = function() {
+  return `<hr class="my-10 border-t border-slate-200" />`;
+};
+
+// Paragraphs
+renderer.paragraph = function({ text }) {
+  if (text.startsWith('<div') || text.startsWith('<table') || text.startsWith('<ul') || text.startsWith('<ol') || text.startsWith('<blockquote') || text.startsWith('<pre') || text.startsWith('<figure') || text.startsWith('<hr') || text.startsWith('<h')) {
+    return text;
+  }
+  return `<p class="text-slate-600 leading-relaxed mb-5 text-[15px]">${text}</p>`;
+};
+
+marked.use({ renderer });
+
+const htmlContent = marked.parse(post.content || '');
+
+// Find related posts
+const related = posts
+  .filter(p => p.slug !== post.slug && p.categories?.some(c => post.categories?.includes(c)))
+  .slice(0, 3);
 ---
 
 <BaseLayout title={post.title} description={post.summary}>
-  <main class="max-w-3xl mx-auto px-4 py-12">
-    <article class="prose max-w-none">
-      <h1 class="text-4xl font-bold text-slate-900 mb-4">{post.title}</h1>
-      <div class="flex items-center gap-4 text-slate-500 mb-8">
-        <span>{post.date}</span>
-        <span>By {post.author || 'Hari Kotian'}</span>
+  <Header />
+
+  <main class="page-transition">
+
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-[100px]" />
+
+      <div class="max-w-4xl mx-auto px-4 relative">
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm text-blue-200/70 hover:text-white mb-6 transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+          Back to Blog
+        </a>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+          {(post.categories || []).slice(0, 3).map(cat => (
+            <span class="px-3 py-1 bg-white/10 border border-white/10 text-amber-300 text-xs font-semibold rounded-full backdrop-blur-sm">
+              {cat}
+            </span>
+          ))}
+        </div>
+
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+          {post.title}
+        </h1>
+
+        <p class="text-lg text-blue-100/80 mb-6 max-w-3xl leading-relaxed">
+          {post.summary}
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 text-sm text-blue-200/70">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-xs">HK</div>
+            <span class="text-white font-medium">{post.author || 'Hari Kotian'}</span>
+          </div>
+          <span class="text-blue-300/40">|</span>
+          <time>{post.date}</time>
+          <span class="text-blue-300/40">|</span>
+          <span>{Math.ceil((post.content || '').split(/\s+/).length / 200)} min read</span>
+        </div>
       </div>
-      <div set:html={parseContent(post.content)} />
+    </section>
+
+    <!-- Article Body -->
+    <article class="py-12 lg:py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
+
+      <!-- Author Box -->
+      <div class="max-w-3xl mx-auto px-4 mt-12">
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+          <div class="flex items-start gap-4">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-lg">HK</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">Hari Kotian</h3>
+              <p class="text-sm text-blue-600 font-medium mb-3">IRDAI Certified Insurance Advisor | 25+ Years Experience</p>
+              <p class="text-slate-600 text-sm leading-relaxed">IRDAI Reg No: 0149161D. Helping families across Bengaluru and India with insurance advisory, claim recovery, and policy optimization since 1998.</p>
+              <a href="/contact" class="inline-flex items-center gap-2 mt-4 px-5 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                Book Free Consultation
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      {related.length > 0 && (
+        <div class="max-w-3xl mx-auto px-4 mt-12">
+          <h3 class="text-xl font-bold text-slate-900 mb-6">Related Articles</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {related.map(rp => (
+              <a href={`/blog/${rp.slug}`} class="block bg-white rounded-xl border border-slate-200 p-5 hover:shadow-lg hover:border-blue-200 transition-all group">
+                <div class="flex flex-wrap gap-1 mb-2">
+                  {(rp.categories || []).slice(0, 1).map(cat => (
+                    <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-medium rounded">{cat}</span>
+                  ))}
+                </div>
+                <h4 class="text-sm font-bold text-slate-900 mb-2 leading-snug line-clamp-3 group-hover:text-blue-600 transition-colors">{rp.title}</h4>
+                <span class="text-xs text-slate-400">{rp.date}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- CTA -->
+      <div class="max-w-3xl mx-auto px-4 mt-16 mb-8">
+        <div class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 md:p-10 text-center text-white relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]" />
+          <h3 class="text-2xl md:text-3xl font-extrabold mb-3 relative">Need personalized insurance advice?</h3>
+          <p class="text-blue-200/80 mb-6 relative">Free consultation with Hari Kotian. No obligation.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full text-lg shadow-lg shadow-amber-500/25 hover:shadow-xl hover:scale-105 transition-all btn-glow relative">
+            Book Free Consultation
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+      </div>
     </article>
-    <div class="mt-16 bg-blue-50 p-8 rounded-2xl text-center">
-      <h3 class="text-xl font-bold text-slate-900 mb-4">Need personalized insurance advice?</h3>
-      <a href="/contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors">Book Free Consultation</a>
-    </div>
   </main>
+
+  <Footer />
 </BaseLayout>
+
+<style is:global>
+  .blog-content {
+    @apply text-slate-600;
+  }
+  .blog-content table {
+    @apply min-w-full text-sm border-collapse;
+  }
+  .blog-content thead tr {
+    @apply border-b-2 border-slate-200;
+  }
+  .blog-content tbody tr:last-child {
+    @apply border-b-0;
+  }
+  .blog-content img {
+    @apply max-w-full h-auto rounded-xl shadow-md my-8;
+  }
+  .blog-content a {
+    @apply text-blue-600 hover:text-blue-800 underline decoration-blue-300/50 hover:decoration-blue-500 transition-colors;
+  }
+  .blog-content strong {
+    @apply text-slate-800 font-bold;
+  }
+  .blog-content blockquote {
+    @apply border-l-4 border-blue-500 bg-blue-50/50 rounded-r-xl px-6 py-4 my-6 italic text-slate-700;
+  }
+  .blog-content pre {
+    @apply bg-slate-900 text-slate-100 rounded-xl p-5 my-6 overflow-x-auto text-sm;
+  }
+  .blog-content code {
+    @apply bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  .blog-content pre code {
+    @apply bg-transparent text-slate-100 p-0;
+  }
+</style>
