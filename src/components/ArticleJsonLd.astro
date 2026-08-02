@@ -1,0 +1,43 @@
+---
+// Article JSON-LD structured data for rich search snippets
+// Props: { title, description, url, date, imageUrl?, authorName? }
+export interface Props {
+  title: string;
+  description: string;
+  url: string;
+  date: string;
+  imageUrl?: string;
+  authorName?: string;
+}
+
+const { title, description, url, date, imageUrl, authorName = "Hari Kotian" } = Astro.props;
+const defaultImage = "https://insurancesupport.online/og-default.png";
+const siteName = "Insurance Support - Hari Kotian";
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description,
+  author: {
+    "@type": "Person",
+    name: authorName,
+    url: "https://insurancesupport.online/about"
+  },
+  publisher: {
+    "@type": "Organization",
+    name: siteName,
+    logo: {
+      "@type": "ImageObject",
+      url: "https://insurancesupport.online/favicon.svg"
+    }
+  },
+  datePublished: date,
+  dateModified: date,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": url
+  },
+  image: imageUrl || defaultImage
+})} />

@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const TITLE = "Health Insurance Claim Rejection: 15 Real Reasons & How to Prevent Them";
+const DESCRIPTION = "Why did your health insurance claim get rejected? Here are 15 real reasons and practical steps to prevent each one. Expert guide for Indian policyholders.";
+const KEYWORDS = "health insurance claim rejection reasons India, prevent health claim denial, pre-existing disease waiting period, room rent capping health insurance, India 2026";
+const CANONICAL_URL = "https://insurancesupport.online/blog/health-insurance-claim-rejection-15-reasons";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-07-25";
+
+const REASONS = [
+  {
+    title: "1. Non-Disclosure of Pre-Existing Diseases (PED)",
+    detail: "Failing to declare a pre-existing condition like diabetes or hypertension at the time of buying the policy is the single most common reason for claim denial. Insurers can void the policy if a PED is discovered later.",
+    prevention: "Always declare all known medical conditions honestly at the time of application. If you've already bought a policy without disclosure, consider a portability application to a new insurer with full disclosure."
+  },
+  {
+    title: "2. Waiting Period Not Completed",
+    detail: "Health policies have waiting periods — typically 30 days for general illness, 2-4 years for specific diseases like cataracts or hernia, and 48 months for pre-existing conditions.",
+    prevention: "Read your policy document carefully. Plan medical procedures after waiting periods are completed. For planned surgeries, buy coverage well in advance."
+  },
+  {
+    title: "3. Room Rent Capping Violation",
+    detail: "Many policies restrict room type (e.g., shared room only) or cap room rent at 1% of sum insured. Claiming for an upgraded room can result in proportional deduction or full rejection.",
+    prevention: "Choose a policy with a generous room rent limit or no cap. If upgrading, check the proportional deduction clause before admission."
+  },
+  {
+    title: "4. Treatment at a Non-Network Hospital",
+    detail: "If your policy is a cashless-only plan, going to a hospital outside the insurer's network will result in rejection for reimbursement claims.",
+    prevention: "Always verify your hospital is in the insurer's network for cashless claims. Keep reimbursement claim documents ready if using a non-network hospital."
+  },
+  {
+    title: "5. Self-Funded or Outpatient Expenses",
+    detail: "Day-care procedures, doctor consultations, diagnostic tests without hospitalization, and dental treatment (unless specified) are not covered under standard health policies.",
+    prevention: "Buy a top-up plan that covers OPD. Read your policy to understand what qualifies as a valid hospitalization claim."
+  },
+  {
+    title: "6. Intentional Non-Disclosure (Fraud)",
+    detail: "If the insurer finds that a material fact was withheld with the intent to deceive, they can reject the claim and cancel the policy entirely — even if the illness is unrelated.",
+    prevention: "Be 100% honest on the proposal form. Material facts include habits (smoking, alcohol), profession risks, and all medical history."
+  },
+  {
+    title: "7. Claim Outside Policy Term",
+    detail: "If the policy has lapsed due to non-payment of premium, any claim made after the lapse date is rejected.",
+    prevention: "Set renewal reminders. Use auto-pay to avoid accidental lapse. If lapsed, use the free-look or revival period to reinstate."
+  },
+  {
+    title: "8. Sub-Limit Exceeded",
+    detail: "Many policies impose sub-limits on specific treatments — e.g., cataract surgery capped at Rs. 40,000 or mental health treatment at Rs. 20,000. Claiming above the cap leads to short-settlement.",
+    prevention: "Choose policies without sub-limits for critical treatments. Read the coverage table to know exact caps before undergoing treatment."
+  },
+  {
+    title: "9. Pre-Authorization Delay",
+    detail: "For cashless claims, insurers require pre-authorization before admission. Delaying this request beyond the hospital's internal deadline can result in rejection.",
+    prevention: "Request cashless authorization at least 24-48 hours before a planned admission. For emergencies, authorize within 24 hours of admission."
+  },
+  {
+    title: "10. Incorrect or Incomplete Documentation",
+    detail: "Missing hospital discharge summary, incorrect diagnosis codes, unsigned documents, or incomplete investigation reports are among the top administrative reasons for claim delays and rejections.",
+    prevention: "Collect all documents before discharge: discharge summary, final bill, investigation reports, prescription slips, and payment receipts. Review them before submitting."
+  },
+  {
+    title: "11. Cosmetic or Elective Procedures",
+    detail: "Weight loss treatments, plastic surgery (unless due to accident), hair transplant, and IVF are excluded from standard health insurance.",
+    prevention: "Read the exclusions list before buying. If you anticipate such treatments, look for specialized add-on covers or riders."
+  },
+  {
+    title: "12. War, Nuclear Risk, or Intentional Self-Injury",
+    detail: "Standard policies exclude claims arising from war, nuclear contamination, riots, and self-harm. Claims linked to these causes are automatically rejected.",
+    prevention: "These exclusions are standard and unavoidable. Ensure other aspects of your policy are comprehensive to cover everyday risks."
+  },
+  {
+    title: "13. Domiciliary Hospitalization Not Qualified",
+    detail: "Treatment taken at home is covered only if it meets specific criteria — e.g., the patient cannot be moved to a hospital, or nursing care is required at home. Simply preferring home treatment is not sufficient.",
+    prevention: "File domiciliary claims only when supported by a doctor certificate stating medical necessity for home treatment. Keep all prescriptions and logs."
+  },
+  {
+    title: "14. Fraud or Misrepresentation",
+    detail: "Filing a claim with inflated bills, duplicate claims, or altered documents is considered fraud. Insurers share data via CIS (Claim Information Sharing) platform, making duplicate claims easy to detect.",
+    prevention: "Never inflate bills or file duplicate claims. Keep all originals safe and submit only certified copies to the insurer."
+  },
+  {
+    title: "15. Illness/Accident During Waiting Period After Renewal",
+    detail: "If you switch insurers and don't port your continuity benefits, a condition that was waiting under the old policy restarts its waiting period under the new policy.",
+    prevention: "Always use portability to transfer your policy when switching. Continuity benefits for pre-existing conditions must be ported; don't let them lapse."
+  },
+];
+---
+
+<BaseLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  keywords={KEYWORDS}
+  canonical={CANONICAL_URL}
+>
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-blue-600">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-700">15 Health Claim Rejection Reasons</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} | Published on {PUBLISH_DATE}</p>
+
+    <p class="text-lg text-slate-700 leading-relaxed mb-10">
+      Health insurance claims in India have an average rejection rate that concerns every policyholder. 
+      Understanding <em>why</em> claims are rejected is the best prevention strategy. In this guide, I 
+      cover the 15 most common reasons — and what you can do right now to protect your coverage.
+    </p>
+
+    <div class="space-y-6">
+      {REASONS.map((reason) => (
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">{reason.title}</h2>
+          <p class="text-slate-700 mb-4">{reason.detail}</p>
+          <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+            <p class="text-sm font-semibold text-green-900 mb-1">Prevention:</p>
+            <p class="text-sm text-green-800">{reason.prevention}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Facing a Health Claim Rejection?</h2>
+      <p class="text-blue-100 mb-6">I help families recover rightful claims. Don't accept a rejection without a review.</p>
+      <a href="https://wa.me/919986634506" class="inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">
+        WhatsApp for Claim Review
+      </a>
+    </div>
+  </main>
+</BaseLayout>

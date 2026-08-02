@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const TITLE = "LIC Jeevan Anand vs Jeevan Labh: Which Plan is Best for You in 2026?";
+const DESCRIPTION = "A detailed comparison of LIC Jeevan Anand (Plan 915) vs. LIC Jeevan Labh (Plan 936). Understand the key differences to choose the right plan for your goals.";
+const KEYWORDS = "Jeevan Anand vs Jeevan Labh, LIC plan comparison 2026, LIC Jeevan Anand vs Jeevan Labh benefits, which LIC plan is best";
+const CANONICAL_URL = "https://insurancesupport.online/blog/lic-jeevan-anand-vs-jeevan-labh-comparison";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-07-25";
+
+const COMPARISON_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Table",
+  "name": "Comparison: Jeevan Anand vs Jeevan Labh",
+  "about": "Comparison of LIC plan benefits"
+};
+---
+
+<BaseLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  keywords={KEYWORDS}
+  canonical={CANONICAL_URL}
+>
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <script type="application/ld+json">{JSON.stringify(COMPARISON_SCHEMA)}</script>
+    
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-blue-600">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-700">Jeevan Anand vs Jeevan Labh Comparison</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} | Published on {PUBLISH_DATE}</p>
+
+    <p class="text-lg text-slate-700 leading-relaxed mb-8">
+      Choosing between LIC Jeevan Anand and LIC Jeevan Labh is one of the most common dilemmas for investors. 
+      Both are powerful endowment plans, but they serve different financial objectives. This guide 
+      compares their core features to help you make an informed decision for 2026.
+    </p>
+
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">Core Differences at a Glance</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="min-w-full bg-white border border-slate-200 rounded-lg shadow-sm">
+        <thead class="bg-blue-800 text-white">
+          <tr>
+            <th class="py-3 px-4 text-left">Feature</th>
+            <th class="py-3 px-4 text-left">Jeevan Anand (Plan 915)</th>
+            <th class="py-3 px-4 text-left">Jeevan Labh (Plan 936)</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-700">
+          <tr><td class="py-2 px-4 border-b">Plan Type</td><td class="py-2 px-4 border-b">Whole Life Endowment</td><td class="py-2 px-4 border-b">Limited Premium Endowment</td></tr>
+          <tr><td class="py-2 px-4 border-b">Maturity Benefit</td><td class="py-2 px-4 border-b">Sum Assured + Bonus</td><td class="py-2 px-4 border-b">Sum Assured + Bonus</td></tr>
+          <tr><td class="py-2 px-4 border-b">Death Cover</td><td class="py-2 px-4 border-b">Continues after maturity</td><td class="py-2 px-4 border-b">Ends at maturity</td></tr>
+          <tr><td class="py-2 px-4 border-b">Best For</td><td class="py-2 px-4 border-b">Lifetime protection & estate planning</td><td class="py-2 px-4 border-b">Medium-term goals (child education)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">Detailed Breakdown</h2>
+    <h3 class="text-2xl font-bold text-slate-800 mb-2">LIC Jeevan Anand (The "Lifetime" Plan)</h3>
+    <p class="text-slate-700 mb-4">
+      Jeevan Anand is unique because its life cover continues <strong>even after the policy matures</strong>. 
+      If the policyholder survives the term, they receive the maturity value, but the risk cover 
+      remains active until death. It is an excellent plan for estate planning.
+    </p>
+    
+    <h3 class="text-2xl font-bold text-slate-800 mb-2">LIC Jeevan Labh (The "Short-Term" Saver)</h3>
+    <p class="text-slate-700 mb-6">
+      Jeevan Labh is designed for limited premium payments. You pay premiums for a shorter duration 
+      than the total policy term, making it ideal for parents planning for their children's 
+      education or marriage expenses occurring at a specific time in the future.
+    </p>
+
+    <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 mb-8">
+      <h2 class="text-2xl font-bold text-blue-900 mb-2">Still Unsure?</h2>
+      <p class="text-slate-700 mb-4">
+        Every investor's needs are different. Let's analyze your financial goals and 
+        recommend the plan that fits you best.
+      </p>
+      <a href="https://wa.me/919986634506" class="inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">
+        WhatsApp Hari Kotian
+      </a>
+    </div>
+  </main>
+</BaseLayout>

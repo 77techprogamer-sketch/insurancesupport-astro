@@ -1,9 +1,36 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const services = [
+  { title: 'Life Insurance', desc: 'Secure your family\'s future with customized term and endowment plans.' },
+  { title: 'Health Insurance', desc: 'Comprehensive coverage for medical emergencies and hospital expenses.' },
+  { title: 'Motor Insurance', desc: 'Robust protection for your car and two-wheeler against accidents and theft.' },
+  { title: 'Pension Plans', desc: 'Build a steady stream of income for your golden years.' },
+  { title: 'Claim Support', desc: 'Expert assistance for claim settlement and documentation.' },
+  { title: 'Policy Review', desc: 'Personalized audits to ensure your existing policies meet your current needs.' },
+  { title: 'Child Education Plans', desc: 'Invest in your child\'s future with secure education-focused insurance.' },
+  { title: 'Investment Plans', desc: 'Maximize your returns while securing your financial future.' },
+  { title: 'Travel Insurance', desc: 'Peace of mind for your domestic and international travel.' },
+  { title: 'Professional Indemnity', desc: 'Tailored protection for professionals in high-liability fields.' }
+];
 ---
-<BaseLayout title="Our Services" description="List of all 10 insurance types we offer.">
+
+<BaseLayout title="Our Insurance Services" description="Explore our 10 comprehensive insurance services in Bangalore, including life, health, motor, and pension plans.">
+  <Header />
   <main class="max-w-5xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-slate-900 mb-8">Our Services</h1>
-    <p>List of 10 insurance types.</p>
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-8">Our Insurance Services</h1>
+    <p class="text-lg text-slate-600 mb-12">We provide 10 comprehensive insurance solutions tailored to protect what matters most to you. From life and health covers to specialized investment and claim recovery services, our IRDAI-certified expertise ensures you get the right advice.</p>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map(service => (
+        <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <h2 class="text-xl font-bold text-blue-900 mb-3">{service.title}</h2>
+          <p class="text-slate-600 leading-relaxed">{service.desc}</p>
+        </div>
+      ))}
+    </div>
   </main>
+  <Footer />
 </BaseLayout>

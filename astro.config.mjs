@@ -19,6 +19,9 @@ export default defineConfig({
       cssCodeSplit: false,
     },
   },
+  prefetch: {
+    prefetchAll: true,
+  },
   security: {
     headers: {
       'Content-Security-Policy': [

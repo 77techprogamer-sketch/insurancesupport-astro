@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const AREAS = [
+  { slug: 'whitefield', name: 'Whitefield', highlight: 'Tech corridor' },
+  { slug: 'indiranagar', name: 'Indiranagar', highlight: 'Urban residential' },
+  { slug: 'jayanagar', name: 'Jayanagar', highlight: 'Established residential' },
+  { slug: 'btm-layout', name: 'BTM Layout', highlight: 'Mid-income hub' },
+  { slug: 'koramangala', name: 'Koramangala', highlight: 'IT professional hub' },
+  { slug: 'hebbal', name: 'Hebbal', highlight: 'North Bangalore' },
+  { slug: 'electronic-city', name: 'Electronic City', highlight: 'IT hub' },
+  { slug: 'marathahalli', name: 'Marathahalli', highlight: 'Varthur Road' },
+  { slug: 'hsr-layout', name: 'HSR Layout', highlight: 'Sector 1-7' },
+  { slug: 'rajajinagar', name: 'Rajajinagar', highlight: 'Central west' },
+  { slug: 'yelahanka', name: 'Yelahanka', highlight: 'North Bangalore' },
+  { slug: 'bannerghatta', name: 'Bannerghatta Road', highlight: 'Southwest corridor' },
+  { slug: 'kengeri', name: 'Kengeri', highlight: 'South Bangalore' },
+  { slug: 'mysore-road', name: 'Mysore Road', highlight: 'Southwest' },
+  { slug: 'jalahalli', name: 'Jalahalli', highlight: 'Northwest industrial' },
+  { slug: 'sadashivanagar', name: 'Sadashivanagar', highlight: 'Premium locality' },
+  { slug: 'malleshwaram', name: 'Malleshwaram', highlight: 'Cultural hub' },
+  { slug: 'rt-nagar', name: 'R.T. Nagar', highlight: 'Central north' },
+  { slug: 'kammanahalli', name: 'Kammanahalli', highlight: 'East residential' },
+  { slug: 'shivajinagar', name: 'Shivajinagar', highlight: 'CBD' },
+  { slug: 'brigade-road', name: 'Brigade Road', highlight: 'Commercial hub' },
+  { slug: 'mg-road', name: 'MG Road', highlight: 'Business district' },
+  { slug: 'ulsoor', name: 'Ulsoor', highlight: 'Lake locality' },
+  { slug: 'hal', name: 'HAL', highlight: 'East Bangalore' },
+  { slug: 'domlur', name: 'Domlur', highlight: 'IT corridor' },
+  { slug: 'bellandur', name: 'Bellandur', highlight: 'Outer ORR' },
+  { slug: 'kadubeesanahalli', name: 'Kadubeesanahalli', highlight: 'Outer ring road' },
+  { slug: 'panathur', name: 'Panathur', highlight: 'Sarjapur Road' },
+  { slug: 'hoodi', name: 'Hoodi', highlight: 'Whitefield vicinity' },
+  { slug: 'itpl', name: 'ITPL', highlight: 'Tech park area' },
+  { slug: 'kr-puram', name: 'KR Puram', highlight: 'Outer east' },
+  { slug: 'ramamurthy-nagar', name: 'Ramamurthy Nagar', highlight: 'IT hub extension' },
+  { slug: 'banaswadi', name: 'Banaswadi', highlight: 'HRBR Layout area' },
+  { slug: 'hrbr-layout', name: 'HRBR Layout', highlight: 'Premium north' },
+  { slug: 'kalyan-nagar', name: 'Kalyan Nagar', highlight: 'Kammanahalli link' },
+  { slug: 'lingarajapuram', name: 'Lingarajapuram', highlight: 'Central east' },
+  { slug: 'wilson-garden', name: 'Wilson Garden', highlight: 'Central south' },
+  { slug: 'j-p-nagar', name: 'J.P. Nagar', highlight: 'Southwest residential' },
+  { slug: 'btm', name: 'BTM', highlight: 'Layout area' },
+  { slug: 'madiwala', name: 'Madiwala', highlight: 'Sarjapur Road start' },
+  { slug: 'ejipura', name: 'Ejipura', highlight: 'Central Bangalore' },
+  { slug: 'sanjaynagar', name: 'Sanjaynagar', highlight: 'Cultural hub' },
+  { slug: 'mahalakshmipuram', name: 'Mahalakshmipuram', highlight: 'West Bangalore' },
+  { slug: 'mathikere', name: 'Mathikere', highlight: 'Near Yeshwantpur' },
+  { slug: 'kasturi-nagar', name: 'Kasturi Nagar', highlight: 'East Bangalore' },
+  { slug: 'vimanapura', name: 'Vimanapura', highlight: 'Near Indiranagar' },
+  { slug: 'bommanahalli', name: 'Bommanahalli', highlight: 'Bannerghatta Road' },
+  { slug: 'kannur', name: 'Kannur', highlight: 'North Bangalore' },
+  { slug: 'bagalur', name: 'Bagalur', highlight: 'Airport road north' },
+  { slug: 'yelahanka-new-town', name: 'Yelahanka New Town', highlight: 'Planned township' },
+  { slug: 'sahakara-nagar', name: 'Sahakara Nagar', highlight: 'Near Hebbal' },
+  { slug: 'kodigehalli', name: 'Kodigehalli', highlight: 'Sahakara Nagar' },
+  { slug: 'dasarahalli', name: 'Dasarahalli', highlight: 'Tumkur Road' },
+  { slug: 'nagasandra', name: 'Nagasandra', highlight: 'Tumkur Road' },
+  { slug: 'mahalakshmi', name: 'Mahalakshmi Layout', highlight: 'West Bangalore' },
+  { slug: 'subramanyapura', name: 'Subramanyapura', highlight: 'Uttarahalli' },
+  { slug: 'uttarahalli', name: 'Uttarahalli', highlight: 'South Bangalore' },
+  { slug: 'kempapura', name: 'Kempapura', highlight: 'Hebbal' },
+  { slug: 'cox-town', name: 'Cox Town', highlight: 'Frazer Town area' },
+  { slug: 'richmond-town', name: 'Richmond Town', highlight: 'Town area' },
+  { slug: 'city-market', name: 'City Market', highlight: 'KR Market' },
+  { slug: 'girinagar', name: 'Girinagar', highlight: 'Near Banashankari' },
+  { slug: 'gottigere', name: 'Gottigere', highlight: 'Bannerghatta Road' },
+  { slug: 'horamavu', name: 'Horamavu', highlight: 'Ramamurthy Nagar' },
+  { slug: 'puttenahalli', name: 'Puttenahalli', highlight: 'JP Nagar 6th Phase' },
+  { slug: 'yeshwantpur', name: 'Yeshwantpur', highlight: 'Industrial area' },
+  { slug: 'hmt-layout', name: 'HMT Layout', highlight: 'Jalahalli' },
+  { slug: 'palace-guttahalli', name: 'Palace Guttahalli', highlight: 'Malleswaram' },
+  { slug: 'subramanyanagar', name: 'Subramanyanagar', highlight: 'Rajajinagar' },
+  { slug: 'prakash-nagar', name: 'Prakash Nagar', highlight: 'Rajajinagar' },
+  { slug: 'vinayaka-layout', name: 'Vinayaka Layout', highlight: 'JP Nagar extension' },
+  { slug: 'padmanabha-nagar', name: 'Padmanabha Nagar', highlight: 'South Bangalore' },
+  { slug: 'chikkalsandra', name: 'Chikkalsandra', highlight: 'Raghavendra Block' },
+  { slug: 'kumaraswamy-layout', name: 'Kumaraswamy Layout', highlight: 'Near V V Mohalla' },
+  { slug: 'andrahalli', name: 'Andrahalli', highlight: 'Southwest outer' },
+  { slug: 'pattabiram-nagar', name: 'Pattabiram Nagar', highlight: 'JP Nagar extension' },
+  { slug: 'hosahalli', name: 'Hosahalli', highlight: 'Vijayanagar ext' },
+  { slug: 'nayandahalli', name: 'Nayandahalli', highlight: 'Mysore Road' },
+  { slug: 'kaggalipura', name: 'Kaggalipura', highlight: 'Kanakapura Road' },
+  { slug: 'bengaluru-south', name: 'Bengaluru South', highlight: 'City south' },
+  { slug: 'bengaluru-north', name: 'Bengaluru North', highlight: 'City north' },
+  { slug: 'bengaluru-east', name: 'Bengaluru East', highlight: 'City east' },
+  { slug: 'bengaluru-west', name: 'Bengaluru West', highlight: 'City west' },
+];
+---
+
+<BaseLayout
+  title="LIC Agent Bangalore — All Areas Served | Insurance Support"
+  description="Hari Kotian provides LIC insurance advisory across 83+ Bangalore areas. Find your local expert for life, health, term insurance and claim recovery. IRDAI Reg No: 0149161D."
+>
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">
+        LIC Insurance Advisor Across Bangalore
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Door-step service across 83+ Bangalore neighborhoods. Select your area below for local contact details, recommended plans, and free consultation booking.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {AREAS.map((area) => (
+        <a
+          href={`/cities/${area.slug}`}
+          class="group block p-5 border border-slate-200 rounded-xl hover:border-blue-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 bg-white"
+        >
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+              {area.name.charAt(0)}
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                {area.name}
+              </h3>
+              <p class="text-sm text-slate-500 mt-1">{area.highlight}</p>
+            </div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-medium text-blue-600">View Details</span>
+            <svg class="w-4 h-4 text-slate-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <section class="mt-16 p-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl text-white text-center">
+      <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Don't See Your Area?</h2>
+      <p class="text-blue-100 mb-6 max-w-xl mx-auto">
+        I serve all of Bangalore and surrounding regions. If your locality isn't listed, I still provide door-step consultation — just reach out.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://wa.me/919986634506" class="inline-flex items-center gap-2 bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">
+          WhatsApp Me
+        </a>
+        <a href="tel:+919986634506" class="inline-flex items-center gap-2 bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-50 transition-colors">
+          Call Now
+        </a>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-amber-400 text-slate-900 font-bold py-3 px-6 rounded-lg hover:bg-amber-300 transition-colors">
+          Book Free Consultation
+        </a>
+      </div>
+    </section>
+
+    <footer class="mt-12 text-center text-sm text-slate-500">
+      <p>IRDAI Reg No: 0149161D | 25+ Years Experience | 1000+ Families Served | INR 50Cr+ Claims Recovered</p>
+    </footer>
+  </main>
+</BaseLayout>

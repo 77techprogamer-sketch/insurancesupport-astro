@@ -1,9 +1,73 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 ---
-<BaseLayout title="About Hari Kotian" description="Meet Hari Kotian, IRDAI certified insurance advisor with 25+ years experience.">
+<BaseLayout title="About Hari Kotian" description="Meet Hari Kotian — IRDAI certified insurance advisor with 25+ years experience, 1000+ clients served, and INR 50+ Crores in claims recovered across India.">
+  <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online' }, { label: 'About', url: 'https://insurancesupport.online/about' }]} />
   <main class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-slate-900 mb-8">About Hari Kotian</h1>
-    <p class="text-lg text-slate-600">IRDAI Certified Insurance Advisor (Reg: 0149161D). 25+ years of experience, 1000+ clients, INR 50 Cr+ claims recovered.</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-4">About Hari Kotian</h1>
+    <p class="text-lg text-slate-600 mb-6 leading-relaxed">IRDAI Certified Insurance Advisor (Reg No: 0149161D). 25+ years of experience serving families across India.</p>
+
+    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 mb-10">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Your Trusted Insurance Partner</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        With over <strong>25 years</strong> in the insurance industry, I've helped <strong>1000+ families</strong> across India secure their financial future through carefully chosen insurance plans. My mission is simple — protect what matters most to you with the right coverage, at the right price.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        I specialize in <strong>claim recovery</strong>, having successfully recovered <strong>INR 50+ Crores</strong> in claim amounts for my clients. Whether it's a rejected claim, a complex policy issue, or just finding the right plan — I'm here to help.
+      </p>
+      <p class="text-slate-700 leading-relaxed">
+        As a <strong>LIC authorized advisor</strong> with IRDAI certification, I offer unbiased advice across life, health, motor, term, and all insurance types. Free consultations — no obligation.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
+        <div class="text-3xl font-extrabold text-blue-600 mb-1">25+</div>
+        <p class="text-sm text-slate-500">Years Experience</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
+        <div class="text-3xl font-extrabold text-blue-600 mb-1">1000+</div>
+        <p class="text-sm text-slate-500">Happy Clients</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
+        <div class="text-3xl font-extrabold text-blue-600 mb-1">₹50Cr+</div>
+        <p class="text-sm text-slate-500">Claims Recovered</p>
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Services I Offer</h2>
+      <ul class="space-y-3 text-slate-700">
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
+          <span><strong>Life Insurance:</strong> LIC policies, term plans, endowment, ULIP, money-back, whole life</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
+          <span><strong>Health Insurance:</strong> Individual, family floater, senior citizen, super top-up, critical illness</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
+          <span><strong>Motor Insurance:</strong> Car, bike, third-party, comprehensive, zero-depreciation</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
+          <span><strong>Claim Recovery:</strong> File appeals, represent you at IRDAI/ombudsman, negotiate settlements</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
+          <span><strong>Policy Management:</strong> Revival, surrender, loan, nomination, maturity, portability</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 md:p-10 text-center text-white">
+      <h2 class="text-2xl font-bold mb-3">Need help with insurance?</h2>
+      <p class="text-blue-200/80 mb-6">Free consultation — no obligation. Let's find the right plan for you.</p>
+      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full text-lg shadow-lg shadow-amber-500/25 hover:shadow-xl hover:scale-105 transition-all">
+        Book Free Consultation
+      </a>
+    </div>
   </main>
 </BaseLayout>
