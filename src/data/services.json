@@ -1,0 +1,12 @@
+[
+  {"slug": "life-insurance", "title": "Life Insurance", "desc": "Secure your family’s future with customized term and endowment plans."},
+  {"slug": "health-insurance", "title": "Health Insurance", "desc": "Comprehensive coverage for medical emergencies and hospital expenses."},
+  {"slug": "motor-insurance", "title": "Motor Insurance", "desc": "Robust protection for your car and two-wheeler against accidents and theft."},
+  {"slug": "pension-plans", "title": "Pension Plans", "desc": "Build a steady stream of income for your golden years."},
+  {"slug": "claim-support", "title": "Claim Support", "desc": "Expert assistance for claim settlement and documentation."},
+  {"slug": "policy-review", "title": "Policy Review", "desc": "Personalized audits to ensure your existing policies meet your current needs."},
+  {"slug": "child-education-plan", "title": "Child Education Plans", "desc": "Invest in your child's future with secure education‑focused insurance."},
+  {"slug": "investment-plans", "title": "Investment Plans", "desc": "Maximize your returns while securing your financial future."},
+  {"slug": "travel-insurance", "title": "Travel Insurance", "desc": "Peace of mind for your domestic and international travel."},
+  {"slug": "professional-indemnity", "title": "Professional Indemnity", "desc": "Tailored protection for professionals in high‑liability fields."}
+]

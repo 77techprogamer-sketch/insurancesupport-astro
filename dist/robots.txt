@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://insurancesupport.online/sitemap.xml
+IndexNow-Key: 71a80a3568ae5d1d945fda3ef57fe18e
