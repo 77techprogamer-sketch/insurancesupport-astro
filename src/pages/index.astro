@@ -9,6 +9,7 @@ import BlogSection from '../components/BlogSection';
 import NewsletterSection from '../components/NewsletterSection';
 import FloatingCTA from '../components/FloatingCTA';
 import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
+import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -187,6 +188,43 @@ import Footer from '../components/Footer.astro';
             <div class="text-3xl md:text-4xl font-extrabold">95%</div>
             <div class="text-blue-200 text-sm font-medium mt-1">Success Rate</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="py-20 bg-white">
+      <FAQPageJsonLd questions={[
+        { question: "How much does insurance cost?", answer: "Premiums vary based on coverage type, sum assured, age, health condition, occupation, and location. GST of 18% is applicable on most insurance premiums. For life insurance, terms under 5 years are typically tax-free. Health insurance premiums include GST, and NCB (No Claim Bonus) can reduce motor insurance costs." },
+        { question: "Can you help with a rejected insurance claim?", answer: "Yes, claim rejection recovery is our specialty. We analyze your rejection letter, review your policy terms, and guide you through the grievance redressal process with the insurer, IRDAI, and the Insurance Ombudsman. We have recovered over ₹50Cr in previously rejected claims for 1000+ families." },
+        { question: "What is the difference between term insurance and health insurance?", answer: "Term insurance provides life cover — a lump sum payout to your nominees if you pass away during the policy term. Health insurance covers medical expenses and hospitalization costs. They serve completely different purposes and most families need both." },
+        { question: "Do you charge for insurance consultation?", answer: "Our initial consultation is completely free. We earn commissions from insurance companies when you purchase a policy through us, so there is no cost to you for advisory services." },
+        { question: "Can I buy insurance online through you?", answer: "Yes, we facilitate online policy purchases for multiple insurers including LIC, HDFC Life, ICICI Prudential, and others. We handle the entire process from comparison to application submission and policy issuance." },
+        { question: "How do I know if my existing policy is good enough?", answer: "We offer a complimentary policy review service. We analyze your current coverage for gaps, compare it with current market offerings, and recommend optimizations — whether that means enhancing riders, switching insurers, or adding supplementary coverage." }
+      ]} />
+      <div class="max-w-4xl mx-auto px-4">
+        <h3 class="text-3xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h3>
+        <div class="space-y-3">
+          {[
+            { question: "How much does insurance cost?", answer: "Premiums vary based on coverage type, sum assured, age, health condition, occupation, and location. GST of 18% is applicable on most insurance premiums. For life insurance, terms under 5 years are typically tax-free. Health insurance premiums include GST, and NCB (No Claim Bonus) can reduce motor insurance costs." },
+            { question: "Can you help with a rejected insurance claim?", answer: "Yes, claim rejection recovery is our specialty. We analyze your rejection letter, review your policy terms, and guide you through the grievance redressal process with the insurer, IRDAI, and the Insurance Ombudsman. We have recovered over ₹50Cr in previously rejected claims for 1000+ families." },
+            { question: "What is the difference between term insurance and health insurance?", answer: "Term insurance provides life cover — a lump sum payout to your nominees if you pass away during the policy term. Health insurance covers medical expenses and hospitalization costs. They serve completely different purposes and most families need both." },
+            { question: "Do you charge for insurance consultation?", answer: "Our initial consultation is completely free. We earn commissions from insurance companies when you purchase a policy through us, so there is no cost to you for advisory services." },
+            { question: "Can I buy insurance online through you?", answer: "Yes, we facilitate online policy purchases for multiple insurers including LIC, HDFC Life, ICICI Prudential, and others. We handle the entire process from comparison to application submission and policy issuance." },
+            { question: "How do I know if my existing policy is good enough?", answer: "We offer a complimentary policy review service. We analyze your current coverage for gaps, compare it with current market offerings, and recommend optimizations — whether that means enhancing riders, switching insurers, or adding supplementary coverage." }
+          ].map(faq => (
+            <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-slate-50 transition-colors">
+                <span class="font-semibold text-slate-900 pr-4">{faq.question}</span>
+                <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5">
+                <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
         </div>
       </div>
     </section>
