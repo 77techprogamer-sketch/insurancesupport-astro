@@ -1,9 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 ---
 <BaseLayout title="Client Support Services" description="Insurance support services: claims, policy revival, ombudsman.">
   <main class="max-w-4xl mx-auto px-4 py-16">
     <h1 class="text-4xl font-bold text-slate-900 mb-8">Client Support Services</h1>
-    <p>Rejected Claims, Stuck Claims, Policy Revival, Lost Documents, Ombudsman, Renewal.</p>
+    <p class="text-lg text-slate-600 mb-12">Rejected Claims, Stuck Claims, Policy Revival, Lost Documents, Ombudsman, Renewal. Get help with all your insurance support needs.</p>
+
+    <ClaimRejectionQuiz client:load />
+
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">How We Can Help You</h2>
+      <div class="space-y-8 text-lg text-slate-700">
+        <p>Facing issues with your insurance policy or a rejected claim can be frustrating. Our expert team specializes in navigating the complexities of the insurance landscape to provide you with comprehensive support. We assist with:</p>
+        <ul class="list-disc list-inside space-y-2 pl-4">
+          <li>**Claim Rejection Recovery:** Analyzing rejection reasons and guiding you through the appeal process.</li>
+          <li>**Stuck Claims:** Expediting claims that are delayed by insurers.</li>
+          <li>**Policy Revival:** Assisting with the revival of lapsed life insurance policies.</li>
+          <li>**Lost Documents:** Guidance on obtaining duplicate policy documents.</li>
+          <li>**IRDAI & Ombudsman Complaints:** Representing your case before regulatory bodies.</li>
+          <li>**Policy Renewals & Reviews:** Ensuring your policies are up-to-date and optimized.</li>
+        </ul>
+        <p>Don't face insurance challenges alone. Contact us today for personalized assistance.</p>
+        <div class="text-center mt-12">
+          <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg">
+            Get Direct Support
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>

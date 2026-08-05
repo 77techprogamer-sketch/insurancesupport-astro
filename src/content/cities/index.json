@@ -1,0 +1,192 @@
+[
+  {
+    "slug": "bangalore-indiranagar",
+    "name": "Indiranagar, Bangalore",
+    "state": "Karnataka",
+    "desc": "In the bustling heart of Indiranagar, Bangalore, we provide premium localized Insurance Support. From health covers tailored for startup founders to doorstep LIC policy revivals for long-time residents, our team near 100 Feet Road ensures you skip the traffic and get expert advice at your home or office.",
+    "phone": "+91-99866 34506",
+    "areas": ["HAL 2nd Stage", "Domlur", "Tippasandra", "Doopanahalli"],
+    "nearby": ["bangalore", "bangalore-koramangala", "bangalore-whitefield"],
+    "it_focus": "Indiranagar is a startup hub. We specialize in configuring Group Health Insurance for growing teams and portable individual policies for mobile founders.",
+    "senior_focus": "For the established residents of HAL 2nd Stage and Domlur, we offer personalized pension revivals and doorstep assistance for medical claims without navigating 100FT Road traffic.",
+    "branch_dets": "We coordinate with the Jeevan Bima Nagar and Domlur LIC branches to expedite your paperwork locally.",
+    "local_faqs": [
+      { "question": "Where can I find an LIC branch in Indiranagar?", "answer": "The nearest major LIC branch is in Jeevan Bima Nagar, accessible from Indiranagar. We also offer doorstep service for policy assistance." },
+      { "question": "Do you help with health insurance for startups in Indiranagar?", "answer": "Yes, we specialize in group health insurance solutions for startups and individual health plans for entrepreneurs and their families in Indiranagar." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-koramangala",
+    "name": "Koramangala, Bangalore",
+    "state": "Karnataka",
+    "desc": "Serving the startup and residential hub of Koramangala, we offer hyper-local Insurance Support. Whether you need an Employee Benefits plan for your new tech venture or personal health insurance for your family, our advisors provide fast-track doorstep service across all Koramangala blocks.",
+    "phone": "+91-99866 34506",
+    "areas": ["Ejipura", "Vivek Nagar", "BTM Layout 1st Stage", "Venkatapura"],
+    "nearby": ["bangalore", "bangalore-indiranagar", "bangalore-jayanagar"],
+    "it_focus": "Koramangala demands high-flexibility insurance. We offer specialized 'Loss of Income' covers and Super Top-Up health plans tailored for tech professionals in Ejipura and BTM Layout.",
+    "senior_focus": "We assist Koramangala's senior residents with complicated life insurance maturity claims and pension plan advisories, ensuring smooth processing without the need to visit branch offices.",
+    "branch_dets": "Our local presence means we can coordinate directly with LIC branches in Koramangala and surrounding areas for faster service.",
+    "local_faqs": [
+      { "question": "Are there good cashless hospitals for health insurance in Koramangala?", "answer": "Koramangala boasts several top-tier hospitals in our cashless network, including Apollo Spectra, Sakra World Hospital (nearby), and others. We can provide a full list." },
+      { "question": "Can I get motor insurance assistance in Koramangala?", "answer": "Yes, we offer doorstep motor insurance renewal, claim assistance, and IDV assessment services across all blocks of Koramangala." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-whitefield",
+    "name": "Whitefield, Bangalore",
+    "state": "Karnataka",
+    "desc": "As the IT hub of Bangalore, Whitefield residents and professionals can access specialized insurance advisory. From comprehensive health covers for tech families to term plans for NRIs, we provide expert guidance right at your doorstep in Whitefield.",
+    "phone": "+91-99866 34506",
+    "areas": ["ITPL", "Kadugodi", "Varthur", "Brookefield"],
+    "nearby": ["bangalore", "bangalore-marathahalli", "bangalore-hsr-layout"],
+    "it_focus": "Whitefield's IT professionals benefit from our expertise in high-sum-assured health plans, critical illness covers, and term insurance with global coverage options.",
+    "senior_focus": "For senior citizens in Whitefield, we offer dedicated assistance for health insurance renewals, claim processing, and investment-linked pension advisories.",
+    "branch_dets": "We work closely with LIC and other insurer branches in and around Whitefield for efficient service delivery.",
+    "local_faqs": [
+      { "question": "Which health insurance is best for IT professionals in Whitefield?", "answer": "We recommend plans with high sum assured, critical illness riders, and international coverage options, considering the demanding lifestyle and potential travel for IT professionals. We'll compare options like Max Bupa, HDFC Ergo, and Star Health." },
+      { "question": "Can I get my LIC policy serviced near ITPL Whitefield?", "answer": "Absolutely. Our advisors offer doorstep service for all LIC policy-related queries, premium payments, and document submission in areas around ITPL and Whitefield." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-electronic-city",
+    "name": "Electronic City, Bangalore",
+    "state": "Karnataka",
+    "desc": "Specialized insurance solutions for Electronic City's tech professionals and residents. Whether it's group insurance for your company or individual term and health plans, we provide expert, on-site advisory.",
+    "phone": "+91-99866 34506",
+    "areas": ["Phase 1", "Phase 2", "Wipro Gate", "Infosys Campus"],
+    "nearby": ["bangalore", "bangalore-jp-nagar", "bangalore-hosur-road"],
+    "it_focus": "For the high-income group in Electronic City, we focus on wealth protection with large sum assured term plans and comprehensive family health insurance, including international coverage.",
+    "senior_focus": "We provide dedicated support for retired professionals in Electronic City, assisting with pension fund management, annuity plans, and senior citizen health insurance solutions.",
+    "branch_dets": "Our team coordinates with major insurer branches in Electronic City to ensure quick and efficient service for all policyholders.",
+    "local_faqs": [
+      { "question": "Which hospitals in Electronic City are covered by cashless health insurance?", "answer": "Most major hospitals in Electronic City, like Narayana Hrudayalaya, Springleaf Hospital, and Vimalalaya Hospital, are part of our cashless network. We can verify for your specific policy." },
+      { "question": "Can I get advice on group health insurance for my company in Electronic City?", "answer": "Yes, we offer tailored group health insurance solutions for companies of all sizes in Electronic City, ensuring comprehensive coverage and competitive premiums for your employees." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-hsr-layout",
+    "name": "HSR Layout, Bangalore",
+    "state": "Karnataka",
+    "desc": "Comprehensive insurance advisory services for the residents and businesses of HSR Layout. From life insurance planning to seamless health claim support, we are your local experts.",
+    "phone": "+91-99866 34506",
+    "areas": ["Sector 1", "Sector 2", "Sector 3", "Sector 4", "Sector 5", "Sector 6", "Sector 7"],
+    "nearby": ["bangalore", "bangalore-koramangala", "bangalore-bellandur"],
+    "it_focus": "HSR Layout's dynamic workforce can benefit from our personalized advice on retirement planning, investment-linked insurance, and critical illness policies.",
+    "senior_focus": "We provide specialized services for seniors in HSR Layout, including health insurance for parents, pension plans, and estate planning with life insurance.",
+    "branch_dets": "We liaise with all major insurance company branches serving HSR Layout for quick document processing and claim assistance.",
+    "local_faqs": [
+      { "question": "What are the best health insurance options for families in HSR Layout?", "answer": "For families in HSR Layout, we recommend comprehensive family floater plans with high sum assured and no room rent limits. Popular options include Apollo Munich, HDFC Ergo, and Star Health." },
+      { "question": "Can I get help with my LIC policy in HSR Layout?", "answer": "Our advisors offer complete support for LIC policy services in HSR Layout, including premium payments, status checks, and maturity/claim assistance at your home." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-marathahalli",
+    "name": "Marathahalli, Bangalore",
+    "state": "Karnataka",
+    "desc": "Serving the vibrant and diverse community of Marathahalli with expert insurance solutions. From motor insurance renewals to complex health claim support, our local team is here to assist you.",
+    "phone": "+91-99866 34506",
+    "areas": ["Munnekollal", "Vignana Nagar", "Kundalahalli"],
+    "nearby": ["bangalore", "bangalore-whitefield", "bangalore-bellandur"],
+    "it_focus": "Marathahalli's working professionals often require flexible health insurance and secure term plans. We offer advice on plans that cover daycare procedures and provide critical illness benefits.",
+    "senior_focus": "For the diverse residents of Marathahalli, we provide guidance on senior citizen health plans and customized annuity solutions to ensure a comfortable retirement.",
+    "branch_dets": "We ensure efficient coordination with all insurance branches in the Marathahalli area for seamless policy and claim services.",
+    "local_faqs": [
+      { "question": "Where can I get immediate motor insurance in Marathahalli?", "answer": "We offer instant motor insurance quotes and policy issuance for cars and two-wheelers in Marathahalli. You can get covered within minutes, often with doorstep document collection." },
+      { "question": "Do you help with accident claims for bikes in Marathahalli?", "answer": "Yes, we provide end-to-end support for motor accident claims, including surveyor coordination, document submission, and follow-up with the insurer, especially in busy areas like Marathahalli." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-jp-nagar",
+    "name": "JP Nagar, Bangalore",
+    "state": "Karnataka",
+    "desc": "Dedicated insurance advisory for the residents of JP Nagar. Whether it's securing your family's future with life insurance or ensuring seamless health claim processing, our experts are just a call away.",
+    "phone": "+91-99866 34506",
+    "areas": ["Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase 5", "Phase 6", "Phase 7", "Phase 8", "Phase 9"],
+    "nearby": ["bangalore", "bangalore-jayanagar", "bangalore-bannerghatta"],
+    "it_focus": "JP Nagar's established families seek secure investment and life insurance options. We offer guidance on ULIPs, traditional endowment plans, and child education plans.",
+    "senior_focus": "For the elderly population in JP Nagar, we provide tailored health insurance plans, critical illness covers, and easy claim assistance with a focus on door-to-door service.",
+    "branch_dets": "We coordinate with LIC and other insurance company branches in JP Nagar for all policy-related services.",
+    "local_faqs": [
+      { "question": "What life insurance plans are popular in JP Nagar?", "answer": "Term insurance with critical illness riders and child education plans are highly sought after in JP Nagar for family security and future planning. We'll help you compare options." },
+      { "question": "Can I get health insurance for my parents in JP Nagar?", "answer": "Yes, we specialize in senior citizen health insurance plans that offer comprehensive coverage and easy claim settlement for residents in JP Nagar. We'll explain waiting periods and pre-existing disease coverage." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-bellandur",
+    "name": "Bellandur, Bangalore",
+    "state": "Karnataka",
+    "desc": "Providing specialized insurance solutions for Bellandur, a rapidly growing area in Bangalore. From health insurance for young professionals to term plans for families, our local experts offer personalized guidance.",
+    "phone": "+91-99866 34506",
+    "areas": ["Outer Ring Road", "Sarjapur Road", "Harlur Road"],
+    "nearby": ["bangalore", "bangalore-hsr-layout", "bangalore-marathahalli"],
+    "it_focus": "Bellandur's dynamic population benefits from our flexible and comprehensive health and term insurance plans, designed for mobility and career changes.",
+    "senior_focus": "For senior residents in Bellandur, we provide assistance with cashless claim processing, pension plan reviews, and health insurance renewals at their convenience.",
+    "branch_dets": "We maintain strong coordination with all major insurance company branches located on Sarjapur Road and Outer Ring Road for fast services.",
+    "local_faqs": [
+      { "question": "Which are the best health insurance plans for IT professionals in Bellandur?", "answer": "We recommend plans from Apollo Munich, HDFC Ergo, and Star Health that offer high sum assured, critical illness covers, and global emergency coverage, well-suited for Bellandur's IT workforce." },
+      { "question": "Can I get quick motor insurance renewal near Bellandur Lake?", "answer": "Yes, our advisors offer quick motor insurance renewals and claim assistance services around Bellandur Lake and the surrounding areas, with options for doorstep service." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-sarjapur",
+    "name": "Sarjapur, Bangalore",
+    "state": "Karnataka",
+    "desc": "Expert insurance advisory for the rapidly developing Sarjapur region. Whether you're a young family seeking health insurance or a professional looking for investment-linked plans, we've got you covered.",
+    "phone": "+91-99866 34506",
+    "areas": ["Sarjapur Road", "Dommasandra", "Kodathi"],
+    "nearby": ["bangalore", "bangalore-bellandur", "bangalore-electronic-city"],
+    "it_focus": "For the growing tech community along Sarjapur Road, we offer tailored life and health insurance plans that provide maximum coverage and flexibility for dynamic career paths.",
+    "senior_focus": "We provide specialized advisory for senior residents in Sarjapur, focusing on comprehensive health plans, pension strategies, and easy access to claim support.",
+    "branch_dets": "Our team coordinates with all major insurance company offices on Sarjapur Road and nearby areas for efficient policy and claim management.",
+    "local_faqs": [
+      { "question": "What health insurance options are available for new families in Sarjapur?", "answer": "For new families in Sarjapur, we recommend comprehensive family floater plans, potentially with maternity benefits and child covers. We'll help you choose from leading insurers like Star Health and HDFC Ergo." },
+      { "question": "Can I find an insurance advisor for investment plans near Sarjapur Road?", "answer": "Yes, our advisors near Sarjapur Road specialize in investment-linked insurance plans (ULIPs) and traditional endowment plans, helping you build wealth while securing your future." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  },
+  {
+    "slug": "bangalore-yelahanka",
+    "name": "Yelahanka, Bangalore",
+    "state": "Karnataka",
+    "desc": "Serving the growing residential and commercial hub of Yelahanka with expert insurance solutions. From securing your business with property insurance to protecting your family with life and health plans, we are your local experts.",
+    "phone": "+91-99866 34506",
+    "areas": ["New Town", "Old Town", "Jakkur", "Airport Road"],
+    "nearby": ["bangalore", "bangalore-hebbal", "bangalore-devanahalli"],
+    "it_focus": "Yelahanka's diverse population benefits from our tailored advice on property insurance for businesses, group health plans, and term insurance for salaried professionals.",
+    "senior_focus": "For senior citizens in Yelahanka, we offer specialized health insurance plans, pension advice, and seamless claim support for all types of policies.",
+    "branch_dets": "We ensure efficient coordination with all insurance branches in Yelahanka and nearby areas, including those near Airport Road, for hassle-free services.",
+    "local_faqs": [
+      { "question": "What is the best home insurance for Yelahanka residents?", "answer": "Home insurance plans covering fire, burglary, natural calamities, and property damage are essential for Yelahanka residents. We compare policies from companies like Bajaj Allianz and HDFC Ergo to find the best fit." },
+      { "question": "Can I get health insurance for senior citizens in Yelahanka?", "answer": "Yes, we provide comprehensive senior citizen health insurance plans with a focus on pre-existing disease coverage and cashless hospitalization networks convenient for Yelahanka residents." }
+    ],
+    "long_count": 0,
+    "lic_name": "",
+    "lic_addr": ""
+  }
+]
