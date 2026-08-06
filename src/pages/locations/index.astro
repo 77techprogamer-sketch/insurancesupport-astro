@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import cities from '../../data/cities.json';
+import { getCollection } from 'astro:content';
+
+const allCitiesCollection = await getCollection('cities');
+const cities = allCitiesCollection[0].data;
 
 // Group by state
-const states = {};
+const states: Record<string, typeof cities> = {};
 for (const city of cities) {
   const st = city.state || 'Other';
   if (!states[st]) states[st] = [];

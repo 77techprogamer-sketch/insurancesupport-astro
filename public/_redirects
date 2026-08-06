@@ -1,3 +1,4 @@
 /blog/:splat /blog/:splat/ 301
 /locations/:splat /locations/:splat/ 301
 /about /about/ 301
+/services/:splat /services/:splat/ 301
