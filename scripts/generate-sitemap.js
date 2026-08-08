@@ -33,7 +33,8 @@ async function generateSitemap() {
 
     // Filter out duplicate and unwanted URLs (e.g., test pages)
     const uniqueLinks = Array.from(new Set(links.map(link => link.url)))
-        .filter(url => !url.includes('/test')); // Exclude any /test pages
+    .filter(url => !url.includes('/test'))
+    .filter(url => !url.includes('/404'));  // FIX: Remove 404 page
 
     // Convert to sitemap format
     const sitemapLinks = uniqueLinks.map(url => ({ url, changefreq: 'weekly', priority: 0.7 }));

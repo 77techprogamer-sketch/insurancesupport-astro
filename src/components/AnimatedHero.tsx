@@ -64,7 +64,7 @@ export default function AnimatedHero() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] mb-6 reveal" style={{ transitionDelay: '0.1s' }}>
               <span className="text-gradient-hero">
-                India's #1 Claim Rejection Recovery Experts
+                Claim Rejection Recovery Experts
              </span>
            </h1>
 

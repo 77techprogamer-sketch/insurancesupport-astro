@@ -6,9 +6,9 @@ export interface Props {
 
 const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage } = Astro.props;
 
-const siteName = "Insurance Support - Hari Kotian";
+const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online";
-const ogImage = pageOgImage || `${siteUrl}/og-default.png`;
+const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
 ---
 
 <!doctype html>
@@ -31,14 +31,14 @@ const ogImage = pageOgImage || `${siteUrl}/og-default.png`;
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title ? `${title} | ${siteName}` : siteName} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage || `${siteUrl}/og-default.png`} />
+    <meta property="og:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="en_IN" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url.href} />
     <meta property="twitter:title" content={title ? `${title} | ${siteName}` : siteName} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage || `${siteUrl}/og-default.png`} />
+    <meta property="twitter:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
