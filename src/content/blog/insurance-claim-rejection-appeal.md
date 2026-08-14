@@ -1,9 +1,11 @@
 ---
 title: "Your Ultimate Guide to Appealing a Rejected Insurance Claim in India"
-description: "Has your insurance claim been rejected? Learn the step-by-step process to appeal a health or life insurance claim rejection, from approaching the insurer to filing a complaint with IRDAI and the Ombudsman."
-pubDate: "Aug 06 2026"
-heroImage: "/images/blog/claim-rejection-appeal.jpg"
+summary: "Has your insurance claim been rejected? Learn the step-by-step process to appeal a health or life insurance claim rejection, from approaching the insurer to filing a complaint with IRDAI and the Ombudsman."
+date: "2026-08-06"
+author: "Hari Kotian"
+categories: ["Insurance Claims", "Health Insurance", "Life Insurance", "IRDAI", "Ombudsman"]
 tags: ["claim-rejection", "health-insurance", "life-insurance", "irdai", "ombudsman"]
+heroImage: "/images/blog/claim-rejection-appeal.jpg"
 ---
 
 A rejected insurance claim can be a devastating financial and emotional blow. Whether it's a health, life, or motor insurance claim, you have the right to appeal if you believe the rejection was unjust. This guide provides a comprehensive overview of the insurance claim appeal process in India.

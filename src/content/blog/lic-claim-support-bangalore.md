@@ -1,9 +1,11 @@
 ---
 title: "Expert LIC Claim Support in Bangalore: A Step-by-Step Guide"
-description: "Facing an LIC claim rejection in Bangalore? Our guide covers common rejection reasons, the appeal process, and how an expert advisor can help you recover your claim."
-pubDate: "Aug 05 2026"
-heroImage: "/images/blog/lic-claim-support.jpg"
+summary: "Facing an LIC claim rejection in Bangalore? Our guide covers common rejection reasons, the appeal process, and how an expert advisor can help you recover your claim."
+date: "2026-08-05"
+author: "Hari Kotian"
+categories: ["Insurance Claims", "LIC", "Bangalore", "Claim Recovery"]
 tags: ["lic", "claim-rejection", "bangalore", "insurance-advisor"]
+heroImage: "/images/blog/lic-claim-support.jpg"
 ---
 
 ## Understanding LIC Claim Rejections in Bangalore
@@ -20,7 +22,7 @@ Life Insurance Corporation of India (LIC) is one of the most trusted insurers in
 
 ## The LIC Claim Rejection Appeal Process
 
-If your claim has been rejected, you have the right to appeal. Here’s the process:
+If your claim has been rejected, you have the right to appeal. Here's the process:
 
 1.  **Review the Rejection Letter:** The first step is to carefully read the rejection letter from LIC. It will state the specific reason for the denial.
 2.  **Gather Your Documents:** Collect all relevant documents, including the policy document, the rejection letter, medical records, and any correspondence with LIC.

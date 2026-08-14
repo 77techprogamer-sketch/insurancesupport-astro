@@ -1,0 +1,92 @@
+---
+// src/components/Breadcrumbs.astro
+import BreadcrumbJsonLd from './BreadcrumbJsonLd.astro';
+import { formatLabel } from '@/utils/formatText';
+
+interface Props {
+  currentPage?: string;
+  breadcrumbs?: Array<{ label: string; href: string }>;
+}
+
+const { 
+  currentPage, 
+  breadcrumbs: customBreadcrumbs 
+} = Astro.props;
+
+// Auto-generate breadcrumbs based on current URL if not provided
+function getAutoBreadcrumbs(): Array<{ label: string; href: string }> {
+  const path = Astro.url.pathname;
+  const segments = path.split('/').filter(Boolean);
+  
+  if (segments.length === 0) return [];
+  
+  const crumbs = [{ label: 'Home', href: '/' }];
+  let currentPath = '';
+  
+  for (let i = 0; i < segments.length; i++) {
+    const segment = segments[i];
+    currentPath += `/${segment}`;
+    
+    // Skip the last segment if it's the dynamic slug (current page)
+    if (i === segments.length - 1 && currentPage) {
+      continue;
+    }
+    
+    // Format the label - keep specific names readable
+    let label: string;
+    if (segment === 'services') label = 'Services';
+    else if (segment === 'blog') label = 'Blog';
+    else if (segment === 'locations') label = 'Locations';
+    else if (segment === 'cities') label = 'Cities';
+    else if (segment === 'contact') label = 'Contact';
+    else if (segment === 'about') label = 'About';
+    else if (segment === 'faq') label = 'FAQ';
+    else if (segment === 'support') label = 'Support';
+    else label = formatLabel(segment);
+    
+    crumbs.push({ label, href: currentPath });
+  }
+  
+  // Add current page with custom label if provided
+  if (currentPage) {
+    crumbs.push({ label: currentPage, href: Astro.url.pathname });
+  }
+  
+  return crumbs;
+}
+
+const breadcrumbs = customBreadcrumbs || getAutoBreadcrumbs();
+const jsonLdItems = breadcrumbs.map(c => ({ label: c.label, url: `https://insurancesupport.online${c.href}` }));
+---
+
+<nav 
+  class="py-3 bg-slate-50 border-b border-slate-100" 
+  aria-label="Breadcrumb"
+  data-pagefind-ignore
+>
+  <BreadcrumbJsonLd items={jsonLdItems} />
+  
+  <div class="max-w-7xl mx-auto px-4">
+    <ol class="flex flex-wrap items-center gap-2 text-sm" role="list">
+      {breadcrumbs.map((crumb, index) => (
+        <li class="flex items-center gap-2" role="listitem">
+          {index > 0 && (
+            <svg class="w-4 h-4 text-slate-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+           </svg>
+          )}
+          {index === breadcrumbs.length - 1 ? (
+            <span class="text-slate-900 font-semibold" aria-current="page">{crumb.label}</span>
+          ) : (
+            <a 
+              href={crumb.href}
+              class="text-slate-500 hover:text-blue-600 transition-colors font-medium"
+            >
+              {crumb.label}
+           </a>
+          )}
+       </li>
+      ))}
+   </ol>
+ </div>
+</nav>

@@ -146,14 +146,14 @@ declare module 'astro:content' {
   slug: "insurance-claim-rejection-appeal";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "lic-claim-support-bangalore.md": {
 	id: "lic-claim-support-bangalore.md";
   slug: "lic-claim-support-bangalore";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
 
@@ -167,15 +167,10 @@ declare module 'astro:content' {
   data: any
 };
 };
-"products": Record<string, {
-  id: string;
-  collection: "products";
-  data: any;
-}>;
 
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }

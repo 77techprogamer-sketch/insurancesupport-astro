@@ -1,7 +1,6 @@
 ---
 // src/components/ClaimRejectionQuiz.astro
 // This component will handle the interactive quiz logic.
-import { Astro } from 'astro/runtime';
 ---
 
 <div id="claimRejectionQuiz" class="max-w-xl mx-auto bg-white rounded-lg shadow-xl p-8 mb-12 border border-blue-100">
@@ -87,13 +86,15 @@ import { Astro } from 'astro/runtime';
   </div>
 </div>
 
-<script define:vars={{ initialQuestions: Astro.props.initialQuestions }}>
+<script>
   document.addEventListener('DOMContentLoaded', () => {
     const quizForm = document.getElementById('quizForm');
     const quizResult = document.getElementById('quizResult');
     const potentialScore = document.getElementById('potentialScore');
     const potentialMessage = document.getElementById('potentialMessage');
     const whatsappCta = document.getElementById('whatsappCta');
+
+    if (!quizForm) return;
 
     quizForm.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -137,14 +138,16 @@ import { Astro } from 'astro/runtime';
         message = "Moderate potential. While challenging, we can still review your case for any hidden opportunities.";
       }
 
-      potentialScore.textContent = `${score}%`;
-      potentialMessage.textContent = message;
+      if (potentialScore) potentialScore.textContent = `${score}%`;
+      if (potentialMessage) potentialMessage.textContent = message;
 
       const whatsappMessage = `Hi Hari, I just took the Claim Rejection Quiz. My claim from ${insurer} for a ${policyType} was rejected due to ${rejectionReason}. The amount was ${claimAmount} and it was rejected ${rejectionDate}. My appeal potential is ${score}%. Can you help?`;
-      whatsappCta.href = `https://wa.me/919986634506?text=${encodeURIComponent(whatsappMessage)}`;
+      if (whatsappCta) whatsappCta.href = `https://wa.me/919986634506?text=${encodeURIComponent(whatsappMessage)}`;
       
-      quizResult.classList.remove('hidden');
-      quizResult.scrollIntoView({ behavior: 'smooth' });
+      if (quizResult) {
+        quizResult.classList.remove('hidden');
+        quizResult.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 </script>

@@ -38,14 +38,9 @@ export default function AnimatedHero() {
 
   return (
     <section className="hero-gradient min-h-[85vh] flex items-center relative overflow-hidden">
-      <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-blue-500/20 rounded-full blur-[120px] animate-pulse" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-blue-600/5 via-transparent to-amber-500/5 rounded-full blur-[200px]" />
-
-      <div className="absolute top-[15%] left-[10%] w-2 h-2 bg-amber-400/60 rounded-full float-anim" />
-      <div className="absolute top-[25%] right-[15%] w-1.5 h-1.5 bg-blue-400/50 rounded-full float-anim-delay" />
-      <div className="absolute bottom-[30%] left-[20%] w-1 h-1 bg-white/40 rounded-full float-anim" style={{ animationDelay: '3s' }} />
-      <div className="absolute top-[60%] right-[25%] w-2 h-2 bg-amber-300/30 rounded-full float-anim-delay" style={{ animationDelay: '1.5s' }} />
+      {/* Simplified background - single subtle gradient blob */}
+      <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '1s' }} />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-20">
         <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -131,10 +126,9 @@ export default function AnimatedHero() {
                </div>
              </div>
 
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-amber-500/20 rounded-full blur-xl animate-pulse" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
-              <div className="absolute top-1/2 -right-6 w-3 h-3 bg-amber-400 rounded-full float-anim" />
-              <div className="absolute -bottom-2 right-1/3 w-2 h-2 bg-blue-400 rounded-full float-anim-delay" />
+              {/* Subtle decorative accents */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-amber-500/10 rounded-full blur-xl animate-pulse" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
            </div>
          </div>
 

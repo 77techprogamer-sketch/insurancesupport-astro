@@ -33,34 +33,34 @@ const recentPosts = sorted.slice(0, 12);
     <div class="max-w-6xl mx-auto px-4 py-12">
 
       <!-- Featured Post -->
-      {latestPost && (
-        <a href={`/blog/${latestPost.slug}`} class="block bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100 hover:shadow-xl hover:border-blue-200 transition-all mb-12 group">
-          <div class="flex flex-wrap items-center gap-3 mb-4">
-            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">Latest</span>
-            <span class="text-sm text-slate-500">{latestPost.date}</span>
-            <span class="text-sm text-slate-500">By {latestPost.author || 'Hari Kotian'}</span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors leading-tight">{latestPost.title}</h2>
-          <p class="text-slate-600 mb-4 line-clamp-2 leading-relaxed">{latestPost.summary}</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            {(latestPost.categories || []).slice(0, 3).map(cat => (
-              <span class="px-2 py-1 bg-white text-blue-600 text-xs font-medium rounded-lg border border-blue-100">{cat}</span>
-            ))}
-          </div>
-          <span class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:gap-3 transition-all">
-            Read Full Article
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </span>
-        </a>
-      )}
+            {latestPost && (
+              <a href={`/blog/${latestPost.slug}`} class="block bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100 hover:shadow-xl hover:border-blue-200 transition-all mb-12 group">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                  <span class="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">Latest</span>
+                  <span class="text-sm text-slate-500">{latestPost.date}</span>
+                  <span class="text-sm text-slate-500">By {latestPost.author || 'Hari Kotian'}</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors leading-tight">{latestPost.title}</h2>
+                <p class="text-slate-600 mb-4 line-clamp-2 leading-relaxed">{latestPost.summary}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {(latestPost.categories || []).slice(0, 3).map(cat => (
+                    <span class="px-2 py-1 bg-white text-blue-600 text-xs font-medium rounded-lg border border-blue-100">{cat}</span>
+                  ))}
+                </div>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:gap-3 transition-all">
+                  Read Full Article
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </span>
+              </a>
+            )}
 
-      <!-- Category Filter -->
-      <div class="flex flex-wrap gap-2 mb-8">
-        <span class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium shadow-sm">All Posts</span>
-        {allCategories.map(cat => (
-          <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-default">{cat}</span>
-        ))}
-      </div>
+            <!-- Category Filter - static display (not interactive) -->
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">All Posts</span>
+              {allCategories.map(cat => (
+                <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-medium cursor-default">{cat}</span>
+              ))}
+            </div>
 
       <!-- Blog Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
