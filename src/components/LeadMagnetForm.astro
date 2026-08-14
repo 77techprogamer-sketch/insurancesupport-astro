@@ -1,0 +1,262 @@
+---
+// src/components/LeadMagnetForm.astro
+interface Props {
+  fields: string[];
+  ctaText: string;
+  magnetSlug: string;
+  thankYouMessage: string;
+  variant?: 'inline' | 'sticky';
+}
+
+const { fields, ctaText, magnetSlug, thankYouMessage, variant = 'inline' } = Astro.props;
+
+const fieldLabels: Record<string, { label: string; type: string; placeholder: string; required: boolean; options?: string[] }> = {
+  name: { label: 'Full Name', type: 'text', placeholder: 'Your name', required: true },
+  email: { label: 'Email Address', type: 'email', placeholder: 'you@example.com', required: true },
+  phone: { label: 'WhatsApp Number', type: 'tel', placeholder: '+91 99866 34506', required: true },
+  insurer: {
+    label: 'Insurance Company',
+    type: 'select',
+    placeholder: 'Select insurer',
+    required: true,
+    options: ['LIC', 'HDFC Life', 'ICICI Prudential', 'SBI Life', 'Max Life', 'Bajaj Allianz', 'Star Health', 'Care Health', 'TATA AIG', 'Other']
+  },
+  claimAmount: {
+    label: 'Claim Amount',
+    type: 'select',
+    placeholder: 'Select range',
+    required: true,
+    options: ['Under 2L', '2L - 5L', '5L - 10L', '10L - 25L', '25L+']
+  },
+  rejectionReason: {
+    label: 'Reason for Rejection',
+    type: 'select',
+    placeholder: 'Select reason',
+    required: true,
+    options: ['Non-disclosure', 'Policy lapsed', 'Exclusion', 'Waiting period', 'Documentation incomplete', 'Other']
+  },
+  age: { label: 'Your Age', type: 'number', placeholder: '30', required: true },
+  coverageNeeded: {
+    label: 'Coverage Needed',
+    type: 'select',
+    placeholder: 'Select coverage',
+    required: true,
+    options: ['50L - 1Cr', '1Cr - 2Cr', '2Cr - 5Cr', '5Cr+']
+  },
+  smoker: {
+    label: 'Do you smoke?',
+    type: 'select',
+    placeholder: 'Select',
+    required: true,
+    options: ['No', 'Occasionally', 'Regularly']
+  },
+  denialReason: {
+    label: 'Denial Reason',
+    type: 'select',
+    placeholder: 'Select reason',
+    required: true,
+    options: ['Pre-existing disease', 'Waiting period', 'Non-disclosure', 'Sub-limit exceeded', 'Network hospital issue', 'Documentation', 'Exclusion', 'Not medically necessary']
+  },
+  hospitalName: { label: 'Hospital Name', type: 'text', placeholder: 'e.g., Apollo, Fortis', required: false },
+  policyNumber: { label: 'Policy Number', type: 'text', placeholder: 'Optional', required: false },
+  complaintType: {
+    label: 'Complaint Type',
+    type: 'select',
+    placeholder: 'Select type',
+    required: true,
+    options: ['Claim rejected', 'Claim delayed', 'Mis-selling', 'Premium dispute', 'Service quality', 'Other']
+  },
+  previousSteps: {
+    label: 'What have you tried so far?',
+    type: 'textarea',
+    placeholder: 'e.g., Emailed GRO 30 days ago, no response',
+    required: false
+  }
+};
+---
+
+<div class={`lead-magnet-form-wrapper ${variant}`} data-magnet-slug={magnetSlug}>
+  <form
+    class="lead-magnet-form bg-white rounded-2xl shadow-xl border border-slate-200 p-8 space-y-5"
+    data-magnet-slug={magnetSlug}
+    novalidate
+  >
+    <div class="text-center mb-6">
+      <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-3">
+        <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z</path>
+       </svg>
+     </div>
+      <p class="text-sm text-slate-600">Free download &middot; No spam &middot; Unsubscribe anytime</p>
+   </div>
+
+    {fields.map((fieldName) => {
+      const config = fieldLabels[fieldName];
+      if (!config) return null;
+
+      return (
+        <div class="form-field">
+          <label for={`${magnetSlug}-${fieldName}`} class="block text-sm font-semibold text-slate-700 mb-1.5">
+            {config.label}{config.required && <span class="text-red-500 ml-1">*</span>}
+         </label>
+
+          {config.type === 'textarea' ? (
+            <textarea
+              id={`${magnetSlug}-${fieldName}`}
+              name={fieldName}
+              required={config.required}
+              placeholder={config.placeholder}
+              rows="3"
+              class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            />
+          ) : config.type === 'select' ? (
+            <select
+              id={`${magnetSlug}-${fieldName}`}
+              name={fieldName}
+              required={config.required}
+              class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-white"
+            >
+              <option value="">{config.placeholder}</option>
+                            {config.options && config.options.map((opt) => (
+                              <option value={opt}>{opt}</option>
+                            ))}
+                        </select>
+          ) : (
+            <input
+              id={`${magnetSlug}-${fieldName}`}
+              name={fieldName}
+              type={config.type}
+              required={config.required}
+              placeholder={config.placeholder}
+              autocomplete={fieldName === 'email' ? 'email' : fieldName === 'phone' ? 'tel' : 'off'}
+              class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            />
+          )}
+       </div>
+      );
+    })}
+
+    <button
+      type="submit"
+      class="w-full px-6 py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-lg shadow-lg shadow-blue-500/25 hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
+    >
+      <span class="submit-text">{ctaText</span>
+      <svg class="w-5 h-5 submit-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3</path>
+     </svg>
+      <svg class="w-5 h-5 spinner animate-spin hidden" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4</circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z</path>
+     </svg>
+   </button>
+
+    <p class="text-xs text-center text-slate-500 leading-relaxed">
+      By submitting, you agree to receive the resource + occasional insurance tips. We respect your inbox and never share your data.
+   </p>
+ </form>
+
+  <!-- Success message (hidden by default) -->
+  <div class="success-message hidden bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-8 text-center">
+    <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+      <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7</path>
+     </svg>
+   </div>
+    <h3 class="text-2xl font-bold text-green-900 mb-2">You're all set! 🎉</h3>
+    <p class="success-text text-green-800 mb-4">{thankYouMessage}</p>
+    <div class="bg-white rounded-lg p-4 text-sm text-slate-700 space-y-2">
+      <p class="font-semibold">📧 Check your email in the next 2 minutes</p>
+      <p class="font-semibold">📱 WhatsApp link sent to your phone</p>
+      <p class="font-semibold">❓ Questions? Reply to the email or WhatsApp us</p>
+   </div>
+ </div>
+</div>
+
+<style>
+  .lead-magnet-form-wrapper.sticky {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .lead-magnet-form input:focus,
+  .lead-magnet-form select:focus,
+  .lead-magnet-form textarea:focus {
+    outline: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll<HTMLFormElement>('.lead-magnet-form');
+    forms.forEach((form) => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        const submitText = form.querySelector<HTMLSpanElement>('.submit-text');
+        const submitArrow = form.querySelector<SVGElement>('.submit-arrow');
+        const spinner = form.querySelector<SVGElement>('.spinner');
+
+        if (!submitBtn || !submitText || !submitArrow || !spinner) return;
+
+        // Loading state
+        submitBtn.disabled = true;
+        const originalText = submitText.textContent || 'Submit';
+        submitText.textContent = 'Sending...';
+        submitArrow.classList.add('hidden');
+        spinner.classList.remove('hidden');
+
+        try {
+          const formData = new FormData(form);
+          const data: Record<string, string> = {};
+          formData.forEach((value, key) => {
+            data[key] = value.toString();
+          });
+          const magnetSlug = form.dataset.magnetSlug || '';
+
+          // Submit to Cloudflare Pages Function
+          const response = await fetch('/functions/lead-capture', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ magnetSlug, ...data })
+          });
+
+          if (!response.ok) throw new Error('Submission failed');
+
+          // Track conversion (Google Analytics)
+          if (typeof (window as any).gtag === 'function') {
+            (window as any).gtag('event', 'lead_magnet_download', {
+              magnet_slug: magnetSlug,
+              value: 1
+            });
+          }
+
+          // Track Facebook Pixel
+          if (typeof (window as any).fbq === 'function') {
+            (window as any).fbq('track', 'Lead', {
+              content_name: magnetSlug,
+              value: 1,
+              currency: 'INR'
+            });
+          }
+
+          // Hide form, show success
+          form.classList.add('hidden');
+          const wrapper = form.parentElement;
+          const success = wrapper?.querySelector<HTMLElement>('.success-message');
+          if (success) {
+            success.classList.remove('hidden');
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } catch (error) {
+          console.error('Lead capture error:', error);
+          alert('Something went wrong. Please try again or WhatsApp us: +91 99866 34506');
+          submitBtn.disabled = false;
+          submitText.textContent = originalText;
+          submitArrow.classList.remove('hidden');
+          spinner.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

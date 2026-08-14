@@ -1,0 +1,120 @@
+[
+  {
+    "slug": "claim-checklist",
+    "title": "LIC Claim Rejection Checklist & Appeal Template",
+    "subtitle": "The exact 12-point checklist we use to analyze rejected LIC claims + ready-to-send appeal letter template",
+    "description": "Don't let a rejected claim be the final word. This checklist identifies the exact gaps in your rejection letter and the template gives you a professional appeal letter you can send to the Grievance Redressal Officer today.",
+    "heroImage": "/images/lead-magnets/claim-checklist-hero.jpg",
+    "format": "PDF (3 pages) + Word Template",
+    "delivery": "Instant email + WhatsApp",
+    "fields": ["name", "email", "phone", "insurer", "claimAmount", "rejectionReason"],
+    "ctaText": "Get My Free Checklist & Template",
+    "thankYouMessage": "Check your email and WhatsApp — your checklist and template are on the way!",
+    "benefits": [
+      "Identify exactly why your claim was rejected (12-point analysis)",
+      "Professional appeal letter template — just fill in the blanks",
+      "Grievance Redressal Officer contact details for all major insurers",
+      "Timeline checklist: what to do in the first 7, 15, and 30 days",
+      "WhatsApp support for 7 days after download"
+    ],
+    "idealFor": [
+      "LIC policyholders with rejected death/maturity claims",
+      "Families who received a rejection letter in the last 90 days",
+      "Anyone facing 'non-disclosure' or 'lapsed policy' rejections"
+    ],
+    "stats": {
+      "downloads": 1247,
+      "successRate": "68%",
+      "avgRecovery": "��12.4L"
+    }
+  },
+  {
+    "slug": "term-comparison",
+    "title": "Term Insurance Comparison Sheet — Top 10 Insurers 2024",
+    "subtitle": "Side-by-side comparison of premiums, claim settlement ratios, riders, and exclusions for India's top term plans",
+    "description": "Stop guessing which term plan is best. This spreadsheet compares 10 insurers across 25+ parameters so you can decide in 15 minutes what takes agents weeks to explain.",
+    "heroImage": "/images/lead-magnets/term-comparison-hero.jpg",
+    "format": "Google Sheets (editable copy) + PDF",
+    "delivery": "Instant email with edit access",
+    "fields": ["name", "email", "phone", "age", "coverageNeeded", "smoker"],
+    "ctaText": "Get My Comparison Sheet",
+    "thankYouMessage": "Your editable Google Sheet is ready — check your email for the link!",
+    "benefits": [
+      "10 insurers compared: LIC, HDFC Life, ICICI Pru, Max Life, Bajaj Allianz, Tata AIA, PNB MetLife, Kotak, Aegon, Canara HSBC",
+      "25+ parameters: premium (age 25/30/35/40/45), CSR, solvency ratio, claim TAT, rider options",
+      "Pre-filled formulas: enter your age & coverage — see instant premium estimates",
+      "Rider comparison: Critical Illness, Accidental Death, Waiver of Premium, Terminal Illness",
+      "Exclusion checklist: suicide, substance abuse, hazardous activities, pre-existing conditions",
+      "Updated quarterly — you get auto-updates via email"
+    ],
+    "idealFor": [
+      "First-time term insurance buyers (age 25-45)",
+      "People comparing agent quotes vs direct online prices",
+      "Anyone wanting to understand rider value before buying"
+    ],
+    "stats": {
+      "downloads": 3421,
+      "successRate": "23%",
+      "avgRecovery": "��18K/yr savings"
+    }
+  },
+  {
+    "slug": "health-claim-denial",
+    "title": "Health Claim Denial Response Letter Generator",
+    "subtitle": "Generate a professionally drafted response letter for your insurer in 3 minutes — tailored to your denial reason",
+    "description": "Most health claim denials are overturned on appeal — but only if you respond correctly. This tool creates a legally sound response letter addressing your specific denial reason (pre-existing condition, waiting period, non-disclosure, etc.).",
+    "heroImage": "/images/lead-magnets/health-claim-hero.jpg",
+    "format": "Interactive Web Tool + PDF Download",
+    "delivery": "Instant on-screen + email copy",
+    "fields": ["name", "email", "phone", "insurer", "denialReason", "hospitalName", "claimAmount", "policyNumber"],
+    "ctaText": "Generate My Response Letter",
+    "thankYouMessage": "Your personalized response letter is ready — download the PDF and send it today!",
+    "benefits": [
+      "8 denial reasons covered: pre-existing disease, waiting period, non-disclosure, sub-limits, network hospital, documentation, exclusions, 'not medically necessary'",
+      "IRDAI-compliant language referencing specific regulations (IRDAI (Health Insurance) Regulations, 2016)",
+      "Auto-fills policy details, hospital bills, treatment timeline",
+      "Includes escalation path: GRO → IGMS → Ombudsman → Consumer Court",
+      "WhatsApp follow-up: we review your draft before you send (free)"
+    ],
+    "idealFor": [
+      "Cashless claims denied at network hospitals",
+      "Reimbursement claims rejected for 'pre-existing disease'",
+      "Senior citizens with denied claims (we prioritize these)"
+    ],
+    "stats": {
+      "downloads": 892,
+      "successRate": "61%",
+      "avgRecovery": "��3.2L"
+    }
+  },
+  {
+    "slug": "irdai-complaint",
+    "title": "IRDAI IGMS Complaint Filing Walkthrough (Video + Checklist)",
+    "subtitle": "Step-by-step video guide + document checklist to file a complaint that actually gets insurer attention",
+    "description": "Filing on IGMS is free but most complaints go nowhere because they're poorly drafted. This 12-minute video + checklist shows you exactly how to file a complaint that forces the insurer to respond within 15 days.",
+    "heroImage": "/images/lead-magnets/irdai-complaint-hero.jpg",
+    "format": "Video (12 min) + PDF Checklist + Sample Complaint Text",
+    "delivery": "Instant email with video link + downloads",
+    "fields": ["name", "email", "phone", "insurer", "complaintType", "previousSteps"],
+    "ctaText": "Get Video + Checklist",
+    "thankYouMessage": "Your video guide and checklist are on the way — check email and WhatsApp!",
+    "benefits": [
+      "Screen-recorded walkthrough of the IGMS portal (updated for 2024 UI)",
+      "Exact complaint structure that gets escalated (not auto-closed)",
+      "Evidence checklist: what documents to attach, in what order",
+      "Sample complaint texts for: claim rejection, delay, mis-selling, premium dispute",
+      "Follow-up tracker: what to do on Day 7, 15, 30 if no response",
+      "Ombudsman escalation template (if IGMS fails)"
+    ],
+    "idealFor": [
+      "Anyone whose insurer ignored their grievance for 15+ days",
+      "Policyholders facing unfair claim rejection or delay",
+      "People wanting to avoid lawyer fees for complaints under ₹10L"
+    ],
+    "stats": {
+      "downloads": 2156,
+      "successRate": "72%",
+      "avgRecovery": "High"
+    }
+  }
+]

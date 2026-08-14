@@ -2,9 +2,11 @@
 export interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  noIndex?: boolean;
 }
 
-const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage } = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false } = Astro.props;
 
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online";
@@ -21,7 +23,7 @@ const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
     <meta name="description" content={description} />
     <meta name="keywords" content="insurance advisor Bengaluru, IRDAI certified insurance agent, life insurance India, health insurance advisor, motor insurance, claim settlement expert, Hari Kotian insurance" />
     <meta name="author" content="Hari Kotian" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={Astro.url.href} />
     <meta name="geo.region" content="IN-KA" />
     <meta name="geo.placename" content="Bengaluru" />

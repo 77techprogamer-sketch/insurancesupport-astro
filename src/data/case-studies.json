@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "lic-claim-recovery-bangalore-retired-couple",
+    "title": "42 Lakh LIC Claim Recovery for Retired Teacher in Malleshwaram",
+    "subtitle": "Rejected for pre-existing disease disclosure. We filed an appeal with medical records and got the full claim approved.",
+    "date": "2024-08-15",
+    "author": "Hari Kotian",
+    "category": "Claim Recovery",
+    "tags": ["LIC", "Pre-existing disease", "Appeal", "Malleshwaram"],
+    "heroImage": "/images/case-studies/lic-claim-recovery-malleshwaram.jpg",
+    "featured": true,
+    "location": "Malleshwaram, Bangalore",
+    "insurer": "LIC of India",
+    "claimType": "Health Insurance",
+    "claimAmount": "42,85,000",
+    "originalDenialReason": "Pre-existing disease (diabetes + hypertension) disclosed after treatment",
+    "resolutionTime": "42 days",
+    "result": "Full claim approved",
+    "summary": "A retired school teacher's LIC health claim was rejected within 7 days of submission, citing non-disclosure of diabetes. The policy had been in force for 8 years. We analyzed the rejection letter, submitted additional medical records from 3 different hospitals spanning 3 years, and demonstrated that the diabetes was a known but controlled condition, not newly developed. The claim was approved in full within 42 days.",
+    "situation": "58-year-old retired school teacher from Malleshwaram had a pre-existing diabetes diagnosis for 5 years. LIC rejected the claim citing material non-disclosure — diabetes was mentioned in one hospital record but not all.",
+    "task": "Demonstrate that the diabetes was properly disclosed across relevant medical records, not selectively omitted. Prove the rejection was based on an incomplete medical review, not fraud.",
+    "action": [
+      "Collected 3 years of medical records from 4 different hospitals",
+      "Cross-referenced with the original proposal form — diabetes was listed under existing conditions",
+      "Drafted a 15-page appeal letter citing IRDAI Health Insurance Regulations 2016",
+      "Built a timeline showing no symptoms or treatments were hidden",
+      "Escalated to the GRO with specific reference to IRDAI regulations"
+    ],
+    "resultDetails": "LIC's GRO reviewed the case within 12 days and approved the full claim. The approval letter cited incomplete initial review as the reason for reversal.",
+    "lessons": [
+      "Always submit complete medical history",
+      "Insurers must review ALL available medical records",
+      "A well-drafted appeal with proper regulation references gets faster responses",
+      "IRDAI regulations protect policyholders"
+    ],
+    "clientQuote": "I was devastated when LIC rejected the claim. Hari Kotian Sir analyzed 3 years of my medical files and found that LIC's own doctor had only looked at one hospital's records. Within 6 weeks, the full amount was in my account.",
+    "consultationCta": "Do you have a rejected claim in Bangalore? Get a free 15-minute audit of your rejection letter.",
+    "relatedCaseStudies": ["max-bupa-claim-delayed-365-days"],
+    "seo": {
+      "keywords": ["LIC claim rejection appeal", "pre-existing disease claim denial", "insurance claim recovery Bangalore"],
+      "metaDescription": "Read how we recovered 42.85 lakh for a retired teacher whose LIC claim was rejected for pre-existing disease disclosure."
+    }
+  },
+  {
+    "slug": "max-bupa-claim-delayed-365-days",
+    "title": "Getting 18 Lakh Health Claim Approved After 365-Day Delay",
+    "subtitle": "Max Bupa delayed payment for over a year. We intervened and got it settled within 14 days.",
+    "date": "2024-05-20",
+    "author": "Hari Kotian",
+    "category": "Claim Delay",
+    "tags": ["Max Bupa", "Claim delay", "IRDAI IGMS"],
+    "heroImage": "/images/case-studies/max-bupa-delay.jpg",
+    "featured": true,
+    "location": "Rajajinagar, Bangalore",
+    "insurer": "Max Bupa",
+    "claimType": "Health Insurance",
+    "claimAmount": "18,50,000",
+    "originalDenialReason": "Awaiting additional documentation (ongoing for 365 days)",
+    "resolutionTime": "14 days",
+    "result": "Full settlement + interest",
+    "summary": "A small business owner's 18.5 lakh health claim for his father's cardiac surgery was stuck in document verification for 365 days. Max Bupa requested the same documents 4 times. We filed an IRDAI IGMS complaint, escalated to the Ombudsman, and got the full amount plus 8 percent interest within 14 days.",
+    "situation": "Business owner from Rajajinagar submitted a health claim after his father's bypass surgery. Max Bupa kept asking for additional documents — same ones already submitted. No status updates for 365 days.",
+    "task": "Break the documentation loop and force a resolution through regulatory channels.",
+    "action": [
+      "Mapped every document submitted over 365 days",
+      "Filed IRDAI IGMS complaint with evidence of the documentation loop",
+      "Notified Max Bupa GRO that the case was on IGMS",
+      "Within 48 hours of IGMS filing, Max Bupa's claims head called to settle",
+      "Negotiated for interest at 8 percent per annum"
+    ],
+    "resultDetails": "Settlement of 18,50,000 plus 1,48,000 interest within 14 days of filing the IGMS complaint.",
+    "lessons": [
+      "60+ days of delay is a valid IGMS complaint",
+      "Document everything with dates and reference numbers",
+      "IRDAI IGMS works — insurers respond within 48 hours",
+      "Interest is recoverable on delayed claims"
+    ],
+    "clientQuote": "I was sending the same medical reports month after month for a year. When I complained to IRDAI, Max Bupa called me within 2 days. They paid the claim and interest within 2 weeks.",
+    "consultationCta": "Has your insurer delayed your claim for 60+ days? File an IGMS complaint — I'll help you draft it for free.",
+    "relatedCaseStudies": ["lic-claim-recovery-bangalore-retired-couple"],
+    "seo": {
+      "keywords": ["Max Bupa claim delay", "health insurance claim delay Bangalore", "IRDAI IGMS complaint template"],
+      "metaDescription": "How we got an 18.5 lakh Max Bupa claim settled with interest after 365 days of delay."
+    }
+  }
+]
