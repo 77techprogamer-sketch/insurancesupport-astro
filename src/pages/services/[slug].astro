@@ -24,22 +24,18 @@ const serviceUrl = `https://insurancesupport.online/services/${slug}`;
     "@context": "https://schema.org",
     "@type": "Service",
     name: `${service.title} in Bengaluru`,
+    serviceType: service.title, // Add serviceType
     description: service.desc,
     provider: {
       "@type": "LocalBusiness",
       name: "Insurance Support",
       url: "https://insurancesupport.online",
-      telephone: "+919986634506",
+      telephone: "+91-9986634506", // Corrected phone number
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bengaluru",
         addressRegion: "KA",
         addressCountry: "IN"
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.2",
-        reviewCount: "23"
       }
     },
     areaServed: "Bengaluru, Karnataka, India",

@@ -23,26 +23,36 @@ async function generateSitemap() {
             } else if (dirent.isFile() && dirent.name.endsWith('.html')) {
                 let urlPath = path.relative(distPath, res).replace(/\\/g, '/');
                 // Remove /index.html and .html extension
-                urlPath = urlPath.replace(/(\/)?index\.html$/, '$1');
+                urlPath = urlPath.replace(/\/?index\.html$/, '$1');
                 urlPath = urlPath.replace(/\.html$/, '');
-                links.push({ url: `/${urlPath}`, changefreq: 'weekly', priority: 0.7 });
+
+                // Get file modification time for lastmod
+                const stat = await fs.stat(res);
+                const lastmod = stat.mtime.toISOString();
+
+                links.push({ url: `/${urlPath}`, changefreq: 'weekly', priority: 0.7, lastmod });
             }
         }
     }
 
     await getHtmlFiles(distPath);
 
-    // Filter out duplicate and unwanted URLs (e.g., test pages)
+    // Filter out duplicate and unwanted URLs (e.g., test pages, non-content files)
     const uniqueLinks = Array.from(new Set(links.map(link => link.url)))
     .filter(url => !url.includes('/test'))
     .filter(url => !url.includes('/404'))
+    .filter(url => !url.includes('fbed68329c17dcd9'))  // IndexNow verification file
+    .filter(url => !url.includes('/robots.txt'))
+    .filter(url => !url.includes('/_headers'))
+    .filter(url => !url.includes('/_redirects'))
     .filter(url => url !== '/index');  // remove broken /index artifact
 
-    // Convert to sitemap format
+    // Convert to sitemap format with lastmod
     const sitemapLinks = uniqueLinks.map(url => ({
         url,
         changefreq: url === '/' ? 'daily' : 'weekly',
-        priority: url === '/' ? 1.0 : (url.startsWith('/blog/') ? 0.8 : 0.7)
+        priority: url === '/' ? 1.0 : (url.startsWith('/blog/') ? 0.8 : 0.7),
+        lastmod: links.find(l => l.url === url)?.lastmod || new Date().toISOString()
     }));
 
     const stream = new SitemapStream({ hostname: siteUrl });
