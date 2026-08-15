@@ -1,14 +1,13 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
+// @astrojs/sitemap removed — using custom generate-sitemap.js in postbuild instead
 
 export default defineConfig({
   site: 'https://insurancesupport.online',
   output: 'static',
   integrations: [
     react(),
-    sitemap(),
     tailwind(),
   ],
   vite: {
