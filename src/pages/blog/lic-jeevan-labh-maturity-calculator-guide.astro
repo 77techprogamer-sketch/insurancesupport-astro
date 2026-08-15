@@ -7,6 +7,7 @@ const KEYWORDS = "LIC Jeevan Labh maturity calculator, Jeevan Labh returns, LIC 
 const CANONICAL_URL = "https://insurancesupport.online/blog/lic-jeevan-labh-maturity-calculator-guide";
 const AUTHOR_NAME = "Hari Kotian";
 const PUBLISH_DATE = "2026-07-25"; // Today's date
+const MODIFIED_DATE = "2026-06-28";
 
 const FAQ_SCHEMA = [
   {
@@ -78,11 +79,12 @@ const FAQ_SCHEMA = [
         }
       },
       "datePublished": PUBLISH_DATE,
-      "url": CANONICAL_URL,
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": CANONICAL_URL
-      }
+            "dateModified": MODIFIED_DATE || PUBLISH_DATE,
+            "url": CANONICAL_URL,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": CANONICAL_URL
+            }
     })}</script>
     <script type="application/ld+json">{JSON.stringify({
       "@context": "https://schema.org",

@@ -2,3 +2,8 @@
 # https://developers.cloudflare.com/pages/configuration/redirects/
 http://insurancesupport.online/*  https://insurancesupport.online/:splat  301
 http://www.insurancesupport.online/*  https://insurancesupport.online/:splat  301
+
+# Legacy redirects for broken links
+/services/lic-claim-reappeal  /services/claim-support  301
+/services/tax-planning-insurance  /services/health-insurance  301
+/locations/karnataka/bangalore/motor-insurance  /locations/bangalore-koramangala  301

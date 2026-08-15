@@ -4,11 +4,26 @@
     "title": "Life Insurance",
     "desc": "Secure your family's future with customized term and endowment plans.",
     "faqs": [
-      { "question": "What is the difference between term insurance and whole life insurance?", "answer": "Term insurance provides coverage for a specified period (10-40 years) with lower premiums. Whole life insurance provides lifelong coverage with cash value accumulation but significantly higher premiums. Term is suitable for most people seeking high coverage at low cost." },
-      { "question": "How much life insurance coverage do I need?", "answer": "A common rule is 10-15 times your annual income, plus outstanding debts, future goals (children's education, marriage), and inflation-adjusted living expenses for dependents. We provide personalized calculation during consultation." },
-      { "question": "Can I buy term insurance online through you?", "answer": "Yes, we facilitate online term insurance purchases from multiple insurers including LIC, HDFC Life, ICICI Prudential, and others. We handle the entire process from comparison to medical tests and policy issuance." },
-      { "question": "What riders should I add to my term insurance?", "answer": "Recommended riders: Critical Illness (lump sum on diagnosis), Accidental Death Benefit (additional payout), Waiver of Premium (premiums waived on disability), and Terminal Illness (advance payout on terminal diagnosis)." },
-      { "question": "Is medical test mandatory for term insurance?", "answer": "For high sum assured (usually above ₹50-75 lakh) or age above 40, medical tests are typically required. Many insurers now offer tele-medical or home-based tests for convenience." }
+      {
+        "question": "What is the difference between term insurance and whole life insurance?",
+        "answer": "Term insurance provides coverage for a specified period (10-40 years) with lower premiums. Whole life insurance provides lifelong coverage with cash value accumulation but significantly higher premiums. Term is suitable for most people seeking high coverage at low cost."
+      },
+      {
+        "question": "How much life insurance coverage do I need?",
+        "answer": "A common rule is 10-15 times your annual income, plus outstanding debts, future goals (children's education, marriage), and inflation-adjusted living expenses for dependents. We provide personalized calculation during consultation."
+      },
+      {
+        "question": "Can I buy term insurance online through you?",
+        "answer": "Yes, we facilitate online term insurance purchases from multiple insurers including LIC, HDFC Life, ICICI Prudential, and others. We handle the entire process from comparison to medical tests and policy issuance."
+      },
+      {
+        "question": "What riders should I add to my term insurance?",
+        "answer": "Recommended riders: Critical Illness (lump sum on diagnosis), Accidental Death Benefit (additional payout), Waiver of Premium (premiums waived on disability), and Terminal Illness (advance payout on terminal diagnosis)."
+      },
+      {
+        "question": "Is medical test mandatory for term insurance?",
+        "answer": "For high sum assured (usually above ₹50-75 lakh) or age above 40, medical tests are typically required. Many insurers now offer tele-medical or home-based tests for convenience."
+      }
     ]
   },
   {
@@ -16,11 +31,26 @@
     "title": "Health Insurance",
     "desc": "Comprehensive coverage for medical emergencies and hospital expenses.",
     "faqs": [
-      { "question": "What is the waiting period for pre-existing diseases?", "answer": "Typically 2-4 years depending on the insurer and policy. Under IRDAI's moratorium, after 8 years of continuous coverage without claims, insurers cannot deny claims for pre-existing conditions." },
-      { "question": "Should I choose individual or family floater health insurance?", "answer": "Family floater is cost-effective for young families. Individual plans are better if a family member has pre-existing conditions or if you want separate sum assured for each member. We help you decide based on your family profile." },
-      { "question": "What is room rent capping and how does it affect claims?", "answer": "Most policies cap daily room rent (e.g., ₹5,000/day). If you choose a room above this limit, the insurer applies proportionate deduction — reducing all claim amounts proportionally. We recommend policies with no room rent limits or high limits." },
-      { "question": "Can I port my health insurance to another insurer?", "answer": "Yes, IRDAI allows health insurance portability. You can switch insurers without losing continuity benefits (waiting period credit for pre-existing diseases). We handle the entire porting process for you." },
-      { "question": "What is No Claim Bonus (NCB) in health insurance?", "answer": "NCB increases your sum assured by 10-50% for each claim-free year, up to a maximum (usually 100%). It rewards healthy policyholders with enhanced coverage at no extra cost." }
+      {
+        "question": "What is the waiting period for pre-existing diseases?",
+        "answer": "Typically 2-4 years depending on the insurer and policy. Under IRDAI's moratorium, after 8 years of continuous coverage without claims, insurers cannot deny claims for pre-existing conditions."
+      },
+      {
+        "question": "Should I choose individual or family floater health insurance?",
+        "answer": "Family floater is cost-effective for young families. Individual plans are better if a family member has pre-existing conditions or if you want separate sum assured for each member. We help you decide based on your family profile."
+      },
+      {
+        "question": "What is room rent capping and how does it affect claims?",
+        "answer": "Most policies cap daily room rent (e.g., ₹5,000/day). If you choose a room above this limit, the insurer applies proportionate deduction — reducing all claim amounts proportionally. We recommend policies with no room rent limits or high limits."
+      },
+      {
+        "question": "Can I port my health insurance to another insurer?",
+        "answer": "Yes, IRDAI allows health insurance portability. You can switch insurers without losing continuity benefits (waiting period credit for pre-existing diseases). We handle the entire porting process for you."
+      },
+      {
+        "question": "What is No Claim Bonus (NCB) in health insurance?",
+        "answer": "NCB increases your sum assured by 10-50% for each claim-free year, up to a maximum (usually 100%). It rewards healthy policyholders with enhanced coverage at no extra cost."
+      }
     ]
   },
   {
@@ -28,11 +58,26 @@
     "title": "Motor Insurance",
     "desc": "Robust protection for your car and two-wheeler against accidents and theft.",
     "faqs": [
-      { "question": "What is the difference between third-party and comprehensive motor insurance?", "answer": "Third-party covers only liability for damage to others — mandatory by law. Comprehensive covers third-party plus own damage (accident, theft, fire, natural calamities). We strongly recommend comprehensive for complete protection." },
-      { "question": "What is IDV and how does it affect my premium?", "answer": "Insured Declared Value (IDV) is the maximum claim amount for total loss/theft — essentially your vehicle's current market value. Higher IDV = higher premium but better coverage. We help you set the optimal IDV." },
-      { "question": "Should I buy zero depreciation add-on?", "answer": "Yes, especially for cars under 5 years. Without it, insurer deducts depreciation on replaced parts (50% for plastic, 30% for rubber, etc.). Zero depreciation covers full replacement cost. Highly recommended." },
-      { "question": "What is NCB in motor insurance?", "answer": "No Claim Bonus gives 20-50% discount on own-damage premium for each claim-free year, up to 50%. It's transferable when switching insurers or vehicles. We ensure your NCB is preserved." },
-      { "question": "How do I file a motor insurance claim?", "answer": "1) Inform insurer immediately, 2) File FIR for theft/major accidents, 3) Get surveyor inspection, 4) Submit documents, 5) Repair at network garage (cashless) or any garage (reimbursement). We assist with the entire process." }
+      {
+        "question": "What is the difference between third-party and comprehensive motor insurance?",
+        "answer": "Third-party covers only liability for damage to others — mandatory by law. Comprehensive covers third-party plus own damage (accident, theft, fire, natural calamities). We strongly recommend comprehensive for complete protection."
+      },
+      {
+        "question": "What is IDV and how does it affect my premium?",
+        "answer": "Insured Declared Value (IDV) is the maximum claim amount for total loss/theft — essentially your vehicle's current market value. Higher IDV = higher premium but better coverage. We help you set the optimal IDV."
+      },
+      {
+        "question": "Should I buy zero depreciation add-on?",
+        "answer": "Yes, especially for cars under 5 years. Without it, insurer deducts depreciation on replaced parts (50% for plastic, 30% for rubber, etc.). Zero depreciation covers full replacement cost. Highly recommended."
+      },
+      {
+        "question": "What is NCB in motor insurance?",
+        "answer": "No Claim Bonus gives 20-50% discount on own-damage premium for each claim-free year, up to 50%. It's transferable when switching insurers or vehicles. We ensure your NCB is preserved."
+      },
+      {
+        "question": "How do I file a motor insurance claim?",
+        "answer": "1) Inform insurer immediately, 2) File FIR for theft/major accidents, 3) Get surveyor inspection, 4) Submit documents, 5) Repair at network garage (cashless) or any garage (reimbursement). We assist with the entire process."
+      }
     ]
   },
   {
@@ -40,9 +85,18 @@
     "title": "Pension Plans",
     "desc": "Build a steady stream of income for your golden years.",
     "faqs": [
-      { "question": "What is the difference between NPS and traditional pension plans?", "answer": "NPS is market-linked with equity/debt allocation choices, offers tax benefits under 80CCD, and allows 60% lump sum withdrawal at 60. Traditional plans (like LIC Jeevan Shanti) offer guaranteed returns and fixed annuity rates." },
-      { "question": "When should I start investing in a pension plan?", "answer": "Ideally in your 30s. The power of compounding works best over 25-30 years. Starting early means lower monthly contributions for the same retirement corpus. It's never too late to start, though." },
-      { "question": "Are pension plan returns taxable?", "answer": "Annuity payouts are taxable as per your income tax slab. However, NPS allows 60% tax-free withdrawal at 60, and 40% must be used to buy annuity (taxable). Traditional plans have different tax treatment for commutation vs pension." }
+      {
+        "question": "What is the difference between NPS and traditional pension plans?",
+        "answer": "NPS is market-linked with equity/debt allocation choices, offers tax benefits under 80CCD, and allows 60% lump sum withdrawal at 60. Traditional plans (like LIC Jeevan Shanti) offer guaranteed returns and fixed annuity rates."
+      },
+      {
+        "question": "When should I start investing in a pension plan?",
+        "answer": "Ideally in your 30s. The power of compounding works best over 25-30 years. Starting early means lower monthly contributions for the same retirement corpus. It's never too late to start, though."
+      },
+      {
+        "question": "Are pension plan returns taxable?",
+        "answer": "Annuity payouts are taxable as per your income tax slab. However, NPS allows 60% tax-free withdrawal at 60, and 40% must be used to buy annuity (taxable). Traditional plans have different tax treatment for commutation vs pension."
+      }
     ]
   },
   {
@@ -50,10 +104,22 @@
     "title": "Claim Support",
     "desc": "Expert assistance for claim settlement and documentation.",
     "faqs": [
-      { "question": "My claim was rejected. Can you help?", "answer": "Yes, this is our core expertise. We analyze the rejection reason, review your policy terms, gather supporting evidence, and represent you through the insurer's grievance process, IRDAI's IGMS portal, and the Insurance Ombudsman. We've recovered ₹50Cr+ in rejected claims." },
-      { "question": "What documents are needed for a claim?", "answer": "Common: Claim form, policy document, ID proof, medical reports/bills (health), FIR and survey report (motor), death certificate (life). Specific requirements vary by claim type. We provide a customized checklist." },
-      { "question": "How long does claim settlement take?", "answer": "IRDAI mandates: 30 days for straightforward claims, up to 90 days if investigation needed. With our assistance, we expedite by ensuring complete documentation upfront and regular follow-up. Most claims settle in 15-30 days." },
-      { "question": "What if the insurer delays my claim?", "answer": "Insurers must settle within timelines. For delays, we escalate to the Grievance Redressal Officer, then IRDAI IGMS, then Ombudsman. Interest is payable by insurer for delays beyond 30 days (for non-investigated claims)." }
+      {
+        "question": "My claim was rejected. Can you help?",
+        "answer": "Yes, this is our core expertise. We analyze the rejection reason, review your policy terms, gather supporting evidence, and represent you through the insurer's grievance process, IRDAI's IGMS portal, and the Insurance Ombudsman. We've recovered ₹50Cr+ in rejected claims."
+      },
+      {
+        "question": "What documents are needed for a claim?",
+        "answer": "Common: Claim form, policy document, ID proof, medical reports/bills (health), FIR and survey report (motor), death certificate (life). Specific requirements vary by claim type. We provide a customized checklist."
+      },
+      {
+        "question": "How long does claim settlement take?",
+        "answer": "IRDAI mandates: 30 days for straightforward claims, up to 90 days if investigation needed. With our assistance, we expedite by ensuring complete documentation upfront and regular follow-up. Most claims settle in 15-30 days."
+      },
+      {
+        "question": "What if the insurer delays my claim?",
+        "answer": "Insurers must settle within timelines. For delays, we escalate to the Grievance Redressal Officer, then IRDAI IGMS, then Ombudsman. Interest is payable by insurer for delays beyond 30 days (for non-investigated claims)."
+      }
     ]
   },
   {
@@ -61,9 +127,18 @@
     "title": "Policy Review",
     "desc": "Personalized audits to ensure your existing policies meet your current needs.",
     "faqs": [
-      { "question": "Why should I review my insurance policies?", "answer": "Life changes (marriage, children, job change, income increase) create coverage gaps. Policies bought years ago may have outdated sum assured, missing riders, or poor terms. Regular reviews ensure your coverage matches current needs and identify potential savings." },
-      { "question": "How often should I review my policies?", "answer": "Annually, or after major life events: marriage, childbirth, job change, home purchase, salary hike, parents' aging, loan closure, or when insurers announce new products/rates. We offer complimentary reviews twice a year for clients." },
-      { "question": "Can you help me switch to a better policy?", "answer": "Yes. We compare your current policy with market alternatives for better coverage, lower premiums, higher claim settlement ratios, and favorable terms. We handle the switching process including porting health insurance and surrendering/replacing life policies." }
+      {
+        "question": "Why should I review my insurance policies?",
+        "answer": "Life changes (marriage, children, job change, income increase) create coverage gaps. Policies bought years ago may have outdated sum assured, missing riders, or poor terms. Regular reviews ensure your coverage matches current needs and identify potential savings."
+      },
+      {
+        "question": "How often should I review my policies?",
+        "answer": "Annually, or after major life events: marriage, childbirth, job change, home purchase, salary hike, parents' aging, loan closure, or when insurers announce new products/rates. We offer complimentary reviews twice a year for clients."
+      },
+      {
+        "question": "Can you help me switch to a better policy?",
+        "answer": "Yes. We compare your current policy with market alternatives for better coverage, lower premiums, higher claim settlement ratios, and favorable terms. We handle the switching process including porting health insurance and surrendering/replacing life policies."
+      }
     ]
   },
   {
@@ -71,8 +146,14 @@
     "title": "Child Education Plans",
     "desc": "Invest in your child's future with secure education-focused insurance.",
     "faqs": [
-      { "question": "What is a child education plan?", "answer": "A combination of life insurance and investment that provides guaranteed payouts at key education milestones (age 18, 21, 24) plus life cover for the parent. If parent passes away, future premiums are waived and payouts continue." },
-      { "question": "When should I start a child education plan?", "answer": "As early as possible — ideally when the child is 0-5 years old. This maximizes the investment horizon and compounding, and premiums are lower. We can help calculate the target corpus based on current education costs and inflation." }
+      {
+        "question": "What is a child education plan?",
+        "answer": "A combination of life insurance and investment that provides guaranteed payouts at key education milestones (age 18, 21, 24) plus life cover for the parent. If parent passes away, future premiums are waived and payouts continue."
+      },
+      {
+        "question": "When should I start a child education plan?",
+        "answer": "As early as possible — ideally when the child is 0-5 years old. This maximizes the investment horizon and compounding, and premiums are lower. We can help calculate the target corpus based on current education costs and inflation."
+      }
     ]
   },
   {
@@ -80,8 +161,14 @@
     "title": "Investment Plans",
     "desc": "Maximize your returns while securing your financial future.",
     "faqs": [
-      { "question": "What are ULIPs and should I invest in them?", "answer": "ULIPs (Unit Linked Insurance Plans) combine life insurance with market-linked investments (equity/debt/balanced). They offer tax benefits, fund switching, and transparency. Suitable for long-term goals (10+ years) with risk appetite. We compare ULIPs vs mutual funds + term insurance." },
-      { "question": "Are ULIPs better than mutual funds?", "answer": "ULIPs have insurance component, tax benefits under 80C/10(10D), and fund switching without tax. Mutual funds offer lower costs, higher liquidity, and better fund variety. For pure investment, mutual funds + separate term insurance often wins. We provide side-by-side comparison." }
+      {
+        "question": "What are ULIPs and should I invest in them?",
+        "answer": "ULIPs (Unit Linked Insurance Plans) combine life insurance with market-linked investments (equity/debt/balanced). They offer tax benefits, fund switching, and transparency. Suitable for long-term goals (10+ years) with risk appetite. We compare ULIPs vs mutual funds + term insurance."
+      },
+      {
+        "question": "Are ULIPs better than mutual funds?",
+        "answer": "ULIPs have insurance component, tax benefits under 80C/10(10D), and fund switching without tax. Mutual funds offer lower costs, higher liquidity, and better fund variety. For pure investment, mutual funds + separate term insurance often wins. We provide side-by-side comparison."
+      }
     ]
   },
   {
@@ -89,8 +176,14 @@
     "title": "Travel Insurance",
     "desc": "Peace of mind for your domestic and international travel.",
     "faqs": [
-      { "question": "Is travel insurance mandatory for international trips?", "answer": "Mandatory for Schengen visa countries (minimum €30,000 coverage). Strongly recommended for all international travel — medical emergencies abroad can cost lakhs. We provide instant policy issuance for any destination." },
-      { "question": "What does travel insurance cover?", "answer": "Medical emergencies, trip cancellation/interruption, baggage loss/delay, passport loss, personal liability, emergency evacuation. Coverage varies by plan. We help you choose the right sum assured based on destination and duration." }
+      {
+        "question": "Is travel insurance mandatory for international trips?",
+        "answer": "Mandatory for Schengen visa countries (minimum €30,000 coverage). Strongly recommended for all international travel — medical emergencies abroad can cost lakhs. We provide instant policy issuance for any destination."
+      },
+      {
+        "question": "What does travel insurance cover?",
+        "answer": "Medical emergencies, trip cancellation/interruption, baggage loss/delay, passport loss, personal liability, emergency evacuation. Coverage varies by plan. We help you choose the right sum assured based on destination and duration."
+      }
     ]
   },
   {
@@ -98,8 +191,59 @@
     "title": "Professional Indemnity",
     "desc": "Tailored protection for professionals in high-liability fields.",
     "faqs": [
-      { "question": "Who needs professional indemnity insurance?", "answer": "Doctors, lawyers, architects, engineers, chartered accountants, consultants, and any professional whose advice or service could cause financial loss to clients. It covers legal defense costs and damages awarded." },
-      { "question": "What does professional indemnity cover?", "answer": "Legal defense costs, settlements, and damages for claims of negligence, errors, omissions, or breach of professional duty. Coverage is claims-made (claim must be reported during policy period). We tailor limits based on your profession's risk profile." }
+      {
+        "question": "Who needs professional indemnity insurance?",
+        "answer": "Doctors, lawyers, architects, engineers, chartered accountants, consultants, and any professional whose advice or service could cause financial loss to clients. It covers legal defense costs and damages awarded."
+      },
+      {
+        "question": "What does professional indemnity cover?",
+        "answer": "Legal defense costs, settlements, and damages for claims of negligence, errors, omissions, or breach of professional duty. Coverage is claims-made (claim must be reported during policy period). We tailor limits based on your profession's risk profile."
+      }
+    ]
+  },
+  {
+    "slug": "term-insurance",
+    "title": "Term Insurance",
+    "desc": "Affordable life cover for a specific period with no investment component.",
+    "faqs": [
+      {
+        "question": "What is the difference between term insurance and whole life insurance?",
+        "answer": "Term insurance provides coverage for a specified period (10-40 years) with lower premiums. Whole life insurance provides lifelong coverage with cash value accumulation but significantly higher premiums. Term is suitable for most people seeking high coverage at low cost."
+      },
+      {
+        "question": "How much term insurance coverage do I need?",
+        "answer": "A common rule is 10-15 times your annual income, plus outstanding debts, future goals (children's education, marriage), and inflation-adjusted living expenses for dependents. We provide personalized calculation during consultation."
+      }
+    ]
+  },
+  {
+    "slug": "sme-insurance",
+    "title": "SME Insurance",
+    "desc": "Tailored insurance solutions for small and medium enterprises.",
+    "faqs": [
+      {
+        "question": "What types of insurance are most important for SMEs?",
+        "answer": "Key coverages: Business Interruption Insurance, Property Insurance, Employee Liability Insurance, Cyber Insurance, and Professional Indemnity Insurance. We help identify the right mix for your business."
+      },
+      {
+        "question": "How much does SME insurance cost?",
+        "answer": "Premiums vary based on business type, location, turnover, and risk profile. Typically 0.5-2% of annual turnover. We provide competitive quotes from multiple insurers."
+      }
+    ]
+  },
+  {
+    "slug": "ulip-plans",
+    "title": "ULIP Plans",
+    "desc": "Investment-linked insurance plans combining life cover with market-linked returns.",
+    "faqs": [
+      {
+        "question": "What is the difference between ULIP and mutual funds?",
+        "answer": "ULIPs combine insurance and investment, offering guaranteed death benefit plus market-linked returns. Mutual funds are purely investment products without insurance protection. ULIPs are better for those needing both protection and growth."
+      },
+      {
+        "question": "How do I choose the right ULIP?",
+        "answer": "Consider your risk tolerance, investment horizon, and life stage. We analyze your profile and recommend suitable ULIPs from top insurers like HDFC Life, ICICI Prudential, and SBI."
+      }
     ]
   }
 ]

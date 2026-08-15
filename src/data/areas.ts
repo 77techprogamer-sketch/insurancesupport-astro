@@ -58,6 +58,7 @@ export const AREAS: Area[] = [
   { slug: 'sahakara-nagar', name: 'Sahakara Nagar', highlight: 'Northwest' },
   { slug: 'kodigehalli', name: 'Kodigehalli', highlight: 'Northwest' },
   { slug: 'dasarahalli', name: 'Dasarahalli', highlight: 'Northwest' },
+  { slug: 'nagasandra', name: 'Nagasandra', highlight: 'Tumkur Road' },
   { slug: 'mahalakshmi', name: 'Mahalakshmi', highlight: 'West Bangalore' },
   { slug: 'subramanyapura', name: 'Subramanyapura', highlight: 'South Bangalore' },
   { slug: 'uttarahalli', name: 'Uttarahalli', highlight: 'South Bangalore' },

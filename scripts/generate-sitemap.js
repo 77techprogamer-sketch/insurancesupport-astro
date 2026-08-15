@@ -23,7 +23,7 @@ async function generateSitemap() {
             } else if (dirent.isFile() && dirent.name.endsWith('.html')) {
                 let urlPath = path.relative(distPath, res).replace(/\\/g, '/');
                 // Remove /index.html and .html extension
-                urlPath = urlPath.replace(/\/?index\.html$/, '$1');
+                urlPath = urlPath.replace(/\/?index\.html$/, '');
                 urlPath = urlPath.replace(/\.html$/, '');
 
                 // Get file modification time for lastmod
