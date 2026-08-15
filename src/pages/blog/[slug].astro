@@ -120,7 +120,7 @@ const related = posts
 ---
 
 <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl}>
-  <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}`} date={post.date} authorName={post.author || 'Hari Kotian'} />
+  <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}
   <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online' }, { label: 'Blog', url: 'https://insurancesupport.online/blog' }, { label: post.title, url: `https://insurancesupport.online/blog/${post.slug}` }]} />
   <Header />

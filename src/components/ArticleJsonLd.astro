@@ -10,7 +10,7 @@ export interface Props {
   authorName?: string;
 }
 
-const { title, description, url, date, imageUrl, authorName = "Hari Kotian" } = Astro.props;
+const { title, description, url, date, modifiedDate, imageUrl, authorName = "Hari Kotian" } = Astro.props;
 const defaultImage = "https://insurancesupport.online/og-image.png";
 const siteName = "Insurance Support - Hari Kotian";
 ---
@@ -34,7 +34,7 @@ const siteName = "Insurance Support - Hari Kotian";
     }
   },
   datePublished: date,
-  dateModified: date,
+  dateModified: modifiedDate || date,
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": url

@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const allCitiesCollection = await getCollection('cities');
 const cities = allCitiesCollection[0].data;
 
-// Group by state
 const states: Record<string, typeof cities> = {};
 for (const city of cities) {
   const st = city.state || 'Other';
@@ -13,37 +16,88 @@ for (const city of cities) {
   states[st].push(city);
 }
 const sortedStates = Object.keys(states).sort();
+const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
 ---
 
-<BaseLayout title="Service Locations | Insurance Support Bengaluru & Pan India" description="Find Insurance Support in your city. 240+ locations across India with doorstep service. IRDAI certified advisor.">
-  <main class="max-w-7xl mx-auto px-4 py-12">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Our Service Locations</h1>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Serving <strong class="text-blue-600">{cities.length}</strong> locations across India with personalized doorstep insurance advisory.</p>
-      <p class="text-sm text-slate-500 mt-2">IRDAI Certified | 25+ Years Experience | Free Consultation</p>
-    </div>
+<BaseLayout title="Insurance Service Locations Bengaluru | Insurance Support" description={`Insurance advisory across ${cities.length} Bengaluru neighborhoods. Free doorstep service. IRDAI certified advisor Hari Kotian, 25+ years experience.`}>
+  <Header />
 
-    <div class="mb-8">
-      <input type="text" id="citySearch" placeholder="Search your city..." class="w-full max-w-md px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500" onkeyup="filterCities()">
-    </div>
+  <main class="page-transition">
 
-    {sortedStates.map(state => <section class="mb-12" data-state={state}>
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b border-slate-200">{state} <span class="text-sm font-normal text-slate-500">({states[state].length} locations)</span></h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 city-grid">
-        {states[state].map(city => <a href={`/locations/${city.slug}`} class="city-card block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group">
-          <h3 class="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">{city.name}</h3>
-          <p class="text-xs text-slate-400 mt-1">{city.areas.length} areas served</p>
-        </a>)}
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white py-16 lg:py-20">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-[100px]"></div>
+
+      <div class="max-w-5xl mx-auto px-4 relative">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-amber-300 text-sm font-medium mb-6 backdrop-blur-sm">
+          Bengaluru, Karnataka
+        </span>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 max-w-3xl">
+          Insurance Service Locations in Bengaluru
+        </h1>
+
+        <p class="text-lg md:text-xl text-blue-100/80 mb-8 max-w-2xl leading-relaxed">
+          Doorstep insurance advisory across {cities.length} Bengaluru neighborhoods, covering {totalAreas} areas. Pan-India online consultations available.
+        </p>
+
+        <div class="flex flex-wrap gap-6 text-sm">
+          <div class="flex items-center gap-2 text-blue-100">
+            {cities.length} Neighborhoods
+          </div>
+          <div class="flex items-center gap-2 text-blue-100">
+            Free Doorstep Service
+          </div>
+          <div class="flex items-center gap-2 text-blue-100">
+            25+ Years Experience
+          </div>
+        </div>
       </div>
-    </section>)}
+    </section>
 
-    <div class="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white text-center mt-8">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">Don't See Your City?</h2>
-      <p class="text-lg text-blue-100 mb-6 max-w-xl mx-auto">We offer pan-India online consultations. Contact us for personalized insurance guidance anywhere in India.</p>
-      <a href="/contact" class="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors">Contact Us</a>
-    </div>
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-10 max-w-md mx-auto">
+          <label for="citySearch" class="sr-only">Search your neighborhood</label>
+          <div class="relative">
+            <input type="text" id="citySearch" placeholder="Search your neighborhood..." class="w-full px-4 py-3.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700" onkeyup="filterCities()" />
+          </div>
+        </div>
+
+        {sortedStates.map(state => <section class="mb-12" data-state={state}>
+          <h2 class="text-2xl font-bold text-slate-900 mb-6 pb-3 border-b border-slate-200 flex items-center gap-3">
+            {state}
+            <span class="text-sm font-normal text-slate-500 bg-slate-100 px-3 py-1 rounded-full">{states[state].length} neighborhoods</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 city-grid">
+            {states[state].map(city => <a href={`/locations/${city.slug}`} class="city-card block p-5 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">{city.name}</h3>
+                  <p class="text-xs text-slate-400 mt-1">{city.areas.length} areas served</p>
+                </div>
+              </div>
+            </a>)}
+          </div>
+        </section>)}
+
+        <div class="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-8 md:p-12 text-center border border-slate-100 mt-8">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-sm font-semibold mb-4">Beyond Bengaluru</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Outside Bengaluru</h2>
+          <p class="text-lg text-slate-600 mb-6 max-w-xl mx-auto">We offer pan-India online consultations for life, health, and motor insurance. Contact us for personalized guidance anywhere in India.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-md">
+            Book Online Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
-</main>
+
+  <Footer />
+</BaseLayout>
 
 <script>
 function filterCities() {
