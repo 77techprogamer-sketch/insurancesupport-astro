@@ -1,0 +1,43 @@
+---
+// src/components/ClaimRecoveryTicker.astro
+// Acko-style live proof bar: recent claim recoveries with amounts
+import caseStudies from '../data/case-studies.json';
+
+const recoveries = caseStudies.map(cs => ({
+  title: cs.title,
+  amount: cs.claimAmount,
+  insurer: cs.insurer,
+  result: cs.result,
+  location: cs.location,
+  slug: cs.slug
+}));
+---
+
+<section class="py-10 bg-slate-900 border-y border-slate-800 relative overflow-hidden" aria-label="Recent claim recoveries">
+  <div class="absolute inset-0 opacity-[0.03] bg-[url('/grid.svg')] bg-center"></div>
+  <div class="max-w-7xl mx-auto px-4 relative">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+      </span>
+      <h2 class="text-sm md:text-base font-bold text-white uppercase tracking-wider">Recent Claim Recoveries</h2>
+      <span class="text-xs text-slate-400">Real cases handled by Hari Kotian</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {recoveries.map(r => (
+        <a href={`/case-studies/${r.slug}`} class="group flex items-center justify-between gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-400/40 rounded-xl px-5 py-4 transition-all">
+          <div class="min-w-0">
+            <p class="text-sm font-semibold text-white truncate group-hover:text-amber-300 transition-colors">{r.title}</p>
+            <p class="text-xs text-slate-400 mt-1">{r.insurer} • {r.location} • <span class="text-green-400 font-medium">{r.result}</span></p>
+          </div>
+          <div class="shrink-0 text-right">
+            <div class="text-lg font-extrabold text-amber-400">₹{r.amount}</div>
+            <div class="text-[10px] text-slate-500 uppercase tracking-wider">Recovered</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -10,6 +10,9 @@ import NewsletterSection from '../components/NewsletterSection';
 import FloatingCTA from '../components/FloatingCTA';
 import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
+import ClaimRecoveryTicker from '../components/ClaimRecoveryTicker.astro';
+import AdvisorVsPortalSection from '../components/AdvisorVsPortalSection.astro';
+import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -47,6 +50,7 @@ import Footer from '../components/Footer.astro';
 
     <!-- ===== TRUST COUNTER BAR ===== -->
     <TrustCounterBar client:load />
+    <ClaimRecoveryTicker />
 
     <!-- ===== TRUST INDICATORS ===== -->
             <section class="py-12 bg-white border-b border-slate-100">
@@ -82,6 +86,9 @@ import Footer from '../components/Footer.astro';
 
     <!-- ===== SERVICES ===== -->
     <ServicesGrid client:load />
+
+    <!-- ===== ADVISOR VS PORTAL ===== -->
+    <AdvisorVsPortalSection />
 
     <!-- ===== FEATURES ===== -->
     <FeaturesSection />
@@ -233,6 +240,19 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ===== CLAIM REJECTION QUIZ (Interactive) ===== -->
+    <section class="py-20 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-4xl mx-auto px-4 text-center mb-10">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+          Instant Assessment
+        </span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">Check Your Claim Appeal Potential</h2>
+        <p class="text-lg text-slate-600">Answer 5 quick questions and get an instant assessment of your chances.</p>
+      </div>
+      <ClaimRejectionQuiz />
     </section>
 
     <!-- ===== FAQ SECTION ===== -->
