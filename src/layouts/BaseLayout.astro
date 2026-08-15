@@ -11,6 +11,57 @@ const { title, description = "Insurance Support by Hari Kotian — IRDAI-certifi
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online";
 const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
+const phoneNumber = "+91-9986634506";
+const phoneE164 = "+919986634506";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Insurance Support",
+  "url": siteUrl,
+  "logo": `${siteUrl}/logo.png`,
+  "sameAs": [
+    "https://share.google/2Cbcq7l39kTWJl2Dm"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": phoneE164,
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Hindi", "Kannada"],
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Hari Kotian",
+    "jobTitle": "IRDAI Certified Insurance Advisor",
+    "telephone": phoneE164,
+    "email": "contact@insurancesupport.online",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Insurance Support"
+    }
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteName,
+  "url": siteUrl,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/search?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <!doctype html>
@@ -47,7 +98,7 @@ const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    {/* Inter is removed, fonts are now loaded via global.css @import and tailwind config */}
+    <script type="application/ld+json" set:html={JSON.stringify([organizationSchema, websiteSchema])} />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP67H399V2"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-JP67H399V2");</script>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-P8DZ6MRQ");</script>

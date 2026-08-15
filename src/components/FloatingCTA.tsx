@@ -40,8 +40,6 @@ export default function FloatingCTA() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold rounded-full py-3 px-5 shadow-[0_4px_20px_rgba(234,179,8,0.4)] transition-all flex items-center justify-center gap-2 group text-sm"
-            animate={{ y: [0, -6, 0] }}
-            transition={{ y: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
           >
             <span className="whitespace-nowrap">Get a Quote</span>
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -49,7 +47,7 @@ export default function FloatingCTA() {
 
           {/* Call */}
           <motion.a
-            href="tel:+919****4506"
+            href="tel:+919986634506"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-[0_4px_20px_rgba(0,0,0,0.2)] transition-all flex items-center justify-center"
@@ -59,7 +57,7 @@ export default function FloatingCTA() {
 
           {/* WhatsApp */}
           <motion.a
-            href="https://wa.me/9199?6634506?text=Hi%20Hari%2C%20I%20need%20help%20with%20insurance."
+            href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20help%20with%20insurance."
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}

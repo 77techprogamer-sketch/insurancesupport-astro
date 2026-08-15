@@ -54,14 +54,6 @@ const recentPosts = sorted.slice(0, 12);
               </a>
             )}
 
-            <!-- Category Filter - static display (not interactive) -->
-            <div class="flex flex-wrap gap-2 mb-8">
-              <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">All Posts</span>
-              {allCategories.map(cat => (
-                <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-medium cursor-default">{cat}</span>
-              ))}
-            </div>
-
       <!-- Blog Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {recentPosts.map((post, i) => (
