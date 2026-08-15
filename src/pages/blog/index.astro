@@ -11,6 +11,22 @@ const recentPosts = sorted.slice(0, 12);
 ---
 
 <BaseLayout title="Insurance Blog | Expert Guides & Tips | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Insurance Blog | Expert Guides & Tips",
+    "description": "Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian.",
+    "url": "https://insurancesupport.online/blog/",
+    "isPartOf": { "@type": "WebSite", "name": "Insurance Support", "url": "https://insurancesupport.online" },
+    "about": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor" },
+    "hasPart": sorted.slice(0, 10).map(p => ({
+      "@type": "BlogPosting",
+      "headline": p.title,
+      "url": `https://insurancesupport.online/blog/${p.slug}`,
+      "datePublished": p.date,
+      "author": { "@type": "Person", "name": p.author || "Hari Kotian" }
+    }))
+  })} />
   <Header />
 
   <main class="page-transition">

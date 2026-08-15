@@ -155,10 +155,10 @@ const related = posts
         </p>
 
         <div class="flex flex-wrap items-center gap-4 text-sm text-blue-200/70">
-          <div class="flex items-center gap-2">
+          <a href="/about" rel="author" class="inline-flex items-center gap-2 group">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-xs">HK</div>
-            <span class="text-white font-medium">{post.author || 'Hari Kotian'}</span>
-          </div>
+            <span class="text-white font-medium group-hover:text-amber-300 transition-colors">{post.author || 'Hari Kotian'}</span>
+          </a>
           <span class="text-blue-300/40">|</span>
           <time>{post.date}</time>
           <span class="text-blue-300/40">|</span>
