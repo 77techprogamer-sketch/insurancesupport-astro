@@ -23,7 +23,8 @@ async function generateSitemap() {
             } else if (dirent.isFile() && dirent.name.endsWith('.html')) {
                 let urlPath = path.relative(distPath, res).replace(/\\/g, '/');
                 // Remove /index.html and .html extension
-                urlPath = urlPath.replace(/(\/index)?\.html$/, '');
+                urlPath = urlPath.replace(/(\/)?index\.html$/, '$1');
+                urlPath = urlPath.replace(/\.html$/, '');
                 links.push({ url: `/${urlPath}`, changefreq: 'weekly', priority: 0.7 });
             }
         }
@@ -34,10 +35,15 @@ async function generateSitemap() {
     // Filter out duplicate and unwanted URLs (e.g., test pages)
     const uniqueLinks = Array.from(new Set(links.map(link => link.url)))
     .filter(url => !url.includes('/test'))
-    .filter(url => !url.includes('/404'));  // FIX: Remove 404 page
+    .filter(url => !url.includes('/404'))
+    .filter(url => url !== '/index');  // remove broken /index artifact
 
     // Convert to sitemap format
-    const sitemapLinks = uniqueLinks.map(url => ({ url, changefreq: 'weekly', priority: 0.7 }));
+    const sitemapLinks = uniqueLinks.map(url => ({
+        url,
+        changefreq: url === '/' ? 'daily' : 'weekly',
+        priority: url === '/' ? 1.0 : (url.startsWith('/blog/') ? 0.8 : 0.7)
+    }));
 
     const stream = new SitemapStream({ hostname: siteUrl });
 
