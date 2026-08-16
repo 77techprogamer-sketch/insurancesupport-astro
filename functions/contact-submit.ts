@@ -83,7 +83,7 @@ export async function onRequestPost(context: any) {
 
   // Phone validation (Indian)
   const phoneRegex = /^(\+91|91|0)?[6-9]\d{9}$/;
-  const cleanedPhone = (data.phone || '').replace(/\s+/g, '');
+  const cleanedPhone = (data.phone || '').replace(/[^0-9]/g, '');
   if (!phoneRegex.test(cleanedPhone)) {
     return new Response(JSON.stringify({
       success: false,
