@@ -461,7 +461,6 @@
 ::selection {
   @apply bg-accent text-primary;
 }
-css
 /* WCAG AA Color Contrast Fixes - Applied urgently */
 /* Fix for text-blue-300 which was failing 4.5:1 contrast on dark backgrounds */
 .text-blue-300 {
