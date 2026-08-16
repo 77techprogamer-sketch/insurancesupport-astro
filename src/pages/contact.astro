@@ -135,6 +135,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div id="formSuccess" class="hidden p-4 bg-emerald-500/20 border border-emerald-500/40 rounded-xl text-emerald-300 text-center font-medium">
                 Thank you! Your message has been sent. Hari Kotian will contact you shortly.
               </div>
+              <div id="formError" class="hidden p-4 bg-red-500/20 border border-red-500/40 rounded-xl text-red-300 text-center font-medium"></div>
             </form>
           </div>
         </div>
@@ -143,14 +144,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </main>
 
-  <script>
-    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+  <script is:inline>
+    document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
       e.preventDefault();
+      const form = this;
+      const btn = form.querySelector('button[type="submit"]');
       const successDiv = document.getElementById('formSuccess');
-      if (successDiv) {
-        successDiv.classList.remove('hidden');
-        this.reset();
-        setTimeout(() => successDiv.classList.add('hidden'), 5000);
+      const errorDiv = document.getElementById('formError');
+      const origHtml = btn.innerHTML;
+      if (errorDiv) errorDiv.classList.add('hidden');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="w-5 h-5 border-2 border-slate-900/20 border-t-slate-900 rounded-full animate-spin" /> Sending...';
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        const res = await fetch('/contact-submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: data.name, phone: data.phone, email: data.email || '', category: data.category || '', message: data.message })
+        });
+        const json = await res.json();
+        if (!res.ok || !json.success) throw new Error(json.error || 'Submission failed');
+        if (successDiv) { successDiv.classList.remove('hidden'); setTimeout(() => successDiv.classList.add('hidden'), 6000); }
+        form.reset();
+      } catch (err) {
+        if (errorDiv) { errorDiv.textContent = err.message || 'Something went wrong. Please try again.'; errorDiv.classList.remove('hidden'); setTimeout(() => errorDiv.classList.add('hidden'), 6000); }
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = origHtml;
       }
     });
   </script>

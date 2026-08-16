@@ -9,7 +9,13 @@ export default function NewsletterSection() {
     if (!email) return;
     setStatus('loading');
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const res = await fetch('/newsletter-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const json = await res.json();
+      if (!res.ok || !json.success) throw new Error(json.error || 'Signup failed');
       setStatus('success');
       setEmail('');
     } catch {

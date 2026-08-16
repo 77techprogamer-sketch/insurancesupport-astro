@@ -8,7 +8,6 @@ const contactMethods = [
     description: "Mon - Sat, 9:00 AM - 9:00 PM",
     color: "from-emerald-500 to-green-600",
   },
-
   {
     icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
     label: "Visit Us",
@@ -54,14 +53,14 @@ const contactMethods = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
       <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-xl">
         <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
-        <form action="#" method="POST" class="space-y-4">
+        <form id="contactSectionForm" class="space-y-4" novalidate>
           <div>
             <label for="name" class="block text-sm font-medium text-blue-100/90 mb-2">Your Name</label>
-            <input type="text" id="name" name="name" class="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-blue-200/50 focus:ring-amber-400 focus:border-amber-400" placeholder="John Doe" />
+            <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-blue-200/50 focus:ring-amber-400 focus:border-amber-400" placeholder="John Doe" />
           </div>
           <div>
             <label for="email" class="block text-sm font-medium text-blue-100/90 mb-2">Your Email</label>
-            <input type="email" id="email" name="email" class="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-blue-200/50 focus:ring-amber-400 focus:border-amber-400" placeholder="john.doe@example.com" />
+            <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-blue-200/50 focus:ring-amber-400 focus:border-amber-400" placeholder="john.doe@example.com" />
           </div>
           <div>
             <label for="phone" class="block text-sm font-medium text-blue-100/90 mb-2">Phone Number (Optional)</label>
@@ -69,13 +68,15 @@ const contactMethods = [
           </div>
           <div>
             <label for="message" class="block text-sm font-medium text-blue-100/90 mb-2">Your Message</label>
-            <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-blue-200/50 focus:ring-amber-400 focus:border-amber-400" placeholder="I need help with..." />
+            <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-blue-200/50 focus:ring-amber-400 focus:border-amber-400" placeholder="I need help with..."></textarea>
           </div>
           <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full text-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
             Send Message
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </button>
           <p class="text-xs text-blue-200/70 mt-3 text-center">Your information is kept confidential and used only for contact purposes.</p>
+          <div id="contactSectionSuccess" class="hidden p-4 bg-emerald-500/20 border border-emerald-500/40 rounded-xl text-emerald-300 text-center font-medium">Thank you! Your message has been sent. We will contact you shortly.</div>
+          <div id="contactSectionError" class="hidden p-4 bg-red-500/20 border border-red-500/40 rounded-xl text-red-300 text-center font-medium"></div>
         </form>
       </div>
 
@@ -107,6 +108,38 @@ const contactMethods = [
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.getElementById('contactSectionForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = this;
+    const btn = form.querySelector('button[type="submit"]');
+    const successDiv = document.getElementById('contactSectionSuccess');
+    const errorDiv = document.getElementById('contactSectionError');
+    const origHtml = btn.innerHTML;
+    if (errorDiv) errorDiv.classList.add('hidden');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="w-5 h-5 border-2 border-slate-900/20 border-t-slate-900 rounded-full animate-spin" /> Sending...';
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      const res = await fetch('/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: data.name, phone: data.phone, email: data.email || '', message: data.message })
+      });
+      const json = await res.json();
+      if (!res.ok || !json.success) throw new Error(json.error || 'Submission failed');
+      if (successDiv) { successDiv.classList.remove('hidden'); setTimeout(() => successDiv.classList.add('hidden'), 6000); }
+      form.reset();
+    } catch (err) {
+      if (errorDiv) { errorDiv.textContent = err.message || 'Something went wrong. Please try again.'; errorDiv.classList.remove('hidden'); setTimeout(() => errorDiv.classList.add('hidden'), 6000); }
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = origHtml;
+    }
+  });
+</script>
 
 <style>
   .footer-marquee {

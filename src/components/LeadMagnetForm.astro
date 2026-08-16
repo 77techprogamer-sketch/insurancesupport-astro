@@ -215,7 +215,7 @@ const fieldLabels: Record<string, { label: string; type: string; placeholder: st
           const magnetSlug = form.dataset.magnetSlug || '';
 
           // Submit to Cloudflare Pages Function
-          const response = await fetch('/functions/lead-capture', {
+          const response = await fetch('/lead-capture', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ magnetSlug, ...data })
