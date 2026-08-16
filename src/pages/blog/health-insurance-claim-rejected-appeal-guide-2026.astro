@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "Health Insurance Claim Rejected? Step-by-Step Appeal Guide for India (2026)";
+const DESCRIPTION = "Got your health insurance claim rejected? Don't accept denial. Follow this expert 2026 step-by-step guide to challenge rejections, file internal grievances, and win at the Insurance Ombudsman.";
+const KEYWORDS = "health insurance claim rejected appeal India 2026, claim denial dispute resolution, Bima Bharosa IRDAI complaint, Insurance Ombudsman appeal workflow";
+const CANONICAL_URL = "https://insurancesupport.online/blog/health-insurance-claim-rejected-appeal-guide-2026";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-08-16";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Health Insurance Claim Appeal Guide', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Claim Appeal Guide</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Reg 0149161D) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        Having a health insurance claim rejected during a medical emergency is stressful and unjust. In India, over 12-15% of initial health insurance claims face rejection or short-settlement. However, <strong>a rejection is not the final word</strong>. With the right documentation and escalation framework under IRDAI guidelines, a significant percentage of rightful claims are successfully overturned.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Step 1: Demand Written Rejection Reasons</h2>
+      <p>
+        Never rely on verbal explanations from the TPA (Third Party Administrator) or hospital desk. Demand the official <strong>Repudiation Letter</strong> or short-settlement statement in writing, detailing the exact clause invoked.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Step 2: File Grievance with Insurer's Grievance Redressal Officer (GRO)</h2>
+      <p>
+        Insurance companies are mandated by IRDAI to resolve grievances within 14 days. Submit a formal appeal attaching your discharge summary, doctor's certificate clarifying medical necessity, and policy wording proofs.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Step 3: Escalate to IRDAI Bima Bharosa & Insurance Ombudsman</h2>
+      <p>
+        If the insurer upholds the rejection or fails to reply within 30 days, you can lodge a complaint on the IRDAI <strong>Bima Bharosa portal</strong> or approach the local <strong>Insurance Ombudsman</strong> (free of cost, binding on the insurer up to Rs. 50 lakhs).
+      </p>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Need Expert Help Overturning a Claim Rejection?</h2>
+      <p class="text-blue-100 mb-6">I have 25+ years of experience helping policyholders recover rightful claims across India.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20my%20health%20insurance%20claim%20was%20rejected.%20Please%20help%20me%20appeal." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp for Claim Review
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

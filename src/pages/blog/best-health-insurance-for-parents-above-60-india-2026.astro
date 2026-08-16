@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "Best Health Insurance for Parents Above 60 in India (2026 Guide)";
+const DESCRIPTION = "Specialized health insurance plans for senior citizens aged 60+ in India. Compare HDFC ERGO Optima Secure, Star Senior Care, Care Senior Health Advantage, and Acko Senior Care.";
+const KEYWORDS = "health insurance for parents above 60 India 2026, senior citizen health insurance plans, mediclaim policy for 60+, best health insurance for elderly parents";
+const CANONICAL_URL = "https://insurancesupport.online/blog/best-health-insurance-for-parents-above-60-india-2026";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-08-16";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Senior Citizen Health Insurance', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Senior Health Insurance</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Reg 0149161D) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        As parents age, their healthcare needs become more specialized. Standard health insurance plans may not cover all the unique requirements of senior citizens. Here are the best health insurance options specifically designed for parents above 60 years in India:
+      </p>
+
+      <table class="w-full border-collapse border border-slate-200">
+        <thead>
+          <tr class="bg-blue-50">
+            <th class="p-3 text-left">Plan Name</th>
+            <th class="p-3 text-left">Sum Insured</th>
+            <th class="p-3 text-left">Key Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-t">HDFC ERGO Optima Secure</td>
+            <td class="p-3 border-t">₹10 lakh</td>
+            <td class="p-3 border-t">Day care treatment cover, no age limit, 30-day waiting period for pre-existing diseases</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-t">Star Senior Care</td>
+            <td class="p-3 border-t">₹5 lakh</td>
+            <td class="p-3 border-t">Ambulance cover, critical illness benefits, and coverage for day care procedures</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-t">Care Senior Health Advantage</td>
+            <td class="p-3 border-t">₹10 lakh</td>
+            <td class="p-3 border-t">No upper age limit, coverage for pre-existing diseases, and day care benefits</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-t">Acko Senior Care</td>
+            <td class="p-3 border-t">₹5 lakh</td>
+            <td class="p-3 border-t">Ambulance cover, day care treatment benefits, and coverage for pre-existing diseases</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        These specialized senior citizen health insurance plans offer unique benefits like day care treatment coverage, no upper age limit, and coverage for pre-existing diseases. Always compare the policy terms and exclusions before purchasing.
+      </p>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Need Health Insurance for Your Parents Above 60?</h2>
+      <p class="text-blue-100 mb-6">Get expert advice on the best senior citizen health insurance plans.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20I%20need%20health%20insurance%20for%20my%20parents%20above%2060." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp for Insurance Advice
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

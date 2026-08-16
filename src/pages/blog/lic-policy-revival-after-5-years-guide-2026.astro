@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "LIC Policy Revival After 5 Years: Complete Guide & Surrender Rules (2026)";
+const DESCRIPTION = "Can you revive a lapsed LIC policy after 5 years? Complete 2026 guide on revival rules, unpaid premium calculations, late fees, medical requirements, and surrender options.";
+const KEYWORDS = "LIC policy revival after 5 years, lapsed LIC policy revival rules 2026, LIC surrender value calculator, special revival scheme LIC";
+const CANONICAL_URL = "https://insurancesupport.online/blog/lic-policy-revival-after-5-years-guide-2026";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-08-16";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'LIC Policy Revival After 5 Years', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">LIC Policy Revival</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Reg 0149161D) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        Life Insurance Corporation (LIC) policies lapse when premiums are not paid within the grace period (30 days for yearly/half-yearly, 15 days for monthly). Standard revival is permitted within <strong>5 years</strong> from the date of the First Unpaid Premium (FUP). But what happens if 5 years have passed?
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Can You Revive an LIC Policy After 5 Years?</h2>
+      <p>
+        Strictly speaking under standard LIC rules, <strong>no</strong>. Once 5 years from the FUP elapse without revival, the policy cannot be revived through ordinary or special revival schemes. However, policyholders still have critical options:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Surrender Value:</strong> If your policy has completed at least 3 full years of premium payments, it has acquired a Guaranteed Surrender Value (GSV). You can surrender it to claim your accumulated funds.</li>
+        <li><strong>Paid-Up Value:</strong> If not surrendered, the policy may continue as a reduced paid-up policy, paying out reduced benefits upon maturity or death.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Revival Within 5 Years: What You Need</h2>
+      <p>
+        If your policy is within the 5-year window, revival requires paying all overdue premiums plus compounding interest (typically 9.5% to 10.5% p.a.), along with a health declaration or medical examination depending on your age and sum assured.
+      </p>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Has Your LIC Policy Lapsed? Let's Check Your Options.</h2>
+      <p class="text-blue-100 mb-6">Get a free calculation of your revival dues, surrender value, or revival eligibility.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20I%20want%20to%20check%20my%20lapsed%20LIC%20policy%20revival%20or%20surrender%20value." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp for LIC Guidance
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
