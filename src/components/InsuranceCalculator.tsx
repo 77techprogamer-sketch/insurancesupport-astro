@@ -53,7 +53,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden ${className}`}
+      className={`bg-gradient-to-br from-white to-blue-50 rounded-3xl border border-blue-100 shadow-2xl overflow-hidden ${className}`}
     >
       <div className="p-6 md:p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -63,25 +63,25 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
             <div className="grid grid-cols-2 gap-2">
               <button
                 onClick={() => setPolicyType('life')}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${policyType === 'life' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${policyType === 'life' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
               >
                 Life
               </button>
               <button
                 onClick={() => setPolicyType('health')}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${policyType === 'health' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${policyType === 'health' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
               >
                 Health
               </button>
               <button
                 onClick={() => setPolicyType('motor')}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${policyType === 'motor' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${policyType === 'motor' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
               >
                 Motor
               </button>
               <button
                 onClick={() => setPolicyType('term')}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${policyType === 'term' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${policyType === 'term' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
               >
                 Term
               </button>
@@ -98,7 +98,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                 max="80"
                 value={age}
                 onChange={(e) => setAge(parseInt(e.target.value))}
-                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-2 bg-gradient-to-r from-blue-200 to-blue-400 rounded-lg appearance-none cursor-pointer"
               />
               <span className="text-slate-900 font-medium w-12 text-right">{age}</span>
             </div>
@@ -116,7 +116,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                 step="100000"
                 value={coverage}
                 onChange={(e) => setCoverage(parseInt(e.target.value))}
-                className="w-full pl-8 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-8 pr-3 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
               />
             </div>
           </div>
@@ -132,7 +132,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                   max="30"
                   value={termLength}
                   onChange={(e) => setTermLength(parseInt(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-2 bg-gradient-to-r from-blue-200 to-blue-400 rounded-lg appearance-none cursor-pointer"
                 />
                 <span className="text-slate-900 font-medium w-12 text-right">{termLength}</span>
               </div>
@@ -143,13 +143,13 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
         <div className="mt-6 flex gap-3">
           <button
             onClick={calculatePremium}
-            className="flex-1 px-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-lg"
           >
             Calculate Premium
           </button>
           <button
             onClick={resetCalculator}
-            className="px-4 py-3 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+            className="px-4 py-3 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 shadow-sm"
           >
             Reset
           </button>
@@ -161,9 +161,14 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200"
+            className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200 shadow-lg"
           >
-            <h3 className="text-lg font-semibold text-blue-800 mb-2">Estimated Premium</h3>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8l3 5m0 0l3-5m-3 5v4"/></svg>
+              </div>
+              <h3 className="text-lg font-semibold text-blue-800">Estimated Premium</h3>
+            </div>
             <p className="text-3xl font-bold text-blue-600">₹{premium.toLocaleString()}</p>
             <p className="text-sm text-slate-600 mt-2">This is an estimate based on your inputs. Actual premium may vary.</p>
             <div className="mt-4 flex items-center gap-2">
