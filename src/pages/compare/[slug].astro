@@ -1,0 +1,166 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import comparisons from "../../data/comparisons.json";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import FAQPageJsonLd from "../../components/FAQPageJsonLd.astro";
+
+export function getStaticPaths() {
+  return comparisons.map(c => ({ params: { slug: c.slug } }));
+}
+
+const { slug } = Astro.params;
+const comparison = comparisons.find(c => c.slug === slug);
+if (!comparison) {
+  throw new Error('Comparison not found');
+}
+
+const pageUrl = `https://insurancesupport.online/compare/${slug}`;
+---
+
+<BaseLayout title={`${comparison.title} | Insurance Support`} description={comparison.description} canonical={pageUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: comparison.title,
+    description: comparison.description,
+    author: { "@type": "Person", name: "Hari Kotian" },
+    publisher: {
+      "@type": "Organization",
+      name: "Insurance Support",
+      url: "https://insurancesupport.online"
+    },
+    datePublished: "2025-01-15",
+    dateModified: "2026-08-16",
+    mainEntityOfPage: pageUrl
+  })} />
+
+  <Breadcrumbs currentPage={comparison.title} />
+
+  <main class="page-transition">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 lg:py-20 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-[100px]" />
+      <div class="max-w-4xl mx-auto px-4 relative">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-amber-300 text-sm font-semibold mb-6">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+          Expert Comparison
+        </span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">{comparison.title}</h1>
+        <p class="text-lg text-blue-100/80 max-w-3xl leading-relaxed">{comparison.description}</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-12 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <p class="text-lg text-slate-700 leading-relaxed">{comparison.intro}</p>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-12 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-8 text-center">Side-by-Side Comparison</h2>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+          <table class="w-full text-sm bg-white">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="px-6 py-4 text-left font-semibold w-1/5">Parameter</th>
+                <th class="px-6 py-4 text-left font-semibold w-2/5">Option A</th>
+                <th class="px-6 py-4 text-left font-semibold w-2/5">Option B</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparison.comparison.map((row, i) => (
+                <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}>
+                  <td class="px-6 py-5 font-bold text-slate-900 align-top">{row.feature}</td>
+                  <td class="px-6 py-5 text-slate-600 align-top">{row.companyA}</td>
+                  <td class="px-6 py-5 text-slate-600 align-top">{row.companyB}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Advisor Notes -->
+        <div class="mt-6 bg-blue-50 border border-blue-100 rounded-2xl p-6">
+          <h3 class="font-bold text-blue-900 mb-3 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            Advisor Notes
+          </h3>
+          {comparison.comparison.map((row, i) => (
+            <p class="text-sm text-blue-800 mb-2"><strong class="font-semibold">{row.feature}:</strong> {row.note}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 md:p-10 text-white">
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-4 flex items-center gap-3">
+            <svg class="w-8 h-8 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            Our Verdict
+          </h2>
+          <p class="text-blue-100/90 leading-relaxed">{comparison.verdict}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    {comparison.faqs && comparison.faqs.length > 0 && (
+      <>
+        <FAQPageJsonLd questions={comparison.faqs} />
+        <section class="py-16 bg-slate-50">
+          <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+              {comparison.faqs.map(faq => (
+                <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-slate-50 transition-colors">
+                    <span class="font-semibold text-slate-900 pr-4">{faq.question}</span>
+                    <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div class="px-5 pb-5">
+                    <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
+    )}
+
+    <!-- Other Comparisons -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-8 text-center">More Comparisons</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          {comparisons.filter(c => c.slug !== slug).map(c => (
+            <a href={`/compare/${c.slug}`} class="group p-6 bg-slate-50 border border-slate-200 rounded-2xl hover:border-blue-300 hover:shadow-lg transition-all">
+              <h3 class="font-bold text-blue-900 group-hover:text-blue-600 mb-2">{c.title}</h3>
+              <p class="text-sm text-slate-600 line-clamp-2">{c.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Not sure which plan fits you?</h2>
+        <p class="text-blue-100 mb-8">Get a free, no-obligation consultation. We compare plans across insurers based on YOUR family's needs.</p>
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full text-lg shadow-lg shadow-amber-500/25 hover:shadow-xl hover:scale-105 transition-all">
+          Book Free Consultation
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
