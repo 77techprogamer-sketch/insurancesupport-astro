@@ -28,9 +28,9 @@ import InsuranceCalculator from '../components/InsuranceCalculator';
   <main id="main-content" class="page-transition">
 
     <!-- ===== HERO ===== -->
-    <AnimatedHero client:load />
+        <AnimatedHero client:visible />
 
-    <!-- ===== INSURANCE CALCULATOR ===== -->
+        <!-- ===== INSURANCE CALCULATOR ===== -->
     <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12 reveal">
@@ -41,7 +41,7 @@ import InsuranceCalculator from '../components/InsuranceCalculator';
           <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Insurance Premium Calculator</h2>
           <p class="text-lg text-slate-600 max-w-2xl mx-auto">Get an instant estimate for your insurance needs. Select your policy type and fill in the details below.</p>
         </div>
-        <InsuranceCalculator client:load />
+        <InsuranceCalculator client:visible />
       </div>
     </section>
 
@@ -64,7 +64,7 @@ import InsuranceCalculator from '../components/InsuranceCalculator';
     </section>
 
     <!-- ===== TRUST COUNTER BAR ===== -->
-    <TrustCounterBar client:load />
+    <TrustCounterBar client:visible />
     <ClaimRecoveryTicker />
 
     <!-- ===== TRUST INDICATORS ===== -->
@@ -100,7 +100,7 @@ import InsuranceCalculator from '../components/InsuranceCalculator';
     </section>
 
     <!-- ===== SERVICES ===== -->
-    <ServicesGrid client:load />
+    <ServicesGrid client:visible />
 
     <!-- ===== ADVISOR VS PORTAL ===== -->
     <AdvisorVsPortalSection />
@@ -119,7 +119,7 @@ import InsuranceCalculator from '../components/InsuranceCalculator';
           <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">What Our Clients Say</h2>
           <p class="text-lg text-slate-600">Real stories from families we've helped protect and recover.</p>
         </div>
-        <TestimonialsCarousel client:load />
+        <TestimonialsCarousel client:visible />
       </div>
     </section>
 
@@ -171,7 +171,7 @@ import InsuranceCalculator from '../components/InsuranceCalculator';
     </section>
 
     <!-- ===== BLOG ===== -->
-    <BlogSection client:load />
+    <BlogSection client:visible />
 
     <!-- ===== NEWSLETTER ===== -->
     <NewsletterSection />
@@ -180,7 +180,7 @@ import InsuranceCalculator from '../components/InsuranceCalculator';
     <ClaimRejectionQuiz />
 
     <!-- ===== FLOATING CTA ===== -->
-    <FloatingCTA client:load />
+    <FloatingCTA client:idle />
 
     <!-- ===== FAQ SCHEMA ===== -->
     <FAQPageJsonLd />

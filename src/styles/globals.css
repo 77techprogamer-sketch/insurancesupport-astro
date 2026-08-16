@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
-
 /* View Transitions — smooth page nav like Next.js/Framer Motion */
 @import './view-transitions.css';
 
@@ -480,4 +478,36 @@ css
 .touch-target-min {
   min-width: 44px;
   min-height: 44px;
+}
+
+/* ============================================
+   MOBILE UX FIXES
+   ============================================ */
+/* Kill double-tap zoom delay on all interactive elements */
+a, button, input, select, textarea, .tappable {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile menu button — 44x44px minimum tap target */
+#mobile-menu-btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Premium calculator & form elements on small screens */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  button, .btn, a[class*="bg-blue-600"] {
+    min-height: 44px;
+  }
+  input, select, textarea {
+    font-size: 16px; /* Prevents iOS zoom-on-focus */
+  }
 }
