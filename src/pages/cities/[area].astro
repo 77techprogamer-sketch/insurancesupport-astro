@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { AREAS } from '../../data/areas';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 
 
 
@@ -25,12 +26,40 @@ if (!area) return Astro.redirect('/404');
 
 const featuredPlans = PLAN_MAP.sort(() => Math.random() - 0.5).slice(0, 2);
 const citySlug = area.slug;
+const pageUrl = `https://insurancesupport.online/cities/${citySlug}`;
 ---
 
 <BaseLayout
   title={`LIC Agent in ${area.name}, Bangalore — Expert Policy Advice | Insurance Support`}
   description={`Trusted LIC agent in ${area.name}, Bangalore. Hari Kotian offers 25+ years of experience. IRDAI Reg No: 0149161D. Life, health, and term insurance services.`}
 >
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Cities', url: 'https://insurancesupport.online/cities' },
+    { label: `${area.name}, Bangalore`, url: pageUrl }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `LIC Agent & Insurance Advisor in ${area.name} - Hari Kotian`,
+    "description": `IRDAI certified insurance advisor serving ${area.name}, Bangalore. Life, health, motor, term plans and claim recovery assistance.`,
+    "url": pageUrl,
+    "telephone": "+91-9986634506",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": area.name,
+      "addressRegion": "Bengaluru, KA",
+      "postalCode": "560013",
+      "addressCountry": "IN"
+    },
+    "priceRange": "₹₹",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Insurance Support - Hari Kotian",
+      "url": "https://insurancesupport.online"
+    }
+  })} />
   <main class="max-w-4xl mx-auto px-4 py-16">
     <nav class="text-sm text-slate-500 mb-6">
       <a href="/" class="hover:text-blue-600">Home</a>
