@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ContactSection from '../../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="Expert Insights | Insurance Support by Hari Kotian" 
+  description="Gain in-depth knowledge and expert perspectives on insurance strategies, market trends, and policy insights from IRDAI-certified advisor Hari Kotian."
+>
+  <Breadcrumbs currentPage="Expert Insights" />
+
+  <main class="page-transition">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 lg:py-20 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-[100px]" />
+      <div class="max-w-4xl mx-auto px-4 relative text-center">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-amber-300 text-sm font-semibold mb-6">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7v3m0-3V9m-4 0v3m0-3V9" /></svg>
+          Deep Dive
+        </span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+          Expert Insights & Guides
+        </h1>
+        <p class="text-lg text-blue-100/80 max-w-3xl leading-relaxed">
+          Unlock the complexities of insurance with in-depth analyses, market trends, and strategic advice from Hari Kotian.
+        </p>
+      </div>
+    </section>
+
+    <!-- Placeholder for Expert Insight Articles/Resources -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">Coming Soon: In-depth Articles</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          We are curating a collection of exclusive expert insights, whitepapers, and detailed guides to help you make informed insurance decisions.
+          Check back soon for valuable resources on advanced insurance strategies, financial planning, and claim management.
+        </p>
+        <a href="/blog" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg">
+          Explore Our Blog
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section for Consultation -->
+    <ContactSection />
+
+  </main>
+</BaseLayout>
