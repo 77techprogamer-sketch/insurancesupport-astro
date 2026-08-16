@@ -83,7 +83,8 @@ export async function onRequestPost(context: any) {
 
   // Phone validation (Indian)
   const phoneRegex = /^(\+91|91|0)?[6-9]\d{9}$/;
-  if (!phoneRegex.test((data.phone || '').replace(/\s+/g, ''))) {
+  const cleanedPhone = (data.phone || '').replace(/\s+/g, '');
+  if (!phoneRegex.test(cleanedPhone)) {
     return new Response(JSON.stringify({
       success: false,
       error: 'Invalid Indian phone number',
@@ -99,7 +100,7 @@ export async function onRequestPost(context: any) {
     type: 'contact_form',
     name: (data.name || '').trim(),
     email: data.email ? data.email.trim().toLowerCase() : null,
-    phone: (data.phone || '').trim(),
+    phone: cleanedPhone,
     category: data.category || null,
     message: (data.message || '').trim(),
     ip,
