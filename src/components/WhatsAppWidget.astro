@@ -1,0 +1,27 @@
+<!--
+// src/components/WhatsAppWidget.astro
+// WhatsApp floating chat button for immediate client inquiries
+-->
+
+<div class="fixed bottom-24 right-4 z-50">
+  <a
+    href="https://wa.me/919986634506?text=Hi%20Hari,%20I%20need%20help%20with..."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-opacity-50"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L9.42 15.59l-1.42-1.42L13.17 10H11v2h3.17l2.59-2.59z"/>
+    </svg>
+  </a>
+</div>
+
+<style>
+  /* Ensure the button stays above mobile sticky bar */
+  @media (max-width: 640px) {
+    .fixed.bottom-24 {
+      bottom: 6rem; /* Clear space above mobile sticky bar */
+    }
+  }
+</style>
