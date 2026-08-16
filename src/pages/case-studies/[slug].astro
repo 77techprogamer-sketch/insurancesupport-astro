@@ -1,8 +1,8 @@
 ---
 // src/pages/case-studies/[slug].astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+
+
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import caseStudies from '../../data/case-studies.json';
 
@@ -27,7 +27,7 @@ const related = cs.relatedCaseStudies
   title={`${cs.title} | Case Study`}
   description={cs.seo.metaDescription}
 >
-  <Header />
+
   <Breadcrumbs currentPage={cs.title} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -211,5 +211,4 @@ const related = cs.relatedCaseStudies
     </article>
   </main>
 
-  <Footer />
 </BaseLayout>

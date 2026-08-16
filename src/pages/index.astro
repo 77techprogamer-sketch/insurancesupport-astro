@@ -13,8 +13,9 @@ import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import ClaimRecoveryTicker from '../components/ClaimRecoveryTicker.astro';
 import AdvisorVsPortalSection from '../components/AdvisorVsPortalSection.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+
+
+import InsuranceCalculator from '../components/InsuranceCalculator';
 ---
 
 <BaseLayout title="IRDAI Certified Insurance Advisor in Bengaluru" description="25+ years experience IRDAI certified insurance advisor. Free consultation for life, health, motor, term & all insurance types. Claim recovery expert.">
@@ -23,12 +24,26 @@ import Footer from '../components/Footer.astro';
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg">Skip to main content</a>
 
   <!-- ===== HEADER ===== -->
-  <Header />
 
   <main id="main-content" class="page-transition">
 
     <!-- ===== HERO ===== -->
     <AnimatedHero client:load />
+
+    <!-- ===== INSURANCE CALCULATOR ===== -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-4">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+            Quick Estimate
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Insurance Premium Calculator</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">Get an instant estimate for your insurance needs. Select your policy type and fill in the details below.</p>
+        </div>
+        <InsuranceCalculator client:load />
+      </div>
+    </section>
 
     <!-- ===== GOOGLE RATING TRUST BAR ===== -->
     <section class="py-6 bg-white border-b border-slate-100">
@@ -53,36 +68,36 @@ import Footer from '../components/Footer.astro';
     <ClaimRecoveryTicker />
 
     <!-- ===== TRUST INDICATORS ===== -->
-            <section class="py-12 bg-white border-b border-slate-100">
-              <div class="max-w-6xl mx-auto px-4">
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                  <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors">
-                    <div class="w-14 h-14 mx-auto mb-4 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">IRDAI Certified</h3>
-                    <p class="text-sm text-slate-600">Reg. No: 0149161D — Government authorized advisor</p>
-                  </div>
-                  <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.08s">
-                    <div class="w-14 h-14 mx-auto mb-4 bg-emerald-100 rounded-xl flex items-center justify-center">
-                      <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">25+ Years Experience</h3>
-                    <p class="text-sm text-slate-600">Helping families since 1998 across India</p>
-                  </div>
-                  <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.16s">
-                    <div class="w-14 h-14 mx-auto mb-4 bg-amber-100 rounded-xl flex items-center justify-center">
-                      <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">₹50 Cr+ Recovered</h3>
-                    <p class="text-sm text-slate-600">Claim rejection recovery expertise</p>
-                  </div>
-                </div>
-                <div class="mt-8 text-center reveal">
-                  <p class="text-sm text-slate-400 font-medium uppercase tracking-wider">Trusted by 1000+ families across Bengaluru & India</p>
-                </div>
-              </div>
-            </section>
+    <section class="py-12 bg-white border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors">
+            <div class="w-14 h-14 mx-auto mb-4 bg-blue-100 rounded-xl flex items-center justify-center">
+              <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">IRDAI Certified</h3>
+            <p class="text-sm text-slate-600">Reg. No: 0149161D — Government authorized advisor</p>
+          </div>
+          <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.08s">
+            <div class="w-14 h-14 mx-auto mb-4 bg-emerald-100 rounded-xl flex items-center justify-center">
+              <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">25+ Years Experience</h3>
+            <p class="text-sm text-slate-600">Helping families since 1998 across India</p>
+          </div>
+          <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.16s">
+            <div class="w-14 h-14 mx-auto mb-4 bg-amber-100 rounded-xl flex items-center justify-center">
+              <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">₹50 Cr+ Recovered</h3>
+            <p class="text-sm text-slate-600">Claim rejection recovery expertise</p>
+          </div>
+        </div>
+        <div class="mt-8 text-center reveal">
+          <p class="text-sm text-slate-400 font-medium uppercase tracking-wider">Trusted by 1000+ families across Bengaluru & India</p>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== SERVICES ===== -->
     <ServicesGrid client:load />
@@ -148,181 +163,29 @@ import Footer from '../components/Footer.astro';
 
           <div class="text-center reveal relative" style="transition-delay:0.3s">
             <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-amber-500/30 glow-pulse relative z-10 hover:scale-110 transition-transform">4</div>
-            <h3 class="text-lg font-bold mb-2">Lifetime Support</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Ongoing reviews, claim assistance, and advice.</p>
+            <h3 class="text-lg font-bold mb-2">Get Results</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">We ensure your claim is processed and approved.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== BLOG SECTION ===== -->
-        <BlogSection client:load />
-
-        <!-- ===== LEAD MAGNET CTA SECTION ===== -->
-        <section class="py-20 bg-white">
-          <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-sm font-semibold mb-4">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                Free Resources & Guides
-              </span>
-              <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Download What You Need</h2>
-              <p class="text-lg text-slate-600 max-w-2xl mx-auto">Expert checklists, comparison sheets, and response templates — built from 25+ years of claim recovery experience.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <!-- Claim Checklist -->
-              <a href="/lead-magnets/claim-checklist" class="block bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                </div>
-                <h3 class="font-bold text-slate-900 mb-2">LIC Claim Checklist</h3>
-                <p class="text-sm text-slate-600 mb-4">12-point analysis + appeal letter template for rejected LIC claims</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">Get Free Checklist <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
-              </a>
-
-              <!-- Term Comparison -->
-              <a href="/lead-magnets/term-comparison" class="block bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <svg class="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                </div>
-                <h3 class="font-bold text-slate-900 mb-2">Term Comparison Sheet</h3>
-                <p class="text-sm text-slate-600 mb-4">Top 10 insurers compared across 25+ parameters with premium calculator</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">Get Comparison <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
-              </a>
-
-              <!-- Health Claim Generator -->
-              <a href="/lead-magnets/health-claim-denial" class="block bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                </div>
-                <h3 class="font-bold text-slate-900 mb-2">Health Claim Response</h3>
-                <p class="text-sm text-slate-600 mb-4">Generate IRDAI-compliant response letter for 8 denial reasons in 3 minutes</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">Generate Letter <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
-              </a>
-
-              <!-- IRDAI Complaint -->
-              <a href="/lead-magnets/irdai-complaint" class="block bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                </div>
-                <h3 class="font-bold text-slate-900 mb-2">IRDAI Complaint Guide</h3>
-                <p class="text-sm text-slate-600 mb-4">12-min video walkthrough + checklist to file a complaint that gets results</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">Get Video + Checklist <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===== SOCIAL PROOF BANNER ===== -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-0 left-1/4 w-40 h-40 bg-white rounded-full blur-3xl" />
-        <div class="absolute bottom-0 right-1/4 w-60 h-60 bg-amber-300 rounded-full blur-3xl" />
-      </div>
-      <div class="max-w-5xl mx-auto px-4 text-center text-white relative">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 stagger-children">
-          <div class="reveal">
-            <div class="text-3xl md:text-4xl font-extrabold">25+</div>
-            <div class="text-blue-200 text-sm font-medium mt-1">Years Experience</div>
-          </div>
-          <div class="reveal" style="transition-delay:0.1s">
-            <div class="text-3xl md:text-4xl font-extrabold">1000+</div>
-            <div class="text-blue-200 text-sm font-medium mt-1">Families Served</div>
-          </div>
-          <div class="reveal" style="transition-delay:0.2s">
-            <div class="text-3xl md:text-4xl font-extrabold">₹50Cr+</div>
-            <div class="text-blue-200 text-sm font-medium mt-1">Claims Recovered</div>
-          </div>
-          <div class="reveal" style="transition-delay:0.3s">
-            <div class="text-3xl md:text-4xl font-extrabold">95%</div>
-            <div class="text-blue-200 text-sm font-medium mt-1">Success Rate</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CLAIM REJECTION QUIZ (Interactive) ===== -->
-    <section class="py-20 bg-slate-50 border-y border-slate-100">
-      <div class="max-w-4xl mx-auto px-4 text-center mb-10">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-sm font-semibold mb-4">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-          Instant Assessment
-        </span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">Check Your Claim Appeal Potential</h2>
-        <p class="text-lg text-slate-600">Answer 5 quick questions and get an instant assessment of your chances.</p>
-      </div>
-      <ClaimRejectionQuiz />
-    </section>
-
-    <!-- ===== FAQ SECTION ===== -->
-    <section class="py-20 bg-white">
-      <FAQPageJsonLd questions={[
-        { question: "How much does insurance cost?", answer: "Premiums vary based on coverage type, sum assured, age, health condition, occupation, and location. GST of 18% is applicable on most insurance premiums. For life insurance, terms under 5 years are typically tax-free. Health insurance premiums include GST, and NCB (No Claim Bonus) can reduce motor insurance costs." },
-        { question: "Can you help with a rejected insurance claim?", answer: "Yes, claim rejection recovery is our specialty. We analyze your rejection letter, review your policy terms, and guide you through the grievance redressal process with the insurer, IRDAI, and the Insurance Ombudsman. We have recovered over ₹50Cr in previously rejected claims for 1000+ families." },
-        { question: "What is the difference between term insurance and health insurance?", answer: "Term insurance provides life cover — a lump sum payout to your nominees if you pass away during the policy term. Health insurance covers medical expenses and hospitalization costs. They serve completely different purposes and most families need both." },
-        { question: "Do you charge for insurance consultation?", answer: "Our initial consultation is completely free. We earn commissions from insurance companies when you purchase a policy through us, so there is no cost to you for advisory services." },
-        { question: "Can I buy insurance online through you?", answer: "Yes, we facilitate online policy purchases for multiple insurers including LIC, HDFC Life, ICICI Prudential, and others. We handle the entire process from comparison to application submission and policy issuance." },
-        { question: "How do I know if my existing policy is good enough?", answer: "We offer a complimentary policy review service. We analyze your current coverage for gaps, compare it with current market offerings, and recommend optimizations — whether that means enhancing riders, switching insurers, or adding supplementary coverage." }
-      ]} />
-      <div class="max-w-4xl mx-auto px-4">
-        <h3 class="text-3xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h3>
-        <div class="space-y-3">
-          {[
-            { question: "How much does insurance cost?", answer: "Premiums vary based on coverage type, sum assured, age, health condition, occupation, and location. GST of 18% is applicable on most insurance premiums. For life insurance, terms under 5 years are typically tax-free. Health insurance premiums include GST, and NCB (No Claim Bonus) can reduce motor insurance costs." },
-            { question: "Can you help with a rejected insurance claim?", answer: "Yes, claim rejection recovery is our specialty. We analyze your rejection letter, review your policy terms, and guide you through the grievance redressal process with the insurer, IRDAI, and the Insurance Ombudsman. We have recovered over ₹50Cr in previously rejected claims for 1000+ families." },
-            { question: "What is the difference between term insurance and health insurance?", answer: "Term insurance provides life cover — a lump sum payout to your nominees if you pass away during the policy term. Health insurance covers medical expenses and hospitalization costs. They serve completely different purposes and most families need both." },
-            { question: "Do you charge for insurance consultation?", answer: "Our initial consultation is completely free. We earn commissions from insurance companies when you purchase a policy through us, so there is no cost to you for advisory services." },
-            { question: "Can I buy insurance online through you?", answer: "Yes, we facilitate online policy purchases for multiple insurers including LIC, HDFC Life, ICICI Prudential, and others. We handle the entire process from comparison to application submission and policy issuance." },
-            { question: "How do I know if my existing policy is good enough?", answer: "We offer a complimentary policy review service. We analyze your current coverage for gaps, compare it with current market offerings, and recommend optimizations — whether that means enhancing riders, switching insurers, or adding supplementary coverage." }
-          ].map(faq => (
-            <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-              <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-slate-50 transition-colors">
-                <span class="font-semibold text-slate-900 pr-4">{faq.question}</span>
-                <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <div class="px-5 pb-5">
-                <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+    <!-- ===== BLOG ===== -->
+    <BlogSection client:load />
 
     <!-- ===== NEWSLETTER ===== -->
-    <NewsletterSection client:load />
+    <NewsletterSection />
 
-    <!-- ===== CTA ===== -->
-        <section class="py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-blue-50/50 relative overflow-hidden">
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl" />
-          <div class="max-w-4xl mx-auto px-4 text-center relative">
-            <div class="reveal">
-              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-sm font-semibold mb-6">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Free Expert Consultation
-              </span>
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">Ready to Secure Your Family's Future?</h2>
-              <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto leading-relaxed">Get personalized insurance guidance from an IRDAI-certified advisor with 25+ years of experience. Free consultation, no obligation.</p>
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="/contact" class="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full text-lg shadow-lg shadow-amber-500/25 hover:shadow-xl hover:scale-105 active:scale-95 transition-all btn-glow">
-                  Book Free Consultation
-                  <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </a>
-                <a href="tel:+919986634506" class="inline-flex items-center gap-2 px-8 py-4 bg-white border border-slate-200 text-slate-700 font-semibold rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
-                  <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  Call +91-99866 34506
-                </a>
-              </div>
-              <p class="text-sm text-slate-500 mt-8">IRDAI Reg No: 0149161D | 25+ Years | 1000+ Families Served</p>
-            </div>
-          </div>
-        </section>
+    <!-- ===== CLAIM REJECTION QUIZ ===== -->
+    <ClaimRejectionQuiz />
 
-    <!-- ===== FOOTER ===== -->
-    <Footer />
+    <!-- ===== FLOATING CTA ===== -->
+    <FloatingCTA client:load />
+
+    <!-- ===== FAQ SCHEMA ===== -->
+    <FAQPageJsonLd />
   </main>
-  <FloatingCTA client:load />
+
+  <!-- ===== FOOTER ===== -->
+
 </BaseLayout>

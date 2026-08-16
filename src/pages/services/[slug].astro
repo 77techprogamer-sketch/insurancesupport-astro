@@ -3,8 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import services from "../../data/services.json";
 import FAQPageJsonLd from "../../components/FAQPageJsonLd.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+
 
 export async function getStaticPaths() {
   return services.map(s => ({ params: { slug: s.slug } }));
@@ -43,7 +42,6 @@ const serviceUrl = `https://insurancesupport.online/services/${slug}`;
   })} />
   
   <Breadcrumbs currentPage={service.title} />
-  <Header />
 
   <main class="page-transition">
     <div class="max-w-4xl mx-auto px-4 py-16">
@@ -86,5 +84,4 @@ const serviceUrl = `https://insurancesupport.online/services/${slug}`;
     </div>
   </main>
 
-  <Footer />
 </BaseLayout>

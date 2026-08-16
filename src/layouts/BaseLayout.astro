@@ -1,14 +1,18 @@
 ---
 import MobileStickyBar from '../components/MobileStickyBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 export interface Props {
   title: string;
   description?: string;
   ogImage?: string;
   noIndex?: boolean;
+  keywords?: string;
+  canonical?: string;
 }
 
-const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false } = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical } = Astro.props;
 
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online";
@@ -46,7 +50,10 @@ const organizationSchema = {
     "worksFor": {
       "@type": "Organization",
       "name": "Insurance Support"
-    }
+    },
+    "sameAs": [
+      "https://insurancesupport.online/about"
+    ]
   }
 };
 
@@ -55,13 +62,15 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": siteName,
   "url": siteUrl,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${siteUrl}/search?q={search_term_string}`
-    },
-    "query-input": "required name=search_term_string"
+  "publisher": {
+    "@type": "Organization",
+    "name": "Insurance Support",
+    "url": siteUrl
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Hari Kotian",
+    "url": `${siteUrl}/about`
   }
 };
 ---
@@ -74,23 +83,24 @@ const websiteSchema = {
     <title>{title ? `${title} | ${siteName}` : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`}</title>
     <meta name="title" content={title ? `${title} | ${siteName}` : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="insurance advisor Bengaluru, IRDAI certified insurance agent, life insurance India, health insurance advisor, motor insurance, claim settlement expert, Hari Kotian insurance" />
+    <meta name="keywords" content={keywords || "insurance advisor Bengaluru, IRDAI certified insurance agent, life insurance India, health insurance advisor, motor insurance, claim settlement expert, Hari Kotian insurance"} />
     <meta name="author" content="Hari Kotian" />
     <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="canonical" href={canonical || Astro.url.href} />
+    <link rel="author" href="https://insurancesupport.online/about" />
     <meta name="geo.region" content="IN-KA" />
     <meta name="geo.placename" content="Bengaluru" />
     <meta name="geo.position" content="13.0159;77.5522" />
     <meta name="ICBM" content="13.0159, 77.5522" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:url" content={canonical || Astro.url.href} />
     <meta property="og:title" content={title ? `${title} | ${siteName}` : siteName} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="en_IN" />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url.href} />
+    <meta property="twitter:url" content={canonical || Astro.url.href} />
     <meta property="twitter:title" content={title ? `${title} | ${siteName}` : siteName} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage || `${siteUrl}/og-image.png`} />
@@ -106,7 +116,9 @@ const websiteSchema = {
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-P8DZ6MRQ");</script>
   </head>
   <body class="font-sans text-base antialiased pb-16 md:pb-0">
+    <Header />
     <slot />
+    <Footer />
     <MobileStickyBar />
     <script src="/scripts/reveal.js" is:inline></script>
   </body>

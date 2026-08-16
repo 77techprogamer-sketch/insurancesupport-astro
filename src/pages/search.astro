@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+
+---
+
+<BaseLayout title="Search Insurance Guides & Articles | Insurance Support" description="Search across all expert insurance guides, claim tips, and IRDAI updates from Hari Kotian.">
+
+  <main class="page-transition">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
+      <div class="max-w-4xl mx-auto px-4 text-center relative">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">Search Insurance Knowledge Base</h1>
+        <p class="text-lg text-blue-100/80 max-w-2xl mx-auto">Find answers on claim rejections, LIC plans, health insurance waiting periods, and more.</p>
+      </div>
+    </section>
+
+    <!-- Search Container -->
+    <div class="max-w-4xl mx-auto px-4 py-12">
+      <div class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-xl mb-12">
+        <div class="relative">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Type a keyword (e.g., 'LIC claim rejection', 'health insurance waiting period')..."
+            class="w-full px-5 py-4 pl-12 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all text-lg"
+            autofocus
+          />
+          <svg class="w-6 h-6 text-slate-400 absolute left-4 top-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <div id="search-stats" class="text-xs text-slate-400 mt-3 px-1"></div>
+      </div>
+
+      <!-- Results Container -->
+      <div id="search-results" class="space-y-6">
+        <div class="text-center py-12 text-slate-400">
+          <svg class="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <p class="text-lg font-medium text-slate-600">Start typing to search 200+ pages and guides</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline>
+    let pagefind = null;
+
+    async function initSearch() {
+      try {
+        pagefind = await import('/pagefind/pagefind.js');
+        await pagefind.init();
+      } catch (e) {
+        console.log('Pagefind not loaded:', e);
+      }
+    }
+
+    initSearch();
+
+    const input = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+    const statsContainer = document.getElementById('search-stats');
+
+    let debounceTimer;
+    input?.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
+      const query = e.target.value.trim();
+
+      if (!query) {
+        resultsContainer.innerHTML = `
+          <div class="text-center py-12 text-slate-400">
+            <svg class="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <p class="text-lg font-medium text-slate-600">Start typing to search 200+ pages and guides</p>
+          </div>
+        `;
+        statsContainer.textContent = '';
+        return;
+      }
+
+      debounceTimer = setTimeout(async () => {
+        if (!pagefind) {
+          resultsContainer.innerHTML = `
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 text-center text-amber-800">
+              <p class="font-bold mb-1">Search index building</p>
+              <p class="text-sm">Search requires a production build (` + '`npm run build`' + `).</p>
+            </div>
+          `;
+          return;
+        }
+
+        const search = await pagefind.search(query);
+        statsContainer.textContent = `Found ${search.results.length} result(s) for "${query}"`;
+
+        if (search.results.length === 0) {
+          resultsContainer.innerHTML = `
+            <div class="bg-slate-50 rounded-xl p-8 text-center border border-slate-200">
+              <p class="text-lg font-semibold text-slate-800 mb-1">No matching guides found</p>
+              <p class="text-sm text-slate-600">Try broader keywords like "claim", "health insurance", or "LIC policy".</p>
+            </div>
+          `;
+          return;
+        }
+
+        const data = await Promise.all(search.results.slice(0, 15).map(r => r.data()));
+
+        resultsContainer.innerHTML = data.map(item => `
+          <a href="${item.url}" class="block bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group">
+            <h2 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">${item.meta.title}</h2>
+            <p class="text-slate-600 text-sm leading-relaxed mb-3">${item.excerpt}</p>
+            <span class="text-xs font-semibold text-blue-600 flex items-center gap-1">
+              Read Guide
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </span>
+          </a>
+        `).join('');
+      }, 250);
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get('q');
+    if (q) {
+      input.value = q;
+      input.dispatchEvent(new Event('input'));
+    }
+  </script>
+</BaseLayout>

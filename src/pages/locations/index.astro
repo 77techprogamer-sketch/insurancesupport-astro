@@ -3,8 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+
 
 const allCitiesCollection = await getCollection('cities');
 const cities = allCitiesCollection[0].data;
@@ -20,7 +19,6 @@ const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
 ---
 
 <BaseLayout title="Insurance Service Locations Bengaluru | Insurance Support" description={`Insurance advisory across ${cities.length} Bengaluru neighborhoods. Free doorstep service. IRDAI certified advisor Hari Kotian, 25+ years experience.`}>
-  <Header />
 
   <main class="page-transition">
 
@@ -96,7 +94,6 @@ const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
 
   </main>
 
-  <Footer />
 </BaseLayout>
 
 <script>

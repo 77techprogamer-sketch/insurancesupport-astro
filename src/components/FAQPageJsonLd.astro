@@ -1,6 +1,6 @@
 ---
 // FAQPage JSON-LD structured data
-const { questions } = Astro.props;
+const { questions = [] } = Astro.props;
 ---
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",

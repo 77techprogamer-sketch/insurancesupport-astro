@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+
 
 const services = [
   { title: 'Life Insurance', desc: 'Secure your family\'s future with customized term and endowment plans.' },
@@ -18,7 +17,7 @@ const services = [
 ---
 
 <BaseLayout title="Our Insurance Services" description="Explore our 10 comprehensive insurance services in Bangalore, including life, health, motor, and pension plans.">
-  <Header />
+
   <main class="max-w-5xl mx-auto px-4 py-16">
     <h1 class="text-4xl font-extrabold text-slate-900 mb-8">Our Insurance Services</h1>
     <p class="text-lg text-slate-600 mb-12">We provide 10 comprehensive insurance solutions tailored to protect what matters most to you. From life and health covers to specialized investment and claim recovery services, our IRDAI-certified expertise ensures you get the right advice.</p>
@@ -32,5 +31,5 @@ const services = [
       ))}
     </div>
   </main>
-  <Footer />
+
 </BaseLayout>
