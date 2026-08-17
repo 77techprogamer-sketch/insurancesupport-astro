@@ -1,0 +1,39 @@
+<!--
+// src/components/ClaimReviewCTA.astro
+// Inline WhatsApp Claim Review call-to-action banner for high-intent blog posts.
+// Props: none required — uses site's standard WhatsApp number and pre-filled message.
+-->
+<section class="max-w-3xl mx-auto px-4 my-8">
+  <div class="bg-gradient-to-r from-emerald-600 to-green-600 rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none" />
+    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none" />
+
+    <div class="relative flex flex-col md:flex-row md:items-center gap-6">
+      <div class="flex-1">
+        <h3 class="text-white text-xl md:text-2xl font-extrabold mb-2 leading-tight">
+          Facing a claim rejection or stuck policy?
+        </h3>
+        <p class="text-emerald-50/90 text-sm md:text-base leading-relaxed">
+          Get a <strong class="text-white">free claim review</strong> from Hari Kotian,
+          IRDAI-certified advisor (Reg 0149161D, 25+ years experience, ₹50 Cr+ claims recovered).
+          Send your policy details on WhatsApp — usually answered within minutes.
+        </p>
+      </div>
+      <div class="shrink-0">
+        <a
+          href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20a%20free%20claim%20review.%20Here%20are%20my%20policy%20details%3A"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-6 py-4 bg-white text-emerald-700 font-bold rounded-xl hover:bg-emerald-50 hover:scale-105 transition-all shadow-lg"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L9.42 15.59l-1.42-1.42L13.17 10H11v2h3.17l2.59-2.59z"/>
+          </svg>
+          Get Free Claim Review
+        </a>
+        <p class="text-center text-emerald-100/80 text-xs mt-2">No obligation · Free consultation</p>
+      </div>
+    </div>
+  </div>
+</section>

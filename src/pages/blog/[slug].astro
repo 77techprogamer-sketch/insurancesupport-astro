@@ -6,6 +6,7 @@ import posts from '../../data/blogs.json';
 import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
 import { marked } from 'marked';
 
 export function getStaticPaths() {
@@ -117,6 +118,16 @@ if (faqSection) {
 const related = posts
   .filter(p => p.slug !== post.slug && p.categories?.some(c => post.categories?.includes(c)))
   .slice(0, 3);
+
+// Show claim-review CTA on high-intent claim/urgent posts
+const claimIntentSlugs = new Set([
+  'lic-claim-rejection-appeal-guide-2026',
+  'how-to-appeal-rejected-insurance-claim-india-2026',
+  'irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026',
+  'health-insurance-claim-rejection-15-real-reasons-how-to-prevent-appeal-each-one-2026',
+  'insurance-claim-rejection-rate-india-2026-data',
+]);
+const isClaimIntent = claimIntentSlugs.has(post.slug) || /claim|rejection|rejected|appeal|grievance|ombudsman/i.test(post.title || '');
 ---
 
 <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl}>
@@ -169,6 +180,9 @@ const related = posts
     <!-- Article Body -->
     <article class="py-12 lg:py-16 bg-white">
       <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
+
+      <!-- Claim Review CTA (high-intent posts only) -->
+      {isClaimIntent && <ClaimReviewCTA />}
 
       <!-- Author Box -->
       <div class="max-w-3xl mx-auto px-4 mt-12">
