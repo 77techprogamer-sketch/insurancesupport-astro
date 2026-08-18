@@ -99,8 +99,8 @@ export default function NewsletterSection() {
                     {status === 'error' && (
                       <p className="text-red-500 text-sm text-center">Something went wrong. Please try again.</p>
                     )}
-                    <p className="text-xs text-slate-400 text-center mt-2">
-                      We respect your privacy. Unsubscribe at any time.
+                    <p className="text-xs text-slate-600 text-center mt-2">
+                    We respect your privacy. Unsubscribe at any time.
                     </p>
                   </form>
                 )}

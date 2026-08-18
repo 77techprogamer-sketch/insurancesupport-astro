@@ -31,15 +31,14 @@ export default function FloatingCTA() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 40, scale: 0.9 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed right-6 z-50 flex flex-col gap-3"
-          style={{ bottom: '1.5rem' }}
+          className="fixed right-4 sm:right-6 bottom-4 sm:bottom-6 z-40 flex flex-col items-end gap-3"
         >
           {/* Get a Quote */}
           <motion.a
             href="/contact"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold rounded-full py-3 px-5 shadow-[0_4px_20px_rgba(234,179,8,0.4)] transition-all flex items-center justify-center gap-2 group text-sm"
+            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold rounded-full py-2.5 px-4 shadow-[0_4px_20px_rgba(234,179,8,0.4)] transition-all flex items-center justify-center gap-2 group text-sm"
           >
             <span className="whitespace-nowrap">Get a Quote</span>
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
