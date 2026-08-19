@@ -53,3 +53,8 @@
   Access-Control-Allow-Methods: POST, OPTIONS
   Access-Control-Allow-Headers: Content-Type
   Cache-Control: no-store
+
+# Geo endpoint - edge cached for 15 min (geolocation doesn't change fast)
+/api/geo
+  Cache-Control: public, max-age=900, s-maxage=900, stale-while-revalidate=3600
+  Access-Control-Allow-Origin: *

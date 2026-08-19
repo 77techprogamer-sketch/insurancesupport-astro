@@ -1,55 +1,67 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/life-insurance-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/health-insurance-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/motor-insurance-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/pension-plans-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/claim-support-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/policy-review-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
+    <loc>https://insurancesupport.online/sitemaps/blog-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://insurancesupport.online/sitemaps/child-education-plan-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/claim-support-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/core-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/health-insurance-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://insurancesupport.online/sitemaps/investment-plans-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/travel-insurance-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
+    <loc>https://insurancesupport.online/sitemaps/life-insurance-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/locations-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/motor-insurance-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/pension-plans-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/policy-review-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://insurancesupport.online/sitemaps/professional-indemnity-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://insurancesupport.online/sitemaps/term-insurance-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://insurancesupport.online/sitemaps/sme-insurance-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/term-insurance-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://insurancesupport.online/sitemaps/travel-insurance-sitemap.xml</loc>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://insurancesupport.online/sitemaps/ulip-plans-sitemap.xml</loc>
-    <lastmod>2026-08-19T17:08:11.700731Z</lastmod>
+    <lastmod>2026-08-19T22:28:28.236802Z</lastmod>
   </sitemap>
 </sitemapindex>
