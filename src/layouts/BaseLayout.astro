@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import GeoBanner from '../components/GeoBanner';
 
 export interface Props {
   title: string;
@@ -125,11 +126,12 @@ const websiteSchema = {
     </script>
   </head>
   <body class="font-sans text-base antialiased pb-16 md:pb-0" style="scroll-padding-top: 5rem;">
-    <Header />
-    <slot />
-    <Footer />
-    <MobileStickyBar />
-        <WhatsAppWidget />
-        <script src="/scripts/reveal.js" is:inline></script>
-      </body>
+      <Header />
+      <GeoBanner client:visible />
+      <slot />
+      <Footer />
+      <MobileStickyBar />
+      <WhatsAppWidget />
+      <script src="/scripts/reveal.js" is:inline></script>
+    </body>
     </html>
