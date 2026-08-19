@@ -33,14 +33,42 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
 
     // Adjust for age
     const ageFactor = age < 30 ? 0.8 : age > 50 ? 1.2 : 1;
-    
+
     // Adjust for term length (for term policies only)
     const termFactor = policyType === 'term' ? (termLength / 20) : 1;
-    
+
     // Calculate premium
     const calculatedPremium = coverage * baseRate * ageFactor * termFactor;
     setPremium(Math.round(calculatedPremium));
     setShowResult(true);
+
+    // Add realistic premium adjustments based on policy type
+    switch (policyType) {
+      case 'life':
+        // Life insurance premiums are typically higher for older ages
+        if (age > 60) {
+          setPremium(prev => Math.round(prev * 1.5));
+        }
+        break;
+      case 'health':
+        // Health insurance premiums increase with age
+        if (age > 40) {
+          setPremium(prev => Math.round(prev * (1 + (age - 40) * 0.02)));
+        }
+        break;
+      case 'motor':
+        // Motor insurance premiums are higher for younger drivers
+        if (age < 25) {
+          setPremium(prev => Math.round(prev * 1.3));
+        }
+        break;
+      case 'term':
+        // Term insurance premiums decrease with longer terms
+        if (termLength > 20) {
+          setPremium(prev => Math.round(prev * 0.9));
+        }
+        break;
+    }
   };
 
   const resetCalculator = () => {
