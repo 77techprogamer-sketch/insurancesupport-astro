@@ -342,5 +342,380 @@
     "lic_name": "",
     "lic_addr": "",
     "nearbyLocations": []
+  },
+  {
+    "slug": "pune",
+    "name": "Pune",
+    "state": "Maharashtra",
+    "desc": "Trusted insurance advisory for families, IT professionals, and retirees across Pune. From health cover top-ups in Hinjewadi and Kharadi to doorstep LIC policy revivals in Kothrud and Aundh, our IRDAI certified experts help you skip the paperwork hassles.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Hinjewadi",
+      "Kharadi",
+      "Kothrud",
+      "Aundh",
+      "Viman Nagar",
+      "Baner",
+      "Hadapsar",
+      "Wakad"
+    ],
+    "nearby": [
+      "mumbai",
+      "nashik"
+    ],
+    "it_focus": "We provide specialized Group Health insurance for tech startups in Hinjewadi & Kharadi, plus Super Top-Up covers and portable term insurance for IT engineers.",
+    "senior_focus": "For senior citizens in Kothrud, Deccan, and Aundh, we handle doorstep LIC policy maturity claims, pension revivals, and hassle-free cashless health insurance support.",
+    "branch_dets": "Direct coordination with major LIC branches in Shivajinagar and Laxmi Road, plus leading health insurer offices in Pune.",
+    "local_faqs": [
+      {
+        "question": "Which top hospitals in Pune accept cashless health claims through your support?",
+        "answer": "We assist with cashless claims across major Pune networks including Ruby Hall Clinic, Sahyadri Hospitals, Jehangir Hospital, Jupiter Hospital Baner, and Manipal Hospital Kharadi."
+      },
+      {
+        "question": "Can I get doorstep assistance for my old LIC policy in Pune?",
+        "answer": "Yes, our team provides doorstep policy revival, address change, nomination update, and maturity claim support anywhere in Pune."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Shivajinagar",
+    "lic_addr": "Shivajinagar, Pune, Maharashtra 411005",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "mumbai",
+    "name": "Mumbai",
+    "state": "Maharashtra",
+    "desc": "Comprehensive insurance advisory across Mumbai MMR. Whether you need high sum assured term insurance in BKC/South Mumbai or senior citizen health coverage in Thane, Navi Mumbai, and Borivali, we provide personalized guidance and fast claim support.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Andheri",
+      "BKC",
+      "Bandra",
+      "Borivali",
+      "Thane",
+      "Navi Mumbai",
+      "Dadard",
+      "Ghatkopar"
+    ],
+    "nearby": [
+      "pune",
+      "thane"
+    ],
+    "it_focus": "Custom term plans with global critical illness riders for corporate executives in BKC, Lower Parel, and Powai.",
+    "senior_focus": "Dedicated doorstep assistance for senior citizens in Dadar, Matunga, and Borivali for claim settlement, pension planning, and policy documentation.",
+    "branch_dets": "Seamless service coordination across Western, Central, and Harbour suburb insurer branches.",
+    "local_faqs": [
+      {
+        "question": "Do you help with health insurance claim rejections in Mumbai?",
+        "answer": "Yes, claim recovery is our core specialty. We review rejected claims from any insurer and handle the appeal process with insurance ombudsman offices in Mumbai."
+      },
+      {
+        "question": "How quickly can I renew my car or health insurance in Mumbai?",
+        "answer": "You can get instant quotes and digital policy issuance within 15 minutes, along with local advisor support for claim claims."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Mumbai",
+    "lic_addr": "Yogakshema, Nariman Point, Mumbai 400021",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "indore",
+    "name": "Indore",
+    "state": "Madhya Pradesh",
+    "desc": "Trusted by families and business owners across Indore. We provide expert guidance on health insurance, LIC policy revival, term plans, and doorstep claim support in Vijay Nagar, Palasia, Saket, and Old Indore.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Vijay Nagar",
+      "New Palasia",
+      "Old Palasia",
+      "Saket Nagar",
+      "Rau",
+      "Bhawarkua",
+      "Mahalaxmi Nagar"
+    ],
+    "nearby": [
+      "bhopal",
+      "ujjain"
+    ],
+    "it_focus": "Tailored health and life insurance solutions for IT pros in Super Corridor and entrepreneurs across Indore's commercial hubs.",
+    "senior_focus": "Specialized senior citizen health plans and doorstep LIC policy revival for established residents in Vijay Nagar and Palasia.",
+    "branch_dets": "Coordination with LIC Divisional Office at MG Road Indore and all major general insurance offices.",
+    "local_faqs": [
+      {
+        "question": "Are cashless health insurance services available in top Indore hospitals?",
+        "answer": "Yes, our policies cover top Indore hospitals including Bombay Hospital Indore, CHL Hospital, Medanta Super Specialty, and Choithram Hospital."
+      },
+      {
+        "question": "How can I revive my lapsed LIC policy in Indore?",
+        "answer": "We provide end-to-end guidance including health declarations, late fee interest calculation, and document submission right at your doorstep in Indore."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Indore",
+    "lic_addr": "MG Road, Indore, Madhya Pradesh 452001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "kochi",
+    "name": "Kochi",
+    "state": "Kerala",
+    "desc": "Leading insurance advisory service in Kochi & Ernakulam. From NRI term plans with global coverage to comprehensive family health insurance and claim recovery in Kakkanad, Edappally, and MG Road, get expert advice you can trust.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Kakkanad",
+      "Edappally",
+      "Vyttila",
+      "MG Road Ernakulam",
+      "Kaloor",
+      "Aluva",
+      "Fort Kochi",
+      "Palarivattom"
+    ],
+    "nearby": [
+      "thiruvananthapuram",
+      "thrissur"
+    ],
+    "it_focus": "Specialized covers for IT engineers in Infopark Kakkanad, including maternity riders, corporate group top-ups, and international travel insurance.",
+    "senior_focus": "Peace of mind for senior citizens and NRI parents in Ernakulam with dedicated health claim concierge and policy management.",
+    "branch_dets": "Direct alignment with LIC Divisional Office Ernakulam and major private health insurers in Kochi.",
+    "local_faqs": [
+      {
+        "question": "Do you offer NRI insurance consultation in Kochi?",
+        "answer": "Yes, we specialize in NRI life insurance, term covers, and health insurance for NRI parents residing in Kochi and Kerala."
+      },
+      {
+        "question": "Which hospitals in Kochi are covered for cashless treatment?",
+        "answer": "Network hospitals include Amrita Hospital, Aster Medcity, VPS Lakeshore, Rajagiri Hospital, and Medical Trust Hospital."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Ernakulam",
+    "lic_addr": "MG Road, Ernakulam, Kochi, Kerala 682011",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "chandigarh",
+    "name": "Chandigarh",
+    "state": "Chandigarh",
+    "desc": "Premier insurance guidance for Chandigarh, Mohali, and Panchkula (Tricity). Secure your family with high-benefit term plans, health insurance with zero room rent capping, and expert assistance for rejected insurance claims.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Sector 17",
+      "Sector 35",
+      "Mohali Phase 7",
+      "Panchkula Sector 8",
+      "IT Park Mohali",
+      "Zirakpur",
+      "Kharar"
+    ],
+    "nearby": [
+      "ludhiana",
+      "dehradun"
+    ],
+    "it_focus": "Health and term insurance for tech professionals in IT Park Chandigarh and Mohali, featuring high sum assured and wellness rewards.",
+    "senior_focus": "Comprehensive health protection and pension advice for retired government officers and senior residents across Tricity.",
+    "branch_dets": "Close coordination with the Insurance Ombudsman Office in Sector 17-A Chandigarh for claim disputes.",
+    "local_faqs": [
+      {
+        "question": "Where is the Insurance Ombudsman office in Chandigarh if my claim is rejected?",
+        "answer": "The Office of the Insurance Ombudsman is located at Sector 17-A, Chandigarh. We guide you through filing formal appeals if your insurer denies a valid claim."
+      },
+      {
+        "question": "Do you provide doorstep insurance services in Mohali and Panchkula?",
+        "answer": "Yes, our advisors serve the complete Tricity area including Chandigarh, Mohali, Panchkula, and Zirakpur."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Chandigarh",
+    "lic_addr": "Sector 17-B, Chandigarh 160017",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "nagpur",
+    "name": "Nagpur",
+    "state": "Maharashtra",
+    "desc": "Trusted doorstep insurance advisory for families and businesses in Nagpur. Get expert help for health insurance renewals, LIC policy revivals, motor claims, and term insurance in Dharampeth, Sadar, Civil Lines, and Manish Nagar.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Dharampeth",
+      "Civil Lines",
+      "Manish Nagar",
+      "Sadar",
+      "Ramdaspeth",
+      "Sitabuldi",
+      "Wardha Road",
+      "Nandanvan"
+    ],
+    "nearby": [
+      "pune",
+      "nashik"
+    ],
+    "it_focus": "Flexible term and health plans for professionals in MIHAN Nagpur and commercial establishments across the city.",
+    "senior_focus": "Personalized claim support, policy review, and health insurance for seniors in Dharampeth, Ramdaspeth, and Civil Lines.",
+    "branch_dets": "Coordination with LIC Divisional Office Kingsway Nagpur and all major general insurance branches.",
+    "local_faqs": [
+      {
+        "question": "Which Nagpur hospitals offer cashless hospitalization through your policies?",
+        "answer": "Major cashless hospitals include Alexis Hospital, Kingsway Hospital, Wockhardt Hospital, and Care Hospital Nagpur."
+      },
+      {
+        "question": "Can you help me recover an unpaid death claim or maturity claim in Nagpur?",
+        "answer": "Yes, we specialize in claim recovery and dispute documentation for families across Nagpur."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Nagpur",
+    "lic_addr": "Kingsway, Nagpur, Maharashtra 440001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "bhubaneswar",
+    "name": "Bhubaneswar",
+    "state": "Odisha",
+    "desc": "Expert insurance support in Bhubaneswar. Serving Saheed Nagar, Patia, Chandrasekharpur, and Jayadev Vihar with tailored health insurance, term plans, LIC policy servicing, and hassle-free claim recovery.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Patia",
+      "Saheed Nagar",
+      "Chandrasekharpur",
+      "Jayadev Vihar",
+      "Khandagiri",
+      "Unit 9",
+      "Infocity",
+      "Old Town"
+    ],
+    "nearby": [
+      "kolkata",
+      "vizag"
+    ],
+    "it_focus": "Group and individual health coverage for tech workers in Infocity and IT Park Bhubaneswar.",
+    "senior_focus": "Doorstep support for policy revivals, pension advice, and senior health coverage in Saheed Nagar and Unit areas.",
+    "branch_dets": "Direct interaction with LIC Divisional Office Unit-4 Bhubaneswar and major insurance hubs.",
+    "local_faqs": [
+      {
+        "question": "What cashless hospitals in Bhubaneswar are available?",
+        "answer": "Network hospitals include AIIMS Bhubaneswar, KIIMS, SUM Hospital, Apollo Hospitals Bhubaneswar, and AMRI Hospital."
+      },
+      {
+        "question": "Do you offer doorstep service in Patia and Infocity areas?",
+        "answer": "Yes, we provide free doorstep consultation across all major residential and commercial sectors in Bhubaneswar."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Bhubaneswar",
+    "lic_addr": "Unit-4, Bhubaneswar, Odisha 751001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "surat",
+    "name": "Surat",
+    "state": "Gujarat",
+    "desc": "Comprehensive insurance advisory for business owners, textile & diamond entrepreneurs, and families in Surat. Specialized SME business insurance, keyman health plans, term insurance, and doorstep LIC services in Ghoddod Road, Adajan, Vesu, and Varachha.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Vesu",
+      "Adajan",
+      "Ghoddod Road",
+      "Varachha",
+      "Piplod",
+      "Rander",
+      "Katargam",
+      "Bhatar"
+    ],
+    "nearby": [
+      "ahmedabad",
+      "vadodara"
+    ],
+    "it_focus": "Commercial SME insurance, Keyman insurance, and group medical cover for business entities in Surat.",
+    "senior_focus": "Family health insurance and endowment maturity claim assistance for senior citizens across Vesu and Ghoddod Road.",
+    "branch_dets": "Coordination with LIC Divisional Office Muglisara Surat and major private insurer offices.",
+    "local_faqs": [
+      {
+        "question": "Do you provide business and keyman insurance for Surat entrepreneurs?",
+        "answer": "Yes, we structure SME, Keyman, Partnership insurance, and Group Health policies specifically designed for business owners in Surat."
+      },
+      {
+        "question": "Which top Surat hospitals are in the cashless network?",
+        "answer": "Cashless hospitals include Sunshine Global Hospital, Kiran Super Specialty, Unique Hospital, and Shalby Hospital Surat."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Surat",
+    "lic_addr": "Muglisara, Surat, Gujarat 395003",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "mysore",
+    "name": "Mysore",
+    "state": "Karnataka",
+    "desc": "Trusted insurance advice and doorstep service in Mysore (Mysuru). From senior citizen health coverage in Gokulam and VV Mohalla to term plans and policy revivals in Jayalakshmipuram and Kuvempunagar, Hari Kotian's expert team is here to help.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Gokulam",
+      "VV Mohalla",
+      "Jayalakshmipuram",
+      "Kuvempunagar",
+      "Saraswathipuram",
+      "Vijayanagar",
+      "Hebbal Mysore"
+    ],
+    "nearby": [
+      "bangalore-koramangala",
+      "bangalore-jp-nagar"
+    ],
+    "it_focus": "Health insurance and term plans for IT engineers in Hebbal Industrial Area and Infosys Mysuru campus.",
+    "senior_focus": "Dedicated doorstep assistance for retired residents in Gokulam, VV Mohalla, and Saraswathipuram for LIC policy revivals and medical claim processing.",
+    "branch_dets": "Direct coordination with LIC Divisional Office Mysore at Nazarbad and major city insurer branches.",
+    "local_faqs": [
+      {
+        "question": "Can I get doorstep service for my LIC policy in Mysore?",
+        "answer": "Yes, our team visits your home in Mysore for policy servicing, maturity claims, revival calculations, and new consultations."
+      },
+      {
+        "question": "Which hospitals in Mysore offer cashless treatment?",
+        "answer": "Cashless treatment is available at Columbia Asia / Manipal Hospital Mysore, Apollo BGS Hospital, and JSS Hospital."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Mysore",
+    "lic_addr": "Nazarbad, Mysore, Karnataka 570010",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "hosur",
+    "name": "Hosur",
+    "state": "Tamil Nadu",
+    "desc": "Expert doorstep insurance advisory for industrial workers, business owners, and families in Hosur. Secure your health and income with term plans, factory/SME insurance, health covers, and fast claim recovery in Sipcot, Mathigiri, and Mookandapalli.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Sipcot Phase 1",
+      "Sipcot Phase 2",
+      "Mathigiri",
+      "Mookandapalli",
+      "Denkanikottai Road",
+      "Bagalur Road"
+    ],
+    "nearby": [
+      "bangalore-electronic-city",
+      "vellore"
+    ],
+    "it_focus": "Specialized SME, group health, and employee benefit insurance for industrial and tech units in Hosur Sipcot hub.",
+    "senior_focus": "Doorstep health insurance guidance and LIC policy revival support for senior citizens across Hosur town.",
+    "branch_dets": "Liaison with LIC Branch Office Hosur and insurer branches across Krishnagiri district.",
+    "local_faqs": [
+      {
+        "question": "Do you help industrial employees and business owners in Hosur?",
+        "answer": "Yes, we offer group mediclaim, personal accident, term insurance, and factory insurance across Sipcot Hosur."
+      },
+      {
+        "question": "Can I consult an advisor in Hosur for Bangalore or Tamil Nadu claims?",
+        "answer": "Yes, we handle seamless claims across Karnataka and Tamil Nadu hospitals due to our strong cross-border presence."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Office Hosur",
+    "lic_addr": "Bagalur Road, Hosur, Tamil Nadu 635109",
+    "nearbyLocations": []
   }
 ]
