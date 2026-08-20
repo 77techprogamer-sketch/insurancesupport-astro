@@ -1,0 +1,13 @@
+# Google Disavow File for insurancesupport.online
+# Created: 2026-08-20
+# Purpose: Tell Google to ignore spammy bulk directory backlinks
+# These 5 domains are low-quality bulk web directories that provide
+# no SEO value and may actively harm rankings.
+
+# Upload to: https://search.google.com/search-console/disavow-links
+
+domain:justlink.org
+domain:asklink.org
+domain:relevantdirectories.com
+domain:efdir.com
+domain:sublimelink.org
