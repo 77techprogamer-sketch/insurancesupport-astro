@@ -717,5 +717,985 @@
     "lic_name": "LIC Branch Office Hosur",
     "lic_addr": "Bagalur Road, Hosur, Tamil Nadu 635109",
     "nearbyLocations": []
+  },
+  {
+    "slug": "bangalore-jayanagar",
+    "name": "Jayanagar, Bangalore",
+    "state": "Karnataka",
+    "desc": "Serving the established residential neighbourhood of Jayanagar, one of Bangalore's oldest planned localities. From traditional endowment policy servicing for long-time 4th Block residents to modern family floater health covers for young families near Jayanagar 9th Block, we provide doorstep insurance support across all blocks.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Jayanagar 4th Block",
+      "Jayanagar 9th Block",
+      "Jayanagar 10th Block",
+      "JayNagar 11th Block",
+      "Jayanagar 3rd Block",
+      "Byrasandra"
+    ],
+    "nearby": [
+      "bangalore-jp-nagar",
+      "bangalore-koramangala"
+    ],
+    "it_focus": "Jayanagar's growing community of remote IT workers and freelancers benefits from portable health plans with tele-consultation riders and flexible-premium term insurance.",
+    "senior_focus": "Many senior residents of Jayanagar hold decades-old LIC endowment policies. We specialise in maturity claim processing, policy revivals, and senior citizen health top-ups with cashless access at nearby hospitals.",
+    "branch_dets": "We coordinate with LIC branches on Jayanagar 4th Block Commercial Complex road and South End Circle for local policy servicing.",
+    "local_faqs": [
+      {
+        "question": "Which cashless hospitals are near Jayanagar for health insurance?",
+        "answer": "Apollo Hospitals Bannerghatta, Sagar Hospitals Jayanagar, Fortis Hospital BG Road, and Mallige Medical Centre are all in our cashless network accessible from Jayanagar."
+      },
+      {
+        "question": "Can you help with an old LIC policy maturity claim in Jayanagar?",
+        "answer": "Yes, we handle endowment maturity claims, survival benefit claims, and nomination updates at your doorstep across all Jayanagar blocks. We also liaise with the South End LIC branch."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Jayanagar",
+    "lic_addr": "Jayanagar 4th Block, Bangalore 560011",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "bangalore-hebbal",
+    "name": "Hebbal, Bangalore",
+    "state": "Karnataka",
+    "desc": "Expert insurance advisory for Hebbal and North Bangalore. With the tech corridor expanding along Bellary Road and the Aerospace Park nearby, we help Hebbal professionals with high-sum-assured term plans, corporate group health, and doorstep LIC policy servicing.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Hebbal Kempapura",
+      "Bhoochi Reddy Palya",
+      "Bellary Road",
+      "L&t Junction",
+      "Hebbal Lake Road"
+    ],
+    "nearby": [
+      "bangalore-yelahanka",
+      "bangalore-devanahalli"
+    ],
+    "it_focus": "Professionals working near the Hebbal-Bellary Road IT corridor and Manyata Tech Park benefit from our large sum-assured term plans with critical illness riders and global coverage extensions.",
+    "senior_focus": "For senior residents near Hebbal Lake, we provide doorstep assistance for health insurance renewals, annual check-up riders, and pension plan advisories.",
+    "branch_dets": "Direct liaison with LIC branch at M S Palya and general insurer offices on Bellary Road.",
+    "local_faqs": [
+      {
+        "question": "How close are cashless hospitals to Hebbal for my health insurance?",
+        "answer": "Sakra World Hospital, Columbia Asia Hebbal, and Nethradhama Super Speciality Eye Hospital are all accessible from Hebbal and in our cashless network."
+      },
+      {
+        "question": "Do you help tech employees in Hebbal with group health for startups?",
+        "answer": "Yes, we configure custom group mediclaim, personal accident, and employee benefit policies for startups near Manyata Tech Park and Aerospace Park."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Hebbal",
+    "lic_addr": "Bellary Road, Hebbal, Bangalore 560024",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "bangalore-devanahalli",
+    "name": "Devanahalli, Bangalore",
+    "state": "Karnataka",
+    "desc": "Insurance solutions for the rapidly growing Devanahalli belt near Kempegowda International Airport. From property insurance for warehouse operators to term insurance for young families in gated communities along Nandi Hills Road, our team brings expert advice to your doorstep.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Devanahalli Town",
+      "Trumpet Interchange",
+      "Nandi Hills Road",
+      "Vaderahalli",
+      "Chikballapur Road"
+    ],
+    "nearby": [
+      "bangalore-yelahanka",
+      "bangalore-hebbal"
+    ],
+    "it_focus": "For employees at the aerospace corridor and companies near KIA Road, we arrange portable term plans and corporate health insurance with airport zone hospital coverage.",
+    "senior_focus": "Established farming families and senior residents of Devanahalli benefit from our endowment revival assistance and crop-linked diversified insurance planning.",
+    "branch_dets": "Periodic visiting advisory runs coordinated from our Yelahanka branch presence; LIC coordination via Devanahalli Town branch.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals near Devanahalli provide cashless treatment?",
+        "answer": "We work with hospitals including Saptagiri Hospital (NH-44), Akash Hospital, and Cytecare Cancer Hospital near Devanahalli for cashless facility activation."
+      },
+      {
+        "question": "Do you assist with property or business insurance near the airport?",
+        "answer": "Yes, we structure property insurance, factory fire policies, and marine insurance for logistics operators across the Devanahalli industrial belt."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Devanahalli",
+    "lic_addr": "Devanahalli Town, Bangalore Rural 562110",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "bangalore-bannerghatta",
+    "name": "Bannerghatta Road, Bangalore",
+    "state": "Karnataka",
+    "desc": "Insurance advisory along the Bannerghatta Road corridor, from Dairy Circle to Anekal. Tech executives near IIM Bangalore and families in surrounding gated communities benefit from our doorstep health claim assistance and high-value investment advice.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "BTM 2nd Stage",
+      "Bannerghatta Road",
+      "Vijayanagar Bannerghatta",
+      "Disco Junction",
+      "Kothanur"
+    ],
+    "nearby": [
+      "bangalore-jp-nagar",
+      "bangalore-bellandur"
+    ],
+    "it_focus": "Senior health-check linked policies for executives near IIM Bangalore and high-sum-assured term plans for campus employees at Infosys and Accenture.",
+    "senior_focus": "Established residents along Bannerghatta Road get dedicated patient-navigators for in-hospital claim processes at hospitals like Apollo Speciality.",
+    "branch_dets": "We coordinate with LIC Bannerghatta branch and private insurer offices around Jayadeva Junction for claim processing and documentation.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals on Bannerghatta Road offer cashless health insurance?",
+        "answer": "Apollo Hospitals Bannerghatta, Fortis BG Road, Sagar Hospital Akshayanagar, and Jayadeva Hospital are all in the cashless network on this stretch."
+      },
+      {
+        "question": "Do you help families near IIM Bangalore with portfolio reviews?",
+        "answer": "Yes, we conduct free portfolio reviews including policy audit, premium optimisation, and claim-conflict resolution for residents."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Bannerghatta",
+    "lic_addr": "Bannerghatta Main Road, Bangalore 560076",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "ahmedabad",
+    "name": "Ahmedabad",
+    "state": "Gujarat",
+    "desc": "Trusted insurance guidance for business families and professionals in Ahmedabad. From family floater health plans and property insurance for units in Naroda and Vatva, to term insurance for IT engineers at Prahlad Nagar and SG Highway, we provide doorstep support across the city.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Satellite",
+      "Prahlad Nagar",
+      "Bodakdev",
+      "Vastrapur",
+      "Sabarmati",
+      "Naroda",
+      "Maninagar",
+      "SG Highway",
+      "Thaltej"
+    ],
+    "nearby": [
+      "surat",
+      "vadodara"
+    ],
+    "it_focus": "Flexible health insurance with maternity and OPD covers for IT engineers working in Prahlad Nagar and SG Highway corporate offices.",
+    "senior_focus": "Doorstep LIC endowment maturity support and senior citizen health insurance reviews in Navrangpura, Paldi, and Maninagar.",
+    "branch_dets": "Direct coordination with LIC Divisional Office Ashram Road Ahmedabad and all major insurer branches in SG Highway belt.",
+    "local_faqs": [
+      {
+        "question": "Which Ahmedabad hospitals are part of your cashless network?",
+        "answer": "Apollo Hospitals Gandhinagar, Zydus Hospital, SAL Hospital, CIMS, and Shalby Hospitals are among the major cashless network hospitals in Ahmedabad."
+      },
+      {
+        "question": "Do you help business owners in Ahmedabad with insurance audit and SME covers?",
+        "answer": "Yes, we audit insurance coverage for SMEs, factories, and trading businesses; then structure fire, burglary, public liability, and keyman policies."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Ahmedabad",
+    "lic_addr": "Ashram Road, Ahmedabad 380009",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "vadodara",
+    "name": "Vadodara",
+    "state": "Gujarat",
+    "desc": "Complete insurance advisory for families and industrial workers in Vadodara. Whether you need a high-value health plan near Alkapuri and Race Course, a shop insurance package in Sayajigunj, or LIC policy revival in Gotri and New VIP Road, our local team is at your service.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Alkapuri",
+      "Sayajigunj",
+      "Gotri",
+      "Akota",
+      "New Alkapuri",
+      "Fatehganj",
+      "Manjalpur",
+      "Vasna-Bhayli"
+    ],
+    "nearby": [
+      "surat",
+      "ahmedabad"
+    ],
+    "it_focus": "Group health insurance and employee benefit covers for manufacturing units at Gujarat Industrial Development Corporation estates.",
+    "senior_focus": "Dedicated health insurance guidance for senior citizens in Alkapuri and Gotri, including cashless claim processing at Bhailal Amin and Sunshine Hospital.",
+    "branch_dets": "Coordination with LIC offices at Sayajigunj and all private insurer branches near Race Course Circle.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals in Vadodara accept your cashless policies?",
+        "answer": "Cashless network includes Bhailal Amin General Hospital, Sunshine Global Hospital, Meditina Hospital, and K D Hospital."
+      },
+      {
+        "question": "Can you assist with industrial insurance in Vadodara GIDC areas?",
+        "answer": "Yes, we structure fire, marine, public liability, and terrorism insurance for industrial units around Vadodara GIDC estates."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Vadodara",
+    "lic_addr": "Sayajigunj, Vadodara 390005",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "bhopal",
+    "name": "Bhopal",
+    "state": "Madhya Pradesh",
+    "desc": "Professional insurance guidance for families, professionals, and business owners in Bhopal. From MP Nagar business district to Bairagarh and Kolar, we offer health insurance, term plans, and claim dispute support at your doorstep.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "MP Nagar",
+      "Arera Colony",
+      "Shahpura",
+      "Kolar",
+      "Bairagarh",
+      "Habibganj",
+      "BHEL",
+      "Govindpura"
+    ],
+    "nearby": [
+      "indore",
+      "ujjain"
+    ],
+    "it_focus": "Health and term insurance for private-sector employees and freelancers around MP Nagar and Habibganj Naka.",
+    "senior_focus": "Health insurance and pension plan guidance for retired BHEL employees and senior residents of Arera Colony and Shahpura.",
+    "branch_dets": "Direct coordination with LIC Divisional Office at MP Nagar and major health insurer branches.",
+    "local_faqs": [
+      {
+        "question": "Which top hospitals in Bhopal are in the cashless network?",
+        "answer": "J.K. Hospital, Bansal Hospital, AIIMS Bhopal, Noble Hospital, and Sunrise Hospital are all in our cashless facility network."
+      },
+      {
+        "question": "Can you help retired BHEL employees with health insurance transition?",
+        "answer": "Yes, we advise retired BHEL employees on transitioning from CGHS to individual senior citizen health plans with continued coverage for existing conditions."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Bhopal",
+    "lic_addr": "MP Nagar, Bhopal 462011",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "ujjain",
+    "name": "Ujjain",
+    "state": "Madhya Pradesh",
+    "desc": "Local insurance advisory for families in Ujjain, the temple city of Madhya Pradesh. From traditional savings-linked LIC policies for Freesanjh residents to health insurance for families in Desi Nagan and Freeganj, we provide personalised doorstep support.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Freeganj",
+      "Freesanjh",
+      "Desai Nagan",
+      "Bhairavgarh",
+      "Nai Sadak",
+      "Jawahar Marg",
+      "Dewas Gate"
+    ],
+    "nearby": [
+      "indore",
+      "bhopal"
+    ],
+    "it_focus": "Term plans and critical illness covers for professionals commuting to IT parks near Dewas and surrounding industrial estates.",
+    "senior_focus": "Doorstep LIC maturity, pension, and established policy update services for senior residents of Freesanjh and Desai Nagan.",
+    "branch_dets": "Liaison with LIC branch at Freeganj Chowk and coordination with all major insurance offices in Ujjain.",
+    "local_faqs": [
+      {
+        "question": "What are the top cashless hospitals available in Ujjain?",
+        "answer": "CHL Hospital, R.D. Gardi Medical College Hospital, B.RK.M. Hospital, and Ujjain hospital at Freeganj are in our cashless network."
+      },
+      {
+        "question": "Do you offer doorstep LIC policy review for elderly clients in Ujjain?",
+        "answer": "Yes, we visit homes across Ujjain including Freeganj, Desai Nagan, and Dewas Gate for policy audit, revival, and claim documentation."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Ujjain",
+    "lic_addr": "Freeganj, Ujjain 456010",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "nashik",
+    "name": "Nashik",
+    "state": "Maharashtra",
+    "desc": "Complete insurance advisory for families and agricultural professionals in Nashik, the grape capital of India. From health insurance and farm property covers for families in Gangapur Road to term plans for IT employees in MIDC Ambad and Satpur, we bring doorstep expertise.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Gangapur Road",
+      "College Road",
+      "Nashik Road",
+      "Satpur",
+      "Ambad MIDC",
+      "Sinner",
+      "CIDCO",
+      "Panchvati"
+    ],
+    "nearby": [
+      "pune",
+      "mumbai"
+    ],
+    "it_focus": "Group Health insurance and personal accident covers for manufacturing employees at Ambad MIDC and IT zone.",
+    "senior_focus": "Comprehensive senior citizen health cover and pension assistance for residents of Panchvati and Gangapur Road.",
+    "branch_dets": "Coordination with LIC offices at Main Road Nashik and major insurer branches at College Road and Gangapur Road.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals offer cashless treatment in Nashik?",
+        "answer": "Sankalp Hospital, Vignaharta Multi-Speciality Hospital, Lokmanya Hospital, and Apollo Hospital Nashik are in our cashless network."
+      },
+      {
+        "question": "Do you advise farmers in the Nashik grape belt on insurance?",
+        "answer": "Yes, we structure crop insurance, livestock, tractor, and hospital covers for families around Sinner and Pimpalgaon Baswant."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Nashik",
+    "lic_addr": "Main Road, Nashik 422001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "thane",
+    "name": "Thane",
+    "state": "Maharashtra",
+    "desc": "Trusted doorstep insurance guidance across Thane and Navi Mumbai. From term plans for executives in Ghodbunder Road societies to health insurance and claim recovery support for families in Naupada, Kolbad, and Manpada, our experts ensure you get personal service at your door.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Naupada",
+      "Ghodbunder Road",
+      "Manpada",
+      "Kolbad",
+      "Vasant Vihar",
+      "Majiwada",
+      "Wagle Estate",
+      "Kasarvadavali"
+    ],
+    "nearby": [
+      "mumbai",
+      "pune"
+    ],
+    "it_focus": "High-sum-assured term plans and wellness-linked health insurance for IT executives commuting to Airoli and Hiranandani Business Park.",
+    "senior_focus": "Dedicated doorstep support for senior residents of Naupada and Ghodbunder Road for policy revivals, pension advisory, and cashless medical claim help.",
+    "branch_dets": "Direct coordination with LIC branch at Naupada and health insurer branches at Manpada and Ghodbunder Road.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals in Thane are covered for cashless treatment?",
+        "answer": "Bethany Hospital, Jupiter Hospital Thane, Currae Hospital, and Hiranandani Hospital can be accessed for cashless claims through our plans."
+      },
+      {
+        "question": "Can you help with claim disputes in Thane?",
+        "answer": "Yes, we document and represent your case at the Insurance Ombudsman office serving the Thane and Navi Mumbai region, escalating from appeal to award."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Thane",
+    "lic_addr": "Naupada, Thane West 400602",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "dehradun",
+    "name": "Dehradun",
+    "state": "Uttarakhand",
+    "desc": "Expert insurance solutions for families and professionals in Dehradun, nestled in the Doon valley. From health insurance with pre-existing disease cover for residents of Rajpur Road and premium term plans for engineers at Software Technology Park, we offer doorstep support across the valley.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Rajpur Road",
+      "Saharanpur Road",
+      "FRI Campus",
+      "Garhi Cantt",
+      "Nehru Colony",
+      "Premnagar",
+      "Doehlelimdehradun",
+      "Vasant/Vasant Vihar"
+    ],
+    "nearby": [
+      "chandigarh",
+      "ludhiana"
+    ],
+    "it_focus": "Health and term insurance for engineers and employees at Doiwala IT units and IT Park Selaqui, with wellness-linked premium discounts.",
+    "senior_focus": "Health insurance and pension advisory designed for retired army officers and senior residents of Garhi Cantt and Rajpur Road.",
+    "branch_dets": "Direct coordination with LIC branch at Rajpur Road and major insurer offices in Astley Hall.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals in Dehradun are part of the cashless network?",
+        "answer": "Max Hospital, Kailash Hospital, Synergy Institute of Medical Sciences, and Shri Mahant Indresh Hospital are in our cashless network."
+      },
+      {
+        "question": "Can you assist retired army personnel in Garhi Cantt?",
+        "answer": "Yes, we transition ex-servicemen from CGHS/ECHS to individual health plans with proper pre-existing disease coverage and continuous renewal guarantees."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Dehradun",
+    "lic_addr": "Rajpur Road, Dehradun 248001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "ludhiana",
+    "name": "Ludhiana",
+    "state": "Punjab",
+    "desc": "Trusted insurance advisory for factory owners, NRI families, and working professionals in Ludhiana. Get high-value term plans for exporters in Focal Point, group health for hosiery units in Gill Road, and NRI-linked life insurance for families in Sarabha Nagar and Model Town.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Sarabha Nagar",
+      "Model Town",
+      "Ghumar Mandi",
+      "Ferozepur Road",
+      "Pakhowal Road",
+      "Focal Point",
+      "Gill Road",
+      "BRS Nagar"
+    ],
+    "nearby": [
+      "chandigarh",
+      "dehradun"
+    ],
+    "it_focus": "Group mediclaim and employee compensation insurance for factory workers in Focal Point and hosiery clusters.",
+    "senior_focus": "NRI parent health insurance plans and doorstep LIC maturity claim help for senior families in Sarabha Nagar and BRS Nagar.",
+    "branch_dets": "Direct coordination with LIC Divisional Office at Bharat Nagar Chowk and major insurer branches on Ferozepur Road.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals in Ludhiana accept cashless health insurance?",
+        "answer": "Dayanand Medical College Hospital, Fortis Ludhiana, SPS Apollo Hospitals, and Deep Hospital are included in our cashless network."
+      },
+      {
+        "question": "Do you assist NRI families with LIC policy servicing in Ludhiana?",
+        "answer": "Yes, we manage NRI-owned LIC policies including revival, nomination changes, maturity claims, and NRE/NRO documentation support."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Ludhiana",
+    "lic_addr": "Bharat Nagar Chowk, Ludhiana 141001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "kolkata",
+    "name": "Kolkata",
+    "state": "West Bengal",
+    "desc": "Comprehensive insurance guidance across Kolkata from Salt Lake to South Kolkata. Secure your family with structured term plans for corporate executives in Sector V, senior citizen health insurance in Ballygunge and Behala, and LIC policy support with door-to-door service across the city.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Salt Lake",
+      "Sector V",
+      "Ballygunge",
+      "Behala",
+      "Park Street",
+      "New Town",
+      "Tollygunge",
+      "Shyambazar",
+      "Garia"
+    ],
+    "nearby": [
+      "bhubaneswar",
+      "vizag"
+    ],
+    "it_focus": "Group health, personal accident, and portable term insurance for IT employees in Salt Lake Sector V and New Town action area.",
+    "senior_focus": "Doorstep LIC maturity claim and pension support for established families in Ballygunge, Behala, and Tollygunge.",
+    "branch_dets": "Direct liaison with LIC zonal office at Mint Street and BBD Bagh, plus private insurer offices in Park Street.",
+    "local_faqs": [
+      {
+        "question": "Which are the top cashless hospitals in Kolkata for health insurance?",
+        "answer": "Kolkata Medical College, AMRI Hospitals, Apollo Gleneagles, Woodlands Hospital, and Fortis Kolkata are in our cashless network."
+      },
+      {
+        "question": "Can you assist with insurance ombudsman complaints in Kolkata?",
+        "answer": "Yes, we prepare documentation and represent grievances at the Insurance Ombudsman office in Kolkata for health and life insurance claim disputes."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Zonal Office Kolkata",
+    "lic_addr": "Mint Road, Kolkata 700001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "vellore",
+    "name": "Vellore",
+    "state": "Tamil Nadu",
+    "desc": "Insurance advisory for families, students, and medical professionals in Vellore, home to CMC Vellore and VIT University. From health insurance covering cashless access at CMC for local residents to term plans for VIT alumni and families in Sathuvacheri and Allipuram, we provide doorstep support.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Allipuram",
+      "Sathuvacheri",
+      "Bagayam",
+      "Thorapadi",
+      "Vellore Fort area",
+      "Katpadi",
+      "BN Puram",
+      "VIT Campus"
+    ],
+    "nearby": [
+      "hosur",
+      "chennai"
+    ],
+    "it_focus": "Portable health and term insurance for VIT students and young techies staffing local IT companies.",
+    "senior_focus": "Cashless claim assistance for senior residents near CMC Hospital and pension plan advisory for retired teaching and medical professionals.",
+    "branch_dets": "Coordination with LIC Arni Road branch and health insurer offices near Vellore Town and CMC.",
+    "local_faqs": [
+      {
+        "question": "Can you help me get cashless access at CMC Vellore?",
+        "answer": "Yes, we help families activate cashless authorisation at CMC Vellore and nearby hospitals including Apollo KH Hospital and Government Vellore Medical College."
+      },
+      {
+        "question": "Do you offer insurance support for VIT students and alumni?",
+        "answer": "Yes, we structure affordable term insurance, student health covers, and investment-linked ULIP plans for current students, alumni, and faculty."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Vellore",
+    "lic_addr": "Arni Road, Vellore 632001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "vizag",
+    "name": "Visakhapatnam (Vizag)",
+    "state": "Andhra Pradesh",
+    "desc": "Trusted insurance advisory for the port city of Visakhapatnam. From term insurance and family health for navy and port employees in Seethammadhara to group health covers for steel plant and pharma employees at Gajuwaka, we bring expert doorstep service.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Seethammadhara",
+      "Dwaraka Nagar",
+      "Rushikonda",
+      "Gajuwaka",
+      "Akkayyapalem",
+      "Asilametta",
+      "Pendurthi",
+      "Madhurawada"
+    ],
+    "nearby": [
+      "bhubaneswar",
+      "kolkata"
+    ],
+    "it_focus": "Group health and comprehensive term policies for IT employees at Rushikonda IT Park and Rushikonda Bheemili Road tech corridor.",
+    "senior_focus": "Health insurance renewals and pension advisory for retired steel plant, navy, and port Trust employees in Seethammadhara and MVP Colony.",
+    "branch_dets": "Coordination with LIC Divisional Office at Dwaraka Nagar and major insurer branches in Siripuram.",
+    "local_faqs": [
+      {
+        "question": "Which Vizag hospitals are on the cashless list?",
+        "answer": "Apollo Hospitals Health City, Manipal Hospital, Sims Hospital, and Care Hospitals are all in our cashless network in Visakhapatnam."
+      },
+      {
+        "question": "Do you offer term insurance for navy families in Visakhapatnam?",
+        "answer": "Yes, we structure high-sum-assured term and accident covers for navy personnel and port employees with policy servicing support."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Visakhapatnam",
+    "lic_addr": "Dwaraka Nagar, Visakhapatnam 530016",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "thrissur",
+    "name": "Thrissur",
+    "state": "Kerala",
+    "desc": "Local insurance advisory for families and business owners in Thrissur, the cultural capital of Kerala. From health insurance covering cashless access at major hospitals near Swaraj Round to term and pension plans for NRIs in Poothole and Nenmanikkara, we help at your doorstep.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Swaraj Round",
+      "Poothole",
+      "Nenmanikkara",
+      "Ayyanthole",
+      "Kuttoor",
+      "Mallur",
+      "Thrissur East",
+      "Vellanikkara"
+    ],
+    "nearby": [
+      "kochi",
+      "thiruvananthapuram"
+    ],
+    "it_focus": "Health and term insurance for professionals at Thrissur IT Park Ayyanthole nearby.",
+    "senior_focus": "Doorstep LIC policy revivals and health insurance claim assistance for senior residents around Swaraj Round and Ayyanthole.",
+    "branch_dets": "Coordination with LIC branch at Round South and private insurer offices near plush Swaraj Round.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals in Thrissur offer cashless health insurance?",
+        "answer": "Amala Institute of Medical Sciences, Westfort Hospital, Elite Mission Hospital, and Thrissur Medical College offer cashless facilities through our health plans."
+      },
+      {
+        "question": "Do you help NRIs from Thrissur manage LIC policies?",
+        "answer": "Yes, we provide full NRI policy servicing including revival, maturity collection, nomination update, and address proof documentation."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Thrissur",
+    "lic_addr": "Round South, Thrissur 680001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "thiruvananthapuram",
+    "name": "Thiruvananthapuram",
+    "state": "Kerala",
+    "desc": "Expert insurance advisory for families and government employees in Thiruvananthapuram, Kerala's capital city. From term plans for IT professionals at Technopark and health insurance for government employees at PMG Junction to LIC policy servicing near Statue Road, we offer doorstep support.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Technopark",
+      "Palayam",
+      "Statue Junction",
+      "PMG",
+      "Kowdiar",
+      "Pattom",
+      "Sasthamangalam",
+      "Kazhakkoottam"
+    ],
+    "nearby": [
+      "kochi",
+      "thrissur"
+    ],
+    "it_focus": "Group and individual health insurance plus portable term plans for Technopark Kazhakkoottam IT professionals.",
+    "senior_focus": "Doorstep health insurance renewal, LIC maturity claim, and pension advisory for retired government servants in Palayam, PMG, and Kowdiar areas.",
+    "branch_dets": "Direct coordination with LIC Divisional Office at Palayam and major insurer branches at Statue Junction.",
+    "local_faqs": [
+      {
+        "question": "Which Thiruvananthapuram hospitals accept cashless insurance?",
+        "answer": "KIMS Healthcare, Ananthapuri Hospital, Cosmopolitan Hospital, and SUT Hospital are in our cashless network."
+      },
+      {
+        "question": "Can you help retired government servants at PMG with insurance review?",
+        "answer": "Yes, we review pension-linked health covers, exclusive senior plans, and endowment maturity claims for retired state government employees."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Thiruvananthapuram",
+    "lic_addr": "Palayam, Thiruvananthapuram 695001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "chennai",
+    "name": "Chennai",
+    "state": "Tamil Nadu",
+    "desc": "Comprehensive insurance advisory across Chennai, from OMR and Sholinganallur IT corridor to Mylapore and Adyar family neighbourhoods. Get high-sum-assured term insurance, family health plans with maternity benefits, and expert claim recovery support at your doorstep.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "OMR",
+      "Sholinganallur",
+      "T Nagar",
+      "Mylapore",
+      "Adyar",
+      "Anna Nagar",
+      "Velachery",
+      "Guindy",
+      "Porur"
+    ],
+    "nearby": [
+      "vellore",
+      "coimbatore"
+    ],
+    "it_focus": "Comprehensive health and term insurance for OMR IT corridor employees at Sholinganallur, Tidel Park, and DLF Cyber City.",
+    "senior_focus": "Doorstep LIC policy servicing and cashless claim support for senior residents of Mylapore, Adyar, and T Nagar.",
+    "branch_dets": "Direct liaison with LIC Zonal Office at Anna Salai and private insurer branches on OMR and T Nagar.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals in Chennai are covered for cashless treatment?",
+        "answer": "Apollo Hospitals Greams Road, Fortis Malar, MIOT International, Kauvery Hospital, and SIMS Hospital are all in our cashless network."
+      },
+      {
+        "question": "Can you help IT employees on OMR with group health insurance?",
+        "answer": "Yes, we structuring group mediclaim, personal accident, and corporate health plans for startups and IT companies along OMR and Sholinganallur."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Zonal Office Chennai",
+    "lic_addr": "Anna Salai, Chennai 600002",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "hyderabad",
+    "name": "Hyderabad",
+    "state": "Telangana",
+    "desc": "Expert insurance solutions for professionals, families, and retirees across Hyderabad and Secunderabad. From high-value health plans for IT and pharma employees in HITEC City and Madhapur to LIC policy revival in Ameerpet and Begumpet, our team offers doorstep service.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "HITEC City",
+      "Madhapur",
+      "Kondapur",
+      "Gachibowli",
+      "Ameerpet",
+      "Banjara Hills",
+      "Jubilee Hills",
+      "Kukatpally",
+      "Begumpet"
+    ],
+    "nearby": [
+      "vizag",
+      "bangalore-koramangala"
+    ],
+    "it_focus": "Custom health and term insurance for IT professionals in HITEC City, Gachibowli Financial District, and Madhapur with global coverage options.",
+    "senior_focus": "Tailored health insurance and pension advisory for senior families in Banjara Hills, Jubilee Hills, and Ameerpet with local cashless hospital access.",
+    "branch_dets": "Direct coordination with LIC zonal office at Secretariat Road and major private insurer branches in Banjara Hills and HITEC City.",
+    "local_faqs": [
+      {
+        "question": "Which Hyderabad hospitals offer cashless health insurance?",
+        "answer": "Apollo Hospitals Jubilee Hills, KIMS Hospitals, Continental Hospital, Star Hospitals, and Yashoda Hospitals are all in our cashless network."
+      },
+      {
+        "question": "Can you arrange group health for startups in HITEC City?",
+        "answer": "Yes, we design scalable group mediclaim, personal accident, and employee wellness policies for Hyderabad startups and IT teams."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Zonal Office Hyderabad",
+    "lic_addr": "Secretariat Road, Hyderabad 500063",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "delhi-ncr",
+    "name": "Delhi NCR",
+    "state": "Delhi",
+    "desc": "Trusted insurance advisory across Delhi NCR - from South Delhi's Greater Kailash and Lajpat Nagar to Gurgaon Cyber City and Noida Sector 62. Secure your family with high-value term plans, comprehensive health coverage, and fast claim dispute support representation at the Delhi Insurance Ombudsman.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Greater Kailash",
+      "Lajpat Nagar",
+      "Connaught Place",
+      "Dwarka",
+      "Rohini",
+      "Pitampura",
+      "Gurgaon Golf Course Road",
+      "Noida Sector 62"
+    ],
+    "nearby": [
+      "chandigarh",
+      "ludhiana"
+    ],
+    "it_focus": "High-sum-assured term insurance with global critical illness riders for executives in Gurgaon Cyber City, Noida Sector 62, and Nehru Place.",
+    "senior_focus": "Doorstep LIC maturity claim support and pension advisory for senior families in Greater Kailash, Lajpat Nagar, and Vasant Vihar.",
+    "branch_dets": "Direct coordination with LIC Jeevan Bima Delhi offices and the Insurance Ombudsman Office at Lok Nayak Bhawan New Delhi.",
+    "local_faqs": [
+      {
+        "question": "How do I reach the Insurance Ombudsman in Delhi for a claim dispute?",
+        "answer": "The Insurance Ombudsman Office is at Lok Nayak Bhawan, Khan Market, New Delhi. We prepare your complaint file and accompany the representation with full documentation."
+      },
+      {
+        "question": "Which Delhi NCR hospitals accept cashless insurance?",
+        "answer": "AIIMS Delhi, Max Super Speciality Saket, Fortis Escorts Okhla, Apollo Hospitals Delhi, Medanta Medicity Gurgaon, and Fortis Noida are in our cashless network."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Zonal Office Delhi",
+    "lic_addr": "Connaught Place, New Delhi 110001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "jaipur",
+    "name": "Jaipur",
+    "state": "Rajasthan",
+    "desc": "Complete insurance advisory for families, professionals, and business owners in Jaipur. From term plans for IT employees at Sitapura CityPlex to health insurance for senior citizens in C-Scheme and Vaishali Nagar, our local experts offer doorstep service and claim recovery support.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "C-Scheme",
+      "Vaishali Nagar",
+      "Mansarovar",
+      "Malviya Nagar",
+      "Sitapura",
+      "Jagatpura",
+      "Jawahar Nagar",
+      "Tonk Road"
+    ],
+    "nearby": [
+      "delhi-ncr",
+      "ahmedabad"
+    ],
+    "it_focus": "Health and term insurance products for IT sector employees at Sitapura IT Park and corporates on Tonk Road.",
+    "senior_focus": "Comprehensive health insurance and LIC revival support for senior residents of C-Scheme, Civil Lines, and Jawahar Nagar.",
+    "branch_dets": "Direct coordination with LIC Divisional Office at Tonk Road and major insurer branches in C-Scheme.",
+    "local_faqs": [
+      {
+        "question": "Which Jaipur hospitals are in the cashless network?",
+        "answer": "SMS Hospital, Fortis Escorts Jaipur, EHCC Hospital, Santokba Durlabhji Memorial Hospital, and Apex Hospital are all in our cashless network."
+      },
+      {
+        "question": "Can you help with term insurance for IT employees in Sitapura?",
+        "answer": "Yes, we configure high-sum-assured term plans with critical illness and accidental death benefit riders for IT professionals working in Sitapura."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Jaipur",
+    "lic_addr": "Tonk Road, Jaipur 302015",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "lucknow",
+    "name": "Lucknow",
+    "state": "Uttar Pradesh",
+    "desc": "Trusted insurance guidance for families, professionals, and government employees in Lucknow. From health insurance for residents of Gomti Nagar and Hazratganj to term plans for working professionals in Aliganj and Indira Nagar, our team brings hassle-free doorstep advisory.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Gomti Nagar",
+      "Hazratganj",
+      "Aliganj",
+      "Indira Nagar",
+      "Aminabad",
+      "Jankipuram",
+      "Rajajipuram",
+      "Chowk"
+    ],
+    "nearby": [
+      "delhi-ncr",
+      "bhopal"
+    ],
+    "it_focus": "Health insurance and term plans for semi-conductor and IT employees in Gomti Nagar Extensions and Hazratganj corporate offices.",
+    "senior_focus": "Doorstep LIC policy servicing, maturity claims, and senior citizen health cover reviews for families in Aminabad, Hazratganj, and Chowk.",
+    "branch_dets": "Direct coordination with LIC Divisional Office at Vidhan Sabha Marg and major insurer branches at Hazratganj.",
+    "local_faqs": [
+      {
+        "question": "Which Lucknow hospitals offer cashless health insurance?",
+        "answer": "King George Medical University, SGPGI, Apollo Medics, Sahara Hospital, and Mayo Hospital are all in our cashless network."
+      },
+      {
+        "question": "Can you help with investment-linked insurance in Lucknow?",
+        "answer": "Yes, we structure ULIPs and endowment plans for wealth creation while providing life cover, with personalised risk profiling for Lucknow clients."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Divisional Office Lucknow",
+    "lic_addr": "Vidhan Sabha Marg, Lucknow 226001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "coimbatore",
+    "name": "Coimbatore",
+    "state": "Tamil Nadu",
+    "desc": "Expert insurance advisory for professionals and families in Coimbatore, the Manchester of South India. From health insurance for textile industrial workers at Sulur and Singanallur to term plans for IT employees at Tidel Park and CHIL SEZ, we offer doorstep service.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "RS Puram",
+      "Race Course Road",
+      "Saibaba Colony",
+      "Gandhipuram",
+      "Singanallur",
+      "Sulur",
+      "Vadavalli",
+      "Tidel Park Coimbatore"
+    ],
+    "nearby": [
+      "kochi",
+      "chennai"
+    ],
+    "it_focus": "Group health and individual term insurance for IT cluster employees at Tidel Park Coimbatore and CHIL SEZ.",
+    "senior_focus": "Doorstep health insurance renewal and LIC maturity processing for established families in RS Puram and Race Course Road.",
+    "branch_dets": "Direct coordination with LIC branch at Trichy Road and major insurer offices at RS Puram.",
+    "local_faqs": [
+      {
+        "question": "Which Coimbatore hospitals accept cashless health insurance?",
+        "answer": "G Kuppuswamy Naidu Hospital, PSG Hospital, Kovai Medical Center, and Sri Ramakrishna Hospital are in our cashless network."
+      },
+      {
+        "question": "Do you provide insurance for textile factory workers in Coimbatore?",
+        "answer": "Yes, we structure group mediclaim, Employees Compensation Act policies, and personal accident cover for textile units."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Coimbatore",
+    "lic_addr": "Trichy Road, Coimbatore 641018",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "mangalore",
+    "name": "Mangalore",
+    "state": "Karnataka",
+    "desc": "Local insurance advisory for families, professionals, and NRI households in this coastal Karnataka city. From health insurance with cashless coverage at major hospitals in Kankanady and Bejai to term plans for employees at Baikampady Industrial Area, we bring expert service to your doorstep.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Kankanady",
+      "Bejai",
+      "Falnir",
+      "Hampankatta",
+      "Kadri Kambla",
+      "Nanthoor",
+      "Surathkal",
+      "Baikampady"
+    ],
+    "nearby": [
+      "kochi",
+      "mysore"
+    ],
+    "it_focus": "Portable health and term insurance for engineers at MRPL, Baikampady industrial estate, and IT companies near KSRTC Bejai.",
+    "senior_focus": "Doorstep health insurance and LIC policy servicing for senior Catholic and community families in Kankanady, Falnir, and Kadri.",
+    "branch_dets": "Coordination with LIC branch at Hampankatta and health insurer offices in Kankanady.",
+    "local_faqs": [
+      {
+        "question": "Which Mangalore hospitals are in the cashless network?",
+        "answer": "Father Muller Hospital, KMC Hospital Attavar, A J Hospital, and Indiana Hospital are all in our cashless network."
+      },
+      {
+        "question": "Can you help NRIs in Gulf countries manage family insurance in Mangalore?",
+        "answer": "Yes, we manage NRI parent health insurance, LIC policy servicing, and documentation for families in Gulf countries with origin in Mangalore."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Mangalore",
+    "lic_addr": "Hampankatta, Mangalore 575001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "madurai",
+    "name": "Madurai",
+    "state": "Tamil Nadu",
+    "desc": "Trusted insurance guidance for families, senior citizens, and small business owners in Madurai. From health insurance near Meenakshi Temple temple town to term plans for employees at textile and rubber clusters in Kappalur and Thirumangalam, we provide personalised doorstep support.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "KK Nagar",
+      "Anna Nagar",
+      "Goripalayam",
+      "Thallakulam",
+      "Kappalur",
+      "Tallakulam",
+      "Vandiyur",
+      "Thirumangalam"
+    ],
+    "nearby": [
+      "coimbatore",
+      "thiruvananthapuram"
+    ],
+    "it_focus": "Group health and term insurance for employees at Kappalur Sector and Madurai IT Park.",
+    "senior_focus": "Senior citizen health insurance and pension advisory for established families around Goripalayam and Tallakulam.",
+    "branch_dets": "Coordination with LIC branch at West Tower road and major insurers at Anna Nagar.",
+    "local_faqs": [
+      {
+        "question": "Which Madurai hospitals accept cashless health insurance?",
+        "answer": "Apollo Specialty Hospitals Madurai, Vasantha Mission Hospital, Meenakshi Mission Hospital, and Remedy Hospital are in our cashless network."
+      },
+      {
+        "question": "Do you help small businesses with insurance in Madurai?",
+        "answer": "Yes, we structure shop insurance, burglary, public liability, and group mediclaim for small businesses and traders in Madurai."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Madurai",
+    "lic_addr": "West Tower Road, Madurai 625001",
+    "nearbyLocations": []
+  },
+  {
+    "slug": "goa",
+    "name": "Goa",
+    "state": "Goa",
+    "desc": "Insurance advisory for families, hospitality professionals, and NRI residents across Goa - Panjim, Margao, Vasco, and Mapusa. From health insurance with cashless hospital access at Manipal Goa to term insurance for hospitality entrepreneurs in Baga and Calangute, our local team provides doorstep support.",
+    "phone": "+91-99866 34506",
+    "areas": [
+      "Panjim",
+      "Margao",
+      "Vasco da Gama",
+      "Mapusa",
+      "Porvorim",
+      "Candolim",
+      "Baga-Calangute",
+      "Ponda"
+    ],
+    "nearby": [
+      "mangalore",
+      "kochi"
+    ],
+    "it_focus": "Health and term insurance for hospitality entrepreneurs, self-employed professionals, and remote IT workers based in Goa.",
+    "senior_focus": "Doorstep LIC policy management and senior citizen health insurance for retired residents across Panjim, Margao, and Porvorim.",
+    "branch_dets": "Direct coordination with LIC branch at Panjim and private insurer branches in Margao.",
+    "local_faqs": [
+      {
+        "question": "Which hospitals in Goa offer cashless health insurance?",
+        "answer": "Manipal Hospitals Goa, Apollo Hospital Margao, Healthway Hospital, and Victor Hospital are in our cashless network."
+      },
+      {
+        "question": "Can you help NRI property owners in Goa with insurance?",
+        "answer": "Yes, we structure holiday home insurance, property damage, and liability covers for NRI-owned properties in Goa."
+      }
+    ],
+    "long_count": 0,
+    "lic_name": "LIC Branch Panjim",
+    "lic_addr": "Panjim, Goa 403001",
+    "nearbyLocations": []
   }
 ]
