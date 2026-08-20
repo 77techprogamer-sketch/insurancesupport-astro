@@ -7,3 +7,8 @@ http://www.insurancesupport.online/*  https://insurancesupport.online/:splat  30
 /services/lic-claim-reappeal  /services/claim-support  301
 /services/tax-planning-insurance  /services/health-insurance  301
 /locations/karnataka/bangalore/motor-insurance  /locations/bangalore-koramangala  301
+
+# Consolidated blog redirects (keyword cannibalization cleanup)
+/blog/how-to-appeal-rejected-insurance-claim-india  /blog/how-to-appeal-rejected-insurance-claim-india-2026  301
+/blog/irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026-2026  /blog/irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026  301
+/blog/lic-accidental-death-disability-rider-guide-2026-2026  /blog/lic-accidental-death-disability-rider-guide-2026  301

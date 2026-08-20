@@ -12,14 +12,14 @@ import { formatLabel } from '@/utils/formatText';
     <div class="container mx-auto px-4 h-16 flex justify-between items-center">
 
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group" aria-label="Insurance Support">
-        <div class="h-9 w-9 rounded-lg overflow-hidden shrink-0 group-hover:opacity-90 transition-opacity">
-          <img src="/logo.png" alt="Insurance Support" width={36} height={36} class="object-cover" />
-        </div>
-        <span class="text-xl font-bold tracking-tight text-blue-900 group-hover:text-blue-700 transition-colors">
-          Insurance Support
-        </span>
-      </a>
+            <a href="/" class="flex items-center gap-2 group" aria-label="Insurance Support">
+              <div class="h-9 w-9 rounded-lg overflow-hidden shrink-0 group-hover:opacity-90 transition-opacity">
+                <Image src="/logo.png" alt="Insurance Support" width={36} height={36} class="object-cover" loading="eager" fetchpriority="high" />
+              </div>
+              <span class="text-xl font-bold tracking-tight text-blue-900 group-hover:text-blue-700 transition-colors">
+                Insurance Support
+              </span>
+            </a>
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
