@@ -9,7 +9,6 @@ const __dirname = path.dirname(__filename);
 
 const INDEXNOW_KEY = '71a80a3568ae5d1d945fda3ef57fe18e';
 const SITE_URL = 'https://insurancesupport.online';
-const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
 async function pingIndexNow() {
   const urls = [
@@ -17,7 +16,6 @@ async function pingIndexNow() {
     SITE_URL
   ];
 
-  // Fetch sitemap to extract all URLs for IndexNow
   const sitemapPath = path.join(__dirname, '../dist/sitemap.xml');
   try {
     const sitemapContent = await fs.readFile(sitemapPath, 'utf-8');
@@ -25,7 +23,6 @@ async function pingIndexNow() {
     urls.push(...locs.slice(0, 10000).map(l => l.replace(/<\/?loc>/g, '')));
   } catch { /* sitemap not found yet */ }
 
-  // IndexNow API
   const payload = JSON.stringify({
     host: SITE_URL.replace('https://', ''),
     key: INDEXNOW_KEY,
@@ -33,7 +30,6 @@ async function pingIndexNow() {
     urlList: urls.slice(0, 10000)
   });
 
-  // Submit to Bing (IndexNow supports Bing, Yandex, Seznam)
   const endpoints = [
     'https://api.indexnow.org/indexnow',
     'https://www.bing.com/indexnow',
@@ -43,7 +39,7 @@ async function pingIndexNow() {
 
   for (const endpoint of endpoints) {
     try {
-      await new Promise((resolve, reject) => {
+      await new Promise((resolve) => {
         const url = new URL(endpoint);
         const client = url.protocol === 'https:' ? https : http;
         const req = client.request(url.href, {
@@ -59,6 +55,8 @@ async function pingIndexNow() {
           res.on('end', () => {
             if (res.statusCode === 200) {
               console.log(`✓ IndexNow submitted to ${endpoint}`);
+            } else if (res.statusCode === 403) {
+              console.log(`? IndexNow ${endpoint} responded 403: Site verification pending in Webmaster Tools.`);
             } else {
               console.log(`? IndexNow ${endpoint} responded ${res.statusCode}: ${body.slice(0, 100)}`);
             }
@@ -67,7 +65,7 @@ async function pingIndexNow() {
         });
         req.on('error', (e) => {
           console.log(`✗ IndexNow ${endpoint} failed: ${e.message}`);
-          resolve(); // don't block
+          resolve();
         });
         req.write(payload);
         req.end();

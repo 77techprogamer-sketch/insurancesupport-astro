@@ -123,13 +123,26 @@ def main():
     generate_sitemap_xml(location_urls, "locations-sitemap.xml")
     sitemap_index_urls.append(urljoin(BASE_URL, "/sitemaps/locations-sitemap.xml"))
 
-    # ----- BLOG SITEMAP (all blog posts + pagination) -----
+    # ----- BLOG SITEMAP (quality-gated: 200+ word content only) -----
+    MIN_WORD_COUNT = 200
     blog_urls = [urljoin(BASE_URL, "/blog")]
+    filtered = []
+    skipped = 0
     for blog in blogs_data:
-        blog_urls.append(urljoin(BASE_URL, f"/blog/{blog['slug']}"))
-    for page in [2, 3, 4, 5, 6, 7, 8, 9]:
+        content = blog.get("content", "") or ""
+        wc = len(content.split())
+        if wc >= MIN_WORD_COUNT:
+            blog_urls.append(urljoin(BASE_URL, f"/blog/{blog['slug']}"))
+            filtered.append(blog["slug"])
+        else:
+            skipped += 1
+    # Only paginate if we have enough posts to warrant pagination
+    total_posts = len(filtered)
+    pages_needed = max(1, (total_posts + 9) // 10)  # 10 posts per page
+    for page in range(2, pages_needed + 1):
         blog_urls.append(urljoin(BASE_URL, f"/blog/page/{page}"))
     generate_sitemap_xml(blog_urls, "blog-sitemap.xml")
+    print(f"Blog sitemap: {total_posts} posts included (skipped {skipped} thin/empty)")
     sitemap_index_urls.append(urljoin(BASE_URL, "/sitemaps/blog-sitemap.xml"))
 
     # ----- CORE PAGES SITEMAP (home, about, services, contact, faq, support, resources, all /cities/*) -----
