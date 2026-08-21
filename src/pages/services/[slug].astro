@@ -48,6 +48,24 @@ const serviceUrl = `https://insurancesupport.online/services/${slug}`;
       <h1 class="text-4xl font-bold mb-4">{service.title} in Bengaluru</h1>
       <p class="text-lg text-slate-600 mb-12">{service.desc}</p>
 
+      {service.content && (
+        <div class="prose prose-lg max-w-none mb-12" set:html={service.content.replace(/\n/g, '<br/>')} />
+      )}
+
+      {service.benefits && service.benefits.length > 0 && (
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">Why Choose Our {service.title} Service</h2>
+          <ul class="space-y-3">
+            {service.benefits.map(benefit => (
+              <li class="flex items-start gap-3 text-slate-600 leading-relaxed">
+                <span class="text-emerald-500 mt-1">✓</span>
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {service.faqs && service.faqs.length > 0 && (
         <>
           <FAQPageJsonLd questions={service.faqs} />
