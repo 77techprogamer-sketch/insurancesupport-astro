@@ -1,9 +1,9 @@
+/* View Transitions — smooth page nav like Next.js/Framer Motion */
+@import './view-transitions.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* View Transitions — smooth page nav like Next.js/Framer Motion */
-@import './view-transitions.css';
 
 /* ============================================
    THEME VARIABLES (matching Next.js palette)
