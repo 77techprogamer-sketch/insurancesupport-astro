@@ -40,26 +40,49 @@ const phoneFormatted = phone.replace(/\s/g, '');
     { label: `${cityName}, ${stateName}`, url: pageUrl }
   ]} />
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": `Insurance Support - Hari Kotian in ${cityName}`,
-    "description": description,
-    "url": pageUrl,
-    "telephone": phone,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": cityName,
-      "addressRegion": stateName,
-      "addressCountry": "IN"
-    },
-    "priceRange": "₹₹",
-    "areaServed": areas,
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Insurance Support - Hari Kotian",
-      "url": "https://insurancesupport.online"
-    }
-  })} />
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": `Insurance Support - Hari Kotian in ${cityName}`,
+      "description": description,
+      "url": pageUrl,
+      "telephone": phone,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": cityName,
+        "addressRegion": stateName,
+        "addressCountry": "IN"
+      },
+      "priceRange": "₹₹",
+      "areaServed": areas,
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Insurance Support - Hari Kotian",
+        "url": "https://insurancesupport.online"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Place",
+      "name": `${cityName}, ${stateName}`,
+      "description": `Insurance advisory services in ${cityName}, ${stateName} by IRDAI-certified advisor Hari Kotian`,
+      "url": pageUrl,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": city.lat || 12.9716,
+        "longitude": city.lng || 77.5946
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": cityName,
+        "addressRegion": stateName,
+        "addressCountry": "IN"
+      },
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Karnataka",
+        "addressCountry": "IN"
+      }
+    })} />
   {localFaqs.length > 0 && <FAQPageJsonLd questions={localFaqs} />}
 
 <main class="page-transition">

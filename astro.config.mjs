@@ -22,11 +22,11 @@ export default defineConfig({
     headers: {
       'Content-Security-Policy': [
         "default-src 'self'",
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+        "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://clarity.ms https://www.google.com 'unsafe-inline'",
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
         "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com",
         "font-src 'self' https://fonts.gstatic.com",
-        "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+        "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms",
         "frame-src 'self' https://www.youtube.com https://www.google.com",
         "object-src 'none'",
         "base-uri 'self'",

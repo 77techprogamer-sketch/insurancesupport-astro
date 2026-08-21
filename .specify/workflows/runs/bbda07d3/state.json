@@ -1,0 +1,39 @@
+{
+  "run_id": "bbda07d3",
+  "workflow_id": "speckit",
+  "installed_workflow_id": "speckit",
+  "installed_registry_root": null,
+  "status": "failed",
+  "current_step_index": 0,
+  "current_step_id": "specify",
+  "step_results": {
+    "specify": {
+      "type": "command",
+      "integration": "hermes",
+      "model": null,
+      "options": {},
+      "input": {
+        "args": "Comprehensive site analysis of insurancesupport.online"
+      },
+      "output": {
+        "command": "speckit.specify",
+        "integration": "hermes",
+        "model": null,
+        "options": {},
+        "input": {
+          "args": "Comprehensive site analysis of insurancesupport.online"
+        },
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "",
+        "dispatched": true
+      },
+      "status": "failed",
+      "error": "Command exited with code 1"
+    }
+  },
+  "workflow_dir": "C:\\Users\\A\\Desktop\\insurancesupport-astro\\.specify\\workflows\\speckit",
+  "created_at": "2026-08-21T04:47:38.102664+00:00",
+  "updated_at": "2026-08-21T04:47:44.504764+00:00",
+  "error": "Command exited with code 1"
+}

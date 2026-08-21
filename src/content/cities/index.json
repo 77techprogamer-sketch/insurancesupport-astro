@@ -31,7 +31,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9784,
+    "lng": 77.6408
   },
   {
     "slug": "bangalore-koramangala",
@@ -65,7 +67,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9355,
+    "lng": 77.6245
   },
   {
     "slug": "bangalore-whitefield",
@@ -99,7 +103,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9698,
+    "lng": 77.7499
   },
   {
     "slug": "bangalore-electronic-city",
@@ -132,7 +138,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.8456,
+    "lng": 77.6603
   },
   {
     "slug": "bangalore-hsr-layout",
@@ -169,7 +177,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9082,
+    "lng": 77.6476
   },
   {
     "slug": "bangalore-marathahalli",
@@ -202,7 +212,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9592,
+    "lng": 77.6974
   },
   {
     "slug": "bangalore-jp-nagar",
@@ -241,7 +253,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9029,
+    "lng": 77.5856
   },
   {
     "slug": "bangalore-bellandur",
@@ -274,7 +288,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9328,
+    "lng": 77.6768
   },
   {
     "slug": "bangalore-sarjapur",
@@ -307,7 +323,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.8556,
+    "lng": 77.7256
   },
   {
     "slug": "bangalore-yelahanka",
@@ -341,7 +359,9 @@
     "long_count": 0,
     "lic_name": "",
     "lic_addr": "",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 13.101,
+    "lng": 77.5962
   },
   {
     "slug": "pune",
@@ -379,7 +399,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Shivajinagar",
     "lic_addr": "Shivajinagar, Pune, Maharashtra 411005",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 18.5204,
+    "lng": 73.8567
   },
   {
     "slug": "mumbai",
@@ -417,7 +439,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Mumbai",
     "lic_addr": "Yogakshema, Nariman Point, Mumbai 400021",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 19.076,
+    "lng": 72.8777
   },
   {
     "slug": "indore",
@@ -454,7 +478,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Indore",
     "lic_addr": "MG Road, Indore, Madhya Pradesh 452001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 22.7196,
+    "lng": 75.8577
   },
   {
     "slug": "kochi",
@@ -492,7 +518,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Ernakulam",
     "lic_addr": "MG Road, Ernakulam, Kochi, Kerala 682011",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 9.9312,
+    "lng": 76.2673
   },
   {
     "slug": "chandigarh",
@@ -529,7 +557,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Chandigarh",
     "lic_addr": "Sector 17-B, Chandigarh 160017",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 30.7333,
+    "lng": 76.7794
   },
   {
     "slug": "nagpur",
@@ -567,7 +597,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Nagpur",
     "lic_addr": "Kingsway, Nagpur, Maharashtra 440001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 21.1458,
+    "lng": 79.0882
   },
   {
     "slug": "bhubaneswar",
@@ -605,7 +637,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Bhubaneswar",
     "lic_addr": "Unit-4, Bhubaneswar, Odisha 751001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.2961,
+    "lng": 85.8245
   },
   {
     "slug": "surat",
@@ -643,7 +677,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Surat",
     "lic_addr": "Muglisara, Surat, Gujarat 395003",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 21.1702,
+    "lng": 72.8311
   },
   {
     "slug": "mysore",
@@ -680,7 +716,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Mysore",
     "lic_addr": "Nazarbad, Mysore, Karnataka 570010",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.2958,
+    "lng": 76.6394
   },
   {
     "slug": "hosur",
@@ -716,7 +754,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Office Hosur",
     "lic_addr": "Bagalur Road, Hosur, Tamil Nadu 635109",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.7409,
+    "lng": 77.8253
   },
   {
     "slug": "bangalore-jayanagar",
@@ -752,7 +792,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Jayanagar",
     "lic_addr": "Jayanagar 4th Block, Bangalore 560011",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9193,
+    "lng": 77.5862
   },
   {
     "slug": "bangalore-hebbal",
@@ -787,7 +829,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Hebbal",
     "lic_addr": "Bellary Road, Hebbal, Bangalore 560024",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 13.0355,
+    "lng": 77.597
   },
   {
     "slug": "bangalore-devanahalli",
@@ -822,7 +866,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Devanahalli",
     "lic_addr": "Devanahalli Town, Bangalore Rural 562110",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 13.248,
+    "lng": 77.7056
   },
   {
     "slug": "bangalore-bannerghatta",
@@ -857,7 +903,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Bannerghatta",
     "lic_addr": "Bannerghatta Main Road, Bangalore 560076",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.894,
+    "lng": 77.5708
   },
   {
     "slug": "ahmedabad",
@@ -896,7 +944,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Ahmedabad",
     "lic_addr": "Ashram Road, Ahmedabad 380009",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "vadodara",
@@ -934,7 +984,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Vadodara",
     "lic_addr": "Sayajigunj, Vadodara 390005",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "bhopal",
@@ -972,7 +1024,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Bhopal",
     "lic_addr": "MP Nagar, Bhopal 462011",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "ujjain",
@@ -1009,7 +1063,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Ujjain",
     "lic_addr": "Freeganj, Ujjain 456010",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "nashik",
@@ -1047,7 +1103,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Nashik",
     "lic_addr": "Main Road, Nashik 422001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "thane",
@@ -1085,7 +1143,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Thane",
     "lic_addr": "Naupada, Thane West 400602",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "dehradun",
@@ -1123,7 +1183,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Dehradun",
     "lic_addr": "Rajpur Road, Dehradun 248001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "ludhiana",
@@ -1161,7 +1223,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Ludhiana",
     "lic_addr": "Bharat Nagar Chowk, Ludhiana 141001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "kolkata",
@@ -1200,7 +1264,9 @@
     "long_count": 0,
     "lic_name": "LIC Zonal Office Kolkata",
     "lic_addr": "Mint Road, Kolkata 700001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "vellore",
@@ -1238,7 +1304,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Vellore",
     "lic_addr": "Arni Road, Vellore 632001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "vizag",
@@ -1276,7 +1344,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Visakhapatnam",
     "lic_addr": "Dwaraka Nagar, Visakhapatnam 530016",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "thrissur",
@@ -1314,7 +1384,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Thrissur",
     "lic_addr": "Round South, Thrissur 680001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "thiruvananthapuram",
@@ -1352,7 +1424,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Thiruvananthapuram",
     "lic_addr": "Palayam, Thiruvananthapuram 695001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "chennai",
@@ -1391,7 +1465,9 @@
     "long_count": 0,
     "lic_name": "LIC Zonal Office Chennai",
     "lic_addr": "Anna Salai, Chennai 600002",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "hyderabad",
@@ -1430,7 +1506,9 @@
     "long_count": 0,
     "lic_name": "LIC Zonal Office Hyderabad",
     "lic_addr": "Secretariat Road, Hyderabad 500063",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "delhi-ncr",
@@ -1468,7 +1546,9 @@
     "long_count": 0,
     "lic_name": "LIC Zonal Office Delhi",
     "lic_addr": "Connaught Place, New Delhi 110001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "jaipur",
@@ -1506,7 +1586,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Jaipur",
     "lic_addr": "Tonk Road, Jaipur 302015",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "lucknow",
@@ -1544,7 +1626,9 @@
     "long_count": 0,
     "lic_name": "LIC Divisional Office Lucknow",
     "lic_addr": "Vidhan Sabha Marg, Lucknow 226001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "coimbatore",
@@ -1582,7 +1666,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Coimbatore",
     "lic_addr": "Trichy Road, Coimbatore 641018",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 20.5937,
+    "lng": 78.9629
   },
   {
     "slug": "mangalore",
@@ -1620,7 +1706,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Mangalore",
     "lic_addr": "Hampankatta, Mangalore 575001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 12.9141,
+    "lng": 74.856
   },
   {
     "slug": "madurai",
@@ -1658,7 +1746,9 @@
     "long_count": 0,
     "lic_name": "LIC Branch Madurai",
     "lic_addr": "West Tower Road, Madurai 625001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 9.9252,
+    "lng": 78.1198
   },
   {
     "slug": "goa",
@@ -1696,6 +1786,8 @@
     "long_count": 0,
     "lic_name": "LIC Branch Panjim",
     "lic_addr": "Panjim, Goa 403001",
-    "nearbyLocations": []
+    "nearbyLocations": [],
+    "lat": 15.2993,
+    "lng": 74.124
   }
 ]
