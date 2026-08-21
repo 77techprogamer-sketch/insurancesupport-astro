@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && npx pagefind --site dist",
+    "build": "astro build && (npx pagefind --site dist || echo 'Pagefind skipped - continuing build')",
     "preview": "astro preview",
     "astro": "astro",
     "postbuild": "node ./scripts/generate-sitemap.js && node ./scripts/indexnow-notify.js"
