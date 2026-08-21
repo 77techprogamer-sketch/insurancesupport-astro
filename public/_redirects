@@ -1,7 +1,8 @@
-# Force HTTPS — all HTTP requests redirect to HTTPS
+# Force HTTPS + canonical www to non-www
 # https://developers.cloudflare.com/pages/configuration/redirects/
 http://insurancesupport.online/*  https://insurancesupport.online/:splat  301
-http://www.insurancesupport.online/*  https://insurancesupport.online/:splat  301
+http://www.insurancesupport.online/*  https://www.insurancesupport.online/:splat  301
+https://www.insurancesupport.online/*  https://insurancesupport.online/:splat  301
 
 # Legacy redirects for broken links
 /services/lic-claim-reappeal  /services/claim-support  301
