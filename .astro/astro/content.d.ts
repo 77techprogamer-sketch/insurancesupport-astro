@@ -141,6 +141,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"claim-recovery-hub-complete-2026-guide.md": {
+	id: "claim-recovery-hub-complete-2026-guide.md";
+  slug: "claim-recovery-hub-complete-2026-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"health-insurance-hub-complete-2026-guide.md": {
+	id: "health-insurance-hub-complete-2026-guide.md";
+  slug: "health-insurance-hub-complete-2026-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "insurance-claim-rejection-appeal.md": {
 	id: "insurance-claim-rejection-appeal.md";
   slug: "insurance-claim-rejection-appeal";
@@ -151,6 +165,13 @@ declare module 'astro:content' {
 "lic-claim-support-bangalore.md": {
 	id: "lic-claim-support-bangalore.md";
   slug: "lic-claim-support-bangalore";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"lic-policy-hub-complete-guide-2026.md": {
+	id: "lic-policy-hub-complete-guide-2026.md";
+  slug: "lic-policy-hub-complete-guide-2026";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
