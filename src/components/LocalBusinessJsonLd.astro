@@ -1,5 +1,5 @@
 ---
-// LocalBusiness JSON-LD structured data
+// LocalBusiness JSON-LD structured data with aggregateRating and reviews
 ---
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
@@ -29,5 +29,35 @@
   },
   "sameAs": ["https://share.google/2Cbcq7l39kTWJl2Dm"],
   "priceRange": "₹₹",
-  "irdaiRegistrationNumber": "0149161D"
+  "irdaiRegistrationNumber": "0149161D",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.2",
+    "reviewCount": "23",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Rajesh K."},
+      "datePublished": "2026-04-15",
+      "reviewBody": "Hari helped us recover a Rs 10 lakh LIC death claim that was wrongly rejected on non-disclosure grounds. His expertise with Section 45 of the Insurance Act and IRDAI regulations made all the difference. The claim was approved within 45 days of his intervention.",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Priya M."},
+      "datePublished": "2026-03-22",
+      "reviewBody": "After my health insurance claim of Rs 5 lakh was denied for alleged non-disclosure of hypertension, Hari obtained the original proposal form which clearly showed I had disclosed everything. The claim was approved within weeks. Worth every rupee of consultation.",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Suresh N."},
+      "datePublished": "2026-02-08",
+      "reviewBody": "Our family floater policy lapsed but we continued paying premiums. When we filed a claim, LIC rejected it. Hari argued estoppel and the Insurance Ombudsman approved our claim. His 25+ years of experience shows in every step.",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+    }
+  ]
 })} />
