@@ -1,0 +1,12 @@
+# sites that should be disavowed
+# Generated for insurancesupport.online on 2026-08-22
+# Reason: Low-quality, spammy directory links that risk link-based penalties
+
+# Spam Directories
+domain:justlink.org
+domain:asklink.org
+domain:linkopedia.com
+domain:linkcatalog.net
+domain:quicklinking.net
+
+# Add additional spammy domains below if found in future audits
