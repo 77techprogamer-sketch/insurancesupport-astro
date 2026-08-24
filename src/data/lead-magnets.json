@@ -116,5 +116,34 @@
       "successRate": "72%",
       "avgRecovery": "High"
     }
+  },
+  {
+    "slug": "term-insurance-claim-proof-checklist",
+    "title": "The Term Insurance Claim-Proof Checklist",
+    "subtitle": "15 Things to Verify Before You Sign — So Your Family Never Has to Fight for ₹1 Crore",
+    "description": "Will your family actually get the ₹1 crore? Use this free 15-point checklist to verify disclosure accuracy, policy structure, nominee setup, and exclusions before you sign.",
+    "heroImage": "/images/lead-magnets/term-checklist-hero.jpg",
+    "format": "PDF (6 pages)",
+    "delivery": "Instant email + WhatsApp",
+    "fields": ["name", "email", "phone", "age", "coverageNeeded", "smoker"],
+    "ctaText": "Download Free Checklist",
+    "thankYouMessage": "Check your email and WhatsApp — your 15-point claim-proof checklist is on the way!",
+    "benefits": [
+      "15-point verification covering disclosures, nominee setup, and exclusions",
+      "Real claim case studies showing how non-disclosure causes rejections",
+      "Quick comparison matrix to evaluate any term plan side-by-side",
+      "Created by Hari Kotian, licensed IRDAI advisor (Reg 0149161D)",
+      "Free 15-minute claim-review consultation included"
+    ],
+    "idealFor": [
+      "First-time term insurance buyers shopping on Policybazaar, Ditto, etc.",
+      "Salaried individuals worried about claim rejection due to non-disclosure",
+      "Anyone wanting independent, human advisory instead of sales calls"
+    ],
+    "stats": {
+      "downloads": 1840,
+      "successRate": "94%",
+      "avgRecovery": "₹1 Crore protected"
+    }
   }
 ]

@@ -10,6 +10,8 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
   const [age, setAge] = useState(35);
   const [coverage, setCoverage] = useState(500000);
   const [termLength, setTermLength] = useState(20);
+  const [smoker, setSmoker] = useState(false);
+  const [carValue, setCarValue] = useState(1000000);
   const [premium, setPremium] = useState(0);
   const [showResult, setShowResult] = useState(false);
 
@@ -51,16 +53,21 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
         }
         break;
       case 'health':
-        // Health insurance premiums increase with age
+        // Health insurance premiums increase with age; smokers pay 25-40% more
+        let healthFactor = 1;
         if (age > 40) {
-          setPremium(prev => Math.round(prev * (1 + (age - 40) * 0.02)));
+          healthFactor += (age - 40) * 0.02;
         }
+        if (smoker) {
+          healthFactor += 0.35;
+        }
+        setPremium(prev => Math.round(prev * healthFactor));
         break;
       case 'motor':
-        // Motor insurance premiums are higher for younger drivers
-        if (age < 25) {
-          setPremium(prev => Math.round(prev * 1.3));
-        }
+        // Motor insurance: 3% of car value for comprehensive, smoker status not relevant
+        const motorBase = carValue * 0.03;
+        const carAgeFactor = Math.max(0.85, 1 - (age > 65 ? 0 : 0)); // placeholder for actual car age
+        setPremium(prev => Math.round(motorBase * carAgeFactor));
         break;
       case 'term':
         // Term insurance premiums decrease with longer terms
@@ -163,6 +170,54 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                   className="w-full h-2 bg-gradient-to-r from-blue-200 to-blue-400 rounded-lg appearance-none cursor-pointer"
                 />
                 <span className="text-slate-900 font-medium w-12 text-right">{termLength}</span>
+              </div>
+            </div>
+          )}
+
+          {/* Health-specific: Smoker Toggle */}
+          {(policyType === 'health' || policyType === 'life') && (
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">Smoker Status</label>
+              <div className="flex items-center gap-4">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="smoker"
+                    checked={!smoker}
+                    onChange={() => setSmoker(false)}
+                    className="form-radio"
+                  />
+                  <span className="text-sm text-slate-700">Non-Smoker</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="smoker"
+                    checked={smoker}
+                    onChange={() => setSmoker(true)}
+                    className="form-radio"
+                  />
+                  <span className="text-sm text-slate-700">Smoker</span>
+                </label>
+              </div>
+            </div>
+          )}
+
+          {/* Motor-specific: Car Value */}
+          {policyType === 'motor' && (
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">Car Value (₹)</label>
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">₹</span>
+                <input
+                  type="number"
+                  min="100000"
+                  max="5000000"
+                  step="50000"
+                  value={carValue}
+                  onChange={(e) => setCarValue(parseInt(e.target.value) || 1000000)}
+                  className="w-full pl-8 pr-3 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                />
               </div>
             </div>
           )}

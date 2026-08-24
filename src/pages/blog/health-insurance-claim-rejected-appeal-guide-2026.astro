@@ -37,6 +37,46 @@ const PUBLISH_DATE = "2026-08-16";
     <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
     <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Reg 0149161D) | Published on {PUBLISH_DATE}</p>
 
+    <!-- FAQPage JSON-LD for rich results -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long do I have to file an appeal after a health insurance claim is rejected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You should file a formal grievance with the insurer's Grievance Redressal Officer within 30 days of receiving the written rejection. Escalation to IRDAI Bima Bharosa or the Insurance Ombudsman can be made within 1 year of the rejection date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What documents are needed to successfully appeal a health claim rejection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Key documents include the official repudiation letter, discharge summary, doctor's certificate clarifying medical necessity, policy wording proving coverage, and any pre-authorization records."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a cost to approach the Insurance Ombudsman?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Filing a complaint with the Insurance Ombudsman is completely free of cost. The Ombudsman's decision is binding on the insurer for claims up to Rs. 50 lakhs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can an insurance advisor help me recover a rejected claim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. An experienced IRDAI-certified advisor can review the rejection grounds, gather the right documentation, and represent you through the internal grievance and Ombudsman stages, significantly improving your chances of success."
+          }
+        }
+      ]
+    })} />
+
     <div class="prose max-w-none text-slate-700 space-y-6">
       <p class="text-lg leading-relaxed">
         Having a health insurance claim rejected during a medical emergency is stressful and unjust. In India, over 12-15% of initial health insurance claims face rejection or short-settlement. However, <strong>a rejection is not the final word</strong>. With the right documentation and escalation framework under IRDAI guidelines, a significant percentage of rightful claims are successfully overturned.

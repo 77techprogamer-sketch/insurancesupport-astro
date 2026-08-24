@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import LeadMagnetForm from '../../components/LeadMagnetForm.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+
+const TITLE = "Insurance Policy Review Checklist: 12 Essential Steps to Avoid Claim Rejection";
+const DESCRIPTION = "Download our free 12-point insurance policy review checklist. Identify coverage gaps, redundant policies, and claim pitfalls before it's too late. IRDAI-certified advisor.";
+const KEYWORDS = "insurance policy review checklist, claim rejection prevention, policy audit checklist, insurance gap analysis, Bangalore";
+const CANONICAL_URL = "https://insurancesupport.online/blog/insurance-policy-review-checklist-claim-rejection";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-08-25";
+const PAGE_URL = CANONICAL_URL;
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Policy Review Checklist', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": PAGE_URL }
+  })} />
+
+  <FAQPageJsonLd questions={[
+    { question: "Why should I review my insurance policies annually?", answer: "Insurance needs change with life events (marriage, children, job change, home purchase). An annual review catches gaps in coverage, identifies redundant policies, and ensures nominees are up to date before a claim is needed." },
+    { question: "What's the most common mistake in insurance policies?", answer: "The most common mistake is incorrect or outdated nominee details, followed by pre-disclosing medical conditions incorrectly on the application form, which leads to claim rejection." },
+    { question: "How long does a policy review take?", answer: "A basic self-review using our checklist takes 15-20 minutes. A comprehensive review with an advisor may take 1-2 hours depending on the number of policies." },
+    { question: "Is a policy review worth the cost?", answer: "An annual policy review often identifies savings of 10-30% on premiums and prevents claim rejections worth lakhs. The cost of review is negligible compared to potential claim losses." }
+  ]} />
+
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Policy Review Checklist</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Reg 0149161D) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-8">
+      <p class="text-lg leading-relaxed">
+        A recent RBI-ICMR joint study found that <strong>over 30% of insurance claims are rejected</strong> not due to fraud, but because of easily correctable errors in policy documentation and disclosure. Yet, shockingly, fewer than 1 in 10 Indian families conduct an annual insurance audit.
+      </p>
+
+      <p class="text-lg leading-relaxed">
+        As an IRDAI-certified advisor with 25 years of experience helping Bangalore families navigate insurance complexities, I see the same patterns repeatedly. Whether it's a senior citizen in Malleshwaram whose health policy doesn't cover pre-existing diabetes, or a young IT professional in Koramangala whose term plan lacks an accidental death rider, the gaps are predictable—and entirely preventable.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The Hidden Cost of Ignoring Your Policies</h2>
+      <p>
+        Last month, a client from Whitefield lost a ₹50 lakh health claim payout—not because of fraud, but because his policy had a sub-limit of ₹40,000 on cataract surgery. He’d never noticed this clause buried in page 18 of his policy document. A simple review would have caught it.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">My 12-Point Policy Review Checklist</h2>
+      <p>Below is the exact checklist I use with every client. Download the full PDF version for a printable, annotated guide.</p>
+
+      <ol class="space-y-4">
+        <li><strong>1. Verify Nominee Details</strong> — Are nominees correctly named and their relationship accurately stated? Any life event (marriage, childbirth) requiring updates?</li>
+        <li><strong>2. Check Sum Assured vs. Needs</strong> — For term plans: 10-15× annual income is the minimum benchmark. For health: ₹10-15 lakhs for a family of 4.</li>
+        <li><strong>3. Cross-Check Disclosure Accuracy</strong> — Review the original proposal form against what’s in the policy. Discrepancies are the #1 reason for claim rejection.</li>
+        <li><strong>4. Audit Riders and Add-ons</strong> — Are riders like accidental death, critical illness, or Waiver of Premium still relevant?</li>
+        <li><strong>5. Confirm Tax Benefits</strong> — Ensure Section 80C, 80D, and 10(10D) limits are optimized across your policies.</li>
+        <li><strong>6. Validate Waiting Periods</strong> — Especially for health (48 months for PEDs) — is your coverage timeline aligned with your risk profile?</li>
+        <li><strong>7. Review Network Hospital Lists</strong> — If in Whitefield, ensure nearby hospitals (Columbia, Narayana, etc.) are in-network for cashless claims.</li>
+        <li><strong>8. Assess Pre-Authorization Triggers</strong> — For planned procedures, confirm the pre-auth window and documentation list.</li>
+        <li><strong>9. Check Grace Period and Auto-Pay</strong> — Is auto-debit enabled? What’s the grace period before lapse?</li>
+        <li><strong>10. Examine Sub-limits and Co-payments</strong> — Room rent caps, sub-limits on specific procedures, annual/daily ceilings.</li>
+        <li><strong>11. Evaluate Portability History</strong> — If you switched insurers, was your pre-existing condition (PED) waiting period correctly ported?</li>
+        <li><strong>12. Test the Claims Process</strong> — Have you ever simulated a claim? Know the steps: intimation, documentation, escalation path.</li>
+      </ol>
+
+      <blockquote class="border-l-4 border-blue-600 pl-6 italic text-slate-600">
+        "A policy is not a product you buy and forget. It's a promise—conditional, contractual, and only as strong as the paperwork behind it." — Hari Kotian, IRDAI Reg 0149161D
+      </blockquote>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Download Your Free Printable Checklist</h2>
+      <p>
+        Want a printable, shareable version of all 12 steps, plus space to annotate your own notes? Enter your details below to receive it instantly via email.
+      </p>
+
+      <div class="my-8">
+        <LeadMagnetForm
+          fields={["name", "email", "phone", "insurer", "claimAmount"]}
+          ctaText="Get My Free Checklist"
+          magnetSlug="policy-review-checklist"
+          thankYouMessage="Your Policy Review Checklist is on its way! Please check your email (and spam folder) in the next 2 minutes."
+          variant="inline"
+        />
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">FAQs: Policy Reviews</h2>
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-semibold text-slate-800">How often should I review my insurance policies?</h3>
+          <p>Annually, ideally before policy renewal. Also review after major life events: marriage, childbirth, job change, home purchase, or reaching age milestones (turn 50, 55, 60).</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-slate-800">Can you review policies I already own, even if I didn't buy them through you?</h3>
+          <p>Absolutely. Policy reviews are independent of purchase origin. If you bought a policy elsewhere, I can still audit it for gaps, redundancy, or claim vulnerabilities.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-slate-800">Do I get charged for a policy review?</h3>
+          <p>No. I offer one free 30-minute policy review per client annually. Additional sessions or complex cases are priced transparently.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Facing a Policy Gap or Claim Rejection?</h2>
+      <p class="text-blue-100 mb-6">Don't wait for a crisis. Book a free review session today.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20would%20like%20to%20book%20a%20free%20policy%20review." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">WhatsApp for Free Review</a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">Call +91-99866 34506</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

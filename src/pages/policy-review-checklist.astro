@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadMagnetForm from '../components/LeadMagnetForm.astro';
+import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
+import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
+---
+
+<BaseLayout title="Free Policy Review Checklist - Insurance Support" description="Get instant access to our comprehensive policy review checklist to identify gaps in your insurance coverage before it's too late.">
+  <LocalBusinessJsonLd />
+  <FAQPageJsonLd />
+
+  <section class="min-h-screen py-20 bg-gradient-to-br from-slate-50 to-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-600 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4.518a9 9 0 1113.876-4.518M9 17h.01M9 12h.01M9 7h.01"></path>
+          </svg>
+          Free Resource
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">
+          Policy Review Checklist: Don't Let Hidden Gaps Ruin Your Family's Financial Future
+        </h1>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Get our comprehensive 12-point checklist (used with 500+ families in Bangalore) to identify missing coverage, redundant policies, and potential claim pitfalls before they become a problem.
+        </p>
+      </div>
+
+      <!-- Value Proposition -->
+      <div class="bg-white shadow-xl rounded-3xl p-8 md:p-12 mb-16">
+        <h2 class="text-2xl font-bold text-center text-slate-900 mb-8">What You'll Get Inside:</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold text-sm">1</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Coverage Adequacy Check</h3>
+              <p class="text-sm text-slate-600">Is your sum assured enough for your family's needs?</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold text-sm">2</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Nomination Accuracy Scan</h3>
+              <p class="text-sm text-slate-600">Are your nominees correctly designated?</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold text-sm">3</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Claim Readiness Score</h3>
+              <p class="text-sm text-slate-600">Will your claim get approved quickly?</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold text-sm">4</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Tax Optimization Guide</h3>
+              <p class="text-sm text-slate-600">Maximize deductions under Sec 80C, 80D, 10(10D)</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold text-sm">5</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Redundancy Detector</h3>
+              <p class="text-sm text-slate-600">Spot overlapping or duplicate coverage</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold text-sm">6</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Premium Benchmarking</h3>
+              <p class="text-sm text-slate-600">Is your premium competitive?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Section -->
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl shadow-2xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Download Your Free Checklist Now</h2>
+        <p class="text-blue-100 mb-8 max-w-xl mx-auto">Enter your details below and we'll email your PDF checklist within seconds.</p>
+        <LeadMagnetForm
+          fields={["name", "email", "phone", "insurer", "claimAmount"]}
+          ctaText="Get My Free Checklist"
+          magnetSlug="policy-review-checklist"
+          thankYouMessage="Your Policy Review Checklist is on its way to your email! We'll also send a personalized WhatsApp message with next steps."
+          variant="inline"
+        />
+      </div>
+
+      <!-- Trust Signals -->
+      <div class="text-center mt-12">
+        <p class="text-sm text-slate-500 mb-4">Trusted by 500+ families across Bengaluru</p>
+        <div class="flex items-center justify-center gap-4 flex-wrap">
+          <span class="text-xs text-slate-400">IRDAI Reg: 0149161D</span>
+          <span class="text-slate-300">|</span>
+          <span class="text-xs text-slate-400">25+ Years Experience</span>
+          <span class="text-slate-300">|</span>
+          <span class="text-xs text-slate-400">₹50 Cr+ Claims Recovered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

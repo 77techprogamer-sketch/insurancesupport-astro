@@ -102,30 +102,43 @@ const REASONS = [
   ]} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": TITLE,
-    "description": DESCRIPTION,
-    "image": "https://insurancesupport.online/images/og/health-insurance-claim-rejection-15-reasons-2026.png",
-    "datePublished": PUBLISH_DATE,
-    "dateModified": PUBLISH_DATE,
-    "author": {
-      "@type": "Person",
-      "name": AUTHOR_NAME
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Insurance Support",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://insurancesupport.online/logo.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": PAGE_URL
-    }
-  })} />
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the most common reasons for health insurance claim rejection in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 15 most common reasons include non-disclosure of pre-existing diseases, incomplete waiting periods, room rent capping, treatment at non-network hospitals, OPD expenses not covered, intentional non-disclosure, claims outside policy term, sub-limit exceedances, pre-authorization delays, incomplete documentation, cosmetic or elective procedures, war or nuclear risks, domiciliary hospitalization not qualifying, fraud or misrepresentation, and illness during a waiting period after renewal without portability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I check if my hospital is in my insurer's network?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can verify network hospitals by visiting your insurer's website, calling their customer service, or using their mobile app. As an IRDAI-certified advisor, I can also provide you with a network hospital list specific to your policy and location in Bangalore."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do immediately after my health claim is rejected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "First, demand a written repudiation letter from the insurer detailing the exact clause invoked. Then, file a formal grievance with the insurer's Grievance Redressal Officer within 30 days. If unresolved, escalate to IRDAI's Bima Bharosa portal or the local Insurance Ombudsman within 1 year of the rejection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I still recover a claim if the rejection was due to non-disclosure of a pre-existing disease?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — many claims rejected for 'non-disclosure' are successfully overturned when the original proposal form actually discloses the condition, or when the disease is unrelated to the claim. An experienced advisor can review your proposal form and repudiation letter to find the error. I have helped numerous clients recover claims worth ₹5‑10 lakhs on this exact ground."
+          }
+        }
+      ]
+    })} />
 
   <main class="max-w-4xl mx-auto px-4 py-16">
     <nav class="text-sm text-slate-500 mb-6">

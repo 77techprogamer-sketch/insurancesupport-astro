@@ -20,7 +20,8 @@ const magnets: Magnet[] = [
   { slug: 'claim-checklist', title: 'LIC Claim Rejection Checklist & Appeal Template' },
   { slug: 'term-comparison', title: 'Term Insurance Comparison Sheet — Top 10 Insurers 2024' },
   { slug: 'health-claim-denial', title: 'Health Claim Denial Response Letter Generator' },
-  { slug: 'irdai-complaint', title: 'IRDAI IGMS Complaint Filing Walkthrough (Video + Checklist)' }
+  { slug: 'irdai-complaint', title: 'IRDAI IGMS Complaint Filing Walkthrough (Video + Checklist)' },
+  { slug: 'policy-review-checklist', title: 'Policy Review Checklist — Comprehensive 12-Point Audit' }
 ];
 
 // Simple in-memory rate limiting (resets on deploy)

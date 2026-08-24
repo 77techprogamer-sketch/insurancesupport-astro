@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InsuranceCalculator from '../../components/InsuranceCalculator.tsx';
+import LocalBusinessJsonLd from '../../components/LocalBusinessJsonLd.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+
+const TITLE = "Insurance Advisor in Koramangala, Bengaluru | Insurance Support";
+const DESCRIPTION = "IRDAI certified insurance advisor for life, health, motor & term insurance in Koramangala, Bengaluru. Free consultation and claim recovery expert. 25+ years experience.";
+const CANONICAL_URL = "https://insurancesupport.online/services/koramangala";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} canonical={CANONICAL_URL} geoPlaceName="Koramangala, Bengaluru" geoRegion="IN-KA">
+  <LocalBusinessJsonLd />
+  <FAQPageJsonLd questions={[
+    { question: "How do I find an insurance advisor near me in Koramangala?", answer: "Hari Kotian is an IRDAI-certified insurance advisor with 25+ years experience serving Koramangala residents. You can reach him via WhatsApp at +91-99866 34506 or visit insurancesupport.online for a free consultation." },
+    { question: "What types of insurance are offered in Koramangala?", answer: "We cover life insurance, health insurance, motor insurance, term insurance, ULIP, pension plans, travel insurance, and SME/business insurance for residents of Koramangala and surrounding areas." },
+    { question: "Can you help with rejected insurance claims in Koramangala?", answer: "Yes. We specialize in recovering rejected claims. If your health or life insurance claim was rejected anywhere in Bangalore, including Koramangala, we can review your case and help you appeal." }
+  ]} />
+
+  <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+    <div class="max-w-6xl mx-auto px-4">
+
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          Now Serving Koramangala
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">Insurance Advisor in Koramangala, Bengaluru</h1>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          As an IRDAI-certified insurance advisor (Reg. No: 0149161D), I provide personalised life, health, motor, and term insurance guidance to families and professionals in Koramangala — backed by 25+ years of expertise.
+        </p>
+      </div>
+
+      <!-- Google Map -->
+      <div class="rounded-2xl overflow-hidden shadow-lg mb-12 aspect-video">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.35!2d77.6106!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159c9f48f7ef%3A0x2e6d5f6c795b9c5a!2sKoramangala%2C%20Bengaluru!5e0!3m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style="border:0;"  loading="lazy"
+          title="Insurance advisor in Koramangala, Bengaluru"
+        ></iframe>
+      </div>
+
+      <!-- Local Success Story -->
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-8 shadow-sm mb-12">
+        <h2 class="text-2xl font-bold text-amber-900 mb-4">Local Claim Recovery — Koramangala</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          A software professional in Koramangala had a ₹12 lakh health claim rejected for "non-disclosure of hypertension". We retrieved the original proposal form, proved the condition was disclosed, and got the claim approved within 28 days.
+        </p>
+        <p class="text-sm text-slate-500 italic">— Verified Client, Koramangala (name withheld for privacy)</p>
+      </div>
+
+      <!-- Services for Koramangala -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Insurance Services in Koramangala</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Life & Term Insurance</h3>
+            <p class="text-sm text-slate-600">Choose the right term cover and life plans tailored to your income and family needs.</p>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Health Insurance</h3>
+            <p class="text-sm text-slate-600">Family floater, individual, and senior citizen plans with cashless hospital access in Koramangala.</p>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Motor Insurance</h3>
+            <p class="text-sm text-slate-600">Comprehensive and third-party car/bike insurance with quick claim support.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculator -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Estimate Your Premium</h2>
+        <p class="text-lg text-slate-600 mb-8">Use our quick calculator for an indicative premium estimate.</p>
+        <InsuranceCalculator client:visible />
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white">
+        <h2 class="text-2xl font-bold mb-3">Need Personalised Insurance Advice in Koramangala?</h2>
+        <p class="text-blue-100 mb-6">Free consultation. No obligation. Talk to a certified advisor with 25+ years of experience.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20insurance%20help%20in%20Koramangala" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">WhatsApp Hari Kotian</a>
+          <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">Call +91-99866 34506</a>
+        </div>
+      </div>
+
+      <!-- Local Nav -->
+      <div class="mt-12 text-center">
+        <p class="text-sm text-slate-500 mb-4">Also serving nearby areas:</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/services/indiranagar" class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 hover:bg-blue-50 hover:border-blue-200 transition-colors">Indiranagar</a>
+          <a href="/services/whitefield" class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 hover:bg-blue-50 hover:border-blue-200 transition-colors">Whitefield</a>
+          <a href="/services/jayanagar" class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 hover:bg-blue-50 hover:border-blue-200 transition-colors">Jayanagar</a>
+          <a href="/services/btm-layout" class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 hover:bg-blue-50 hover:border-blue-200 transition-colors">BTM Layout</a>
+          <a href="/services/malleshwaram" class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 hover:bg-blue-50 hover:border-blue-200 transition-colors">Malleshwaram</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
