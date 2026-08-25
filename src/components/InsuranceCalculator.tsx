@@ -314,7 +314,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
           >
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 8l3 5m0 0l3-5m-3 5v4" />
                 </svg>
               </div>
@@ -327,7 +327,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
             </p>
 
             <div className="mt-4 flex items-start gap-2">
-              <svg className="w-4 h-4 text-blue-500 mt-0.5 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 text-blue-500 mt-0.5 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <p className="text-sm text-slate-600">
