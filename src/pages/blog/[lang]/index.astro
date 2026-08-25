@@ -1,43 +1,50 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import posts from '../../data/blogs.json';
-import languagesData from '../../data/languages.json';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import posts from '../../../data/blogs.json';
+import languagesData from '../../../data/languages.json';
+import { INDIAN_LANGUAGES } from '../../../data/languages';
 
-const INDIAN_LANGUAGES = ['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml'];
-
-// Only show English posts in the main listing
-const englishPosts = posts.filter(p => (p.lang || 'en') === 'en');
-const sorted = englishPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-const allCategories = [...new Set(sorted.flatMap(p => p.categories || []))].sort();
-const latestPost = sorted[0];
-const remainingPosts = sorted.slice(1);
-
-// Group translated posts by language
-const translatedByLang: Record<string, any[]> = {};
-for (const p of posts) {
-  if (p.lang && p.lang !== 'en') {
-    if (!translatedByLang[p.lang]) translatedByLang[p.lang] = [];
-    translatedByLang[p.lang].push(p);
-  }
+// Generate static paths for each language index
+export function getStaticPaths() {
+  return INDIAN_LANGUAGES.map(code => ({
+    params: { lang: code }
+  }));
 }
-const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[l] && translatedByLang[l].length > 0);
+
+const { lang } = Astro.params;
+
+if (!INDIAN_LANGUAGES.includes(lang)) {
+  return Astro.redirect('/blog');
+}
+
+const langInfo = languagesData.languages.find(l => l.code === lang);
+const langName = langInfo?.name || lang;
+const langNativeName = langInfo?.nativeName || lang;
+
+// Get translated posts for this language
+const langPosts = posts.filter(p => p.lang === lang).sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const allCategories = [...new Set(langPosts.flatMap(p => p.categories || []))].sort();
+const latestPost = langPosts[0];
+const remainingPosts = langPosts.slice(1);
 ---
 
-<BaseLayout title="Insurance Blog | Expert Guides & Tips | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience.">
+<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Insurance Blog | Expert Guides & Tips",
-    "description": "Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian.",
-    "url": "https://insurancesupport.online/blog/",
+    "name": `${langName} Insurance Blog`,
+    "description": `Expert insurance guides in ${langName}. Claim tips, IRDAI updates, advisory.`,
+    "url": `https://insurancesupport.online/blog/${lang}/`,
     "isPartOf": { "@type": "WebSite", "name": "Insurance Support", "url": "https://insurancesupport.online" },
     "about": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor" },
-    "hasPart": sorted.slice(0, 10).map(p => ({
+    "hasPart": langPosts.slice(0, 10).map(p => ({
       "@type": "BlogPosting",
       "headline": p.title,
-      "url": `https://insurancesupport.online/blog/${p.slug}`,
+      "url": `https://insurancesupport.online/blog/${lang}/${p.translatedFrom || p.slug}/`,
       "datePublished": p.date,
-      "author": { "@type": "Person", "name": p.author || "Hari Kotian" }
+      "author": { "@type": "Person", "name": p.author || "Hari Kotian" },
+      "inLanguage": lang
     }))
   })} />
 
@@ -51,11 +58,11 @@ const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[
       <div class="max-w-6xl mx-auto px-4 text-center relative">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-amber-300 text-sm font-semibold mb-6">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-          Expert Insurance Blog
+          {langName} Insurance Blog
         </span>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">Insurance Guides & Insights</h1>
-        <p class="text-lg text-blue-100/80 max-w-2xl mx-auto">Expert guides, claim tips, and insurance insights from Hari Kotian, IRDAI certified advisor with 25+ years experience.</p>
-        <p class="text-sm text-blue-200/60 mt-3">{sorted.length} expert articles published</p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">{langNativeName} बीमा गाइड और इनसाइट्स</h1>
+        <p class="text-lg text-blue-100/80 max-w-2xl mx-auto">Hari Kotian के विशेषज्ञ गाइड {langNativeName} में - IRDAI प्रमाणित सलाहकार, 25+ साल का अनुभव।</p>
+        <p class="text-sm text-blue-200/60 mt-3">{langPosts.length} लेख उपलब्ध</p>
       </div>
     </section>
 
@@ -63,11 +70,11 @@ const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[
 
       <!-- Featured Post -->
       {latestPost && (
-        <a href={`/blog/${latestPost.slug}`} class="block bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100 hover:shadow-xl hover:border-blue-200 transition-all mb-12 group">
+        <a href={`/blog/${lang}/${latestPost.translatedFrom || latestPost.slug}`} class="block bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-10 border border-blue-100 hover:shadow-xl hover:border-blue-200 transition-all mb-12 group">
           <div class="flex flex-wrap items-center gap-3 mb-4">
-            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">Latest Guide</span>
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">नवीनतम गाइड</span>
             <span class="text-sm text-slate-500">{latestPost.date}</span>
-            <span class="text-sm text-slate-500">By {latestPost.author || 'Hari Kotian'}</span>
+            <span class="text-sm text-slate-500">लेखक: {latestPost.author || 'Hari Kotian'}</span>
           </div>
           <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors leading-tight">{latestPost.title}</h2>
           <p class="text-slate-600 mb-4 line-clamp-2 leading-relaxed">{latestPost.summary}</p>
@@ -77,7 +84,7 @@ const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[
             ))}
           </div>
           <span class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:gap-3 transition-all">
-            Read Full Article
+            पूरा लेख पढ़ें
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </span>
         </a>
@@ -89,14 +96,14 @@ const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[
           <input
             type="text"
             id="blog-filter"
-            placeholder="Filter articles by keyword..."
+            placeholder="कीवर्ड द्वारा फ़िल्टर करें..."
             class="w-full px-4 py-3 pl-10 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm"
           />
           <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
         </div>
 
         <div class="flex flex-wrap gap-2 w-full md:w-auto">
-          <button data-cat="all" class="cat-btn px-3 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-lg transition-all">All Topics</button>
+          <button data-cat="all" class="cat-btn px-3 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-lg transition-all">सभी विषय</button>
           {allCategories.slice(0, 5).map(cat => (
             <button data-cat={cat} class="cat-btn px-3 py-1.5 bg-white border border-slate-200 text-slate-700 text-xs font-semibold rounded-lg hover:border-blue-300 transition-all">{cat}</button>
           ))}
@@ -107,7 +114,7 @@ const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[
       <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {remainingPosts.map((post, i) => (
           <div class="blog-card" data-title={post.title.toLowerCase()} data-summary={post.summary.toLowerCase()} data-categories={JSON.stringify(post.categories || [])}>
-            <a href={`/blog/${post.slug}`} class="group block bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 h-full flex flex-col justify-between">
+            <a href={`/blog/${lang}/${post.translatedFrom || post.slug}`} class="group block bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 h-full flex flex-col justify-between">
               <div>
                 <div class="h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500" />
                 <div class="p-6">
@@ -128,7 +135,7 @@ const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[
                 <div class="flex items-center justify-between pt-3 border-t border-slate-100">
                   <span class="text-xs text-slate-400">{post.date}</span>
                   <span class="text-xs font-semibold text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Read More
+                    पूरा पढ़ें
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </span>
                 </div>
@@ -138,38 +145,24 @@ const languagesWithTranslations = INDIAN_LANGUAGES.filter(l => translatedByLang[
         ))}
       </div>
 
+      {langPosts.length === 0 && (
+        <div class="text-center py-16">
+          <p class="text-slate-600 mb-4">इस भाषा में कोई लेख उपलब्ध नहीं है।</p>
+          <a href="/blog" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors">English ब्लॉग पर जाएं</a>
+        </div>
+      )}
+
       <!-- Bottom CTA -->
       <div class="mt-16 text-center">
         <div class="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-8 md:p-10 border border-slate-100">
-          <h3 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-3">Have a specific insurance question?</h3>
-          <p class="text-slate-600 mb-6">Get personalized answers from Hari Kotian, IRDAI certified advisor with 25+ years of experience.</p>
+          <h3 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-3">कोई बीमा प्रश्न है?</h3>
+          <p class="text-slate-600 mb-6">Hari Kotian से व्यक्तिगत सलाह लें, IRDAI प्रमाणित सलाहकार जिनके पास 25+ साल का अनुभव है।</p>
           <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full text-lg shadow-lg shadow-amber-500/25 hover:shadow-xl hover:scale-105 transition-all btn-glow">
-            Consult Hari Kotian
+            Hari Kotian से सलाह लें
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
       </div>
-
-      <!-- Language Translations Section -->
-      {languagesWithTranslations.length > 0 && (
-        <div class="mt-16">
-          <h3 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-6 text-center">Read Our Guides in Indian Languages</h3>
-          <p class="text-slate-600 mb-8 text-center max-w-2xl mx-auto">Expert insurance guides translated into major Indian languages for wider accessibility.</p>
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            {languagesWithTranslations.map(langCode => {
-              const langInfo = languagesData.languages.find(l => l.code === langCode);
-              const count = translatedByLang[langCode]?.length || 0;
-              return (
-                <a href={`/blog/${langCode}/`} class="group block bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all text-center">
-                  <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30">{count}</div>
-                  <h4 class="font-bold text-slate-900 mb-1">{langInfo?.nativeName || langCode}</h4>
-                  <p class="text-sm text-slate-500">{count} guides available</p>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </div>
   </main>
 

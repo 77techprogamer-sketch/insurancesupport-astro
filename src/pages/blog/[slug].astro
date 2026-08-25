@@ -9,11 +9,16 @@ import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
 import { marked } from 'marked';
 
+// Only generate routes for English posts (translated posts live at /blog/[lang]/[slug])
 export function getStaticPaths() {
-  return posts.map(post => ({
-    params: { slug: post.slug },
-    props: { post }
-  }));
+  const langPrefixes = ['hi-', 'bn-', 'ta-', 'te-', 'mr-', 'gu-', 'kn-', 'ml-'];
+  return posts
+    .filter(p => !p.lang || p.lang === 'en')
+    .filter(p => !langPrefixes.some(prefix => p.slug.startsWith(prefix)))
+    .map(post => ({
+      params: { slug: post.slug },
+      props: { post }
+    }));
 }
 
 const { post } = Astro.props;

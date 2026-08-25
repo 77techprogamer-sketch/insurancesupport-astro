@@ -1,0 +1,75 @@
+{
+  "sourceLanguage": "en",
+  "sourceLanguageName": "English",
+  "languages": [
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "nativeName": "हिन्दी",
+      "urlCode": "hi",
+      "direction": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "bn",
+      "name": "Bengali",
+      "nativeName": "বাংলা",
+      "urlCode": "bn",
+      "direction": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "ta",
+      "name": "Tamil",
+      "nativeName": "தமிழ்",
+      "urlCode": "ta",
+      "direction": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "te",
+      "name": "Telugu",
+      "nativeName": "తెలుగు",
+      "urlCode": "te",
+      "direction": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "mr",
+      "name": "Marathi",
+      "nativeName": "मराठी",
+      "urlCode": "mr",
+      "direction": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati",
+      "nativeName": "ગુજરાતી",
+      "urlCode": "gu",
+      "direction": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "kn",
+      "name": "Kannada",
+      "nativeName": "ಕನ್ನಡ",
+      "urlCode": "kn",
+      "direction": "ltr",
+      "enabled": true
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam",
+      "nativeName": "മലയാളം",
+      "urlCode": "ml",
+      "direction": "ltr",
+      "enabled": true
+    }
+  ],
+  "notes": [
+    "Urdu is intentionally excluded per project requirements.",
+    "Indian English (en-IN) is the source language.",
+    "Each blog post slug gets a language-specific version at /blog/{langCode}/{slug}"
+  ]
+}
