@@ -29,7 +29,8 @@
 /robots.txt
   Cache-Control: public, max-age=3600
 
-/sitemap.xml
+# Sitemap index - revalidate frequently
+/sitemap-index.xml
   Cache-Control: public, max-age=3600
 
 # HTML pages - moderate caching with stale-while-revalidate
