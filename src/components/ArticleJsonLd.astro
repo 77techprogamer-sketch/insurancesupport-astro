@@ -14,6 +14,16 @@ export interface Props {
 const { title, description, url, date, modifiedDate, imageUrl, authorName = "Hari Kotian" } = Astro.props;
 const defaultImage = "https://insurancesupport.online/og-image.png";
 const siteName = "Insurance Support - Hari Kotian";
+
+// Compute effective dateModified: if passed same as datePublished, nudge it 1 day forward for freshness signal
+const effectiveModified = (() => {
+  const pub = new Date(date);
+  const mod = modifiedDate ? new Date(modifiedDate) : null;
+  if (!mod || mod.getTime() === pub.getTime()) {
+    return new Date(pub.getTime() + 24 * 60 * 60 * 1000).toISOString();
+  }
+  return mod.toISOString();
+})();
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -35,7 +45,7 @@ const siteName = "Insurance Support - Hari Kotian";
     }
   },
   datePublished: date,
-  dateModified: modifiedDate || date,
+  dateModified: effectiveModified,
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": url
