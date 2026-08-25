@@ -4,6 +4,7 @@ import posts from '../../../data/blogs.json';
 import languagesData from '../../../data/languages.json';
 import { INDIAN_LANGUAGES } from '../../../data/languages';
 import ArticleJsonLd from '../../../components/ArticleJsonLd.astro';
+import LanguageSidebar from '../../../components/LanguageSidebar.astro';
 import BreadcrumbJsonLd from '../../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../../components/FAQPageJsonLd.astro';
 import { marked } from 'marked';
@@ -274,6 +275,8 @@ const altLangText: Record<string, string> = {
       </div>
     </div>
   </main>
+
+  <LanguageSidebar lang={lang} />
 </BaseLayout>
 
 <style is:global>

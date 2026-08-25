@@ -7,6 +7,7 @@ import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
+import LanguageSidebar from '../../components/LanguageSidebar.astro';
 import { marked } from 'marked';
 
 // Only generate routes for English posts (translated posts live at /blog/[lang]/[slug])
@@ -263,6 +264,8 @@ const isClaimIntent = claimIntentSlugs.has(post.slug) || /claim|rejection|reject
         </div>
       </div>
     </article>
+
+    <LanguageSidebar lang="en" />
   </main>
 
 </BaseLayout>

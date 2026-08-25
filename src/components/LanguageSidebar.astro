@@ -1,0 +1,39 @@
+---
+// src/components/LanguageSidebar.astro
+import languagesData from '../data/languages.json';
+
+const INDIAN_LANGUAGES = ['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml'];
+const currentLang = Astro.props.lang || 'en';
+---
+
+<div class="fixed right-4 top-24 z-40 hidden xl:block">
+  <div class="bg-white rounded-xl border border-slate-200 shadow-xl p-4 w-48 max-h-[calc(100vh-100px)] overflow-y-auto">
+    <h4 class="text-sm font-bold text-slate-900 mb-3">Read in Indian Languages</h4>
+    <p class="text-xs text-slate-500 mb-4">66 guides available in each language</p>
+    <div class="space-y-2">
+      {INDIAN_LANGUAGES.map(langCode => {
+        const langInfo = languagesData.languages.find(l => l.code === langCode);
+        const isActive = currentLang === langCode;
+        return (
+          <a
+            href={`/blog/${langCode}/`}
+            class={`flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+              isActive
+                ? 'bg-blue-600 text-white'
+                : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'
+            }`}
+          >
+            <span class="text-lg">{langInfo?.nativeName || langCode}</span>
+          </a>
+        );
+      })}
+    </div>
+    <div class="border-t border-slate-100 my-3"></div>
+    <a
+      href="/blog"
+      class="block text-center text-xs text-slate-500 hover:text-blue-600 transition-colors py-1"
+    >
+      ← Back to English
+    </a>
+  </div>
+</div>
