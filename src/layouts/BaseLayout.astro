@@ -28,18 +28,18 @@ const phoneE164 = "+919986634506"; // Unmasked for schema (valid E.164)
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "InsuranceAgency",
   "name": "Insurance Support",
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "sameAs": [
-    "https://share.google/2Cbcq7l39kTWJl2Dm"
+    "https://g.co/kgs/insurancesupport"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": phoneE164,
     "contactType": "customer service",
-    "availableLanguage": ["English", "Hindi", "Kannada"],
+    "availableLanguage": ["English", "Hindi", "Bengali", "Tamil", "Telugu", "Marathi", "Gujarati", "Kannada", "Malayalam"],
     "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -125,11 +125,11 @@ const websiteSchema = {
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <script type="application/ld+json" set:html={JSON.stringify([organizationSchema, websiteSchema])} />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP67H399V2" data-csp-hash></script>
-    <script data-csp-hash>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-JP67H399V2")</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP67H399V2"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-JP67H399V2")</script>
     <!-- Google Ads Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18269976114"></script>
-    <script data-csp-hash>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -143,14 +143,7 @@ const websiteSchema = {
         }
       });
     </script>
-    <script async data-csp-hash>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-P8DZ6MRQ")</script>
-    <script defer data-csp-hash>
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "v9dto5m10l");
-   </script>
+    <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-P8DZ6MRQ")</script>
   </head>
   <body class="font-sans text-base antialiased pb-16 md:pb-0" style="scroll-padding-top: 5rem;">
       <Header />
@@ -160,5 +153,13 @@ const websiteSchema = {
       <MobileStickyBar />
       <WhatsAppWidget />
       <script src="/scripts/reveal.js" is:inline defer></script>
+      <!-- Analytics Scripts (deferred to end of body for performance) -->
+      <script defer>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "v9dto5m10l");
+      </script>
     </body>
     </html>
