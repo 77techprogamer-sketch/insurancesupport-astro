@@ -117,12 +117,12 @@ const compareAlternatives = [
             <p class="text-sm text-slate-300">Sunday: By appointment</p>
           </div>
           <!-- Share Button -->
-          <div class="pt-2">
-            <button id="share-site-button" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transition-colors">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6L15.316 6.095m0 0a3 3 0 110-2.684 3 3 0 010 2.684m0 0l.046-.073A.978.978 0 0015.623 4H15.32a.977.977 0 00-.704.293L11.809 9.916m7.135-9.135A9.999 9.999 0 0112 12 9.999 9.999 0 013.866 20.076V19.5c0-1.293.493-2.502 1.353-3.447L9.44 10.59m-9.44 9.44a3 3 0 110-5.368 3 3 0 010 5.368zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              Share Site
-            </button>
-          </div>
+                    <div class="pt-2">
+                      <button id="share-site-button" class="inline-flex items-center gap-2 px-4 py-2 text-slate-400 hover:text-white bg-transparent border border-slate-700 hover:border-blue-500 rounded-full transition-colors" aria-label="Share Insurance Support website URL">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6L15.316 6.095m0 0a3 3 0 110-2.684 3 3 0 010 2.684m0 0l.046-.073A.978.978 0 0015.623 4H15.32a.977.977 0 00-.704.293L11.809 9.916m7.135-9.135A9.999 9.999 0 0112 12 9.999 9.999 0 013.866 20.076V19.5c0-1.293.493-2.502 1.353-3.447L9.44 10.59m-9.44 9.44a3 3 0 110-5.368 3 3 0 010 5.368zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Share Site
+                      </button>
+                    </div>
         </div>
       </div>
     </div>
@@ -153,28 +153,52 @@ const compareAlternatives = [
 </footer>
 
 <script is:inline>
+  // Toast notification helper
+  function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    const bgColor = type === 'success' ? 'bg-emerald-500/90' : 'bg-amber-500/90';
+    toast.className = `fixed bottom-6 right-6 z-50 ${bgColor} text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2 animate-slide-up`;
+    toast.innerHTML = `
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="${type === 'success' ? 'M5 13l4 4L19 7' : 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z'}" />
+      </svg>
+      <span>${message}</span>
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+      toast.style.transition = 'opacity 0.3s, transform 0.3s';
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  }
+
   document.getElementById('share-site-button')?.addEventListener('click', async () => {
     const shareData = {
       title: 'Insurance Support by Hari Kotian',
       text: 'Check out Insurance Support — IRDAI certified insurance advisory and claim recovery experts in Bengaluru.',
       url: window.location.href
     };
+    let method = 'clipboard';
     if (navigator.share) {
       try {
         await navigator.share(shareData);
+        method = 'native';
+        showToast('Shared successfully!');
       } catch (err) {
         if (err.name !== 'AbortError') console.error(err);
       }
     } else {
       try {
         await navigator.clipboard.writeText(window.location.href);
-        const btn = document.getElementById('share-site-button');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg> Link Copied!`;
-        setTimeout(() => { btn.innerHTML = originalText; }, 2500);
+        showToast('Link copied to clipboard');
       } catch (err) {
-        alert('Copy failed. You can copy the URL from your browser address bar.');
+        showToast('Copy failed. Use browser address bar.', 'error');
       }
+    }
+    // Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'share', { method, content_type: 'site' });
     }
   });
 </script>
@@ -190,5 +214,18 @@ const compareAlternatives = [
     100% {
       transform: translateX(-33.33%);
     }
+  }
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out forwards;
   }
 </style>
