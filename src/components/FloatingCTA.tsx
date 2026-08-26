@@ -43,8 +43,9 @@ export default function FloatingCTA() {
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </motion.a>
 
-          {/* Call */}<motion.a
-            href="tel:+919****4506"
+          {/* Call */}
+          <motion.a
+            href="tel:+919986634506"
             aria-label="Call us"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}

@@ -65,7 +65,7 @@ renderer.link = function({ href, title, text }) {
 };
 renderer.image = function({ href, title, text }) {
   const t = title ? ` title="${title}"` : '';
-  return `<figure class="my-8"><img src="${href}" alt="${text || ''}"${t} class="w-full rounded-xl shadow-md" loading="lazy" />${text ? `<figcaption class="text-center text-sm text-slate-500 mt-2">${text}</figcaption>` : ''}</figure>`;
+  return `<figure class="my-8"><img src="${href}" alt="${text || ''}"${t} class="w-full h-auto rounded-xl shadow-md" width="1200" height="630" loading="lazy" decoding="async" />${text ? `<figcaption class="text-center text-sm text-slate-500 mt-2">${text}</figcaption>` : ''}</figure>`;
 };
 renderer.heading = function({ text, depth }) {
   const cls = {
