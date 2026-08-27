@@ -24,7 +24,7 @@ const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online/";
 const ogImage = pageOgImage || `${siteUrl}og-image.png`;
 const phoneNumber = "+91-9986634506";
-const phoneE164 = "+919986634506"; // Unmasked for schema (valid E.164)
+const phoneE164 = "+919986634506";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -33,7 +33,13 @@ const organizationSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "sameAs": [
-    "https://g.co/kgs/insurancesupport"
+    "https://g.page/r/CRDgJanrKjRhEBM/review"
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Bengaluru" },
+    { "@type": "City", "name": "Koramangala" },
+    { "@type": "State", "name": "Karnataka" },
+    { "@type": "Country", "name": "IN", "sameAs": "https://insurancesupport.online/locations/" }
   ],
   "contactPoint": {
     "@type": "ContactPoint",

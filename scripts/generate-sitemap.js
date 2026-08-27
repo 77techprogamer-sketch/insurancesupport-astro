@@ -125,16 +125,14 @@ async function generateSitemaps() {
     await fs.writeFile(path.join(distPath, 'sitemap-index.xml'), sitemapIndexBuffer.toString());
     console.log(`Sitemap index generated at ${path.join(distPath, 'sitemap-index.xml')} with ${sitemapIndexLinks.length} sitemaps.`);
 
-    // Delete the old sitemap.xml if it exists and we're moving to index-based sitemaps
-    const oldSitemapPath = path.join(distPath, 'sitemap.xml');
-    try {
-        await fs.unlink(oldSitemapPath);
-        console.log(`Deleted old sitemap.xml at ${oldSitemapPath}`);
-    } catch (error) {
-        if (error.code !== 'ENOENT') {
-            console.error(`Error deleting old sitemap.xml: ${error}`);
-        }
-    }
+    // Generate root sitemap.xml as a sitemap index pointing to segmented sitemaps
+    // This replaces the old approach of deleting sitemap.xml, ensuring /sitemap.xml always works
+    const rootSitemapStream = new SitemapIndexStream({ hostname: siteUrl });
+    sitemapIndexLinks.forEach(link => rootSitemapStream.write(link));
+    rootSitemapStream.end();
+    const rootSitemapBuffer = await streamToPromise(rootSitemapStream);
+    await fs.writeFile(path.join(distPath, 'sitemap.xml'), rootSitemapBuffer.toString());
+    console.log(`Root sitemap.xml generated at ${path.join(distPath, 'sitemap.xml')} with ${sitemapIndexLinks.length} sitemaps.`);
 }
 
 generateSitemaps().catch(console.error);
