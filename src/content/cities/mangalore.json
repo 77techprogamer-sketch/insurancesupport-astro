@@ -1,0 +1,40 @@
+{
+  "slug": "mangalore",
+  "name": "Mangalore",
+  "state": "Karnataka",
+  "desc": "Families and professionals in Mangalore, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Kankanady",
+    "Bejai",
+    "Falnir",
+    "Hampankatta",
+    "Kadri Kambla",
+    "Nanthoor",
+    "Surathkal",
+    "Baikampady"
+  ],
+  "nearby": [
+    "kochi",
+    "mysore"
+  ],
+  "it_focus": "Portable health and term insurance for engineers at MRPL, Baikampady industrial estate, and IT companies near KSRTC Bejai.",
+  "senior_focus": "Doorstep health insurance and LIC policy servicing for senior Catholic and community families in Kankanady, Falnir, and Kadri.",
+  "branch_dets": "Coordination with LIC branch at Hampankatta and health insurer offices in Kankanady.",
+  "local_faqs": [
+    {
+      "question": "Which Mangalore hospitals are in the cashless network?",
+      "answer": "Father Muller Hospital, KMC Hospital Attavar, A J Hospital, and Indiana Hospital are all in our cashless network."
+    },
+    {
+      "question": "Can you help NRIs in Gulf countries manage family insurance in Mangalore?",
+      "answer": "Yes, we manage NRI parent health insurance, LIC policy servicing, and documentation for families in Gulf countries with origin in Mangalore."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Mangalore",
+  "lic_addr": "Hampankatta, Mangalore 575001",
+  "nearbyLocations": [],
+  "lat": 12.9141,
+  "lng": 74.856
+}

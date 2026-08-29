@@ -1,0 +1,40 @@
+{
+  "slug": "mumbai",
+  "name": "Mumbai",
+  "state": "Maharashtra",
+  "desc": "In Mumbai, where fast-paced urban life meets complex financial planning, Hari Kotian brings 25+ years of IRDAI-certified expertise. Get personalized doorstep consultations for life, health, and motor insurance tailored to your family's exact requirements.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Andheri",
+    "BKC",
+    "Bandra",
+    "Borivali",
+    "Thane",
+    "Navi Mumbai",
+    "Dadard",
+    "Ghatkopar"
+  ],
+  "nearby": [
+    "pune",
+    "thane"
+  ],
+  "it_focus": "Custom term plans with global critical illness riders for corporate executives in BKC, Lower Parel, and Powai.",
+  "senior_focus": "Dedicated doorstep assistance for senior citizens in Dadar, Matunga, and Borivali for claim settlement, pension planning, and policy documentation.",
+  "branch_dets": "Seamless service coordination across Western, Central, and Harbour suburb insurer branches.",
+  "local_faqs": [
+    {
+      "question": "Do you help with health insurance claim rejections in Mumbai?",
+      "answer": "Yes, claim recovery is our core specialty. We review rejected claims from any insurer and handle the appeal process with insurance ombudsman offices in Mumbai."
+    },
+    {
+      "question": "How quickly can I renew my car or health insurance in Mumbai?",
+      "answer": "You can get instant quotes and digital policy issuance within 15 minutes, along with local advisor support for claim claims."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Mumbai",
+  "lic_addr": "Yogakshema, Nariman Point, Mumbai 400021",
+  "nearbyLocations": [],
+  "lat": 19.076,
+  "lng": 72.8777
+}

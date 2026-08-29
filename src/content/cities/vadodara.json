@@ -1,0 +1,40 @@
+{
+  "slug": "vadodara",
+  "name": "Vadodara",
+  "state": "Gujarat",
+  "desc": "Families and professionals in Vadodara, Gujarat trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Alkapuri",
+    "Sayajigunj",
+    "Gotri",
+    "Akota",
+    "New Alkapuri",
+    "Fatehganj",
+    "Manjalpur",
+    "Vasna-Bhayli"
+  ],
+  "nearby": [
+    "surat",
+    "ahmedabad"
+  ],
+  "it_focus": "Group health insurance and employee benefit covers for manufacturing units at Gujarat Industrial Development Corporation estates.",
+  "senior_focus": "Dedicated health insurance guidance for senior citizens in Alkapuri and Gotri, including cashless claim processing at Bhailal Amin and Sunshine Hospital.",
+  "branch_dets": "Coordination with LIC offices at Sayajigunj and all private insurer branches near Race Course Circle.",
+  "local_faqs": [
+    {
+      "question": "Which hospitals in Vadodara accept your cashless policies?",
+      "answer": "Cashless network includes Bhailal Amin General Hospital, Sunshine Global Hospital, Meditina Hospital, and K D Hospital."
+    },
+    {
+      "question": "Can you assist with industrial insurance in Vadodara GIDC areas?",
+      "answer": "Yes, we structure fire, marine, public liability, and terrorism insurance for industrial units around Vadodara GIDC estates."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Vadodara",
+  "lic_addr": "Sayajigunj, Vadodara 390005",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

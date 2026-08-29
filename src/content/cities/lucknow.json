@@ -1,0 +1,40 @@
+{
+  "slug": "lucknow",
+  "name": "Lucknow",
+  "state": "Uttar Pradesh",
+  "desc": "Families and professionals in Lucknow, Uttar Pradesh trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Gomti Nagar",
+    "Hazratganj",
+    "Aliganj",
+    "Indira Nagar",
+    "Aminabad",
+    "Jankipuram",
+    "Rajajipuram",
+    "Chowk"
+  ],
+  "nearby": [
+    "delhi-ncr",
+    "bhopal"
+  ],
+  "it_focus": "Health insurance and term plans for semi-conductor and IT employees in Gomti Nagar Extensions and Hazratganj corporate offices.",
+  "senior_focus": "Doorstep LIC policy servicing, maturity claims, and senior citizen health cover reviews for families in Aminabad, Hazratganj, and Chowk.",
+  "branch_dets": "Direct coordination with LIC Divisional Office at Vidhan Sabha Marg and major insurer branches at Hazratganj.",
+  "local_faqs": [
+    {
+      "question": "Which Lucknow hospitals offer cashless health insurance?",
+      "answer": "King George Medical University, SGPGI, Apollo Medics, Sahara Hospital, and Mayo Hospital are all in our cashless network."
+    },
+    {
+      "question": "Can you help with investment-linked insurance in Lucknow?",
+      "answer": "Yes, we structure ULIPs and endowment plans for wealth creation while providing life cover, with personalised risk profiling for Lucknow clients."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Lucknow",
+  "lic_addr": "Vidhan Sabha Marg, Lucknow 226001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

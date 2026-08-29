@@ -1,0 +1,50 @@
+{
+  "slug": "bangalore-hsr-layout",
+  "name": "HSR Layout, Bangalore",
+  "state": "Karnataka",
+  "desc": "HSR Layout insurance advisor for tech professionals in Sectors 1-7, startup founders, and families. Hari Kotian provides doorstep claim support with 25+ years experience. IRDAI Reg No: 0149161D.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Sector 1",
+    "Sector 2",
+    "Sector 3",
+    "Sector 4",
+    "Sector 5",
+    "Sector 6",
+    "Sector 7",
+    "BTM Layout (nearby)"
+  ],
+  "nearby": [
+    "bangalore-koramangala",
+    "bangalore-btm-layout",
+    "bangalore-electronic-city",
+    "bangalore-sarjapur"
+  ],
+  "it_focus": "HSR Layout is a startup hub with thousands of tech professionals. We offer term insurance with flexible premiums for entrepreneurs, Super Top-Up health plans for startup employees, and group health optimization. Real case: A SaaS founder ported term cover post-funding in 5 days.",
+  "senior_focus": "Senior residents in HSR Layout get LIC maturity claim acceleration, pension plan optimization, and seamless health insurance portability.",
+  "branch_dets": "Coordination with LIC branches in BTM Layout and nearby areas. IRDAI appeal filing within 48 hours.",
+  "local_faqs": [
+    {
+      "question": "Cashless hospitals in HSR Layout?",
+      "answer": "Narayana Health (HSR Layout), Fortis (Bannerghatta Road), Apollo Spectra (Koramangala nearby), Sakra World Hospital (Marathahalli nearby). Full cashless support."
+    },
+    {
+      "question": "Term insurance for startup employees?",
+      "answer": "Flexible premium plans with ESOP-linked payment cycles, critical illness rider, and global cover. HDFC, ICICI, Max options available."
+    },
+    {
+      "question": "Health insurance for startups?",
+      "answer": "Group plans for 3-100 employees. Maternity, OPD, wellness, telemedicine. Premium optimization included."
+    },
+    {
+      "question": "Motor insurance in HSR Layout?",
+      "answer": "Doorstep service with zero-depreciation, engine protection, and roadside assistance for ORR commuters."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "",
+  "lic_addr": "",
+  "nearbyLocations": [],
+  "lat": 12.9082,
+  "lng": 77.6476
+}

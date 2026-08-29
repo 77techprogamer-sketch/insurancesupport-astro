@@ -6,7 +6,7 @@ import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 
 
 const allCitiesCollection = await getCollection('cities');
-const cities = allCitiesCollection[0].data;
+const cities = allCitiesCollection.map(entry => entry.data);
 
 const states: Record<string, typeof cities> = {};
 for (const city of cities) {

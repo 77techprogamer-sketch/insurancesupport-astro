@@ -1,0 +1,40 @@
+{
+  "slug": "kochi",
+  "name": "Kochi",
+  "state": "Kerala",
+  "desc": "Families and professionals in Kochi, Kerala trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Kakkanad",
+    "Edappally",
+    "Vyttila",
+    "MG Road Ernakulam",
+    "Kaloor",
+    "Aluva",
+    "Fort Kochi",
+    "Palarivattom"
+  ],
+  "nearby": [
+    "thiruvananthapuram",
+    "thrissur"
+  ],
+  "it_focus": "Specialized covers for IT engineers in Infopark Kakkanad, including maternity riders, corporate group top-ups, and international travel insurance.",
+  "senior_focus": "Peace of mind for senior citizens and NRI parents in Ernakulam with dedicated health claim concierge and policy management.",
+  "branch_dets": "Direct alignment with LIC Divisional Office Ernakulam and major private health insurers in Kochi.",
+  "local_faqs": [
+    {
+      "question": "Do you offer NRI insurance consultation in Kochi?",
+      "answer": "Yes, we specialize in NRI life insurance, term covers, and health insurance for NRI parents residing in Kochi and Kerala."
+    },
+    {
+      "question": "Which hospitals in Kochi are covered for cashless treatment?",
+      "answer": "Network hospitals include Amrita Hospital, Aster Medcity, VPS Lakeshore, Rajagiri Hospital, and Medical Trust Hospital."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Ernakulam",
+  "lic_addr": "MG Road, Ernakulam, Kochi, Kerala 682011",
+  "nearbyLocations": [],
+  "lat": 9.9312,
+  "lng": 76.2673
+}

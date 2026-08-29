@@ -1,0 +1,40 @@
+{
+  "slug": "nagpur",
+  "name": "Nagpur",
+  "state": "Maharashtra",
+  "desc": "In Nagpur, where fast-paced urban life meets complex financial planning, Hari Kotian brings 25+ years of IRDAI-certified expertise. Get personalized doorstep consultations for life, health, and motor insurance tailored to your family's exact requirements.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Dharampeth",
+    "Civil Lines",
+    "Manish Nagar",
+    "Sadar",
+    "Ramdaspeth",
+    "Sitabuldi",
+    "Wardha Road",
+    "Nandanvan"
+  ],
+  "nearby": [
+    "pune",
+    "nashik"
+  ],
+  "it_focus": "Flexible term and health plans for professionals in MIHAN Nagpur and commercial establishments across the city.",
+  "senior_focus": "Personalized claim support, policy review, and health insurance for seniors in Dharampeth, Ramdaspeth, and Civil Lines.",
+  "branch_dets": "Coordination with LIC Divisional Office Kingsway Nagpur and all major general insurance branches.",
+  "local_faqs": [
+    {
+      "question": "Which Nagpur hospitals offer cashless hospitalization through your policies?",
+      "answer": "Major cashless hospitals include Alexis Hospital, Kingsway Hospital, Wockhardt Hospital, and Care Hospital Nagpur."
+    },
+    {
+      "question": "Can you help me recover an unpaid death claim or maturity claim in Nagpur?",
+      "answer": "Yes, we specialize in claim recovery and dispute documentation for families across Nagpur."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Nagpur",
+  "lic_addr": "Kingsway, Nagpur, Maharashtra 440001",
+  "nearbyLocations": [],
+  "lat": 21.1458,
+  "lng": 79.0882
+}

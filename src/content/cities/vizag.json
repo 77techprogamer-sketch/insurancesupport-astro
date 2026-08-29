@@ -1,0 +1,40 @@
+{
+  "slug": "vizag",
+  "name": "Visakhapatnam (Vizag)",
+  "state": "Andhra Pradesh",
+  "desc": "Families and professionals in Visakhapatnam (Vizag), Andhra Pradesh trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Seethammadhara",
+    "Dwaraka Nagar",
+    "Rushikonda",
+    "Gajuwaka",
+    "Akkayyapalem",
+    "Asilametta",
+    "Pendurthi",
+    "Madhurawada"
+  ],
+  "nearby": [
+    "bhubaneswar",
+    "kolkata"
+  ],
+  "it_focus": "Group health and comprehensive term policies for IT employees at Rushikonda IT Park and Rushikonda Bheemili Road tech corridor.",
+  "senior_focus": "Health insurance renewals and pension advisory for retired steel plant, navy, and port Trust employees in Seethammadhara and MVP Colony.",
+  "branch_dets": "Coordination with LIC Divisional Office at Dwaraka Nagar and major insurer branches in Siripuram.",
+  "local_faqs": [
+    {
+      "question": "Which Vizag hospitals are on the cashless list?",
+      "answer": "Apollo Hospitals Health City, Manipal Hospital, Sims Hospital, and Care Hospitals are all in our cashless network in Visakhapatnam."
+    },
+    {
+      "question": "Do you offer term insurance for navy families in Visakhapatnam?",
+      "answer": "Yes, we structure high-sum-assured term and accident covers for navy personnel and port employees with policy servicing support."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Visakhapatnam",
+  "lic_addr": "Dwaraka Nagar, Visakhapatnam 530016",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

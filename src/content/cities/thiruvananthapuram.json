@@ -1,0 +1,40 @@
+{
+  "slug": "thiruvananthapuram",
+  "name": "Thiruvananthapuram",
+  "state": "Kerala",
+  "desc": "Families and professionals in Thiruvananthapuram, Kerala trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Technopark",
+    "Palayam",
+    "Statue Junction",
+    "PMG",
+    "Kowdiar",
+    "Pattom",
+    "Sasthamangalam",
+    "Kazhakkoottam"
+  ],
+  "nearby": [
+    "kochi",
+    "thrissur"
+  ],
+  "it_focus": "Group and individual health insurance plus portable term plans for Technopark Kazhakkoottam IT professionals.",
+  "senior_focus": "Doorstep health insurance renewal, LIC maturity claim, and pension advisory for retired government servants in Palayam, PMG, and Kowdiar areas.",
+  "branch_dets": "Direct coordination with LIC Divisional Office at Palayam and major insurer branches at Statue Junction.",
+  "local_faqs": [
+    {
+      "question": "Which Thiruvananthapuram hospitals accept cashless insurance?",
+      "answer": "KIMS Healthcare, Ananthapuri Hospital, Cosmopolitan Hospital, and SUT Hospital are in our cashless network."
+    },
+    {
+      "question": "Can you help retired government servants at PMG with insurance review?",
+      "answer": "Yes, we review pension-linked health covers, exclusive senior plans, and endowment maturity claims for retired state government employees."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Thiruvananthapuram",
+  "lic_addr": "Palayam, Thiruvananthapuram 695001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

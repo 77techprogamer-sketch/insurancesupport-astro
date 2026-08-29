@@ -1,0 +1,40 @@
+{
+  "slug": "ludhiana",
+  "name": "Ludhiana",
+  "state": "Punjab",
+  "desc": "Families and professionals in Ludhiana, Punjab trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Sarabha Nagar",
+    "Model Town",
+    "Ghumar Mandi",
+    "Ferozepur Road",
+    "Pakhowal Road",
+    "Focal Point",
+    "Gill Road",
+    "BRS Nagar"
+  ],
+  "nearby": [
+    "chandigarh",
+    "dehradun"
+  ],
+  "it_focus": "Group mediclaim and employee compensation insurance for factory workers in Focal Point and hosiery clusters.",
+  "senior_focus": "NRI parent health insurance plans and doorstep LIC maturity claim help for senior families in Sarabha Nagar and BRS Nagar.",
+  "branch_dets": "Direct coordination with LIC Divisional Office at Bharat Nagar Chowk and major insurer branches on Ferozepur Road.",
+  "local_faqs": [
+    {
+      "question": "Which hospitals in Ludhiana accept cashless health insurance?",
+      "answer": "Dayanand Medical College Hospital, Fortis Ludhiana, SPS Apollo Hospitals, and Deep Hospital are included in our cashless network."
+    },
+    {
+      "question": "Do you assist NRI families with LIC policy servicing in Ludhiana?",
+      "answer": "Yes, we manage NRI-owned LIC policies including revival, nomination changes, maturity claims, and NRE/NRO documentation support."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Ludhiana",
+  "lic_addr": "Bharat Nagar Chowk, Ludhiana 141001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

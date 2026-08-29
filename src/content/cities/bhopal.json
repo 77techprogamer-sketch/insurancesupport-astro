@@ -1,0 +1,40 @@
+{
+  "slug": "bhopal",
+  "name": "Bhopal",
+  "state": "Madhya Pradesh",
+  "desc": "Families and professionals in Bhopal, Madhya Pradesh trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "MP Nagar",
+    "Arera Colony",
+    "Shahpura",
+    "Kolar",
+    "Bairagarh",
+    "Habibganj",
+    "BHEL",
+    "Govindpura"
+  ],
+  "nearby": [
+    "indore",
+    "ujjain"
+  ],
+  "it_focus": "Health and term insurance for private-sector employees and freelancers around MP Nagar and Habibganj Naka.",
+  "senior_focus": "Health insurance and pension plan guidance for retired BHEL employees and senior residents of Arera Colony and Shahpura.",
+  "branch_dets": "Direct coordination with LIC Divisional Office at MP Nagar and major health insurer branches.",
+  "local_faqs": [
+    {
+      "question": "Which top hospitals in Bhopal are in the cashless network?",
+      "answer": "J.K. Hospital, Bansal Hospital, AIIMS Bhopal, Noble Hospital, and Sunrise Hospital are all in our cashless facility network."
+    },
+    {
+      "question": "Can you help retired BHEL employees with health insurance transition?",
+      "answer": "Yes, we advise retired BHEL employees on transitioning from CGHS to individual senior citizen health plans with continued coverage for existing conditions."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Bhopal",
+  "lic_addr": "MP Nagar, Bhopal 462011",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

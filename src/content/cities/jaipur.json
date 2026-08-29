@@ -1,0 +1,40 @@
+{
+  "slug": "jaipur",
+  "name": "Jaipur",
+  "state": "Rajasthan",
+  "desc": "Families and professionals in Jaipur, Rajasthan trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "C-Scheme",
+    "Vaishali Nagar",
+    "Mansarovar",
+    "Malviya Nagar",
+    "Sitapura",
+    "Jagatpura",
+    "Jawahar Nagar",
+    "Tonk Road"
+  ],
+  "nearby": [
+    "delhi-ncr",
+    "ahmedabad"
+  ],
+  "it_focus": "Health and term insurance products for IT sector employees at Sitapura IT Park and corporates on Tonk Road.",
+  "senior_focus": "Comprehensive health insurance and LIC revival support for senior residents of C-Scheme, Civil Lines, and Jawahar Nagar.",
+  "branch_dets": "Direct coordination with LIC Divisional Office at Tonk Road and major insurer branches in C-Scheme.",
+  "local_faqs": [
+    {
+      "question": "Which Jaipur hospitals are in the cashless network?",
+      "answer": "SMS Hospital, Fortis Escorts Jaipur, EHCC Hospital, Santokba Durlabhji Memorial Hospital, and Apex Hospital are all in our cashless network."
+    },
+    {
+      "question": "Can you help with term insurance for IT employees in Sitapura?",
+      "answer": "Yes, we configure high-sum-assured term plans with critical illness and accidental death benefit riders for IT professionals working in Sitapura."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Jaipur",
+  "lic_addr": "Tonk Road, Jaipur 302015",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

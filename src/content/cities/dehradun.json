@@ -1,0 +1,40 @@
+{
+  "slug": "dehradun",
+  "name": "Dehradun",
+  "state": "Uttarakhand",
+  "desc": "Families and professionals in Dehradun, Uttarakhand trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Rajpur Road",
+    "Saharanpur Road",
+    "FRI Campus",
+    "Garhi Cantt",
+    "Nehru Colony",
+    "Premnagar",
+    "Doehlelimdehradun",
+    "Vasant/Vasant Vihar"
+  ],
+  "nearby": [
+    "chandigarh",
+    "ludhiana"
+  ],
+  "it_focus": "Health and term insurance for engineers and employees at Doiwala IT units and IT Park Selaqui, with wellness-linked premium discounts.",
+  "senior_focus": "Health insurance and pension advisory designed for retired army officers and senior residents of Garhi Cantt and Rajpur Road.",
+  "branch_dets": "Direct coordination with LIC branch at Rajpur Road and major insurer offices in Astley Hall.",
+  "local_faqs": [
+    {
+      "question": "Which hospitals in Dehradun are part of the cashless network?",
+      "answer": "Max Hospital, Kailash Hospital, Synergy Institute of Medical Sciences, and Shri Mahant Indresh Hospital are in our cashless network."
+    },
+    {
+      "question": "Can you assist retired army personnel in Garhi Cantt?",
+      "answer": "Yes, we transition ex-servicemen from CGHS/ECHS to individual health plans with proper pre-existing disease coverage and continuous renewal guarantees."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Dehradun",
+  "lic_addr": "Rajpur Road, Dehradun 248001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

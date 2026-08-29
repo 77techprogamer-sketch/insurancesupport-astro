@@ -1,0 +1,40 @@
+{
+  "slug": "goa",
+  "name": "Goa",
+  "state": "Goa",
+  "desc": "Families and professionals in Goa, Goa trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Panjim",
+    "Margao",
+    "Vasco da Gama",
+    "Mapusa",
+    "Porvorim",
+    "Candolim",
+    "Baga-Calangute",
+    "Ponda"
+  ],
+  "nearby": [
+    "mangalore",
+    "kochi"
+  ],
+  "it_focus": "Health and term insurance for hospitality entrepreneurs, self-employed professionals, and remote IT workers based in Goa.",
+  "senior_focus": "Doorstep LIC policy management and senior citizen health insurance for retired residents across Panjim, Margao, and Porvorim.",
+  "branch_dets": "Direct coordination with LIC branch at Panjim and private insurer branches in Margao.",
+  "local_faqs": [
+    {
+      "question": "Which hospitals in Goa offer cashless health insurance?",
+      "answer": "Manipal Hospitals Goa, Apollo Hospital Margao, Healthway Hospital, and Victor Hospital are in our cashless network."
+    },
+    {
+      "question": "Can you help NRI property owners in Goa with insurance?",
+      "answer": "Yes, we structure holiday home insurance, property damage, and liability covers for NRI-owned properties in Goa."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Panjim",
+  "lic_addr": "Panjim, Goa 403001",
+  "nearbyLocations": [],
+  "lat": 15.2993,
+  "lng": 74.124
+}

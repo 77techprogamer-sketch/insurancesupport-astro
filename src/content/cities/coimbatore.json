@@ -1,0 +1,40 @@
+{
+  "slug": "coimbatore",
+  "name": "Coimbatore",
+  "state": "Tamil Nadu",
+  "desc": "Serving families and business owners across Coimbatore, Tamil Nadu, Insurance Support offers independent, IRDAI-certified consultancy. From high-sum-assured term plans to family floater health policies, we help you secure the right coverage with full claim recovery backup.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "RS Puram",
+    "Race Course Road",
+    "Saibaba Colony",
+    "Gandhipuram",
+    "Singanallur",
+    "Sulur",
+    "Vadavalli",
+    "Tidel Park Coimbatore"
+  ],
+  "nearby": [
+    "kochi",
+    "chennai"
+  ],
+  "it_focus": "Group health and individual term insurance for IT cluster employees at Tidel Park Coimbatore and CHIL SEZ.",
+  "senior_focus": "Doorstep health insurance renewal and LIC maturity processing for established families in RS Puram and Race Course Road.",
+  "branch_dets": "Direct coordination with LIC branch at Trichy Road and major insurer offices at RS Puram.",
+  "local_faqs": [
+    {
+      "question": "Which Coimbatore hospitals accept cashless health insurance?",
+      "answer": "G Kuppuswamy Naidu Hospital, PSG Hospital, Kovai Medical Center, and Sri Ramakrishna Hospital are in our cashless network."
+    },
+    {
+      "question": "Do you provide insurance for textile factory workers in Coimbatore?",
+      "answer": "Yes, we structure group mediclaim, Employees Compensation Act policies, and personal accident cover for textile units."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Coimbatore",
+  "lic_addr": "Trichy Road, Coimbatore 641018",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

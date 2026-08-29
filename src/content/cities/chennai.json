@@ -1,0 +1,41 @@
+{
+  "slug": "chennai",
+  "name": "Chennai",
+  "state": "Tamil Nadu",
+  "desc": "Serving families and business owners across Chennai, Tamil Nadu, Insurance Support offers independent, IRDAI-certified consultancy. From high-sum-assured term plans to family floater health policies, we help you secure the right coverage with full claim recovery backup.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "OMR",
+    "Sholinganallur",
+    "T Nagar",
+    "Mylapore",
+    "Adyar",
+    "Anna Nagar",
+    "Velachery",
+    "Guindy",
+    "Porur"
+  ],
+  "nearby": [
+    "vellore",
+    "coimbatore"
+  ],
+  "it_focus": "Comprehensive health and term insurance for OMR IT corridor employees at Sholinganallur, Tidel Park, and DLF Cyber City.",
+  "senior_focus": "Doorstep LIC policy servicing and cashless claim support for senior residents of Mylapore, Adyar, and T Nagar.",
+  "branch_dets": "Direct liaison with LIC Zonal Office at Anna Salai and private insurer branches on OMR and T Nagar.",
+  "local_faqs": [
+    {
+      "question": "Which hospitals in Chennai are covered for cashless treatment?",
+      "answer": "Apollo Hospitals Greams Road, Fortis Malar, MIOT International, Kauvery Hospital, and SIMS Hospital are all in our cashless network."
+    },
+    {
+      "question": "Can you help IT employees on OMR with group health insurance?",
+      "answer": "Yes, we structuring group mediclaim, personal accident, and corporate health plans for startups and IT companies along OMR and Sholinganallur."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Zonal Office Chennai",
+  "lic_addr": "Anna Salai, Chennai 600002",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

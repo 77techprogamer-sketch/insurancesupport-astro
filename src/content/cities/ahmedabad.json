@@ -1,0 +1,41 @@
+{
+  "slug": "ahmedabad",
+  "name": "Ahmedabad",
+  "state": "Gujarat",
+  "desc": "Families and professionals in Ahmedabad, Gujarat trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Satellite",
+    "Prahlad Nagar",
+    "Bodakdev",
+    "Vastrapur",
+    "Sabarmati",
+    "Naroda",
+    "Maninagar",
+    "SG Highway",
+    "Thaltej"
+  ],
+  "nearby": [
+    "surat",
+    "vadodara"
+  ],
+  "it_focus": "Flexible health insurance with maternity and OPD covers for IT engineers working in Prahlad Nagar and SG Highway corporate offices.",
+  "senior_focus": "Doorstep LIC endowment maturity support and senior citizen health insurance reviews in Navrangpura, Paldi, and Maninagar.",
+  "branch_dets": "Direct coordination with LIC Divisional Office Ashram Road Ahmedabad and all major insurer branches in SG Highway belt.",
+  "local_faqs": [
+    {
+      "question": "Which Ahmedabad hospitals are part of your cashless network?",
+      "answer": "Apollo Hospitals Gandhinagar, Zydus Hospital, SAL Hospital, CIMS, and Shalby Hospitals are among the major cashless network hospitals in Ahmedabad."
+    },
+    {
+      "question": "Do you help business owners in Ahmedabad with insurance audit and SME covers?",
+      "answer": "Yes, we audit insurance coverage for SMEs, factories, and trading businesses; then structure fire, burglary, public liability, and keyman policies."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Ahmedabad",
+  "lic_addr": "Ashram Road, Ahmedabad 380009",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "thrissur",
+  "name": "Thrissur",
+  "state": "Kerala",
+  "desc": "Families and professionals in Thrissur, Kerala trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Swaraj Round",
+    "Poothole",
+    "Nenmanikkara",
+    "Ayyanthole",
+    "Kuttoor",
+    "Mallur",
+    "Thrissur East",
+    "Vellanikkara"
+  ],
+  "nearby": [
+    "kochi",
+    "thiruvananthapuram"
+  ],
+  "it_focus": "Health and term insurance for professionals at Thrissur IT Park Ayyanthole nearby.",
+  "senior_focus": "Doorstep LIC policy revivals and health insurance claim assistance for senior residents around Swaraj Round and Ayyanthole.",
+  "branch_dets": "Coordination with LIC branch at Round South and private insurer offices near plush Swaraj Round.",
+  "local_faqs": [
+    {
+      "question": "Which hospitals in Thrissur offer cashless health insurance?",
+      "answer": "Amala Institute of Medical Sciences, Westfort Hospital, Elite Mission Hospital, and Thrissur Medical College offer cashless facilities through our health plans."
+    },
+    {
+      "question": "Do you help NRIs from Thrissur manage LIC policies?",
+      "answer": "Yes, we provide full NRI policy servicing including revival, maturity collection, nomination update, and address proof documentation."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Thrissur",
+  "lic_addr": "Round South, Thrissur 680001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

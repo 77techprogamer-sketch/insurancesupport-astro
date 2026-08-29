@@ -1,0 +1,39 @@
+{
+  "slug": "indore",
+  "name": "Indore",
+  "state": "Madhya Pradesh",
+  "desc": "Families and professionals in Indore, Madhya Pradesh trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Vijay Nagar",
+    "New Palasia",
+    "Old Palasia",
+    "Saket Nagar",
+    "Rau",
+    "Bhawarkua",
+    "Mahalaxmi Nagar"
+  ],
+  "nearby": [
+    "bhopal",
+    "ujjain"
+  ],
+  "it_focus": "Tailored health and life insurance solutions for IT pros in Super Corridor and entrepreneurs across Indore's commercial hubs.",
+  "senior_focus": "Specialized senior citizen health plans and doorstep LIC policy revival for established residents in Vijay Nagar and Palasia.",
+  "branch_dets": "Coordination with LIC Divisional Office at MG Road Indore and all major general insurance offices.",
+  "local_faqs": [
+    {
+      "question": "Are cashless health insurance services available in top Indore hospitals?",
+      "answer": "Yes, our policies cover top Indore hospitals including Bombay Hospital Indore, CHL Hospital, Medanta Super Specialty, and Choithram Hospital."
+    },
+    {
+      "question": "How can I revive my lapsed LIC policy in Indore?",
+      "answer": "We provide end-to-end guidance including health declarations, late fee interest calculation, and document submission right at your doorstep in Indore."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Indore",
+  "lic_addr": "MG Road, Indore, Madhya Pradesh 452001",
+  "nearbyLocations": [],
+  "lat": 22.7196,
+  "lng": 75.8577
+}

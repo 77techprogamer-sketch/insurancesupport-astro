@@ -1,0 +1,40 @@
+{
+  "slug": "delhi-ncr",
+  "name": "Delhi NCR",
+  "state": "Delhi",
+  "desc": "Navigating insurance in Delhi NCR requires expert guidance through local hospital networks and policy terms. Insurance Support offers independent advisory and dedicated claim recovery assistance right at your doorstep across Delhi NCR.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Greater Kailash",
+    "Lajpat Nagar",
+    "Connaught Place",
+    "Dwarka",
+    "Rohini",
+    "Pitampura",
+    "Gurgaon Golf Course Road",
+    "Noida Sector 62"
+  ],
+  "nearby": [
+    "chandigarh",
+    "ludhiana"
+  ],
+  "it_focus": "High-sum-assured term insurance with global critical illness riders for executives in Gurgaon Cyber City, Noida Sector 62, and Nehru Place.",
+  "senior_focus": "Doorstep LIC maturity claim support and pension advisory for senior families in Greater Kailash, Lajpat Nagar, and Vasant Vihar.",
+  "branch_dets": "Direct coordination with LIC Jeevan Bima Delhi offices and the Insurance Ombudsman Office at Lok Nayak Bhawan New Delhi.",
+  "local_faqs": [
+    {
+      "question": "How do I reach the Insurance Ombudsman in Delhi for a claim dispute?",
+      "answer": "The Insurance Ombudsman Office is at Lok Nayak Bhawan, Khan Market, New Delhi. We prepare your complaint file and accompany the representation with full documentation."
+    },
+    {
+      "question": "Which Delhi NCR hospitals accept cashless insurance?",
+      "answer": "AIIMS Delhi, Max Super Speciality Saket, Fortis Escorts Okhla, Apollo Hospitals Delhi, Medanta Medicity Gurgaon, and Fortis Noida are in our cashless network."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Zonal Office Delhi",
+  "lic_addr": "Connaught Place, New Delhi 110001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

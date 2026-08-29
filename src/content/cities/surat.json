@@ -1,0 +1,40 @@
+{
+  "slug": "surat",
+  "name": "Surat",
+  "state": "Gujarat",
+  "desc": "Families and professionals in Surat, Gujarat trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Vesu",
+    "Adajan",
+    "Ghoddod Road",
+    "Varachha",
+    "Piplod",
+    "Rander",
+    "Katargam",
+    "Bhatar"
+  ],
+  "nearby": [
+    "ahmedabad",
+    "vadodara"
+  ],
+  "it_focus": "Commercial SME insurance, Keyman insurance, and group medical cover for business entities in Surat.",
+  "senior_focus": "Family health insurance and endowment maturity claim assistance for senior citizens across Vesu and Ghoddod Road.",
+  "branch_dets": "Coordination with LIC Divisional Office Muglisara Surat and major private insurer offices.",
+  "local_faqs": [
+    {
+      "question": "Do you provide business and keyman insurance for Surat entrepreneurs?",
+      "answer": "Yes, we structure SME, Keyman, Partnership insurance, and Group Health policies specifically designed for business owners in Surat."
+    },
+    {
+      "question": "Which top Surat hospitals are in the cashless network?",
+      "answer": "Cashless hospitals include Sunshine Global Hospital, Kiran Super Specialty, Unique Hospital, and Shalby Hospital Surat."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Surat",
+  "lic_addr": "Muglisara, Surat, Gujarat 395003",
+  "nearbyLocations": [],
+  "lat": 21.1702,
+  "lng": 72.8311
+}

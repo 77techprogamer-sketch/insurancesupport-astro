@@ -1,0 +1,40 @@
+{
+  "slug": "thane",
+  "name": "Thane",
+  "state": "Maharashtra",
+  "desc": "In Thane, where fast-paced urban life meets complex financial planning, Hari Kotian brings 25+ years of IRDAI-certified expertise. Get personalized doorstep consultations for life, health, and motor insurance tailored to your family's exact requirements.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Naupada",
+    "Ghodbunder Road",
+    "Manpada",
+    "Kolbad",
+    "Vasant Vihar",
+    "Majiwada",
+    "Wagle Estate",
+    "Kasarvadavali"
+  ],
+  "nearby": [
+    "mumbai",
+    "pune"
+  ],
+  "it_focus": "High-sum-assured term plans and wellness-linked health insurance for IT executives commuting to Airoli and Hiranandani Business Park.",
+  "senior_focus": "Dedicated doorstep support for senior residents of Naupada and Ghodbunder Road for policy revivals, pension advisory, and cashless medical claim help.",
+  "branch_dets": "Direct coordination with LIC branch at Naupada and health insurer branches at Manpada and Ghodbunder Road.",
+  "local_faqs": [
+    {
+      "question": "Which hospitals in Thane are covered for cashless treatment?",
+      "answer": "Bethany Hospital, Jupiter Hospital Thane, Currae Hospital, and Hiranandani Hospital can be accessed for cashless claims through our plans."
+    },
+    {
+      "question": "Can you help with claim disputes in Thane?",
+      "answer": "Yes, we document and represent your case at the Insurance Ombudsman office serving the Thane and Navi Mumbai region, escalating from appeal to award."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Thane",
+  "lic_addr": "Naupada, Thane West 400602",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

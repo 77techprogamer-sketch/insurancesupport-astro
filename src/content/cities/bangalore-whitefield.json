@@ -1,0 +1,50 @@
+{
+  "slug": "bangalore-whitefield",
+  "name": "Whitefield, Bangalore",
+  "state": "Karnataka",
+  "desc": "Insurance advisory for Whitefield IT professionals, EPIP zone employees, and Graphite India residents. Hari Kotian provides doorstep claim support with 25+ years experience. IRDAI Reg No: 0149161D.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "ITPL",
+    "EPIP Zone",
+    "Graphite India",
+    "Kaikondrahalli",
+    "Varthur Road",
+    "Hoodi",
+    "Kadubeesanahalli",
+    "Ramamurthy Nagar"
+  ],
+  "nearby": [
+    "bangalore-marathahalli",
+    "bangalore-kr-puram",
+    "bangalore-hebbal",
+    "bangalore-hoodi"
+  ],
+  "it_focus": "Whitefield has 300,000+ IT professionals at ITPL, EPIP, and Graphite India. We specialize in term insurance for techies with ESOP-linked premium flexibility, Super Top-Up health plans covering Apollo Whitefield and Columbia Asia, and group health for startups.",
+  "senior_focus": "Senior residents in Graphite India and surrounding layouts receive pension optimization, LIC maturity claim acceleration, and health insurance portability assistance.",
+  "branch_dets": "Coordination with LIC branches in ITPL and Hoodi. IRDAI appeal filing within 48 hours for denied claims.",
+  "local_faqs": [
+    {
+      "question": "Cashless hospitals in Whitefield?",
+      "answer": "Columbia Asia (Whitefield), Apollo Clinic (ITPL), Narayana Health (Kaikondrahalli), Manipal Hospital (Varthur Road). Full cashless support provided."
+    },
+    {
+      "question": "Term insurance for ITPL employees?",
+      "answer": "Yes -- plans with income-linked coverage up to 50x annual income. Waiver of Premium rider recommended for job transitions."
+    },
+    {
+      "question": "Group health for Whitefield startups?",
+      "answer": "Custom plans for 5-100 employee teams. Maternity, OPD, wellness, and telemedicine included."
+    },
+    {
+      "question": "Motor insurance in Whitefield?",
+      "answer": "Doorstep service with zero-depreciation, engine protection, and roadside assistance for ORR commuters."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "",
+  "lic_addr": "",
+  "nearbyLocations": [],
+  "lat": 12.9698,
+  "lng": 77.7499
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "bhubaneswar",
+  "name": "Bhubaneswar",
+  "state": "Odisha",
+  "desc": "Families and professionals in Bhubaneswar, Odisha trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Patia",
+    "Saheed Nagar",
+    "Chandrasekharpur",
+    "Jayadev Vihar",
+    "Khandagiri",
+    "Unit 9",
+    "Infocity",
+    "Old Town"
+  ],
+  "nearby": [
+    "kolkata",
+    "vizag"
+  ],
+  "it_focus": "Group and individual health coverage for tech workers in Infocity and IT Park Bhubaneswar.",
+  "senior_focus": "Doorstep support for policy revivals, pension advice, and senior health coverage in Saheed Nagar and Unit areas.",
+  "branch_dets": "Direct interaction with LIC Divisional Office Unit-4 Bhubaneswar and major insurance hubs.",
+  "local_faqs": [
+    {
+      "question": "What cashless hospitals in Bhubaneswar are available?",
+      "answer": "Network hospitals include AIIMS Bhubaneswar, KIIMS, SUM Hospital, Apollo Hospitals Bhubaneswar, and AMRI Hospital."
+    },
+    {
+      "question": "Do you offer doorstep service in Patia and Infocity areas?",
+      "answer": "Yes, we provide free doorstep consultation across all major residential and commercial sectors in Bhubaneswar."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Bhubaneswar",
+  "lic_addr": "Unit-4, Bhubaneswar, Odisha 751001",
+  "nearbyLocations": [],
+  "lat": 20.2961,
+  "lng": 85.8245
+}

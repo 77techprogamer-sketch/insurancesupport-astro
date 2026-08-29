@@ -1,0 +1,40 @@
+{
+  "slug": "madurai",
+  "name": "Madurai",
+  "state": "Tamil Nadu",
+  "desc": "Serving families and business owners across Madurai, Tamil Nadu, Insurance Support offers independent, IRDAI-certified consultancy. From high-sum-assured term plans to family floater health policies, we help you secure the right coverage with full claim recovery backup.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "KK Nagar",
+    "Anna Nagar",
+    "Goripalayam",
+    "Thallakulam",
+    "Kappalur",
+    "Tallakulam",
+    "Vandiyur",
+    "Thirumangalam"
+  ],
+  "nearby": [
+    "coimbatore",
+    "thiruvananthapuram"
+  ],
+  "it_focus": "Group health and term insurance for employees at Kappalur Sector and Madurai IT Park.",
+  "senior_focus": "Senior citizen health insurance and pension advisory for established families around Goripalayam and Tallakulam.",
+  "branch_dets": "Coordination with LIC branch at West Tower road and major insurers at Anna Nagar.",
+  "local_faqs": [
+    {
+      "question": "Which Madurai hospitals accept cashless health insurance?",
+      "answer": "Apollo Specialty Hospitals Madurai, Vasantha Mission Hospital, Meenakshi Mission Hospital, and Remedy Hospital are in our cashless network."
+    },
+    {
+      "question": "Do you help small businesses with insurance in Madurai?",
+      "answer": "Yes, we structure shop insurance, burglary, public liability, and group mediclaim for small businesses and traders in Madurai."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Madurai",
+  "lic_addr": "West Tower Road, Madurai 625001",
+  "nearbyLocations": [],
+  "lat": 9.9252,
+  "lng": 78.1198
+}

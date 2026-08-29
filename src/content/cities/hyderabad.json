@@ -1,0 +1,41 @@
+{
+  "slug": "hyderabad",
+  "name": "Hyderabad",
+  "state": "Telangana",
+  "desc": "Families and professionals in Hyderabad, Telangana trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "HITEC City",
+    "Madhapur",
+    "Kondapur",
+    "Gachibowli",
+    "Ameerpet",
+    "Banjara Hills",
+    "Jubilee Hills",
+    "Kukatpally",
+    "Begumpet"
+  ],
+  "nearby": [
+    "vizag",
+    "bangalore-koramangala"
+  ],
+  "it_focus": "Custom health and term insurance for IT professionals in HITEC City, Gachibowli Financial District, and Madhapur with global coverage options.",
+  "senior_focus": "Tailored health insurance and pension advisory for senior families in Banjara Hills, Jubilee Hills, and Ameerpet with local cashless hospital access.",
+  "branch_dets": "Direct coordination with LIC zonal office at Secretariat Road and major private insurer branches in Banjara Hills and HITEC City.",
+  "local_faqs": [
+    {
+      "question": "Which Hyderabad hospitals offer cashless health insurance?",
+      "answer": "Apollo Hospitals Jubilee Hills, KIMS Hospitals, Continental Hospital, Star Hospitals, and Yashoda Hospitals are all in our cashless network."
+    },
+    {
+      "question": "Can you arrange group health for startups in HITEC City?",
+      "answer": "Yes, we design scalable group mediclaim, personal accident, and employee wellness policies for Hyderabad startups and IT teams."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Zonal Office Hyderabad",
+  "lic_addr": "Secretariat Road, Hyderabad 500063",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

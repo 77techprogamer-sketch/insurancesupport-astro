@@ -1,0 +1,39 @@
+{
+  "slug": "chandigarh",
+  "name": "Chandigarh",
+  "state": "Chandigarh",
+  "desc": "Families and professionals in Chandigarh, Chandigarh trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Sector 17",
+    "Sector 35",
+    "Mohali Phase 7",
+    "Panchkula Sector 8",
+    "IT Park Mohali",
+    "Zirakpur",
+    "Kharar"
+  ],
+  "nearby": [
+    "ludhiana",
+    "dehradun"
+  ],
+  "it_focus": "Health and term insurance for tech professionals in IT Park Chandigarh and Mohali, featuring high sum assured and wellness rewards.",
+  "senior_focus": "Comprehensive health protection and pension advice for retired government officers and senior residents across Tricity.",
+  "branch_dets": "Close coordination with the Insurance Ombudsman Office in Sector 17-A Chandigarh for claim disputes.",
+  "local_faqs": [
+    {
+      "question": "Where is the Insurance Ombudsman office in Chandigarh if my claim is rejected?",
+      "answer": "The Office of the Insurance Ombudsman is located at Sector 17-A, Chandigarh. We guide you through filing formal appeals if your insurer denies a valid claim."
+    },
+    {
+      "question": "Do you provide doorstep insurance services in Mohali and Panchkula?",
+      "answer": "Yes, our advisors serve the complete Tricity area including Chandigarh, Mohali, Panchkula, and Zirakpur."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Chandigarh",
+  "lic_addr": "Sector 17-B, Chandigarh 160017",
+  "nearbyLocations": [],
+  "lat": 30.7333,
+  "lng": 76.7794
+}

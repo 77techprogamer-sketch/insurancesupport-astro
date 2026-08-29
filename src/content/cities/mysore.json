@@ -1,0 +1,39 @@
+{
+  "slug": "mysore",
+  "name": "Mysore",
+  "state": "Karnataka",
+  "desc": "Families and professionals in Mysore, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Gokulam",
+    "VV Mohalla",
+    "Jayalakshmipuram",
+    "Kuvempunagar",
+    "Saraswathipuram",
+    "Vijayanagar",
+    "Hebbal Mysore"
+  ],
+  "nearby": [
+    "bangalore-koramangala",
+    "bangalore-jp-nagar"
+  ],
+  "it_focus": "Health insurance and term plans for IT engineers in Hebbal Industrial Area and Infosys Mysuru campus.",
+  "senior_focus": "Dedicated doorstep assistance for retired residents in Gokulam, VV Mohalla, and Saraswathipuram for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Direct coordination with LIC Divisional Office Mysore at Nazarbad and major city insurer branches.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Mysore?",
+      "answer": "Yes, our team visits your home in Mysore for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Mysore offer cashless treatment?",
+      "answer": "Cashless treatment is available at Columbia Asia / Manipal Hospital Mysore, Apollo BGS Hospital, and JSS Hospital."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Mysore",
+  "lic_addr": "Nazarbad, Mysore, Karnataka 570010",
+  "nearbyLocations": [],
+  "lat": 12.2958,
+  "lng": 76.6394
+}

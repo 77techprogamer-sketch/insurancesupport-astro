@@ -1,0 +1,38 @@
+{
+  "slug": "hosur",
+  "name": "Hosur",
+  "state": "Tamil Nadu",
+  "desc": "Serving families and business owners across Hosur, Tamil Nadu, Insurance Support offers independent, IRDAI-certified consultancy. From high-sum-assured term plans to family floater health policies, we help you secure the right coverage with full claim recovery backup.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Sipcot Phase 1",
+    "Sipcot Phase 2",
+    "Mathigiri",
+    "Mookandapalli",
+    "Denkanikottai Road",
+    "Bagalur Road"
+  ],
+  "nearby": [
+    "bangalore-electronic-city",
+    "vellore"
+  ],
+  "it_focus": "Specialized SME, group health, and employee benefit insurance for industrial and tech units in Hosur Sipcot hub.",
+  "senior_focus": "Doorstep health insurance guidance and LIC policy revival support for senior citizens across Hosur town.",
+  "branch_dets": "Liaison with LIC Branch Office Hosur and insurer branches across Krishnagiri district.",
+  "local_faqs": [
+    {
+      "question": "Do you help industrial employees and business owners in Hosur?",
+      "answer": "Yes, we offer group mediclaim, personal accident, term insurance, and factory insurance across Sipcot Hosur."
+    },
+    {
+      "question": "Can I consult an advisor in Hosur for Bangalore or Tamil Nadu claims?",
+      "answer": "Yes, we handle seamless claims across Karnataka and Tamil Nadu hospitals due to our strong cross-border presence."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Office Hosur",
+  "lic_addr": "Bagalur Road, Hosur, Tamil Nadu 635109",
+  "nearbyLocations": [],
+  "lat": 12.7409,
+  "lng": 77.8253
+}

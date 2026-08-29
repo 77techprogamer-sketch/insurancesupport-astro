@@ -1,0 +1,61 @@
+{
+  "slug": "bangalore-koramangala",
+  "name": "Koramangala, Bangalore",
+  "state": "Karnataka",
+  "desc": "For residents and professionals in Koramangala, Bangalore, Hari Kotian provides direct, zero-hassle insurance advisory. Whether you are navigating complex mediclaim renewals at Apollo Spectra, securing term life coverage as an IT professional, or resolving LIC maturity claim delays for senior citizens, our local presence ensures prompt doorstep assistance without branch queues. IRDAI Reg No: 0149161D.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "6th Block",
+    "7th Block",
+    "8th Block",
+    "HSR Layout (Sector 1-4)",
+    "BTM Layout (1st & 2nd Stage)",
+    "Ejipura",
+    "Venkatapura",
+    "J.P. Nagar (nearby)",
+    "Shivajinagar (nearby)",
+    "Madhupatna"
+  ],
+  "nearby": [
+    "bangalore-indiranagar",
+    "bangalore-jayanagar",
+    "bangalore-btm-layout",
+    "bangalore-hsr-layout",
+    "bangalore-electronic-city"
+  ],
+  "it_focus": "Koramangala is home to over 200,000 IT professionals working at TechPark, ThoughtWorks, and countless startups. We offer specialized Loss of Income covers, Super Top-Up health plans (critical for filling the gap between employer group cover and actual hospital bills), and term insurance with Critical Illness and Waiver of Premium riders. Standard online portals cannot provide same-day escalation for claim denials — we can. Common scenarios: a Infosys engineer had a 12 lakh claim reversed after our 15-day IRDAI appeal. A TCS employee ported his term cover seamlessly after switching to a startup.",
+  "senior_focus": "Koramangala has over 15,000 residents aged 60+. We specialize in LIC maturity claim processing (avoid 6-month delays common with branch submissions), pension plan optimization under Section 80CCC, and health insurance portability for seamless policy transfers. Real result: Mrs. Priya received 8.2 lakh (plus 1.1 lakh loyalty bonus she did not know was due) within 12 days — against the typical 3-6 months timeline.",
+  "branch_dets": "Our local presence means we coordinate directly with LIC branches in Koramangala, BTM Layout, and surrounding areas for faster service. We handle full claim documentation — cashless approval, cashless discharge, and post-discharge follow-up. If your claim is rejected for pre-existing disease, waiting period, or non-medical expense, we file appeals with IRDAI within 48 hours.",
+  "local_faqs": [
+    {
+      "question": "Are there good cashless hospitals for health insurance in Koramangala?",
+      "answer": "Yes. Koramangala has several top-tier hospitals in our cashless network: Apollo Spectra (60 feet Road), Sakra World Hospital (Marathahalli, 8 min away), Cloudnine Hospital (9th Block), Fortis (Bannerghatta Road), and Narayana Health (HSR Layout). We handle all pre-authorization paperwork — you just carry your policy documents and ID."
+    },
+    {
+      "question": "Can I get motor insurance assistance in Koramangala?",
+      "answer": "Yes. We offer doorstep motor insurance renewal, claim assistance, and IDV assessment services across all blocks. Koramangala has higher parking damage and theft risks — we recommend zero-depreciation cover and engine protection (covers water ingression from monsoon flooding)."
+    },
+    {
+      "question": "How much health insurance coverage do I need in Koramangala?",
+      "answer": "Minimum recommended: Individual 15 lakh (covers ICU stays at premium hospitals), Family Floater 25-30 lakh (2 adults + 1 child), Super Top-Up 20 lakh deductible (saves 40-60% on premiums). These amounts are calibrated to Bangalore hospital rates."
+    },
+    {
+      "question": "What are the best term insurance plans for IT professionals in Koramangala?",
+      "answer": "For tech professionals earning 8-20 lakhs annually: HDFC Click 2 Protect (lowest premium, global cover), ICICI Pru iProtect (highest coverage up to 50x annual income), Max Money Super Sure (best critical illness rider), Tata AIA Life (flexible premium payment — useful for ESOP vesting cycles)."
+    },
+    {
+      "question": "Do I need separate insurance if my company provides group coverage?",
+      "answer": "Absolutely yes. Group insurance covers medical emergencies during active employment only, has limited sum insured (usually 5-8 lakh), and no coverage for personal accident outside work hours. We recommend a personal term plan (1-2 crore) as a foundation, with company group cover as supplementary."
+    },
+    {
+      "question": "What are the IRDAI-approved claim settlement timelines?",
+      "answer": "Pre-authorization approval: 3-7 working days. Claim intimation: 24 hours. Claim settlement: 30 days (cashless) / 45 days (reimbursement). Interest for delay: 2% above MCLR (auto-compounded). If your claim is delayed beyond these timelines, we escalate to IRDAI IGMS portal immediately."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "",
+  "lic_addr": "",
+  "nearbyLocations": [],
+  "lat": 12.9355,
+  "lng": 77.6245
+}

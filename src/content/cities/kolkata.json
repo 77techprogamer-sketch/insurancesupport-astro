@@ -1,0 +1,41 @@
+{
+  "slug": "kolkata",
+  "name": "Kolkata",
+  "state": "West Bengal",
+  "desc": "Families and professionals in Kolkata, West Bengal trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Salt Lake",
+    "Sector V",
+    "Ballygunge",
+    "Behala",
+    "Park Street",
+    "New Town",
+    "Tollygunge",
+    "Shyambazar",
+    "Garia"
+  ],
+  "nearby": [
+    "bhubaneswar",
+    "vizag"
+  ],
+  "it_focus": "Group health, personal accident, and portable term insurance for IT employees in Salt Lake Sector V and New Town action area.",
+  "senior_focus": "Doorstep LIC maturity claim and pension support for established families in Ballygunge, Behala, and Tollygunge.",
+  "branch_dets": "Direct liaison with LIC zonal office at Mint Street and BBD Bagh, plus private insurer offices in Park Street.",
+  "local_faqs": [
+    {
+      "question": "Which are the top cashless hospitals in Kolkata for health insurance?",
+      "answer": "Kolkata Medical College, AMRI Hospitals, Apollo Gleneagles, Woodlands Hospital, and Fortis Kolkata are in our cashless network."
+    },
+    {
+      "question": "Can you assist with insurance ombudsman complaints in Kolkata?",
+      "answer": "Yes, we prepare documentation and represent grievances at the Insurance Ombudsman office in Kolkata for health and life insurance claim disputes."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Zonal Office Kolkata",
+  "lic_addr": "Mint Road, Kolkata 700001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

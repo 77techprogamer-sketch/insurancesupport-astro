@@ -1,0 +1,39 @@
+{
+  "slug": "ujjain",
+  "name": "Ujjain",
+  "state": "Madhya Pradesh",
+  "desc": "Families and professionals in Ujjain, Madhya Pradesh trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Freeganj",
+    "Freesanjh",
+    "Desai Nagan",
+    "Bhairavgarh",
+    "Nai Sadak",
+    "Jawahar Marg",
+    "Dewas Gate"
+  ],
+  "nearby": [
+    "indore",
+    "bhopal"
+  ],
+  "it_focus": "Term plans and critical illness covers for professionals commuting to IT parks near Dewas and surrounding industrial estates.",
+  "senior_focus": "Doorstep LIC maturity, pension, and established policy update services for senior residents of Freesanjh and Desai Nagan.",
+  "branch_dets": "Liaison with LIC branch at Freeganj Chowk and coordination with all major insurance offices in Ujjain.",
+  "local_faqs": [
+    {
+      "question": "What are the top cashless hospitals available in Ujjain?",
+      "answer": "CHL Hospital, R.D. Gardi Medical College Hospital, B.RK.M. Hospital, and Ujjain hospital at Freeganj are in our cashless network."
+    },
+    {
+      "question": "Do you offer doorstep LIC policy review for elderly clients in Ujjain?",
+      "answer": "Yes, we visit homes across Ujjain including Freeganj, Desai Nagan, and Dewas Gate for policy audit, revival, and claim documentation."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Ujjain",
+  "lic_addr": "Freeganj, Ujjain 456010",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

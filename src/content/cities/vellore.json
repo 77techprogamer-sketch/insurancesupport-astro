@@ -1,0 +1,40 @@
+{
+  "slug": "vellore",
+  "name": "Vellore",
+  "state": "Tamil Nadu",
+  "desc": "Serving families and business owners across Vellore, Tamil Nadu, Insurance Support offers independent, IRDAI-certified consultancy. From high-sum-assured term plans to family floater health policies, we help you secure the right coverage with full claim recovery backup.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Allipuram",
+    "Sathuvacheri",
+    "Bagayam",
+    "Thorapadi",
+    "Vellore Fort area",
+    "Katpadi",
+    "BN Puram",
+    "VIT Campus"
+  ],
+  "nearby": [
+    "hosur",
+    "chennai"
+  ],
+  "it_focus": "Portable health and term insurance for VIT students and young techies staffing local IT companies.",
+  "senior_focus": "Cashless claim assistance for senior residents near CMC Hospital and pension plan advisory for retired teaching and medical professionals.",
+  "branch_dets": "Coordination with LIC Arni Road branch and health insurer offices near Vellore Town and CMC.",
+  "local_faqs": [
+    {
+      "question": "Can you help me get cashless access at CMC Vellore?",
+      "answer": "Yes, we help families activate cashless authorisation at CMC Vellore and nearby hospitals including Apollo KH Hospital and Government Vellore Medical College."
+    },
+    {
+      "question": "Do you offer insurance support for VIT students and alumni?",
+      "answer": "Yes, we structure affordable term insurance, student health covers, and investment-linked ULIP plans for current students, alumni, and faculty."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Vellore",
+  "lic_addr": "Arni Road, Vellore 632001",
+  "nearbyLocations": [],
+  "lat": 20.5937,
+  "lng": 78.9629
+}

@@ -9,7 +9,7 @@ import FloatingCTA from '../../components/FloatingCTA.tsx';
 
 export async function getStaticPaths() {
   const allCitiesCollection = await getCollection('cities');
-  const allCitiesData = allCitiesCollection[0].data;
+  const allCitiesData = allCitiesCollection.map(entry => entry.data);
 
   return allCitiesData.map(city => ({
     params: { slug: city.slug },
