@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "here-now": {
+      "source": "heredotnow/skill",
+      "sourceType": "github",
+      "skillPath": "here-now/SKILL.md",
+      "computedHash": "5c8c6e095d990fc2127086bc122daea8423eab5cf9b171b626a88a4df2f2597d"
+    }
+  }
+}

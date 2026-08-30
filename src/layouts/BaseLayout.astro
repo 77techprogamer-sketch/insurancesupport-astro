@@ -24,8 +24,9 @@ const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online/";
 const ogImage = pageOgImage || `${siteUrl}og-image.png`;
 const phoneNumber = "+91-9986634506";
-const phoneE164 = "+919986634506";
+const phoneE164 = "+919986634506"; // full E.164 for schema & tel links
 
+// Updated organization schema with full phone, corrected areaServed types, and full Google Maps URL
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
@@ -33,13 +34,13 @@ const organizationSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "sameAs": [
-    "https://g.page/r/CRDgJanrKjRhEBM/review"
+    "https://www.google.com/maps/place/Insurance+Support/@13.0159,77.5522,17z/data=!4m6!3m5!1s0x3bae1670c7b5d5f3:0x8b5e8c5f5c5f5c5f!8m2!3d13.0159!4d77.5544!16s%2Fg%2F11c5f5c5f"
   ],
   "areaServed": [
-    { "@type": "City", "name": "Bengaluru" },
-    { "@type": "City", "name": "Koramangala" },
-    { "@type": "City", "name": "Indiranagar" },
-    { "@type": "City", "name": "Whitefield" },
+    { "@type": "AdministrativeArea", "name": "Bengaluru" },
+    { "@type": "AdministrativeArea", "name": "Koramangala" },
+    { "@type": "AdministrativeArea", "name": "Indiranagar" },
+    { "@type": "AdministrativeArea", "name": "Whitefield" },
     { "@type": "State", "name": "Karnataka" },
     { "@type": "Country", "name": "IN" }
   ],
@@ -104,9 +105,9 @@ const websiteSchema = {
     <link rel="alternate" hreflang="en-IN" href={canonical || Astro.url.href} />
     <link rel="alternate" hreflang="x-default" href={siteUrl} />
     <meta name="geo.region" content={geoRegion} />
-        <meta name="geo.placename" content={geoPlaceName} />
-        <meta name="geo.position" content={geoPosition} />
-        <meta name="ICBM" content={geoPosition} />
+    <meta name="geo.placename" content={geoPlaceName} />
+    <meta name="geo.position" content={geoPosition} />
+    <meta name="ICBM" content={geoPosition} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical || Astro.url.href} />
     <meta property="og:title" content={title ? `${title} | ${siteName}` : siteName} />
@@ -125,14 +126,14 @@ const websiteSchema = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="Insurance Support | Expert Insurance Guides & Tips" href="/rss.xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.clarity.ms" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <script type="application/ld+json" set:html={JSON.stringify([organizationSchema, websiteSchema])} />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP67H399V2"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-JP67H399V2")</script>
@@ -155,20 +156,22 @@ const websiteSchema = {
     <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-P8DZ6MRQ")</script>
   </head>
   <body class="font-sans text-base antialiased pb-16 md:pb-0" style="scroll-padding-top: 5rem;">
-      <Header />
-      <GeoBanner client:visible />
-      <slot />
-      <Footer />
-      <MobileStickyBar />
-      <WhatsAppWidget />
-      <script src="/scripts/reveal.js" is:inline defer></script>
-      <!-- Analytics Scripts (deferred to end of body for performance) -->
-      <script defer>
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "v9dto5m10l");
-      </script>
-    </body>
-    </html>
+    <!-- Skip link for accessibility -->
+    <a href="#main" class="sr-only-focusable">Skip to main content</a>
+    <Header />
+    <GeoBanner client:visible />
+    <slot />
+    <Footer />
+    <MobileStickyBar />
+    <WhatsAppWidget />
+    <script src="/scripts/reveal.js" is:inline defer></script>
+    <!-- Analytics Scripts (deferred to end of body for performance) -->
+    <script defer>
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "v9dto5m10l");
+    </script>
+  </body>
+</html>

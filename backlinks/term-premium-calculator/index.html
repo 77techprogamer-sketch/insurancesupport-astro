@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Term Insurance Premium Calculator — Insurance Support</title>
+  <meta name="description" content="Calculate your term insurance premium instantly. Compare plans from HDFC, ICICI, Max, Tata AIA. IRDAI-certified advisor Hari Kotian (Reg: 0149161D).">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://here.now/insurance-support/term-premium-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Term Insurance Premium Calculator — Instant Quotes">
+  <meta property="og:description" content="Get accurate term insurance premiums in seconds. No spam, no login. Expert advisory from IRDAI-certified advisor.">
+  <meta property="og:image" content="https://insurancesupport.online/og-calculator.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: oklch(45% 0.18 250);
+      --color-primary-fg: #ffffff;
+      --color-accent: oklch(55% 0.22 85);
+      --color-accent-fg: #000000;
+      --color-bg: #ffffff;
+      --color-surface: oklch(98% 0.005 250);
+      --color-border: oklch(90% 0.01 250);
+      --color-text: oklch(15% 0.02 250);
+      --color-text-muted: oklch(45% 0.02 250);
+      --color-success: oklch(55% 0.18 150);
+      --radius: 8px;
+      --radius-sm: 4px;
+      --shadow-1: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-2: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-3: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-glow-accent: 0 0 20px oklch(55% 0.22 85 / 0.3);
+      --font-sans: 'Outfit', system-ui, sans-serif;
+      --font-serif: 'Roboto', serif;
+      --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+      --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px;
+      --transition: 150ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+      min-height: 100vh;
+    }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    a { color: var(--color-primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: var(--space-6) var(--space-4); }
+    @media (min-width: 768px) { .container { padding: var(--space-10) var(--space-6); } }
+    header { text-align: center; margin-bottom: var(--space-10); }
+    .badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-3); background: var(--color-primary); color: var(--color-primary-fg); font-size: 0.75rem; font-weight: 600; border-radius: 9999px; margin-bottom: var(--space-4); }
+    h1 { font-size: clamp(1.875rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; color: var(--color-text); margin-bottom: var(--space-3); }
+    .lead { font-family: var(--font-serif); font-size: 1.125rem; line-height: 1.7; color: var(--color-text-muted); max-width: 60ch; margin: 0 auto var(--space-8); }
+    .calculator-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: var(--space-6); box-shadow: var(--shadow-1); }
+    @media (min-width: 768px) { .calculator-card { padding: var(--space-8); } }
+    .section { margin-bottom: var(--space-6); }
+    .section:last-of-type { margin-bottom: 0; }
+    .section-title { font-size: 1rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-2); }
+    .section-title::before { content: ''; width: 8px; height: 8px; background: var(--color-accent); border-radius: 2px; }
+    .form-group { margin-bottom: var(--space-4); }
+    label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--color-text); margin-bottom: var(--space-2); }
+    label .required { color: var(--color-accent); }
+    .input-wrapper { position: relative; }
+    .input-prefix { position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%); font-weight: 600; color: var(--color-text-muted); pointer-events: none; }
+    .input-suffix { position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%); font-weight: 500; color: var(--color-text-muted); pointer-events: none; }
+    input[type="number"], input[type="text"], select { width: 100%; padding: var(--space-3) var(--space-4); font-family: var(--font-sans); font-size: 1rem; line-height: 1.5; color: var(--color-text); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-sm); transition: border-color var(--transition), box-shadow var(--transition); }
+    input[type="number"]:focus, input[type="text"]:focus, select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px oklch(45% 0.18 250 / 0.2); }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type="number"] { -moz-appearance: textfield; }
+    .input-hint { font-size: 0.75rem; color: var(--color-text-muted); margin-top: var(--space-1); }
+    .range-input { display: flex; align-items: center; gap: var(--space-3); }
+    .range-input input[type="range"] { flex: 1; accent-color: var(--color-primary); }
+    .range-input output { min-width: 5ch; text-align: right; font-weight: 600; color: var(--color-primary); }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .checkbox-label { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-sm); cursor: pointer; font-size: 0.875rem; transition: all var(--transition); }
+    .checkbox-label:hover { border-color: var(--color-primary); }
+    .checkbox-label input[type="checkbox"] { accent-color: var(--color-primary); width: 1rem; height: 1rem; }
+    .checkbox-label input[type="checkbox"]:checked + span { color: var(--color-primary); font-weight: 500; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); width: 100%; padding: var(--space-3) var(--space-6); font-family: var(--font-sans); font-size: 1rem; font-weight: 600; line-height: 1.5; border: none; border-radius: var(--radius); cursor: pointer; transition: all var(--transition); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-primary { background: var(--color-primary); color: var(--color-primary-fg); box-shadow: var(--shadow-2); }
+    .btn-primary:hover:not(:disabled) { background: oklch(40% 0.18 250); box-shadow: var(--shadow-glow-accent); transform: translateY(-1px); }
+    .btn-whatsapp { background: #10b981; color: #fff; box-shadow: 0 4px 14px rgba(16,185,129,0.3); margin-top: var(--space-4); }
+    .btn-whatsapp:hover { background: #059669; transform: scale(1.02); }
+    .results { display: none; margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); animation: fade-up 0.4s ease forwards; }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .results.visible { display: block; }
+    .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-3); }
+    .results-title { font-size: 1.25rem; font-weight: 700; color: var(--color-text); }
+    .premium-display { text-align: right; }
+    .premium-label { font-size: 0.875rem; color: var(--color-text-muted); }
+    .premium-amount { font-size: 2rem; font-weight: 700; color: var(--color-primary); line-height: 1.2; }
+    .premium-period { font-size: 1rem; color: var(--color-text-muted); font-weight: 400; }
+    .plan-comparison { display: grid; gap: var(--space-4); }
+    @media (min-width: 640px) { .plan-comparison { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .plan-comparison { grid-template-columns: repeat(4, 1fr); } }
+    .plan-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius); padding: var(--space-5); transition: all var(--transition); position: relative; }
+    .plan-card:hover { box-shadow: var(--shadow-3); border-color: var(--color-primary); }
+    .plan-card.recommended { border-color: var(--color-accent); box-shadow: var(--shadow-glow-accent); }
+    .plan-card.recommended::before { content: 'Recommended'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-accent); color: var(--color-accent-fg); font-size: 0.625rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; white-space: nowrap; }
+    .plan-header { text-align: center; margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border); }
+    .plan-name { font-size: 1rem; font-weight: 600; color: var(--color-text); margin-bottom: var(--space-1); }
+    .plan-premium { font-size: 1.5rem; font-weight: 700; color: var(--color-primary); }
+    .plan-premium-period { font-size: 0.75rem; color: var(--color-text-muted); font-weight: 400; }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
+    .plan-feature { display: flex; align-items: flex-start; gap: var(--space-2); font-size: 0.875rem; color: var(--color-text); line-height: 1.5; }
+    .plan-feature svg { flex-shrink: 0; margin-top: 2px; color: var(--color-success); }
+    .disclaimer { margin-top: var(--space-6); padding: var(--space-4); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-serif); font-size: 0.8125rem; line-height: 1.6; color: var(--color-text-muted); }
+    .disclaimer strong { color: var(--color-text); }
+    .cta-section { margin-top: var(--space-10); text-align: center; }
+    .cta-text { font-family: var(--font-serif); font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: var(--space-4); max-width: 50ch; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; flex-direction: column; gap: var(--space-3); max-width: 320px; margin: 0 auto; }
+    @media (min-width: 480px) { .cta-buttons { flex-direction: row; justify-content: center; } }
+    .trust-bar { margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--color-border); text-align: center; }
+    .trust-items { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-6); margin-top: var(--space-4); }
+    .trust-item { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); }
+    .trust-value { font-size: 1.5rem; font-weight: 700; color: var(--color-primary); line-height: 1.2; }
+    .trust-label { font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    footer { margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--color-border); text-align: center; font-size: 0.75rem; color: var(--color-text-muted); font-family: var(--font-serif); }
+    footer a { color: var(--color-text-muted); }
+    footer a:hover { color: var(--color-primary); }
+    .error-message { display: none; padding: var(--space-3); background: oklch(55% 0.22 15 / 0.1); border: 1px solid oklch(55% 0.22 15 / 0.3); border-radius: var(--radius-sm); color: oklch(55% 0.22 15); font-size: 0.875rem; margin-bottom: var(--space-4); }
+    .error-message.visible { display: block; }
+    .loading { display: none; text-align: center; padding: var(--space-8); }
+    .loading.visible { display: block; }
+    .spinner { width: 40px; height: 40px; border: 3px solid var(--color-border); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto var(--space-4); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .sr-only-focusable:not(:focus):not(:focus-within) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .sr-only-focusable:focus, .sr-only-focusable:focus-within { position: static; width: auto; height: auto; padding: var(--space-3) var(--space-4); background: var(--color-primary); color: var(--color-primary-fg); font-weight: 600; z-index: 1000; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Term Insurance Premium Calculator",
+    "description": "Instant term insurance premium calculator for Indian residents. Compare HDFC, ICICI, Max Life, Tata AIA plans.",
+    "url": "https://here.now/insurance-support/term-premium-calculator/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor",
+      "url": "https://insurancesupport.online/about",
+      "licenseNumber": "0149161D",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Insurance Support",
+        "url": "https://insurancesupport.online"
+      }
+    },
+    "featureList": [
+      "Instant premium calculation",
+      "Multi-insurer comparison",
+      "Rider recommendations",
+      "No personal data required",
+      "IRDAI-compliant assumptions"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only-focusable">Skip to calculator</a>
+  <div class="container">
+    <header>
+      <span class="badge">IRDAI Reg: 0149161D • No Login • No Spam</span>
+      <h1>Term Insurance Premium Calculator</h1>
+      <p class="lead">Get accurate premium estimates in seconds. Compare top insurers side-by-side. Zero personal data required — just your basics.</p>
+    </header>
+    <main id="main">
+      <div class="calculator-card" role="form" aria-label="Term insurance premium calculator">
+        <div class="error-message" id="errorMsg" aria-live="polite"></div>
+        <div class="loading" id="loading" aria-live="polite" aria-busy="true">
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Calculating premiums across insurers...</p>
+        </div>
+        <div class="section">
+          <h2 class="section-title">Your Profile</h2>
+          <div class="form-group">
+            <label for="age">Age <span class="required" aria-hidden="true">*</span></label>
+            <div class="input-wrapper">
+              <input type="number" id="age" min="18" max="65" value="30" required aria-describedby="ageHint">
+              <span class="input-suffix">years</span>
+            </div>
+            <span class="input-hint" id="ageHint">Enter your current age (18-65)</span>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender <span class="required" aria-hidden="true">*</span></label>
+            <select id="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="annualIncome">Annual Income <span class="required" aria-hidden="true">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-prefix">₹</span>
+              <input type="number" id="annualIncome" min="100000" max="100000000" value="1200000" required aria-describedby="incomeHint">
+            </div>
+            <span class="input-hint" id="incomeHint">Your gross annual income in INR</span>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="section-title">Coverage Preferences</h2>
+          <div class="form-group">
+            <label for="coverAmount">Cover Amount (Sum Assured) <span class="required" aria-hidden="true">*</span></label>
+            <div class="range-input">
+              <input type="range" id="coverAmount" min="2500000" max="50000000" step="500000" value="10000000" aria-describedby="coverHint">
+              <output for="coverAmount" id="coverOutput">₹1 Cr</output>
+            </div>
+            <span class="input-hint" id="coverHint">Recommended: 10-15× annual income</span>
+          </div>
+          <div class="form-group">
+            <label for="policyTerm">Policy Term <span class="required" aria-hidden="true">*</span></label>
+            <div class="range-input">
+              <input type="range" id="policyTerm" min="10" max="40" step="5" value="30" aria-describedby="termHint">
+              <output for="policyTerm" id="termOutput">30 years</output>
+            </div>
+            <span class="input-hint" id="termHint">Cover until retirement age (typically 60-65)</span>
+          </div>
+          <div class="form-group">
+            <label for="premiumFreq">Premium Payment Frequency</label>
+            <select id="premiumFreq">
+              <option value="annual" selected>Annual</option>
+              <option value="semi-annual">Semi-Annual</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="section-title">Riders & Add-ons</h2>
+          <p class="input-hint" style="margin-bottom: var(--space-3);">Select riders to include in premium calculation</p>
+          <div class="checkbox-group" role="group" aria-label="Rider options">
+            <label class="checkbox-label"><input type="checkbox" id="riderCritical" value="critical"><span>Critical Illness Cover</span></label>
+            <label class="checkbox-label"><input type="checkbox" id="riderAccidental" value="accidental"><span>Accidental Death Benefit</span></label>
+            <label class="checkbox-label"><input type="checkbox" id="riderWaiver" value="waiver" checked><span>Waiver of Premium</span></label>
+            <label class="checkbox-label"><input type="checkbox" id="riderTerminal" value="terminal"><span>Terminal Illness</span></label>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="section-title">Health & Lifestyle</h2>
+          <div class="checkbox-group" role="group" aria-label="Health declarations">
+            <label class="checkbox-label"><input type="checkbox" id="smoker" value="smoker"><span>Smoker / Tobacco User</span></label>
+            <label class="checkbox-label"><input type="checkbox" id="preExisting" value="preExisting"><span>Pre-existing Conditions</span></label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="calculateBtn" aria-busy="false">Calculate Premiums</button>
+      </div>
+      <div class="results" id="results" aria-live="polite">
+        <div class="results-header">
+          <h2 class="results-title">Your Estimated Premiums</h2>
+          <div class="premium-display" id="bestPremium">
+            <div class="premium-label">Best Annual Premium</div>
+            <div class="premium-amount">₹<span id="bestAmount">—</span></div>
+            <div class="premium-period">/ year</div>
+          </div>
+        </div>
+        <div class="plan-comparison" id="planComparison" role="list" aria-label="Insurer comparison"></div>
+        <div class="disclaimer">
+          <strong>Important Disclaimers:</strong>
+          <ul style="margin: var(--space-2) 0 0 var(--space-4); padding-left: var(--space-4);">
+            <li>Premiums are indicative estimates based on standard mortality tables and insurer public filings (2025-26).</li>
+            <li>Actual premiums vary based on medical underwriting, lifestyle, occupation, and insurer-specific loading.</li>
+            <li>Rider premiums are approximate; final cost confirmed at application.</li>
+            <li>This calculator does not constitute financial advice. Consult an IRDAI-certified advisor before purchasing.</li>
+            <li>Tax benefits under Section 80C (up to ₹1.5L) and Section 80D (health riders) subject to prevailing laws.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <section class="cta-section">
+      <p class="cta-text">Want a personalized comparison with actual policy documents? Speak directly with <strong>Hari Kotian</strong> (IRDAI Reg: 0149161D) for a zero-obligation portfolio review. Doorstep service across Bangalore.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20used%20the%20term%20calculator%20and%20want%20expert%20advice." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Hari Kotian
+        </a>
+        <a href="tel:+919986634506" class="btn" style="background: linear-gradient(to right, var(--color-accent), oklch(65% 0.18 75)); color: var(--color-accent-fg); box-shadow: var(--shadow-glow-accent);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Call +91-99866 34506
+        </a>
+      </div>
+    </section>
+    <div class="trust-bar">
+      <p style="font-size: 0.875rem; color: var(--color-text-muted);">Trusted by 2,000+ families across Bangalore</p>
+      <div class="trust-items">
+        <div class="trust-item"><span class="trust-value">25+</span><span class="trust-label">Years Experience</span></div>
+        <div class="trust-item"><span class="trust-value">96%</span><span class="trust-label">Claim Approval Rate</span></div>
+        <div class="trust-item"><span class="trust-value">20+</span><span class="trust-label">Insurers Compared</span></div>
+        <div class="trust-item"><span class="trust-value">14</span><span class="trust-label">Bangalore Areas</span></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>© 2026 Insurance Support — IRDAI Reg No: 0149161D | Hari Kotian, Koramangala, Bangalore</p>
+    <p style="margin-top: var(--space-2);"><a href="https://insurancesupport.online">insurancesupport.online</a> | <a href="https://insurancesupport.online/privacy">Privacy</a> | <a href="https://insurancesupport.online/terms">Terms</a></p>
+  </footer>
+  <script>
+    (function() {
+      'use strict';
+      // Configuration
+      const INSURERS = [
+        { id: 'hdfc', name: 'HDFC Click 2 Protect', baseRate: 0.0032, settlementRatio: 99.7, claimTime: 7, logo: 'HDFC' },
+        { id: 'icici', name: 'ICICI Pru iProtect', baseRate: 0.0034, settlementRatio: 98.0, claimTime: 10, logo: 'ICICI' },
+        { id: 'max', name: 'Max Money Super Sure', baseRate: 0.0031, settlementRatio: 97.0, claimTime: 12, logo: 'Max Life' },
+        { id: 'tata', name: 'Tata AIA Life', baseRate: 0.0033, settlementRatio: 96.0, claimTime: 14, logo: 'Tata AIA' }
+      ];
+      const RIDER_MULTIPLIERS = { critical: 0.25, accidental: 0.12, waiver: 0.08, terminal: 0.05 };
+      const SMOKER_LOADING = 1.5; // 50% loading
+      const PRE_EXISTING_LOADING = 1.25; // 25% loading
+      const FREQ_FACTORS = { annual: 1, 'semi-annual': 1.02, quarterly: 1.03, monthly: 1.05 };
+      // DOM
+      const form = document.querySelector('.calculator-card');
+      const calculateBtn = document.getElementById('calculateBtn');
+      const results = document.getElementById('results');
+      const loading = document.getElementById('loading');
+      const errorMsg = document.getElementById('errorMsg');
+      const planComparison = document.getElementById('planComparison');
+      const bestAmount = document.getElementById('bestAmount');
+      // Range outputs
+      const coverAmount = document.getElementById('coverAmount');
+      const coverOutput = document.getElementById('coverOutput');
+      const policyTerm = document.getElementById('policyTerm');
+      const termOutput = document.getElementById('termOutput');
+      // Format INR
+      function formatINR(num) {
+        if (num >= 10000000) return '₹' + (num / 10000000).toFixed(num % 10000000 === 0 ? 0 : 1) + ' Cr';
+        if (num >= 100000) return '₹' + (num / 100000).toFixed(num % 100000 === 0 ? 0 : 1) + ' L';
+        return '₹' + num.toLocaleString('en-IN');
+      }
+      // Update range outputs
+      coverAmount.addEventListener('input', () => { coverOutput.textContent = formatINR(parseInt(coverAmount.value)); });
+      policyTerm.addEventListener('input', () => { termOutput.textContent = policyTerm.value + ' years'; });
+      // Validation
+      function validate() {
+        const age = parseInt(document.getElementById('age').value);
+        const income = parseInt(document.getElementById('annualIncome').value);
+        const cover = parseInt(document.getElementById('coverAmount').value);
+        if (isNaN(age) || age < 18 || age > 65) return 'Age must be between 18 and 65';
+        if (isNaN(income) || income < 100000) return 'Annual income must be at least ₹1,00,000';
+        if (isNaN(cover) || cover < 2500000) return 'Cover amount must be at least ₹25,00,000';
+        if (cover > income * 25) return 'Cover amount cannot exceed 25× annual income (IRDAI guideline)';
+        const term = parseInt(document.getElementById('policyTerm').value);
+        if (age + term > 75) return 'Policy term cannot extend beyond age 75';
+        return null;
+      }
+      // Calculate premium for one insurer
+      function calculatePremium(insurer, inputs) {
+        const { age, gender, cover, term, freq, riders, smoker, preExisting } = inputs;
+        // Base premium per 1000 sum assured (simplified actuarial)
+        let rate = insurer.baseRate;
+        // Age loading (approximate)
+        if (age > 40) rate *= 1 + (age - 40) * 0.025;
+        if (age > 50) rate *= 1 + (age - 50) * 0.04;
+        // Gender adjustment (female ~10% lower)
+        if (gender === 'female') rate *= 0.9;
+        // Term loading
+        if (term > 25) rate *= 1 + (term - 25) * 0.008;
+        // Frequency factor
+        rate *= FREQ_FACTORS[freq];
+        // Base annual premium
+        let premium = (cover / 1000) * rate;
+        // Riders
+        riders.forEach(r => { premium *= (1 + RIDER_MULTIPLIERS[r]); });
+        // Health loadings
+        if (smoker) premium *= SMOKER_LOADING;
+        if (preExisting) premium *= PRE_EXISTING_LOADING;
+        // Round to nearest 100
+        return Math.round(premium / 100) * 100;
+      }
+      // Generate plan card HTML
+      function renderPlanCard(insurer, premium, isBest) {
+        const features = [
+          { text: '₹' + formatINR(premium) + ' / year', icon: true },
+          { text: insurer.settlementRatio + '% Settlement Ratio', icon: false },
+          { text: insurer.claimTime + ' day avg. claim', icon: false },
+          { text: 'Online purchase available', icon: false }
+        ];
+        return `
+          <article class="plan-card${isBest ? ' recommended' : ''}" role="listitem">
+            <div class="plan-header">
+              <div class="plan-name">${insurer.name}</div>
+              <div class="plan-premium">₹${(premium / 1000).toFixed(0)}K<span class="plan-premium-period"> / yr</span></div>
+            </div>
+            <ul class="plan-features">
+              ${features.map(f => `
+                <li class="plan-feature">
+                  ${f.icon ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>' : ''}
+                  ${f.text}
+                </li>
+              `).join('')}
+            </ul>
+          </article>
+        `;
+      }
+      // Main calculation
+      async function calculate() {
+        const err = validate();
+        if (err) { showError(err); return; }
+        hideError();
+        calculateBtn.disabled = true;
+        calculateBtn.setAttribute('aria-busy', 'true');
+        calculateBtn.textContent = 'Calculating...';
+        loading.classList.add('visible');
+        results.classList.remove('visible');
+        // Simulate API delay
+        await new Promise(r => setTimeout(r, 800));
+        const inputs = {
+          age: parseInt(document.getElementById('age').value),
+          gender: document.getElementById('gender').value,
+          cover: parseInt(document.getElementById('coverAmount').value),
+          term: parseInt(document.getElementById('policyTerm').value),
+          freq: document.getElementById('premiumFreq').value,
+          riders: Array.from(document.querySelectorAll('.checkbox-group[aria-label="Rider options"] input:checked')).map(cb => cb.value),
+          smoker: document.getElementById('smoker').checked,
+          preExisting: document.getElementById('preExisting').checked
+        };
+        // Calculate for each insurer
+        const results_arr = INSURERS.map(insurer => ({
+          ...insurer,
+          premium: calculatePremium(insurer, inputs)
+        })).sort((a, b) => a.premium - b.premium);
+        const best = results_arr[0];
+        bestAmount.textContent = formatINR(best.premium);
+        planComparison.innerHTML = results_arr.map((ins, i) => renderPlanCard(ins, ins.premium, i === 0)).join('');
+        loading.classList.remove('visible');
+        calculateBtn.disabled = false;
+        calculateBtn.setAttribute('aria-busy', 'false');
+        calculateBtn.textContent = 'Calculate Premiums';
+        results.classList.add('visible');
+        results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function showError(msg) { errorMsg.textContent = msg; errorMsg.classList.add('visible'); }
+      function hideError() { errorMsg.classList.remove('visible'); }
+      calculateBtn.addEventListener('click', calculate);
+      // Enter key on last field
+      document.getElementById('preExisting').addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+      // Initial render
+      coverOutput.textContent = formatINR(parseInt(coverAmount.value));
+      termOutput.textContent = policyTerm.value + ' years';
+    })();
+  </script>
+</body>
+</html>
