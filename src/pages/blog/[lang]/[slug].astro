@@ -170,7 +170,7 @@ const altLangText: Record<string, string> = {
   ml: "മറ്റ് ഭാഷകളിൽ വായിക്കുക"
 };
 ---
-<BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl}>
+  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')}>
   <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}
   <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'Blog', url: 'https://insurancesupport.online/blog/' }, { label: `${langName} Blog`, url: `https://insurancesupport.online/blog/${lang}/` }, { label: post.title, url: `https://insurancesupport.online/blog/${lang}/${slug}/` }]} />
@@ -212,7 +212,18 @@ const altLangText: Record<string, string> = {
     <article class="py-12 lg:py-16 bg-white">
       <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
 
-      <!-- Language link -->
+      <!-- Keyword Tags (SEO + User Signal) -->
+      {post.tags && post.tags.length > 0 && (
+        <div class="max-w-3xl mx-auto px-4 mt-10">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Related Topics</p>
+          <div class="flex flex-wrap gap-2">
+            {post.tags.slice(0, 20).map(tag => (
+              <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-default">{tag}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div class="max-w-3xl mx-auto px-4 mt-8">
         <div class="border-t border-slate-200 pt-6">
           <p class="text-sm text-slate-500 mb-3">Language: {langName}</p>
