@@ -9,11 +9,18 @@ interface Props {
 }
 
 export default function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000, label }: Props) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end); // Start at final value for SSR
   const ref = useRef<HTMLDivElement>(null);
   const counted = useRef(false);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
+    // Reset to 0 only after hydration, then animate up
+    if (!hasAnimated.current) {
+      hasAnimated.current = true;
+      setCount(0);
+    }
+
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(([entry]) => {
@@ -36,11 +43,11 @@ export default function AnimatedCounter({ end, suffix = '', prefix = '', duratio
   }, [end, duration]);
 
   return (
-    <div ref={ref} class="text-center">
-      <div class="text-4xl md:text-5xl font-extrabold text-blue-600 counter-value">
+    <div ref={ref} className="text-center">
+      <div className="text-4xl md:text-5xl font-extrabold text-blue-600 counter-value">
         {prefix}{count.toLocaleString()}{suffix}
       </div>
-      <div class="text-sm text-slate-500 mt-1 font-medium">{label}</div>
+      <div className="text-sm text-slate-500 mt-1 font-medium">{label}</div>
     </div>
   );
 }

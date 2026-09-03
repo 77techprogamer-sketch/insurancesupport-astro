@@ -14,10 +14,18 @@ const items: CounterItem[] = [
 ];
 
 function AnimatedNum({ end, suffix }: { end: number; suffix: string }) {
-  const [val, setVal] = useState(0);
+  const [val, setVal] = useState(end); // Start at final value for SSR
   const ref = useRef<HTMLSpanElement>(null);
   const done = useRef(false);
+  const hasAnimated = useRef(false);
+
   useEffect(() => {
+    // Reset to 0 only after hydration, then animate up
+    if (!hasAnimated.current) {
+      hasAnimated.current = true;
+      setVal(0);
+    }
+
     const el = ref.current?.parentElement;
     if (!el) return;
     const obs = new IntersectionObserver(([e]) => {
@@ -37,20 +45,21 @@ function AnimatedNum({ end, suffix }: { end: number; suffix: string }) {
     obs.observe(el);
     return () => obs.disconnect();
   }, [end]);
+
   return <span ref={ref}>{val}{suffix}</span>;
 }
 
 export default function TrustCounterBar() {
   return (
-    <section class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 py-12">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 py-12">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {items.map((item, i) => (
-            <div key={i} class="reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-              <div class="text-3xl md:text-4xl font-extrabold text-amber-400 counter-value">
+            <div key={i} className="reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div className="text-3xl md:text-4xl font-extrabold text-amber-400 counter-value">
                 <AnimatedNum end={item.end} suffix={item.suffix} />
               </div>
-              <div class="text-sm text-blue-200/80 mt-1 font-medium">{item.label}</div>
+              <div className="text-sm text-blue-200/80 mt-1 font-medium">{item.label}</div>
             </div>
           ))}
         </div>
