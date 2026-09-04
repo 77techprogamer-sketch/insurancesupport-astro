@@ -1,0 +1,75 @@
+{
+  "published": [],
+  "failed": [
+    {
+      "slug": "insurance-support-bannerghatta",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-bellandur",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-devanahalli",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-electronic-city",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-hebbal",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-hsr-layout",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-indiranagar",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-jayanagar",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-jp-nagar",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-koramangala",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-marathahalli",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-sarjapur",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-whitefield",
+      "step": "finalize",
+      "detail": "Not found"
+    },
+    {
+      "slug": "insurance-support-yelahanka",
+      "step": "finalize",
+      "detail": "Not found"
+    }
+  ]
+}

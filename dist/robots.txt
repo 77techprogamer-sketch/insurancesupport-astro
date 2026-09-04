@@ -1,28 +1,51 @@
 User-agent: *
 Allow: /
 
-# Explicitly welcome AI training & browsing bots (ChatGPT, Claude, Perplexity, Gemini, Grok, Copilot)
+# === Search Engine Crawlers ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# === OpenAI / ChatGPT ===
+# OAI-SearchBot: indexes pages for ChatGPT Search answers (CRITICAL for ChatGPT visibility)
+User-agent: OAI-SearchBot
+Allow: /
+
+# GPTBot: crawls content for training OpenAI's models
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT-User: fetches pages on demand when initiated by a user
 User-agent: ChatGPT-User
 Allow: /
 
+# === Anthropic / Claude ===
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
+# === Perplexity ===
+# PerplexityBot: indexes pages for Perplexity search results and citations
 User-agent: PerplexityBot
 Allow: /
 
+# Perplexity-User: fetches pages live when building an answer to a specific question
+User-agent: Perplexity-User
+Allow: /
+
+# === Google AI / Gemini ===
+# Google-Extended: controls some non-Search Google AI uses
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
+User-agent: Gemini-Deep-Research
 Allow: /
 
+# === Other AI Platforms ===
 User-agent: Applebot-Extended
 Allow: /
 
@@ -38,7 +61,7 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-User-agent: Gemini-Deep-Research
+User-agent: CCBot
 Allow: /
 
 IndexNow-Key: 71a80a3568ae5d1d945fda3ef57fe18e

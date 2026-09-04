@@ -1,0 +1,75 @@
+{
+  "published": [],
+  "failed": [
+    {
+      "slug": "insurance-support-bannerghatta",
+      "step": "finalize",
+      "detail": "Some files were not uploaded. Upload all files before finalizing."
+    },
+    {
+      "slug": "insurance-support-bellandur",
+      "step": "finalize",
+      "detail": "Some files were not uploaded. Upload all files before finalizing."
+    },
+    {
+      "slug": "insurance-support-devanahalli",
+      "step": "finalize",
+      "detail": "Some files were not uploaded. Upload all files before finalizing."
+    },
+    {
+      "slug": "insurance-support-electronic-city",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-hebbal",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-hsr-layout",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-indiranagar",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-jayanagar",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-jp-nagar",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-koramangala",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-marathahalli",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-sarjapur",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-whitefield",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    },
+    {
+      "slug": "insurance-support-yelahanka",
+      "step": "create",
+      "detail": "Rate limit exceeded. Max 60 sites per hour."
+    }
+  ]
+}

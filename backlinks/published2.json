@@ -1,0 +1,75 @@
+{
+  "published": [],
+  "failed": [
+    {
+      "slug": "insurance-support-bannerghatta",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-bellandur",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-devanahalli",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-electronic-city",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-hebbal",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-hsr-layout",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-indiranagar",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-jayanagar",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-jp-nagar",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-koramangala",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-marathahalli",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-sarjapur",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-whitefield",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "slug": "insurance-support-yelahanka",
+      "step": "finalize",
+      "detail": "JSON parse error: Expecting value: line 1 column 1 (char 0)"
+    }
+  ]
+}

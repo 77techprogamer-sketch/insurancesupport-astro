@@ -170,7 +170,12 @@ const altLangText: Record<string, string> = {
   ml: "മറ്റ് ഭാഷകളിൽ വായിക്കുക"
 };
 ---
-  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')}>
+  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href}>
+  <link rel="alternate" hreflang="en" href={`https://insurancesupport.online/blog/${post.slug}/`} />
+  {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => (
+    <link rel="alternate" hreflang={l} href={`https://insurancesupport.online/blog/${l}/${post.slug}/`} />
+  ))}
+
   <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}
   <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'Blog', url: 'https://insurancesupport.online/blog/' }, { label: `${langName} Blog`, url: `https://insurancesupport.online/blog/${lang}/` }, { label: post.title, url: `https://insurancesupport.online/blog/${lang}/${slug}/` }]} />
