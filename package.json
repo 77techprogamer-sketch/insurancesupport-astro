@@ -12,7 +12,6 @@
     "postbuild": "node ./scripts/generate-sitemap.js && node ./scripts/indexnow-notify.js"
   },
   "dependencies": {
-    "@astrojs/node": "^8.3.4",
     "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
