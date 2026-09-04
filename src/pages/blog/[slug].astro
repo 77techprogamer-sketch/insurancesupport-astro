@@ -135,6 +135,7 @@ const claimIntentSlugs = new Set([
   'insurance-claim-rejection-rate-india-2026-data',
 ]);
 const isClaimIntent = claimIntentSlugs.has(post.slug) || /claim|rejection|rejected|appeal|grievance|ombudsman/i.test(post.title || '');
+const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 ---
 
 <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href}>

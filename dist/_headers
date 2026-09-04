@@ -69,4 +69,4 @@
 # Geo endpoint - edge cached for 15 min (geolocation doesn't change fast)
 /api/geo
   Cache-Control: public, max-age=900, s-maxage=900, stale-while-revalidate=3600
-  Access-Control-Allow-Origin: https://insurancesupport.online
+  Access-Control-Allow-Origin: https://insurancesupport.online# Fri, Sep  4, 2026  3:18:24 PM
