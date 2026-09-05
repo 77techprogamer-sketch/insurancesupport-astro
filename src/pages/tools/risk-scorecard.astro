@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="Is Your Family Truly Protected? | Free Risk Scorecard | Insurance Support"
+  description="Take our 30-second free Risk Scorecard to identify gaps in your family's financial security. Data-driven assessment based on 25+ years of insurance claim experience."
+>
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/resources" class="hover:text-amber-300">Resources</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Risk Scorecard</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-400/20 text-indigo-300 text-sm font-semibold mb-4 border border-indigo-400/30">
+          Free Risk Assessment
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          Is Your Family <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-300">Truly Protected?</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Our 30-second proprietary Risk Scorecard helps you identify gaps in your financial security before they become critical.
+        </p>
+      </div>
+
+      <!-- Quiz -->
+      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-8 mb-14" id="risk-quiz">
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-slate-400">Step <span id="risk-step-num">1</span> of 5</span>
+            <span class="text-xs text-slate-500">30-seconds, no personal data needed</span>
+          </div>
+          <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full transition-all" id="risk-progress" style="width:20%"></div>
+          </div>
+        </div>
+
+        <div id="risk-q1" class="risk-q">
+          <h2 class="text-2xl font-bold text-white mb-6">Are you the primary breadwinner of your family?</h2>
+          <div class="flex gap-4">
+            <button onclick="answer(1, true)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">Yes</button>
+            <button onclick="answer(1, false)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">No</button>
+          </div>
+        </div>
+
+        <div id="risk-q2" class="risk-q hidden">
+          <h2 class="text-2xl font-bold text-white mb-6">Do you have life insurance covering at least 10x your annual income?</h2>
+          <div class="flex gap-4">
+            <button onclick="answer(2, true)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">Yes</button>
+            <button onclick="answer(2, false)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">No / Not sure</button>
+          </div>
+        </div>
+
+        <div id="risk-q3" class="risk-q hidden">
+          <h2 class="text-2xl font-bold text-white mb-6">Does every earning member have a separate health insurance plan (not just company group cover)?</h2>
+          <div class="flex gap-4">
+            <button onclick="answer(3, true)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">Yes</button>
+            <button onclick="answer(3, false)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">No</button>
+          </div>
+        </div>
+
+        <div id="risk-q4" class="risk-q hidden">
+          <h2 class="text-2xl font-bold text-white mb-6">Do you need to support aging parents or dependents with special needs?</h2>
+          <div class="flex gap-4">
+            <button onclick="answer(4, true)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">Yes</button>
+            <button onclick="answer(4, false)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">No</button>
+          </div>
+        </div>
+
+        <div id="risk-q5" class="risk-q hidden">
+          <h2 class="text-2xl font-bold text-white mb-6">Do you have a written claim-support plan for your family (knowing whom to call, what documents to submit)?</h2>
+          <div class="flex gap-4">
+            <button onclick="answer(5, true)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">Yes</button>
+            <button onclick="answer(5, false)" class="flex-1 px-6 py-4 bg-slate-800/80 border border-white/10 rounded-xl text-lg font-semibold text-white hover:bg-indigo-600/40 hover:border-indigo-400/50 transition-all">No</button>
+          </div>
+        </div>
+
+        <div id="risk-result" class="hidden text-center py-8">
+          <div class="text-6xl mb-4" id="risk-score-display">🛡️</div>
+          <h2 class="text-3xl font-bold text-white mb-3" id="risk-score-title">—</h2>
+          <p class="text-slate-300 max-w-lg mx-auto mb-6" id="risk-score-text">—</p>
+          <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-xl text-lg shadow-xl shadow-amber-500/20 hover:scale-[1.02] transition-all">
+            Get a Free Gap Analysis Consultation
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust points -->
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">Privacy First</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">We don't ask for personal data until you decide to get a detailed report.</p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">Instant Analysis</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">Get your result in less than 30 seconds with our data-driven algorithm.</p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">Data Driven</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">Based on 25+ years of risk management insight and real claim history.</p>
+        </div>
+      </div>
+
+      <ContactSection />
+    </div>
+  </main>
+
+  <script>
+    let riskScore = 0;
+    let riskStep = 1;
+    function answer(step, value) {
+      if (value === false) riskScore += 1;  // Each "no" = a gap
+      if (step < 5) {
+        document.getElementById('risk-q' + step).classList.add('hidden');
+        document.getElementById('risk-q' + (step + 1)).classList.remove('hidden');
+        riskStep++;
+        document.getElementById('risk-step-num').textContent = riskStep;
+        document.getElementById('risk-progress').style.width = (riskStep * 20) + '%';
+      } else {
+        showResult();
+      }
+    }
+    function showResult() {
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById('risk-q' + i).classList.add('hidden');
+      }
+      document.getElementById('risk-result').classList.remove('hidden');
+      document.getElementById('risk-progress').style.width = '100%';
+      const gaps = riskScore;
+      const title = document.getElementById('risk-score-title');
+      const text = document.getElementById('risk-score-text');
+      const icon = document.getElementById('risk-score-display');
+      if (gaps === 0) {
+        title.textContent = 'Strong Protection!';
+        text.textContent = 'Your family has solid coverage. Get a periodic policy review to keep it that way as your income and family grow.';
+        icon.textContent = '🛡️';
+      } else if (gaps <= 2) {
+        title.textContent = 'Moderate Gaps Found';
+        text.textContent = 'You have ' + gaps + ' protection gap(s). A focused review can close them affordably — many families fix this with one well-structured term + health combination.';
+        icon.textContent = '⚠️';
+      } else {
+        title.textContent = 'Critical Gaps Found';
+        text.textContent = 'You have ' + gaps + ' protection gaps that could leave your family financially exposed. Book a free review now to build a claim-proof plan.';
+        icon.textContent = '🔴';
+      }
+    }
+  </script>
+</BaseLayout>

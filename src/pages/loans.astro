@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="Loans & Financial Services | Insurance Support India"
+  description="Home loans, personal loans, business loans, mortgage loans, vehicle loans and education loans with tailored solutions, competitive rates and quick approvals through Insurance Support."
+>
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Loans</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-400/20 text-blue-300 text-sm font-semibold mb-4 border border-blue-400/30">
+          Financial Services
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          Smart Loans for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Your Every Need</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          From home and personal loans to business financing, we provide tailored solutions with competitive interest rates and quick approvals.
+        </p>
+      </div>
+
+      <!-- Loan types -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/40 transition-all group">
+          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Home Loan</h3>
+          <p class="text-slate-400 text-sm">Best rates for purchase, construction, and home extension with minimal documentation.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 mt-4 text-blue-300 text-sm font-semibold hover:text-blue-200">Get Quote &rarr;</a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/40 transition-all group">
+          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Personal Loan</h3>
+          <p class="text-slate-400 text-sm">Quick unsecured loans for weddings, travel, medical needs, or any personal requirement.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 mt-4 text-blue-300 text-sm font-semibold hover:text-blue-200">Get Quote &rarr;</a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/40 transition-all group">
+          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Business Loan</h3>
+          <p class="text-slate-400 text-sm">Working capital, equipment, and expansion financing for SMEs, MSMEs, and startups.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 mt-4 text-blue-300 text-sm font-semibold hover:text-blue-200">Get Quote &rarr;</a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/40 transition-all group">
+          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Mortgage Loan</h3>
+          <p class="text-slate-400 text-sm">Unlock the value of your property with flexible loan-against-property options.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 mt-4 text-blue-300 text-sm font-semibold hover:text-blue-200">Get Quote &rarr;</a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/40 transition-all group">
+          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" /></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Vehicle Loan</h3>
+          <p class="text-slate-400 text-sm">Car and two-wheeler loans with fast approvals, flexible tenures, and attractive rates.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 mt-4 text-blue-300 text-sm font-semibold hover:text-blue-200">Get Quote &rarr;</a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/40 transition-all group">
+          <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Education Loan</h3>
+          <p class="text-slate-400 text-sm">Funding for higher education in India and abroad with student-friendly terms.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 mt-4 text-blue-300 text-sm font-semibold hover:text-blue-200">Get Quote &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Why choose us -->
+      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 mb-16">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">Why Choose Insurance Support?</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div>
+            <h3 class="text-lg font-bold text-white mb-2">Expert Guidance</h3>
+            <p class="text-slate-400 text-sm">Our experienced advisors help you navigate claims and find the best loan and insurance plans.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-2">24/7 Support</h3>
+            <p class="text-slate-400 text-sm">Dedicated support teams available around the clock for your peace of mind.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-2">Claims Assistance</h3>
+            <p class="text-slate-400 text-sm">Hassle-free recovery and claim settlement support when you need it most.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="max-w-3xl mx-auto mb-16">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          <details class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-white/10 transition-colors">
+              <span class="font-semibold text-white pr-4">What loan products do you offer?</span>
+            </summary>
+            <p class="px-5 pb-5 text-slate-400 text-sm">We assist with home loans, personal loans, business loans, mortgages (loan against property), vehicle loans, and education loans — across all major Indian banks and NBFCs.</p>
+          </details>
+          <details class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-white/10 transition-colors">
+              <span class="font-semibold text-white pr-4">Do you charge a fee for loan assistance?</span>
+            </summary>
+            <p class="px-5 pb-5 text-slate-400 text-sm">Our loan advisory service is free — we are compensated by the lending institution. You pay nothing extra for our guidance, comparison, and paperwork support.</p>
+          </details>
+          <details class="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-center p-5 cursor-pointer list-none hover:bg-white/10 transition-colors">
+              <span class="font-semibold text-white pr-4">How long does loan approval take?</span>
+            </summary>
+            <p class="px-5 pb-5 text-slate-400 text-sm">Personal loans typically approve within 24-48 hours, vehicle loans in 2-3 days, and home/business loans in 1-2 weeks depending on documentation and lender processes. We expedite where possible.</p>
+          </details>
+        </div>
+      </div>
+
+      <ContactSection />
+    </div>
+  </main>
+</BaseLayout>

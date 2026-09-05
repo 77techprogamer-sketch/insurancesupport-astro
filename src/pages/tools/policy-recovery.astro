@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="Find Your Lost Wealth | LIC Policy Recovery Service | Insurance Support"
+  description="Recover lost, lapsed, or forgotten insurance policies with our veteran-led recovery service. We trace LIC records, handle indemnity bonds, and coordinate with all insurers for policy revival."
+>
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/resources" class="hover:text-amber-300">Resources</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Policy Recovery</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
+          Specialized Recovery Service
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          Find Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Lost Wealth</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Recover lost, lapsed, or hidden insurance policies with our veteran-led recovery service. We handle the paperwork, you reclaim your legacy.
+        </p>
+      </div>
+
+      <!-- Eligibility Checker -->
+      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-8 mb-14">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold text-white mb-2">Lost Policy Recovery Tool</h2>
+          <p class="text-slate-400">Check your eligibility for policy revival</p>
+        </div>
+        
+        <div class="max-w-md mx-auto">
+          <label for="policy-insurer" class="block text-sm font-semibold text-slate-300 mb-2">Which Insurance Company?</label>
+          <select id="policy-insurer" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+            <option value="">Select Insurer</option>
+            <option>LIC of India</option>
+            <option>HDFC Life</option>
+            <option>ICICI Prudential</option>
+            <option>SBI Life</option>
+            <option>Max Life</option>
+            <option>Tata AIA</option>
+            <option>Star Health</option>
+            <option>Other / Not Sure</option>
+          </select>
+          <div class="mt-4 text-center">
+            <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+              Start Recovery Process
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">All Insurers Covered</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Whether it's LIC or private insurers, we have the archives and processes to trace your records — even policies from decades ago.
+          </p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">Saves Months of Work</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Don't run around insurer offices. We coordinate the entire tracing, revival, and claims process professionally.
+          </p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">Legal Documentation</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            We assist with Indemnity Bonds and legal formalities for duplicate policy issuance and matured policy payouts.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <ContactSection />
+    </div>
+  </main>
+</BaseLayout>

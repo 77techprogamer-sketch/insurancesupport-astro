@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="How It Works | Insurance Support | Insurance Support"
+  description="A simple, transparent 4-phase process to get you the best coverage or recover your money from rejected claims. Step-by-step guide by Insurance Support."
+>
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/resources" class="hover:text-amber-300">Resources</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">How It Works</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          How It Works
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Our simple, transparent process to ensure you get the best coverage or recover your money from rejected claims.
+        </p>
+      </div>
+
+      <!-- 4 phases -->
+      <div class="space-y-8 mb-16">
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 flex gap-6">
+          <div class="flex-shrink-0 h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg text-xl font-bold text-white">1</div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">Free Consultation &amp; Assessment</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">
+              We start with a complete review of your current situation. Whether you are looking to buy a new policy or fighting a rejected claim, our experts sit with you to understand your needs.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Doorstep or Video Call consultation</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Policy document review</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Claim rejection letter analysis (if applicable)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 flex gap-6">
+          <div class="flex-shrink-0 h-14 w-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg text-xl font-bold text-white">2</div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">Strategy &amp; Paperwork</h2>
+            <p class="text-slate-300 leading-relaxed">
+              We handle all the heavy lifting. We gather the necessary documents, communicate with hospitals, TPAs, or insurance companies, and draft the medical representation for appeals.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 flex gap-6">
+          <div class="flex-shrink-0 h-14 w-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg text-xl font-bold text-white">3</div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">Escalation &amp; Follow-up</h2>
+            <p class="text-slate-300 leading-relaxed">
+              If a claim is delayed, we escalate it to the Grievance Redressal Officer or Ombudsman. We don't stop until there is a resolution.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 flex gap-6">
+          <div class="flex-shrink-0 h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center shadow-lg text-xl font-bold text-white">4</div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">Success &amp; Settlement</h2>
+            <p class="text-slate-300 leading-relaxed">
+              You receive your claim money directly to your account. For new policies, you receive your confirmed bond and our lifetime support promise.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-bold rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all hover:scale-[1.02]">
+          Book a Free Consultation
+        </a>
+      </div>
+
+      <ContactSection />
+    </div>
+  </main>
+</BaseLayout>

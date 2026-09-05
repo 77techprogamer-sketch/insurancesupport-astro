@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PersonJsonLd from '../components/PersonJsonLd.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="About Hari Kotian | IRDAI-Certified Insurance Advisor Since 1998 | Insurance Support"
+  description="Meet Hari Kotian — IRDAI-certified insurance advisor (Reg No. 0149161D) with 25+ years of experience in claim recovery, policy revival, and family protection across India."
+>
+  <PersonJsonLd />
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">About Hari Kotian</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-sm font-semibold mb-4 border border-amber-400/30">
+          IRDAI Reg No. 0149161D
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          About <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Hari Kotian</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Over two decades of battling insurance technicalities, winning rejected claims, and securing families. Experience is the ultimate shield in the insurance industry.
+        </p>
+      </div>
+
+      <!-- Career highlights -->
+      <div class="space-y-8 mb-16">
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
+          <h2 class="text-2xl font-bold text-white mb-4">25+ Years of Trust &amp; Knowledge</h2>
+          <p class="text-slate-300 leading-relaxed mb-4">
+            Insurance Support is built on the foundation of deep, battle-tested knowledge. Our senior advisors have seen every type of policy variation, exclusion clause, and TPA delay tactic since the late 90s.
+          </p>
+          <p class="text-slate-300 leading-relaxed">
+            When you work with us, you aren't just buying a policy from a portal; you are gaining a lifelong advocate who knows how to navigate the complex corporate structures of LIC, Star Health, HDFC ERGO, and more.
+          </p>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
+          <h2 class="text-2xl font-bold text-white mb-4">Inside Knowledge of Underwriting &amp; Claims</h2>
+          <p class="text-slate-300 leading-relaxed">
+            Because we know how underwriters think, we structure your applications to minimize the risk of future claim rejections. We know exactly which medical documents to submit and how to declare pre-existing conditions safely.
+          </p>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
+          <h2 class="text-2xl font-bold text-white mb-4">The Ombudsman &amp; Escalation Ecosystem</h2>
+          <p class="text-slate-300 leading-relaxed">
+            A typical agent stops answering calls when a claim is rejected. A veteran advisor steps in. We draft legal-grade medical representations and fight cases at the grievance and Ombudsman levels.
+          </p>
+          <div class="mt-6 grid sm:grid-cols-3 gap-4">
+            <div class="bg-slate-800/60 rounded-xl p-4 text-center">
+              <div class="text-2xl font-extrabold text-amber-300">15k+</div>
+              <div class="text-xs text-slate-400 mt-1">Clients Served</div>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-4 text-center">
+              <div class="text-2xl font-extrabold text-amber-300">98%</div>
+              <div class="text-xs text-slate-400 mt-1">Claims Settled</div>
+            </div>
+            <div class="bg-slate-800/60 rounded-xl p-4 text-center">
+              <div class="text-2xl font-extrabold text-amber-300">25+</div>
+              <div class="text-xs text-slate-400 mt-1">Years Experience</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
+          <h2 class="text-2xl font-bold text-white mb-4">Experience the Advantage</h2>
+          <p class="text-slate-300 leading-relaxed mb-6">
+            Whether it's a rejected claim, a lapsed LIC policy, or choosing the right family cover, Hari Kotian and his team are on your side — for the lifetime of your policy.
+          </p>
+          <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-bold rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all hover:scale-[1.02]">
+            Talk to Our Senior Advisors
+          </a>
+        </div>
+      </div>
+
+      <ContactSection />
+    </div>
+  </main>
+</BaseLayout>

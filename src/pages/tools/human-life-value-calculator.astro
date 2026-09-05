@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="Human Life Value (HLV) Calculator | How Much Insurance Do You Need? | Insurance Support"
+  description="Calculate your exact Human Life Value (HLV) in 30 seconds. Find out how much term life insurance your family needs to maintain their lifestyle, using the scientific income-replacement method."
+>
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Header -->
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">HLV Calculator</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-sm font-semibold mb-4 border border-amber-400/30">
+          Free Risk Assessment Tool
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          Human Life Value <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">(HLV) Calculator</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Most people are under-insured. Use this scientific calculator to find the <strong class="text-white">exact amount</strong> your family would need to maintain their lifestyle if you weren't there.
+        </p>
+      </div>
+
+      <!-- Calculator -->
+      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl overflow-hidden mb-16">
+        <div class="grid md:grid-cols-2">
+          <!-- Inputs -->
+          <div class="p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-white mb-4">Calculate Your HLV</h2>
+            <p class="text-sm text-slate-400 -mt-3 mb-2">Adjust the values to match your financial profile.</p>
+            
+            <div>
+              <label for="hlv-age" class="block text-sm font-semibold text-slate-300 mb-2">Current Age</label>
+              <input type="number" id="hlv-age" value="30" min="18" max="60" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-amber-400 focus:outline-none" />
+            </div>
+            <div>
+              <label for="hlv-retire" class="block text-sm font-semibold text-slate-300 mb-2">Retire at</label>
+              <input type="number" id="hlv-retire" value="60" min="40" max="70" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-amber-400 focus:outline-none" />
+            </div>
+            <div>
+              <label for="hlv-income" class="block text-sm font-semibold text-slate-300 mb-2">Annual Income (₹)</label>
+              <input type="number" id="hlv-income" value="1200000" min="0" step="100000" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-amber-400 focus:outline-none" />
+            </div>
+            <div>
+              <label for="hlv-loans" class="block text-sm font-semibold text-slate-300 mb-2">Outstanding Loans (₹) <span class="text-slate-500">(Home, Car, Personal)</span></label>
+              <input type="number" id="hlv-loans" value="500000" min="0" step="100000" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-amber-400 focus:outline-none" />
+            </div>
+            <div>
+              <label for="hlv-savings" class="block text-sm font-semibold text-slate-300 mb-2">Existing Savings/Investments (₹)</label>
+              <input type="number" id="hlv-savings" value="200000" min="0" step="50000" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-amber-400 focus:outline-none" />
+            </div>
+            <button onclick="window.calcHLV()" class="w-full px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-bold rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all hover:scale-[1.02]">
+              Calculate My Value
+            </button>
+          </div>
+
+          <!-- Result -->
+          <div class="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border-l border-white/10 p-8 flex flex-col justify-center">
+            <h3 class="text-lg font-semibold text-slate-300 mb-4">Your Human Life Value</h3>
+            <div id="hlv-result" class="text-center">
+              <div class="text-5xl font-extrabold text-amber-300 mb-3" id="hlv-amount">₹ —</div>
+              <p class="text-slate-400 text-sm max-w-xs mx-auto">Your family would need this cover to replace your income, clear liabilities, and maintain their standard of living.</p>
+            </div>
+            <div class="mt-8 bg-slate-800/60 rounded-2xl p-5 border border-white/10">
+              <p class="text-sm text-slate-300 leading-relaxed">
+                <strong class="text-amber-300">Next step:</strong> Compare the top 3 term plans that match this cover amount, benchmarked by claim settlement ratio, and book a free policy review. 
+              </p>
+              <a href="/services/term-insurance" class="inline-flex items-center gap-2 mt-4 text-amber-300 text-sm font-semibold hover:text-amber-200">
+                Compare Term Plans &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explanation -->
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">What is HLV?</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Human Life Value is a numeric value representing your economic worth to your family — the amount needed to replace your future earnings and pay off liabilities.
+          </p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">Why it Matters</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            It prevents under-insurance (random ₹5 lakh policies are rarely enough), accounts for inflation your family will face, and covers home loans, personal loans, and education costs.
+          </p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-3">The Formula</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            HLV = (Annual Income − Personal Expenses) × Years to Retirement + Outstanding Loans − Current Savings
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <ContactSection />
+    </div>
+  </main>
+
+  <script>
+    window.calcHLV = function() {
+      const age = parseInt(document.getElementById('hlv-age').value) || 30;
+      const retire = parseInt(document.getElementById('hlv-retire').value) || 60;
+      const income = parseInt(document.getElementById('hlv-income').value) || 0;
+      const loans = parseInt(document.getElementById('hlv-loans').value) || 0;
+      const savings = parseInt(document.getElementById('hlv-savings').value) || 0;
+      
+      const years = Math.max(1, retire - age);
+      // Standard calculation: 60% of income goes to family, + loans - savings
+      const hlv = (income * 0.6 * years) + loans - savings;
+      const formatted = '₹' + hlv.toLocaleString('en-IN');
+      document.getElementById('hlv-amount').textContent = formatted;
+    };
+  </script>
+</BaseLayout>

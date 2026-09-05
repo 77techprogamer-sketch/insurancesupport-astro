@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
+---
+
+<BaseLayout 
+  title="Get Free Insurance Quote | 30 Seconds, No Spam | Insurance Support"
+  description="Get a free insurance quote in 30 seconds. Life, health, term, motor, pension — expert advice from IRDAI-certified advisor Hari Kotian. No spam, only expert advice."
+>
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Get Free Quote</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
+          ~30 Seconds to Get Quote
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+          Get Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Free Quote</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Select your insurance need and get personalized advice from an IRDAI-certified expert. Your data is 100% secure — no spam, only expert advice.
+        </p>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10">
+          <div class="text-2xl font-extrabold text-amber-300">15k+</div>
+          <div class="text-xs text-slate-400 mt-1">Clients</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10">
+          <div class="text-2xl font-extrabold text-amber-300">98%</div>
+          <div class="text-xs text-slate-400 mt-1">Claims Settled</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10">
+          <div class="text-2xl font-extrabold text-amber-300">24/7</div>
+          <div class="text-xs text-slate-400 mt-1">Support</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10">
+          <div class="text-2xl font-extrabold text-amber-300">50+</div>
+          <div class="text-xs text-slate-400 mt-1">Awards</div>
+        </div>
+      </div>
+
+      <!-- Quote form -->
+      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-8 md:p-10 mb-14">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">Get a Quote for Your Insurance Need</h2>
+        <form class="grid md:grid-cols-2 gap-6" onsubmit="event.preventDefault(); this.classList.add('hidden'); document.getElementById('quote-success').classList.remove('hidden');">
+          <div class="md:col-span-2">
+            <label for="quote-type" class="block text-sm font-semibold text-slate-300 mb-2">Select Insurance Need</label>
+            <select id="quote-type" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+              <option value="">Select your insurance need</option>
+              <option>Term Insurance</option>
+              <option>Health Insurance</option>
+              <option>Life Insurance</option>
+              <option>Motor Insurance</option>
+              <option>Pension / Retirement Plans</option>
+              <option>Child Education Plan</option>
+              <option>SME / Business Insurance</option>
+              <option>Claim Support / Rejected Claim</option>
+              <option>Policy Review</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="quote-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name</label>
+            <input type="text" id="quote-name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
+          </div>
+          <div>
+            <label for="quote-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number</label>
+            <input type="tel" id="quote-phone" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
+          </div>
+          <div class="md:col-span-2 text-center pt-2">
+            <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+              Get My Free Quote
+            </button>
+            <p class="text-xs text-slate-500 mt-4">We respect your privacy. No spam, only expert advice.</p>
+          </div>
+        </form>
+        <div id="quote-success" class="hidden text-center py-10">
+          <div class="text-5xl mb-4">✅</div>
+          <h3 class="text-2xl font-bold text-white mb-3">Thank You!</h3>
+          <p class="text-slate-300 mb-6">Hari Kotian or a senior advisor will call you within 30 minutes during business hours (9 AM – 9 PM IST).</p>
+          <a href="tel:+919986634506" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-xl text-lg hover:scale-[1.02] transition-all">
+            Or Call Now: +91-9986634506
+          </a>
+        </div>
+      </div>
+
+      <ContactSection />
+    </div>
+  </main>
+</BaseLayout>
