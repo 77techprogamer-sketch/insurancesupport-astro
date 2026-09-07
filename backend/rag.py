@@ -198,44 +198,98 @@ Answer concisely and helpfully:"""
 
 
 def call_llm(prompt: str, max_tokens: int = 700, temperature: float = 0.2) -> str:
-    """Call the local OpenAI-compatible LLM."""
-    try:
-        with httpx.Client(timeout=120.0) as client:
-            resp = client.post(
-                f"{LLM_BASE_URL}/chat/completions",
-                json={
-                    "model": LLM_MODEL,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": max_tokens,
-                    "temperature": temperature,
-                    "stream": False,
-                },
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            return data["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        print(f"LLM call failed: {e}")
-        return ""
+    """DEPRECATED: LLM generation is disabled by default (LLM-free RAG).
+
+    Retained only so any external caller referencing it doesn't break.
+    Returns an empty string so rag_answer falls back to the extractive path.
+    """
+    return ""
 
 
-def rag_answer(query: str, include_signature: bool = True) -> dict:
-    """Full RAG pipeline. Returns answer + sources + metadata."""
-    parsed = parse_query(query)
-    results = retrieve_context(parsed)
+def compose_extractive_answer(query: str, parsed: dict, results: list[dict]) -> str:
+    """Build an answer directly from retrieved chunks — NO LLM involved.
 
-    if results:
-        prompt = build_prompt(query, parsed, results)
-        answer = call_llm(prompt)
-    else:
-        answer = ""
-
-    if not answer:
-        answer = (
+    Presents the most relevant source passages verbatim (lightly cleaned),
+    labelled by insurer / product / section, so the user gets grounded,
+    citable information without any generation step.
+    """
+    if not results:
+        return (
             "Based on available information, I could not find a definitive answer "
             "for this in the current knowledge base. Please get in touch with "
             "Insurance Support for exact details."
         )
+
+    # Detect topic for a short introductory line
+    topic = parsed.get("topic", "general")
+    topic_line = {
+        "waiting period": "Here is what the retrieved documents say about waiting periods:",
+        "pre-existing": "Here is what the retrieved documents say about pre-existing diseases:",
+        "exclusions": "Here is what the retrieved documents say about exclusions / what is not covered:",
+        "eligibility": "Here is what the retrieved documents say about eligibility / age:",
+        "premium": "Here is what the retrieved documents say about premium / cost:",
+        "claims": "Here is what the retrieved documents say about claims:",
+        "sum insured": "Here is what the retrieved documents say about coverage / sum insured:",
+        "tax": "Here is what the retrieved documents say about tax:",
+        "renewal": "Here is what the retrieved documents say about renewal:",
+        "comparison": "Here is a comparison drawn from the retrieved documents:",
+    }.get(topic, "Here is what the retrieved documents say for your question:")
+
+    lines = [topic_line]
+
+    seen = set()
+    shown = 0
+    for r in results[:5]:
+        m = r["metadata"]
+        label = m.get("product_name") or m.get("insurer") or "Source"
+        # de-dup by product+source
+        key = (m.get("product_name"), m.get("source_url"))
+        if key in seen:
+            continue
+        seen.add(key)
+
+        content = (r.get("content") or "").strip()
+        if not content or len(content) < 20:
+            continue
+
+        # Light cleanup: collapse blank lines / excessive whitespace
+        import re
+        cleaned = re.sub(r"\n{3,}", "\n\n", content).strip()
+        # Cap each passage to keep the reply readable
+        if len(cleaned) > 1400:
+            cleaned = cleaned[:1400].rstrip() + "…"
+
+        header = f"\n• {label} ({m.get('insurer', '')}"
+        if m.get("section_title"):
+            header += f" — {m.get('section_title')}"
+        header += "):"
+
+        lines.append(header)
+        lines.append(cleaned)
+        shown += 1
+        if shown >= 4:
+            break
+
+    lines.append("")
+    lines.append(
+        "Exact coverage, premium, and eligibility depend on underwriting and the "
+        "latest insurer rules. Please verify details with Insurance Support before deciding."
+    )
+    return "\n".join(lines)
+
+
+def rag_answer(query: str, include_signature: bool = True) -> dict:
+    """Full RAG pipeline — LLM-FREE.
+
+    Retrieves the most relevant chunks (filtered by insurer/product) from the
+    Drive-hosted vector store and returns the source passages directly as the
+    answer, with citations and the required contact signature. No local or
+    remote language model is called.
+    """
+    parsed = parse_query(query)
+    results = retrieve_context(parsed)
+
+    answer = compose_extractive_answer(query, parsed, results)
 
     if include_signature:
         answer += CONTACT_SIGNATURE
@@ -262,6 +316,7 @@ def rag_answer(query: str, include_signature: bool = True) -> dict:
         "sources": sources,
         "query": query,
         "parsed": parsed,
+        "mode": "extractive",  # confirms no LLM was used
     }
 
 
