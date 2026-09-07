@@ -1,0 +1,30 @@
+{
+  "run_date": "2026-09-06T23:16:15",
+  "duration_seconds": 164.0,
+  "per_insurer": {
+    "lic": {
+      "fetched": 36,
+      "updated": 9,
+      "failed": 0,
+      "chunks": 27
+    },
+    "icici_lombard": {
+      "fetched": 15,
+      "updated": 0,
+      "failed": 1,
+      "chunks": 0
+    },
+    "care_health": {
+      "fetched": 33,
+      "updated": 1,
+      "failed": 0,
+      "chunks": 2
+    }
+  },
+  "documents_fetched": 84,
+  "documents_updated": 10,
+  "documents_failed": 1,
+  "chunks_created": 29,
+  "new_chunks_indexed": 28,
+  "status": "success"
+}

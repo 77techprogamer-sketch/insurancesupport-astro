@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance Support — Ask About LIC, ICICI Lombard & Care Health</title>
+  <meta name="description" content="Ask Hari Kotian's Insurance Support chatbot about LIC, ICICI Lombard and Care Health insurance products — benefits, waiting periods, coverage and more." />
+  <style>
+    :root {
+      --bg: #f3f5f9;
+      --panel: #ffffff;
+      --ink: #1a2233;
+      --muted: #55627a;
+      --brand: #0f4c81;
+      --brand-2: #1d70b8;
+      --accent: #e8f1fb;
+      --user-msg: #0f4c81;
+      --user-text: #ffffff;
+      --bot-msg: #ffffff;
+      --border: #dde3ee;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(15, 76, 129, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+    }
+    header .logo {
+      background: rgba(255,255,255,.18);
+      border-radius: 10px;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 18px;
+    }
+    header h1 { font-size: 16px; line-height: 1.25; }
+    header p { font-size: 12px; opacity: .85; }
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .msg {
+      max-width: 86%;
+      padding: 11px 14px;
+      border-radius: var(--radius);
+      line-height: 1.5;
+      font-size: 14.5px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .msg.user {
+      align-self: flex-end;
+      background: var(--user-msg);
+      color: var(--user-text);
+      border-bottom-right-radius: 4px;
+    }
+    .msg.bot {
+      align-self: flex-start;
+      background: var(--bot-msg);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+      box-shadow: var(--shadow);
+    }
+    .msg.bot a { color: var(--brand-2); }
+    .sources {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .sources a { display: block; margin-top: 2px; color: var(--brand-2); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+    .typing { display: flex; gap: 4px; padding: 14px 16px; }
+    .typing span {
+      width: 8px; height: 8px;
+      background: var(--brand-2);
+      border-radius: 50%;
+      animation: blink 1.2s infinite;
+    }
+    .typing span:nth-child(2) { animation-delay: .2s; }
+    .typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+    .error { color: #b3261e; font-size: 13px; margin: 8px 14px 0; }
+    form#chatForm {
+      padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    textarea {
+      flex: 1;
+      resize: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 11px 16px;
+      font: inherit;
+      font-size: 14.5px;
+      max-height: 120px;
+      outline: none;
+      background: #f8fafc;
+    }
+    textarea:focus { border-color: var(--brand-2); background: #fff; }
+    button {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 46px; height: 46px;
+      font-size: 18px;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s;
+    }
+    button:hover { background: var(--brand-2); }
+    button:disabled { background: #9fb3c9; cursor: default; }
+    .chips {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      padding: 0 14px 4px;
+      background: var(--panel);
+    }
+    .chip {
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: var(--brand);
+      border-radius: 16px;
+      padding: 6px 12px;
+      font-size: 12.5px;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .chip:hover { background: var(--accent); border-color: var(--brand-2); }
+
+    /* ---- Lead capture floating button + slide-up modal ---- */
+    #leadBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #1a8a3f;
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(26,138,63,.4);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 1000;
+      display: none;          /* shown after 2+ bot answers */
+      transition: transform .2s;
+    }
+    #leadBtn:hover { transform: scale(1.08); background: #157a34; }
+
+    #leadModalOverlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.35);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    #leadModalOverlay.show { display: flex; }
+
+    #leadModal {
+      background: #fff;
+      border-radius: 18px 18px 0 0;
+      width: 100%;
+      max-width: 420px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 22px 20px 28px;
+      box-shadow: 0 -6px 30px rgba(0,0,0,.15);
+      animation: slideUp .25s ease-out;
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+    #leadModal h2 {
+      font-size: 17px; font-weight: 700; margin-bottom: 4px;
+    }
+    #leadModal .lead-subtitle {
+      font-size: 13px; color: var(--muted); margin-bottom: 16px;
+    }
+
+    .lead-form-group {
+      margin-bottom: 12px;
+    }
+    .lead-form-group label {
+      display: block;
+      font-size: 12.5px; font-weight: 600; margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .lead-form-group input,
+    .lead-form-group select,
+    .lead-form-group textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #f8fafc;
+      outline: none;
+    }
+    .lead-form-group input:focus,
+    .lead-form-group select:focus,
+    .lead-form-group textarea:focus {
+      border-color: var(--brand-2);
+      background: #fff;
+    }
+    .lead-form-group textarea { max-height: 80px; resize: vertical; }
+    .lead-form-group .required { color: #b3261e; }
+
+    .lead-btn-submit {
+      background: #1a8a3f;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+      padding: 13px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background .15s;
+    }
+    .lead-btn-submit:hover { background: #157a34; }
+    .lead-btn-submit:disabled { background: #9fb3c9; cursor: default; }
+
+    .lead-success {
+      background: #d4edda;
+      color: #155724;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 14px;
+      display: none;
+      margin-top: 10px;
+    }
+    .lead-success.show { display: block; }
+    .lead-error {
+      background: #f8d7da;
+      color: #721c24;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 13px;
+      display: none;
+      margin-top: 10px;
+    }
+    .lead-error.show { display: block; }
+
+    .lead-close-btn {
+      background: var(--muted);
+      border-radius: 50%;
+      width: 34px; height: 34px;
+      font-size: 16px;
+      position: absolute;
+      top: 14px; right: 16px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .msg { max-width: 92%; }
+      #leadModal { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">IS</div>
+    <div>
+      <h1>Insurance Support</h1>
+      <p>LIC &bull; ICICI Lombard &bull; Care Health &mdash; Ask anything about products</p>
+    </div>
+  </header>
+
+  <div id="messages" aria-live="polite">
+    <div class="msg bot">Hello! I can answer questions about LIC, ICICI Lombard and Care Health insurance products &mdash; benefits, waiting periods, coverage, exclusions and more.
+
+For example:
+&bull; What are the key benefits of LIC Jeevan Anand?
+&bull; Compare ICICI Lombard health plans for a family of 4
+&bull; What is the pre-existing disease waiting period in Care Health policies?</div>
+  </div>
+
+  <div class="chips" id="chips"></div>
+  <div id="error" class="error" hidden></div>
+
+  <form id="chatForm">
+    <textarea id="input" rows="1" placeholder="Type your insurance question…" aria-label="Your question"></textarea>
+    <button type="submit" aria-label="Send">&#10148;</button>
+  </form>
+
+  <!-- Lead capture floating button (shown after the visitor has asked 2+ questions) -->
+  <button id="leadBtn" aria-label="Get a free consultation">Free<br>Help</button>
+
+  <!-- Lead capture slide-up modal -->
+  <div id="leadModalOverlay">
+    <div id="leadModal" style="position:relative;">
+      <button class="lead-close-btn" aria-label="Close" id="leadCloseBtn">&times;</button>
+      <h2>Get a free consultation</h2>
+      <p class="lead-subtitle">Leave your details and Hari will call you back &mdash; no obligation.</p>
+
+      <form id="leadForm">
+        <div class="lead-form-group">
+          <label>Your Name <span class="required">*</span></label>
+          <input type="text" id="leadName" required maxlength="120" placeholder="e.g. Ravi Kumar" />
+        </div>
+        <div class="lead-form-group">
+          <label>Phone / WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="leadPhone" required maxlength="20" placeholder="e.g. 9876543210" />
+        </div>
+        <div class="lead-form-group">
+          <label>Email (optional)</label>
+          <input type="email" id="leadEmail" maxlength="120" placeholder="e.g. name@gmail.com" />
+        </div>
+        <div class="lead-form-group">
+          <label>City</label>
+          <input type="text" id="leadCity" maxlength="120" placeholder="e.g. Bangalore" />
+        </div>
+        <div class="lead-form-group">
+          <label>What insurance do you need?</label>
+          <select id="leadInsurer">
+            <option value="">Not sure yet</option>
+            <option value="LIC">LIC &mdash; Life Insurance</option>
+            <option value="ICICI Lombard">ICICI Lombard &mdash; Health / Motor / Travel</option>
+            <option value="Care Health">Care Health &mdash; Health Insurance</option>
+            <option value="general">General enquiry</option>
+          </select>
+        </div>
+        <div class="lead-form-group">
+          <label>Product / coverage interest</label>
+          <input type="text" id="leadProduct" maxlength="200" placeholder="e.g. Family floater, term plan, car insurance" />
+        </div>
+        <div class="lead-form-group">
+          <label>Message (optional)</label>
+          <textarea id="leadMessage" maxlength="2000" placeholder="Any specific questions or context…"></textarea>
+        </div>
+
+        <button type="submit" class="lead-btn-submit" id="leadSubmitBtn">Call me back</button>
+
+        <div class="lead-success" id="leadSuccess">
+          <strong>Thank you!</strong> Your details are saved. Hari will contact you shortly at the number you provided.
+        </div>
+        <div class="lead-error" id="leadError"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ----- CONFIG -----
+    const API_BASE = localStorage.getItem("IS_RAG_API") || "http://127.0.0.1:8000";
+    const SUGGESTIONS = [
+      "What are the key benefits of LIC Jeevan Anand?",
+      "Compare ICICI Lombard health plans for a family of 4",
+      "What is the pre-existing disease waiting period in Care Health policies?",
+      "Does ICICI Lombard car insurance cover zero depreciation?",
+      "List all Care Health family floater plans with sum insured options"
+    ];
+
+    // ----- CHAT -----
+    const messages   = document.getElementById('messages');
+    const form       = document.getElementById('chatForm');
+    const input      = document.getElementById('input');
+    const errorBox   = document.getElementById('error');
+    const chips      = document.getElementById('chips');
+
+    let botAnswerCount = 0;   // track how many Q&A rounds the visitor has had
+
+    function addMessage(text, role) {
+      const div = document.createElement('div');
+      div.className = 'msg ' + role;
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+      return div;
+    }
+
+    function addSources(sources) {
+      if (!sources || !sources.length) return;
+      const div = document.createElement('div');
+      div.className = 'sources';
+      div.textContent = 'Sources:';
+      sources.forEach(s => {
+        if (s.url) {
+          const a = document.createElement('a');
+          a.href = s.url;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.textContent = `${s.product_name || s.insurer} (${s.insurer})`;
+          div.appendChild(a);
+        }
+      });
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function showTyping() {
+      const div = document.createElement('div');
+      div.className = 'msg bot typing';
+      div.innerHTML = '<span></span><span></span><span></span>';
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+      return div;
+    }
+
+    async function ask(text) {
+      errorBox.hidden = true;
+      addMessage(text, 'user');
+      input.value = '';
+      input.style.height = 'auto';
+      const typing = showTyping();
+      try {
+        const res = await fetch(API_BASE + '/rag_answer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: text, include_signature: true })
+        });
+        if (!res.ok) throw new Error('Bad response: ' + res.status);
+        const data = await res.json();
+        typing.remove();
+        addMessage(data.answer || 'Sorry, I could not answer that. Please try again.', 'bot');
+        addSources(data.sources);
+
+        // Track answers; show lead capture prompt after 2 bot replies
+        botAnswerCount++;
+        if (botAnswerCount >= 2) showLeadButton();
+      } catch (e) {
+        typing.remove();
+        errorBox.hidden = false;
+        errorBox.textContent = 'Could not reach the answer service. Please try again in a moment.';
+      }
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = input.value.trim();
+      if (q) ask(q);
+    });
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        form.requestSubmit();
+      }
+    });
+
+    input.addEventListener('input', () => {
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+    });
+
+    // Suggest chips
+    SUGGESTIONS.forEach(s => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip';
+      b.textContent = s;
+      b.onclick = () => ask(s);
+      chips.appendChild(b);
+    });
+
+    // ----- LEAD CAPTURE -----
+    const leadBtn      = document.getElementById('leadBtn');
+    const overlay      = document.getElementById('leadModalOverlay');
+    const leadForm     = document.getElementById('leadForm');
+    const closeBtn     = document.getElementById('leadCloseBtn');
+    const submitBtn    = document.getElementById('leadSubmitBtn');
+    const successBox   = document.getElementById('leadSuccess');
+    const errorLeadBox = document.getElementById('leadError');
+
+    function showLeadButton() { leadBtn.style.display = 'flex'; }
+
+    leadBtn.addEventListener('click', () => {
+      overlay.classList.add('show');
+      successBox.classList.remove('show');
+      errorLeadBox.classList.remove('show');
+    });
+
+    closeBtn.addEventListener('click', () => overlay.classList.remove('show'));
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('show'); });
+
+    leadForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Saving…';
+      successBox.classList.remove('show');
+      errorLeadBox.classList.remove('show');
+
+      const payload = {
+        name:   document.getElementById('leadName').value.trim(),
+        phone:  document.getElementById('leadPhone').value.trim(),
+        email:  document.getElementById('leadEmail').value.trim(),
+        city:   document.getElementById('leadCity').value.trim(),
+        insurer: document.getElementById('leadInsurer').value,
+        interested_product: document.getElementById('leadProduct').value.trim(),
+        message: document.getElementById('leadMessage').value.trim(),
+        source: 'website-chatbot',
+        page_url: location.href
+      };
+
+      try {
+        const res = await fetch(API_BASE + '/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.detail || 'Failed');
+        }
+        successBox.classList.add('show');
+        leadBtn.style.display = 'none';
+      } catch (err) {
+        errorLeadBox.textContent = 'Sorry, there was an error saving your details. You can also call Hari directly at 9986634506.';
+        errorLeadBox.classList.add('show');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Call me back';
+      }
+    });
+  </script>
+</body>
+</html>
