@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# Generated data (large binaries — NOT committed to git)
+data/
+exports/
+
+# Temp files
+.tmp/
+*.tmp
+
+# Service account keys (NEVER commit)
+config/service_account.json
+
+# IDE
+.vscode/
+.idea/
