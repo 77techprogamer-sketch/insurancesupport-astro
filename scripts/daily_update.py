@@ -12,6 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from backend import settings
 from backend.database import get_db, init_db, load_products_from_config
 from backend.crawlers import crawler
 from backend.vectorstore import sync_index
@@ -29,19 +30,24 @@ def run_daily_update(force: bool = False) -> dict:
     total_failed = sum(s.get("failed", 0) for s in stats.values())
     total_chunks = sum(s.get("chunks", 0) for s in stats.values())
 
-    # After crawling, export the model and upload to Drive (optional)
+    # Embed only the NEW/CHANGED chunks into ChromaDB (incremental, no full re-index)
+    new_chunks = 0
+    try:
+        new_chunks = sync_index()
+        print(f"Vector index sync: {new_chunks} new chunks embedded")
+    except Exception as e:
+        print(f"Vector sync failed: {e}")
+        new_chunks = -1
+
+    # After crawling, export the model locally (no Drive upload)
     try:
         from scripts.export_model import export_model
         archive_path = export_model()
         print(f"Model exported to {archive_path}")
-        # Upload (if user configured a Drive folder or env var)
-        from backend.google_integration import upload_file, find_folder
-        folder_id = settings.RAG_DRIVE_FOLDER_ID or find_folder('Insurance-RAG-Backups', create_if_missing=True)
-        if folder_id:
-            result = upload_file(str(archive_path), parent_folder_id=folder_id)
-            print(f"Uploaded backup to Drive: {result.get('webViewLink')}")
     except Exception as e:
-        print(f"Optional Drive upload failed: {e}")
+        print(f"Model export failed: {e}")
+    # No Drive upload – model stays in the repository
+
 
     duration = time.time() - start
     report = {

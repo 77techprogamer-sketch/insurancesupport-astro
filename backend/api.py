@@ -45,6 +45,10 @@ class LeadRecord(BaseModel):
 @app.on_event("startup")
 def startup():
     init_db()
+    # Model is stored locally in the repository — no Drive download needed.
+    # RAG_MODEL_FROM_DRIVE environment variable is ignored.
+    # download_model script is no longer executed.
+
 
 
 @app.get("/health")
