@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Insurance Support Chatbot</string>
+    <string name="brand_tagline">Your Trusted Insurance Advisor</string>
+    <string name="welcome_message">Hi! I’m your Insurance Support assistant. Ask me about policies.</string>
+    <string name="whatsapp_url">https://wa.me/919986634506</string>
+    <string name="call_number">tel:+919986634506</string>
+    <string name="contact_prompt">Need help? <a href="@string/whatsapp_url">WhatsApp</a> or <a href="@string/call_number">Call</a></string>
+</resources>

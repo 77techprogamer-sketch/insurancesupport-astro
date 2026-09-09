@@ -25,3 +25,16 @@ Thumbs.db
 # Netlify
 .netlify/.wrangler/
 .wrangler/
+
+# RAG backend (Python)
+rag-backend/.venv/
+rag-backend/venv/
+rag-backend/__pycache__/
+rag-backend/**/__pycache__/
+rag-backend/data/
+rag-backend/exports/
+rag-backend/logs/
+rag-backend/backend/logs/
+rag-backend/config/service_account.json
+rag-backend/.env
+rag-backend/.tmp/

@@ -1,0 +1,195 @@
+{
+  "insurers": {
+    "lic": {
+      "name": "Life Insurance Corporation of India",
+      "short_name": "LIC",
+      "base_url": "https://licindia.in",
+      "categories": {
+        "endowment": {
+          "label": "Endowment Plans",
+          "products": [
+            {"name": "LIC's Single Premium Endowment Plan", "plan": "717", "uin": "512N283V03", "url": "https://licindia.in/web/guest/lic-s-single-premium-endowment-plan-717-512n283v03", "status": "live"},
+            {"name": "LIC's New Endowment Plan", "plan": "714", "uin": "512N277V03", "url": "https://licindia.in/web/guest/lic-s-new-endowment-plan-714-512n277v03", "status": "live"},
+            {"name": "LIC's New Jeevan Anand", "plan": "715", "uin": "512N279V03", "url": "https://licindia.in/web/guest/lic-s-new-jeevan-anand-715%09512n279v03", "status": "live"},
+            {"name": "LIC's Jeevan Lakshya", "plan": "733", "uin": "512N297V03", "url": "https://licindia.in/web/guest/lic-s-jeevan-lakshya-733-512n297v03", "status": "live"},
+            {"name": "LIC's Jeevan Labh Plan", "plan": "736", "uin": "512N304V03", "url": "https://licindia.in/web/guest/lic-s-jeevan-labh-plan-736-512n304v03", "status": "live"},
+            {"name": "LIC's Amritbaal", "plan": "774", "uin": "512N365V02", "url": "https://licindia.in/web/guest/lic-s-amritbaal-774%09512n365v02", "status": "live"},
+            {"name": "LIC's Bima Jyoti", "plan": "760", "uin": "512N339V03", "url": "https://licindia.in/web/guest/lic-s-bima-jyoti-new", "status": "live"},
+            {"name": "LIC's Nav Jeevan Shree", "plan": "912", "uin": "512N387V02", "url": "https://licindia.in/web/guest/lic-s-nav-jeevan-shree-plan-no.912-1", "status": "live"},
+            {"name": "LIC's Bima Lakshmi", "plan": "881", "uin": "512N389V01", "url": "https://licindia.in/web/guest/lic-s-bima-lakshmi-881-512n389v01", "status": "live"},
+            {"name": "LIC's New Jeevan Sathi - Single Premium", "plan": "888", "uin": "512N393V01", "url": "https://licindia.in/web/guest/lic-s-new-jeevan-sathi-single-premium-", "status": "live"},
+            {"name": "LIC's New Jeevan Sathi - Limited Premium", "plan": "889", "uin": "512N394V01", "url": "https://licindia.in/web/guest/lic-s-new-jeevan-sathi-limited-premium-", "status": "live"},
+            {"name": "LIC's New Bima Jyoti", "plan": "890", "uin": "512N395V01", "url": "https://licindia.in/web/guest/lic-s-new-bima-jyoti", "status": "live"}
+          ]
+        },
+        "whole_life": {
+          "label": "Whole Life Plans",
+          "products": [
+            {"name": "LIC's Jeevan Umang", "plan": "745", "uin": "512N312V03", "url": "https://licindia.in/web/guest/lic-sjeevanumang-745%09512n312v03", "status": "live"},
+            {"name": "LIC's Jeevan Utsav", "plan": "771", "uin": "512N363V02", "url": "https://licindia.in/web/guest/lic-s-jeevan-utsav1", "status": "live"},
+            {"name": "LIC's Jeevan Utsav Single Premium", "plan": "883", "uin": "512N392V01", "url": "https://licindia.in/web/guest/lic-s-jeevan-utsav-single-premium", "status": "live"}
+          ]
+        },
+        "money_back": {
+          "label": "Money Back Plans",
+          "products": [
+            {"name": "LIC's Bima Shree", "plan": "748", "uin": "512N316V03", "url": "https://licindia.in/web/guest/lic-s-bima-shree", "status": "live"},
+            {"name": "LIC's New Money Back Plan - 20 Years", "plan": "720", "uin": "512N280V03", "url": "https://licindia.in/web/guest/lic-s-new-money-back-plan-20-years", "status": "live"},
+            {"name": "LIC's New Money Back Plan - 25 Years", "plan": "721", "uin": "512N278V03", "url": "https://licindia.in/web/guest/lic-s-new-money-back-plan-25-years", "status": "live"},
+            {"name": "LIC's New Children's Money Back Plan", "plan": "732", "uin": "512N296V03", "url": "https://licindia.in/web/guest/lic-s-new-children-s-money-back-plan", "status": "live"},
+            {"name": "LIC's Jeevan Tarun", "plan": "734", "uin": "512N299V03", "url": "https://licindia.in/web/guest/lic-s-jeevan-tarun", "status": "live"}
+          ]
+        },
+        "term_assurance": {
+          "label": "Term Assurance Plans",
+          "products": [
+            {"name": "LIC's Digi Term", "plan": "876", "uin": "512N356V02", "url": "https://licindia.in/web/guest/lic-s-digi-term-876-512n356v01", "status": "live"},
+            {"name": "LIC's Digi Credit Life", "plan": "878", "uin": "512N358V01", "url": "https://licindia.in/web/guest/lic-s-digi-credit-life-878-512n358v01", "status": "live"},
+            {"name": "LIC's Yuva Credit Life", "plan": "877", "uin": "512N357V01", "url": "https://licindia.in/web/guest/lic-s-yuva-credit-life-877-512n357v01", "status": "live"},
+            {"name": "LIC's Yuva Term", "plan": "875", "uin": "512N355V02", "url": "https://licindia.in/web/guest/lic-s-yuva-term-875-512n355v02", "status": "live"},
+            {"name": "LIC's New Tech-Term", "plan": "954", "uin": "512N351V02", "url": "https://licindia.in/web/guest/lic-s-new-tech-term-954-512n351v01", "status": "live"},
+            {"name": "LIC's New Jeevan Amar", "plan": "955", "uin": "512N350V02", "url": "https://licindia.in/web/guest/lic-s-new-jeevan-amar-955-uin-512n350v02", "status": "live"},
+            {"name": "LIC's Saral Jeevan Bima", "plan": "859", "uin": "512N341V01", "url": "https://licindia.in/web/guest/lic-s-saral-jeevan-bima", "status": "live"},
+            {"name": "LIC's Bima Kavach", "plan": "887", "uin": "512N360V01", "url": "https://licindia.in/web/guest/lic-s-bima-kavach", "status": "live"}
+          ]
+        },
+        "pension": {
+          "label": "Pension Plans",
+          "products": [
+            {"name": "LIC's New Pension Plus", "plan": "867", "uin": "512L347V01", "url": "https://licindia.in/web/guest/lic-s-new-pension-plus-867-512l347v01", "status": "live"},
+            {"name": "LIC's Jeevan Akshay-VII", "plan": "857", "uin": "512N337V07", "url": "https://licindia.in/web/guest/lic-s-jeevan-akshay-vii-plan-no.-857-uin-512n337v07-", "status": "live"},
+            {"name": "LIC's New Jeevan Shanti", "plan": "758", "uin": "512N338V08", "url": "https://licindia.in/web/guest/lic-s-new-jeevan-shanti-plan-no.-758-uin-512n338v08-", "status": "live"},
+            {"name": "LIC's Saral Pension", "plan": "862", "uin": "512N342V05", "url": "https://licindia.in/web/guest/lic-s-saral-pension", "status": "live"},
+            {"name": "LIC's Smart Pension", "plan": "879", "uin": "512N386V01", "url": "https://licindia.in/web/guest/lic-s-smart-pension", "status": "live"}
+          ]
+        },
+        "unit_linked": {
+          "label": "Unit Linked Plans",
+          "products": [
+            {"name": "LIC's New Pension Plus (ULIP)", "plan": "867", "uin": "512L347V01", "url": "https://licindia.in/web/guest/unit-linked-plans", "status": "live"},
+            {"name": "LIC's Index Plus", "plan": "873", "uin": "512L354V01", "url": "https://licindia.in/web/guest/lic-s-index-plus-873-512l354v01", "status": "live"},
+            {"name": "LIC's SIIP", "plan": "-", "uin": "-", "url": "https://licindia.in/web/guest/lic-s-siip", "status": "live"},
+            {"name": "LIC's Nivesh Plus", "plan": "-", "uin": "-", "url": "https://licindia.in/web/guest/lic-s-nivesh-plus", "status": "live"}
+          ]
+        }
+      }
+    },
+    "icici_lombard": {
+      "name": "ICICI Lombard General Insurance Company Limited",
+      "short_name": "ICICI Lombard",
+      "base_url": "https://www.icicilombard.com",
+      "categories": {
+        "health": {
+          "label": "Health Insurance",
+          "products": [
+            {"name": "Elevate", "url": "https://www.icicilombard.com/health-insurance", "category": "health", "status": "live"},
+            {"name": "Activate Booster", "url": "https://www.icicilombard.com/health-insurance/activate-booster", "category": "health", "status": "live"},
+            {"name": "Activate Booster Combo", "url": "https://www.icicilombard.com/health-insurance/activate-booster-combo", "category": "health", "status": "live"},
+            {"name": "MaxProtect", "url": "https://www.icicilombard.com/health-insurance/max-protect-1-crore-health-insurance", "category": "health", "status": "live"},
+            {"name": "Health AdvantEdge", "url": "https://www.icicilombard.com/health-insurance/health-advantedge-insurance-for-family", "category": "health", "status": "live"},
+            {"name": "Health Shield Inclusive", "url": "https://www.icicilombard.com/health-insurance/health-shield-inclusive", "category": "health", "status": "live"},
+            {"name": "Health Booster (Super Top-up)", "url": "https://www.icicilombard.com/health-insurance/health-booster", "category": "health", "status": "live"}
+          ]
+        },
+        "motor": {
+          "label": "Motor Insurance",
+          "products": [
+            {"name": "Private Car Package Policy", "uin": "IRDAN115RP0017V01200102", "url": "https://www.icicilombard.com/motor-insurance/car-insurance", "category": "motor", "status": "live"},
+            {"name": "Two Wheeler Vehicle Package Policy", "uin": "IRDAN115RP0015V05201415", "url": "https://www.icicilombard.com/motor-insurance/two-wheeler-insurance", "category": "motor", "status": "live"},
+            {"name": "Goods Carrying Vehicle Package Policy", "uin": "IRDAN115RP0013V01200203", "url": "https://www.icicilombard.com/motor-insurance", "category": "motor", "status": "live"},
+            {"name": "Passenger Carrying Vehicle Package Policy", "uin": "IRDAN115RP0014V01200203", "url": "https://www.icicilombard.com/motor-insurance", "category": "motor", "status": "live"},
+            {"name": "Motor Extended Warranty Insurance", "uin": "UIN-IRDAN115RPMT0011V01202425", "url": "https://www.icicilombard.com/motor-insurance", "category": "motor", "status": "live"}
+          ]
+        },
+        "travel": {
+          "label": "Travel Insurance",
+          "products": [
+            {"name": "TripSecure+ (Single Trip)", "url": "https://www.icicilombard.com/travel-insurance", "category": "travel", "status": "live"},
+            {"name": "Multi-Trip Travel Insurance", "url": "https://www.icicilombard.com/travel-insurance", "category": "travel", "status": "live"},
+            {"name": "Student Travel Insurance", "url": "https://www.icicilombard.com/travel-insurance", "category": "travel", "status": "live"}
+          ]
+        },
+        "personal_accident": {
+          "label": "Personal Accident",
+          "products": [
+            {"name": "Personal Protect Policy", "uin": "ICIPAIP22076V042122", "url": "https://www.icicilombard.com/health-insurance/personal-accident-insurance", "category": "personal_accident", "status": "live"}
+          ]
+        }
+      }
+    },
+    "care_health": {
+      "name": "Care Health Insurance Limited",
+      "short_name": "Care Health",
+      "base_url": "https://www.careinsurance.com",
+      "categories": {
+        "health": {
+          "label": "Health Insurance",
+          "products": [
+            {"name": "Ultimate Care", "url": "https://www.careinsurance.com/product/ultimate-care", "category": "health", "status": "live"},
+            {"name": "Ultimate Care - Unlimited Coverage", "url": "https://www.careinsurance.com/product/ultimate-care-unlimited-coverage", "category": "health", "status": "live"},
+            {"name": "Ultimate Care Senior", "url": "https://www.careinsurance.com/product/ultimate-care-senior", "category": "health", "status": "live"},
+            {"name": "EN Ultimate Care", "url": "https://www.careinsurance.com/product/en-ultimate-care", "category": "health", "status": "live"},
+            {"name": "Care Supreme", "url": "https://www.careinsurance.com/product/care-supreme", "category": "health", "status": "live"},
+            {"name": "Care Supreme Value Plus", "url": "https://www.careinsurance.com/product/care-supreme-value-plus", "category": "health", "status": "live"},
+            {"name": "Care Supreme Value", "url": "https://www.careinsurance.com/product/care-supreme-value", "category": "health", "status": "live"},
+            {"name": "Care Supreme Vikas", "url": "https://www.careinsurance.com/product/care-supreme-vikas", "category": "health", "status": "live"},
+            {"name": "Supreme Enhance", "url": "https://www.careinsurance.com/product/care-supreme-enhance", "category": "health", "status": "live"},
+            {"name": "Care Supreme Super Saver", "url": "https://www.careinsurance.com/product/care-supreme-super-saver", "category": "health", "status": "live"},
+            {"name": "Care Advantage", "url": "https://www.careinsurance.com/product/care-advantage", "category": "health", "status": "live"},
+            {"name": "Care Classic", "url": "https://www.careinsurance.com/product/care-classic", "category": "health", "status": "live"},
+            {"name": "Care Plus Youth", "url": "https://www.careinsurance.com/product/care-plus-youth-health-insurance-plan", "category": "health", "status": "live"},
+            {"name": "Care Plus Complete", "url": "https://www.careinsurance.com/product/care-plus-the-complete-health-insurance-plan", "category": "health", "status": "live"},
+            {"name": "Care Freedom", "url": "https://www.careinsurance.com/product/care-freedom", "category": "health", "status": "live"},
+            {"name": "Senior Health Advantage", "url": "https://www.careinsurance.com/product/senior-health-advantage", "category": "health", "status": "live"},
+            {"name": "Care Heart", "url": "https://www.careinsurance.com/product/care-heart", "category": "health", "status": "live"},
+            {"name": "Care (Base Plan)", "url": "https://www.careinsurance.com/product/care", "category": "health", "status": "live"},
+            {"name": "Arogya Sanjeevani", "url": "https://www.careinsurance.com/product/arogya-sanjeevani", "category": "health", "status": "live"},
+            {"name": "Care Saksham", "url": "https://www.careinsurance.com/product/caresaksham", "category": "health", "status": "live"},
+            {"name": "Enhance (Super Top-up)", "url": "https://www.careinsurance.com/product/enhance", "category": "health", "status": "live"}
+          ]
+        },
+        "maternity": {
+          "label": "Maternity Insurance",
+          "products": [
+            {"name": "Joy Maternity", "url": "https://www.careinsurance.com/product/joy", "category": "maternity", "status": "live"}
+          ]
+        },
+        "critical_illness": {
+          "label": "Critical Illness",
+          "products": [
+            {"name": "Critical Mediclaim", "url": "https://www.careinsurance.com/product/care-critical-mediclaim", "category": "critical_illness", "status": "live"},
+            {"name": "Heart Mediclaim", "url": "https://www.careinsurance.com/product/care-heart-mediclaim", "category": "critical_illness", "status": "live"},
+            {"name": "Cancer Mediclaim", "url": "https://www.careinsurance.com/product/care-cancer-mediclaim", "category": "critical_illness", "status": "live"},
+            {"name": "Operation Mediclaim", "url": "https://www.careinsurance.com/product/care-operation-mediclaim", "category": "critical_illness", "status": "live"}
+          ]
+        },
+        "personal_accident": {
+          "label": "Personal Accident",
+          "products": [
+            {"name": "Secure Plus", "url": "https://www.careinsurance.com/product/secure-plus", "category": "personal_accident", "status": "live"},
+            {"name": "Secure Child", "url": "https://www.careinsurance.com/product/secure-child", "category": "personal_accident", "status": "live"},
+            {"name": "Saral Suraksha Bima", "url": "https://www.careinsurance.com/product/saral-suraksha-bima", "category": "personal_accident", "status": "live"}
+          ]
+        },
+        "travel": {
+          "label": "Travel Insurance",
+          "products": [
+            {"name": "Travel Explore", "url": "https://www.careinsurance.com/product/travel-explore", "category": "travel", "status": "live"},
+            {"name": "Student Explore", "url": "https://www.careinsurance.com/product/student-explore", "category": "travel", "status": "live"},
+            {"name": "Explore Health Unlimited", "url": "https://www.careinsurance.com/product/explore-health-unlimited-for-students", "category": "travel", "status": "live"}
+          ]
+        },
+        "special": {
+          "label": "Special Plans",
+          "products": [
+            {"name": "Surrogacy Plan", "url": "https://www.careinsurance.com/product/surrogacy", "category": "special", "status": "live"}
+          ]
+        }
+      }
+    }
+  },
+  "contact_signature": "\n\n---\n**Name:** Hari Kotian, Insurance Support\n**Contact (Call & WhatsApp):** 9986634506\n",
+  "brochure_urls": {
+    "care_advantage": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-advantage-(health-insurance-product)---brochure.pdf"
+  }
+}

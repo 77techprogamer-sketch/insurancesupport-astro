@@ -1,0 +1,31 @@
+# Insurance RAG - Configuration
+# Embedding model for vector search
+embedding:
+  model: "all-MiniLM-L6-v2"
+  dimension: 384
+
+# Chunking parameters
+chunking:
+  max_tokens: 400
+  min_tokens: 350
+  overlap_tokens: 50
+
+# Crawler settings
+crawler:
+  delay_between_requests: 2  # seconds
+  max_retries: 3
+  timeout: 30
+  user_agent: "InsuranceRAG-Bot/1.0 (research; +https://insurance-rag.local)"
+
+# Database
+database:
+  host: localhost
+  port: 5432
+  name: insurance_rag
+  user: postgres
+  # password: set via env var DB_PASSWORD
+
+# API
+api:
+  host: 0.0.0.0
+  port: 8000
