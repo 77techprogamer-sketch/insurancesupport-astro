@@ -174,7 +174,7 @@ const websiteSchema = {
   </head>
   <body class="font-sans text-base antialiased pb-16 md:pb-0" style="scroll-padding-top: 5rem;">
     <!-- Skip link for accessibility -->
-    <a href="#main" class="sr-only-focusable">Skip to main content</a>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg" aria-label="Skip to main content">Skip to main content</a>
     <Header />
     <GeoBanner client:visible />
     <slot />
