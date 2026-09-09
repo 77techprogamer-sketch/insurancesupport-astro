@@ -26,11 +26,12 @@
     "react-dom": "^18.3.1",
     "sitemap": "^9.0.1",
     "tailwindcss": "^3.4.0",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.5.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "pagefind": "^1.5.2"
+    "@astrojs/check": "^0.9.10",
+    "pagefind": "^1.5.2",
+    "typescript": "^5.9.3"
   },
   "allowScripts": {
     "esbuild@0.21.5": true,

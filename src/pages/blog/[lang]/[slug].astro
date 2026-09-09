@@ -169,12 +169,21 @@ const altLangText: Record<string, string> = {
   kn: "ಇತರ ಭಾಷೆಗಳಲ್ಲಿ ಓದಿ",
   ml: "മറ്റ് ഭാഷകളിൽ വായിക്കുക"
 };
-const canonical = `https://insurancesupport.online/blog/${lang}/${post.slug}/`;
+const canonical = `https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`;
 ---
-  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href}>
-  <link rel="alternate" hreflang="en" href={`https://insurancesupport.online/blog/${post.slug}/`} />
+  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true}>
+  {/*
+    HREFLANG FIX: translated posts have slugs like "hi-health-insurance-...". Using post.slug here
+    produced URLs like /blog/hi/hi-health-insurance-... (double prefix) which 404. The clean english
+    slug is post.translatedFrom, giving /blog/{lang}/{englishSlug}/ which is the real page URL.
+  */}
+  <link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${post.translatedFrom || post.slug}/`} />
+  <link rel="alternate" hreflang="en" href={`https://insurancesupport.online/blog/${post.translatedFrom || post.slug}/`} />
   {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => (
-    <link rel="alternate" hreflang={l} href={`https://insurancesupport.online/blog/${l}/${post.slug}/`} />
+    <link rel="alternate" hreflang={l} href={`https://insurancesupport.online/blog/${l}/${post.translatedFrom || post.slug}/`} />
+  ))}
+  {INDIAN_LANGUAGES.filter(l => l === lang).map(l => (
+    <link rel="alternate" hreflang={l} href={`https://insurancesupport.online/blog/${l}/${post.translatedFrom || post.slug}/`} />
   ))}
 
   <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} />

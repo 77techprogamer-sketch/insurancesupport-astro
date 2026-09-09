@@ -17,9 +17,10 @@ export interface Props {
   geoRegion?: string;
   geoPlaceName?: string;
   geoPosition?: string;
+  skipDefaultHreflang?: boolean;
 }
 
-const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522" } = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false } = Astro.props;
 
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online"; // no trailing slash — avoids double-slash in concatenations
@@ -113,8 +114,12 @@ const websiteSchema = {
     <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="author" href="https://insurancesupport.online/about" />
-    <link rel="alternate" hreflang="en-IN" href={canonical || Astro.url.href} />
-    <link rel="alternate" hreflang="x-default" href={siteUrl} />
+    {!skipDefaultHreflang && (
+      <>
+        <link rel="alternate" hreflang="en-IN" href={canonical || Astro.url.href} />
+        <link rel="alternate" hreflang="x-default" href={siteUrl} />
+      </>
+    )}
     <meta name="geo.region" content={geoRegion} />
     <meta name="geo.placename" content={geoPlaceName} />
     <meta name="geo.position" content={geoPosition} />

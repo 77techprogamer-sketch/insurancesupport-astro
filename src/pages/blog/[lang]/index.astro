@@ -53,7 +53,7 @@ const remainingPosts = langPosts.slice(1);
 const currentUi = ui[lang] || ui.hi;
 ---
 
-<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`}>
+<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`} skipDefaultHreflang={true}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
