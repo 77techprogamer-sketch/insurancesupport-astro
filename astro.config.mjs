@@ -23,7 +23,7 @@ export default defineConfig({
     headers: {
       'Content-Security-Policy': [
         "default-src 'self'",
-        "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://clarity.ms https://www.google.com",
+        "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://clarity.ms https://www.google.com",
         "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com",
         "font-src 'self' https://fonts.gstatic.com",
         "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.clarity.ms",
@@ -36,7 +36,7 @@ export default defineConfig({
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'DENY',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=(), interest-cohort=()",
     },
   },
 });
