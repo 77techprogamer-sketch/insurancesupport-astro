@@ -3,7 +3,8 @@ import MobileStickyBar from '../components/MobileStickyBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
-import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import FloatingCTA from '../components/FloatingCTA.tsx';
+import Chatbot from '../components/Chatbot.astro';
 import GeoBanner from '../components/GeoBanner';
 
 export interface Props {
@@ -21,8 +22,18 @@ export interface Props {
 const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522" } = Astro.props;
 
 const siteName = "Insurance Support";
-const siteUrl = "https://insurancesupport.online/";
-const ogImage = pageOgImage || `${siteUrl}og-image.png`;
+const siteUrl = "https://insurancesupport.online"; // no trailing slash — avoids double-slash in concatenations
+// Dedup: if title already contains the brand, don't append it again (prevents "X | Insurance Support | Insurance Support")
+// Also collapse double occurrences of "| Insurance Support" into a single instance.
+let cleanTitle = title;
+if (cleanTitle && cleanTitle.includes(`${siteName} | ${siteName}`)) {
+  // Replace any duplicate "| Insurance Support | Insurance Support" with a single instance
+  const dupPattern = new RegExp(`\\s*\\|\\s*${siteName}\\s*\\|\\s*${siteName}`);
+  cleanTitle = cleanTitle.replace(dupPattern, ` | ${siteName}`);
+}
+const fullTitle = cleanTitle ? (cleanTitle.includes(siteName) ? cleanTitle : `${cleanTitle} | ${siteName}`) : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`;
+
+const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
 const phoneNumber = "+91-9986634506";
 const phoneE164 = "+919986634506"; // full E.164 for schema & tel links
 
@@ -94,8 +105,8 @@ const websiteSchema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title ? `${title} | ${siteName}` : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`}</title>
-    <meta name="title" content={title ? `${title} | ${siteName}` : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`} />
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords || "insurance advisor Bengaluru, IRDAI certified insurance agent, life insurance India, health insurance advisor, motor insurance, claim settlement expert, Hari Kotian insurance"} />
     <meta name="author" content="Hari Kotian" />
@@ -110,14 +121,14 @@ const websiteSchema = {
     <meta name="ICBM" content={geoPosition} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical || Astro.url.href} />
-    <meta property="og:title" content={title ? `${title} | ${siteName}` : siteName} />
+    <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="en_IN" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonical || Astro.url.href} />
-    <meta name="twitter:title" content={title ? `${title} | ${siteName}` : siteName} />
+    <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
@@ -164,7 +175,8 @@ const websiteSchema = {
     <slot />
     <Footer />
     <MobileStickyBar />
-    <WhatsAppWidget />
+    <FloatingCTA client:idle />
+    <Chatbot />
     <script src="/scripts/reveal.js" is:inline defer></script>
     <!-- Analytics Scripts (deferred to end of body for performance) -->
     <script defer>

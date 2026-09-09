@@ -31,7 +31,7 @@ export default function FloatingCTA() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 40, scale: 0.9 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed right-4 sm:right-6 bottom-4 sm:bottom-6 z-40 flex flex-col items-end gap-3"
+          className="fixed right-4 sm:right-6 bottom-20 sm:bottom-6 z-40 flex flex-col items-end gap-3"
         >
           {/* Get a Quote */}<motion.a
             href="/contact"

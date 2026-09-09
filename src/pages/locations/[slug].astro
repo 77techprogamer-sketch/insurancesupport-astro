@@ -4,9 +4,6 @@ import { getCollection } from 'astro:content';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 
-
-import FloatingCTA from '../../components/FloatingCTA.tsx';
-
 export async function getStaticPaths() {
   const allCitiesCollection = await getCollection('cities');
   const allCitiesData = allCitiesCollection.map(entry => entry.data);
@@ -276,6 +273,4 @@ const phoneFormatted = phone.replace(/\s/g, '');
   </section>
 
 </main>
-
-<FloatingCTA client:idle />
 </BaseLayout>

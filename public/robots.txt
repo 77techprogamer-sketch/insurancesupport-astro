@@ -64,5 +64,21 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# === ByteDance / TikTok ===
+User-agent: Bytespider
+Allow: /
+
+# === Yandex ===
+User-agent: YandexBot
+Allow: /
+
+# === Meta / Facebook ===
+User-agent: FacebookBot
+Allow: /
+
+# === Omgili ===
+User-agent: Omgilibot
+Allow: /
+
 IndexNow-Key: 71a80a3568ae5d1d945fda3ef57fe18e
 Sitemap: https://insurancesupport.online/sitemap-index.xml
