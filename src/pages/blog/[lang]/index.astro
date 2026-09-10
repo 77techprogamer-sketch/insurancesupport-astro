@@ -51,9 +51,24 @@ const latestPost = langPosts[0];
 const remainingPosts = langPosts.slice(1);
 
 const currentUi = ui[lang] || ui.hi;
+const langRegion: Record<string, string> = {
+  hi: "hi-IN", bn: "bn-IN", ta: "ta-IN", te: "te-IN",
+  mr: "mr-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN"
+};
+const ogLocaleMap: Record<string, string> = {
+  hi: "hi_IN", bn: "bn_IN", ta: "ta_IN", te: "te_IN",
+  mr: "mr_IN", gu: "gu_IN", kn: "kn_IN", ml: "ml_IN"
+};
 ---
 
-<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`} skipDefaultHreflang={true}>
+<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"} ogLocale={ogLocaleMap[lang] || "en_IN"}>
+  {/* Language index hreflang set: self + English index + x-default + all other 7 language indexes */}
+  <link rel="alternate" hreflang={langRegion[lang] || "en-IN"} href={`https://insurancesupport.online/blog/${lang}/`} />
+  <link rel="alternate" hreflang="en-IN" href="https://insurancesupport.online/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://insurancesupport.online/blog/" />
+  {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => (
+    <link rel="alternate" hreflang={langRegion[l] || `${l}-IN`} href={`https://insurancesupport.online/blog/${l}/`} />
+  ))}
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",

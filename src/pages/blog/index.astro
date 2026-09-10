@@ -20,7 +20,13 @@ function formatDate(dateStr: string) {
 }
 ---
 
-<BaseLayout title="Insurance Blog | Expert Guides & Tips | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience.">
+<BaseLayout title="Insurance Blog | Expert Guides & Tips | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience." skipDefaultHreflang={true}>
+  {/* English blog index hreflang cluster: en-IN self + x-default + all 8 language indexes */}
+  <link rel="alternate" hreflang="en-IN" href="https://insurancesupport.online/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://insurancesupport.online/blog/" />
+  {['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml'].map(l => (
+    <link rel="alternate" hreflang={`${l}-IN`} href={`https://insurancesupport.online/blog/${l}/`} />
+  ))}
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
