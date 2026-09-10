@@ -18,9 +18,11 @@ export interface Props {
   geoPlaceName?: string;
   geoPosition?: string;
   skipDefaultHreflang?: boolean;
+  pageLang?: string;   // e.g. "hi-IN", "bn-IN" — defaults to "en-IN"
+  ogLocale?: string;   // e.g. "hi_IN", "bn_IN" — defaults to "en_IN"
 }
 
-const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false } = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN" } = Astro.props;
 
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online"; // no trailing slash — avoids double-slash in concatenations
@@ -102,7 +104,7 @@ const websiteSchema = {
 ---
 
 <!doctype html>
-<html lang="en-IN">
+<html lang={pageLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -130,7 +132,7 @@ const websiteSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale" content={ogLocale} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonical || Astro.url.href} />
     <meta name="twitter:title" content={fullTitle} />

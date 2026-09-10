@@ -170,20 +170,24 @@ const altLangText: Record<string, string> = {
   ml: "മറ്റ് ഭാഷകളിൽ വായിക്കുക"
 };
 const canonical = `https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`;
+const translatedfrom = post.translatedFrom || slug;
+const langRegion: Record<string, string> = {
+  hi: "hi-IN", bn: "bn-IN", ta: "ta-IN", te: "te-IN",
+  mr: "mr-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN"
+};
+const ogLocaleMap: Record<string, string> = {
+  hi: "hi_IN", bn: "bn_IN", ta: "ta_IN", te: "te_IN",
+  mr: "mr_IN", gu: "gu_IN", kn: "kn_IN", ml: "ml_IN"
+};
 ---
-  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true}>
-  {/*
-    HREFLANG FIX: translated posts have slugs like "hi-health-insurance-...". Using post.slug here
-    produced URLs like /blog/hi/hi-health-insurance-... (double prefix) which 404. The clean english
-    slug is post.translatedFrom, giving /blog/{lang}/{englishSlug}/ which is the real page URL.
-  */}
-  <link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${post.translatedFrom || post.slug}/`} />
-  <link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${post.translatedFrom || post.slug}/`} />
+  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"} ogLocale={ogLocaleMap[lang] || "en_IN"}>
+  {/* HREFLANG FIX (verified): translated posts live at /blog/{lang}/{englishSlug}/.
+      Full bidirectional hreflang set: self-reference + English (en-IN) + x-default + all other 7 languages (region-scoped). */}
+  <link rel="alternate" hreflang={langRegion[lang] || "en-IN"} href={canonical} />
+  <link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${translatedfrom}/`} />
+  <link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${translatedfrom}/`} />
   {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => (
-    <link rel="alternate" hreflang={l} href={`https://insurancesupport.online/blog/${l}/${post.translatedFrom || post.slug}/`} />
-  ))}
-  {INDIAN_LANGUAGES.filter(l => l === lang).map(l => (
-    <link rel="alternate" hreflang={l} href={`https://insurancesupport.online/blog/${l}/${post.translatedFrom || post.slug}/`} />
+    <link rel="alternate" hreflang={langRegion[l] || `${l}-IN`} href={`https://insurancesupport.online/blog/${l}/${translatedfrom}/`} />
   ))}
 
   <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} />
