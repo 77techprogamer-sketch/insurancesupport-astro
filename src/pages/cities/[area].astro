@@ -1,8 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { AREAS } from '../../data/areas';
+import { AREA_DETAIL } from '../../data/areas-content';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 
+export async function getStaticPaths() {
+  return AREAS.map(a => ({ params: { area: a.slug } }))
+}
+
+const area = AREAS.find(a => a.slug === Astro.params.area);
+if (!area) return Astro.redirect('/404');
+
+const detail = AREA_DETAIL[area.slug];
+
+// Deterministic plan selection based on area slug (not Math.random)
 const PLAN_MAP = [
   'LIC Jeevan Labh',
   'LIC Tech Term',
@@ -14,144 +26,57 @@ const PLAN_MAP = [
   'LIC Jeevan Shanti',
   'LIC Dhan Rekha',
 ];
+const slugHash = area.slug.split('').reduce((h, c) => ((h << 5) - h + c.charCodeAt(0)) | 0, 0);
+const idx1 = Math.abs(slugHash) % PLAN_MAP.length;
+const idx2 = (idx1 + 3) % PLAN_MAP.length;
+const featuredPlans = [PLAN_MAP[idx1], PLAN_MAP[idx2]];
 
-export async function getStaticPaths() {
-  return AREAS.map(a => ({ params: { area: a.slug } }))
-}
-
-const area = AREAS.find(a => a.slug === Astro.params.area);
-if (!area) return Astro.redirect('/404');
-
-const featuredPlans = PLAN_MAP.sort(() => Math.random() - 0.5).slice(0, 2);
 const citySlug = area.slug;
-const pageUrl = `https://insurancesupport.online/cities/${citySlug}`;
+const pageUrl = `https://insurancesupport.online/cities/${citySlug}/`;
 
-const LOCAL_LANDMARKS = {
-  koramangala: [
-    'Koramangala 8th Block',
-    'Koramangala 1st Block',
-    'Koramangala 6th Block',
-    'Koramangala 7th Block',
-    'Koramangala 5th Block'
-  ],
-  indiranagar: [
-    'Indiranagar 100ft Road',
-    'Indiranagar 2nd Stage',
-    'Indiranagar 3rd Stage',
-    'Indiranagar 4th Stage',
-    'Indiranagar 5th Stage'
-  ],
-  jayanagar: [
-    'Jayanagar 4th Block',
-    'Jayanagar 9th Block',
-    'Jayanagar 10th Block',
-    'Jayanagar 11th Block',
-    'Jayanagar 1st Block'
-  ],
-  whitefield: [
-    'Whitefield Main Road',
-    'Whitefield 2nd Stage',
-    'Whitefield 3rd Stage',
-    'Whitefield 4th Stage',
-    'Whitefield 5th Stage'
-  ],
-  hsrlayout: [
-    'HSR Layout 1st Sector',
-    'HSR Layout 2nd Sector',
-    'HSR Layout 3rd Sector',
-    'HSR Layout 4th Sector',
-    'HSR Layout 5th Sector'
-  ],
-  marathahalli: [
-    'Marathahalli Bridge',
-    'Marathahalli 2nd Block',
-    'Marathahalli 3rd Block',
-    'Marathahalli 4th Block',
-    'Marathahalli 5th Block'
-  ],
-  jpnagar: [
-    'JP Nagar 1st Phase',
-    'JP Nagar 2nd Phase',
-    'JP Nagar 3rd Phase',
-    'JP Nagar 4th Phase',
-    'JP Nagar 5th Phase'
-  ],
-  bellandur: [
-    'Bellandur Main Road',
-    'Bellandur 1st Block',
-    'Bellandur 2nd Block',
-    'Bellandur 3rd Block',
-    'Bellandur 4th Block'
-  ],
-  sarjapur: [
-    'Sarjapur Road',
-    'Sarjapur 1st Block',
-    'Sarjapur 2nd Block',
-    'Sarjapur 3rd Block',
-    'Sarjapur 4th Block'
-  ],
-  yelahanka: [
-    'Yelahanka New Town',
-    'Yelahanka 1st Block',
-    'Yelahanka 2nd Block',
-    'Yelahanka 3rd Block',
-    'Yelahanka 4th Block'
-  ]
-};
-
-const LOCAL_TRENDS = {
-  koramangala: 'Koramangala is known for its vibrant nightlife, tech parks, and luxury housing. Many residents are IT professionals and startups.',
-  indiranagar: 'Indiranagar is a cultural hub with a mix of residential, commercial, and educational spaces. It has a strong arts and crafts community.',
-  jayanagar: 'Jayanagar is a residential area with a mix of middle-class and upper-middle-class families. It has a strong educational and healthcare presence.',
-  whitefield: 'Whitefield is a major IT hub with a mix of residential and commercial spaces. It is known for its luxury housing and high-end amenities.',
-  hsrlayout: 'HSR Layout is a major IT hub with a mix of residential and commercial spaces. It is known for its luxury housing and high-end amenities.',
-  marathahalli: 'Marathahalli is a major IT hub with a mix of residential and commercial spaces. It is known for its luxury housing and high-end amenities.',
-  jpnagar: 'JP Nagar is a residential area with a mix of middle-class and upper-middle-class families. It has a strong educational and healthcare presence.',
-  bellandur: 'Bellandur is a major IT hub with a mix of residential and commercial spaces. It is known for its luxury housing and high-end amenities.',
-  sarjapur: 'Sarjapur is a major IT hub with a mix of residential and commercial spaces. It is known for its luxury housing and high-end amenities.',
-  yelahanka: 'Yelahanka is a residential area with a mix of middle-class and upper-middle-class families. It has a strong educational and healthcare presence.'
-};
-
-const LOCAL_INSURANCE_TRENDS = {
-  koramangala: 'Many residents in Koramangala are concerned about health insurance due to the high cost of medical treatments. They are looking for affordable health insurance plans.',
-  indiranagar: 'Residents in Indiranagar are concerned about life insurance due to the high cost of education and healthcare. They are looking for affordable life insurance plans.',
-  jayanagar: 'Residents in Jayanagar are concerned about health insurance due to the high cost of medical treatments. They are looking for affordable health insurance plans.',
-  whitefield: 'Residents in Whitefield are concerned about life insurance due to the high cost of education and healthcare. They are looking for affordable life insurance plans.',
-  hsrlayout: 'Residents in HSR Layout are concerned about health insurance due to the high cost of medical treatments. They are looking for affordable health insurance plans.',
-  marathahalli: 'Residents in Marathahalli are concerned about life insurance due to the high cost of education and healthcare. They are looking for affordable life insurance plans.',
-  jpnagar: 'Residents in JP Nagar are concerned about health insurance due to the high cost of medical treatments. They are looking for affordable health insurance plans.',
-  bellandur: 'Residents in Bellandur are concerned about life insurance due to the high cost of education and healthcare. They are looking for affordable life insurance plans.',
-  sarjapur: 'Residents in Sarjapur are concerned about health insurance due to the high cost of medical treatments. They are looking for affordable health insurance plans.',
-  yelahanka: 'Residents in Yelahanka are concerned about life insurance due to the high cost of education and healthcare. They are looking for affordable life insurance plans.'
+// Local landmarks from existing data
+const LOCAL_LANDMARKS: Record<string, string[]> = {
+  koramangala: ['Koramangala 8th Block', 'Koramangala 1st Block', 'Koramangala 6th Block', 'Koramangala 7th Block', 'Koramangala 5th Block'],
+  indiranagar: ['Indiranagar 100ft Road', 'Indiranagar 2nd Stage', 'Indiranagar 3rd Stage', 'Indiranagar 4th Stage', 'Indiranagar 5th Stage'],
+  jayanagar: ['Jayanagar 4th Block', 'Jayanagar 9th Block', 'Jayanagar 10th Block', 'Jayanagar 11th Block', 'Jayanagar 1st Block'],
+  whitefield: ['Whitefield Main Road', 'Whitefield 2nd Stage', 'Whitefield 3rd Stage', 'Whitefield 4th Stage', 'Whitefield 5th Stage'],
+  hsrlayout: ['HSR Layout 1st Sector', 'HSR Layout 2nd Sector', 'HSR Layout 3rd Sector', 'HSR Layout 4th Sector', 'HSR Layout 5th Sector'],
+  marathahalli: ['Marathahalli Bridge', 'Marathahalli 2nd Block', 'Marathahalli 3rd Block', 'Marathahalli 4th Block', 'Marathahalli 5th Block'],
+  jpnagar: ['JP Nagar 1st Phase', 'JP Nagar 2nd Phase', 'JP Nagar 3rd Phase', 'JP Nagar 4th Phase', 'JP Nagar 5th Phase'],
+  bellandur: ['Bellandur Main Road', 'Bellandur 1st Block', 'Bellandur 2nd Block', 'Bellandur 3rd Block', 'Bellandur 4th Block'],
+  sarjapur: ['Sarjapur Road', 'Sarjapur 1st Block', 'Sarjapur 2nd Block', 'Sarjapur 3rd Block', 'Sarjapur 4th Block'],
+  yelahanka: ['Yelahanka New Town', 'Yelahanka 1st Block', 'Yelahanka 2nd Block', 'Yelahanka 3rd Block', 'Yelahanka 4th Block'],
 };
 
 const LOCAL_LANDMARKS_LIST = LOCAL_LANDMARKS[citySlug] || [];
-const LOCAL_TREND = LOCAL_TRENDS[citySlug] || '';
-const LOCAL_INSURANCE_TREND = LOCAL_INSURANCE_TRENDS[citySlug] || '';
+const hospitals = detail?.hospitals || [];
+const itParks = detail?.itParks || [];
+const profile = detail?.profile || `${area.name} is a key locality in Bangalore.`;
+const insuranceFocus = detail?.insuranceFocus || `Insurance services for ${area.name} residents.`;
+const localFaqs = detail?.localFaqs || [];
 ---
 
 <BaseLayout
-  title={`LIC Agent in ${area.name}, Bangalore — Expert Policy Advice | Insurance Support`}
-  description={`Trusted LIC agent in ${area.name}, Bangalore. Hari Kotian offers 25+ years of experience. IRDAI Reg No: 0149161D. Life, health, and term insurance services.`}
+  title={`Insurance Advisor in ${area.name}, Bangalore — Block-Level Guidance | Insurance Support`}
+  description={`IRDAI-certified insurance advisor serving ${area.name}, Bangalore. Hari Kotian provides block-level insurance guidance — health cover at nearby hospitals, term plans for IT professionals, LIC claim processing, and motor insurance for local residents. Free consultation.`}
 >
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' },
-    { label: 'Cities', url: 'https://insurancesupport.online/cities' },
+    { label: 'Bangalore Localities', url: 'https://insurancesupport.online/cities/' },
     { label: `${area.name}, Bangalore`, url: pageUrl }
   ]} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": `LIC Agent & Insurance Advisor in ${area.name} - Hari Kotian`,
-    "description": `IRDAI certified insurance advisor serving ${area.name}, Bangalore. Life, health, motor, term plans and claim recovery assistance.`,
+    "name": `Insurance Advisor in ${area.name}, Bangalore - Hari Kotian`,
+    "description": `Block-level insurance advisory for ${area.name}, Bangalore. Health, life, motor, and claim recovery services. IRDAI Reg No: 0149161D.`,
     "url": pageUrl,
     "telephone": "+91-9986634506",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": area.name,
-      "addressRegion": "Bengaluru, KA",
-      "postalCode": "560013",
+      "addressLocality": `${area.name}, Bangalore`,
+      "addressRegion": "Karnataka",
       "addressCountry": "IN"
     },
     "priceRange": "₹₹",
@@ -159,84 +84,115 @@ const LOCAL_INSURANCE_TREND = LOCAL_INSURANCE_TRENDS[citySlug] || '';
       "@type": "Organization",
       "name": "Insurance Support - Hari Kotian",
       "url": "https://insurancesupport.online"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": `${area.name}, Bangalore`
     }
   })} />
+
+  {localFaqs.length > 0 && <FAQPageJsonLd questions={localFaqs} />}
 
   <main id="main" class="max-w-4xl mx-auto px-4 py-16">
     <nav class="text-sm text-slate-500 mb-6">
       <a href="/" class="hover:text-blue-600">Home</a>
       <span class="mx-2">/</span>
-      <a href="/cities" class="hover:text-blue-600">Locations</a>
+      <a href="/cities/" class="hover:text-blue-600">Bangalore Localities</a>
       <span class="mx-2">/</span>
       <span class="text-slate-700">{area.name}</span>
     </nav>
 
     <h1 class="text-4xl font-extrabold text-blue-900 mb-6">
-      LIC Agent in {area.name}, Bangalore
+      Insurance Advisory in {area.name}, Bangalore
     </h1>
 
     <p class="text-lg text-slate-700 mb-8">
-      {area.name} is a key locality in {area.highlight} Bangalore. As your local
-      IRDAI-certified LIC advisor, I provide expert guidance on life insurance, health cover,
-      term plans, and claim recovery — right here in {area.name}. With 25+ years of
-      experience and INR 50Cr+ claims recovered, families across Bangalore trust me
-      for honest, professional insurance advisory.
+      {profile}
     </p>
 
     <h2 class="text-2xl font-bold text-slate-900 mb-4">
-      Why {area.name} Residents Choose Me
+      Nearby Hospitals with Cashless Insurance
     </h2>
     <ul class="list-disc list-inside space-y-2 text-slate-700 mb-8">
-      <li><strong>IRDAI Registered:</strong> Reg No: 0149161D — verified and accountable.</li>
-      <li><strong>25+ Years of Trust:</strong> Serving families across Bangalore since 1999.</li>
-      <li><strong>INR 50Cr+ Recovered:</strong> Claim recovery expertise you can rely on.</li>
-      <li><strong>Door-Step Service:</strong> I visit {area.name} and surrounding areas.</li>
-      <li><strong>Free Portfolio Review:</strong> No obligation consultation at your convenience.</li>
+      {hospitals.map(h => <li>{h}</li>)}
     </ul>
 
     <h2 class="text-2xl font-bold text-slate-900 mb-4">
-      Local Landmarks in {area.name}
+      IT Parks &amp; Business Hubs
     </h2>
     <ul class="list-disc list-inside space-y-2 text-slate-700 mb-8">
-      {LOCAL_LANDMARKS_LIST.map((landmark) => (
-        <li>{landmark}</li>
-      ))}
+      {itParks.map(p => <li>{p}</li>)}
     </ul>
 
     <h2 class="text-2xl font-bold text-slate-900 mb-4">
-      Local Trends in {area.name}
+      Why {area.name} Residents Choose Us
     </h2>
-    <p class="text-lg text-slate-700 mb-8">
-      {LOCAL_TREND}
-    </p>
+    <ul class="list-disc list-inside space-y-2 text-slate-700 mb-8">
+      <li><strong>Block-Level Service:</strong> We visit {area.name} and surrounding blocks for policy reviews and claim submissions.</li>
+      <li><strong>Hospital Network:</strong> Pre-authorized cashless treatment at {hospitals[0] || 'nearby hospitals'}.</li>
+      <li><strong>IRDAI Registered:</strong> Reg No: 0149161D — accountable to the regulator, not just to you.</li>
+      <li><strong>25+ Years Experience:</strong> Serving families across Bangalore since 1999.</li>
+      <li><strong>₹50 Cr+ Claims Recovered:</strong> Claim recovery expertise for rejected and delayed claims.</li>
+    </ul>
+
+    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-8">
+      <h2 class="text-xl font-bold text-blue-900 mb-3">
+        Insurance Landscape in {area.name}
+      </h2>
+      <p class="text-slate-700">
+        {insuranceFocus}
+      </p>
+    </div>
+
+    {LOCAL_LANDMARKS_LIST.length > 0 && (
+      <>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">
+          Areas Covered in {area.name}
+        </h2>
+        <div class="flex flex-wrap gap-2 mb-8">
+          {LOCAL_LANDMARKS_LIST.map(l => (
+            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm">{l}</span>
+          ))}
+        </div>
+      </>
+    )}
 
     <h2 class="text-2xl font-bold text-slate-900 mb-4">
-      Insurance Trends in {area.name}
-    </h2>
-    <p class="text-lg text-slate-700 mb-8">
-      {LOCAL_INSURANCE_TREND}
-    </p>
-
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">
-      Recommended Plans for {area.name}
+      Recommended Plans for {area.name} Residents
     </h2>
     <div class="grid md:grid-cols-2 gap-4 mb-8">
-      {featuredPlans.map((plan) => (
-        <div class="p-4 border rounded-xl shadow-sm">
+      {featuredPlans.map(plan => (
+        <div class="p-4 border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">
           <h3 class="text-xl font-bold text-slate-900 mb-2">{plan}</h3>
           <p class="text-slate-700">
-            A tailored {plan} plan designed for residents in {area.name}.
+            A tailored {plan} plan suitable for {area.name} residents. WhatsApp us for a personalized comparison based on your age, income, and coverage needs.
           </p>
         </div>
       ))}
     </div>
 
+    {localFaqs.length > 0 && (
+      <>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions — {area.name}
+        </h2>
+        <div class="space-y-6 mb-8">
+          {localFaqs.map(faq => (
+            <div class="border border-slate-200 rounded-xl p-6">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">{faq.question}</h3>
+              <p class="text-slate-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+
     <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
       <h2 class="text-2xl font-bold mb-3">Need Insurance Help in {area.name}?</h2>
-      <p class="text-blue-100 mb-6">Get expert advice from your local LIC agent in {area.name}.</p>
+      <p class="text-blue-100 mb-6">Get expert advice from your local IRDAI-certified advisor. Free consultation, no obligation.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20I%20need%20insurance%20help%20in%20${area.name}." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-          WhatsApp for Insurance Advice
+        <a href={`https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20insurance%20help%20in%20${area.name}.`} target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp for Advice
         </a>
         <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
           Call +91-99866 34506

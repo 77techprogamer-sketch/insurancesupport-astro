@@ -139,8 +139,9 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 ---
 
 <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true}>
-{/* English canonical + hreflang self-reference */}
-<link rel="alternate" hreflang="en" href={`https://insurancesupport.online/blog/${post.slug}/`} />
+{/* English canonical + hreflang self-reference + x-default */}
+<link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${post.slug}/`} />
+<link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${post.slug}/`} />
 {/* Declare all 8 Indian-language translations. Translated posts live at /blog/{lang}/{englishSlug}/
     with slugs prefixed {lang}-{englishSlug}. Using the clean english slug avoids the double-prefix bug. */}
 {['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml'].map(l => (
