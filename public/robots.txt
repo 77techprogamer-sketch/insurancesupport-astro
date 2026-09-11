@@ -80,5 +80,5 @@ Allow: /
 User-agent: Omgilibot
 Allow: /
 
-IndexNow: 71a80a3568ae5d1d945fda3ef57fe18e
+IndexNow: 53fe20be7b9f3f7d157e718bb02f7e4f
 Sitemap: https://insurancesupport.online/sitemap-index.xml
