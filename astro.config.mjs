@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
+// @astrojs/tailwind integration removed — Tailwind is processed via postcss.config.cjs + tailwind.config.mjs
+// (v2.1.3 is incompatible with Astro 7's config hook; Vite handles Tailwind natively through PostCSS)
 // @astrojs/sitemap removed — using custom generate-sitemap.js in postbuild instead
 
 export default defineConfig({
@@ -9,7 +10,6 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     react(),
-    tailwind(),
   ],
   vite: {
     build: {
