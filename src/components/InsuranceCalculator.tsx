@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 
 /**
  * InsuranceCalculator
@@ -166,10 +165,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+    <div
       className={`bg-gradient-to-br from-white to-blue-50 rounded-3xl border border-blue-100 shadow-2xl overflow-hidden ${className}`}
     >
       <div className="p-6 md:p-8">
@@ -241,52 +237,48 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
             </div>
           </div>
 
-          {/* Term Length (only for term / life policies) */}
-          {(policyType === 'term' || policyType === 'life') && (
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">Term Length (Years)</label>
-              <div className="flex items-center gap-4">
-                <input
-                  type="range"
-                  min="5"
-                  max="35"
-                  value={termLength}
-                  onChange={(e) => setTermLength(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gradient-to-r from-blue-200 to-blue-400 rounded-lg appearance-none cursor-pointer"
-                />
-                <span className="text-slate-900 font-medium w-12 text-right">{termLength}</span>
-              </div>
+          {/* Term Length */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-2">Term Length (Years)</label>
+            <div className="flex items-center gap-4">
+              <input
+                type="range"
+                min="5"
+                max="35"
+                value={termLength}
+                onChange={(e) => setTermLength(parseInt(e.target.value))}
+                className="w-full h-2 bg-gradient-to-r from-blue-200 to-blue-400 rounded-lg appearance-none cursor-pointer"
+              />
+              <span className="text-slate-900 font-medium w-12 text-right">{termLength}</span>
             </div>
-          )}
+          </div>
 
-          {/* Smoker Status (life / health / term) */}
-          {(policyType === 'health' || policyType === 'life' || policyType === 'term') && (
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">Smoker Status</label>
-              <div className="flex items-center gap-4">
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="smoker"
-                    checked={!smoker}
-                    onChange={() => setSmoker(false)}
-                    className="form-radio"
-                  />
-                  <span className="text-sm text-slate-700">Non-Smoker</span>
-                </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="smoker"
-                    checked={smoker}
-                    onChange={() => setSmoker(true)}
-                    className="form-radio"
-                  />
-                  <span className="text-sm text-slate-700">Smoker</span>
-                </label>
-              </div>
+          {/* Smoker Status */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-2">Smoker Status</label>
+            <div className="flex items-center gap-4">
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="smoker"
+                  checked={!smoker}
+                  onChange={() => setSmoker(false)}
+                  className="form-radio"
+                />
+                <span className="text-sm text-slate-700">Non-Smoker</span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="smoker"
+                  checked={smoker}
+                  onChange={() => setSmoker(true)}
+                  className="form-radio"
+                />
+                <span className="text-sm text-slate-700">Smoker</span>
+              </label>
             </div>
-          )}
+          </div>
         </div>
 
         <div className="mt-6 flex gap-3">
@@ -306,12 +298,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
 
         {/* Result Display */}
         {showResult && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200 shadow-lg"
-          >
+          <div className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200 shadow-lg">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                 <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -337,10 +324,10 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                 for exact quotes tailored to your profile.
               </p>
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
