@@ -1,0 +1,11 @@
+{
+  "resource": "https://insurancesupport.online",
+  "authorization_servers": [
+    "https://insurancesupport.online/.well-known/oauth-authorization-server"
+  ],
+  "scopes_supported": [
+    "openid",
+    "profile"
+  ],
+  "bearer_methods_supported": ["header"]
+}

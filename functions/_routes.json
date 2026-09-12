@@ -1,1 +1,5 @@
-{"routes":[{"include":"/!/.well-known/*","handle":"markdown"},{"include":"/*","handle":"markdown"}]}
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": ["/.well-known/*", "/openapi.json", "/api-docs.html", "/health.json"]
+}
