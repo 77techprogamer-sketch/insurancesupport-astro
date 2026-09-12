@@ -1,84 +1,45 @@
 User-agent: *
 Allow: /
 
-# === Search Engine Crawlers ===
-User-agent: Googlebot
-Allow: /
-
-User-agent: bingbot
-Allow: /
-
-# === OpenAI / ChatGPT ===
-# OAI-SearchBot: indexes pages for ChatGPT Search answers (CRITICAL for ChatGPT visibility)
+# AI bots (optional)
 User-agent: OAI-SearchBot
 Allow: /
-
-# GPTBot: crawls content for training OpenAI's models
 User-agent: GPTBot
 Allow: /
-
-# ChatGPT-User: fetches pages on demand when initiated by a user
 User-agent: ChatGPT-User
 Allow: /
-
-# === Anthropic / Claude ===
 User-agent: ClaudeBot
 Allow: /
-
 User-agent: Claude-Web
 Allow: /
-
-# === Perplexity ===
-# PerplexityBot: indexes pages for Perplexity search results and citations
 User-agent: PerplexityBot
 Allow: /
-
-# Perplexity-User: fetches pages live when building an answer to a specific question
 User-agent: Perplexity-User
 Allow: /
-
-# === Google AI / Gemini ===
-# Google-Extended: controls some non-Search Google AI uses
 User-agent: Google-Extended
 Allow: /
-
 User-agent: Gemini-Deep-Research
 Allow: /
-
-# === Other AI Platforms ===
 User-agent: Applebot-Extended
 Allow: /
-
 User-agent: Amazonbot
 Allow: /
-
 User-agent: meta-externalagent
 Allow: /
-
 User-agent: cohere-ai
 Allow: /
-
 User-agent: YouBot
 Allow: /
-
 User-agent: CCBot
 Allow: /
-
-# === ByteDance / TikTok ===
 User-agent: Bytespider
 Allow: /
-
-# === Yandex ===
 User-agent: YandexBot
 Allow: /
-
-# === Meta / Facebook ===
 User-agent: FacebookBot
 Allow: /
-
-# === Omgili ===
 User-agent: Omgilibot
 Allow: /
 
-IndexNow: 71a80a3568ae5d1d945fda3ef57fe18e
+IndexNow: 53fe20be7b9f3f7d157e718bb02f7e4f
 Sitemap: https://insurancesupport.online/sitemap-index.xml
