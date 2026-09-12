@@ -1,0 +1,14 @@
+{
+  "serverInfo": {
+    "name": "insurancesupport-mcp",
+    "version": "1.0.0"
+  },
+  "description": "MCP server exposing Insurance Support tools: insurance guide search, claim process information, IRDAI regulation lookups, LIC policy guidance, and health insurance buyer advice.",
+  "endpoint": "https://insurancesupport.online/mcp",
+  "transport": "streamable-http",
+  "capabilities": {
+    "tools": { "listChanged": false },
+    "resources": { "subscribe": false, "listChanged": false },
+    "prompts": { "listChanged": false }
+  }
+}
