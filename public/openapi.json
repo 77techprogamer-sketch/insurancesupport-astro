@@ -1,0 +1,28 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Insurance Support API",
+    "description": "Public API endpoints for insurancesupport.online — geolocation and lead capture.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "https://insurancesupport.online" }
+  ],
+  "paths": {
+    "/api/geo": {
+      "get": {
+        "summary": "Detect visitor city via IP",
+        "responses": {
+          "200": {
+            "description": "Geolocation result",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
