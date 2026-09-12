@@ -7,7 +7,7 @@ import https from 'node:https';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const INDEXNOW_KEY = '71a80a3568ae5d1d945fda3ef57fe18e';
+const INDEXNOW_KEY = '6f345ded6a94be2d28ae371306ffcd79';
 const SITE_URL = 'https://insurancesupport.online';
 
 async function pingIndexNow() {
