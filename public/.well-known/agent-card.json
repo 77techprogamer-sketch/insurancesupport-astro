@@ -1,0 +1,54 @@
+{
+  "protocolVersion": "0.2.0",
+  "name": "Insurance Support",
+  "description": "IRDAI-registered insurance advisory by Hari Kotian (Reg 0149161D). Expert guides on LIC, health, motor, and general insurance in India; claim recovery, appeal support, and policy advice. 25+ years experience, INR 50+ Cr claims recovered.",
+  "url": "https://insurancesupport.online",
+  "version": "1.0.0",
+  "supportedInterfaces": [
+    {
+      "type": "agent-card",
+      "url": "https://insurancesupport.online/.well-known/agent-card.json"
+    },
+    {
+      "type": "http",
+      "url": "https://insurancesupport.online/agent",
+      "transport": "http"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "insurance-guide-search",
+      "name": "Insurance Guide Search",
+      "description": "Answer questions about life, health, motor, and general insurance in India using the Insurance Support guide library, including premium tax benefits (80C/80D), portability, and policy comparisons."
+    },
+    {
+      "id": "claim-support-info",
+      "name": "Claim Support Information",
+      "description": "Explain insurance claim processes, IRDAI regulations, the 30-day settlement rule, appeal procedures, ombudsman complaints, and IGMS filing for rejected claims."
+    },
+    {
+      "id": "lic-policy-advisor",
+      "name": "LIC Policy Advisor",
+      "description": "Guidance on LIC policies: revival of lapsed policies, maturity claims, death claim settlement, premium payment modes, and policy loans."
+    },
+    {
+      "id": "health-insurance-buyer-guide",
+      "name": "Health Insurance Buyer Guide",
+      "description": "Help buyers choose health insurance: pre-existing disease waiting periods, restoration benefits, claim settlement ratios, senior citizen plans, and family floater vs individual coverage."
+    }
+  ],
+  "securitySchemes": [],
+  "security": [],
+  "agents": []
+}

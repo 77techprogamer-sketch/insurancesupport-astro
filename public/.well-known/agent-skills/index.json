@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "version": "0.2.0",
+  "skills": [
+    {
+      "name": "insurance-guide-search",
+      "type": "skill-md",
+      "description": "Answer questions about life, health, motor, and general insurance in India using the Insurance Support guide library — premium tax benefits (80C/80D), portability, claim settlement ratios, and policy comparisons.",
+      "url": "https://insurancesupport.online/.well-known/skills/insurance-guide-search/SKILL.md",
+      "digest": "sha256:faf3466686feba8da46e85ef6510ce943c9db9ca27aef29e9143b77474344792"
+    }
+  ]
+}
