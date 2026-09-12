@@ -1,1 +1,1 @@
-{"routes":[{"include":"/*","handle":"markdown"}]}
+{"routes":[{"include":"/.well-known/api-catalog","handle":"static"},{"include":"/*","handle":"markdown"}]}
