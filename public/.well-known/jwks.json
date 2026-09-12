@@ -1,0 +1,12 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "use": "sig",
+      "kid": "insurancesupport-2026",
+      "alg": "RS256",
+      "n": "sample-verification-key-placeholder-replace-with-real-modulus",
+      "e": "AQAB"
+    }
+  ]
+}

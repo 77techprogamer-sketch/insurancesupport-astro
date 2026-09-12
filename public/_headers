@@ -72,6 +72,10 @@
   Content-Type: text/markdown; charset=utf-8
   Cache-Control: public, max-age=3600
 
+/.well-known/jwks.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
 # API catalog endpoint
 /.well-known/api-catalog
   Content-Type: application/linkset+json
