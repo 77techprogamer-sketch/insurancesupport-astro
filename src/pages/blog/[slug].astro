@@ -121,9 +121,9 @@ if (faqSection) {
   }
 }
 
-// Find related posts
+// Find related posts (English posts only — translated variants live at /blog/{lang}/ and would create dead dash-slug links)
 const related = posts
-  .filter(p => p.slug !== post.slug && p.categories?.some(c => post.categories?.includes(c)))
+  .filter(p => p.slug !== post.slug && (!p.lang || p.lang === 'en') && p.categories?.some(c => post.categories?.includes(c)))
   .slice(0, 3);
 
 // Show claim-review CTA on high-intent claim/urgent posts
@@ -237,7 +237,7 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
           <h3 class="text-xl font-bold text-slate-900 mb-6">Related Articles</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {related.map(rp => (
-              <a href={`/blog/${rp.slug}`} class="block bg-white rounded-xl border border-slate-200 p-5 hover:shadow-lg hover:border-blue-200 transition-all group">
+              <a href={`/blog/${rp.translatedFrom || rp.slug}`} class="block bg-white rounded-xl border border-slate-200 p-5 hover:shadow-lg hover:border-blue-200 transition-all group">
                 <div class="flex flex-wrap gap-1 mb-2">
                   {(rp.categories || []).slice(0, 1).map(cat => (
                     <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-medium rounded">{cat}</span>

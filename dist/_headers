@@ -28,6 +28,7 @@
 # Sitemap, robots, and AI files - revalidate frequently
 /robots.txt
   Cache-Control: public, max-age=3600
+  IndexNow: 6f345ded6a94be2d28ae371306ffcd79
 
 /llms.txt
   Cache-Control: public, max-age=3600

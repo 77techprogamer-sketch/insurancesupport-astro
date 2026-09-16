@@ -48,13 +48,16 @@ async function generateSitemaps() {
     }
 
     const uniqueLinks = Array.from(linkMap.values())
-        .filter(link => !link.url.includes('/test'))
-        .filter(link => !link.url.includes('/404'))
-        .filter(link => !link.url.includes('fbed68329c17dcd9'))
-        .filter(link => !link.url.includes('/robots.txt'))
-        .filter(link => !link.url.includes('/_headers'))
-        .filter(link => !link.url.includes('/_redirects'))
-        .filter(link => link.url !== '/index');
+            .filter(link => !link.url.includes('/test'))
+            .filter(link => !link.url.includes('/404'))
+            .filter(link => !link.url.includes('fbed68329c17dcd9'))
+            .filter(link => !link.url.includes('/robots.txt'))
+            .filter(link => !link.url.includes('/_headers'))
+            .filter(link => !link.url.includes('/_redirects'))
+            .filter(link => link.url !== '/index')
+            .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
+            // Keep all other blog URLs (including /blog/hi/slug/ syntax)
+
 
     // Categorize links for individual sitemaps
     const categories = {
@@ -69,8 +72,8 @@ async function generateSitemaps() {
     };
 
     uniqueLinks.forEach(linkObj => {
-        const url = linkObj.url;
-        const finalUrl = url.endsWith('/') || url.includes('.xml') || !path.extname(url) ? url : url + '/';
+            const url = linkObj.url;
+            const finalUrl = url.endsWith('/') ? url : url + '/';
         const sitemapEntry = { url: finalUrl, changefreq: 'weekly', priority: 0.7, lastmod: linkObj.lastmod };
 
         if (url === '/' || url === '/about' || url === '/contact' || url === '/faq' ||
@@ -111,7 +114,16 @@ async function generateSitemaps() {
             sitemapStream.end();
             const sitemapBuffer = await streamToPromise(sitemapStream);
             await fs.writeFile(sitemapCategoryPath, sitemapBuffer.toString());
-            console.log(`Generated ${category}-sitemap.xml with ${categories[category].length} URLs`);
+            console.log('Category counts:', {
+      core: categories.core.length,
+      blog: categories.blog.length,
+      locations: categories.locations.length,
+      services: categories.services.length,
+      cities: categories.cities.length,
+      leadMagnets: categories.leadMagnets.length,
+      caseStudies: categories.caseStudies.length,
+      compare: categories.compare.length,
+    });
             sitemapIndexLinks.push({ url: `${siteUrl}/sitemaps/${category}-sitemap.xml`, lastmod: new Date().toISOString() });
         }
     }

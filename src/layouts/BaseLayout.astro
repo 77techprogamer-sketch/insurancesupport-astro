@@ -26,6 +26,12 @@ const { title, description = "Insurance Support by Hari Kotian — IRDAI-certifi
 
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online"; // no trailing slash — avoids double-slash in concatenations
+
+import { TRENDING_KEYWORDS } from '../data/keywords-string.js';
+const DEFAULT_KEYWORDS = TRENDING_KEYWORDS;
+const phoneNumber = "+91-9986634506";
+const phoneE164 = "+919986634506"; // full E.164 for schema & tel links
+
 // Dedup: if title already contains the brand, don't append it again (prevents "X | Insurance Support | Insurance Support")
 // Also collapse double occurrences of "| Insurance Support" into a single instance.
 let cleanTitle = title;
@@ -37,8 +43,6 @@ if (cleanTitle && cleanTitle.includes(`${siteName} | ${siteName}`)) {
 const fullTitle = cleanTitle ? (cleanTitle.includes(siteName) ? cleanTitle : `${cleanTitle} | ${siteName}`) : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`;
 
 const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
-const phoneNumber = "+91-9986634506";
-const phoneE164 = "+919986634506"; // full E.164 for schema & tel links
 
 // Updated organization schema with full phone, corrected areaServed types, and full Google Maps URL
 const organizationSchema = {
@@ -111,17 +115,29 @@ const websiteSchema = {
     <title>{fullTitle}</title>
     <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords || "insurance advisor Bengaluru, IRDAI certified insurance agent, life insurance India, health insurance advisor, motor insurance, claim settlement expert, Hari Kotian insurance"} />
+    <meta name="keywords" content={keywords || DEFAULT_KEYWORDS} />
     <meta name="author" content="Hari Kotian" />
     <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="author" href="https://insurancesupport.online/about" />
     {!skipDefaultHreflang && (
-      <>
-        <link rel="alternate" hreflang="en-IN" href={canonical || Astro.url.href} />
-        <link rel="alternate" hreflang="x-default" href={canonical || `${siteUrl}/`} />
-      </>
-    )}
+          <>
+            <link rel="alternate" hreflang="en-IN" href={canonical || Astro.url.href} />
+            <link rel="alternate" hreflang="x-default" href={canonical || `${siteUrl}/`} />
+            {/* Only add language variants on non-English pages */}
+            {pageLang && pageLang !== 'en-IN' && (
+              <>
+                {INDIAN_LANGUAGES.map(lang => (
+                  <link 
+                    rel="alternate" 
+                    hreflang={langRegion[lang] || `${lang}-IN`} 
+                    href={`https://insurancesupport.online/blog/${lang}/${translatedFrom || Astro.params.slug}/`} 
+                  />
+                ))}
+              </>
+            )}
+          </>
+        )}
     <meta name="geo.region" content={geoRegion} />
     <meta name="geo.placename" content={geoPlaceName} />
     <meta name="geo.position" content={geoPosition} />

@@ -1186,5 +1186,455 @@
     "claimUrl": null,
     "claimToken": null,
     "publishedAt": "2026-09-01T06:22:37.606Z"
+  },
+  "marathahalli/health-insurance": {
+    "loc": "marathahalli",
+    "svc": "health-insurance",
+    "slug": "wander-nebula-wzbw",
+    "siteUrl": "https://wander-nebula-wzbw.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:29:48.762Z"
+  },
+  "marathahalli/investment-plans": {
+    "loc": "marathahalli",
+    "svc": "investment-plans",
+    "slug": "serene-wisdom-zw4a",
+    "siteUrl": "https://serene-wisdom-zw4a.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:29:56.005Z"
+  },
+  "marathahalli/life-insurance": {
+    "loc": "marathahalli",
+    "svc": "life-insurance",
+    "slug": "marble-bloom-hz4z",
+    "siteUrl": "https://marble-bloom-hz4z.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:01.343Z"
+  },
+  "marathahalli/motor-insurance": {
+    "loc": "marathahalli",
+    "svc": "motor-insurance",
+    "slug": "lusty-bodhi-cbe4",
+    "siteUrl": "https://lusty-bodhi-cbe4.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:07.711Z"
+  },
+  "marathahalli/pension-plans": {
+    "loc": "marathahalli",
+    "svc": "pension-plans",
+    "slug": "lively-flint-f7zx",
+    "siteUrl": "https://lively-flint-f7zx.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:13.030Z"
+  },
+  "marathahalli/policy-review": {
+    "loc": "marathahalli",
+    "svc": "policy-review",
+    "slug": "calm-atlas-jg2a",
+    "siteUrl": "https://calm-atlas-jg2a.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:19.934Z"
+  },
+  "marathahalli/professional-indemnity": {
+    "loc": "marathahalli",
+    "svc": "professional-indemnity",
+    "slug": "opaque-silence-wr3j",
+    "siteUrl": "https://opaque-silence-wr3j.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:27.047Z"
+  },
+  "marathahalli/sme-insurance": {
+    "loc": "marathahalli",
+    "svc": "sme-insurance",
+    "slug": "yearly-koan-m72n",
+    "siteUrl": "https://yearly-koan-m72n.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:34.151Z"
+  },
+  "marathahalli/term-insurance": {
+    "loc": "marathahalli",
+    "svc": "term-insurance",
+    "slug": "tender-birch-tkh7",
+    "siteUrl": "https://tender-birch-tkh7.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:40.842Z"
+  },
+  "marathahalli/travel-insurance": {
+    "loc": "marathahalli",
+    "svc": "travel-insurance",
+    "slug": "graceful-brook-4gwj",
+    "siteUrl": "https://graceful-brook-4gwj.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:47.068Z"
+  },
+  "marathahalli/ulip-plans": {
+    "loc": "marathahalli",
+    "svc": "ulip-plans",
+    "slug": "ancient-entry-cnw6",
+    "siteUrl": "https://ancient-entry-cnw6.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:30:54.753Z"
+  },
+  "sarjapur/child-education-plan": {
+    "loc": "sarjapur",
+    "svc": "child-education-plan",
+    "slug": "hollow-essence-hfn9",
+    "siteUrl": "https://hollow-essence-hfn9.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:01.056Z"
+  },
+  "sarjapur/claim-support": {
+    "loc": "sarjapur",
+    "svc": "claim-support",
+    "slug": "inner-prana-h56x",
+    "siteUrl": "https://inner-prana-h56x.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:07.327Z"
+  },
+  "sarjapur/health-insurance": {
+    "loc": "sarjapur",
+    "svc": "health-insurance",
+    "slug": "hidden-anvil-p28n",
+    "siteUrl": "https://hidden-anvil-p28n.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:12.960Z"
+  },
+  "sarjapur/investment-plans": {
+    "loc": "sarjapur",
+    "svc": "investment-plans",
+    "slug": "meadow-juniper-d9wd",
+    "siteUrl": "https://meadow-juniper-d9wd.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:19.055Z"
+  },
+  "sarjapur/life-insurance": {
+    "loc": "sarjapur",
+    "svc": "life-insurance",
+    "slug": "ivory-garden-zbhz",
+    "siteUrl": "https://ivory-garden-zbhz.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:25.362Z"
+  },
+  "sarjapur/motor-insurance": {
+    "loc": "sarjapur",
+    "svc": "motor-insurance",
+    "slug": "celest-inlet-trsz",
+    "siteUrl": "https://celest-inlet-trsz.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:32.465Z"
+  },
+  "sarjapur/pension-plans": {
+    "loc": "sarjapur",
+    "svc": "pension-plans",
+    "slug": "spruce-comet-t5yw",
+    "siteUrl": "https://spruce-comet-t5yw.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:38.072Z"
+  },
+  "sarjapur/policy-review": {
+    "loc": "sarjapur",
+    "svc": "policy-review",
+    "slug": "rapid-pickle-a34q",
+    "siteUrl": "https://rapid-pickle-a34q.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:46.042Z"
+  },
+  "sarjapur/professional-indemnity": {
+    "loc": "sarjapur",
+    "svc": "professional-indemnity",
+    "slug": "graceful-globe-gsq3",
+    "siteUrl": "https://graceful-globe-gsq3.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:51.334Z"
+  },
+  "sarjapur/sme-insurance": {
+    "loc": "sarjapur",
+    "svc": "sme-insurance",
+    "slug": "blazing-vision-a29y",
+    "siteUrl": "https://blazing-vision-a29y.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:31:57.616Z"
+  },
+  "sarjapur/term-insurance": {
+    "loc": "sarjapur",
+    "svc": "term-insurance",
+    "slug": "cerulean-oyster-6rcm",
+    "siteUrl": "https://cerulean-oyster-6rcm.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:03.470Z"
+  },
+  "sarjapur/travel-insurance": {
+    "loc": "sarjapur",
+    "svc": "travel-insurance",
+    "slug": "calm-cedar-7f3k",
+    "siteUrl": "https://calm-cedar-7f3k.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:09.808Z"
+  },
+  "sarjapur/ulip-plans": {
+    "loc": "sarjapur",
+    "svc": "ulip-plans",
+    "slug": "dusky-vortex-86j4",
+    "siteUrl": "https://dusky-vortex-86j4.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:15.314Z"
+  },
+  "whitefield/child-education-plan": {
+    "loc": "whitefield",
+    "svc": "child-education-plan",
+    "slug": "lusty-fjord-3z6q",
+    "siteUrl": "https://lusty-fjord-3z6q.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:21.971Z"
+  },
+  "whitefield/claim-support": {
+    "loc": "whitefield",
+    "svc": "claim-support",
+    "slug": "dreamy-reef-jtvz",
+    "siteUrl": "https://dreamy-reef-jtvz.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:29.083Z"
+  },
+  "whitefield/health-insurance": {
+    "loc": "whitefield",
+    "svc": "health-insurance",
+    "slug": "vast-canyon-tez6",
+    "siteUrl": "https://vast-canyon-tez6.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:35.329Z"
+  },
+  "whitefield/investment-plans": {
+    "loc": "whitefield",
+    "svc": "investment-plans",
+    "slug": "vowful-flame-rvhg",
+    "siteUrl": "https://vowful-flame-rvhg.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:40.698Z"
+  },
+  "whitefield/life-insurance": {
+    "loc": "whitefield",
+    "svc": "life-insurance",
+    "slug": "queued-bamboo-t8zt",
+    "siteUrl": "https://queued-bamboo-t8zt.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:45.833Z"
+  },
+  "whitefield/motor-insurance": {
+    "loc": "whitefield",
+    "svc": "motor-insurance",
+    "slug": "amber-gable-kder",
+    "siteUrl": "https://amber-gable-kder.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:51.857Z"
+  },
+  "whitefield/pension-plans": {
+    "loc": "whitefield",
+    "svc": "pension-plans",
+    "slug": "liminal-orbit-wvg8",
+    "siteUrl": "https://liminal-orbit-wvg8.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:32:57.620Z"
+  },
+  "whitefield/policy-review": {
+    "loc": "whitefield",
+    "svc": "policy-review",
+    "slug": "woody-hill-c2vb",
+    "siteUrl": "https://woody-hill-c2vb.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:02.765Z"
+  },
+  "whitefield/professional-indemnity": {
+    "loc": "whitefield",
+    "svc": "professional-indemnity",
+    "slug": "proud-rosette-8zrg",
+    "siteUrl": "https://proud-rosette-8zrg.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:11.244Z"
+  },
+  "whitefield/sme-insurance": {
+    "loc": "whitefield",
+    "svc": "sme-insurance",
+    "slug": "frosty-iris-4vvj",
+    "siteUrl": "https://frosty-iris-4vvj.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:16.671Z"
+  },
+  "whitefield/term-insurance": {
+    "loc": "whitefield",
+    "svc": "term-insurance",
+    "slug": "regal-ferry-q4z9",
+    "siteUrl": "https://regal-ferry-q4z9.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:23.523Z"
+  },
+  "whitefield/travel-insurance": {
+    "loc": "whitefield",
+    "svc": "travel-insurance",
+    "slug": "grassy-chant-yach",
+    "siteUrl": "https://grassy-chant-yach.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:29.368Z"
+  },
+  "whitefield/ulip-plans": {
+    "loc": "whitefield",
+    "svc": "ulip-plans",
+    "slug": "mineral-osprey-xgnj",
+    "siteUrl": "https://mineral-osprey-xgnj.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:34.756Z"
+  },
+  "yelahanka/child-education-plan": {
+    "loc": "yelahanka",
+    "svc": "child-education-plan",
+    "slug": "meadow-charm-4p9k",
+    "siteUrl": "https://meadow-charm-4p9k.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:40.602Z"
+  },
+  "yelahanka/claim-support": {
+    "loc": "yelahanka",
+    "svc": "claim-support",
+    "slug": "mighty-tulip-ezqq",
+    "siteUrl": "https://mighty-tulip-ezqq.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:47.016Z"
+  },
+  "yelahanka/health-insurance": {
+    "loc": "yelahanka",
+    "svc": "health-insurance",
+    "slug": "mellow-memoir-j5tg",
+    "siteUrl": "https://mellow-memoir-j5tg.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:53.379Z"
+  },
+  "yelahanka/investment-plans": {
+    "loc": "yelahanka",
+    "svc": "investment-plans",
+    "slug": "astral-gorge-4bsg",
+    "siteUrl": "https://astral-gorge-4bsg.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:33:59.198Z"
+  },
+  "yelahanka/life-insurance": {
+    "loc": "yelahanka",
+    "svc": "life-insurance",
+    "slug": "quaint-nutmeg-g4xq",
+    "siteUrl": "https://quaint-nutmeg-g4xq.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:05.127Z"
+  },
+  "yelahanka/motor-insurance": {
+    "loc": "yelahanka",
+    "svc": "motor-insurance",
+    "slug": "vowful-heron-ehx2",
+    "siteUrl": "https://vowful-heron-ehx2.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:10.568Z"
+  },
+  "yelahanka/pension-plans": {
+    "loc": "yelahanka",
+    "svc": "pension-plans",
+    "slug": "dusty-hutch-sa2r",
+    "siteUrl": "https://dusty-hutch-sa2r.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:15.538Z"
+  },
+  "yelahanka/policy-review": {
+    "loc": "yelahanka",
+    "svc": "policy-review",
+    "slug": "lucid-flint-tbf4",
+    "siteUrl": "https://lucid-flint-tbf4.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:21.722Z"
+  },
+  "yelahanka/professional-indemnity": {
+    "loc": "yelahanka",
+    "svc": "professional-indemnity",
+    "slug": "bitter-onyx-vmgm",
+    "siteUrl": "https://bitter-onyx-vmgm.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:27.418Z"
+  },
+  "yelahanka/sme-insurance": {
+    "loc": "yelahanka",
+    "svc": "sme-insurance",
+    "slug": "sleek-mantle-sc5h",
+    "siteUrl": "https://sleek-mantle-sc5h.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:32.639Z"
+  },
+  "yelahanka/term-insurance": {
+    "loc": "yelahanka",
+    "svc": "term-insurance",
+    "slug": "flowing-breeze-sdrm",
+    "siteUrl": "https://flowing-breeze-sdrm.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:40.106Z"
+  },
+  "yelahanka/travel-insurance": {
+    "loc": "yelahanka",
+    "svc": "travel-insurance",
+    "slug": "urban-violet-wz4c",
+    "siteUrl": "https://urban-violet-wz4c.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:46.200Z"
+  },
+  "yelahanka/ulip-plans": {
+    "loc": "yelahanka",
+    "svc": "ulip-plans",
+    "slug": "polite-steeple-vcyw",
+    "siteUrl": "https://polite-steeple-vcyw.here.now/",
+    "claimUrl": null,
+    "claimToken": null,
+    "publishedAt": "2026-09-16T05:34:51.588Z"
   }
 }
