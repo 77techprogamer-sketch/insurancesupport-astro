@@ -27,8 +27,6 @@ const { title, description = "Insurance Support by Hari Kotian — IRDAI-certifi
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online"; // no trailing slash — avoids double-slash in concatenations
 
-import { TRENDING_KEYWORDS } from '../data/keywords-string.js';
-const DEFAULT_KEYWORDS = TRENDING_KEYWORDS;
 const phoneNumber = "+91-9986634506";
 const phoneE164 = "+919986634506"; // full E.164 for schema & tel links
 
@@ -115,9 +113,8 @@ const websiteSchema = {
     <title>{fullTitle}</title>
     <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords || DEFAULT_KEYWORDS} />
     <meta name="author" content="Hari Kotian" />
-    <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+        <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="author" href="https://insurancesupport.online/about" />
     {!skipDefaultHreflang && (

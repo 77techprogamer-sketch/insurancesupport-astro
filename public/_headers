@@ -25,6 +25,11 @@
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
+# Noindex search page (defense in depth — meta tag also set in search.astro)
+/search/
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
 # Sitemap, robots, and AI files - revalidate frequently
 /robots.txt
   Cache-Control: public, max-age=3600

@@ -12,23 +12,16 @@ const SITE_URL = 'https://insurancesupport.online';
 
 async function pingIndexNow() {
   const urls = [
-    `${SITE_URL}/sitemap.xml`,
-    SITE_URL
+    `${SITE_URL}/`,
+    `${SITE_URL}/sitemap.xml`
   ];
 
-  const sitemapPath = path.join(__dirname, '../dist/sitemap.xml');
-  try {
-    const sitemapContent = await fs.readFile(sitemapPath, 'utf-8');
-    const locs = sitemapContent.match(/<loc>(.*?)<\/loc>/g) || [];
-    urls.push(...locs.slice(0, 10000).map(l => l.replace(/<\/?loc>/g, '')));
-  } catch { /* sitemap not found yet */ }
-
   const payload = JSON.stringify({
-    host: SITE_URL.replace('https://', ''),
-    key: INDEXNOW_KEY,
-    keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
-    urlList: urls.slice(0, 10000)
-  });
+        host: SITE_URL.replace('https://', ''),
+        key: INDEXNOW_KEY,
+        keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
+        urlList: urls.slice(0, 10000)
+      });
 
   const endpoints = [
     'https://api.indexnow.org/indexnow',

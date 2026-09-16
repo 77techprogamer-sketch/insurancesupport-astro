@@ -33,21 +33,16 @@ const related = cs.relatedCaseStudies
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CaseStudy",
-    name: cs.title,
-    description: cs.summary,
-    datePublished: cs.date,
-    author: { "@type": "Person", name: cs.author },
-    about: {
+    "name": cs.title,
+    "description": cs.summary,
+    "datePublished": cs.date,
+    "author": { "@type": "Person", "name": cs.author },
+    "about": {
       "@type": "LocalBusiness",
-      name: "Insurance Support - Hari Kotian",
-      url: "https://insurancesupport.online"
-    },
-    review: {
-      "@type": "Review",
-      author: { "@type": "Person", name: cs.clientQuote.split(' ').slice(0, 2).join(' ') },
-      reviewBody: cs.clientQuote,
-      reviewRating: { "@type": "Rating", ratingValue: "5" }
+      "name": "Insurance Support - Hari Kotian",
+      "url": "https://insurancesupport.online"
     }
+    // Note: Review omitted – Google does not accept Review on CaseStudy rich results
   })} />
 
   <main id="main" class="page-transition">

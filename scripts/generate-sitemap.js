@@ -48,15 +48,19 @@ async function generateSitemaps() {
     }
 
     const uniqueLinks = Array.from(linkMap.values())
-            .filter(link => !link.url.includes('/test'))
-            .filter(link => !link.url.includes('/404'))
-            .filter(link => !link.url.includes('fbed68329c17dcd9'))
-            .filter(link => !link.url.includes('/robots.txt'))
-            .filter(link => !link.url.includes('/_headers'))
-            .filter(link => !link.url.includes('/_redirects'))
-            .filter(link => link.url !== '/index')
-            .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
-            // Keep all other blog URLs (including /blog/hi/slug/ syntax)
+                .filter(link => !link.url.includes('/test'))
+                .filter(link => !link.url.includes('/404'))
+                .filter(link => !link.url.includes('fbed68329c17dcd9'))
+                .filter(link => !link.url.includes('/robots.txt'))
+                .filter(link => !link.url.includes('/_headers'))
+                .filter(link => !link.url.includes('/_redirects'))
+                .filter(link => link.url !== '/index')
+                .filter(link => !link.url.includes('/api-docs'))
+                .filter(link => !link.url.includes('/openapi.json'))
+                .filter(link => !link.url.includes('/health.json'))
+                .filter(link => !link.url.includes('/auth.md'))
+                .filter(link => !link.url.includes('/search'))
+                .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
 
 
     // Categorize links for individual sitemaps
