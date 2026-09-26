@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "Motor Insurance Claim Denied? How to Dispute the Surveyor Report & Win (2026)";
+const DESCRIPTION = "Car or bike insurance claim rejected by the insurer's surveyor? Learn your right to the surveyor report, how to dispute damage assessments and depreciation deductions, the 30-day settlement rule, and the Ombudsman escalation that gets motor claims paid.";
+const KEYWORDS = "motor insurance claim denied India, dispute surveyor report car insurance, car claim rejected what to do, bike insurance claim rejection appeal, IDV depreciation dispute, motor ombudsman complaint";
+const CANONICAL_URL = "https://insurancesupport.online/blog/motor-insurance-claim-denied-surveyor-dispute-2026/";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-09-27";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Motor Claim Dispute Guide', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I repair my car before the surveyor inspects it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Repairing before inspection destroys the evidence the claim is decided on, and insurers legitimately deny on this ground. In emergencies, get written permission or ensure the surveyor inspects first. Keep the vehicle in the damaged state, photographs timestamped, until inspection is complete."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the insurer have to settle a motor own-damage claim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard practice under IRDAI expectations: the surveyor is appointed within 48 hours of intimation for significant damage, the survey report is due within 30 days, and the insurer should settle or deny within 30 days of receiving the survey report. Delays beyond this, in writing, are grievance material."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why did the insurer pay less than my repair bill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deductions usually come from depreciation on plastic/rubber/glass parts and metal by age, consumables not covered in base policy, salvage value of replaced parts, and compulsory excess. Zero-depreciation, consumables, and engine-protect add-ons neutralise most of these — if you bought them. Compare the deduction heads against your policy schedule before accepting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I dispute the surveyor's report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Ask the insurer for a copy of the survey report — you are entitled to it as the basis of their decision. Submit a written disagreement with your own evidence: independent workshop estimate, photographs, and parts invoices. You can request re-inspection or appointment of a second surveyor, and escalate to the Insurance Ombudsman if the insurer does not respond in 30 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are valid grounds for an insurer to deny a motor claim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Legitimate grounds include: driver without a valid licence for that vehicle class, driving under the influence, deliberate damage, use of private car for commercial hire, late intimation without reasonable explanation, and consequential damage not covered by the policy. Every denial must be given in writing with the policy clause invoked."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Motor Claim Dispute</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Cert. Advisor, 25+ years) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        Motor claims are India's highest-volume insurance disputes — and the fight is rarely about whether damage happened. It is about <strong>how the surveyor read the damage</strong>: which parts go to depreciation, what counts as "consequential", and whether your paperwork survived the first 48 hours. I have spent decades on the policyholder's side of this conversation. Here is the playbook.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Why motor claims actually get denied</h2>
+      <ul>
+        <li><strong>Intimation delay</strong> — reporting the accident days later without a written reason. (Report immediately; even a same-day WhatsApp message to the insurer with photos creates a timestamp.)</li>
+        <li><strong>Repair-before-inspection</strong> — the classic self-inflicted denial. Never repair before the surveyor sees the vehicle.</li>
+        <li><strong>Driver issues</strong> — invalid/expired licence for the vehicle class, drink driving, or name not on records where required.</li>
+        <li><strong>Consequential damage</strong> — e.g., engine hydrostatic lock after driving through water, argued as "consequential" unless you carry an engine-protect add-on.</li>
+        <li><strong>Geographical limits</strong> — accident outside the policy's coverage territory.</li>
+        <li><strong>Commercial use</strong> — private car used for hire/cab aggregation without the right cover.</li>
+      </ul>
+      <p>
+        Some of these are genuinely fatal to a claim. Many are not — and the difference is usually documentation plus a written challenge.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The surveyor report: your right to see it, and how to fight it</h2>
+      <p>
+        Most policyholders never see the document that killed their claim. <strong>Demand a copy of the surveyor's report in writing.</strong> The insurer must give you the basis of its decision. Then rebut it on paper:
+      </p>
+      <ol>
+        <li><strong>Quote the report line by line.</strong> If it says "scratches pre-existing", answer with timestamped photos from the accident spot, the police intimation (for major damage), and the workshop's before-repair assessment.</li>
+        <li><strong>Challenge depreciation heads.</strong> Depreciation schedules are mechanical: age-based percentage on metal, fixed rates on plastic/rubber parts, salvage on replaced items. I have seen deductions applied to parts that were clearly add-on-covered — zero-dep, consumables, engine-protect — simply because nobody checked the schedule against the policy.</li>
+        <li><strong>Ask for re-inspection or a second surveyor</strong> where the assessment looks arbitrary. An independent estimate from a reputed workshop, with parts numbers, is the evidence that forces a second look.</li>
+        <li><strong>Set a deadline.</strong> End every letter with: "If I do not receive a reasoned response within 30 days, I will escalate to the Insurance Ombudsman." That sentence, in writing, moves files.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Deduction heads decoded</h2>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-sm">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="border-b px-4 py-2 text-left text-slate-700">Deduction</th>
+              <th class="border-b px-4 py-2 text-left text-slate-700">How it's calculated</th>
+              <th class="border-b px-4 py-2 text-left text-slate-700">Neutralised by</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr><td class="px-4 py-2">Metal parts depreciation</td><td class="px-4 py-2">Age-linked % (e.g., 5yr+ car often 40–50%)</td><td class="px-4 py-2">Zero-dep add-on</td></tr>
+            <tr><td class="px-4 py-2">Plastic/rubber/glass</td><td class="px-4 py-2">Fixed % by part type</td><td class="px-4 py-2">Zero-dep add-on</td></tr>
+            <tr><td class="px-4 py-2">Consumables</td><td class="px-4 py-2">Lubricants, bolts, coolants excluded in base</td><td class="px-4 py-2">Consumables cover</td></tr>
+            <tr><td class="px-4 py-2">Engine hydrostatic lock</td><td class="px-4 py-2">Argued "consequential" in base policy</td><td class="px-4 py-2">Engine protect add-on</td></tr>
+            <tr><td class="px-4 py-2">Salvage</td><td class="px-4 py-2">Value of replaced damaged parts</td><td class="px-4 py-2">Negotiable — challenge valuation</td></tr>
+            <tr><td class="px-4 py-2">Compulsory excess</td><td class="px-4 py-2">Fixed per policy schedule</td><td class="px-4 py-2">Non-negotiable, but small</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Total loss and theft claims: the IDV battle</h2>
+      <p>
+        When repair cost exceeds ~75% of IDV (Insured Declared Value), the vehicle is declared a total loss — and suddenly everyone discovers that IDV is a <strong>negotiated number at renewal</strong>, not an arbitrary figure. If your IDV was set too low in past renewals, that is a renewal-habit problem, not a claim problem. For theft claims: FIR first, RTO transfer formalities, keys handed over, and the "no trace" report from police before settlement. Missing any of these steps hands the insurer a legitimate delay weapon.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Escalation ladder</h2>
+      <ol>
+        <li><strong>Written complaint to the insurer's GRO</strong> with the survey report copy, your rebuttal, and the 30-day Ombudsman trigger line.</li>
+        <li><strong>IRDAI Bima Bharosa</strong> — register the complaint with your earlier correspondence attached.</li>
+        <li><strong>Insurance Ombudsman</strong> — free, no lawyer needed, binding up to ₹50 lakh. Motor disputes (especially surveyor-assessment fights) are among the most successful complaint categories there. Our <a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Ombudsman guide</a> shows the filing format that works.</li>
+      </ol>
+      <p>
+        And for the future: at every renewal, <strong>re-set your IDV to a defensible market value</strong>, keep add-ons matched to real risks (waterlogging city → engine protect), and photograph the car's condition twice a year. Twenty minutes of habit prevents most of the fights above.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Related expert guides</h2>
+      <ul>
+        <li><a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Insurance Ombudsman: the complete filing guide</a></li>
+        <li><a href="/policy-review-checklist/" class="text-blue-600 underline">Policy review checklist</a> — prevent the rejection before it happens</li>
+        <li><a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">Health claim appeal guide</a></li>
+        <li><a href="/support/" class="text-blue-600 underline">Claim support service — how we help</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Fighting a Motor Claim Denial?</h2>
+      <p class="text-blue-100 mb-6">Send me the surveyor report and your policy schedule — I'll show you exactly which deductions are challengeable and draft your rebuttal. 25+ years of claim recovery.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20my%20motor%20insurance%20claim%20was%20denied%2Fshortpaid.%20Please%20help." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp the Surveyor Report
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
