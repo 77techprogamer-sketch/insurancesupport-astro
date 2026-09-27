@@ -166,7 +166,7 @@ const websiteSchema = {
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <!-- Fonts load non-blocking via media="print"; /scripts/analytics.js flips it to "all"
-         after load. (An inline onload= handler would be blocked by the production CSP.) -->
+         after load. (Inline event-handler attributes are blocked by the production CSP.) -->
     <link id="google-fonts-css" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" />
     <script type="application/ld+json" set:html={JSON.stringify([organizationSchema, websiteSchema])} />
     <!-- Analytics: GA4 (G-JP67H399V2) + Google Ads (AW-18269976114) + GTM (GTM-P8DZ6MRQ).
