@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "Mis-Sold an Insurance Policy? Complaint, Free-Look Cancellation & Refund Guide (2026)";
+const DESCRIPTION = "Sold a policy on false promises of returns or coverage? Use the 15/30-day free-look window, file a mis-selling complaint with proof, and escalate to IRDAI Bima Bharosa and the Ombudsman. A 25-year advisor's step-by-step playbook.";
+const KEYWORDS = "insurance mis-selling complaint India, free look period 15 days 30 days, policy mis-sold refund, cancel insurance policy false promises, IRDAI mis-selling complaint";
+const CANONICAL_URL = "https://insurancesupport.online/blog/insurance-mis-selling-complaint-refund-2026/";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-09-27";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Mis-Selling Complaint Guide', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long is the free-look period for insurance policies in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Life and health policies carry a 15-day free-look period from receipt of the policy document (30 days for digital channels and as extended by recent IRDAI norms for certain sales). Within it you can cancel for any reason and receive a refund of premium minus medical-fee, stamp duty and proportionate risk premium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I missed the free-look window. Can I still complain about mis-selling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Free-look cancellation and mis-selling complaints are different remedies. With evidence — WhatsApp chats, recorded calls, a proposal form that does not match what was promised — you can complain to the insurer's grievance cell, IRDAI Bima Bharosa, and the Insurance Ombudsman at any time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What proof works in a mis-selling complaint?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The strongest proof contrasts the promise with the document: WhatsApp/SMS chats where returns or coverage were promised, call recordings, benefit illustrations you never received, and the signed proposal form if the handwriting or answers are not yours. Regulators weigh documentary contrast far more than testimony."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What refund can I expect if mis-selling is established?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Outcomes range from free-look-style refund (premium minus deductions) to full premium refund with interest where the sale is proven fraudulent, or conversion into a more suitable policy. The Ombudsman can award compensation up to Rs. 50 lakh and its award binds the insurer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "The agent says the policy will double my money in 10 years. Is that enforceable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only the benefit illustration in the policy document governs. Verbal return promises are the classic life-insurance mis-sale. If a figure was promised verbally or on chat, preserve it — that contrast between promise and illustration is exactly what mis-selling complaints are built on."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Mis-Selling Complaint</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Cert. Advisor, 25+ years) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        Every week someone shows me a policy they bought for one thing and received as another: <em>"guaranteed 8% returns"</em> that is a market-linked plan, <em>"full body cover"</em> that excludes the surgery they need, or a single-premium "pension" that locks money for 15 years. Mis-selling thrives on a gap between <strong>what was promised and what was signed</strong> — and your complaint lives or dies on how fast you close that gap with evidence.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Remedy 1: the free-look window (fastest, cleanest)</h2>
+      <p>
+        If you are still inside the free-look period — <strong>15 days from receiving the policy document, 30 days for many digital sales, longer under recent IRDAI clarifications</strong> — stop reading and act now. Send a cancellation request to the insurer's official email/branch: policy number, date you <em>received</em> the document, and the reason (any reason is valid). Refund = premium paid minus stamp duty, proportionate risk premium for the days covered, and any medical-test fee. Do not let an agent talk you into "converting" the policy instead — conversion is their outcome, not yours.
+      </p>
+      <p>
+        Critical detail: the clock starts on <strong>receipt</strong>, not issuance. If the agent sat on the policy for two weeks before handing it over, your free-look started late — say so explicitly in the cancellation request with evidence of when you actually received it.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Remedy 2: the mis-selling complaint (when the window has closed)</h2>
+      <p>
+        Missing free-look does not close the case. Build the complaint on documentary contrast:
+      </p>
+      <ul>
+        <li><strong>Preserve everything before confronting anyone.</strong> WhatsApp chats, call recordings, emails, the agent's brochure or screenshots — save originals with metadata. Confrontation is when these get deleted.</li>
+        <li><strong>Request the proposal form copy</strong> from the insurer. If answers about income, existing cover, or health are not in your handwriting or style, say exactly which entries are fabricated.</li>
+        <li><strong>Complain in one shot:</strong> insurer GRO email with all evidence attached and a clear ask — <em>refund of premium or reissue of a suitable policy</em>. Vague outrage gets sympathy; a specific ask gets a file number.</li>
+        <li><strong>Escalate in 30-day steps:</strong> no satisfactory reply → <a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">IRDAI Bima Bharosa portal</a> → Insurance Ombudsman (free, binding up to ₹50 lakh, and mis-selling is a recognised complaint ground there).</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The mis-selling patterns I see most</h2>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-sm">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="border-b px-4 py-2 text-left text-slate-700">The pitch</th>
+              <th class="border-b px-4 py-2 text-left text-slate-700">The reality</th>
+              <th class="border-b px-4 py-2 text-left text-slate-700">Your evidence</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr><td class="px-4 py-2">"Guaranteed 8% returns, tax-free"</td><td class="px-4 py-2">ULIP/unit-linked; returns track markets</td><td class="px-4 py-2">Chat where the figure was promised</td></tr>
+            <tr><td class="px-4 py-2">"This health plan covers everything"</td><td class="px-4 py-2">Sub-limits, room caps, disease-wise exclusions</td><td class="px-4 py-2">Brochure vs policy wording</td></tr>
+            <tr><td class="px-4 py-2">"Single premium, money back in 3 years"</td><td class="px-4 py-2">Lock-in of 5–15 years; surrender losses</td><td class="px-4 py-2">Benefit illustration never shared</td></tr>
+            <tr><td class="px-4 py-2">"Just sign, I will fill the form"</td><td class="px-4 py-2">Fabricated health/income declarations</td><td class="px-4 py-2">Proposal form copy — handwriting mismatch</td></tr>
+            <tr><td class="px-4 py-2">"Endowment is better than term, term is wasted money"</td><td class="px-4 py-2">Agent commission is 10–20x higher on the former</td><td class="px-4 py-2">Recorded call/chat making the claim</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">A hard truth about outcomes</h2>
+      <p>
+        Complaints anchored in documents succeed; complaints anchored in memory rarely do. If you have nothing but the agent's word against yours, the realistic best case is often a policy conversion, not a refund — and honestly assessing that before filing saves months. If there <em>is</em> a paper trail, do not settle for the first "regret to inform" letter; the escalation ladder exists precisely because first replies are scripted. And if you want a professional eye on whether your evidence will hold, that review is exactly what our <a href="/support/" class="text-blue-600 underline">claim and policy support service</a> does.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Related expert guides</h2>
+      <ul>
+        <li><a href="/claim-recovery/" class="text-blue-600 underline">Claim Recovery Hub</a> — the complete guide library, organised by your exact problem</li>
+        <li><a href="/blog/claim-recovery-hub-complete-2026-guide/" class="text-blue-600 underline">Insurance Claim Recovery Hub Guide</a> — the complete appeal framework for rejected claims</li>
+        <li><a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Insurance Ombudsman: the complete filing guide</a></li>
+        <li><a href="/blog/lic-death-claim-rejected-nominee-guide-2026/" class="text-blue-600 underline">LIC death claim guide for nominees</a></li>
+        <li><a href="/blog/insurance-policy-review-checklist-claim-rejection/" class="text-blue-600 underline">Policy review checklist — know what you actually bought</a></li>
+        <li><a href="/blog/lic-policy-revival-after-5-years-guide-2026/" class="text-blue-600 underline">LIC policy revival after 5 years</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Think You Were Mis-Sold?</h2>
+      <p class="text-blue-100 mb-6">Send me the policy document and the promises you were made — I'll tell you within minutes whether you have a complaint that will hold, and what to ask for. 25+ years of reading policy wordings against sales pitches.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20think%20I%20was%20mis-sold%20an%20insurance%20policy.%20Please%20help." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp the Policy Document
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -126,6 +126,27 @@ const related = posts
   .filter(p => p.slug !== post.slug && (!p.lang || p.lang === 'en') && p.categories?.some(c => post.categories?.includes(c)))
   .slice(0, 3);
 
+// Expert claim-recovery guides (standalone pages) matched to this post's topic.
+// Keyword scoring surfaces the 3 most relevant deep guides on every blogs.json post.
+const EXPERT_GUIDES = [
+  { title: "Nominee vs Legal Heirs: Who Gets the Money?", url: "/blog/nominee-vs-legal-heirs-claim-dispute-2026/", kws: ["nominee", "legal heir", "succession", "inheritance"] },
+  { title: "Group (Employer) Policy Claim Problems", url: "/blog/group-health-policy-claim-issues-2026/", kws: ["group policy", "group mediclaim", "employer", "corporate"] },
+  { title: "LIC Death Claim Rejected or Delayed? Nominee's Guide", url: "/blog/lic-death-claim-rejected-nominee-guide-2026/", kws: ["death claim", "lic ", "life insurance claim"] },
+  { title: "Motor Claim Denied? Dispute the Surveyor Report", url: "/blog/motor-insurance-claim-denied-surveyor-dispute-2026/", kws: ["motor", "car insurance", "bike insurance", "vehicle insurance", "surveyor", "own damage"] },
+  { title: "Travel Claim Denied? Recovery Guide", url: "/blog/travel-insurance-claim-denied-2026/", kws: ["travel"] },
+  { title: "Mis-Sold a Policy? Complaint & Refund Guide", url: "/blog/insurance-mis-selling-complaint-refund-2026/", kws: ["mis-sell", "mis-sold", "free look", "misselling", "mis-selling"] },
+  { title: "Health Portability Rejected or Delayed?", url: "/blog/health-insurance-portability-rejected-2026/", kws: ["portability", "switch insurer"] },
+  { title: "Cashless Claim Denied at the Hospital? First 60 Minutes", url: "/blog/cashless-health-insurance-claim-denied-hospital-2026/", kws: ["cashless", "pre-auth", "preauth", "pre-authorization", "pre-authorisation", "tpa"] },
+  { title: "Health Claim Rejected? Step-by-Step Appeal Guide", url: "/blog/health-insurance-claim-rejected-appeal-guide-2026/", kws: ["health claim", "medical claim", "claim rejected", "claim rejection", "claim denial", "mediclaim"] },
+  { title: "Insurance Ombudsman: Complete Filing Guide", url: "/blog/insurance-ombudsman-india-guide/", kws: ["ombudsman", "bima bharosa", "grievance", "igms", "irdai complaint", "insurance complaint"] },
+];
+const postText = ((post.title || '') + ' ' + (post.summary || '') + ' ' + (post.categories || []).join(' ') + ' ' + (post.tags || []).join(' ')).toLowerCase();
+const matchedGuides = EXPERT_GUIDES
+  .map(g => ({ ...g, score: g.kws.reduce((n, kw) => n + (postText.includes(kw) ? 1 : 0), 0) }))
+  .filter(g => g.score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 3);
+
 // Show claim-review CTA on high-intent claim/urgent posts
 const claimIntentSlugs = new Set([
   'lic-claim-rejection-appeal-guide-2026',
@@ -248,6 +269,32 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
               </a>
             ))}
           </div>
+        </div>
+      )}
+
+      <!-- Expert Claim Recovery Guides (topic-matched standalone guides) -->
+      {matchedGuides.length > 0 && (
+        <div class="max-w-3xl mx-auto px-4 mt-12">
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Expert Claim Recovery Guides</h3>
+          <p class="text-sm text-slate-500 mb-5">Deep playbooks from 25+ years of hands-on claim recovery practice.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {matchedGuides.map(g => (
+              <a href={g.url} class="block bg-gradient-to-br from-amber-50 to-white rounded-xl border border-amber-200/70 p-5 hover:shadow-lg hover:border-amber-300 transition-all group">
+                <span class="inline-block px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded uppercase tracking-wide mb-2">Expert Guide</span>
+                <h4 class="text-sm font-bold text-slate-900 mb-1 leading-snug group-hover:text-blue-700 transition-colors">{g.title}</h4>
+                <span class="text-xs text-blue-600 font-semibold">Read the playbook →</span>
+              </a>
+            ))}
+          </div>
+          <p class="mt-5 text-sm"><a href="/claim-recovery/" class="text-blue-600 font-semibold hover:underline">Browse the full Claim Recovery Hub →</a></p>
+        </div>
+      )}
+
+      {matchedGuides.length === 0 && (
+        <div class="max-w-3xl mx-auto px-4 mt-12">
+          <p class="text-sm text-slate-600 bg-blue-50/60 border border-blue-100 rounded-xl px-5 py-4">
+            <strong>Every policy is only as good as its claim payout.</strong> See exactly how claims get decided, denied, and recovered in India — <a href="/claim-recovery/" class="text-blue-600 font-semibold hover:underline">visit the Claim Recovery Hub →</a>
+          </p>
         </div>
       )}
 

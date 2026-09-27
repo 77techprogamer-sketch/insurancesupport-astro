@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "Group Health Policy Claim Problems: Employer Cover Isn't Protecting You Like You Think (2026)";
+const DESCRIPTION = "Claim denied on your employer's group health insurance? Why corporate group mediclaim claims get rejected — from Dependant errors to RBI exit gaps — and the fixes, including why every working professional needs an individual policy alongside.";
+const KEYWORDS = "group health insurance claim denied, employer group mediclaim problems, corporate health policy claim rejected, group mediclaim dependant claim, GMOI claim issues, exit group policy individual";
+const CANONICAL_URL = "https://insurancesupport.online/blog/group-health-policy-claim-issues-2026/";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-09-27";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Group Policy Claim Issues', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why was my claim denied on my employer's group health policy when coverage was confirmed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common causes: the dependant was never actually added to the policy roster (HR added them after the incident), treatment fell in a policy-year boundary or mid-insurer-switch, pre-existing conditions were excluded in that year's group underwriting, or the hospital billed against an outdated corporate buffer rather than the policy itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the employer's group policy deny my pre-existing condition claim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Unlike individual policies after the 2024 IRDAI norm changes, group policies are negotiated contracts — the employer and insurer agree waiting periods and exclusions each year. Many corporate policies still apply PED waiting periods or room-rent capping that employees assume do not exist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my cover when I leave my job?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Group cover ends on your last working day. You have three options: port to an individual policy (credit for waiting periods carries under portability rules when applied in time), convert to the insurer's retail product under the group-exit window (usually 30-60 days, often without fresh waiting periods), or buy fresh cover — which restarts all waiting periods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who files the claim on a group policy — me or HR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both paths exist. Cashless goes through the TPA with your corporate card/employee ID; reimbursement claims usually route through HR's broker. Do not rely on the internal routing alone — track your own claim with the TPA using the corporate policy number and your employee ID, and keep copies of everything HR submits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is employer health insurance enough, or should I buy an individual policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Employer cover is a benefit, not a foundation. It ends when employment ends, its terms are renegotiated annually without your consent, and its sum insured rarely survives a serious illness in a metro hospital. Every professional I advise carries an individual policy for continuity and controls — the employer policy then becomes the top-up it actually is."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Group Policy Claim Issues</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Cert. Advisor, 25+ years) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        "But sir, my company policy covers this" — I have heard that sentence minutes before a denial more times than I can count. Group health insurance is a <strong>contract between your employer and the insurer</strong>, and you are not a party to it. That single fact explains nearly every group-claim surprise: the terms changed at renewal without anyone telling you, the dependant list is out of date, or the broker's helpdesk is optimised for HR volume, not your recovery. Here is the insider map.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Why group claims actually get denied</h2>
+      <ul>
+        <li><strong>Dependant not on the roster.</strong> You "added" your parents in the HR portal, but the enrollment window closed, or the addition took effect next policy year. Claims are judged against the insurer's member file — not your offer letter or payslip deduction.</li>
+        <li><strong>The annual reset.</strong> Group terms are renegotiated every year. Waiting periods, room caps, co-pays, and exclusions can all change at renewal. The plan that covered your father's dialysis last year may exclude it this year — legally, silently.</li>
+        <li><strong>Insurer switched mid-treatment.</strong> Companies change group insurers for price. Treatment spanning the switch lands in a jurisdiction war between two TPAs.</li>
+        <li><strong>Corporate buffer confusion.</strong> Hospitals bill against the "corporate buffer" (employer-funded floating cover) and the base policy interchangeably; when the buffer is exhausted, the claim bounces instead of moving to the base.</li>
+        <li><strong>PED exclusions in group underwriting.</strong> Employees assume group = no PED exclusions. True in generous policies, false in most mid-market ones.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The recovery playbook for a denied group claim</h2>
+      <ol>
+        <li><strong>Get the member file truth.</strong> Ask the TPA (with your employee ID and corporate policy number) for your enrollment status and the policy year's exclusion list in writing. Half of all denials die here — the data was wrong, not the claim.</li>
+        <li><strong>Correct the record retroactively where HR erred.</strong> If the dependant was submitted in time but never registered, HR's submission email to the broker is your evidence. Insurers routinely honour documented timely additions — push through the broker, in writing.</li>
+        <li><strong>Route the grievance to the insurer, not just HR.</strong> You are a beneficiary under the policy even if you are not the contracting party — the insurer's GRO must respond to you. Cite the corporate policy number and attach the denial.</li>
+        <li><strong>Escalate as with any health claim:</strong> <a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">GRO → Bima Bharosa → Ombudsman</a>. Group-policy denials are Ombudsman-actionable against the insurer.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The exit trap: when you change jobs (or retire)</h2>
+      <p>
+        Group cover ends the day employment does — including cover you were counting on for a planned surgery. The legitimate moves, in order of preference:
+      </p>
+      <ol>
+        <li><strong>Port to an individual policy</strong> — apply before the last working day where possible; <a href="/blog/health-insurance-portability-rejected-2026/" class="text-blue-600 underline">portability rules</a> carry your waiting-period credit.</li>
+        <li><strong>Use the group-exit conversion window</strong> — most group insurers offer exiting employees their retail product without fresh waiting periods, inside a 30–60 day window. Ask the broker for the "exit portability form" before you lose access to HR.</li>
+        <li><strong>Fresh purchase as the last resort</strong> — waiting periods restart; if you have any developing condition, this is the worst outcome and the reason to act during employment.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The structural fix: own your foundation cover</h2>
+      <p>
+        After 25 years of watching corporate cover evaporate exactly when needed — layoff, sabbatical, retirement, insurer switch, annual reset — my advice is blunt: <strong>an individual policy bought young and kept forever is the foundation; the employer policy is the top-up.</strong> Buy it while healthy (insurability is not guaranteed later), let waiting periods expire while you are still covered by the corporate plan, and stop negotiating your family's health security with an HR procurement cycle. Our <a href="/policy-review-checklist/" class="text-blue-600 underline">policy review checklist</a> shows what to verify in any policy you hold — and our <a href="/support/" class="text-blue-600 underline">support service</a> handles stuck group claims routinely.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Related expert guides</h2>
+      <ul>
+        <li><a href="/claim-recovery/" class="text-blue-600 underline">Claim Recovery Hub</a> — the complete guide library, organised by your exact problem</li>
+        <li><a href="/blog/health-insurance-hub-complete-2026-guide/" class="text-blue-600 underline">Health Insurance Hub</a> — medical coverage, claims & portability in one guide</li>
+        <li><a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">Health claim rejected? The full appeal guide</a></li>
+        <li><a href="/blog/health-insurance-portability-rejected-2026/" class="text-blue-600 underline">Health portability rejected or delayed? How to fix it</a></li>
+        <li><a href="/blog/cashless-health-insurance-claim-denied-hospital-2026/" class="text-blue-600 underline">Cashless denied at the hospital? First 60 minutes</a></li>
+        <li><a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Insurance Ombudsman filing guide</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Group Policy Claim Denied?</h2>
+      <p class="text-blue-100 mb-6">Send me the denial and your enrollment status — I'll show you whether the data, the terms, or the process failed, and the fastest fix. 25+ years inside group and retail health claims.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20my%20group%20health%20policy%20claim%20was%20denied.%20Please%20help." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp the Denial Letter
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

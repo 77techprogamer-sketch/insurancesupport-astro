@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "Travel Insurance Claim Denied? The NRI & Traveller's Recovery Guide (2026)";
+const DESCRIPTION = "Travel claim rejected for pre-existing illness, incomplete documents, or late intimation? A 25-year advisor explains how medical, baggage and trip-cancellation claims are actually judged, and the recovery path from abroad.";
+const KEYWORDS = "travel insurance claim denied, travel claim rejected India, medical claim denied abroad, baggage loss claim rejected, trip cancellation claim denied, travel insurance pre-existing exclusion";
+const CANONICAL_URL = "https://insurancesupport.online/blog/travel-insurance-claim-denied-2026/";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-09-27";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Travel Claim Recovery Guide', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can a travel insurance claim be denied for a pre-existing condition?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — pre-existing conditions and their complications are excluded in most travel policies. However, many plans cover acute onset of a pre-existing condition up to a sub-limit when it is life-threatening and sudden. Whether your case is an exclusion or a covered acute episode turns on the treating doctor's notes, which is why those records decide the claim."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How late is too late to intimate a travel claim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Policies typically require intimation within 24-48 hours for medical events and immediate (often 24-hour) notice for baggage loss or trip disruption. Late intimation alone is a weak denial ground if you can show you were hospitalised, in transit, or otherwise incapacitated — but you must explain the delay in writing with evidence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What documents does a travel medical claim need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The complete set: passport and visa copies with entry stamps, boarding passes, the treating hospital's final bill with breakup, discharge summary, doctor's prescriptions and investigation reports, pharmacy invoices, police report (for baggage/theft), airline delay confirmation (for trip claims), and original payment receipts. Missing one link is the most common denial cause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "The airline confirmed my baggage was lost but the insurer still denied the claim. Why?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The usual causes: the Property Irregularity Report (PIR) was filed late, the claim exceeded the baggage sub-limit, valuables like electronics/cash/jewellery are capped or excluded, or original purchase receipts were missing. The PIR from the airline plus check-in tag is mandatory evidence in every baggage claim."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I fight a travel claim denial from abroad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Everything works by email: demand the denial clause in writing, submit a rebuttal with the missing links filled, escalate to the insurer's GRO, then IRDAI Bima Bharosa and the Insurance Ombudsman after returning to India (Ombudsman complaints can be filed by NRIs against Indian insurers). Deadlines run from the denial date, so start the paper trail while still abroad."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Travel Claim Denied</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Cert. Advisor, 25+ years) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        Travel claims fail differently from health claims — not usually on coverage, but on <strong>procedure</strong>. A missing police report here, a late intimation there, a discharge summary in a language nobody translated. The insurer's denial letter then makes an evidence problem look like a coverage problem. Here is how each claim type is actually judged, and how to recover one from 10,000 kilometres away.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Medical claims abroad: the exclusion trap</h2>
+      <p>
+        Two clauses decide almost every denied travel-medical claim:
+      </p>
+      <ul>
+        <li><strong>Pre-existing disease and its complications.</strong> The insurer reads your hospital file looking for any linkage to a known condition. A cardiac event gets traced to documented hypertension; a hospitalisation for infection gets traced to diabetes. The counter-evidence is the treating doctor's note: was this a <em>sudden acute episode</em>? Many policies cover exactly that up to a sub-limit — but only if the doctor's records say so, which is why you request a detailed statement before leaving the hospital, not after the denial.</li>
+        <li><strong>Non-disclosure at purchase.</strong> If the proposal asked about existing conditions and the answer was "no", the denial writes itself. This is the hardest to fight honestly — and the reason I tell every traveller to declare, even at higher premium.</li>
+      </ul>
+      <p>
+        For everything else, medical claims abroad are <strong>document arithmetic</strong>: itemised hospital bill in original, discharge summary, prescriptions, diagnostics, pharmacy invoices, passport entry stamps proving you were overseas. Gather the set before flying home — Indian insurers' assistance desks can extend help, but original documents collected abroad are nearly impossible to obtain later.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Baggage, delay and cancellation claims: procedure is everything</h2>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-sm">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="border-b px-4 py-2 text-left text-slate-700">Claim type</th>
+              <th class="border-b px-4 py-2 text-left text-slate-700">Mandatory evidence</th>
+              <th class="border-b px-4 py-2 text-left text-slate-700">Typical denial ground</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr><td class="px-4 py-2">Baggage loss/delay</td><td class="px-4 py-2">Airline PIR filed at the airport, check-in tags, purchase receipts for contents</td><td class="px-4 py-2">Late PIR; valuables capped/excluded</td></tr>
+            <tr><td class="px-4 py-2">Passport loss</td><td class="px-4 py-2">Police report + embassy acknowledgment + reissue receipt</td><td class="px-4 py-2">No police report (only embassy receipt)</td></tr>
+            <tr><td class="px-4 py-2">Trip cancellation</td><td class="px-4 py-2">Airline cancellation letter, refund statement, medical certificate if illness-based</td><td class="px-4 py-2">Cancelled for a non-covered reason</td></tr>
+            <tr><td class="px-4 py-2">Flight delay</td><td class="px-4 py-2">Airline delay confirmation letter with hours stated</td><td class="px-4 py-2">Delay below the policy's trigger threshold (e.g., 6–12h)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The pattern: every claim above has an <strong>airport-side action</strong> that cannot be recreated later. PIR at the counter, delay letter from the airline desk, police report the same day. Travellers who learn this after landing home fund their own losses.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The recovery playbook (works from abroad)</h2>
+      <ol>
+        <li><strong>Get the denial clause in writing</strong> — not "documents insufficient" but which document, and which clause.</li>
+        <li><strong>Fill the exact gap.</strong> If it is the PIR, the airline's central baggage tracing (World Tracer reference) can be cited. If it is the doctor's statement, hospitals abroad respond to written requests — I have had clients obtain clarifying letters weeks later.</li>
+        <li><strong>Rebut in one consolidated email</strong> to the insurer's claims team with a numbered reply to each denial ground and attachments labelled to match.</li>
+        <li><strong>Escalate on schedule:</strong> GRO (30 days) → <a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Bima Bharosa</a> → Insurance Ombudsman. NRIs can pursue Ombudsman complaints against Indian insurers — distance is not a defence for the company.</li>
+      </ol>
+      <p>
+        And for the next trip: declare conditions, photograph the baggage and its contents at check-in, and read the delay-trigger hours before buying. Ninety percent of travel-claim fights are preventable at purchase and at the airport — not at the denial stage. If a claim is already stuck, our <a href="/support/" class="text-blue-600 underline">claim support service</a> handles cross-border cases routinely.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Related expert guides</h2>
+      <ul>
+        <li><a href="/claim-recovery/" class="text-blue-600 underline">Claim Recovery Hub</a> — the complete guide library, organised by your exact problem</li>
+        <li><a href="/blog/claim-recovery-hub-complete-2026-guide/" class="text-blue-600 underline">Insurance Claim Recovery Hub Guide</a> — the complete appeal framework for rejected claims</li>
+        <li><a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Insurance Ombudsman: the complete filing guide</a></li>
+        <li><a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">Health claim appeal guide (domestic)</a></li>
+        <li><a href="/blog/cashless-health-insurance-claim-denied-hospital-2026/" class="text-blue-600 underline">Cashless denied at the hospital? First 60 minutes</a></li>
+        <li><a href="/blog/health-insurance-claim-rejection-15-reasons/" class="text-blue-600 underline">15 reasons claims get rejected — and prevention for each</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Travel Claim Stuck? Get a Same-Day Review.</h2>
+      <p class="text-blue-100 mb-6">Send me the denial letter and what you have in hand — I'll tell you which gap is fatal and which is fixable. 25+ years of claim recovery, including cross-border files.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20my%20travel%20insurance%20claim%20was%20denied.%20Please%20help." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp the Denial Letter
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const TITLE = "Health Insurance Portability Rejected or Delayed? How to Fix It (2026)";
+const DESCRIPTION = "Portability request rejected, stuck in underwriting, or the new insurer is charging a loading? A 25-year advisor explains the porting rules IRDAI actually enforces, the 45-day and 30-day deadlines, and the escalation path when an insurer drags its feet.";
+const KEYWORDS = "health insurance portability rejected, portability request denied India, IRDAI portability rules 45 days, port health insurance claim history, porting rejected what to do";
+const CANONICAL_URL = "https://insurancesupport.online/blog/health-insurance-portability-rejected-2026/";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-09-27";
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Health Portability Rejected', url: CANONICAL_URL }
+  ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": TITLE,
+    "description": DESCRIPTION,
+    "datePublished": PUBLISH_DATE,
+    "dateModified": PUBLISH_DATE,
+    "author": { "@type": "Person", "name": AUTHOR_NAME },
+    "publisher": { "@type": "Organization", "name": "Insurance Support" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When should I apply for health insurance portability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apply at least 45 days before renewal, and ideally 60. The new insurer must decide within 15 days of receiving your complete portability data from the old insurer; if it delays beyond that window, IRDAI rules treat the port as accepted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the new insurer reject my portability request?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can reject on underwriting grounds just like a fresh proposal — unfavourable claims history, undisclosed conditions, or age limits. What it cannot do is deny you the credit you earned: waiting periods already served and continuity for pre-existing diseases carry over when the port is accepted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is porting harder than insurers admit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Portability data flows between insurers through the Insurance Information Bureau. Claims in the last 5 years are visible to the new insurer, and heavy usage or chronic-condition claims often attract loadings of 15–50% or partial exclusions. Rejection usually means the new insurer priced you as a fresh risk rather than a port."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if no insurer accepts my port request?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, check the rejection reason in writing. If the current policy is still active, renew it — losing continuity is the worst outcome. Then re-apply to other insurers for the next renewal with better documentation of your claims record. If a rejection appears arbitrary, a written grievance to the insurer and then IRDAI Bima Bharosa is the escalation path."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does porting move my waiting-period credit for pre-existing diseases?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When a port is accepted, the time already served on waiting periods for pre-existing conditions and specific treatments counts at the new insurer. This credit is the entire point of portability — get the acceptance letter to state it explicitly."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Portability Rejected</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Cert. Advisor, 25+ years) | Published on {PUBLISH_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        Portability is your right under IRDAI's health insurance regulations — but in practice, insurers make you earn it twice: once through the paperwork, and again through underwriting that treats your claims history as a debt. The single most damaging mistake I see is timing: people discover the 45-day rule when 20 days are left. Here is how the process actually works, and what to do when it goes wrong.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The porting clock: deadlines that decide everything</h2>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200 text-sm">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="border-b px-4 py-2 text-left text-slate-700">Deadline</th>
+              <th class="border-b px-4 py-2 text-left text-slate-700">What happens</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr><td class="px-4 py-2"><strong>45–60 days before renewal</strong></td><td class="px-4 py-2">Apply to the new insurer on the portability form. Late applications are the #1 self-inflicted failure.</td></tr>
+            <tr><td class="px-4 py-2"><strong>Within 7 days of applying</strong></td><td class="px-4 py-2">The new insurer requests your claims/underwriting data from the old one via IIB. You fill the detail form once.</td></tr>
+            <tr><td class="px-4 py-2"><strong>15 days from data receipt</strong></td><td class="px-4 py-2">New insurer must decide. No decision in time = port treated as accepted under IRDAI portability norms.</td></tr>
+            <tr><td class="px-4 py-2"><strong>Renewal date</strong></td><td class="px-4 py-2">If porting, do NOT let the old policy lapse — pay if needed. A lapsed policy kills the credit you are porting.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Why port requests get rejected or priced punitively</h2>
+      <ul>
+        <li><strong>Claims-heavy history</strong> — the new insurer sees 5 years of usage and loads the premium 15–50% or excludes the treated condition entirely.</li>
+        <li><strong>Chronic condition now declared</strong> — diabetes/hypertension diagnosed during the old policy surfaces in underwriting and attracts exclusions at the new one.</li>
+        <li><strong>Data gaps</strong> — the old insurer's data transmission is incomplete, and the new insurer prices the void conservatively.</li>
+        <li><strong>Low sum insured migrating to high</strong> — a ₹5 lakh policy porting to ₹50 lakh triggers full fresh underwriting on the increment.</li>
+        <li><strong>Missed deadlines</strong> — applying at 20 days leaves no room for the data round-trip, and the clock kills the port, not the insurer.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The fix: a rejection is often a negotiation, not a verdict</h2>
+      <ol>
+        <li><strong>Get the reason in writing.</strong> "Underwriting decline" is not a reason. Ask which factor — claims, condition, sum insured, or timing — drove it.</li>
+        <li><strong>Attack the data, not the decision.</strong> If the decision rests on wrong claims data (wrong dates, duplicated entries, closed claims shown open), file a data-correction request through the old insurer and re-apply.</li>
+        <li><strong>Negotiate the loading.</strong> Loadings are offers, not laws. A documented remission history, current normal reports, or a higher voluntary deductible moves them. I have seen 30% loadings halved on paper evidence.</li>
+        <li><strong>Parallel-apply.</strong> Apply to two insurers for the same renewal — porting is not exclusive until one accepts. Compare the acceptance letters, including exclusions, line by line.</li>
+        <li><strong>Never let the old policy lapse while negotiating.</strong> If the port fails this year, renewal preserves continuity for next year's attempt.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">When to escalate</h2>
+      <p>
+        If the old insurer refuses to transmit your data, or the new insurer ignores the 15-day decision window and then denies, put the sequence in writing: grievance email to both insurers' GROs citing the IRDAI portability timelines, then <a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Bima Bharosa and the Insurance Ombudsman</a> if unresolved in 30 days. Keep every acknowledgement. Portability complaints are among the few categories where the paper trail alone often settles the matter.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Related expert guides</h2>
+      <ul>
+        <li><a href="/claim-recovery/" class="text-blue-600 underline">Claim Recovery Hub</a> — the complete guide library, organised by your exact problem</li>
+        <li><a href="/blog/health-insurance-hub-complete-2026-guide/" class="text-blue-600 underline">Health Insurance Hub</a> — medical coverage, claims & portability in one guide</li>
+        <li><a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">Health claim rejected? The full appeal guide</a></li>
+        <li><a href="/blog/cashless-health-insurance-claim-denied-hospital-2026/" class="text-blue-600 underline">Cashless denied at the hospital? First 60 minutes</a></li>
+        <li><a href="/blog/group-health-policy-claim-issues-2026/" class="text-blue-600 underline">Group (employer) policy claim problems</a> — and the case for owning an individual policy</li>
+        <li><a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Insurance Ombudsman filing guide</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Porting Stuck or Rejected?</h2>
+      <p class="text-blue-100 mb-6">Send me the rejection letter or loading offer — I'll tell you whether to negotiate, parallel-apply, or renew and fight next year. 25+ years of reading underwriting decisions.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20my%20health%20insurance%20portability%20was%20rejected%2Fdelayed.%20Please%20guide." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          WhatsApp the Rejection Letter
+        </a>
+        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+          Call +91-99866 34506
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
