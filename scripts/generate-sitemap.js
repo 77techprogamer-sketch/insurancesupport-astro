@@ -61,6 +61,7 @@ async function generateSitemaps() {
                 .filter(link => !link.url.includes('/auth.md'))
                 .filter(link => !link.url.includes('/search'))
                 .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
+                .filter(link => !/^\/blog\/(hi|bn|ta|te|mr|gu|kn|ml)(\/|$)/.test(link.url)) // Exclude machine-translated /blog/{lang}/ pages (noindexed scrambled-content spam risk)
 
 
     // Categorize links for individual sitemaps

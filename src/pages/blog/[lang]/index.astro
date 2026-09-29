@@ -61,7 +61,7 @@ const ogLocaleMap: Record<string, string> = {
 };
 ---
 
-<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"} ogLocale={ogLocaleMap[lang] || "en_IN"}>
+<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"} ogLocale={ogLocaleMap[lang] || "en_IN"} noIndex={true}>
   {/* Language index hreflang set: self + English index + x-default + all other 7 language indexes */}
   <link rel="alternate" hreflang={langRegion[lang] || "en-IN"} href={`https://insurancesupport.online/blog/${lang}/`} />
   <link rel="alternate" hreflang="en-IN" href="https://insurancesupport.online/blog/" />

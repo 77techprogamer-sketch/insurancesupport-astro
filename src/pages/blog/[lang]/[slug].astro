@@ -180,7 +180,7 @@ const ogLocaleMap: Record<string, string> = {
   mr: "mr_IN", gu: "gu_IN", kn: "kn_IN", ml: "ml_IN"
 };
 ---
-  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"} ogLocale={ogLocaleMap[lang] || "en_IN"}>
+  <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"} ogLocale={ogLocaleMap[lang] || "en_IN"} noIndex={true}>
   {/* HREFLANG FIX (verified): translated posts live at /blog/{lang}/{englishSlug}/.
       Full bidirectional hreflang set: self-reference + English (en-IN) + x-default + all other 7 languages (region-scoped). */}
   <link rel="alternate" hreflang={langRegion[lang] || "en-IN"} href={canonical} />
