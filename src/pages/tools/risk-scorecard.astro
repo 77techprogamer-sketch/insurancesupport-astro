@@ -113,6 +113,16 @@ import ContactSection from '../../components/sections/ContactSection.astro';
     </div>
   </main>
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Is Your Family Truly Protected? | Free Risk Scorecard",
+    "description": "Take our 30-second free Risk Scorecard to identify gaps in your family's financial security. Data-driven assessment based on 25+ years of insurance claim experience.",
+    "url": "https://insurancesupport.online/tools/risk-scorecard/",
+    "isPartOf": { "@type": "WebPage", "@id": "https://insurancesupport.online/claim-recovery/", "name": "Insurance Claim Recovery Hub" },
+    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor", "url": "https://insurancesupport.online/about/" }
+  })} />
+
   <script>
     let riskScore = 0;
     let riskStep = 1;
@@ -153,4 +163,3 @@ import ContactSection from '../../components/sections/ContactSection.astro';
       }
     }
   </script>
-</BaseLayout>

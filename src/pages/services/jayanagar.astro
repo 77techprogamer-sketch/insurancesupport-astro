@@ -22,10 +22,32 @@ const coordinates = {
 <BaseLayout title={pageTitle} description={description} canonical={canonicalUrl} geoPlaceName={geoPlaceName} geoRegion="IN-KA">
   <LocalBusinessJsonLd />
   <FAQPageJsonLd questions={[
-    { question: `How do I find an insurance advisor near me in ${locality}?`, answer: `Hari Kotian is an IRDAI-certified insurance advisor with 25+ years experience serving ${locality.toLowerCase()} residents. You can reach him via WhatsApp at +91-99866 34506 or visit insurancesupport.online for a free consultation.` },
+    { question: `How do I find an insurance advisor near me in ${locality}?`, answer: `Hari Kotian is an IRDAI-certified insurance advisor with 25+ years experience serving ${ locality.toLowerCase()} residents. You can reach him via WhatsApp at +91-99866 34506 or visit insurancesupport.online for a free consultation.` },
     { question: `What types of insurance are offered in ${locality}?`, answer: `We cover life insurance, health insurance, motor insurance, term insurance, ULIP, pension plans, travel insurance, and SME/business insurance for residents of ${locality.toLowerCase()} and surrounding areas.` },
     { question: `Can you help with rejected insurance claims in ${locality}?`, answer: `Yes. We specialize in recovering rejected claims. If your health or life insurance claim was rejected anywhere in Bangalore, including ${locality.toLowerCase()}, we can review your case and help you appeal.` }
   ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": pageTitle,
+    "description": description,
+    "url": canonicalUrl,
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "IRDAI-certified insurance advisory and claim recovery in Bengaluru"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
 
   <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
     <div class="max-w-6xl mx-auto px-4">
@@ -83,6 +105,19 @@ const coordinates = {
         <h2 class="text-3xl font-bold text-slate-900 mb-4">Estimate Your Premium</h2>
         <p class="text-lg text-slate-600 mb-8">Use our quick calculator for an indicative premium estimate.</p>
         <InsuranceCalculator client:load />
+      </div>
+
+      <!-- Claim Recovery Hub cross-link -->
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+        <p class="text-sm text-slate-700 mb-3">
+          Facing a claim problem in ${locality}? Our <strong>Claim Recovery Hub</strong> walks you through health, LIC, motor, travel, group-policy, and nominee disputes — with the exact escalation steps that work.
+        </p>
+        <a href="/claim-recovery/" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 underline decoration-blue-300/50">
+          Visit the Claim Recovery Hub
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
 
       <!-- CTA -->

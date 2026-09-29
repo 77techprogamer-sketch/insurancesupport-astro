@@ -40,7 +40,29 @@ const serviceUrl = `https://insurancesupport.online/services/${slug}/`;
     areaServed: "Bengaluru, Karnataka, India",
     url: serviceUrl
   })} />
-  
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `${service.title} in Bengaluru`,
+    "description": service.desc,
+    "url": serviceUrl,
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": `IRDAI-certified ${service.title} advisory and claim recovery in Bengaluru`
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
+
   <Breadcrumbs currentPage={service.title} />
 
   <main id="main" class="page-transition">
@@ -104,6 +126,19 @@ const serviceUrl = `https://insurancesupport.online/services/${slug}/`;
           <p class="text-blue-100/80 mb-8 leading-relaxed">
             Free consultation with Hari Kotian, IRDAI certified advisor (Reg No: 0149161D) with 25+ years experience. No pressure, just honest advice and proven claim recovery support.
           </p>
+
+          <!-- Claim Recovery Hub cross-link -->
+          <div class="bg-amber-400/10 border border-amber-400/30 rounded-xl p-5 mb-6 text-center">
+            <p class="text-sm text-blue-100 mb-3">
+              Facing a claim problem with your {service.title.toLowerCase()}? Our <strong>Claim Recovery Hub</strong> walks you through health, LIC, motor, travel, group-policy, and nominee disputes — with the exact escalation steps that work.
+            </p>
+            <a href="/claim-recovery/" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-300 hover:text-white underline decoration-amber-400/50">
+              Visit the Claim Recovery Hub
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
 
           <div class="flex flex-wrap items-center justify-center gap-4">
             <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20I%20need%20help%20with%20{encodeURIComponent(service.title)}." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold rounded-full text-lg shadow-xl shadow-emerald-500/25 hover:scale-105 transition-all">

@@ -54,6 +54,17 @@ A: Yes! Under **IRDAI 30-day claim settlement regulations**, insurers must pay i
 
 ---
 
+## This Guide Is Part of the Insurance Content Hub Family
+
+This pillar guide is one of three hubs built from 25+ years of hands-on insurance practice:
+
+- **[Health Insurance Hub: Complete 2026 Guide to Medical Coverage, Claims & Portability](/blog/health-insurance-hub-complete-2026-guide/)** — medical coverage, cashless claims, pre-authorization, portability, and claim recovery in one guide.
+- **[LIC Policy Hub: Complete 2026 Guide to Life Insurance Corporation of India Policies (2026)](/blog/lic-policy-hub-complete-guide-2026/)** — LIC plans, status check, loans, surrender, revival, and LIC claim support.
+
+Each hub cross-links to the others — start wherever your problem is and follow the links to the full picture.
+
+---
+
 ## Recover Your Rejected Claim Today
 
 Don't let insurance companies keep your money. Contact Hari Kotian for a free claim assessment:

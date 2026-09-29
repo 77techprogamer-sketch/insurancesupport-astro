@@ -109,6 +109,16 @@ import ContactSection from '../../components/sections/ContactSection.astro';
     </div>
   </main>
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Human Life Value (HLV) Calculator",
+    "description": "Calculate your exact Human Life Value (HLV) in 30 seconds. Find out how much term life insurance your family needs to maintain their lifestyle, using the scientific income-replacement method.",
+    "url": "https://insurancesupport.online/tools/human-life-value-calculator/",
+    "isPartOf": { "@type": "WebPage", "@id": "https://insurancesupport.online/claim-recovery/", "name": "Insurance Claim Recovery Hub" },
+    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor", "url": "https://insurancesupport.online/about/" }
+  })} />
+
   <script>
     window.calcHLV = function() {
       const age = parseInt(document.getElementById('hlv-age').value) || 30;
@@ -124,4 +134,3 @@ import ContactSection from '../../components/sections/ContactSection.astro';
       document.getElementById('hlv-amount').textContent = formatted;
     };
   </script>
-</BaseLayout>

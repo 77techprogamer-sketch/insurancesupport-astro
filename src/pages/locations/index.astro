@@ -20,6 +20,24 @@ const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
 
 <BaseLayout title="Insurance Service Locations Bengaluru | Insurance Support" description={`Insurance advisory across ${cities.length} Bengaluru neighborhoods. Free doorstep service. IRDAI certified advisor Hari Kotian, 25+ years experience.`}>
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Insurance Service Locations in Bengaluru",
+    "description": `Insurance advisory across ${cities.length} Bengaluru neighborhoods. Free doorstep service. IRDAI certified advisor Hari Kotian, 25+ years experience.`,
+    "url": "https://insurancesupport.online/locations/",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
+
   <main id="main" class="page-transition">
 
     <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white py-16 lg:py-20">
@@ -85,6 +103,18 @@ const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
           <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-sm font-semibold mb-4">Beyond Bengaluru</span>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Outside Bengaluru</h2>
           <p class="text-lg text-slate-600 mb-6 max-w-xl mx-auto">We offer pan-India online consultations for life, health, and motor insurance. Contact us for personalized guidance anywhere in India.</p>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 text-center mb-6">
+            <p class="text-sm text-slate-700 mb-3">
+              Have a claim problem? Our <strong>Claim Recovery Hub</strong> covers every claim type — health, LIC, motor, travel, group policy, mis-selling, and nominee disputes — with the exact steps that work.
+            </p>
+            <a href="/claim-recovery/" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 underline decoration-blue-300/50">
+              Visit the Claim Recovery Hub
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
           <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-md">
             Book Online Consultation
           </a>

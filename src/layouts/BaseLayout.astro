@@ -7,6 +7,21 @@ import FloatingCTA from '../components/FloatingCTA.tsx';
 import Chatbot from '../components/Chatbot.astro';
 import GeoBanner from '../components/GeoBanner';
 
+// Define Indian languages and their regions for hreflang
+const INDIAN_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa'];
+const langRegion = {
+  'en': 'en-IN',
+  'hi': 'hi-IN',
+  'bn': 'bn-IN',
+  'ta': 'ta-IN',
+  'te': 'te-IN',
+  'mr': 'mr-IN',
+  'gu': 'gu-IN',
+  'kn': 'kn-IN',
+  'ml': 'ml-IN',
+  'pa': 'pa-IN'
+};
+
 export interface Props {
   title: string;
   description?: string;

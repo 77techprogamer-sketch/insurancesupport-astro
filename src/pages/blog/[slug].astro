@@ -10,6 +10,21 @@ import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
 import LanguageSidebar from '../../components/LanguageSidebar.astro';
 import { marked } from 'marked';
 
+// ---- Hub family manifest ----
+// These three pillar posts anchor the insurance-claim / health-insurance / LIC content cluster.
+// When the current post is one of them, we render a visible "part of the hub family" block
+// and add isPartOf JSON-LD pointing back to the Claim Recovery Hub index.
+const HUB_ARTICLES = new Set([
+  'claim-recovery-hub-complete-2026-guide',
+  'health-insurance-hub-complete-2026-guide',
+  'lic-policy-hub-complete-guide-2026',
+]);
+const CLAIM_HUB_URL = 'https://insurancesupport.online/claim-recovery/';
+const HUB_FAMILY = [
+  { slug: 'claim-recovery-hub-complete-2026-guide', title: 'Insurance Claim Recovery Hub: Complete 2026 Guide to Appealing Rejected Claims', url: '/blog/claim-recovery-hub-complete-2026-guide/' },
+  { slug: 'health-insurance-hub-complete-2026-guide', title: 'Health Insurance Hub: Complete 2026 Guide to Medical Coverage, Claims & Portability', url: '/blog/health-insurance-hub-complete-2026-guide/' },
+  { slug: 'lic-policy-hub-complete-guide-2026', title: 'LIC Policy Hub: Complete 2026 Guide to Life Insurance Corporation of India', url: '/blog/lic-policy-hub-complete-guide-2026/' },
+];
 // Only generate routes for English posts (translated posts live at /blog/[lang]/[slug])
 export function getStaticPaths() {
   const langPrefixes = ['hi-', 'bn-', 'ta-', 'te-', 'mr-', 'gu-', 'kn-', 'ml-'];
@@ -23,6 +38,10 @@ export function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+
+const postIsHubArticle = HUB_ARTICLES.has(post.slug);
+const currentHubFamilyIndex = HUB_FAMILY.find(h => h.slug === post.slug);
+const siblingHubs = HUB_FAMILY.filter(h => h.slug !== post.slug);
 
 // Build OG image URL for this article
 const safeSlug = post.slug.replace(/[/\\?%*:|"<>]/g, '-');
@@ -168,7 +187,7 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
   <link rel="alternate" hreflang={`${l}-IN`} href={`https://insurancesupport.online/blog/${l}/${post.slug}/`} />
 ))}
 
-  <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} />
+  <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} isPartOf={postIsHubArticle ? { "@type": "WebPage", "@id": CLAIM_HUB_URL, name: 'Insurance Claim Recovery Hub' } : undefined} />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}
   <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'Blog', url: 'https://insurancesupport.online/blog/' }, { label: post.title, url: `https://insurancesupport.online/blog/${post.slug}/` }]} />
 
@@ -248,6 +267,28 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
             {post.tags.slice(0, 20).map(tag => (
               <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-default">{tag}</span>
             ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Hub family block (visible for the three hub pillar posts) -->
+      {postIsHubArticle && (
+        <div class="max-w-3xl mx-auto px-4 mt-12">
+          <p class="text-sm text-blue-600 font-semibold mb-2">Part of the Insurance Content Hub family</p>
+          <div class="bg-blue-50/60 border border-blue-100 rounded-xl p-5">
+            <p class="text-sm text-slate-600 mb-4">
+              This guide is one of three pillar hubs built from 25+ years of hands-on insurance practice. Browse the full family:
+            </p>
+            <ul class="space-y-2">
+              {siblingHubs.map(h => (
+                <li class="flex items-center gap-2 text-sm">
+                  <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  <a href={h.url} class="text-blue-700 font-medium hover:text-blue-900 underline decoration-blue-300/50">{h.title}</a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

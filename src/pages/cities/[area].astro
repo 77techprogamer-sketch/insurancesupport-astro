@@ -91,6 +91,28 @@ const localFaqs = detail?.localFaqs || [];
     }
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `Insurance Advisory in ${area.name}, Bangalore`,
+    "description": `IRDAI-certified insurance advisor Hari Kotian serving ${area.name}, Bangalore. Health, life, motor, term, and claim recovery services.`,
+    "url": pageUrl,
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Insurance advisory and claim recovery in Bangalore"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
+
   {localFaqs.length > 0 && <FAQPageJsonLd questions={localFaqs} />}
 
   <main id="main" class="max-w-4xl mx-auto px-4 py-16">
@@ -155,11 +177,22 @@ const localFaqs = detail?.localFaqs || [];
           ))}
         </div>
       </>
-    )}
+    )}        <!-- Claim help hub cross-link -->
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+          <p class="text-sm text-slate-700 mb-3">
+            Facing a claim problem in {area.name}? Our <strong>Claim Recovery Hub</strong> walks you through health, LIC, motor, travel, group-policy, and nominee disputes — with the exact escalation steps that work.
+          </p>
+          <a href="/claim-recovery/" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 underline decoration-blue-300/50">
+            Visit the Claim Recovery Hub
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
 
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">
-      Recommended Plans for {area.name} Residents
-    </h2>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">
+          Recommended Plans for {area.name} Residents
+        </h2>
     <div class="grid md:grid-cols-2 gap-4 mb-8">
       {featuredPlans.map(plan => (
         <div class="p-4 border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">

@@ -81,6 +81,17 @@ A: The **cashless claim pre-authorization** must be submitted 48 hours before pl
 
 ---
 
+## This Guide Is Part of the Insurance Content Hub Family
+
+This pillar guide is one of three hubs built from 25+ years of hands-on insurance practice:
+
+- **[Insurance Claim Recovery Hub: Complete 2026 Guide to Appealing Rejected Claims](/blog/claim-recovery-hub-complete-2026-guide/)** — the appeal framework for rejected claims: health, LIC, motor, travel, group policy, mis-selling, and nominee disputes.
+- **[LIC Policy Hub: Complete 2026 Guide to Life Insurance Corporation of India Policies (2026)](/blog/lic-policy-hub-complete-guide-2026/)** — LIC plans, status check, loans, surrender, revival, and LIC claim support.
+
+Each hub cross-links to the others — start wherever your problem is and follow the links to the full picture.
+
+---
+
 ## Ready for Expert Health Insurance Advice?
 
 **[Call Now: +91-99866 34506](tel:+919986634506)** | **[WhatsApp Hari Kotian](https://wa.me/919986634506)**

@@ -36,12 +36,14 @@ const related = cs.relatedCaseStudies
     "name": cs.title,
     "description": cs.summary,
     "datePublished": cs.date,
-    "author": { "@type": "Person", "name": cs.author },
+    "url": `https://insurancesupport.online/case-studies/${cs.slug}/`,
+    "author": { "@type": "Person", "name": cs.author, "url": "https://insurancesupport.online/about/" },
     "about": {
       "@type": "LocalBusiness",
       "name": "Insurance Support - Hari Kotian",
       "url": "https://insurancesupport.online"
-    }
+    },
+    "isPartOf": { "@type": "WebPage", "@id": "https://insurancesupport.online/claim-recovery/", "name": "Insurance Claim Recovery Hub" }
     // Note: Review omitted – Google does not accept Review on CaseStudy rich results
   })} />
 

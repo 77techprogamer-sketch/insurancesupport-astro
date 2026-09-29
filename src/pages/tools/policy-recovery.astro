@@ -85,4 +85,14 @@ import ContactSection from '../../components/sections/ContactSection.astro';
       <ContactSection />
     </div>
   </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Find Your Lost Wealth | LIC Policy Recovery Service",
+    "description": "Recover lost, lapsed, or forgotten insurance policies with our veteran-led recovery service. We trace LIC records, handle indemnity bonds, and coordinate with all insurers for policy revival.",
+    "url": "https://insurancesupport.online/policy-recovery/",
+    "isPartOf": { "@type": "WebPage", "@id": "https://insurancesupport.online/claim-recovery/", "name": "Insurance Claim Recovery Hub" },
+    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor", "url": "https://insurancesupport.online/about/" }
+  })} />
 </BaseLayout>

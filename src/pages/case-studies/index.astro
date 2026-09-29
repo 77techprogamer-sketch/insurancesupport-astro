@@ -17,6 +17,16 @@ const all = caseStudies;
 
   <Breadcrumbs currentPage="Case Studies" />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Case Studies — Real Claim Recovery Stories",
+    "description": "See how Hari Kotian helped families recover rejected and delayed insurance claims in Bangalore. Real stories, real results.",
+    "url": "https://insurancesupport.online/case-studies/",
+    "isPartOf": { "@type": "WebPage", "@id": "https://insurancesupport.online/claim-recovery/", "name": "Insurance Claim Recovery Hub" },
+    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor", "url": "https://insurancesupport.online/about/" }
+  })} />
+
   <main id="main" class="page-transition">
     <!-- Hero -->
     <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">

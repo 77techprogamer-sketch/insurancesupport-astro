@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://insurancesupport.online/sitemap-index.xml
+Sitemap: https://insurancesupport.online/sitemap.xml
+
+# Disallow crawling of admin pages
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# Allow indexing of public content
+Allow: /blog/
+Allow: /services/
+Allow: /cities/
+
+# Google AdsBot
+User-agent: AdsBot-Google
+Allow: /
+
+# Google Mobile AdsBot 
+User-agent: AdsBot-Google-Mobile
+Allow: /
