@@ -16,9 +16,10 @@ if (!service) {
 }
 
 const serviceUrl = `https://insurancesupport.online/services/${slug}/`;
+const kwBase = (service.title || '').toLowerCase();
 ---
 
-<BaseLayout title={`${service.title} in Bengaluru`} description={service.desc}>
+<BaseLayout title={`${service.title} in Bengaluru`} description={service.desc} keywords={`${kwBase} in Bengaluru, best ${kwBase} plan India, ${kwBase} advisor, ${kwBase} claim help, ${kwBase} premium, buy ${kwBase} online, ${kwBase} agent Bangalore`}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
