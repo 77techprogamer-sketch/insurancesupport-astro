@@ -59,6 +59,7 @@ const localFaqs = detail?.localFaqs || [];
 <BaseLayout
   title={`Insurance Advisor in ${area.name}, Bangalore — Block-Level Guidance | Insurance Support`}
   description={`IRDAI-certified insurance advisor serving ${area.name}, Bangalore. Hari Kotian provides block-level insurance guidance — health cover at nearby hospitals, term plans for IT professionals, LIC claim processing, and motor insurance for local residents. Free consultation.`}
+  noIndex={!detail}
 >
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' },

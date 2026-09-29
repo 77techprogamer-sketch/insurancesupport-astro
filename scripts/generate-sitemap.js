@@ -62,6 +62,8 @@ async function generateSitemaps() {
                 .filter(link => !link.url.includes('/search'))
                 .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
                 .filter(link => !/^\/blog\/(hi|bn|ta|te|mr|gu|kn|ml)(\/|$)/.test(link.url)) // Exclude machine-translated /blog/{lang}/ pages (noindexed scrambled-content spam risk)
+                .filter(link => !/^\/services\/[^/]+\/[^/]+$/.test(link.url)) // Exclude thin /services/{location}/{service} combos (noindexed near-duplicate doorway pages)
+                .filter(link => !/^\/cities\/[^/]+$/.test(link.url)) // Exclude thin /cities/{area} locality pages (noindexed templated pages)
 
 
     // Categorize links for individual sitemaps
