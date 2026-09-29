@@ -39,6 +39,21 @@ export interface Props {
 
 const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN" } = Astro.props;
 
+// Google typically truncates meta descriptions at ~155 characters (desktop).
+// Truncate on a safe word boundary so CTAs/keywords aren't cut mid-word in the SERP.
+// The full description is still used inside the page content where applicable.
+const META_DESC_MAX = 150;
+function truncateDesc(desc) {
+  if (!desc) return desc;
+  const plain = String(desc);
+  if (plain.length <= META_DESC_MAX) return plain;
+  const cut = plain.slice(0, META_DESC_MAX);
+  const lastSpace = cut.lastIndexOf(' ');
+  const trimmed = lastSpace > 60 ? cut.slice(0, lastSpace) : cut;
+  return trimmed.replace(/[\s,.;:]+$/,'') + '…';
+}
+const metaDescription = truncateDesc(description);
+
 const siteName = "Insurance Support";
 const siteUrl = "https://insurancesupport.online"; // no trailing slash — avoids double-slash in concatenations
 
@@ -127,7 +142,7 @@ const websiteSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{fullTitle}</title>
     <meta name="title" content={fullTitle} />
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <meta name="author" content="Hari Kotian" />
         <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonical || Astro.url.href} />
@@ -157,14 +172,14 @@ const websiteSchema = {
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical || Astro.url.href} />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content={ogLocale} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonical || Astro.url.href} />
     <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImage || `${siteUrl}/og-image.png`} />
     <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
     <meta name="msvalidate.01" content="551FF3A8CD7B8225D53FAB718B3051E2" />
