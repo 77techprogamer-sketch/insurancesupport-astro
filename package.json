@@ -6,10 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node ./scripts/generate-sitemap.js && (npx pagefind --site dist || echo 'Pagefind skipped - continuing build')",
-        "preview": "astro preview",
-        "astro": "astro",
-        "postbuild": "node ./scripts/indexnow-notify.js"
+    "build": "astro build && node ./scripts/generate-sitemap.js && (npx pagefind --site dist || echo 'Pagefind skipped - continuing build') && (node ./scripts/indexnow-notify.js || echo 'IndexNow ping skipped - continuing build')",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
