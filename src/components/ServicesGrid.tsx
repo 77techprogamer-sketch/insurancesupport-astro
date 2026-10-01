@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const services = [
@@ -12,41 +13,74 @@ const services = [
   { title: 'Policy Review', desc: 'Free audit of your existing portfolio. Identify gaps, overpayment, and better options.', icon: '📋', color: 'from-cyan-500 to-teal-600', bg: 'bg-cyan-50', text: 'text-cyan-600', href: '/contact' },
 ];
 
+// ─── Stagger Variants ─────────────────────────────────────────
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const cardItem = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+};
+
+// ─── Component ────────────────────────────────────────────────
 export default function ServicesGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: '-60px' }}
+    >
       {services.map((s, i) => (
-        <a
+        <motion.a
           key={i}
           href={s.href}
+          variants={cardItem}
           className="group block bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 card-hover card-shine"
+          whileHover={{ y: -6, scale: 1.01 }}
+          whileTap={{ scale: 0.98 }}
         >
-          {/* Icon with gradient background */}
-          <div
+          {/* Icon */}
+          <motion.div
             className={`w-14 h-14 ${s.bg} ${s.text} rounded-2xl flex items-center justify-center text-2xl mb-4`}
+            whileHover={{ rotate: [0, -10, 10, -5, 0] }}
+            transition={{ duration: 0.4 }}
           >
             {s.icon}
-          </div>
+          </motion.div>
 
           {/* Title */}
-          <h3
-            className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors"
-          >
+          <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
             {s.title}
           </h3>
 
           {/* Description */}
           <p className="text-sm text-slate-600 leading-relaxed mb-4">{s.desc}</p>
 
-          {/* Learn more link */}
-          <div
+          {/* "Learn more" link */}
+          <motion.div
             className="flex items-center gap-1 text-sm font-medium text-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300"
+            initial={{ x: -8 }}
+            whileHover={{ x: 4 }}
           >
             Learn more
-            <ArrowRight className="w-4 h-4" />
-          </div>
-        </a>
+            <motion.div
+              animate={{ x: [0, 3, 0] }}
+              transition={{ duration: 1.2, repeat: Infinity, repeatType: 'reverse' }}
+            >
+              <ArrowRight className="w-4 h-4" />
+            </motion.div>
+          </motion.div>
+        </motion.a>
       ))}
-    </div>
+    </motion.div>
   );
 }
