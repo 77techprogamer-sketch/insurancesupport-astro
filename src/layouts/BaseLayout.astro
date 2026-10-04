@@ -33,11 +33,12 @@ export interface Props {
   geoPlaceName?: string;
   geoPosition?: string;
   skipDefaultHreflang?: boolean;
+  landingPage?: boolean;
   pageLang?: string;   // e.g. "hi-IN", "bn-IN" — defaults to "en-IN"
   ogLocale?: string;   // e.g. "hi_IN", "bn_IN" — defaults to "en_IN"
 }
 
-const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN" } = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN", landingPage = false } = Astro.props;
 
 // Google typically truncates meta descriptions at ~155 characters (desktop).
 // Truncate on a safe word boundary so CTAs/keywords aren't cut mid-word in the SERP.
@@ -76,12 +77,10 @@ const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
+  "@id": `${siteUrl}/#organization`,
   "name": "Insurance Support",
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
-  "sameAs": [
-    "https://www.google.com/maps/place/Insurance+Support/@13.0159,77.5522,17z/data=!4m6!3m5!1s0x3bae1670c7b5d5f3:0x8b5e8c5f5c5f5c5f!8m2!3d13.0159!4d77.5544!16s%2Fg%2F11c5f5c5f"
-  ],
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Bengaluru" },
     { "@type": "AdministrativeArea", "name": "Koramangala" },
@@ -97,23 +96,19 @@ const organizationSchema = {
     "availableLanguage": ["English", "Hindi", "Bengali", "Tamil", "Telugu", "Marathi", "Gujarati", "Kannada", "Malayalam"],
     "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "09:00",
       "closes": "21:00"
     }
   },
   "founder": {
     "@type": "Person",
+    "@id": `${siteUrl}/about-hari-kotian/#person`,
     "name": "Hari Kotian",
     "jobTitle": "IRDAI Certified Insurance Advisor",
     "telephone": phoneE164,
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Insurance Support"
-    },
-    "sameAs": [
-      "https://insurancesupport.online/about"
-    ]
+    "url": `${siteUrl}/about-hari-kotian/`,
+    "worksFor": { "@id": `${siteUrl}/#organization` }
   }
 };
 
@@ -124,13 +119,15 @@ const websiteSchema = {
   "url": siteUrl,
   "publisher": {
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     "name": "Insurance Support",
     "url": siteUrl
   },
   "author": {
     "@type": "Person",
+    "@id": `${siteUrl}/about-hari-kotian/#person`,
     "name": "Hari Kotian",
-    "url": `${siteUrl}/about`
+    "url": `${siteUrl}/about-hari-kotian/`
   }
 };
 ---
@@ -206,16 +203,16 @@ const websiteSchema = {
     <script src="/scripts/analytics.js" is:inline defer></script>
   <script src="/scripts/webmcp.js" defer></script>
 </head>
-  <body class="font-sans text-base antialiased pb-16 md:pb-0" style="scroll-padding-top: 5rem;">
+  <body class:list={["font-sans text-base antialiased", landingPage ? "landing-page" : "pb-16 md:pb-0"]} style="scroll-padding-top: 5rem;">
     <!-- Skip link for accessibility -->
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg" aria-label="Skip to main content">Skip to main content</a>
-    <Header />
-    <GeoBanner client:visible />
+    {!landingPage && <Header />}
+    {!landingPage && <GeoBanner client:visible />}
     <slot />
-    <Footer />
-    <MobileStickyBar />
-    <FloatingCTA client:idle />
-    <Chatbot />
+    {!landingPage && <Footer />}
+    {!landingPage && <MobileStickyBar />}
+    {!landingPage && <FloatingCTA client:idle />}
+    {!landingPage && <Chatbot />}
     <script src="/scripts/reveal.js" is:inline defer></script>
     <!-- Microsoft Clarity (v9dto5m10l) now loads from /scripts/analytics.js (CSP-safe). -->
   </body>

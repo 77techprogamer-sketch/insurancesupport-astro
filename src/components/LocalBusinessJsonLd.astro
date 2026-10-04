@@ -1,12 +1,14 @@
 ---
-// LocalBusiness JSON-LD structured data with aggregateRating and reviews
+// Reuse the canonical InsuranceAgency entity declared by the site-wide graph.
 ---
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Insurance Support - Hari Kotian",
+  "@type": "InsuranceAgency",
+  "@id": "https://insurancesupport.online/#organization",
+  "name": "Insurance Support",
   "description": "LIC Policy Advisor and Claim Recovery Expert in Bangalore. 25+ years experience, IRDAI certified.",
-  "url": "https://insurancesupport.online",
+  "url": "https://insurancesupport.online/",
+  "logo": "https://insurancesupport.online/logo.png",
   "telephone": "+91-9986634506",
   "address": {
     "@type": "PostalAddress",
@@ -23,7 +25,7 @@
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
     "opens": "09:00",
     "closes": "21:00"
   },
@@ -32,6 +34,5 @@
     { "@type": "State", "name": "Karnataka" },
     { "@type": "Country", "name": "IN" }
   ],
-  "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM/review"],
     "priceRange": "₹₹"
   })} />

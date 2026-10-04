@@ -1,1 +1,37 @@
-This website is optimized for search engines and provides comprehensive information about insurance services in Bengaluru, India. We offer expert advisory for life, health, motor, term, and all insurance types with 25+ years of experience. Our IRDAI-certified advisor Hari Kotian provides free consultation and specializes in claim recovery and policy review.
+# Insurance Support — Hari Kotian
+
+> Insurance Support provides insurance guidance and claim assistance for people in Bengaluru and across India. Hari Kotian is an IRDAI-registered insurance advisor (registration 0149161D).
+
+Use this site for independent explanations of insurance policies, claim documentation, claim appeals, policy reviews, and escalation routes. The site also offers personal insurance advisory and claim-support services. Regulatory and tax rules can change; confirm current requirements with the relevant regulator or insurer.
+
+## Main pages
+
+- [Home](https://insurancesupport.online/): Overview of advisory and claim-support services.
+- [About Hari Kotian](https://insurancesupport.online/about-hari-kotian/): Advisor background, registration details, and experience.
+- [Services](https://insurancesupport.online/services/): Insurance advisory and support services.
+- [Claim recovery](https://insurancesupport.online/claim-recovery/): Help and information about rejected insurance claims.
+- [Resources](https://insurancesupport.online/resources/): Guides and policyholder tools.
+- [Frequently asked questions](https://insurancesupport.online/faq/): Answers to common insurance questions.
+- [Expert insights](https://insurancesupport.online/blog/): Articles and practical guides.
+- [Contact](https://insurancesupport.online/contact/): Request a consultation or contact the advisor.
+
+## Key topics
+
+- Life, term, health, and motor insurance
+- Claim rejection review, appeal preparation, and escalation
+- LIC policy servicing and revival
+- Policy review and coverage selection
+- Insurance Ombudsman and IRDAI grievance processes
+
+## Contact
+
+- Website: https://insurancesupport.online/
+- Phone: +91-99866 34506
+- Location: Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013, India
+- IRDAI registration: 0149161D
+
+## Site indexes
+
+- [Full AI-readable site guide](https://insurancesupport.online/llms-full.txt)
+- [Sitemap](https://insurancesupport.online/sitemap.xml)
+- [RSS feed](https://insurancesupport.online/rss.xml)

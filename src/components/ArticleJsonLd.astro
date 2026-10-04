@@ -14,17 +14,10 @@ export interface Props {
 
 const { title, description, url, date, modifiedDate, imageUrl, authorName = "Hari Kotian", isPartOf } = Astro.props;
 const defaultImage = "https://insurancesupport.online/og-image.png";
-const siteName = "Insurance Support - Hari Kotian";
+const siteName = "Insurance Support";
 
-// Compute effective dateModified: if passed same as datePublished, nudge it 1 day forward for freshness signal
-const effectiveModified = (() => {
-  const pub = new Date(date);
-  const mod = modifiedDate ? new Date(modifiedDate) : null;
-  if (!mod || mod.getTime() === pub.getTime()) {
-    return new Date(pub.getTime() + 24 * 60 * 60 * 1000).toISOString();
-  }
-  return mod.toISOString();
-})();
+// Never invent a later modified date. If the page has not been revised, use its publication date.
+const effectiveModified = modifiedDate || date;
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -34,16 +27,17 @@ const effectiveModified = (() => {
   description: description,
   author: {
     "@type": "Person",
+    "@id": "https://insurancesupport.online/about-hari-kotian/#person",
     name: authorName,
-    url: "https://insurancesupport.online/about",
-    sameAs: ["https://g.page/r/CRDgJanrKjRhEBM/review"]
+    url: "https://insurancesupport.online/about-hari-kotian/"
   },
   publisher: {
     "@type": "Organization",
+    "@id": "https://insurancesupport.online/#organization",
     name: siteName,
     logo: {
       "@type": "ImageObject",
-      url: "https://insurancesupport.online/favicon.svg"
+      url: "https://insurancesupport.online/logo.png"
     }
   },
   datePublished: date,

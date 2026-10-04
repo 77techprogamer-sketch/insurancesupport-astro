@@ -38,66 +38,14 @@ const phoneFormatted = phone.replace(/\s/g, '');
   ]} />
   <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": `Insurance Support - Hari Kotian in ${cityName}`,
+      "@type": "InsuranceAgency",
+      "@id": "https://insurancesupport.online/#organization",
+      "name": "Insurance Support",
       "description": description,
-      "url": pageUrl,
+      "url": "https://insurancesupport.online/",
+      "logo": "https://insurancesupport.online/logo.png",
       "telephone": phone,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": cityName,
-        "addressRegion": stateName,
-        "addressCountry": "IN"
-      },
-      "priceRange": "₹₹",
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": city.lat || 12.9716,
-        "longitude": city.lng || 77.5946
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "09:00",
-        "closes": "21:00"
-      },
-      "irdaiRegistrationNumber": "0149161D",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.2",
-        "reviewCount": "23",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Rajesh K."},
-          "datePublished": "2026-04-15",
-          "reviewBody": "Hari helped us recover a claim that was wrongly rejected on non-disclosure grounds. His expertise with Section 45 of the Insurance Act and IRDAI regulations made all the difference. The claim was approved within 45 days.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Priya M."},
-          "datePublished": "2026-03-22",
-          "reviewBody": "After my health insurance claim was denied for alleged non-disclosure, Hari obtained the original proposal form which clearly showed I had disclosed everything. The claim was approved within weeks.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Suresh N."},
-          "datePublished": "2026-02-08",
-          "reviewBody": "LIC rejected our claim but Hari argued estoppel and the Insurance Ombudsman approved it. His 25+ years of experience shows in every step.",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-        }
-      ],
       "areaServed": areas,
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "Insurance Support - Hari Kotian",
-        "url": "https://insurancesupport.online"
-      }
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -116,8 +64,10 @@ const phoneFormatted = phone.replace(/\s/g, '');
       },
       "author": {
         "@type": "Person",
+        "@id": "https://insurancesupport.online/about-hari-kotian/#person",
         "name": "Hari Kotian",
-        "jobTitle": "IRDAI Certified Insurance Advisor"
+        "jobTitle": "IRDAI Certified Insurance Advisor",
+        "url": "https://insurancesupport.online/about-hari-kotian/"
       }
     })} />
   <script type="application/ld+json" set:html={JSON.stringify({

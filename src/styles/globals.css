@@ -1,9 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
 /* View Transitions — smooth page nav like Next.js/Framer Motion */
 @import './view-transitions.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.025);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255,255,255,.36), rgba(255,255,255,.08) 22%, transparent 45%, transparent 60%, rgba(255,255,255,.08) 82%, rgba(255,255,255,.24));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+.landing-page { background: #050505; color: #f8fafc; }
+.landing-display { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; }
+.landing-display em { font-weight: 400; }
+.landing-video { background: #111; }
+@media (prefers-reduced-motion: reduce) {
+  .landing-page *, .landing-page *::before, .landing-page *::after { scroll-behavior: auto !important; }
+}
 
 /* ============================================
    THEME VARIABLES (matching Next.js palette)

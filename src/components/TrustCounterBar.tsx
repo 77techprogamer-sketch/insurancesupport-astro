@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 
 interface CounterItem {
   end: number;
@@ -14,39 +14,7 @@ const items: CounterItem[] = [
 ];
 
 function AnimatedNum({ end, suffix }: { end: number; suffix: string }) {
-  const [val, setVal] = useState(end); // Start at final value for SSR
-  const ref = useRef<HTMLSpanElement>(null);
-  const done = useRef(false);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    // Reset to 0 only after hydration, then animate up
-    if (!hasAnimated.current) {
-      hasAnimated.current = true;
-      setVal(0);
-    }
-
-    const el = ref.current?.parentElement;
-    if (!el) return;
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting && !done.current) {
-        done.current = true;
-        const dur = 2000;
-        const start = performance.now();
-        const tick = (now: number) => {
-          const t = Math.min((now - start) / dur, 1);
-          setVal(Math.floor(Math.pow(t, 0.5) * end));
-          if (t < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-        obs.unobserve(el);
-      }
-    }, { threshold: 0.3 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [end]);
-
-  return <span ref={ref}>{val}{suffix}</span>;
+  return <span>{end.toLocaleString('en-IN')}{suffix}</span>;
 }
 
 export default function TrustCounterBar() {

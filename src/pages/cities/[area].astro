@@ -69,23 +69,13 @@ const localFaqs = detail?.localFaqs || [];
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": `Insurance Advisor in ${area.name}, Bangalore - Hari Kotian`,
-    "description": `Block-level insurance advisory for ${area.name}, Bangalore. Health, life, motor, and claim recovery services. IRDAI Reg No: 0149161D.`,
-    "url": pageUrl,
+    "@type": "InsuranceAgency",
+    "@id": "https://insurancesupport.online/#organization",
+    "name": "Insurance Support",
+    "description": `Insurance advisory services for ${area.name}, Bengaluru.`,
+    "url": "https://insurancesupport.online/",
+    "logo": "https://insurancesupport.online/logo.png",
     "telephone": "+91-9986634506",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": `${area.name}, Bangalore`,
-      "addressRegion": "Karnataka",
-      "addressCountry": "IN"
-    },
-    "priceRange": "₹₹",
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Insurance Support - Hari Kotian",
-      "url": "https://insurancesupport.online"
-    },
     "areaServed": {
       "@type": "City",
       "name": `${area.name}, Bangalore`

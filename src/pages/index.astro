@@ -1,262 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AnimatedHero from '../components/AnimatedHero';
-import TrustCounterBar from '../components/TrustCounterBar';
-import ServicesGrid from '../components/ServicesGrid';
-import FeaturesSection from '../components/sections/FeaturesSection.astro';
-import TestimonialsCarousel from '../components/TestimonialsCarousel';
-import BlogSection from '../components/BlogSection';
-import NewsletterSection from '../components/NewsletterSection';
+import InsuranceLanding from '../components/InsuranceLanding';
 import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
 import PersonJsonLd from '../components/PersonJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
-import ClaimRecoveryTicker from '../components/ClaimRecoveryTicker.astro';
-import AdvisorVsPortalSection from '../components/AdvisorVsPortalSection.astro';
-import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 
-import InsuranceCalculator from '../components/InsuranceCalculator';
-
-// Homepage FAQ data — used BOTH for the visible FAQ section AND the FAQPage JSON-LD schema
 const homepageFaqs = [
   {
     question: "How much does insurance cost and what affects the premium?",
-    answer: "Premiums vary based on coverage type, sum assured, age, health condition, occupation, and location. GST of 18% is applicable on most insurance premiums. For life insurance, terms under 5 years are typically tax-free. Health insurance premiums include GST, and NCB (No Claim Bonus) can reduce motor insurance costs. Personal accident insurance is affordable starting from just ₹10 per day. The key factors affecting premiums are sum assured requirements, age, health, and coverage duration."
+    answer: "Premiums vary by coverage, sum assured, age, health, occupation, and location. Since 22 September 2025, GST has been exempt on individual life insurance and individual health insurance policies, including family floaters and senior-citizen policies. Group policies and other insurance products may be treated differently, so check the insurer's current quote."
   },
   {
     question: "How do I know which insurance is best for my family and needs?",
-    answer: "The best insurance depends on your family size, age, income, existing assets, health conditions, and goals. For families with children, consider term insurance with child riders for education funding. For health coverage, choose between individual and family floater plans based on budget. Motor insurance should include third-party liability and comprehensive coverage. Personal accident insurance is crucial for working adults. I provide personalized advisory based on your unique situation, comparing multiple insurer options to find the most suitable coverage at competitive premiums."
+    answer: "The best insurance depends on your family size, age, income, existing assets, health conditions, and goals. For health coverage, choose between individual and family floater plans based on budget. Motor insurance should include third-party liability and suitable own-damage coverage. We provide personalized guidance based on your situation."
   },
   {
     question: "What documents are needed for insurance claims and the process?",
-    answer: "Required documents typically include: completed claim form, original policy document, medical reports/invoices (health insurance), FIR and police report (motor theft/accident), death certificate (life insurance), admission letter and bills (hospitalization), doctor prescriptions, and proof of identity/address. The process involves immediate intimation to insurer, claim registration, document submission, verification by insurer, claim settlement, and final disbursement. I assist with claim filing, document preparation, and follow-up with insurers to ensure smooth and timely settlement, achieving success rates above 95%."
+    answer: "Common documents include the claim form, policy document, medical records and bills for health claims, FIR and survey report for some motor claims, and a death certificate for life claims. Requirements vary by policy and claim. We can help organize documents and follow up; the insurer makes the claim decision under the policy terms."
   },
   {
     question: "Can you help with existing policy review and switching insurers?",
-    answer: "Yes, policy review and switching is one of our specialties. We analyze your existing policy for better terms, coverage gaps, and potential savings. Switching can be beneficial if you find better premium rates, higher sum assured, better claim settlement ratio, or more favorable policy terms. We compare multiple insurers using our expertise in policy comparison, ensuring you don't lose continuity of coverage. We handle all the paperwork and coordination with new insurers, ensuring a smooth transition without service gaps."
+    answer: "Yes. We can review your policy terms, coverage gaps, and potential alternatives. Switching may affect waiting-period credits, exclusions, or other benefits, so compare the terms carefully before replacing existing cover."
   },
   {
     question: "What is the difference between term insurance and whole life insurance?",
-    answer: "Term insurance provides coverage for a specified period (10-40 years) with lower premiums, paying a fixed sum if death occurs during the term. Whole life insurance provides lifelong coverage with premiums that increase with age, includes cash value accumulation, and continues until age 99. Term is suitable for those seeking high coverage at low cost for specific financial goals like children's education or mortgage protection. Whole life is better for those seeking lifelong protection plus an investment component, though premiums are significantly higher. I recommend term insurance for most people, with whole life for those seeking both protection and savings."
+    answer: "Term insurance provides coverage for a specified period, usually at a lower premium. Whole-life insurance can provide lifelong coverage and may include a cash value element, depending on the product. Compare policy terms and suitability before deciding."
   },
   {
-    question: "How often should I review my insurance policies and with whom?",
-    answer: "It's recommended to review insurance policies annually, especially after life changes like marriage, birth of children, career changes, or major financial decisions. Review when changing jobs, relocating, or when insurance companies announce new rates. I offer complimentary reviews for existing clients twice a year, plus free reviews after any major life event. Regular reviews ensure your coverage matches your current needs, identify potential savings through comparisons, discover underinsurance or over-insurance, and ensure claim benefits remain adequate. Professional review is preferred over DIY comparisons for optimal coverage and cost-effectiveness."
+    question: "What is the Insurance Ombudsman?",
+    answer: "The Insurance Ombudsman is a free grievance forum. First write to your insurer; you may approach the Ombudsman if the insurer rejects your complaint, you are dissatisfied with its reply, or you receive no reply within one month. The amended Rules provide for awards up to ₹50 lakh, including relevant expenses. Check current eligibility before filing."
   }
 ];
 ---
 
-<BaseLayout title="IRDAI Certified Insurance Advisor in Bengaluru" description="IRDAI-certified insurance advisor, 25+ years. Life, health, motor & term insurance + claim recovery in Bengaluru. Free review today." keywords="insurance advisor Bangalore, insurance claim rejected help, claim recovery expert, IRDAI certified insurance agent, health insurance agent Bangalore, term insurance advisor, LIC claim appeal help, free insurance consultation">
+<BaseLayout
+  title="Insurance Advisor in Bengaluru | Claim Support | Hari Kotian"
+  description="Speak with Hari Kotian, an IRDAI-registered insurance advisor in Bengaluru with 25+ years of experience. Get clear policy guidance and help navigating difficult claims."
+  keywords="insurance advisor Bangalore, insurance claim support, claim recovery expert, IRDAI registered insurance advisor, health insurance advisor, term insurance advisor"
+  canonical="https://insurancesupport.online/"
+  landingPage={true}
+>
   <LocalBusinessJsonLd />
   <PersonJsonLd />
-
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg">Skip to main content</a>
-
-  <!-- ===== HEADER ===== -->
-
-  <main id="main" id="main-content" class="page-transition">
-
-    <!-- ===== HERO ===== -->
-        <AnimatedHero client:visible />
-
-        <!-- ===== INSURANCE CALCULATOR ===== -->
-        <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
-          <div class="max-w-6xl mx-auto px-4">
-            <!-- Value Proposition Content -->
-            <div class="text-center mb-16 reveal">
-              <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Expert Insurance Advisory — Trusted in Bengaluru Since 1998</h2>
-              <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                As an independent IRDAI-certified insurance advisor (Reg. No: 0149161D) serving families across
-                Bengaluru and Karnataka for 25+ years, I cut through the jargon to find plans that actually get claims
-                approved. Unlike online portals that push whichever policy pays the highest commission, I work purely
-                for your family's financial security — and when claims get rejected, I fight to recover what's yours.
-              </p>
-              <p class="text-sm text-slate-500 mt-4 italic max-w-3xl mx-auto">
-                Specialisation areas: Term Insurance | Health Insurance | Claim Recovery | Policy Review
-              </p>
-            </div>
-            <div class="text-center mb-12 reveal" style="transition-delay:0.1s">
-              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-4">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-                Quick Estimate
-          </span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Insurance Premium Calculator</h2>
-          <p class="text-lg text-slate-600 max-w-2xl mx-auto">Get an instant estimate for your insurance needs. Select your policy type and fill in the details below.</p>
-        </div>
-        <InsuranceCalculator client:load />
-      </div>
-    </section>
-
-    <!-- ===== GOOGLE RATING TRUST BAR ===== -->
-    <section class="py-6 bg-white border-b border-slate-100">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <div class="inline-flex items-center gap-3 px-6 py-3 bg-amber-50 border border-amber-200 rounded-full">
-          <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span class="text-lg font-bold text-slate-900">4.2★ on Google</span>
-          <span class="text-slate-400">|</span>
-          <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors">23 reviews</a>
-          <span class="text-slate-400">|</span>
-          <span class="text-slate-600">IRDAI Reg: 0149161D</span>
-          <span class="text-slate-400">|</span>
-          <span class="text-slate-600">25+ Years Experience</span>
-          <span class="text-slate-400">|</span>
-          <span class="text-slate-600">1000+ Families Served</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TRUST COUNTER BAR ===== -->
-    <TrustCounterBar client:visible />
-    <ClaimRecoveryTicker />
-
-    <!-- ===== TRUST INDICATORS ===== -->
-    <section class="py-12 bg-white border-b border-slate-100">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-          <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors">
-            <div class="w-14 h-14 mx-auto mb-4 bg-blue-100 rounded-xl flex items-center justify-center">
-              <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">IRDAI Certified</h3>
-            <p class="text-sm text-slate-600">Reg. No: 0149161D — Government authorized advisor</p>
-          </div>
-          <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.08s">
-            <div class="w-14 h-14 mx-auto mb-4 bg-emerald-100 rounded-xl flex items-center justify-center">
-              <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">25+ Years Experience</h3>
-            <p class="text-sm text-slate-600">Helping families since 1998 across India</p>
-          </div>
-          <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.16s">
-            <div class="w-14 h-14 mx-auto mb-4 bg-amber-100 rounded-xl flex items-center justify-center">
-              <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">₹50 Cr+ Recovered</h3>
-            <p class="text-sm text-slate-600">Claim rejection recovery expertise</p>
-          </div>
-        </div>
-        <div class="mt-8 text-center reveal">
-          <p class="text-sm text-slate-400 font-medium uppercase tracking-wider">Trusted by 1000+ families across Bengaluru & India</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SERVICES ===== -->
-    <ServicesGrid client:load />
-
-    <!-- ===== ADVISOR VS PORTAL ===== -->
-    <AdvisorVsPortalSection />
-
-    <!-- ===== FEATURES ===== -->
-    <FeaturesSection />
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="py-20 lg:py-28 bg-white">
-      <div class="max-w-5xl mx-auto px-4">
-        <div class="text-center mb-12 reveal">
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 text-purple-700 text-sm font-semibold mb-4">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-            Testimonials
-          </span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">What Our Clients Say</h2>
-          <p class="text-lg text-slate-600">Real stories from families we've helped protect and recover.</p>
-        </div>
-        <TestimonialsCarousel client:load />
-      </div>
-    </section>
-
-    <!-- ===== HOW IT WORKS (Timeline) ===== -->
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden noise-overlay parallax-section" data-parallax-speed="0.15">
-      <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/[0.06] rounded-full blur-3xl parallax-layer" data-parallax-offset="-40" />
-      <div class="absolute bottom-20 right-10 w-80 h-80 bg-amber-500/[0.04] rounded-full blur-3xl parallax-layer" data-parallax-offset="60" />
-
-      <div class="max-w-7xl mx-auto px-4 relative">
-        <div class="text-center mb-16 reveal">
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-amber-300 text-sm font-semibold mb-4">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-            Simple Process
-          </span>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">How It Works</h2>
-          <p class="text-lg text-slate-300 max-w-2xl mx-auto">Getting expert insurance support is simple and stress-free.</p>
-        </div>
-
-        <!-- Timeline Steps -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 stagger-children relative">
-          <!-- Connector line (desktop only) -->
-          <div class="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-amber-400/0 via-amber-400/50 to-amber-400/0" />
-
-          <div class="text-center reveal relative">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-amber-500/30 glow-pulse relative z-10 hover:scale-110 transition-transform">1</div>
-            <h3 class="text-lg font-bold mb-2">Free Consultation</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Call or book online for a no-obligation discussion of your needs.</p>
-          </div>
-
-          <div class="text-center reveal relative" style="transition-delay:0.1s">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-amber-500/30 glow-pulse relative z-10 hover:scale-110 transition-transform">2</div>
-            <h3 class="text-lg font-bold mb-2">Expert Analysis</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">We analyze your situation and find the best solution.</p>
-          </div>
-
-          <div class="text-center reveal relative" style="transition-delay:0.2s">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-amber-500/30 glow-pulse relative z-10 hover:scale-110 transition-transform">3</div>
-            <h3 class="text-lg font-bold mb-2">Take Action</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">We handle paperwork, coordination, and follow-ups.</p>
-          </div>
-
-          <div class="text-center reveal relative" style="transition-delay:0.3s">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-amber-500/30 glow-pulse relative z-10 hover:scale-110 transition-transform">4</div>
-            <h3 class="text-lg font-bold mb-2">Get Results</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">We ensure your claim is processed and approved.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== BLOG ===== -->
-    <BlogSection client:visible />
-
-    <!-- ===== NEWSLETTER ===== -->
-    <NewsletterSection />
-
-    <!-- ===== CLAIM REJECTION QUIZ ===== -->
-    <ClaimRejectionQuiz />
-
-    <!-- ===== FAQ (visible accordion + FAQPage JSON-LD from shared data) ===== -->
-    <section class="py-20 lg:py-28 bg-slate-50" id="faq">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-4">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
-            Common Questions
-          </span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 font-jakarta mb-4">Frequently Asked Questions</h2>
-          <p class="text-lg text-slate-600 max-w-2xl mx-auto">Get answers to the most common questions about insurance planning and our services.</p>
-        </div>
-        <div class="space-y-4">
-          {homepageFaqs.map(faq => (
-            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <details class="group">
-                <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
-                  <h3 class="text-lg font-semibold text-slate-900">{faq.question}</h3>
-                  <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                </summary>
-                <div class="px-6 pb-6">
-                  <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
-                </div>
-              </details>
-            </div>
-          ))}
-        </div>
-        <div class="text-center mt-12">
-          <a href="/faq" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-50 text-slate-700 font-medium rounded-lg hover:bg-slate-100 transition-colors">
-            View All 50+ FAQs
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-        </div>
-      </div>
-    </section>
+  <main id="main">
+    <InsuranceLanding faqs={homepageFaqs} client:load />
     <FAQPageJsonLd questions={homepageFaqs} />
   </main>
-
-  <!-- ===== FOOTER ===== -->
-
 </BaseLayout>

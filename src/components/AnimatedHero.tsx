@@ -1,52 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useSpring, useMotionValue, useMotionValueEvent } from 'framer-motion';
-
-// ─── Typewriter Hook ──────────────────────────────────────────
-function useTypewriter(text: string, speed: number = 40, delay: number = 800) {
-  const [displayed, setDisplayed] = useState('');
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setStarted(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-
-  useEffect(() => {
-    if (!started) return;
-    if (displayed.length < text.length) {
-      const t = setTimeout(() => {
-        setDisplayed(text.slice(0, displayed.length + 1));
-      }, speed);
-      return () => clearTimeout(t);
-    }
-  }, [displayed, started, text, speed]);
-
-  return displayed;
-}
-
-// ─── Animated Counter Hook ────────────────────────────────────
-// Uses a local state + useMotionValueEvent to sync the spring value into renderable state.
-function useCountUp(end: number, duration: number = 2, delay: number = 1.2) {
-  const [display, setDisplay] = useState(0);
-  const count = useMotionValue(0);
-  const springVal = useSpring(count, { stiffness: 60, damping: 20 });
-  const hasStarted = useRef(false);
-
-  useEffect(() => {
-    if (hasStarted.current) return;
-    const timer = setTimeout(() => {
-      hasStarted.current = true;
-      count.set(end);
-    }, delay * 1000);
-    return () => clearTimeout(timer);
-  }, [end, delay, count]);
-
-  useMotionValueEvent(springVal, 'change', (latest) => {
-    setDisplay(Math.round(latest));
-  });
-
-  return display;
-}
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 // ─── Stagger Animation Variants ───────────────────────────────
 const container = {
@@ -118,16 +71,6 @@ function FloatingOrbs() {
 
 // ─── Main Component ───────────────────────────────────────────
 export default function AnimatedHero() {
-  const typedText = useTypewriter(
-    'Over 25 years helping families across Bengaluru navigate life, health, motor & term insurance — and recover rejected claims.',
-    35,
-    600
-  );
-
-  const count50 = useCountUp(50, 2, 1.2);
-  const count25 = useCountUp(25, 1.8, 1.5);
-  const count1000 = useCountUp(1000, 2.2, 1.7);
-
   return (
     <section className="min-h-[85vh] flex items-center relative overflow-hidden hero-gradient">
       <FloatingOrbs />
@@ -167,15 +110,10 @@ export default function AnimatedHero() {
               </span>
             </motion.h1>
 
-            {/* Subtitle with Typewriter */}
+            {/* Keep the service description in the server-rendered HTML. */}
             <motion.div variants={fadeUp} className="mb-8 min-h-[3rem]">
               <p className="text-lg text-blue-200/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                {typedText}
-                <motion.span
-                  className="inline-block w-[3px] h-[1.1em] bg-amber-400 ml-0.5 align-middle"
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
-                />
+                Over 25 years helping families across Bengaluru navigate life, health, motor and term insurance — and recover rejected claims.
               </p>
             </motion.div>
 
@@ -247,7 +185,7 @@ export default function AnimatedHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    ₹{count50} Cr+
+                    ₹50 Cr+
                   </motion.div>
                   <div className="text-sm text-blue-200 mt-1">Claims Successfully Recovered</div>
                 </div>
@@ -260,7 +198,7 @@ export default function AnimatedHero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 1.5 }}
                   >
-                    <div className="text-3xl font-bold text-white">{count25}+</div>
+                    <div className="text-3xl font-bold text-white">25+</div>
                     <div className="text-xs text-blue-300 mt-1">Years Experience</div>
                   </motion.div>
                   <motion.div
@@ -269,7 +207,7 @@ export default function AnimatedHero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 1.7 }}
                   >
-                    <div className="text-3xl font-bold text-white">{count1000}+</div>
+                    <div className="text-3xl font-bold text-white">1,000+</div>
                     <div className="text-xs text-blue-300 mt-1">Happy Families Served</div>
                   </motion.div>
                 </div>
