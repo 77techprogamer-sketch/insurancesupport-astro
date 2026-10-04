@@ -33,12 +33,11 @@ export interface Props {
   geoPlaceName?: string;
   geoPosition?: string;
   skipDefaultHreflang?: boolean;
-  landingPage?: boolean;
   pageLang?: string;   // e.g. "hi-IN", "bn-IN" — defaults to "en-IN"
   ogLocale?: string;   // e.g. "hi_IN", "bn_IN" — defaults to "en_IN"
 }
 
-const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN", landingPage = false } = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN" } = Astro.props;
 
 // Google typically truncates meta descriptions at ~155 characters (desktop).
 // Truncate on a safe word boundary so CTAs/keywords aren't cut mid-word in the SERP.
@@ -203,16 +202,16 @@ const websiteSchema = {
     <script src="/scripts/analytics.js" is:inline defer></script>
   <script src="/scripts/webmcp.js" defer></script>
 </head>
-  <body class:list={["font-sans text-base antialiased", landingPage ? "landing-page" : "pb-16 md:pb-0"]} style="scroll-padding-top: 5rem;">
+  <body class="font-sans text-base antialiased pb-16 md:pb-0" style="scroll-padding-top: 5rem;">
     <!-- Skip link for accessibility -->
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg" aria-label="Skip to main content">Skip to main content</a>
-    {!landingPage && <Header />}
-    {!landingPage && <GeoBanner client:visible />}
+    <Header />
+    <GeoBanner client:visible />
     <slot />
-    {!landingPage && <Footer />}
-    {!landingPage && <MobileStickyBar />}
-    {!landingPage && <FloatingCTA client:idle />}
-    {!landingPage && <Chatbot />}
+    <Footer />
+    <MobileStickyBar />
+    <FloatingCTA client:idle />
+    <Chatbot />
     <script src="/scripts/reveal.js" is:inline defer></script>
     <!-- Microsoft Clarity (v9dto5m10l) now loads from /scripts/analytics.js (CSP-safe). -->
   </body>
