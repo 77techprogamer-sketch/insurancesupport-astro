@@ -30,23 +30,6 @@ const related = cs.relatedCaseStudies
 
   <Breadcrumbs currentPage={cs.title} />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "CaseStudy",
-    "name": cs.title,
-    "description": cs.summary,
-    "datePublished": cs.date,
-    "url": `https://insurancesupport.online/case-studies/${cs.slug}/`,
-    "author": { "@type": "Person", "name": cs.author, "url": "https://insurancesupport.online/about/" },
-    "about": {
-      "@type": "LocalBusiness",
-      "name": "Insurance Support - Hari Kotian",
-      "url": "https://insurancesupport.online"
-    },
-    "isPartOf": { "@type": "WebPage", "@id": "https://insurancesupport.online/claim-recovery/", "name": "Insurance Claim Recovery Hub" }
-    // Note: Review omitted – Google does not accept Review on CaseStudy rich results
-  })} />
-
   <main id="main" class="page-transition">
     <!-- Hero -->
     <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 relative overflow-hidden">
@@ -94,6 +77,7 @@ const related = cs.relatedCaseStudies
         <!-- Summary -->
         <section class="mb-12">
           <h2 class="text-2xl font-extrabold text-slate-900 mb-4 pb-3 border-b border-slate-100">Summary</h2>
+          <p class="text-sm text-slate-500 mb-4">This account and its amounts are reported by Insurance Support and have not been independently verified. Details are selective, and the outcome of another claim may differ.</p>
           <p class="text-slate-600 leading-relaxed text-[15px]">{cs.summary}</p>
         </section>
 

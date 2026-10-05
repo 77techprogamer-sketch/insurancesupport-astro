@@ -78,7 +78,7 @@ export default function AnimatedHero() {
       <motion.div
         className="relative z-10 w-full max-w-7xl mx-auto px-4 py-20"
         variants={container}
-        initial="hidden"
+        initial={false}
         animate="show"
       >
         <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12">
@@ -91,11 +91,11 @@ export default function AnimatedHero() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-amber-300 backdrop-blur-md">
                 <svg className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                Insurance Concierge & Claim Expert
+                Insurance advisory and claim support
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-sm font-medium text-green-300 backdrop-blur-md">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                IRDAI Certified | Reg: 0149161D
+                Insurance guidance and claim support
               </span>
             </motion.div>
 
@@ -113,7 +113,7 @@ export default function AnimatedHero() {
             {/* Keep the service description in the server-rendered HTML. */}
             <motion.div variants={fadeUp} className="mb-8 min-h-[3rem]">
               <p className="text-lg text-blue-200/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Over 25 years helping families across Bengaluru navigate life, health, motor and term insurance — and recover rejected claims.
+                Insurance Support, led by Hari Kotian, helps people understand policy options, prepare claim documents, and navigate insurer follow-up.
               </p>
             </motion.div>
 
@@ -160,10 +160,10 @@ export default function AnimatedHero() {
               </div>
               <div className="text-left">
                 <p className="text-base font-bold text-white">Hari Kotian</p>
-                <p className="text-sm text-blue-200/80 font-medium">IRDAI Certified Advisor — 25+ Years</p>
+                <p className="text-sm text-blue-200/80 font-medium">Insurance advisor</p>
                 <div className="flex items-center gap-2 mt-1">
                   <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                  <span className="text-xs font-semibold text-amber-300">4.2 stars (23 reviews)</span>
+                  <span className="text-xs font-semibold text-amber-300">View customer feedback</span>
                 </div>
               </div>
             </motion.div>
@@ -185,9 +185,9 @@ export default function AnimatedHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    ₹50 Cr+
+                    Claim support
                   </motion.div>
-                  <div className="text-sm text-blue-200 mt-1">Claims Successfully Recovered</div>
+                  <div className="text-sm text-blue-200 mt-1">Understand your next steps</div>
                 </div>
 
                 {/* Sub-stats */}
@@ -198,8 +198,8 @@ export default function AnimatedHero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 1.5 }}
                   >
-                    <div className="text-3xl font-bold text-white">25+</div>
-                    <div className="text-xs text-blue-300 mt-1">Years Experience</div>
+                    <div className="text-3xl font-bold text-white">Policy</div>
+                    <div className="text-xs text-blue-300 mt-1">terms review</div>
                   </motion.div>
                   <motion.div
                     className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
@@ -207,8 +207,8 @@ export default function AnimatedHero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 1.7 }}
                   >
-                    <div className="text-3xl font-bold text-white">1,000+</div>
-                    <div className="text-xs text-blue-300 mt-1">Happy Families Served</div>
+                    <div className="text-3xl font-bold text-white">Claim</div>
+                    <div className="text-xs text-blue-300 mt-1">document help</div>
                   </motion.div>
                 </div>
 
@@ -221,7 +221,7 @@ export default function AnimatedHero() {
                 >
                   <div className="flex items-center justify-center gap-2 text-sm text-blue-200/80">
                     <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                    <span>95% Success Rate</span>
+                    <span>Outcome depends on policy terms</span>
                   </div>
                 </motion.div>
               </motion.div>

@@ -1,34 +1,77 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
+import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
+
+const faqs = [
+  {
+    question: 'What should I do if my insurance claim is rejected?',
+    answer: 'If your insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer’s grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal.'
+  },
+  {
+    question: 'What can I do about a delayed insurance claim?',
+    answer: 'For a delayed claim, keep the claim reference, submission receipts, and insurer or TPA replies. Ask the insurer’s grievance redressal officer for a written status and next step. If the issue remains unresolved, check the current IRDAI complaint and Insurance Ombudsman routes, including their eligibility and time limits, before filing.'
+  },
+  {
+    question: 'What documents should I gather for an insurance claim?',
+    answer: 'Claim documents depend on the policy and reason for the claim. Start with the policy schedule, claim form, insurer’s written query or rejection, claim reference, identity details, and proof of expenses or event. Health claims may need discharge summaries and bills; motor claims may need an FIR or repair estimates. Confirm the final checklist with your insurer.'
+  }
+];
 ---
-<BaseLayout title="Client Support Services" description="Insurance support services: claims, policy revival, ombudsman.">
+
+<BaseLayout
+  title="Insurance Claim Support in Bengaluru | Insurance Support"
+  description="Learn what to do after a rejected or delayed insurance claim, which documents to gather, and how Insurance Support can help with insurer follow-up."
+  canonical="https://insurancesupport.online/support"
+  dateModified="2026-10-05"
+>
   <main id="main" class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-slate-900 mb-8">Client Support Services</h1>
-    <p class="text-lg text-slate-600 mb-12">Rejected Claims, Stuck Claims, Policy Revival, Lost Documents, Ombudsman, Renewal. Get help with all your insurance support needs.</p>
+    <h1 class="text-4xl font-bold text-slate-900 mb-4">Insurance Claim Support in Bengaluru</h1>
+    <p class="text-lg text-slate-600 mb-10">Insurance Support, led by Hari Kotian (IRDAI registration number 0149161D), provides guidance with claim documents, policy questions, and insurer follow-up. The insurer makes claim decisions under the policy terms and the evidence provided; support can help you understand the process but cannot guarantee an outcome.</p>
+
+    <section class="rounded-2xl bg-blue-50 border border-blue-100 p-6 md:p-8 mb-12" aria-labelledby="rejected-claim-answer">
+      <h2 id="rejected-claim-answer" class="text-2xl font-bold text-slate-900 mb-4">What should I do if my insurance claim is rejected?</h2>
+      <p class="text-lg leading-relaxed text-slate-700">If your insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer’s grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal.</p>
+    </section>
 
     <ClaimRejectionQuiz />
 
-    <section class="mt-16">
-      <h2 class="text-3xl font-bold text-slate-900 mb-6">How We Can Help You</h2>
-      <div class="space-y-8 text-lg text-slate-700">
-        <p>Facing issues with your insurance policy or a rejected claim can be frustrating. Our expert team specializes in navigating the complexities of the insurance landscape to provide you with comprehensive support. We assist with:</p>
-        <ul class="list-disc list-inside space-y-2 pl-4">
-          <li>**Claim Rejection Recovery:** Analyzing rejection reasons and guiding you through the appeal process.</li>
-          <li>**Stuck Claims:** Expediting claims that are delayed by insurers.</li>
-          <li>**Policy Revival:** Assisting with the revival of lapsed life insurance policies.</li>
-          <li>**Lost Documents:** Guidance on obtaining duplicate policy documents.</li>
-          <li>**IRDAI & Ombudsman Complaints:** Representing your case before regulatory bodies.</li>
-          <li>**Policy Renewals & Reviews:** Ensuring your policies are up-to-date and optimized.</li>
-        </ul>
-        <p>Don't face insurance challenges alone. Contact us today for personalized assistance.</p>
-        <div class="text-center mt-12">
-          <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg">
-            Get Direct Support
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-        </div>
+    <section class="mt-16" aria-labelledby="claim-help-steps">
+      <h2 id="claim-help-steps" class="text-3xl font-bold text-slate-900 mb-6">How can Insurance Support help with a claim?</h2>
+      <p class="text-lg text-slate-700 mb-5">We can help you review the insurer’s explanation, organize relevant documents, and understand possible follow-up routes. The available steps depend on your policy, claim history, and the insurer’s response.</p>
+      <ul class="list-disc list-inside space-y-2 pl-4 text-lg text-slate-700">
+        <li>Review the written reason for a rejected claim.</li>
+        <li>Organize claim forms, bills, reports, and insurer correspondence.</li>
+        <li>Prepare questions or a response for the insurer’s grievance channel.</li>
+        <li>Understand where to find current IRDAI and Insurance Ombudsman guidance.</li>
+        <li>Discuss policy renewal, review, or lapsed-policy servicing questions.</li>
+      </ul>
+      <p class="mt-5 text-slate-600">Insurance Support does not decide claims. Only the insurer can assess a claim under the policy terms, and external complaint routes have their own eligibility requirements and time limits.</p>
+      <div class="text-center mt-10">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg">
+          Request claim support
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-16" aria-labelledby="claim-faqs">
+      <h2 id="claim-faqs" class="text-3xl font-bold text-slate-900 mb-6">Insurance claim questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="cursor-pointer text-lg font-semibold text-slate-900">{faq.question}</summary>
+            <p class="mt-4 leading-relaxed text-slate-700">{faq.answer}</p>
+            {faq.question === 'What can I do about a delayed insurance claim?' && (
+              <p class="mt-3 text-sm text-slate-600">See <a class="text-blue-700 underline" href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer">IRDAI Bima Bharosa</a> for current grievance information.</p>
+            )}
+            {faq.question === 'What should I do if my insurance claim is rejected?' && (
+              <p class="mt-3 text-sm text-slate-600">For external complaint eligibility and filing steps, consult the <a class="text-blue-700 underline" href="https://www.cioins.co.in/Procedure/Index" target="_blank" rel="noopener noreferrer">Council for Insurance Ombudsmen procedure</a>.</p>
+            )}
+          </details>
+        ))}
       </div>
     </section>
   </main>
+  <FAQPageJsonLd questions={faqs} />
 </BaseLayout>

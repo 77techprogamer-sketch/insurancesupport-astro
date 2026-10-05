@@ -11,8 +11,8 @@ const all = caseStudies;
 ---
 
 <BaseLayout
-  title="Case Studies — Real Claim Recovery Stories"
-  description="See how Hari Kotian helped families recover rejected and delayed insurance claims in Bangalore. Real stories, real results."
+  title="Insurance Claim Case Examples | Insurance Support"
+  description="Examples of insurance claim situations and support steps. Claim decisions depend on policy terms, case facts, and evidence."
 >
 
   <Breadcrumbs currentPage="Case Studies" />
@@ -20,11 +20,11 @@ const all = caseStudies;
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Case Studies — Real Claim Recovery Stories",
-    "description": "See how Hari Kotian helped families recover rejected and delayed insurance claims in Bangalore. Real stories, real results.",
+    "name": "Insurance Claim Case Examples",
+    "description": "Examples of insurance claim situations and support steps. Claim decisions depend on policy terms, case facts, and evidence.",
     "url": "https://insurancesupport.online/case-studies/",
     "isPartOf": { "@type": "WebPage", "@id": "https://insurancesupport.online/claim-recovery/", "name": "Insurance Claim Recovery Hub" },
-    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor", "url": "https://insurancesupport.online/about/" }
+    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "Insurance advisor", "url": "https://insurancesupport.online/about/" }
   })} />
 
   <main id="main" class="page-transition">
@@ -34,29 +34,15 @@ const all = caseStudies;
       <div class="max-w-6xl mx-auto px-4 relative text-center">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-sm font-semibold mb-6">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-          Real Stories, Real Results
+          Claim examples
         </span>
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
-          How We Recover <span class="text-amber-300">50+ Crores</span> in Rejected Claims
+          Examples of claim questions and support steps
         </h1>
         <p class="text-lg text-blue-100/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Every rejected claim has a story. Read how we helped real families in Bangalore get their rightful insurance payouts — and how we can help you.
+          These examples describe claim situations and possible support steps. An insurer decides each claim under its policy terms and the evidence provided; examples do not predict another claim's outcome.
         </p>
 
-        <div class="flex flex-wrap justify-center gap-8 text-center">
-          <div>
-            <div class="text-3xl font-extrabold text-amber-300">1000+</div>
-            <div class="text-sm text-blue-200/70">Families Helped</div>
-          </div>
-          <div>
-            <div class="text-3xl font-extrabold text-amber-300">92%</div>
-            <div class="text-sm text-blue-200/70">Success Rate</div>
-          </div>
-          <div>
-            <div class="text-3xl font-extrabold text-amber-300">25+</div>
-            <div class="text-sm text-blue-200/70">Years Experience</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -65,7 +51,8 @@ const all = caseStudies;
       <section class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4">
           <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">Featured Case Studies</h2>
-          <p class="text-slate-600 mb-10 text-lg">Our most impactful claim recoveries</p>
+          <p class="text-slate-600 mb-10 text-lg">Selected examples of claim situations and support steps</p>
+          <p class="text-sm text-slate-500 mb-8">These accounts and amounts are reported by Insurance Support and have not been independently verified. Details are selective. Claim outcomes vary by policy and evidence; examples do not predict another claim's result.</p>
 
           <div class="grid md:grid-cols-2 gap-8">
             {featured.map(cs => (

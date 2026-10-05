@@ -320,7 +320,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
               <p className="text-sm text-slate-600">
                 Premiums shown are indicative and based on standard rates.
                 Final rates depend on health questionnaires, medical underwriting,
-                and specific product choices. Consult Hari Kotian (IRDAI Reg No: 0149161D)
+                and specific product choices. Review the policy terms with a qualified insurance professional.
                 for exact quotes tailored to your profile.
               </p>
             </div>

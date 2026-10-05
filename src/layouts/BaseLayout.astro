@@ -29,6 +29,7 @@ export interface Props {
   noIndex?: boolean;
   keywords?: string;
   canonical?: string;
+  dateModified?: string;
   geoRegion?: string;
   geoPlaceName?: string;
   geoPosition?: string;
@@ -37,7 +38,7 @@ export interface Props {
   ogLocale?: string;   // e.g. "hi_IN", "bn_IN" — defaults to "en_IN"
 }
 
-const { title, description = "Insurance Support by Hari Kotian — IRDAI-certified insurance advisor. 25+ years of expertise in life, health, motor & all insurance types. Claim recovery experts.", ogImage: pageOgImage, noIndex = false, keywords, canonical, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN" } = Astro.props;
+const { title, description = "Insurance Support by Hari Kotian provides insurance guidance and claim assistance from Bengaluru.", ogImage: pageOgImage, noIndex = false, keywords, canonical, dateModified, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN" } = Astro.props;
 
 // Google typically truncates meta descriptions at ~155 characters (desktop).
 // Truncate on a safe word boundary so CTAs/keywords aren't cut mid-word in the SERP.
@@ -68,7 +69,7 @@ if (cleanTitle && cleanTitle.includes(`${siteName} | ${siteName}`)) {
   const dupPattern = new RegExp(`\\s*\\|\\s*${siteName}\\s*\\|\\s*${siteName}`);
   cleanTitle = cleanTitle.replace(dupPattern, ` | ${siteName}`);
 }
-const fullTitle = cleanTitle ? (cleanTitle.includes(siteName) ? cleanTitle : `${cleanTitle} | ${siteName}`) : `${siteName} — IRDAI Certified Insurance Advisor in Bengaluru`;
+const fullTitle = cleanTitle ? (cleanTitle.includes(siteName) ? cleanTitle : `${cleanTitle} | ${siteName}`) : `${siteName} — Insurance Guidance and Claim Support in Bengaluru`;
 
 const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
 
@@ -78,8 +79,19 @@ const organizationSchema = {
   "@type": "InsuranceAgency",
   "@id": `${siteUrl}/#organization`,
   "name": "Insurance Support",
+  "description": "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
+  "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM/review"],
+  "telephone": phoneE164,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bahubali Nagar, Jalahalli",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560013",
+    "addressCountry": "IN"
+  },
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Bengaluru" },
     { "@type": "AdministrativeArea", "name": "Koramangala" },
@@ -102,18 +114,40 @@ const organizationSchema = {
   },
   "founder": {
     "@type": "Person",
-    "@id": `${siteUrl}/about-hari-kotian/#person`,
+    "@id": `${siteUrl}/about/#person`,
     "name": "Hari Kotian",
-    "jobTitle": "IRDAI Certified Insurance Advisor",
     "telephone": phoneE164,
-    "url": `${siteUrl}/about-hari-kotian/`,
+    "url": `${siteUrl}/about/`,
     "worksFor": { "@id": `${siteUrl}/#organization` }
   }
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteUrl}/about/#person`,
+  "name": "Hari Kotian",
+  "url": `${siteUrl}/about/`,
+  "jobTitle": "Insurance advisor",
+  "worksFor": { "@id": `${siteUrl}/#organization` },
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "license",
+    "name": "IRDAI insurance agent registration",
+    "identifier": "0149161D",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "Insurance Regulatory and Development Authority of India",
+      "url": "https://irdai.gov.in/"
+    }
+  },
+  "knowsAbout": ["Life insurance", "Health insurance", "Motor insurance", "Insurance claims", "Policy review"]
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
   "name": siteName,
   "url": siteUrl,
   "publisher": {
@@ -124,11 +158,22 @@ const websiteSchema = {
   },
   "author": {
     "@type": "Person",
-    "@id": `${siteUrl}/about-hari-kotian/#person`,
+    "@id": `${siteUrl}/about/#person`,
     "name": "Hari Kotian",
-    "url": `${siteUrl}/about-hari-kotian/`
+    "url": `${siteUrl}/about/`
   }
 };
+
+const pageSchema = dateModified ? {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonical || Astro.url.href}#webpage`,
+  "url": canonical || Astro.url.href,
+  "name": title,
+  "dateModified": dateModified,
+  "isPartOf": { "@id": `${siteUrl}/#website` },
+  "publisher": { "@id": `${siteUrl}/#organization` }
+} : null;
 ---
 
 <!doctype html>
@@ -194,7 +239,7 @@ const websiteSchema = {
     <!-- Fonts load non-blocking via media="print"; /scripts/analytics.js flips it to "all"
          after load. (Inline event-handler attributes are blocked by the production CSP.) -->
     <link id="google-fonts-css" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" />
-    <script type="application/ld+json" set:html={JSON.stringify([organizationSchema, websiteSchema])} />
+    <script type="application/ld+json" set:html={JSON.stringify([organizationSchema, websiteSchema, personSchema, ...(pageSchema ? [pageSchema] : [])])} />
     <!-- Analytics: GA4 (G-JP67H399V2) + Google Ads (AW-18269976114) + GTM (GTM-P8DZ6MRQ).
          Loaded from an external file because the production CSP (public/_headers)
          blocks inline scripts. Also enables the gtag() stub used by contact.astro

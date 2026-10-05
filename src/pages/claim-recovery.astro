@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
-import ClaimRecoveryTicker from '../components/ClaimRecoveryTicker.astro';
 
-const TITLE = "Insurance Claim Recovery Hub: Every Guide to Fight a Denied Claim (2026)";
-const DESCRIPTION = "Claim denied, delayed, or short-paid? Every guide from a 25-year claim-recovery veteran — health, LIC, motor, travel, mis-selling, nominee — organised by your exact problem. Free consultation.";
+const TITLE = "Insurance Claim Support: Guides for Rejected, Delayed, or Reduced Claims";
+const DESCRIPTION = "Practical guides for understanding an insurer's written decision, organizing claim documents, and checking available grievance routes in India.";
 const KEYWORDS = "insurance claim recovery India, claim denied what to do, claim rejection help, insurance ombudsman guide, claim appeal guides India";
 const CANONICAL_URL = "https://insurancesupport.online/claim-recovery/";
 
@@ -54,40 +53,40 @@ const TOTAL_GUIDES = GUIDES.reduce((n, g) => n + g.items.length, 0);
 const FAQ = [
   {
     question: "My insurance claim was just denied — what do I do first?",
-    answer: "Get the denial in writing and read the exact clause invoked. Then file a written grievance with the insurer's Grievance Redressal Officer (GRO) citing your claim number and the denial ground. Keep an acknowledgement with a file number. Most recoverable claims turn on the written record, not on phone calls."
+    answer: "Ask for the insurer's written decision and the policy provision it relied on. Compare that explanation with the policy wording and claim records, then send a focused grievance through the insurer's current process if needed. Keep the claim reference, supporting documents, and dated proof of each submission."
   },
   {
     question: "How long does an insurer have to respond to my complaint?",
-    answer: "An insurer's GRO must act on a grievance within 15 days, and in any case within 30 days. If there is no resolution in that window, you can escalate to IRDAI's Bima Bharosa portal and then to the Insurance Ombudsman. Deadlines run from the date you file the grievance in writing, so file early and keep proof of filing."
+    answer: "The response timeline and next step depend on the complaint and current rules. Ask the insurer for an acknowledgement and keep a dated copy of your submission. If the response is unsatisfactory or delayed, check IRDAI Bima Bharosa and Council for Insurance Ombudsmen guidance for the current escalation process and eligibility."
   },
   {
     question: "What is the difference between a grievance and the Insurance Ombudsman?",
-    answer: "A grievance is the insurer's own internal process. The Insurance Ombudsman is an independent forum for eligible complaints. First write to the insurer; you may approach the Ombudsman if the insurer rejects your complaint, you are dissatisfied with its reply, or you receive no reply within one month. The amended Rules provide for awards up to ₹50 lakh including relevant expenses; check the current eligibility rules before filing."
+    answer: "A grievance is handled through the insurer's internal complaint process. The Insurance Ombudsman is a separate forum for eligible complaints after a representation to the insurer. The Council for Insurance Ombudsmen publishes the current procedure, jurisdiction, and compensation limit; check its guidance before filing."
   },
   {
     question: "Is the Insurance Ombudsman free, and do I need a lawyer?",
-    answer: "Filing a complaint with the Insurance Ombudsman is free, and policyholders can file directly without a lawyer. The amended Rules provide for awards up to ₹50 lakh including relevant expenses. Eligibility depends on the complaint and current rules, so check the official guidance before filing."
+    answer: "The Council for Insurance Ombudsmen describes its grievance process and filing requirements on its official website. Review the current rules for fees, representation, eligibility, jurisdiction, and any compensation limit before submitting a complaint."
   },
   {
     question: "Can I appeal a claim denial after 30 days?",
-    answer: "Yes. There is no fixed statutory cut-off for filing a grievance or Ombudsman complaint, but delays weaken your position and can affect interest on delayed settlements. If you received a written repudiation, file the written reply and grievance as soon as you can, attaching the denial letter and your evidence."
+    answer: "Do not assume that a denial can be appealed at any time. The applicable deadline depends on the complaint route and circumstances. Keep the insurer's dated response and check the current IRDAI and Insurance Ombudsman rules promptly; seek qualified legal advice if you are unsure whether a deadline has passed."
   },
   {
     question: "What documents should I attach to a claim appeal?",
-    answer: "The denial (repudiation) letter, your policy document or certificate, the claim form and claim number, and the evidence that counters the denial ground — discharge summaries, doctor certificates, original bills, the surveyor report if it's a motor claim, or the challenger documents for a title dispute. A checklist-style cover letter listing each attachment helps the file move faster."
+    answer: "Start with the insurer's written decision, policy schedule and wording, claim form and reference, relevant correspondence, and records that address the reason given. These may include medical records, bills, repair estimates, surveyor communication, or incident documents. Requirements vary; confirm them with the insurer and keep copies of every submission."
   },
   {
     question: "Does IRDAI penalise insurers for wrongly denying claims?",
-    answer: "IRDAI can act against insurers for service deficiencies, including wrongful repudiation and delays beyond the claim settlement standard. The practical effect for you is the escalation path: a written grievance, then IRDAI's Bima Bharosa portal, then the Ombudsman. The regulator's interest is one reason insurers take a properly filed written grievance seriously."
+    answer: "IRDAI sets requirements for insurers and provides the Bima Bharosa grievance channel. Whether regulatory action or another remedy applies depends on the facts and current rules. A policyholder can first raise the issue with the insurer and review IRDAI's official process if the response is unsatisfactory or delayed."
   },
   {
     question: "Where do I start if my problem is not one of the guides listed here?",
-    answer: "Start with the symptom-based list at the top of this page — pick the sentence closest to your situation and it will take you to the most relevant guide. If nothing matches exactly, the escalation ladder and document checklist on this page still apply. You can also ask me directly: send the denial letter or claim status on WhatsApp or by phone, and I will tell you the fastest legitimate next step."
+    answer: "Use the problem list above to find a guide, then confirm the relevant policy terms and current complaint rules for your case. Insurance Support can discuss document organization and possible follow-up routes; the insurer or complaint forum decides the matter, and assistance cannot guarantee an outcome."
   }
 ];
 ---
 
-<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL} dateModified="2026-10-05">
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' },
     { label: 'Claim Recovery Hub', url: CANONICAL_URL }
@@ -101,7 +100,7 @@ const FAQ = [
     "url": CANONICAL_URL,
     "isPartOf": { "@type": "WebSite", "name": "Insurance Support", "url": "https://insurancesupport.online" },
     "about": { "@type": "Thing", "name": "Insurance claim recovery in India" },
-    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor" },
+    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "Insurance advisor" },
     "hasPart": [
       ...GUIDES.flatMap(g => g.items).map(i => ({
         "@type": "Article",
@@ -141,9 +140,9 @@ const FAQ = [
         </span>
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5 leading-tight">Claim Denied, Delayed, or Short-Paid? Start Here.</h1>
         <p class="text-lg text-blue-100/85 leading-relaxed mb-6">
-          Every guide below comes from my own case files — 25+ years of recovering rejected and stuck claims for policyholders across India. No theory, no recycled listicles: the exact steps that get insurers to reopen files and Ombudsman complaints to succeed.
+          Use these guides to understand an insurer's written decision, organize relevant documents, and review possible grievance routes. Claim outcomes depend on the policy terms, case facts, evidence, and decisions made by the insurer or relevant complaint forum.
         </p>
-        <p class="text-sm text-blue-200/70">— <strong class="text-white">Hari Kotian</strong>, IRDAI Certified Insurance Advisor (Reg 0149161D)</p>
+        <p class="text-sm text-blue-200/70">— <strong class="text-white">Hari Kotian</strong>, Insurance advisor (IRDAI Registration No. 0149161D)</p>
       </div>
     </section>
 
@@ -207,15 +206,14 @@ const FAQ = [
 
       <!-- Escalation ladder -->
       <section class="mb-12 bg-blue-50/60 border border-blue-100 rounded-2xl p-8">
-        <h2 class="text-2xl font-extrabold text-blue-900 mb-4">The escalation ladder every guide uses</h2>
+        <h2 class="text-2xl font-extrabold text-blue-900 mb-4">Where can I raise an insurance complaint?</h2>
         <ol class="space-y-3 text-slate-700">
-          <li class="flex gap-3"><span class="shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span><span><strong>Grievance Redressal Officer (GRO)</strong> — every insurer must resolve within 15 days (30 days max). Always in writing, always with a file number.</span></li>
-          <li class="flex gap-3"><span class="shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span><span><strong>IRDAI Bima Bharosa portal</strong> — the regulator's complaint system once the insurer stalls or refuses.</span></li>
-          <li class="flex gap-3"><span class="shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span><span><strong>Insurance Ombudsman</strong> — free, no lawyer required, with eligibility and award limits set by the current Rules. <a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">How to file it properly →</a></span></li>
+          <li class="flex gap-3"><span class="shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span><span><strong>Insurer grievance process</strong> — send a written complaint through the insurer's current grievance channel and keep its acknowledgement.</span></li>
+          <li class="flex gap-3"><span class="shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span><span><strong>IRDAI Bima Bharosa</strong> — review the regulator's current instructions for registering or tracking an insurance grievance.</span></li>
+          <li class="flex gap-3"><span class="shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span><span><strong>Insurance Ombudsman</strong> — check the Council for Insurance Ombudsmen's current eligibility, jurisdiction, and filing requirements.</span></li>
         </ol>
+        <p class="mt-4 text-sm text-slate-600">Official guidance: <a href="https://bimabharosa.irdai.gov.in/" class="text-blue-700 underline" target="_blank" rel="noopener noreferrer">IRDAI Bima Bharosa</a> and the <a href="https://www.cioins.co.in/Procedure/Index" class="text-blue-700 underline" target="_blank" rel="noopener noreferrer">Council for Insurance Ombudsmen complaint procedure</a>.</p>
       </section>
-
-      <ClaimRecoveryTicker />
 
       <!-- FAQ Section (visible accordion + FAQPage JSON-LD from shared data) -->
       <div class="max-w-3xl mx-auto px-4 mt-12">
@@ -240,7 +238,7 @@ const FAQ = [
       <!-- CTA -->
       <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
         <h2 class="text-2xl font-bold mb-3">Rather Have an Expert Read Your Case?</h2>
-        <p class="text-blue-100 mb-6">Guides tell you the path — I walk it with you. Send me the denial letter or claim status and get a same-day, no-obligation review from 25+ years of claim recovery practice.</p>
+        <p class="text-blue-100 mb-6">Contact Hari Kotian to discuss document organization and possible follow-up steps. Claim outcomes are decided under the policy terms by the insurer or relevant complaint forum.</p>
         <div class="flex flex-wrap justify-center gap-4">
           <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20help%20with%20an%20insurance%20claim." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
             WhatsApp Your Case

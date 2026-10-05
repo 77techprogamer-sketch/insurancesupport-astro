@@ -14,6 +14,29 @@ async function generateSitemaps() {
 
     const allLinks = [];
 
+    // Sitemaps should contain only pages that identify themselves as
+    // indexable and canonical. This also catches future noindex pages without
+    // needing to maintain a separate URL-pattern exclusion for each one.
+    function isIndexableCanonical(html, urlPath) {
+        const robotsMeta = html.match(/<meta\b[^>]*\bname=["'](?:robots|googlebot)["'][^>]*\bcontent=["']([^"']*)["'][^>]*>/i);
+        if (robotsMeta && /\bnoindex\b/i.test(robotsMeta[1])) return false;
+
+        const canonicalMeta = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*\bhref=["']([^"']+)["'][^>]*>/i);
+        if (!canonicalMeta) return false;
+
+        try {
+            const canonical = new URL(canonicalMeta[1], siteUrl);
+            const candidate = new URL(urlPath, siteUrl);
+            const normalizePath = (pathname) => pathname.endsWith('/') ? pathname : `${pathname}/`;
+            return canonical.origin === siteUrl &&
+                !canonical.search &&
+                !canonical.hash &&
+                normalizePath(canonical.pathname) === normalizePath(candidate.pathname);
+        } catch {
+            return false;
+        }
+    }
+
     // Recursively find all HTML files in the dist directory
     async function getHtmlFiles(dir) {
         const dirents = await fs.readdir(dir, { withFileTypes: true });
@@ -26,10 +49,21 @@ async function generateSitemaps() {
                 urlPath = urlPath.replace(/\/?index\.html$/, '');
                 urlPath = urlPath.replace(/\.html$/, '');
 
-                const stat = await fs.stat(res);
-                const lastmod = stat.mtime.toISOString();
+                const html = await fs.readFile(res, 'utf8');
+                // Build output mtimes reflect build time, not editorial changes.
+                // Only publish lastmod when the page provides an honest content date.
+                const modifiedMeta = html.match(/<meta\b[^>]*\bproperty=["']article:modified_time["'][^>]*\bcontent=["']([^"']+)["'][^>]*>/i);
+                const modifiedSchema = html.match(/"dateModified"\s*:\s*"([^"']+)"/i);
+                const lastmodCandidate = modifiedMeta?.[1] || modifiedSchema?.[1];
+                const parsedLastmod = lastmodCandidate ? new Date(lastmodCandidate) : null;
+                const lastmod = parsedLastmod && !Number.isNaN(parsedLastmod.getTime())
+                    ? parsedLastmod.toISOString()
+                    : undefined;
 
-                allLinks.push({ url: `/${urlPath}`, lastmod });
+                const url = `/${urlPath}`;
+                if (isIndexableCanonical(html, url)) {
+                    allLinks.push({ url, lastmod });
+                }
             }
         }
     }
@@ -41,7 +75,7 @@ async function generateSitemaps() {
     for (const link of allLinks) {
         if (linkMap.has(link.url)) {
             const existing = linkMap.get(link.url);
-            if (link.lastmod > existing.lastmod) linkMap.set(link.url, link);
+            if (link.lastmod && (!existing.lastmod || link.lastmod > existing.lastmod)) linkMap.set(link.url, link);
         } else {
             linkMap.set(link.url, link);
         }
@@ -81,7 +115,7 @@ async function generateSitemaps() {
     uniqueLinks.forEach(linkObj => {
             const url = linkObj.url;
             const finalUrl = url.endsWith('/') ? url : url + '/';
-        const sitemapEntry = { url: finalUrl, changefreq: 'weekly', priority: 0.7, lastmod: linkObj.lastmod };
+        const sitemapEntry = { url: finalUrl, changefreq: 'weekly', priority: 0.7, ...(linkObj.lastmod ? { lastmod: linkObj.lastmod } : {}) };
 
         if (url === '/' || url === '/about' || url === '/contact' || url === '/faq' ||
             url === '/resources' || url === '/expert-insights' || url === '/support' ||

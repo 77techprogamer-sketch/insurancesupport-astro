@@ -1,73 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
+
+// Keep the registration identifier consistent with the site's other advisor references.
 ---
-<BaseLayout title="About Hari Kotian" description="Meet Hari Kotian — IRDAI certified insurance advisor with 25+ years experience, 1000+ clients served, and INR 50+ Crores in claims recovered across India." keywords="Hari Kotian insurance advisor, IRDAI certified insurance advisor Bangalore, experienced insurance agent, claim recovery expert India, insurance advisor 25 years experience, trusted insurance agent Bengaluru">
-  <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online' }, { label: 'About', url: 'https://insurancesupport.online/about' }]} />
+<BaseLayout
+  title="About Hari Kotian | Insurance Support"
+  description="Learn about Hari Kotian (IRDAI registration number 0149161D) and Insurance Support, a Bengaluru-based insurance guidance and claim assistance service."
+  canonical="https://insurancesupport.online/about/"
+  dateModified="2026-10-05"
+>
+  <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'About Hari Kotian', url: 'https://insurancesupport.online/about/' }]} />
   <main id="main" class="max-w-4xl mx-auto px-4 py-16">
     <h1 class="text-4xl font-bold text-slate-900 mb-4">About Hari Kotian</h1>
-    <p class="text-lg text-slate-600 mb-6 leading-relaxed">IRDAI Certified Insurance Advisor (Reg No: 0149161D). 25+ years of experience serving families across India.</p>
+    <p class="text-lg text-slate-600 mb-8 leading-relaxed">Hari Kotian (IRDAI registration number <strong>0149161D</strong>) leads Insurance Support, a Bengaluru-based service offering insurance guidance and claim assistance.</p>
 
-    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 mb-10">
-      <h2 class="text-2xl font-bold text-slate-900 mb-4">Your Trusted Insurance Partner</h2>
-      <p class="text-slate-700 leading-relaxed mb-4">
-        With over <strong>25 years</strong> in the insurance industry, I've helped <strong>1000+ families</strong> across India secure their financial future through carefully chosen insurance plans. My mission is simple — protect what matters most to you with the right coverage, at the right price.
-      </p>
-      <p class="text-slate-700 leading-relaxed mb-4">
-        I specialize in <strong>claim recovery</strong>, having successfully recovered <strong>INR 50+ Crores</strong> in claim amounts for my clients. Whether it's a rejected claim, a complex policy issue, or just finding the right plan — I'm here to help.
-      </p>
-      <p class="text-slate-700 leading-relaxed">
-        As a <strong>LIC authorized advisor</strong> with IRDAI certification, I offer unbiased advice across life, health, motor, term, and all insurance types. Free consultations — no obligation.
-      </p>
-    </div>
+    <section class="rounded-2xl border border-slate-200 bg-white p-7 mb-8" aria-labelledby="about-insurance-support">
+      <h2 id="about-insurance-support" class="text-2xl font-bold text-slate-900 mb-4">What does Insurance Support do?</h2>
+      <p class="text-slate-700 leading-relaxed">Insurance Support helps people understand policy terms, organize claim documents, review insurer correspondence, and navigate follow-up. The insurer decides each claim under the issued policy and the evidence provided. Complaint forums have separate eligibility requirements and time limits.</p>
+    </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <div class="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
-        <div class="text-3xl font-extrabold text-blue-600 mb-1">25+</div>
-        <p class="text-sm text-slate-500">Years Experience</p>
-      </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
-        <div class="text-3xl font-extrabold text-blue-600 mb-1">1000+</div>
-        <p class="text-sm text-slate-500">Happy Clients</p>
-      </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
-        <div class="text-3xl font-extrabold text-blue-600 mb-1">₹50Cr+</div>
-        <p class="text-sm text-slate-500">Claims Recovered</p>
-      </div>
-    </div>
-
-    <div class="mb-10">
-      <h2 class="text-2xl font-bold text-slate-900 mb-4">Services I Offer</h2>
-      <ul class="space-y-3 text-slate-700">
-        <li class="flex items-start gap-3">
-          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
-          <span><strong>Life Insurance:</strong> LIC policies, term plans, endowment, ULIP, money-back, whole life</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
-          <span><strong>Health Insurance:</strong> Individual, family floater, senior citizen, super top-up, critical illness</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
-          <span><strong>Motor Insurance:</strong> Car, bike, third-party, comprehensive, zero-depreciation</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
-          <span><strong>Claim Recovery:</strong> File appeals, represent you at IRDAI/ombudsman, negotiate settlements</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0" />
-          <span><strong>Policy Management:</strong> Revival, surrender, loan, nomination, maturity, portability</span>
-        </li>
+    <section class="mb-10" aria-labelledby="services-provided">
+      <h2 id="services-provided" class="text-2xl font-bold text-slate-900 mb-4">Insurance guidance and claim assistance</h2>
+      <ul class="list-disc list-inside space-y-2 text-slate-700">
+        <li>Life, term, health, and motor policy guidance.</li>
+        <li>Help organizing documents for an insurance claim.</li>
+        <li>Review of an insurer’s written claim decision and related policy terms.</li>
+        <li>Guidance on insurer grievance and external complaint information.</li>
+        <li>Policy review and servicing questions.</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 md:p-10 text-center text-white">
-      <h2 class="text-2xl font-bold mb-3">Need help with insurance?</h2>
-      <p class="text-blue-200/80 mb-6">Free consultation — no obligation. Let's find the right plan for you.</p>
-      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full text-lg shadow-lg shadow-amber-500/25 hover:shadow-xl hover:scale-105 transition-all">
-        Book Free Consultation
-      </a>
+    <section class="rounded-2xl bg-slate-50 border border-slate-200 p-7 mb-10" aria-labelledby="business-details">
+      <h2 id="business-details" class="text-2xl font-bold text-slate-900 mb-4">Business details</h2>
+      <dl class="grid sm:grid-cols-2 gap-4 text-slate-700">
+        <div><dt class="font-semibold">Business</dt><dd>Insurance Support</dd></div>
+        <div><dt class="font-semibold">Lead advisor</dt><dd>Hari Kotian</dd></div>
+        <div><dt class="font-semibold">IRDAI registration number</dt><dd>0149161D</dd></div>
+        <div><dt class="font-semibold">Location</dt><dd>Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013, India</dd></div>
+        <div><dt class="font-semibold">Phone</dt><dd><a class="text-blue-700 underline" href="tel:+919986634506">+91 99866 34506</a></dd></div>
+      </dl>
+    </section>
+
+    <p class="text-sm text-slate-500 mb-8">Insurance information is general guidance. Check your issued policy and current insurer or regulator instructions for your situation. Claim outcomes are determined by the insurer under the policy terms.</p>
+
+    <div class="text-center">
+      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg">Contact Insurance Support</a>
     </div>
   </main>
 </BaseLayout>

@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedHero from '../components/AnimatedHero';
-import TrustCounterBar from '../components/TrustCounterBar';
 import ServicesGrid from '../components/ServicesGrid';
 import FeaturesSection from '../components/sections/FeaturesSection.astro';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import BlogSection from '../components/BlogSection';
 import NewsletterSection from '../components/NewsletterSection';
-import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
-import PersonJsonLd from '../components/PersonJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
-import ClaimRecoveryTicker from '../components/ClaimRecoveryTicker.astro';
 import AdvisorVsPortalSection from '../components/AdvisorVsPortalSection.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 
@@ -39,42 +35,52 @@ const homepageFaqs = [
     answer: "Term insurance provides coverage for a specified period, usually at a lower premium. Whole-life insurance can provide lifelong coverage and may include a cash value element, depending on the product. Compare policy terms and suitability before deciding."
   },
   {
+    question: "What should I do if my insurance claim is rejected?",
+    answer: "If your insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer’s grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal."
+  },
+  {
+    question: "What can I do about a delayed insurance claim?",
+    answer: "For a delayed claim, keep the claim reference, submission receipts, and insurer or TPA replies. Ask the insurer’s grievance redressal officer for a written status and next step. If the issue remains unresolved, check the current IRDAI complaint and Insurance Ombudsman routes, including their eligibility and time limits, before filing."
+  },
+  {
     question: "What is the Insurance Ombudsman?",
-    answer: "The Insurance Ombudsman is a free grievance forum. First write to your insurer; you may approach the Ombudsman if the insurer rejects your complaint, you are dissatisfied with its reply, or you receive no reply within one month. The amended Rules provide for awards up to ₹50 lakh, including relevant expenses. Check current eligibility before filing."
+    answer: "The Insurance Ombudsman is an external forum for eligible insurance policyholder complaints. First use the insurer’s grievance process and keep its written response and your supporting documents. Eligibility, jurisdiction, and filing time limits depend on current rules and the case, so check the Council for Insurance Ombudsmen guidance before submitting a complaint."
   }
 ];
 ---
 
 <BaseLayout
-  title="Insurance Advisor in Bengaluru | Claim Support | Hari Kotian"
-  description="Speak with Hari Kotian, an IRDAI-registered insurance advisor in Bengaluru with 25+ years of experience. Get clear policy guidance and help navigating difficult claims."
-  keywords="insurance advisor Bangalore, insurance claim support, claim recovery expert, IRDAI registered insurance advisor, health insurance advisor, term insurance advisor"
+  title="Insurance Claim Support in Bengaluru | Insurance Support"
+  description="Insurance Support helps people understand policy options, organize claim documents, and navigate insurer follow-up. Based in Jalahalli, Bengaluru."
+  keywords="insurance advisor Bangalore, insurance claim support, health insurance advisor, term insurance advisor"
   canonical="https://insurancesupport.online/"
+  dateModified="2026-10-05"
 >
-  <LocalBusinessJsonLd />
-  <PersonJsonLd />
-
   <!-- ===== HEADER ===== -->
 
   <main id="main" class="page-transition">
 
     <!-- ===== HERO ===== -->
         <AnimatedHero client:visible />
+        <section class="bg-white py-12" aria-labelledby="claim-rejected-answer">
+          <div class="max-w-4xl mx-auto px-4">
+            <h2 id="claim-rejected-answer" class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">What should I do if my insurance claim is rejected?</h2>
+            <p class="text-lg leading-relaxed text-slate-700">If your insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer’s grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal.</p>
+            <a class="inline-block mt-4 text-blue-700 font-semibold underline" href="/support">See how Insurance Support can help with a claim</a>
+          </div>
+        </section>
 
         <!-- ===== INSURANCE CALCULATOR ===== -->
         <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
           <div class="max-w-6xl mx-auto px-4">
             <!-- Value Proposition Content -->
             <div class="text-center mb-16 reveal">
-              <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Expert Insurance Advisory — Trusted in Bengaluru Since 1998</h2>
+              <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Insurance guidance and claim support in Bengaluru</h2>
               <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                As an independent IRDAI-certified insurance advisor (Reg. No: 0149161D) serving families across
-                Bengaluru and Karnataka for 25+ years, I cut through the jargon to find plans that actually get claims
-                approved. Unlike online portals that push whichever policy pays the highest commission, I work purely
-                for your family's financial security — and when claims get rejected, I fight to recover what's yours.
+                Insurance Support is led by Hari Kotian and provides insurance guidance and claim assistance from Bengaluru. We help people understand policy terms, organize relevant documents, and follow up with insurers. Each claim is decided by the insurer under the policy terms and available evidence.
               </p>
               <p class="text-sm text-slate-500 mt-4 italic max-w-3xl mx-auto">
-                Specialisation areas: Term Insurance | Health Insurance | Claim Recovery | Policy Review
+                IRDAI registration number: 0149161D. Specialisation areas: term insurance, health insurance, claim support, and policy review.
               </p>
             </div>
             <div class="text-center mb-12 reveal" style="transition-delay:0.1s">
@@ -94,23 +100,12 @@ const homepageFaqs = [
       <div class="max-w-7xl mx-auto px-4 text-center">
         <div class="inline-flex items-center gap-3 px-6 py-3 bg-amber-50 border border-amber-200 rounded-full">
           <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span class="text-lg font-bold text-slate-900">4.2★ on Google</span>
-          <span class="text-slate-400">|</span>
-          <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors">23 reviews</a>
-          <span class="text-slate-400">|</span>
-          <span class="text-slate-600">IRDAI Reg: 0149161D</span>
-          <span class="text-slate-400">|</span>
-          <span class="text-slate-600">25+ Years Experience</span>
-          <span class="text-slate-400">|</span>
-          <span class="text-slate-600">1000+ Families Served</span>
+          <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-800 font-semibold transition-colors">Read Insurance Support customer feedback on Google</a>
         </div>
       </div>
     </section>
 
     <!-- ===== TRUST COUNTER BAR ===== -->
-    <TrustCounterBar client:visible />
-    <ClaimRecoveryTicker />
-
     <!-- ===== TRUST INDICATORS ===== -->
     <section class="py-12 bg-white border-b border-slate-100">
       <div class="max-w-6xl mx-auto px-4">
@@ -119,26 +114,26 @@ const homepageFaqs = [
             <div class="w-14 h-14 mx-auto mb-4 bg-blue-100 rounded-xl flex items-center justify-center">
               <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">IRDAI Certified</h3>
-            <p class="text-sm text-slate-600">Reg. No: 0149161D — Government authorized advisor</p>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Claim Process Guidance</h3>
+            <p class="text-sm text-slate-600">Guidance on policy terms and insurer processes</p>
           </div>
           <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.08s">
             <div class="w-14 h-14 mx-auto mb-4 bg-emerald-100 rounded-xl flex items-center justify-center">
               <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">25+ Years Experience</h3>
-            <p class="text-sm text-slate-600">Helping families since 1998 across India</p>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Policy Guidance</h3>
+            <p class="text-sm text-slate-600">Understand coverage, exclusions, and documents</p>
           </div>
           <div class="reveal p-6 hover:bg-slate-50 rounded-2xl transition-colors" style="transition-delay:0.16s">
             <div class="w-14 h-14 mx-auto mb-4 bg-amber-100 rounded-xl flex items-center justify-center">
               <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">₹50 Cr+ Recovered</h3>
-            <p class="text-sm text-slate-600">Claim rejection recovery expertise</p>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Claim Assistance</h3>
+            <p class="text-sm text-slate-600">Help organizing documents and insurer follow-up</p>
           </div>
         </div>
         <div class="mt-8 text-center reveal">
-          <p class="text-sm text-slate-400 font-medium uppercase tracking-wider">Trusted by 1000+ families across Bengaluru & India</p>
+          <p class="text-sm text-slate-500 font-medium">Based in Jalahalli, Bengaluru, Karnataka</p>
         </div>
       </div>
     </section>
@@ -208,7 +203,7 @@ const homepageFaqs = [
           <div class="text-center reveal relative" style="transition-delay:0.3s">
             <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold text-2xl shadow-lg shadow-amber-500/30 glow-pulse relative z-10 hover:scale-110 transition-transform">4</div>
             <h3 class="text-lg font-bold mb-2">Get Results</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">We ensure your claim is processed and approved.</p>
+            <p class="text-sm text-slate-400 leading-relaxed">We explain follow-up options and coordinate with the insurer; the insurer decides the claim under the policy terms.</p>
           </div>
         </div>
       </div>
@@ -243,7 +238,16 @@ const homepageFaqs = [
                   <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </summary>
                 <div class="px-6 pb-6">
-                  <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
+                <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
+                {faq.question === "How much does insurance cost and what affects the premium?" && (
+                  <p class="text-sm text-slate-500 mt-3">See the <a class="text-blue-700 underline" href="https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf" target="_blank" rel="noopener noreferrer">GST Council FAQ</a> for the government’s explanation of the exemption.</p>
+                )}
+                {faq.question === "What can I do about a delayed insurance claim?" && (
+                  <p class="text-sm text-slate-500 mt-3">For current regulatory grievance guidance, see <a class="text-blue-700 underline" href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer">IRDAI Bima Bharosa</a>.</p>
+                )}
+                {faq.question === "What is the Insurance Ombudsman?" && (
+                  <p class="text-sm text-slate-500 mt-3">See the <a class="text-blue-700 underline" href="https://www.cioins.co.in/Procedure/Index" target="_blank" rel="noopener noreferrer">Council for Insurance Ombudsmen complaint procedure</a> for current eligibility and filing steps.</p>
+                )}
                 </div>
               </details>
             </div>

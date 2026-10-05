@@ -1,38 +1,32 @@
 ---
-// Reuse the canonical InsuranceAgency entity declared by the site-wide graph.
+// Keep this entity aligned with the visible business details and BaseLayout graph.
 ---
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
   "@id": "https://insurancesupport.online/#organization",
   "name": "Insurance Support",
-  "description": "LIC Policy Advisor and Claim Recovery Expert in Bangalore. 25+ years experience, IRDAI certified.",
+  "description": "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
   "url": "https://insurancesupport.online/",
-  "logo": "https://insurancesupport.online/logo.png",
-  "telephone": "+91-9986634506",
+  "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM/review"],
+  "telephone": "+919986634506",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Bahubali Nagar, Jalahalli",
     "addressLocality": "Bengaluru",
-    "addressRegion": "KA",
+    "addressRegion": "Karnataka",
     "postalCode": "560013",
     "addressCountry": "IN"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 13.0159,
-    "longitude": 77.5522
-  },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     "opens": "09:00",
     "closes": "21:00"
   },
   "areaServed": [
     { "@type": "City", "name": "Bengaluru" },
     { "@type": "State", "name": "Karnataka" },
-    { "@type": "Country", "name": "IN" }
-  ],
-    "priceRange": "₹₹"
-  })} />
+    { "@type": "Country", "name": "India" }
+  ]
+})} />
