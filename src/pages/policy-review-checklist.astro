@@ -4,7 +4,7 @@ import LeadMagnetForm from '../components/LeadMagnetForm.astro';
 import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
 ---
 
-<BaseLayout title="Free Policy Review Checklist - Insurance Support" description="Get instant access to our comprehensive policy review checklist to identify gaps in your insurance coverage before it's too late.">
+<BaseLayout title="Printable Insurance Policy Review Checklist | Insurance Support" description="Get a free printable insurance policy review checklist to organize policy documents, coverage limits, exclusions, renewal details, nominees, and claim records in India." keywords="insurance policy review checklist, insurance coverage review, policy document checklist India, health life motor insurance review">
   <LocalBusinessJsonLd />
 
 
@@ -19,10 +19,10 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
           Free Resource
         </span>
         <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">
-          Policy Review Checklist: Don't Let Hidden Gaps Ruin Your Family's Financial Future
+          Free Printable Insurance Policy Review Checklist
         </h1>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-          Get our comprehensive 12-point checklist (used with 500+ families in Bangalore) to identify missing coverage, redundant policies, and potential claim pitfalls before they become a problem.
+          Use this 12-point worksheet to review your policy documents, coverage limits, exclusions, renewals, and claim records. Confirm policy-specific questions directly with your insurer.
         </p>
       </div>
 
@@ -35,8 +35,8 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
               <span class="text-blue-600 font-bold text-sm">1</span>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-1">Coverage Adequacy Check</h3>
-              <p class="text-sm text-slate-600">Is your sum assured enough for your family's needs?</p>
+              <h3 class="font-bold text-slate-900 mb-1">Coverage and Limits Review</h3>
+              <p class="text-sm text-slate-600">Record the cover amount, benefits, limits, and sub-limits in the policy.</p>
             </div>
           </div>
           <div class="flex gap-4">
@@ -44,8 +44,8 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
               <span class="text-blue-600 font-bold text-sm">2</span>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-1">Nomination Accuracy Scan</h3>
-              <p class="text-sm text-slate-600">Are your nominees correctly designated?</p>
+              <h3 class="font-bold text-slate-900 mb-1">Nominee Details</h3>
+              <p class="text-sm text-slate-600">Check the recorded nominee information where the policy has a nominee.</p>
             </div>
           </div>
           <div class="flex gap-4">
@@ -53,8 +53,8 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
               <span class="text-blue-600 font-bold text-sm">3</span>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-1">Claim Readiness Score</h3>
-              <p class="text-sm text-slate-600">Will your claim get approved quickly?</p>
+              <h3 class="font-bold text-slate-900 mb-1">Claim Record Readiness</h3>
+              <p class="text-sm text-slate-600">Keep the policy, insurer contacts, and claim instructions accessible.</p>
             </div>
           </div>
           <div class="flex gap-4">
@@ -62,8 +62,8 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
               <span class="text-blue-600 font-bold text-sm">4</span>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-1">Tax Optimization Guide</h3>
-              <p class="text-sm text-slate-600">Maximize deductions under Sec 80C, 80D, 10(10D)</p>
+              <h3 class="font-bold text-slate-900 mb-1">Questions to Verify</h3>
+              <p class="text-sm text-slate-600">Note policy or tax questions to confirm with the insurer or a qualified professional.</p>
             </div>
           </div>
           <div class="flex gap-4">
@@ -71,8 +71,8 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
               <span class="text-blue-600 font-bold text-sm">5</span>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-1">Redundancy Detector</h3>
-              <p class="text-sm text-slate-600">Spot overlapping or duplicate coverage</p>
+              <h3 class="font-bold text-slate-900 mb-1">Policy Terms and Conditions</h3>
+              <p class="text-sm text-slate-600">Find exclusions, waiting periods, co-payments, and other conditions.</p>
             </div>
           </div>
           <div class="flex gap-4">
@@ -80,8 +80,8 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
               <span class="text-blue-600 font-bold text-sm">6</span>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-1">Premium Benchmarking</h3>
-              <p class="text-sm text-slate-600">Is your premium competitive?</p>
+              <h3 class="font-bold text-slate-900 mb-1">Renewal and Payment Details</h3>
+              <p class="text-sm text-slate-600">Record renewal dates, payment instructions, and reminders.</p>
             </div>
           </div>
         </div>
@@ -90,25 +90,26 @@ import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
       <!-- Form Section -->
       <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl shadow-2xl p-8 md:p-12 text-center text-white">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">Download Your Free Checklist Now</h2>
-        <p class="text-blue-100 mb-8 max-w-xl mx-auto">Enter your details below and we'll email your PDF checklist within seconds.</p>
+        <p class="text-blue-100 mb-8 max-w-xl mx-auto">Enter your details to unlock the printable checklist on this page.</p>
         <LeadMagnetForm
-          fields={["name", "email", "phone", "insurer", "claimAmount"]}
+          fields={["name", "email", "phone"]}
           ctaText="Get My Free Checklist"
           magnetSlug="policy-review-checklist"
-          thankYouMessage="Your Policy Review Checklist is on its way to your email! We'll also send a personalized WhatsApp message with next steps."
+          thankYouMessage="Your printable policy review checklist is ready below."
+          downloadUrl="/downloads/policy-review-checklist.html"
           variant="inline"
         />
       </div>
 
       <!-- Trust Signals -->
       <div class="text-center mt-12">
-        <p class="text-sm text-slate-500 mb-4">Trusted by 500+ families across Bengaluru</p>
+        <p class="text-sm text-slate-500 mb-4">Insurance guidance and claim support from Bengaluru</p>
         <div class="flex items-center justify-center gap-4 flex-wrap">
           <span class="text-xs text-slate-400">IRDAI Reg: 0149161D</span>
           <span class="text-slate-300">|</span>
-          <span class="text-xs text-slate-400">25+ Years Experience</span>
+          <span class="text-xs text-slate-400">Policy and claim guidance</span>
           <span class="text-slate-300">|</span>
-          <span class="text-xs text-slate-400">₹50 Cr+ Claims Recovered</span>
+          <span class="text-xs text-slate-400">Claim outcomes depend on policy terms</span>
         </div>
       </div>
     </div>

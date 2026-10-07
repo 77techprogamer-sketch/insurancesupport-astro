@@ -2,12 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 
-const TITLE = "Cashless Health Insurance Claim Denied at the Hospital? First 60 Minutes Action Plan (2026)";
-const DESCRIPTION = "Cashless treatment denied at the hospital desk? Follow this 60-minute action plan from a 25-year insurance veteran: get the rejection reason in writing, escalate the pre-auth dispute, and protect your reimbursement claim.";
-const KEYWORDS = "cashless health insurance claim denied, pre-authorization rejected India, cashless denied at hospital what to do, TPA rejected preauth appeal, IRDAI cashless pre-authorisation timeline";
+const TITLE = "Cashless Health Insurance Claim Denied at Hospital: What to Do (India)";
+const DESCRIPTION = "Cashless health insurance rejected at the hospital? Get the written pre-authorisation reason, ask what can be corrected, protect your records, and understand reimbursement and grievance options in India.";
+const KEYWORDS = "cashless health insurance claim denied, cashless claim rejected at hospital what to do, health insurance pre-authorization rejected, TPA rejected cashless claim, cashless hospitalization denied India, cashless claim appeal";
 const CANONICAL_URL = "https://insurancesupport.online/blog/cashless-health-insurance-claim-denied-hospital-2026/";
 const AUTHOR_NAME = "Hari Kotian";
 const PUBLISH_DATE = "2026-09-27";
+const MODIFIED_DATE = "2026-10-07";
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
@@ -15,57 +16,43 @@ const ARTICLE_JSON_LD = {
   "headline": TITLE,
   "description": DESCRIPTION,
   "datePublished": PUBLISH_DATE,
-  "dateModified": PUBLISH_DATE,
+  "dateModified": MODIFIED_DATE,
   "author": { "@type": "Person", "name": AUTHOR_NAME },
   "publisher": { "@type": "Organization", "name": "Insurance Support" },
   "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
 };
 
-const FAQ_FAQ_PAGE_JSON_LD = {
+const FAQS = [
+  {
+    question: "Does a cashless pre-authorisation denial mean my health insurance claim is rejected?",
+    answer: "Not necessarily. A cashless decision concerns direct settlement with the network hospital at that stage. It does not by itself decide every later reimbursement request. The insurer will still assess any claim under the policy terms, exclusions, limits, documents and claim-submission requirements."
+  },
+  {
+    question: "How long does an insurer have to decide a cashless request?",
+    answer: "IRDAI's 2024 health insurance master circular says an insurer should decide a cashless authorisation request immediately and within one hour of receiving it. For final authorisation after a discharge request, the stated time limit is three hours. Record when the hospital sent each request and when the insurer responded."
+  },
+  {
+    question: "Can I claim reimbursement after cashless treatment is denied?",
+    answer: "You may submit a reimbursement claim if the treatment and expenses are covered under your policy, subject to its terms and required documents. A cashless denial does not guarantee reimbursement. Check the policy's claim notice and submission deadlines, and keep itemised bills, receipts, clinical records and the written cashless decision."
+  },
+  {
+    question: "What should I ask the hospital insurance desk after a cashless denial?",
+    answer: "Ask for the pre-authorisation reference, the exact written reason, the request and decision timestamps, and whether the hospital can submit missing clinical information or a clarification. Ask for copies of what was sent. Then contact the insurer using the number on your policy or health card and request a service ticket."
+  },
+  {
+    question: "Where can I complain if the insurer does not resolve my grievance?",
+    answer: "First submit a written grievance to the insurer's grievance redressal officer and keep its acknowledgement. If unresolved, you can use IRDAI's Bima Bharosa channel or check whether your complaint qualifies for the Insurance Ombudsman. The Ombudsman has eligibility, time and subject-matter rules, so confirm the current process on its official website."
+  }
+];
+
+const FAQ_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can a hospital refuse treatment if the cashless request is denied?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Life-threatening emergencies must be stabilised regardless of payment confirmation. For planned hospitalisation, the hospital may ask you to pay a deposit or switch to a reimbursement route if pre-authorisation is denied, but the denial must be given with a written reason from the insurer or TPA."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How fast must an insurer respond to a cashless pre-authorisation request?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "IRDAI's Health Department guidance says the insurer should decide a cashless pre-authorisation request immediately and no later than one hour after receipt. Final cashless authorisation is due within three hours after the hospital's discharge-authorisation request. Ask the hospital desk to share the request time, reference number, and written decision."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "If cashless is denied, can I still claim reimbursement later?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. A cashless denial does not reject your claim itself. Pay the bills, collect the complete document set — itemised bills, discharge summary, prescriptions, investigation reports, and the written denial letter — and file for reimbursement within the policy's timeline, typically 15 to 30 days after discharge."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are the most common reasons cashless requests are rejected in India?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The top reasons are: policy not active or premiums unpaid, treatment falling inside a waiting period, pre-existing disease declarations under review, insufficient sum insured after earlier claims, room rent beyond the eligible category, and missing or incomplete clinical details in the pre-authorisation form."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I dispute the denial at the hospital or with the insurance company?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Both, in parallel. The hospital insurance desk escalates to the insurer's helpdesk and can re-submit the pre-auth with better clinical documentation, while you simultaneously note the denial reference number. Only the insurer or TPA can overturn a denial — the hospital can only help you appeal it."
-      }
-    }
-  ]
+  "mainEntity": FAQS.map(({ question, answer }) => ({
+    "@type": "Question",
+    "name": question,
+    "acceptedAnswer": { "@type": "Answer", "text": answer }
+  }))
 };
 ---
 
@@ -73,148 +60,113 @@ const FAQ_FAQ_PAGE_JSON_LD = {
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' },
     { label: 'Blog', url: 'https://insurancesupport.online/blog' },
-    { label: 'Cashless Claim Denied Action Plan', url: CANONICAL_URL }
+    { label: 'Cashless Claim Denied', url: CANONICAL_URL }
   ]} />
-
   <script type="application/ld+json" set:html={JSON.stringify(ARTICLE_JSON_LD)} />
-  <script type="application/ld+json" set:html={JSON.stringify(FAQ_FAQ_PAGE_JSON_LD)} />
+  <script type="application/ld+json" set:html={JSON.stringify(FAQ_JSON_LD)} />
 
   <main id="main" class="max-w-4xl mx-auto px-4 py-16">
-    <nav class="text-sm text-slate-500 mb-6">
-      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Cashless Claim Denied</span>
+    <nav class="text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog/" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Cashless Claim Denied</span>
     </nav>
 
     <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
-    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Cert. Advisor, 25+ years) | Published on {PUBLISH_DATE}</p>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} · Published 27 September 2026 · Updated 7 October 2026</p>
 
     <div class="prose max-w-none text-slate-700 space-y-6">
-      <p class="text-lg leading-relaxed">
-        A cashless denial at the admission desk is one of the most misunderstood moments in Indian health insurance. Families hear <em>"sir, cashless nahi hoga"</em> and assume the claim is dead. It is not. <strong>A pre-authorisation denial is not a claim rejection</strong> — it is a first-round decision that can often be reversed within hours if you respond correctly. This is the exact sequence I have used for over two decades to turn denials into approvals.
-      </p>
+      <p class="text-lg leading-relaxed"><strong>If a cashless health insurance request is denied at the hospital, ask for the decision and reason in writing, get the pre-authorisation reference, and ask whether a clarification or missing record can be sent for review.</strong> A cashless denial is not automatically a final decision on every possible claim. Reimbursement may be available under the policy, but it is assessed against the same coverage terms and required documents.</p>
 
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">First, understand why cashless gets denied</h2>
-      <p>
-        Cashless is a facility, not a guarantee. The insurer's pre-authorisation team reviews the admission request against your policy terms. In practice, denials cluster around seven causes:
-      </p>
-      <ul>
-        <li><strong>Policy not active</strong> — premium unpaid, or the policy was renewed after the grace period lapsed.</li>
-        <li><strong>Waiting period</strong> — the treatment falls inside the 2–4 year waiting window for specific illnesses or procedures.</li>
-        <li><strong>Pre-existing disease (PED) under review</strong> — the diagnosis looks connected to a condition declared (or undeclared) at proposal stage.</li>
-        <li><strong>Sum insured exhausted</strong> — earlier claims in the same policy year have consumed the cover.</li>
-        <li><strong>Room rent breach</strong> — the requested room category exceeds the capping, so proportionate deductions apply.</li>
-        <li><strong>Incomplete clinical papers</strong> — the pre-auth form lacks the discharge summary, investigation reports, or doctor's justification the reviewer needs.</li>
-        <li><strong>Non-medical items bundled</strong> — the estimate includes consumables or administrative items outside cover.</li>
-      </ul>
-      <p>
-        The last two are fixable same-day. The middle ones are negotiable with the right evidence. Only a genuine waiting-period or active-policy problem is a hard stop — and even then you should get the reason in writing before accepting it.
-      </p>
+      <div class="rounded-xl border border-blue-200 bg-blue-50 p-5">
+        <h2 class="text-xl font-bold text-blue-900 mt-0">Quick checklist</h2>
+        <ol>
+          <li>Ask for the written decision, reference number and exact reason.</li>
+          <li>Ask what information is needed and whether the hospital can clarify or resubmit it.</li>
+          <li>Call the insurer using the official number on your policy or health card; note the ticket number.</li>
+          <li>Keep copies of the policy, bills, clinical records, payment proof and messages.</li>
+          <li>If paying for treatment, check the policy's reimbursement process and deadline.</li>
+        </ol>
+      </div>
 
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">The first 60 minutes: minute by minute</h2>
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">What a cashless denial means</h2>
+      <p>Cashless treatment is a facility for the insurer to pay an approved amount directly to a network hospital, subject to the policy and pre-authorisation. A denial or partial approval may relate to missing information, an eligibility question, a policy limit, or a coverage term. The written reason matters: it tells you what the insurer decided and what evidence or policy clause it relied on.</p>
+      <p>Do not assume every denial can be overturned, or that it settles a later reimbursement claim. The insurer may reassess a reimbursement submission, but exclusions, waiting periods, sub-limits, co-payments, medical necessity and documentation requirements still apply.</p>
 
-      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">Minutes 0–10: Get the denial in writing, with a reference number</h3>
-      <p>
-        Politely but firmly ask the hospital insurance desk for the <strong>pre-auth denial reference number and the stated reason</strong>. Insurers communicate pre-auth decisions through the hospital portal or email — ask the desk to share that record. IRDAI's <a href="https://irdai.gov.in/health-dept" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">health guidance</a> says the insurer should decide immediately and no later than one hour after receiving the request. If it is denied, ask for the specific reason in writing. Do not sign any form agreeing to convert to full payment until you understand the decision and your options.
-      </p>
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">First steps at the hospital</h2>
+      <h3 class="text-xl font-semibold text-blue-900">1. Get the full decision record</h3>
+      <p>Ask the hospital insurance desk for the pre-authorisation reference and a copy of the insurer or TPA response. Request the stated reason, any policy clause cited, the amount approved if it was a partial authorisation, and the time the request and decision were sent. If the decision was explained verbally, ask the desk to obtain the written response.</p>
 
-      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">Minutes 10–20: Escalate through the hospital's insurer helpdesk</h3>
-      <p>
-        Every network hospital has a dedicated line to each insurer/TPA. Ask the desk to <strong>escalate the denial to the insurer's helpdesk with a re-submission request</strong>, attaching the missing clinical documents — updated discharge summary, doctor's note on medical necessity, latest investigation reports. Roughly a third of same-day denials I see are documentation gaps that clear on re-submission within an hour.
-      </p>
+      <h3 class="text-xl font-semibold text-blue-900">2. Find out whether the request can be clarified</h3>
+      <p>Ask the treating team and hospital desk whether the insurer needs a clinical note, investigation report, admission history, treatment plan or form correction. The treating doctor should provide accurate clinical information; do not ask anyone to alter or omit medical facts. A clarification may help resolve an information gap, but it does not guarantee approval.</p>
 
-      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">Minutes 20–35: You call the insurer too — in parallel</h3>
-      <p>
-        Call your insurer's 24×7 health helpline yourself (the number is on your health card), quote the policy number and denial reference, and ask three questions: <em>What is the exact reason? Which policy clause is invoked? What documents will you accept for re-review?</em> Note the complaint/ticket number. When the family and the hospital both push, the case gets a second reviewer far faster.
-      </p>
+      <h3 class="text-xl font-semibold text-blue-900">3. Contact the insurer and keep a record</h3>
+      <p>Use the insurer's official customer-care channel from your policy document or health card. Provide the policy and pre-authorisation numbers, ask for the specific reason and next step, and save the service ticket number. Record the date, time and channel for each interaction. The hospital can share medical documents; the insurer makes the coverage decision.</p>
 
-      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">Minutes 35–50: Prepare your fallback — the reimbursement file</h3>
-      <p>
-        If the re-submission also fails, do not stall the treatment. Agree to <strong>pay-and-claim-reimbursement</strong>, but build the file correctly, now, while you can still fix it:
-      </p>
-      <ul>
-        <li>Itemised final bill with procedure-wise breakup (not a summary bill)</li>
-        <li>Discharge summary signed by the treating doctor</li>
-        <li>All prescriptions and investigation reports</li>
-        <li>OT notes / procedure notes if surgery was done</li>
-        <li>Payment receipts in your name; card statements if applicable</li>
-        <li>The <strong>written denial letter</strong> — attach it to the reimbursement claim with your rebuttal if you believe the denial was wrong</li>
-      </ul>
-      <p>
-        File reimbursement within the policy window (usually 15–30 days from discharge). A reimbursement claim with the denial letter attached goes to a different reviewer with fresh eyes — and if the denial was unreasonable, your grievance letter (below) now has a paper trail behind it.
-      </p>
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Check the cashless decision timeline</h2>
+      <p><a href="https://irdai.gov.in/health-dept" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRDAI's Health Department guidance on the 2024 health insurance master circular</a> states that the insurer should decide a cashless authorisation request immediately and no later than one hour after receipt. It also sets a three-hour limit for final authorisation after the hospital submits a discharge-authorisation request. Keep the submission timestamps from the hospital so you can describe any delay accurately in a grievance.</p>
+      <p>These timelines concern the insurer's decision. They do not mean every request must be approved and do not replace the policy terms. If discharge authorisation is delayed, ask the hospital to document when it sent the request and contact the insurer's grievance channel with those details.</p>
 
-      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">Minutes 50–60: Same-day grievance email if the denial looks wrong</h3>
-      <p>
-        If the stated reason contradicts your policy wording — for example, "waiting period" invoked on a treatment you believe is covered, or the reason is unclear — send a short email to the insurer's <strong>Grievance Redressal Officer (GRO)</strong>: policy number, denial reference, why you dispute the reason, and supporting documents. Ask the hospital for the pre-auth request and decision timestamps so you can compare them with IRDAI's one-hour guidance. Escalation to <a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Bima Bharosa and the Insurance Ombudsman</a> remains available if the complaint meets the Ombudsman rules.
-      </p>
-
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Denial reasons decoded: what the words actually mean</h2>
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Common reasons and the evidence to check</h2>
       <div class="overflow-x-auto my-6">
         <table class="min-w-full border border-slate-200 text-sm">
-          <thead class="bg-blue-50">
-            <tr>
-              <th class="border-b px-4 py-2 text-left text-slate-700">What they say</th>
-              <th class="border-b px-4 py-2 text-left text-slate-700">What it usually means</th>
-              <th class="border-b px-4 py-2 text-left text-slate-700">Reversible?</th>
-            </tr>
-          </thead>
+          <thead class="bg-blue-50"><tr>
+            <th class="border-b px-4 py-2 text-left">Reason in the response</th>
+            <th class="border-b px-4 py-2 text-left">What to check</th>
+            <th class="border-b px-4 py-2 text-left">Useful next step</th>
+          </tr></thead>
           <tbody class="divide-y divide-slate-100">
-            <tr><td class="px-4 py-2">"Policy not active"</td><td class="px-4 py-2">Premium unpaid or grace period missed</td><td class="px-4 py-2">Rarely — check renewal receipts</td></tr>
-            <tr><td class="px-4 py-2">"Waiting period applicable"</td><td class="px-4 py-2">Specific illness/procedure window (24–48 months typical)</td><td class="px-4 py-2">No, if genuine — verify dates</td></tr>
-            <tr><td class="px-4 py-2">"Pre-existing condition"</td><td class="px-4 py-2">Diagnosis linked to PED declared at proposal</td><td class="px-4 py-2">Sometimes — medical opinion helps</td></tr>
-            <tr><td class="px-4 py-2">"Insufficient information"</td><td class="px-4 py-2">Pre-auth lacks clinical papers</td><td class="px-4 py-2"><strong>Yes — same day</strong></td></tr>
-            <tr><td class="px-4 py-2">"Room eligibility exceeded"</td><td class="px-4 py-2">Room category above capping</td><td class="px-4 py-2">Yes — downgrade room or accept deduction</td></tr>
-            <tr><td class="px-4 py-2">"Non-medical items"</td><td class="px-4 py-2">Consumables/admin items in estimate</td><td class="px-4 py-2">Partially — itemise and resubmit</td></tr>
+            <tr><td class="px-4 py-3">More information required</td><td class="px-4 py-3">Which clinical record, investigation or clarification is missing?</td><td class="px-4 py-3">Ask the hospital and treating doctor to provide the requested accurate record; retain proof of submission.</td></tr>
+            <tr><td class="px-4 py-3">Waiting period or exclusion</td><td class="px-4 py-3">The exact policy wording, start date, medical history and condition or treatment cited.</td><td class="px-4 py-3">Compare the cited clause with your schedule and prior disclosures; ask the insurer to explain its application in writing.</td></tr>
+            <tr><td class="px-4 py-3">Policy or member eligibility</td><td class="px-4 py-3">Policy dates, premium or renewal proof, insured person's details and active cover.</td><td class="px-4 py-3">Send the schedule, renewal receipt or e-card details if the record appears incorrect.</td></tr>
+            <tr><td class="px-4 py-3">Limit, deductible or co-payment</td><td class="px-4 py-3">Available sum insured, prior claims, sub-limits, deductible and co-pay terms.</td><td class="px-4 py-3">Ask for an itemised calculation and the amount approved or payable by you.</td></tr>
+            <tr><td class="px-4 py-3">Room category or non-payable expense</td><td class="px-4 py-3">Room eligibility, policy schedule and itemised estimate or bill.</td><td class="px-4 py-3">Request the calculation and item-wise basis, and ask how it affects the claim.</td></tr>
           </tbody>
         </table>
       </div>
+      <p>These are examples, not a complete list. Read each response against the wording and schedule of the specific policy. A network hospital does not guarantee that a particular admission or expense is covered.</p>
 
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">When the denial is actually right</h2>
-      <p>
-        Twenty-five years of claim work has taught me that honesty builds more recoveries than outrage. If your premium lapsed before admission, or the treatment genuinely sits inside a waiting period, fighting wastes the days you need for documentation. The professional move is to accept a correct denial quickly, pay, and file a clean reimbursement claim — while making sure any <em>incorrect</em> denial is fought with the escalation ladder above. If you are unsure which side your case falls on, an experienced advisor can read the denial against your policy wording in minutes.
-      </p>
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">If you need to pay and seek reimbursement</h2>
+      <p>For care decisions, speak with the treating team and hospital about clinical needs and payment options. If you pay, collect records while available and retain originals where required. Ask the insurer for the correct claim form, submission channel, document list and deadline stated in your policy.</p>
+      <ul>
+        <li>Itemised final hospital bill and payment receipts</li>
+        <li>Discharge summary, prescriptions and investigation reports</li>
+        <li>Admission records and procedure or operation notes, if applicable</li>
+        <li>Completed claim form and identity or bank details requested by the insurer</li>
+        <li>Pre-authorisation request, denial or partial approval, and later correspondence</li>
+        <li>Copies of every document submitted and submission acknowledgements</li>
+      </ul>
+      <p>Do not rely on a general online deadline: timelines and document requirements vary by policy. Check your policy wording or ask the insurer to confirm the applicable deadline in writing.</p>
 
-      <!-- FAQ Section (visible accordion + FAQPage JSON-LD from shared data) -->
-      <div class="max-w-3xl mx-auto px-4 mt-12">
-        <h3 class="text-xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h3>
-        <div class="space-y-3">
-          {FAQ_FAQ_PAGE_JSON_LD.mainEntity.map(q => (
-            <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-              <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-slate-50 transition-colors">
-                <span class="font-semibold text-slate-900 pr-4">{q.name}</span>
-                <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <div class="px-5 pb-5">
-                <p class="text-slate-600 leading-relaxed">{q.acceptedAnswer.text}</p>
-              </div>
-            </details>
-          ))}
-        </div>
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">How to raise a grievance about the denial</h2>
+      <p>First write to the insurer's grievance redressal officer. Keep the message factual and attach the decision, relevant policy pages, medical records and a clear explanation of the point you dispute. Ask for a reasoned response and acknowledgement. For a reusable structure, see our <a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">health insurance claim appeal guide</a>.</p>
+      <p>If the insurer does not resolve the grievance, review the current official escalation routes. <a href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">IRDAI's Bima Bharosa portal</a> accepts insurance grievances. The <a href="https://www.cioins.co.in/Procedure/Index" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">Council for Insurance Ombudsmen procedure</a> explains eligibility and filing conditions; check these before applying because time limits and other requirements apply.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Frequently asked questions</h2>
+      <div class="space-y-3 not-prose">
+        {FAQS.map((item) => (
+          <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <summary class="p-5 cursor-pointer font-semibold text-slate-900 hover:bg-slate-50">{item.question}</summary>
+            <div class="px-5 pb-5"><p class="text-slate-600 leading-relaxed">{item.answer}</p></div>
+          </details>
+        ))}
       </div>
 
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Related expert guides</h2>
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Related guides and resources</h2>
       <ul>
-        <li><a href="/claim-recovery/" class="text-blue-600 underline">Claim Recovery Hub</a> — the complete guide library, organised by your exact problem</li>
-        <li><a href="/blog/health-insurance-hub-complete-2026-guide/" class="text-blue-600 underline">Health Insurance Hub</a> — medical coverage, claims & portability in one guide</li>
-        <li><a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">Health claim rejected? The full appeal guide</a> — grievance to Ombudsman escalation</li>
-        <li><a href="/blog/health-insurance-claim-rejection-15-reasons/" class="text-blue-600 underline">15 reasons health claims get rejected</a> — and prevention for each</li>
-        <li><a href="/blog/insurance-ombudsman-india-guide/" class="text-blue-600 underline">Insurance Ombudsman guide</a> — free grievance route, with current eligibility rules</li>
-        <li><a href="/support/" class="text-blue-600 underline">Claim support service</a> — how we help policyholders recover claims</li>
+        <li><a href="/claim-recovery/" class="text-blue-600 underline">Health insurance claim recovery hub</a> — steps for common claim problems.</li>
+        <li><a href="/blog/health-insurance-claim-rejected-appeal-guide-2026/" class="text-blue-600 underline">Health insurance claim rejection appeal guide</a> — insurer grievance and escalation steps.</li>
+        <li><a href="/blog/health-insurance-claim-rejection-15-reasons/" class="text-blue-600 underline">Common health insurance claim rejection reasons</a> — what to review in the policy and claim file.</li>
+        <li><a href="/lead-magnets/health-claim-denial/" class="text-blue-600 underline">Health claim denial document checklist</a> — organise papers for review.</li>
+        <li><a href="/support/" class="text-blue-600 underline">Claim support service</a> — see the service scope and how to request a review.</li>
       </ul>
     </div>
 
-    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
-      <h2 class="text-2xl font-bold mb-3">Cashless Denied Right Now? Get a Same-Day Review.</h2>
-      <p class="text-blue-100 mb-6">Share the denial reason and your policy wording — I'll tell you within minutes whether to fight, re-submit, or file reimbursement. 25+ years of claim recovery experience.</p>
+    <aside class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Need help reviewing a cashless denial?</h2>
+      <p class="text-blue-100 mb-6">Share the written reason and relevant policy pages for a document review. Any coverage decision remains with the insurer and depends on your policy and records.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20my%20cashless%20claim%20was%20denied%20at%20the%20hospital.%20Please%20help." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-          WhatsApp Your Denial Letter
-        </a>
-        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
-          Call +91-99866 34506
-        </a>
+        <a href="https://wa.me/919986634506?text=Hi%2C%20my%20cashless%20health%20insurance%20request%20was%20denied.%20I%20need%20help%20understanding%20the%20written%20reason." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">Ask about a document review</a>
+        <a href="/support/" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">View support details</a>
       </div>
-    </div>
+    </aside>
   </main>
 </BaseLayout>

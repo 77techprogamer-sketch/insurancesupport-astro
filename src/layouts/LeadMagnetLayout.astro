@@ -8,14 +8,16 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 interface Props {
   title: string;
   description: string;
+  keywords?: string;
+  canonical?: string;
   ogImage?: string;
   noIndex?: boolean;
 }
 
-const { title, description, ogImage, noIndex } = Astro.props;
+const { title, description, keywords, canonical, ogImage, noIndex } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} ogImage={ogImage} noIndex={noIndex}>
+<BaseLayout title={title} description={description} keywords={keywords} canonical={canonical} ogImage={ogImage} noIndex={noIndex}>
   <Header />
   <Breadcrumbs currentPage={title} />
   

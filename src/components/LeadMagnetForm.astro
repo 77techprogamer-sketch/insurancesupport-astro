@@ -5,15 +5,16 @@ interface Props {
   ctaText: string;
   magnetSlug: string;
   thankYouMessage: string;
+  downloadUrl?: string;
   variant?: 'inline' | 'sticky';
 }
 
-const { fields, ctaText, magnetSlug, thankYouMessage, variant = 'inline' } = Astro.props;
+const { fields, ctaText, magnetSlug, thankYouMessage, downloadUrl = '', variant = 'inline' } = Astro.props;
 
 const fieldLabels: Record<string, { label: string; type: string; placeholder: string; required: boolean; options?: string[] }> = {
   name: { label: 'Full Name', type: 'text', placeholder: 'Your name', required: true },
   email: { label: 'Email Address', type: 'email', placeholder: 'you@example.com', required: true },
-  phone: { label: 'WhatsApp Number', type: 'tel', placeholder: '+91 99866 34506', required: true },
+  phone: { label: 'Phone / WhatsApp Number (optional)', type: 'tel', placeholder: '+91 99866 34506', required: false },
   insurer: {
     label: 'Insurance Company',
     type: 'select',
@@ -75,7 +76,7 @@ const fieldLabels: Record<string, { label: string; type: string; placeholder: st
 };
 ---
 
-<div class={`lead-magnet-form-wrapper ${variant}`} data-magnet-slug={magnetSlug}>
+<div class={`lead-magnet-form-wrapper ${variant}`} data-magnet-slug={magnetSlug} data-download-url={downloadUrl}>
   <form
     class="lead-magnet-form bg-white rounded-2xl shadow-xl border border-slate-200 p-8 space-y-5"
     data-magnet-slug={magnetSlug}
@@ -87,7 +88,7 @@ const fieldLabels: Record<string, { label: string; type: string; placeholder: st
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
        </svg>
      </div>
-      <p class="text-sm text-slate-600">Free download &middot; No spam &middot; Unsubscribe anytime</p>
+      <p class="text-sm text-slate-600">Free download &middot; Your download link appears here after submission</p>
    </div>
 
     {fields.map((fieldName) => {
@@ -152,7 +153,7 @@ const fieldLabels: Record<string, { label: string; type: string; placeholder: st
    </button>
 
     <p class="text-xs text-center text-slate-500 leading-relaxed">
-      By submitting, you agree to receive the resource + occasional insurance tips. We respect your inbox and never share your data.
+      Your details are used to provide this resource and respond to your request. See our <a href="/privacy-policy" class="text-blue-700 underline">Privacy Policy</a>.
    </p>
  </form>
 
@@ -165,11 +166,7 @@ const fieldLabels: Record<string, { label: string; type: string; placeholder: st
    </div>
     <h3 class="text-2xl font-bold text-green-900 mb-2">You're all set! 🎉</h3>
     <p class="success-text text-green-800 mb-4">{thankYouMessage}</p>
-    <div class="bg-white rounded-lg p-4 text-sm text-slate-700 space-y-2">
-      <p class="font-semibold">📧 Check your email in the next 2 minutes</p>
-      <p class="font-semibold">📱 WhatsApp link sent to your phone</p>
-      <p class="font-semibold">❓ Questions? Reply to the email or WhatsApp us</p>
-   </div>
+    {downloadUrl && <a class="download-resource inline-flex items-center justify-center rounded-lg bg-blue-700 px-6 py-3 font-bold text-white hover:bg-blue-800" href={downloadUrl} download>Download your resource</a>}
  </div>
 </div>
 
@@ -241,7 +238,7 @@ const fieldLabels: Record<string, { label: string; type: string; placeholder: st
             });
           }
 
-          // Hide form, show success
+          // Show the real, locally hosted guide after successful lead capture.
           form.classList.add('hidden');
           const wrapper = form.parentElement;
           const success = wrapper?.querySelector<HTMLElement>('.success-message');

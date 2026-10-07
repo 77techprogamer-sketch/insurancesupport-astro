@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'Insurance Claim Support Services in India: Compare Your Options';
+const description = 'Compare insurance claim support options from Insurance Support, Insurance Samadhan, and Ditto. Review each service model, focus, and next steps for a rejected or delayed claim.';
+const canonical = 'https://insurancesupport.online/compare/insurance-claim-support-services';
+const rows = [
+  { feature: 'Main focus stated on its website', own: 'Bengaluru-based insurance guidance, policy questions, claim documents, and insurer follow-up.', samadhan: 'Insurance complaint resolution, including claim rejection, delay, short settlement, and mis-selling.', ditto: 'Policy advice and claims assistance, with dedicated claims support managers and published claim guidance.' },
+  { feature: 'What a policyholder can explore', own: 'Claim support, policy review, claim resources, and direct advisor contact.', samadhan: 'Complaint review and assistance preparing or taking a grievance forward.', ditto: 'Claims assistance for health and term policies, plus policy comparison and purchase advice.' },
+  { feature: 'A useful first step', own: 'Organize the policy, claim reference, insurer decision, and follow-up record; request guidance if needed.', samadhan: 'Review its complaint service and current engagement terms for the type of issue.', ditto: 'Contact the claims team for support or use its claim guides to understand the process.' },
+  { feature: 'Who decides an insurance claim?', own: 'The insurer decides the claim under the policy terms and evidence.', samadhan: 'The insurer or eligible complaint forum decides the matter; a service provider cannot guarantee the outcome.', ditto: 'The insurer decides the claim under the policy terms and available evidence.' }
+];
+---
+
+<BaseLayout title={`${title} | Insurance Support`} description={description} keywords="insurance claim support services India, insurance claim assistance comparison, Insurance Samadhan vs Ditto claims, rejected insurance claim help, insurance grievance support" canonical={canonical} dateModified="2026-10-07">
+  <Breadcrumbs currentPage={title} />
+  <main id="main" class="mx-auto max-w-5xl px-4 py-12 md:py-16">
+    <header class="mb-10">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-blue-700">Service-model comparison</p>
+      <h1 class="mb-5 text-4xl font-extrabold leading-tight text-slate-900">{title}</h1>
+      <p class="max-w-3xl text-lg leading-relaxed text-slate-700">If you are looking for help with a rejected, delayed, or confusing insurance claim, compare what each service says it does before sharing documents or choosing support. This page compares published service descriptions, not claim outcomes or customer rankings.</p>
+      <p class="mt-4 text-sm text-slate-500">Reviewed against the linked public service pages on 7 October 2026. Service terms can change; confirm current availability and fees directly with each provider.</p>
+    </header>
+
+    <section class="mb-12 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm" aria-label="Insurance claim assistance service comparison">
+      <table class="w-full min-w-[760px] border-collapse bg-white text-left text-sm">
+        <thead><tr class="bg-slate-900 text-white"><th class="w-1/5 p-4">What to compare</th><th class="p-4">Insurance Support</th><th class="p-4">Insurance Samadhan</th><th class="p-4">Ditto</th></tr></thead>
+        <tbody>
+          {rows.map((row, index) => <tr class={index % 2 ? 'bg-slate-50' : 'bg-white'}>
+            <th scope="row" class="border-t border-slate-200 p-4 align-top font-bold text-slate-900">{row.feature}</th>
+            <td class="border-t border-slate-200 p-4 align-top text-slate-700">{row.own}</td>
+            <td class="border-t border-slate-200 p-4 align-top text-slate-700">{row.samadhan}</td>
+            <td class="border-t border-slate-200 p-4 align-top text-slate-700">{row.ditto}</td>
+          </tr>)}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="mb-12 rounded-2xl bg-blue-50 p-6 md:p-8" aria-labelledby="choose-support">
+      <h2 id="choose-support" class="mb-4 text-2xl font-bold text-slate-900">How to choose insurance claim assistance</h2>
+      <ul class="list-disc space-y-3 pl-5 leading-relaxed text-slate-700">
+        <li>Ask whether the service handles your policy type and the exact issue: rejection, delay, short payment, documentation, or a complaint.</li>
+        <li>Understand the service steps, fees, scope, privacy terms, and whether representation or only guidance is provided.</li>
+        <li>Keep the insurer's written decision, policy wording, claim reference, evidence, and dated correspondence.</li>
+        <li>Check the insurer's official grievance process first. Before external escalation, verify current eligibility and timelines with IRDAI or the Council for Insurance Ombudsmen.</li>
+      </ul>
+      <p class="mt-4 text-sm leading-relaxed text-slate-600">Insurance Support provides policy and claim-process guidance from Bengaluru. It does not decide claims, represent itself as an insurer or complaint forum, or guarantee claim approval.</p>
+    </section>
+
+    <section class="mb-12 grid gap-5 md:grid-cols-2" aria-label="Compare the published services">
+      <article class="rounded-2xl border border-slate-200 p-6">
+        <h2 class="mb-3 text-xl font-bold text-slate-900">Insurance Support</h2>
+        <p class="mb-4 leading-relaxed text-slate-700">For policyholders who want help understanding claim documents, the insurer's written explanation, or follow-up options, see the service scope and available resources.</p>
+        <a class="font-semibold text-blue-700 underline" href="/support">Insurance claim support in Bengaluru →</a>
+      </article>
+      <article class="rounded-2xl border border-slate-200 p-6">
+        <h2 class="mb-3 text-xl font-bold text-slate-900">Free claim rejection checklist</h2>
+        <p class="mb-4 leading-relaxed text-slate-700">Start by recording your claim reference, insurer decision, policy clause, submitted documents, and follow-up dates.</p>
+        <a class="font-semibold text-blue-700 underline" href="/lead-magnets/claim-checklist">Get the claim timeline tracker →</a>
+      </article>
+    </section>
+
+    <section class="border-t border-slate-200 pt-8" aria-labelledby="comparison-sources">
+      <h2 id="comparison-sources" class="mb-3 text-lg font-bold text-slate-900">Sources and comparison notes</h2>
+      <p class="mb-3 text-sm leading-relaxed text-slate-600">Competitor descriptions below reflect the companies' own public pages. They are included to help you compare stated service models; this page is not sponsored by or affiliated with either company.</p>
+      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-600">
+        <li><a class="text-blue-700 underline" href="https://www.insurancesamadhan.com/" target="_blank" rel="noopener noreferrer">Insurance Samadhan official website</a></li>
+        <li><a class="text-blue-700 underline" href="https://cdn.joinditto.in/claims-assistance/" target="_blank" rel="noopener noreferrer">Ditto claims assistance page</a></li>
+      </ul>
+      <p class="mt-4 text-sm text-slate-600">For official complaint routes, see <a class="text-blue-700 underline" href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer">IRDAI Bima Bharosa</a> and the <a class="text-blue-700 underline" href="https://www.cioins.co.in/Procedure/Index" target="_blank" rel="noopener noreferrer">Council for Insurance Ombudsmen procedure</a>.</p>
+    </section>
+  </main>
+</BaseLayout>

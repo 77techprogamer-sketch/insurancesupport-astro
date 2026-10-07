@@ -17,11 +17,11 @@ interface Magnet {
 }
 
 const magnets: Magnet[] = [
-  { slug: 'claim-checklist', title: 'LIC Claim Rejection Checklist & Appeal Template' },
-  { slug: 'term-comparison', title: 'Term Insurance Comparison Sheet — Top 10 Insurers 2024' },
-  { slug: 'health-claim-denial', title: 'Health Claim Denial Response Letter Generator' },
-  { slug: 'irdai-complaint', title: 'IRDAI IGMS Complaint Filing Walkthrough (Video + Checklist)' },
-  { slug: 'policy-review-checklist', title: 'Policy Review Checklist — Comprehensive 12-Point Audit' }
+  { slug: 'claim-checklist', title: 'Insurance Claim Rejection Checklist and Timeline Tracker' },
+  { slug: 'term-comparison', title: 'Term Insurance Claim-Proof Checklist' },
+  { slug: 'health-claim-denial', title: 'Health Insurance Claim Denial: Document and Response Checklist' },
+  { slug: 'irdai-complaint', title: 'Insurance Ombudsman Complaint Preparation Toolkit' },
+  { slug: 'policy-review-checklist', title: 'Printable Insurance Policy Review Checklist' }
 ];
 
 // Simple in-memory rate limiting (resets on deploy)
@@ -77,7 +77,7 @@ export async function onRequestPost(context: any) {
   }
 
   // Validate required fields
-  const requiredFields = ['magnetSlug', 'name', 'email', 'phone'];
+  const requiredFields = ['magnetSlug', 'name', 'email'];
   for (const field of requiredFields) {
     if (!data[field] || !data[field].toString().trim()) {
       return new Response(JSON.stringify({ error: `Missing required field: ${field}` }), {
@@ -96,9 +96,9 @@ export async function onRequestPost(context: any) {
     });
   }
 
-  // Basic phone validation (Indian numbers)
+  // Validate an optional Indian phone number only when one is provided.
   const phoneRegex = /^(\+91|91|0)?[6-9]\d{9}$/;
-  if (!phoneRegex.test(data.phone.replace(/\s+/g, ''))) {
+  if (data.phone && !phoneRegex.test(data.phone.replace(/[\s-]+/g, ''))) {
     return new Response(JSON.stringify({ error: 'Invalid Indian phone number' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' }
@@ -121,7 +121,7 @@ export async function onRequestPost(context: any) {
     magnetSlug: data.magnetSlug,
     name: data.name.trim(),
     email: data.email.trim().toLowerCase(),
-    phone: data.phone.trim(),
+    phone: (data.phone || '').trim(),
     ip,
     userAgent: request.headers.get('User-Agent') || 'unknown',
     referer: request.headers.get('Referer') || 'direct',

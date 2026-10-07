@@ -1,117 +1,155 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 
-const TITLE = "Health Insurance Claim Rejected? Step-by-Step Appeal Guide for India (2026)";
-const DESCRIPTION = "Got your health insurance claim rejected? Don't accept denial. Follow this expert 2026 step-by-step guide to challenge rejections, file internal grievances, and win at the Insurance Ombudsman.";
-const KEYWORDS = "health insurance claim rejected appeal India 2026, claim denial dispute resolution, Bima Bharosa IRDAI complaint, Insurance Ombudsman appeal workflow";
-const CANONICAL_URL = "https://insurancesupport.online/blog/health-insurance-claim-rejected-appeal-guide-2026/";
-const AUTHOR_NAME = "Hari Kotian";
-const PUBLISH_DATE = "2026-08-16";
+const TITLE = 'Health Insurance Claim Rejected? How to Review and Appeal (India, 2026)';
+const DESCRIPTION = 'Learn what to do after a health insurance claim rejection in India: get the written reason, check your policy, organize evidence, write to the insurer, and review official escalation routes.';
+const KEYWORDS = 'health insurance claim rejected what to do, appeal health insurance claim India, health claim denial letter, cashless claim rejected hospital, health insurance grievance documents, health claim short settlement';
+const CANONICAL_URL = 'https://insurancesupport.online/blog/health-insurance-claim-rejected-appeal-guide-2026/';
+const PUBLISH_DATE = '2026-08-16';
+const UPDATED = '2026-10-07';
+
+const faqs = [
+  { question: 'What should I do first if my health insurance claim is rejected?', answer: 'Ask the insurer for the written decision, the exact policy condition it relied on, and the list of records considered or still required. Keep the claim reference and submission receipts before you prepare a focused grievance.' },
+  { question: 'Is a cashless pre-authorization denial the same as final claim rejection?', answer: 'Not necessarily. A pre-authorization decision concerns cashless approval at that point in treatment. Ask the insurer or TPA what the decision means, whether additional records can be submitted, and what process applies if you pay and submit a reimbursement claim. Coverage still depends on the policy and facts.' },
+  { question: 'What documents do I need to appeal a health insurance claim?', answer: 'Commonly useful records include the policy schedule and wording, claim form and reference, denial or short-payment letter, discharge summary, prescriptions, investigation reports, itemized bills, payment receipts, and insurer/TPA correspondence. Submit only documents relevant to the stated reason and confirm the insurer’s checklist.' },
+  { question: 'How long does the insurer have to reply to a grievance?', answer: 'IRDAI’s grievance information says an insurer should resolve a grievance within two weeks. The Council for Insurance Ombudsmen separately describes its eligibility route after an unsatisfactory reply or no response within 30 days. These refer to different stages; check both official procedures and your case dates.' },
+  { question: 'Can I complain to IRDAI or the Insurance Ombudsman?', answer: 'IRDAI Bima Bharosa is a grievance registration and tracking channel. The Insurance Ombudsman is a separate forum with eligibility, territorial jurisdiction, value, and filing-time requirements. Review the official instructions before choosing a route.' },
+  { question: 'Will an appeal guarantee that the insurer pays the claim?', answer: 'No. The insurer or eligible complaint forum decides the case under the policy, evidence, and applicable rules. An appeal organizes your disagreement and supporting records; it cannot promise a reversal.' }
+];
 ---
 
-<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL} dateModified={UPDATED}>
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' },
     { label: 'Blog', url: 'https://insurancesupport.online/blog' },
     { label: 'Health Insurance Claim Appeal Guide', url: CANONICAL_URL }
   ]} />
-
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": TITLE,
-    "description": DESCRIPTION,
-    "datePublished": PUBLISH_DATE,
-    "dateModified": PUBLISH_DATE,
-    "author": { "@type": "Person", "name": AUTHOR_NAME },
-    "publisher": { "@type": "Organization", "name": "Insurance Support" },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: TITLE,
+    description: DESCRIPTION,
+    datePublished: PUBLISH_DATE,
+    dateModified: UPDATED,
+    author: { '@type': 'Person', name: 'Hari Kotian', url: 'https://insurancesupport.online/about-hari-kotian' },
+    publisher: { '@type': 'Organization', name: 'Insurance Support', url: 'https://insurancesupport.online' },
+    mainEntityOfPage: CANONICAL_URL
   })} />
 
-  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
-    <nav class="text-sm text-slate-500 mb-6">
-      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Claim Appeal Guide</span>
+  <main id="main" class="mx-auto max-w-4xl px-4 py-12 md:py-16">
+    <nav class="mb-6 text-sm text-slate-500" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600">Home</a><span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-blue-600">Blog</a><span class="mx-2">/</span>
+      <span class="text-slate-700">Health Claim Appeal Guide</span>
     </nav>
 
-    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
-    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Reg 0149161D) | Published on {PUBLISH_DATE}</p>
+    <header class="mb-9">
+      <h1 class="mb-5 text-4xl font-extrabold leading-tight text-blue-950 md:text-5xl">{TITLE}</h1>
+      <p class="mb-3 text-sm text-slate-500">By <a class="text-blue-700 underline" href="/about-hari-kotian">Hari Kotian</a> (IRDAI registration number 0149161D) · Updated 7 October 2026</p>
+      <p class="text-lg leading-relaxed text-slate-700">If your health insurance claim was rejected or paid only in part, start with the insurer’s written reason. Compare it with your policy wording, identify what evidence addresses that reason, and submit a dated grievance through the insurer’s current channel. A rejection is not automatically wrong, and an appeal does not guarantee payment.</p>
+    </header>
 
-    <!-- FAQPage JSON-LD for rich results -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How long do I have to file an appeal after a health insurance claim is rejected?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You should file a formal grievance with the insurer's Grievance Redressal Officer within 30 days of receiving the written rejection. Escalation to IRDAI Bima Bharosa or the Insurance Ombudsman can be made within 1 year of the rejection date."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What documents are needed to successfully appeal a health claim rejection?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Key documents include the official repudiation letter, discharge summary, doctor's certificate clarifying medical necessity, policy wording proving coverage, and any pre-authorization records."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is there a cost to approach the Insurance Ombudsman?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Filing a complaint with the Insurance Ombudsman is free. The amended Rules provide for awards up to Rs. 50 lakhs, including relevant expenses; eligibility depends on the complaint and current rules."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can an insurance advisor help me recover a rejected claim?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. An experienced IRDAI-certified advisor can review the rejection grounds, gather the right documentation, and represent you through the internal grievance and Ombudsman stages, significantly improving your chances of success."
-          }
-        }
-      ]
-    })} />
+    <aside class="mb-10 rounded-xl border border-blue-200 bg-blue-50 p-5" aria-label="Quick answer">
+      <h2 class="mb-2 text-lg font-bold text-slate-900">Quick answer: what to do after a health claim denial</h2>
+      <ol class="list-decimal space-y-1 pl-5 text-slate-700">
+        <li>Get the insurer’s written decision and exact policy clause.</li>
+        <li>Save your claim reference, submitted records, receipts, and every reply.</li>
+        <li>Address each reason with relevant policy wording or medical/claim evidence.</li>
+        <li>Ask the insurer’s grievance officer for a written review or status.</li>
+        <li>Check official IRDAI and Ombudsman rules before any external escalation.</li>
+      </ol>
+    </aside>
 
-    <div class="prose max-w-none text-slate-700 space-y-6">
-      <p class="text-lg leading-relaxed">
-        Having a health insurance claim rejected during a medical emergency is stressful and unjust. In India, over 12-15% of initial health insurance claims face rejection or short-settlement. However, <strong>a rejection is not the final word</strong>. With the right documentation and escalation framework under IRDAI guidelines, a significant percentage of rightful claims are successfully overturned.
-      </p>
-
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Step 1: Demand Written Rejection Reasons</h2>
-      <p>
-        Never rely on verbal explanations from the TPA (Third Party Administrator) or hospital desk. Demand the official <strong>Repudiation Letter</strong> or short-settlement statement in writing, detailing the exact clause invoked.
-      </p>
-
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Step 2: File Grievance with Insurer's Grievance Redressal Officer (GRO)</h2>
-      <p>
-        Insurance companies are mandated by IRDAI to resolve grievances within 14 days. Submit a formal appeal attaching your discharge summary, doctor's certificate clarifying medical necessity, and policy wording proofs.
-      </p>
-
-      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Step 3: Escalate to IRDAI Bima Bharosa & Insurance Ombudsman</h2>
-      <p>
-        If the insurer rejects your written complaint, you are dissatisfied with its reply, or it gives no reply within one month, you may escalate through the IRDAI <strong>Bima Bharosa portal</strong> or approach the <strong>Insurance Ombudsman</strong>, subject to the current eligibility rules. Filing with the Ombudsman is free; the amended Rules provide for awards up to Rs. 50 lakhs, including relevant expenses.
-      </p>
-    </div>
-
-    <div class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
-      <h2 class="text-2xl font-bold mb-3">Need Expert Help Overturning a Claim Rejection?</h2>
-      <p class="text-blue-100 mb-6">I have 25+ years of experience helping policyholders recover rightful claims across India.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20my%20health%20insurance%20claim%20was%20rejected.%20Please%20help%20me%20appeal." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-          WhatsApp for Claim Review
-        </a>
-        <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
-          Call +91-99866 34506
-        </a>
+    <section class="mb-12" aria-labelledby="cashless-vs-reimbursement">
+      <h2 id="cashless-vs-reimbursement" class="mb-4 text-3xl font-bold text-slate-900">First, identify which health claim decision you received</h2>
+      <p class="mb-4 leading-relaxed text-slate-700">A cashless pre-authorization denial at a hospital and a final decision on a reimbursement claim are different events. Ask whether the insurer declined cashless authorization, requested more clinical information, rejected the claim after assessment, or approved only part of the amount. The written reason and policy terms determine what to challenge.</p>
+      <div class="grid gap-4 md:grid-cols-2">
+        <article class="rounded-xl border border-slate-200 p-5"><h3 class="font-bold text-slate-900">Cashless authorization declined</h3><p class="mt-2 text-sm leading-relaxed text-slate-700">Ask the hospital insurance desk and insurer/TPA for the authorization reference, exact reason, missing information if any, and whether the request can be reconsidered with additional records. Confirm with the insurer how a reimbursement claim would be submitted if you pay directly.</p></article>
+        <article class="rounded-xl border border-slate-200 p-5"><h3 class="font-bold text-slate-900">Reimbursement rejected or short-paid</h3><p class="mt-2 text-sm leading-relaxed text-slate-700">Request the final written decision, the relevant policy wording, a calculation or deduction breakdown, and the records the insurer relied on. Compare each point with your submitted claim before responding.</p></article>
       </div>
-    </div>
-    <div class="max-w-4xl mx-auto px-4 pb-12">
-      <p class="text-sm text-slate-600"><strong>Facing a claim problem?</strong> <a href="/claim-recovery/" class="text-blue-600 font-semibold hover:underline">Visit the Claim Recovery Hub →</a> every expert guide, organised by your exact situation.</p>
-    </div>
+      <p class="mt-4 text-sm leading-relaxed text-slate-600">Do not postpone urgent medical care while trying to resolve a cashless authorization. Discuss care and payment options with the treating provider; use the insurer’s verified channel for claim questions.</p>
+    </section>
+
+    <section class="mb-12" aria-labelledby="rejection-reasons">
+      <h2 id="rejection-reasons" class="mb-4 text-3xl font-bold text-slate-900">Common reasons for health claim rejection or deduction</h2>
+      <p class="mb-5 leading-relaxed text-slate-700">The insurer should explain its decision in writing and connect a denial to the applicable policy conditions. These examples are prompts for reviewing the letter, not a determination that the insurer is right or wrong.</p>
+      <div class="overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+          <thead class="bg-slate-900 text-white"><tr><th class="p-4">Stated reason</th><th class="p-4">What to check</th><th class="p-4">Possible supporting records</th></tr></thead>
+          <tbody>
+            <tr class="border-t"><th class="p-4 align-top">Waiting period or exclusion</th><td class="p-4 text-slate-700">The policy schedule, wording, endorsements, and dates relevant to the treatment or condition.</td><td class="p-4 text-slate-700">Policy copy, prior insurer/portability records if applicable, treatment timeline.</td></tr>
+            <tr class="border-t bg-slate-50"><th class="p-4 align-top">Pre-existing condition or disclosure</th><td class="p-4 text-slate-700">The exact proposal question, answer recorded, policy clause, and stated connection to the treatment.</td><td class="p-4 text-slate-700">Proposal copy, medical records, prescription history, and the insurer’s written query/decision.</td></tr>
+            <tr class="border-t"><th class="p-4 align-top">Medical necessity or treatment details</th><td class="p-4 text-slate-700">Which clinical information the insurer says is missing or inconsistent.</td><td class="p-4 text-slate-700">Treating doctor’s notes, discharge summary, investigation reports, prescriptions, and relevant clinical explanation.</td></tr>
+            <tr class="border-t bg-slate-50"><th class="p-4 align-top">Sub-limit, co-pay, deductible, or non-payable item</th><td class="p-4 text-slate-700">The amount claimed, the calculation applied, and the policy provision for each deduction.</td><td class="p-4 text-slate-700">Itemized bills, payment receipts, policy wording, and the insurer’s settlement calculation.</td></tr>
+            <tr class="border-t"><th class="p-4 align-top">Missing or late documents</th><td class="p-4 text-slate-700">The insurer’s dated request, delivery, deadline, and whether each requested item was provided.</td><td class="p-4 text-slate-700">Submission receipts, portal screenshots, emails, courier tracking, or a copy of the missing record.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12" aria-labelledby="appeal-steps">
+      <h2 id="appeal-steps" class="mb-4 text-3xl font-bold text-slate-900">How to appeal a rejected health insurance claim</h2>
+      <ol class="space-y-5">
+        <li class="rounded-xl border border-slate-200 p-5"><h3 class="font-bold text-slate-900">1. Request the written decision and records considered</h3><p class="mt-2 leading-relaxed text-slate-700">Ask for the exact policy condition, reason for denial or deduction, and a clear list of any document the insurer still needs. For a health claim, IRDAI’s published health-insurance guidance says a denial communication should state the reasons and refer to corresponding policy conditions; check current IRDAI requirements and policy wording.</p></li>
+        <li class="rounded-xl border border-slate-200 p-5"><h3 class="font-bold text-slate-900">2. Compare the reason against your own policy</h3><p class="mt-2 leading-relaxed text-slate-700">Read the schedule, customer information sheet, full policy wording, and endorsements. Note the clause number and the insurer’s explanation. Do not rely on a brochure or a verbal explanation if the contract wording is different.</p></li>
+        <li class="rounded-xl border border-slate-200 p-5"><h3 class="font-bold text-slate-900">3. Build a focused evidence pack</h3><p class="mt-2 leading-relaxed text-slate-700">Arrange records in the same order as the denial reasons. Give files simple labels and keep a copy of each document and proof of submission. Avoid sending unrelated medical records or sensitive information that does not address the issue.</p></li>
+        <li class="rounded-xl border border-slate-200 p-5"><h3 class="font-bold text-slate-900">4. Send a written grievance to the insurer</h3><p class="mt-2 leading-relaxed text-slate-700">Use the Grievance Redressal Officer (GRO) or other official complaint channel listed by the insurer. State the claim reference, timeline, reason you dispute, evidence attached, and exact action requested. Keep the acknowledgement and any ticket number.</p></li>
+        <li class="rounded-xl border border-slate-200 p-5"><h3 class="font-bold text-slate-900">5. Review the reply and check the right escalation route</h3><p class="mt-2 leading-relaxed text-slate-700">If the response does not resolve the issue, read the current IRDAI Bima Bharosa process and the Council for Insurance Ombudsmen procedure. Their roles and eligibility differ; confirm the applicable filing dates and conditions for your case.</p></li>
+      </ol>
+    </section>
+
+    <section class="mb-12 rounded-2xl bg-slate-50 p-6 md:p-8" aria-labelledby="appeal-letter">
+      <h2 id="appeal-letter" class="mb-3 text-2xl font-bold text-slate-900">What to write in a health insurance claim appeal</h2>
+      <p class="mb-4 leading-relaxed text-slate-700">Keep your grievance factual and connect every disputed point to a record. This outline is for organizing a letter; adapt it to your circumstances and the insurer’s instructions.</p>
+      <ol class="list-decimal space-y-2 pl-6 text-slate-700">
+        <li>Policy number, claim number, insured person, and contact details.</li>
+        <li>Admission/treatment dates and a short timeline of claim submission and insurer communication.</li>
+        <li>The insurer’s exact denial or deduction reason and policy clause.</li>
+        <li>Your response to each reason, with numbered evidence attachments.</li>
+        <li>The resolution requested, such as review against the attached records, a deduction breakdown, or a written explanation.</li>
+        <li>A request for acknowledgement and a written response through the insurer’s official channel.</li>
+      </ol>
+      <p class="mt-4 text-sm text-slate-600">Do not state facts you cannot support or alter medical documents. Avoid sharing passwords, OTPs, or bank credentials.</p>
+      <a href="/lead-magnets/health-claim-denial" class="mt-4 inline-flex font-semibold text-blue-700 underline">Download the health claim document checklist →</a>
+    </section>
+
+    <section class="mb-12" aria-labelledby="timelines-routes">
+      <h2 id="timelines-routes" class="mb-4 text-3xl font-bold text-slate-900">Health claim grievance timelines and escalation in India</h2>
+      <p class="mb-4 leading-relaxed text-slate-700">Keep the date you sent the grievance, the insurer’s acknowledgement, and each response. IRDAI’s grievance information states an insurer should resolve a grievance within two weeks. The Council for Insurance Ombudsmen describes a separate eligibility path after an unsatisfactory insurer response or no response within 30 days, with a filing period and other conditions. These are different stages; check the current official instructions instead of assuming one deadline applies to every route.</p>
+      <div class="grid gap-4 md:grid-cols-2">
+        <article class="rounded-xl border border-slate-200 bg-white p-5"><h3 class="font-bold text-slate-900">IRDAI Bima Bharosa</h3><p class="mt-2 text-sm leading-relaxed text-slate-700">IRDAI’s portal allows policyholders to register and track grievances. IRDAI warns that Bima Bharosa does not ask policyholders to pay money to receive claim proceeds. Use the verified <a class="text-blue-700 underline" href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer">official Bima Bharosa portal</a>.</p></article>
+        <article class="rounded-xl border border-slate-200 bg-white p-5"><h3 class="font-bold text-slate-900">Insurance Ombudsman</h3><p class="mt-2 text-sm leading-relaxed text-slate-700">The Council currently describes a ₹50 lakh value limit including expenses, a one-year filing period in specified situations, and other conditions. Read the <a class="text-blue-700 underline" href="/blog/insurance-ombudsman-india-guide/">Insurance Ombudsman eligibility and filing guide</a> and the <a class="text-blue-700 underline" href="https://www.cioins.co.in/Procedure/Index" target="_blank" rel="noopener noreferrer">current CIO procedure</a>.</p></article>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-slate-600">Official references: <a class="text-blue-700 underline" href="https://irdai.gov.in/grievance-cell-cad" target="_blank" rel="noopener noreferrer">IRDAI grievance cell</a>, <a class="text-blue-700 underline" href="https://irdai.gov.in/faqs-on-health-insurance-regulations" target="_blank" rel="noopener noreferrer">IRDAI health-insurance FAQs</a>, and the <a class="text-blue-700 underline" href="https://www.cioins.co.in/Procedure/Index" target="_blank" rel="noopener noreferrer">CIO complaint procedure</a>. Check official pages for updates before acting.</p>
+    </section>
+
+    <section class="mb-12" aria-labelledby="health-appeal-faqs">
+      <h2 id="health-appeal-faqs" class="mb-5 text-3xl font-bold text-slate-900">Health insurance claim appeal FAQs</h2>
+      <div class="space-y-3">
+        {faqs.map((faq) => <details class="rounded-xl border border-slate-200 bg-white p-5">
+          <summary class="cursor-pointer font-semibold text-slate-900">{faq.question}</summary>
+          <p class="mt-3 leading-relaxed text-slate-700">{faq.answer}</p>
+        </details>)}
+      </div>
+    </section>
+
+    <aside class="mb-12 rounded-2xl bg-blue-50 p-6" aria-labelledby="related-health-help">
+      <h2 id="related-health-help" class="mb-3 text-2xl font-bold text-slate-900">More health insurance claim help</h2>
+      <ul class="list-disc space-y-2 pl-5 text-slate-700">
+        <li><a class="text-blue-700 underline" href="/blog/cashless-health-insurance-claim-denied-hospital-2026/">Cashless claim declined at the hospital: what to ask</a></li>
+        <li><a class="text-blue-700 underline" href="/blog/health-insurance-claim-rejection-15-reasons/">Common health insurance claim rejection reasons</a></li>
+        <li><a class="text-blue-700 underline" href="/lead-magnets/health-claim-denial">Health claim document checklist</a></li>
+        <li><a class="text-blue-700 underline" href="/support">Insurance claim support in Bengaluru</a></li>
+        <li><a class="text-blue-700 underline" href="/claim-recovery/">Claim rejection and delayed claim recovery hub</a></li>
+      </ul>
+    </aside>
+
+    <section class="border-t border-slate-200 pt-6" aria-labelledby="author-note">
+      <h2 id="author-note" class="mb-2 text-lg font-bold text-slate-900">About this guide</h2>
+      <p class="text-sm leading-relaxed text-slate-600">Written by Hari Kotian, Insurance Support (IRDAI registration number 0149161D). Last reviewed 7 October 2026. This guide is general information, not legal or medical advice. The policy, case facts, and current official procedures determine the available options.</p>
+    </section>
   </main>
+  <FAQPageJsonLd questions={faqs} />
 </BaseLayout>

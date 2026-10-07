@@ -1,149 +1,128 @@
 [
   {
     "slug": "claim-checklist",
-    "title": "LIC Claim Rejection Checklist & Appeal Template",
-    "subtitle": "The exact 12-point checklist we use to analyze rejected LIC claims + ready-to-send appeal letter template",
-    "description": "Don't let a rejected claim be the final word. This checklist identifies the exact gaps in your rejection letter and the template gives you a professional appeal letter you can send to the Grievance Redressal Officer today.",
-    "heroImage": "/images/lead-magnets/claim-checklist-hero.jpg",
-    "format": "PDF (3 pages) + Word Template",
-    "delivery": "Instant email + WhatsApp",
-    "fields": ["name", "email", "phone", "insurer", "claimAmount", "rejectionReason"],
-    "ctaText": "Get My Free Checklist & Template",
-    "thankYouMessage": "Check your email and WhatsApp — your checklist and template are on the way!",
+    "title": "Insurance Claim Rejection Checklist and Timeline Tracker",
+    "subtitle": "A practical guide to organizing a rejected or delayed insurance claim, recording insurer responses, and deciding what to do next.",
+    "description": "Download a free insurance claim rejection checklist and timeline tracker. Organize your policy, claim documents, written decision, and insurer follow-ups before escalating a health, life, or motor insurance claim in India.",
+    "keywords": "insurance claim rejection checklist, rejected insurance claim help, insurance claim appeal documents, delayed insurance claim tracker, insurance claim follow-up India",
+    "downloadUrl": "/downloads/claim-timeline-tracker.pdf",
+    "format": "PDF claim timeline tracker",
+    "delivery": "Instant download after a short form",
+    "fields": ["name", "email", "phone"],
+    "ctaText": "Get the Free Claim Tracker",
+    "thankYouMessage": "Your claim timeline tracker is ready to download.",
     "benefits": [
-      "Identify exactly why your claim was rejected (12-point analysis)",
-      "Professional appeal letter template — just fill in the blanks",
-      "Grievance Redressal Officer contact details for all major insurers",
-      "Timeline checklist: what to do in the first 7, 15, and 30 days",
-      "WhatsApp support for 7 days after download"
+      "Record the date you notified the insurer and submitted each document",
+      "Keep claim reference numbers and written insurer responses together",
+      "Track follow-up dates and the question you need answered",
+      "Use the written claim decision and policy wording to understand the stated reason",
+      "Prepare an organized record before using the insurer grievance process"
     ],
     "idealFor": [
-      "LIC policyholders with rejected death/maturity claims",
-      "Families who received a rejection letter in the last 90 days",
-      "Anyone facing 'non-disclosure' or 'lapsed policy' rejections"
+      "Policyholders whose health, life, or motor insurance claim was rejected",
+      "Families waiting for an insurer to respond to a submitted claim",
+      "Anyone preparing a written follow-up or complaint"
     ],
-    "stats": {
-      "downloads": 1247,
-      "successRate": "68%",
-      "avgRecovery": "��12.4L"
-    }
+    "faqs": [
+      { "question": "What should I do first after an insurance claim is rejected?", "answer": "Ask the insurer for the written decision and the specific policy clause relied on. Keep the claim reference, policy wording, submitted documents, and all replies together. The right next step depends on the reason and policy terms." },
+      { "question": "Can this tracker appeal my claim for me?", "answer": "No. It helps you organize dates and records; it does not file an appeal, assess legal merits, or guarantee a claim outcome." },
+      { "question": "Where can I get help with a rejected insurance claim in India?", "answer": "Start with the insurer's official grievance process and retain its response. You can also review our claim support information or check the current official IRDAI and Insurance Ombudsman guidance for eligibility and timelines." }
+    ]
   },
   {
     "slug": "term-comparison",
-    "title": "Term Insurance Comparison Sheet — Top 10 Insurers 2024",
-    "subtitle": "Side-by-side comparison of premiums, claim settlement ratios, riders, and exclusions for India's top term plans",
-    "description": "Stop guessing which term plan is best. This spreadsheet compares 10 insurers across 25+ parameters so you can decide in 15 minutes what takes agents weeks to explain.",
-    "heroImage": "/images/lead-magnets/term-comparison-hero.jpg",
-    "format": "Google Sheets (editable copy) + PDF",
-    "delivery": "Instant email with edit access",
-    "fields": ["name", "email", "phone", "age", "coverageNeeded", "smoker"],
-    "ctaText": "Get My Comparison Sheet",
-    "thankYouMessage": "Your editable Google Sheet is ready — check your email for the link!",
+    "title": "Term Insurance Claim-Proof Checklist",
+    "subtitle": "Review key disclosures, nominee details, and policy documents before you buy or renew term life insurance.",
+    "description": "Download a free term insurance checklist for India. Check application disclosures, nominee details, policy wording, and claim records before choosing or reviewing a term life insurance policy.",
+    "keywords": "term insurance checklist India, term life insurance comparison checklist, term insurance policy review, term insurance claim documents, compare term insurance plans",
+    "downloadUrl": "/downloads/term-insurance-claim-proof-checklist.pdf",
+    "relatedUrl": "/tools/human-life-value-calculator",
+    "relatedLabel": "Estimate your life cover with the Human Life Value calculator",
+    "format": "PDF checklist",
+    "delivery": "Instant download after a short form",
+    "fields": ["name", "email", "phone"],
+    "ctaText": "Download the Term Insurance Checklist",
+    "thankYouMessage": "Your term insurance checklist is ready to download.",
     "benefits": [
-      "10 insurers compared: LIC, HDFC Life, ICICI Pru, Max Life, Bajaj Allianz, Tata AIA, PNB MetLife, Kotak, Aegon, Canara HSBC",
-      "25+ parameters: premium (age 25/30/35/40/45), CSR, solvency ratio, claim TAT, rider options",
-      "Pre-filled formulas: enter your age & coverage — see instant premium estimates",
-      "Rider comparison: Critical Illness, Accidental Death, Waiver of Premium, Terminal Illness",
-      "Exclusion checklist: suicide, substance abuse, hazardous activities, pre-existing conditions",
-      "Updated quarterly — you get auto-updates via email"
+      "Review the accuracy and completeness of your application disclosures",
+      "Check nominee details and where your family can find the policy",
+      "Compare policy definitions, exclusions, and rider terms",
+      "Keep premium and insurer communication records in one place",
+      "Use the same checklist to review a policy you already own"
     ],
     "idealFor": [
-      "First-time term insurance buyers (age 25-45)",
-      "People comparing agent quotes vs direct online prices",
-      "Anyone wanting to understand rider value before buying"
+      "People comparing term life insurance plans in India",
+      "First-time term insurance buyers preparing an application",
+      "Policyholders checking whether their family can locate key documents"
     ],
-    "stats": {
-      "downloads": 3421,
-      "successRate": "23%",
-      "avgRecovery": "��18K/yr savings"
-    }
+    "faqs": [
+      { "question": "What should I compare when choosing term insurance?", "answer": "Compare the policy wording, exclusions, application disclosures, premium terms, available riders, and the insurer's service information. Suitability depends on your needs and profile; a single headline ratio does not establish which policy is right for you." },
+      { "question": "Does this checklist recommend a specific insurer?", "answer": "No. It is a general document checklist and does not rank insurers or replace advice based on your circumstances." },
+      { "question": "How much term life cover might my family need?", "answer": "Estimate income replacement, debts, future goals, existing assets, and current cover. Our Human Life Value calculator can help structure an initial estimate; review assumptions before making a purchase decision." }
+    ]
   },
   {
     "slug": "health-claim-denial",
-    "title": "Health Claim Denial Response Letter Generator",
-    "subtitle": "Generate a professionally drafted response letter for your insurer in 3 minutes — tailored to your denial reason",
-    "description": "Most health claim denials are overturned on appeal — but only if you respond correctly. This tool creates a legally sound response letter addressing your specific denial reason (pre-existing condition, waiting period, non-disclosure, etc.).",
-    "heroImage": "/images/lead-magnets/health-claim-hero.jpg",
-    "format": "Interactive Web Tool + PDF Download",
-    "delivery": "Instant on-screen + email copy",
-    "fields": ["name", "email", "phone", "insurer", "denialReason", "hospitalName", "claimAmount", "policyNumber"],
-    "ctaText": "Generate My Response Letter",
-    "thankYouMessage": "Your personalized response letter is ready — download the PDF and send it today!",
+    "title": "Health Insurance Claim Denial: Document and Response Checklist",
+    "subtitle": "Organize the discharge papers, bills, policy terms, and insurer's written reason before responding to a denied health claim.",
+    "description": "Use this free health insurance claim denial checklist to organize hospital bills, medical records, policy wording, and the insurer's written decision before you submit a response or grievance in India.",
+    "keywords": "health insurance claim rejected checklist, health insurance claim denial documents, cashless claim denied help, health claim appeal India, health insurance reimbursement rejection",
+    "downloadUrl": "/downloads/policyholder-bill-of-rights.pdf",
+    "relatedUrl": "/blog/health-insurance-claim-rejected-appeal-guide-2026",
+    "relatedLabel": "Read the health insurance claim rejection appeal guide",
+    "format": "PDF policyholder rights guide",
+    "delivery": "Instant download after a short form",
+    "fields": ["name", "email", "phone"],
+    "ctaText": "Get the Free Health Claim Guide",
+    "thankYouMessage": "Your policyholder guide is ready to download.",
     "benefits": [
-      "8 denial reasons covered: pre-existing disease, waiting period, non-disclosure, sub-limits, network hospital, documentation, exclusions, 'not medically necessary'",
-      "IRDAI-compliant language referencing specific regulations (IRDAI (Health Insurance) Regulations, 2016)",
-      "Auto-fills policy details, hospital bills, treatment timeline",
-      "Includes escalation path: GRO → IGMS → Ombudsman → Consumer Court",
-      "WhatsApp follow-up: we review your draft before you send (free)"
+      "Save the insurer's written denial or short-payment explanation",
+      "Gather the policy schedule, wording, and relevant endorsements",
+      "Organize discharge summary, prescriptions, reports, and itemized bills",
+      "List missing documents and ask the insurer or TPA how to submit them",
+      "Keep copies and submission receipts for every follow-up"
     ],
     "idealFor": [
-      "Cashless claims denied at network hospitals",
-      "Reimbursement claims rejected for 'pre-existing disease'",
-      "Senior citizens with denied claims (we prioritize these)"
+      "People whose cashless health insurance request was declined",
+      "Families whose reimbursement claim was rejected or reduced",
+      "Policyholders preparing a written query to an insurer or TPA"
     ],
-    "stats": {
-      "downloads": 892,
-      "successRate": "61%",
-      "avgRecovery": "��3.2L"
-    }
+    "faqs": [
+      { "question": "What documents are commonly needed after a health claim denial?", "answer": "Depending on the policy and reason, keep the policy schedule, written decision, claim form, discharge summary, prescriptions, investigation reports, itemized bills, payment receipts, and relevant correspondence. Ask the insurer for any case-specific requirements." },
+      { "question": "Can a cashless health insurance claim be denied and still be reviewed?", "answer": "A cashless authorization decision and final claim assessment can depend on available records and policy terms. Ask for the reason in writing and use the insurer's grievance channel if you disagree." },
+      { "question": "Does this guide guarantee reversal of a denied claim?", "answer": "No. The insurer or eligible complaint forum decides the outcome based on policy wording, facts, evidence, and applicable rules." }
+    ]
   },
   {
     "slug": "irdai-complaint",
-    "title": "IRDAI IGMS Complaint Filing Walkthrough (Video + Checklist)",
-    "subtitle": "Step-by-step video guide + document checklist to file a complaint that actually gets insurer attention",
-    "description": "Filing on IGMS is free but most complaints go nowhere because they're poorly drafted. This 12-minute video + checklist shows you exactly how to file a complaint that forces the insurer to respond within 15 days.",
-    "heroImage": "/images/lead-magnets/irdai-complaint-hero.jpg",
-    "format": "Video (12 min) + PDF Checklist + Sample Complaint Text",
-    "delivery": "Instant email with video link + downloads",
-    "fields": ["name", "email", "phone", "insurer", "complaintType", "previousSteps"],
-    "ctaText": "Get Video + Checklist",
-    "thankYouMessage": "Your video guide and checklist are on the way — check email and WhatsApp!",
+    "title": "Insurance Ombudsman Complaint Preparation Toolkit",
+    "subtitle": "Prepare a clear complaint record with your insurer's response, supporting documents, and a timeline of events.",
+    "description": "Download a free Insurance Ombudsman complaint preparation toolkit for India. Organize your insurer grievance, written response, policy records, evidence, and event timeline before checking current filing rules.",
+    "keywords": "Insurance Ombudsman complaint documents, how to complain against insurance company India, insurance grievance complaint checklist, IRDAI insurance complaint help, insurance claim complaint toolkit",
+    "downloadUrl": "/downloads/ombudsman-complaint-toolkit.pdf",
+    "relatedUrl": "/blog/insurance-ombudsman-india-guide",
+    "relatedLabel": "Read our Insurance Ombudsman process guide",
+    "format": "PDF complaint preparation toolkit",
+    "delivery": "Instant download after a short form",
+    "fields": ["name", "email", "phone"],
+    "ctaText": "Download the Complaint Toolkit",
+    "thankYouMessage": "Your complaint preparation toolkit is ready to download.",
     "benefits": [
-      "Screen-recorded walkthrough of the IGMS portal (updated for 2024 UI)",
-      "Exact complaint structure that gets escalated (not auto-closed)",
-      "Evidence checklist: what documents to attach, in what order",
-      "Sample complaint texts for: claim rejection, delay, mis-selling, premium dispute",
-      "Follow-up tracker: what to do on Day 7, 15, 30 if no response",
-      "Ombudsman escalation template (if IGMS fails)"
+      "Build a dated timeline of the policy, claim, and grievance",
+      "Organize the insurer's final response and earlier complaint references",
+      "Prepare a concise summary of the issue and the resolution requested",
+      "Keep policy documents, claim papers, and supporting evidence together",
+      "Check official eligibility, jurisdiction, and filing timelines before submission"
     ],
     "idealFor": [
-      "Anyone whose insurer ignored their grievance for 15+ days",
-      "Policyholders facing unfair claim rejection or delay",
-      "People wanting to avoid lawyer fees for complaints under ₹10L"
+      "Policyholders who have already raised an issue with their insurer",
+      "People organizing evidence for an unresolved claim or service grievance",
+      "Families researching the Insurance Ombudsman complaint process"
     ],
-    "stats": {
-      "downloads": 2156,
-      "successRate": "72%",
-      "avgRecovery": "High"
-    }
-  },
-  {
-    "slug": "term-insurance-claim-proof-checklist",
-    "title": "The Term Insurance Claim-Proof Checklist",
-    "subtitle": "15 Things to Verify Before You Sign — So Your Family Never Has to Fight for ₹1 Crore",
-    "description": "Will your family actually get the ₹1 crore? Use this free 15-point checklist to verify disclosure accuracy, policy structure, nominee setup, and exclusions before you sign.",
-    "heroImage": "/images/lead-magnets/term-checklist-hero.jpg",
-    "format": "PDF (6 pages)",
-    "delivery": "Instant email + WhatsApp",
-    "fields": ["name", "email", "phone", "age", "coverageNeeded", "smoker"],
-    "ctaText": "Download Free Checklist",
-    "thankYouMessage": "Check your email and WhatsApp — your 15-point claim-proof checklist is on the way!",
-    "benefits": [
-      "15-point verification covering disclosures, nominee setup, and exclusions",
-      "Real claim case studies showing how non-disclosure causes rejections",
-      "Quick comparison matrix to evaluate any term plan side-by-side",
-      "Created by Hari Kotian, licensed IRDAI advisor (Reg 0149161D)",
-      "Free 15-minute claim-review consultation included"
-    ],
-    "idealFor": [
-      "First-time term insurance buyers shopping on Policybazaar, Ditto, etc.",
-      "Salaried individuals worried about claim rejection due to non-disclosure",
-      "Anyone wanting independent, human advisory instead of sales calls"
-    ],
-    "stats": {
-      "downloads": 1840,
-      "successRate": "94%",
-      "avgRecovery": "₹1 Crore protected"
-    }
+    "faqs": [
+      { "question": "Should I complain to my insurer before approaching the Insurance Ombudsman?", "answer": "Use the insurer's grievance process first and keep the written complaint and response. Check the Council for Insurance Ombudsmen's current rules to confirm eligibility and applicable time limits for your case." },
+      { "question": "Is filing an insurance complaint the same as filing a court case?", "answer": "No. The Insurance Ombudsman is a separate complaint redressal forum for eligible matters. Its jurisdiction and process differ from court proceedings; use current official guidance." },
+      { "question": "Does this toolkit submit a complaint to IRDAI or the Ombudsman?", "answer": "No. It helps organize your records. You must verify the current official route and submit the complaint yourself or seek appropriate assistance." }
+    ]
   }
 ]
