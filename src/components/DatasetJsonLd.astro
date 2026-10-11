@@ -1,0 +1,48 @@
+---
+export interface DatasetItem {
+  position: number;
+  name: string;
+  description: string;
+}
+
+export interface DatasetSchemaProps {
+  name: string;
+  description: string;
+  authorName: string;
+  datePublished: string;
+  url: string;
+  items: DatasetItem[];
+}
+
+const {
+  name,
+  description,
+  authorName,
+  datePublished,
+  url,
+  items,
+}: DatasetSchemaProps = Astro.props;
+
+const dataset = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name,
+  description,
+  author: { "@type": "Person", name: authorName },
+  datePublished,
+  url,
+  distribution: {
+    "@type": "DataDownload",
+    encodingFormat: "application/json",
+    contentUrl: url,
+  },
+  variableMeasured: items.map((item) => ({
+    "@type": "PropertyValue",
+    name: item.name,
+    description: item.description,
+  })),
+};
+
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(dataset)} />

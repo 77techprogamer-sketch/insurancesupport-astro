@@ -136,11 +136,8 @@ def main():
             filtered.append(blog["slug"])
         else:
             skipped += 1
-    # Only paginate if we have enough posts to warrant pagination
-    total_posts = len(filtered)
-    pages_needed = max(1, (total_posts + 9) // 10)  # 10 posts per page
-    for page in range(2, pages_needed + 1):
-        blog_urls.append(urljoin(BASE_URL, f"/blog/page/{page}"))
+    # Pagination pages are noindexed in the Astro source, so keep them out
+    # of the sitemap to avoid wasting crawl budget on low-value duplicates.
     generate_sitemap_xml(blog_urls, "blog-sitemap.xml")
     print(f"Blog sitemap: {total_posts} posts included (skipped {skipped} thin/empty)")
     sitemap_index_urls.append(urljoin(BASE_URL, "/sitemaps/blog-sitemap.xml"))

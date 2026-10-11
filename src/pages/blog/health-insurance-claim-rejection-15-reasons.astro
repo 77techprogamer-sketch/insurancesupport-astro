@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import DatasetJsonLd from '../../components/DatasetJsonLd.astro';
 
 const TITLE = "Health Insurance Claim Rejection: 15 Real Reasons & How to Prevent Them";
 const DESCRIPTION = "Why did your health insurance claim get rejected? Here are 15 real reasons and practical steps to prevent each one. Expert guide for Indian policyholders.";
@@ -8,6 +9,27 @@ const KEYWORDS = "health insurance claim rejection reasons India, prevent health
 const CANONICAL_URL = "https://insurancesupport.online/blog/health-insurance-claim-rejection-15-reasons/";
 const AUTHOR_NAME = "Hari Kotian";
 const PUBLISH_DATE = "2026-07-25";
+const DATASET_AUTHOR = "Hari Kotian";
+const DATASET_DATE = "2026-07-25";
+const DATASET_NAME = "15 Real Reasons Health Insurance Claims Get Rejected in India (2026)";
+const DATASET_DESCRIPTION = "A structured dataset of 15 common reasons health insurance claims are rejected or reduced, with the policy basis and how to prevent each reason.";
+const DATASET_ITEMS = [
+  { position: 1, name: "Non-Disclosure of Pre-Existing Diseases (PED)", description: "Failing to declare a pre-existing condition like diabetes or hypertension at the time of buying the policy is the single most common reason for claim denial. Insurers can void the policy if a PED is discovered later." },
+  { position: 2, name: "Waiting Period Not Completed", description: "Health policies have waiting periods — typically 30 days for general illness, 2-4 years for specific diseases like cataracts or hernia, and 48 months for pre-existing conditions." },
+  { position: 3, name: "Room Rent Capping Violation", description: "Many policies restrict room type (e.g., shared room only) or cap room rent at 1% of sum insured. Claiming for an upgraded room can result in proportional deduction or full rejection." },
+  { position: 4, name: "Treatment at a Non-Network Hospital", description: "If your policy is a cashless-only plan, going to a hospital outside the insurer's network will result in rejection for reimbursement claims." },
+  { position: 5, name: "Self-Funded or Outpatient Expenses", description: "Day-care procedures, doctor consultations, diagnostic tests without hospitalization, and dental treatment (unless specified) are not covered under standard health policies." },
+  { position: 6, name: "Intentional Non-Disclosure (Fraud)", description: "If the insurer finds that a material fact was withheld with the intent to deceive, they can reject the claim and cancel the policy entirely — even if the illness is unrelated." },
+  { position: 7, name: "Claim Outside Policy Term", description: "If the policy has lapsed due to non-payment of premium, any claim made after the lapse date is rejected." },
+  { position: 8, name: "Sub-Limit Exceeded", description: "Many policies impose sub-limits on specific treatments — e.g., cataract surgery capped at Rs. 40,000 or mental health treatment at Rs. 20,000. Claiming above the cap leads to short-settlement." },
+  { position: 9, name: "Pre-Authorization Delay", description: "For cashless claims, insurers require pre-authorization before admission. Delaying this request beyond the hospital's internal deadline can result in rejection." },
+  { position: 10, name: "Incorrect or Incomplete Documentation", description: "Missing hospital discharge summary, incorrect diagnosis codes, unsigned documents, or incomplete investigation reports are among the top administrative reasons for claim delays and rejections." },
+  { position: 11, name: "Cosmetic or Elective Procedures", description: "Weight loss treatments, plastic surgery (unless due to accident), hair transplant, and IVF are excluded from standard health insurance." },
+  { position: 12, name: "War, Nuclear Risk, or Intentional Self-Injury", description: "Standard policies exclude claims arising from war, nuclear contamination, riots, and self-harm. Claims linked to these causes are automatically rejected." },
+  { position: 13, name: "Domiciliary Hospitalization Not Qualified", description: "Treatment taken at home is covered only if it meets specific criteria — e.g., the patient cannot be moved to a hospital, or nursing care is required at home. Simply preferring home treatment is not sufficient." },
+  { position: 14, name: "Fraud or Misrepresentation", description: "Filing a claim with inflated bills, duplicate claims, or altered documents is considered fraud. Insurers share data via CIS (Claim Information Sharing) platform, making duplicate claims easy to detect." },
+  { position: 15, name: "Illness/Accident During Waiting Period After Renewal", description: "If you switch insurers and don't port your continuity benefits, a condition that was waiting under the old policy restarts its waiting period under the new policy." }
+];
 const PAGE_URL = "https://insurancesupport.online/blog/health-insurance-claim-rejection-15-reasons";
 
 const REASONS = [
@@ -113,6 +135,7 @@ const REASONS = [
   "mainEntityOfPage": { "@type": "WebPage", "@id": PAGE_URL }
 })} />
 
+  <DatasetJsonLd name={DATASET_NAME} description={DATASET_DESCRIPTION} authorName={DATASET_AUTHOR} datePublished={DATASET_DATE} url={PAGE_URL} items={DATASET_ITEMS} />
 
   <main id="main" class="max-w-4xl mx-auto px-4 py-16">
     <nav class="text-sm text-slate-500 mb-6">

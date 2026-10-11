@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
+
+const TITLE = 'IRDAI Complete Guide for Indian Policyholders (2026)';
+const DESCRIPTION = 'The Insurance Regulatory and Development Authority of India (IRDAI) regulates insurance in India and protects policyholders. Learn what IRDAI does, your rights, complaint routes, settlement timelines, and where to check official information.';
+const KEYWORDS = 'IRDAI complete guide, IRDAI for policyholders, IRDAI functions, IRDAI grievance, IRDAI Bima Bharosa, Insurance Ombudsman India, IRDAI claim settlement, IRDAI rights';
+const CANONICAL_URL = 'https://insurancesupport.online/blog/irdai-complete-guide-policyholders-india-2026/';
+const AUTHOR_NAME = 'Hari Kotian';
+const PUBLISH_DATE = '2026-10-12';
+const MODIFIED_DATE = '2026-10-12';
+const PAGE_URL = CANONICAL_URL;
+
+const faqs = [
+  {
+    question: 'What is the IRDAI complete guide for Indian policyholders?',
+    answer: 'This pillar guide explains what IRDAI is, how it protects policyholders, claim settlement expectations, the insurer, Bima Bharosa and Ombudsman grievance routes, and where to check official IRDAI information.'
+  },
+  {
+    question: 'What does the IRDAI complete guide for Indian policyholders cover?',
+    answer: 'It covers what IRDAI is and what it regulates, how it protects policyholders, claim settlement expectations, grievance channels, where to check official information, and practical tips for policyholders.'
+  },
+  {
+    question: 'What is IRDAI and what does it regulate?',
+    answer: 'The Insurance Regulatory and Development Authority of India (IRDAI) is the regulator for the insurance industry in India. It licenses insurers, sets conduct and solvency norms, protects policyholder interests, and oversees grievance redressal across life, general, and health insurance.'
+  },
+  {
+    question: 'What are my rights as an insurance policyholder?',
+    answer: 'Policyholders have rights including clear policy wording, fair claim handling, timely settlement, a grievance mechanism with the insurer, and access to regulatory channels such as IRDAI Bima Bharosa and the Insurance Ombudsman where eligible.'
+  },
+  {
+    question: 'How do I file a complaint with IRDAI?',
+    answer: 'First complete the insurer grievance process and keep the acknowledgement. Then you can register a complaint through IRDAI Bima Bharosa (bimabharosa.irdai.gov.in). For eligible matters, the Insurance Ombudsman is a separate route with its own rules.'
+  },
+  {
+    question: 'How long does an insurer have to settle a claim?',
+    answer: 'IRDAI regulations require insurers to settle claims within prescribed timelines, commonly within 30 days of receiving all necessary documents. If more time is needed, the insurer should communicate the reason and expected timeline.'
+  },
+  {
+    question: 'What is the Insurance Ombudsman and when can I approach it?',
+    answer: 'The Insurance Ombudsman is an alternative dispute resolution mechanism for suitable individual complaints. Eligibility, territorial limits, and award caps follow the Insurance Ombudsman Rules. You generally need to have first made a written complaint to the insurer.'
+  },
+  {
+    question: 'Where can I check IRDAI official information?',
+    answer: 'Use IRDAI official sources such as irdai.gov.in for circulars, annual reports, the handbook of Indian insurance statistics, and guidance on policyholders and the Ombudsman. Always rely on the official site for current rules and links.'
+  }
+];
+
+const relatedGuides = [
+  { title: 'IRDAI Grievance Process & Complaint Guide', url: '/blog/irdai-grievance-process-complaint-guide-2026/', summary: 'Step-by-step guide to filing an IRDAI grievance against an insurer.' },
+  { title: 'How to File an IRDAI IGMS Portal Complaint', url: '/blog/how-to-file-complaint-irdai-igms-portal-2026/', summary: 'Walkthrough for using the Integrated Grievance Management System.' },
+  { title: 'IRDAI Cashless Claim Pre-Authorization Rules', url: '/blog/irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026/', summary: 'What IRDAI expects for cashless pre-authorization and timelines.' },
+  { title: 'IRDAI Claim Settlement Regulations – 30-Day Rule', url: '/blog/irdai-claim-settlement-regulations-2026-30-day-rule-standardized-forms/', summary: 'How IRDAI claim settlement timelines and forms work.' },
+  { title: 'IRDAI Standardized Health Insurance Policy Wordings', url: '/blog/irdai-standardized-health-insurance-policy-wordings-2026/', summary: 'Key standardized policy wording points for health cover.' },
+  { title: 'Insurance Ombudsman in India: Complete Filing Guide', url: '/blog/insurance-ombudsman-india-guide/', summary: 'Eligibility, process, and documents for the Ombudsman route.' }
+];
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'IRDAI Complete Guide for Policyholders', url: CANONICAL_URL }
+  ]} />
+  <ArticleJsonLd title={TITLE} description={DESCRIPTION} url={CANONICAL_URL} date={PUBLISH_DATE} modifiedDate={MODIFIED_DATE} authorName={AUTHOR_NAME} isPartOf={undefined} />
+  {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600">Home</a> /
+      <a href="/blog/" class="hover:text-blue-600">Blog</a> /
+      <span class="text-slate-700">IRDAI Complete Guide</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} · Published {PUBLISH_DATE} · Updated {MODIFIED_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed"><strong>The Insurance Regulatory and Development Authority of India (IRDAI) is the regulator for insurance in India.</strong> If you hold an insurance policy, IRDAI sits behind the scenes of your relationship with the insurer — setting the rules insurers must follow, overseeing how claims are handled, and providing channels for complaints when things go wrong.</p>
+      <p>This guide explains what IRDAI does, the protections available to policyholders, the complaint routes you can use, and where to check official information before you decide on a next step.</p>
+
+      <div class="rounded-xl border border-blue-200 bg-blue-50 p-5">
+        <h2 class="text-xl font-bold text-blue-900 mt-0">What this guide covers</h2>
+        <ul class="list-disc list-inside space-y-1 pt-2">
+          <li>What IRDAI is and what it regulates</li>
+          <li>How IRDAI protects policyholders</li>
+          <li>Claim settlement expectations and timelines</li>
+          <li>Grievance channels: insurer, Bima Bharosa, and the Ombudsman</li>
+          <li>Where to find official IRDAI information</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">1. What IRDAI is and what it regulates</h2>
+      <p>IRDAI is the Insurance Regulatory and Development Authority of India. It was established to regulate the insurance business in India and to protect the interests of policyholders. It works across life, general, and health insurance, and also covers intermediaries and other participants in the market.</p>
+      <p>IRDAI does not sell insurance and it is not a claims court. Instead, it sets and enforces the regulatory framework that insurers, agents, brokers, and other market players must follow.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">2. How IRDAI protects policyholders</h2>
+      <p>Policyholders are the central focus of insurance regulation. IRDAI supports that focus through:</p>
+      <ul>
+        <li>Licensing and oversight of insurers and intermediaries.</li>
+        <li>Rules on policy wordings, disclosures, and unfair practices.</li>
+        <li>Expectations on claim handling, timelines, and communication.</li>
+        <li>Grievance and dispute mechanisms that policyholders can use when an insurer does not resolve a concern.</li>
+        <li>Public disclosures and guidance so policyholders can check official information themselves.</li>
+      </ul>
+      <p>This means that when you read a policy, make a claim, or raise a dispute, the process should not be at the mercy of the insurer alone. Regulatory expectations and channels exist behind the scenes.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">3. Claim settlement expectations</h2>
+      <p>One of the most practical things policyholders care about is how quickly claims are settled. IRDAI sets expectations for claim settlement timelines and handling. In general, insurers are expected to settle claims within a defined period after all required documents are received, and to communicate clearly if more time is needed.</p>
+      <p>If your claim is delayed, ask for the current status, the reason for any delay, and the expected decision date. Keep the claim reference and copies of every submission.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">4. Grievance channels for policyholders</h2>
+      <p>If you have a problem with an insurer, the usual sequence is:</p>
+      <ul>
+        <li><strong>Step 1 — Raise the grievance with the insurer.</strong> Use the insurer’s grievance officer or designated complaint channel. Keep the acknowledgement and a record of every interaction.</li>
+        <li><strong>Step 2 — Use IRDAI Bima Bharosa.</strong> If the insurer does not resolve the matter, you can register a grievance through IRDAI’s Bima Bharosa portal (bimabharosa.irdai.gov.in). This is the regulator’s grievance channel.</li>
+        <li><strong>Step 3 — Check the Insurance Ombudsman route.</strong> For eligible individual complaints, the Insurance Ombudsman can provide an alternative dispute resolution path. The Ombudsman route has its own eligibility and rule-based conditions.</li>
+      </ul>
+      <p>These channels serve different roles. The first step is usually internal with the insurer. Bima Bharosa gives you a regulatory grievance route. The Ombudsman is available in defined situations and is not an automatic payment mechanism.</p>
+
+      <div class="rounded-xl border border-amber-200 bg-amber-50 p-5">
+        <p class="text-sm text-slate-700"><strong>Important:</strong> Always check the current rules before relying on any timeline, cap, or eligibility condition. IRDAI circulars, annual reports, and the Ombudsman rules can change. The official IRDAI website and the Council for Insurance Ombudsmen are the right places to confirm current details.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">5. Where to check official IRDAI information</h2>
+      <p>Official IRDAI resources include:</p>
+      <ul>
+        <li><strong>IRDAI website (irdai.gov.in)</strong> — circulars, annual reports, policyholder guidance, and statistics.</li>
+        <li><strong>IRDAI Bima Bharosa</strong> — the regulator’s grievance portal.</li>
+        <li><strong>Council for Insurance Ombudsmen</strong> — Ombudsman procedures, eligibility, and filing information.</li>
+      </ul>
+      <p>When you read a statistic or claim about policy limits, settlement timelines, or appeal outcomes, try to trace it back to an official source. IRDAI annual reports and the handbook of Indian insurance statistics are good starting points for market-level data.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">6. Practical tips for policyholders</h2>
+      <ul>
+        <li>Read the policy wording, not just the marketing summary.</li>
+        <li>Keep copies of proposals, receipts, policy documents, and claim records.</li>
+        <li>Raise grievances in writing and keep acknowledgements.</li>
+        <li>Use official channels rather than relying on unofficial advice for formal decisions.</li>
+        <li>Verify current rules before filing through Bima Bharosa or the Ombudsman.</li>
+      </ul>
+      <p>Good records and a calm, factual approach make grievances much easier to resolve.</p>
+
+      <div class="rounded-xl border border-blue-200 bg-blue-50 p-5">
+        <p class="text-sm text-slate-700"><strong>Note:</strong> This guide is general information about IRDAI and policyholder protections. It is not legal advice. For specific disputes, especially where significant money, liability, or legal limits are involved, consider consulting a qualified professional.</p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-sm text-slate-600 border-t border-slate-200 pt-8">
+      <h3 class="font-bold text-slate-900 mb-3">Frequently asked questions</h3>
+      <div class="space-y-2">
+        {faqs.map(f => (
+          <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <summary class="p-5 cursor-pointer font-semibold text-slate-900 hover:bg-slate-50 transition-colors">{f.question}</summary>
+            <div class="px-5 pb-5"><p class="text-slate-600 leading-relaxed">{f.answer}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <aside class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Need help with an IRDAI-related complaint?</h2>
+      <p class="text-blue-100 mb-6">Share the insurer’s written reply and relevant policy pages for a document review. The regulator and any dispute forum make the final call based on your policy and records.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%2C%20I%20have%20an%20IRDAI-related%20grievance%20and%20need%20help%20reviewing%20the%20documents." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">Ask about a document review</a>
+        <a href="/support/" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">View support details</a>
+      </div>
+    </aside>
+
+    <div class="mt-12 text-sm text-slate-600 border-t border-slate-200 pt-8">
+      <h3 class="font-bold text-slate-900 mb-3">Related IRDAI guides</h3>
+      <ul class="space-y-2 list-disc list-inside">
+        {relatedGuides.map(g => (
+          <li class="flex gap-2">
+            <a href={g.url} class="text-blue-600 underline group-hover:text-blue-800">{g.title}</a>
+            <span class="text-slate-500">— {g.summary}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  .prose {
+    @apply text-slate-700;
+  }
+  .prose p {
+    @apply leading-relaxed mb-5;
+  }
+  .prose ul, .prose ol {
+    @apply space-y-2 pl-5;
+  }
+  .prose li {
+    @apply text-slate-600;
+  }
+</style>

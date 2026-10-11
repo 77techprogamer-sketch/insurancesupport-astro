@@ -1,0 +1,55 @@
+---
+export interface HowToStep {
+  name: string;
+  text: string;
+  position: number;
+  itemListElement?: { "@type": "HowToStep", position: number, name?: string, text?: string }[];
+}
+
+export interface HowToSchemaProps {
+  name: string;
+  description: string;
+  steps: Array<{
+    name: string;
+    text: string;
+  }>;
+  estimatedTime?: string;
+  tool?: string;
+  supply?: string;
+  totalTime?: string;
+  url?: string;
+}
+
+const {
+  name,
+  description,
+  steps,
+  estimatedTime,
+  tool,
+  supply,
+  totalTime,
+  url,
+}: HowToSchemaProps = Astro.props;
+
+const howToSteps = steps.map((step, index) => ({
+  "@type": "HowToStep",
+  position: index + 1,
+  name: step.name,
+  text: step.text,
+}));
+
+const howTo = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name,
+  description,
+  step: howToSteps,
+  ...(estimatedTime && { estimatedTime }),
+  ...(tool && { tool: { "@type": "HowToTool", name: tool } }),
+  ...(supply && { supply: { "@type": "HowToSupply", name: supply } }),
+  ...(totalTime && { totalTime }),
+  ...(url && { url }),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(howTo)} />

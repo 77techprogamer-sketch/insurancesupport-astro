@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import HowToJsonLd from '../../components/HowToJsonLd.astro';
+
+const TITLE = 'Motor Insurance Claim Process in India (Step-by-Step 2026)';
+const DESCRIPTION = 'Complete motor insurance claim process in India. Documentation, survey, settlement, rejection reasons, and how to ensure claim approval.';
+const KEYWORDS = 'motor insurance claim process, car insurance claim process, bike insurance claim, third party claim, own damage claim, IRDAI motor claim settlement, motor claim documents, surveyor report';
+const CANONICAL_URL = 'https://insurancesupport.online/blog/motor-insurance-claim-process-guide-2026/';
+const AUTHOR_NAME = 'Hari Kotian';
+const PUBLISH_DATE = '2026-06-28';
+const MODIFIED_DATE = '2026-06-28';
+
+const FAQ_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does IRDAI give insurers to settle a motor claim?',
+      acceptedAnswer: { '@type': 'Answer', text: 'IRDAI guidelines require insurers to settle motor claims within 30 days of receiving all necessary documents. If the insurer needs more time, it should communicate the reason and expected timeline.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need an FIR for a motor insurance claim?',
+      acceptedAnswer: { '@type': 'Answer', text: 'An FIR is usually required when there are injuries, deaths, hit-and-run cases, or third-party property damage above a threshold. For minor accidents with no injuries, an FIR may not be mandatory but is still good practice.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between cashless and reimbursement claims?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A cashless claim is settled directly between the insurer and a network garage, subject to approval. A reimbursement claim means you pay the garage first and then claim the admissible amount from the insurer with the bills and documents.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What if my motor claim is delayed or rejected?',
+      acceptedAnswer: { '@type': 'Answer', text: 'If a claim is delayed beyond the expected timeline or rejected, ask for the written reason, compare it with the policy and documents, and use the insurer grievance process first. If unresolved, escalate through IRDAI Bima Bharosa or the Insurance Ombudsman where eligible.' }
+    }
+  ]
+};
+
+const ARTICLE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: TITLE,
+  description: DESCRIPTION,
+  datePublished: PUBLISH_DATE,
+  dateModified: MODIFIED_DATE,
+  author: { '@type': 'Person', name: AUTHOR_NAME },
+  publisher: { '@type': 'Organization', name: 'Insurance Support' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL_URL }
+};
+
+const HOW_TO_DATA = {
+  name: 'How to File and Settle a Motor Insurance Claim in India',
+  description: 'Follow the motor claim process from reporting the loss through survey, documents and settlement, and know what to do if the claim is delayed or disputed.',
+  steps: [
+    { name: 'Secure the scene and report the loss', text: 'Make the area safe, call for help if needed, document the damage and injuries, and report the accident to the police where required under the Motor Vehicles Act or your policy.' },
+    { name: 'Inform the insurer or agent quickly', text: 'Intimate the insurer or agent as soon as reasonably possible, get the claim reference number, and note the date, time and channel used for intimation.' },
+    { name: 'Collect and keep the evidence together', text: 'Gather photos, repair estimates, the FIR or police report if relevant, registration and policy copies, driving licence where relevant, and communication records.' },
+    { name: 'Co-operate with the survey and documents', text: 'Allow the surveyor inspection, submit requested documents promptly, and keep copies of everything submitted and any surveyor notes or report.' },
+    { name: 'Follow up on the settlement and escalate if needed', text: 'Track the claim status, check the settlement offer against the policy and estimate, and use the insurer grievance process or IRDAI if the claim is unduly delayed or disputed.' }
+  ]
+};
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Motor Insurance Claim Process', url: CANONICAL_URL }
+  ]} />
+  <script type="application/ld+json" set:html={JSON.stringify(ARTICLE_JSON_LD)} />
+  <script type="application/ld+json" set:html={JSON.stringify(FAQ_JSON_LD)} />
+  <HowToJsonLd name={HOW_TO_DATA.name} description={HOW_TO_DATA.description} steps={HOW_TO_DATA.steps} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog/" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Motor Insurance</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} · Published {PUBLISH_DATE} · Updated {MODIFIED_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed"><strong>A motor insurance claim is easier to handle when you know the sequence.</strong> The key is to report the loss promptly, keep the evidence in one place, respond quickly to the surveyor and document requests, and follow up until the settlement is complete. This guide explains the motor claim process in India for own damage, third-party, theft, and personal accident claims.</p>
+
+      <div class="rounded-xl border border-blue-200 bg-blue-50 p-5">
+        <h2 class="text-xl font-bold text-blue-900 mt-0">Quick motor claim checklist</h2>
+        <ol class="list-decimal list-inside space-y-2 pt-2">
+          <li>Make the area safe and call for help if anyone is injured.</li>
+          <li>Document the scene: photos, location, time, witnesses, and other party details.</li>
+          <li>File an FIR where required and note the FIR number.</li>
+          <li>Intimate the insurer or agent as soon as possible and get a claim reference.</li>
+          <li>Submit the requested documents promptly and keep copies of everything.</li>
+          <li>Follow up on the settlement and escalate through the insurer or IRDAI if there is undue delay.</li>
+        </ol>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Types of motor insurance claims</h2>
+      <p>Most motor claims fall into a few common categories:</p>
+      <ul>
+        <li><strong>Third-party claims</strong> — damage or injury caused to another person or their property. Third-party cover is mandatory under the Motor Vehicles Act, 1988.</li>
+        <li><strong>Own damage claims</strong> — damage to your own vehicle due to an accident, theft, fire, natural disaster, or similar event.</li>
+        <li><strong>Theft claims</strong> — a total loss claim if the vehicle is stolen and not recovered within the period stated in the policy, commonly 90 days.</li>
+        <li><strong>Personal accident claims</strong> — compensation for death or permanent disability of the owner-driver, subject to the policy and the mandatory personal accident cover for the owner.</li>
+      </ul>
+      <p>Each type has its own document requirements and process, but the first steps are similar.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Step 1: Ensure safety first</h2>
+      <p>After an accident, your first concern should be safety. Move to a safe location if it is possible to do so, call emergency services if anyone is injured, and avoid admitting fault at the scene. A careful, factual record is more useful than a rushed statement.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Step 2: Document the scene</h2>
+      <p>Collect as much evidence as you can while the scene is still fresh:</p>
+      <ul>
+        <li>Photos and videos of all vehicles involved, from multiple angles.</li>
+        <li>The time, location, and road conditions.</li>
+        <li>Contact details of witnesses, if any.</li>
+        <li>The other driver's insurance details, such as the policy number and insurer name, where available.</li>
+      </ul>
+      <p>Good documentation reduces disputes later, especially when fault is contested or the other party's details are disputed.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Step 3: File an FIR if required</h2>
+      <p>File an FIR at the nearest police station if the situation calls for it, such as when:</p>
+      <ul>
+        <li>There are injuries or fatalities.</li>
+        <li>Third-party property damage exceeds the threshold commonly applied by police.</li>
+        <li>The accident involves a government vehicle.</li>
+        <li>It is a hit-and-run case.</li>
+      </ul>
+      <p>For minor accidents with no injuries, an FIR may not be required, but it can still help if the claim is later questioned. Keep the FIR number safe.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Step 4: Inform your insurer immediately</h2>
+      <p>Most motor policies require you to intimate the insurer quickly, often within a short period after the accident. Delayed intimation can complicate a claim, so report it as soon as you reasonably can. You can usually inform the insurer by:</p>
+      <ul>
+        <li>Calling the insurer's 24x7 helpline.</li>
+        <li>Using the insurer's mobile app or portal.</li>
+        <li>Emailing the claims department.</li>
+        <li>Visiting the nearest branch, if needed.</li>
+      </ul>
+      <p>Have these details ready:</p>
+      <ul>
+        <li>Policy number</li>
+        <li>Date, time, and location of the accident</li>
+        <li>Vehicle registration number</li>
+        <li>Driver's licence number</li>
+        <li>A brief description of the accident</li>
+        <li>FIR number, if filed</li>
+      </ul>
+      <p>Ask for a claim reference number and keep it for every later follow-up.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Step 5: Get a survey</h2>
+      <p>The insurer will usually appoint a surveyor to assess the damage. The surveyor may:</p>
+      <ul>
+        <li>Inspect the vehicle.</li>
+        <li>Ask for documents and photos.</li>
+        <li>Prepare a survey report with an estimated repair cost.</li>
+        <li>For cashless claims, coordinate with the network garage.</li>
+      </ul>
+      <p>Co-operate with the surveyor and share accurate information. If you disagree with the survey estimate, raise it politely and in writing with supporting evidence rather than waiting until the settlement stage.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Step 6: Submit the documents</h2>
+      <p>Document requirements vary by claim type. Common sets include:</p>
+
+      <h3>Own damage claims</h3>
+      <ul>
+        <li>Claim form, signed</li>
+        <li>Registration certificate (RC)</li>
+        <li>Driver's licence valid at the time of the accident</li>
+        <li>Policy copy</li>
+        <li>FIR copy, if filed</li>
+        <li>Repair estimate or invoice</li>
+        <li>Previous claim history, if asked</li>
+      </ul>
+
+      <h3>Theft claims</h3>
+      <ul>
+        <li>Original RC, or a duplicate from the RTO if the original is unavailable</li>
+        <li>All sets of keys</li>
+        <li>FIR copy</li>
+        <li>Non-traceable certificate from the police after the stipulated period</li>
+        <li>Policy document</li>
+        <li>Claim form</li>
+      </ul>
+
+      <h3>Third-party claims</h3>
+      <ul>
+        <li>FIR copy</li>
+        <li>Vehicle RC and insurance details of the other party</li>
+        <li>Medical bills, if there is injury</li>
+        <li>Property damage estimate</li>
+        <li>Court order, if the matter is before a tribunal</li>
+      </ul>
+      <p>Keep copies of everything you submit and note the date and channel used.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Step 7: Claim settlement</h2>
+      <p>Settlement usually happens in one of two ways:</p>
+      <ul>
+        <li><strong>Cashless claim</strong> — if you repair at a network garage, the insurer pays the garage directly. You generally pay only the deductible and any non-covered items, subject to approval.</li>
+        <li><strong>Reimbursement claim</strong> — you repair at any garage, pay upfront, submit the bills, and get reimbursed for the admissible amount after the insurer assesses the claim.</li>
+      </ul>
+      <p>Under IRDAI guidelines, insurers are expected to settle motor claims within 30 days of receiving all necessary documents. If there is a delay, ask for the reason and expected timeline in writing.</p>
+
+      <div class="rounded-xl border border-amber-200 bg-amber-50 p-5">
+        <p class="text-sm text-slate-700"><strong>Note:</strong> This guide is general information, not legal advice. Claim outcomes depend on the policy wording, the facts, and the documents in the file. For serious disputes, third-party liability matters, or legal questions, speak with a qualified lawyer or other appropriate professional.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">What to do if the claim is delayed or rejected</h2>
+      <p>If your motor claim is delayed or rejected, do not assume you have no options. Start by:</p>
+      <ul>
+        <li>Asking the insurer for the written reason and the policy clause relied upon.</li>
+        <li>Comparing the reason with the policy, the survey report, and your documents.</li>
+        <li>Sending a focused written grievance to the insurer's grievance officer.</li>
+        <li>Escalating through IRDAI Bima Bharosa or the Insurance Ombudsman if the matter is not resolved, subject to eligibility and current rules.</li>
+      </ul>
+      <p>If the surveyor estimate is disputed, share your evidence, such as a second estimate, photos, or additional supporting documents, and ask for the basis of the insurer's calculation.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">Final thoughts</h2>
+      <p>A motor claim goes more smoothly when you report it quickly, document the scene carefully, and keep every document in one place. Follow the steps above, respond promptly to the insurer and surveyor, and keep tracking the claim until settlement.</p>
+    </div>
+
+    <aside class="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+      <h2 class="text-2xl font-bold mb-3">Need help with a motor claim?</h2>
+      <p class="text-blue-100 mb-6">Share the survey report, claim reference, and relevant policy pages for a document review. Any coverage decision remains with the insurer and depends on your policy and records.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919986634506?text=Hi%2C%20my%20motor%20insurance%20claim%20needs%20a%20review.%20I%20need%20help%20with%20the%20documents%20and%20process." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">Ask about a document review</a>
+        <a href="/support/" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">View support details</a>
+      </div>
+    </aside>
+
+    <div class="mt-12 text-sm text-slate-600 border-t border-slate-200 pt-8">
+      <h3 class="font-bold text-slate-900 mb-3">Related guides and resources</h3>
+      <ul class="space-y-2 list-disc list-inside">
+        <li><a href="/blog/motor-insurance-claim-denied-surveyor-dispute-2026/" class="text-blue-600 underline">Motor Claim Denied? Dispute the Surveyor Report</a> — how to challenge a survey estimate.</li>
+        <li><a href="/blog/travel-insurance-claim-denied-2026/" class="text-blue-600 underline">Travel Insurance Claim Denied? Recovery Guide</a> — a different claim type, similar documentation principles.</li>
+        <li><a href="/claim-recovery/" class="text-blue-600 underline">Claim Recovery Hub</a> — broader claim tips across motor, health, and life insurance.</li>
+        <li><a href="/support/" class="text-blue-600 underline">Claim support service</a> — see the service scope and how to request a review.</li>
+      </ul>
+    </div>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  .prose {
+    @apply text-slate-700;
+  }
+  .prose p {
+    @apply leading-relaxed mb-5;
+  }
+  .prose ul, .prose ol {
+    @apply space-y-2 pl-5;
+  }
+  .prose li {
+    @apply text-slate-600;
+  }
+  .prose details {
+    @apply mb-3;
+  }
+  .prose summary {
+    @apply cursor-pointer;
+  }
+</style>

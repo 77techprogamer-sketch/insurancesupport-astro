@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import HowToJsonLd from '../../components/HowToJsonLd.astro';
+
+const TITLE = 'How to Appeal a Rejected Insurance Claim in India (Step-by-Step)';
+const DESCRIPTION = 'Learn the exact steps to appeal a rejected insurance claim in India. Insurer grievance, IRDAI Bima Bharosa, Ombudsman, and what to do when a claim is rejected.';
+const KEYWORDS = 'appeal rejected insurance claim India, how to appeal insurance claim rejection, insurance claim rejected appeal process, IRDAI complaint against insurer, Bima Bharosa grievance';
+const CANONICAL_URL = 'https://insurancesupport.online/blog/how-to-appeal-rejected-insurance-claim-india-2026/';
+const AUTHOR_NAME = 'Hari Kotian';
+const PUBLISH_DATE = '2026-06-26';
+const MODIFIED_DATE = '2026-06-26';
+
+const FAQ_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I appeal a rejected insurance claim in India?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Start with the insurer grievance officer, then use IRDAI Bima Bharosa or the Insurance Ombudsman if the complaint is not resolved, subject to eligibility and time limits.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What should I do first after a claim rejection?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Read the rejection letter carefully, note the cited clause and claim reference, compare it with your policy and documents, then write a focused appeal to the insurer.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does an insurer have to respond to a grievance?',
+      acceptedAnswer: { '@type': 'Answer', text: 'IRDAI guidelines require insurers to have a grievance mechanism and respond within defined timelines, but the exact period depends on the channel and the issue. Keep proof of submission and follow up if there is no acknowledgement.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'When can I go to the Insurance Ombudsman?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Ombudsman can consider a complaint if you have first made a written representation to the insurer and it has rejected the complaint, given an unsatisfactory reply, or not replied within the stipulated time, subject to the current Ombudsman rules and limits.' }
+    }
+  ]
+};
+
+const ARTICLE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: TITLE,
+  description: DESCRIPTION,
+  datePublished: PUBLISH_DATE,
+  dateModified: MODIFIED_DATE,
+  author: { '@type': 'Person', name: AUTHOR_NAME },
+  publisher: { '@type': 'Organization', name: 'Insurance Support' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL_URL }
+};
+
+const HOW_TO_DATA = {
+  name: 'How to Appeal a Rejected Insurance Claim in India',
+  description: 'Appeal a rejected insurance claim by understanding the reason, matching it to the policy, lodging a written complaint, and escalating through the right channel.',
+  steps: [
+    { name: 'Read the rejection letter carefully', text: 'Identify the exact reason, the policy clause cited, the claim reference and the deadline or next step mentioned, then keep a copy of the letter or message.' },
+    { name: 'Check the reason against your policy and documents', text: 'Test the reason against the policy wording, schedule, exclusions, limits, documents submitted and facts of the event, and note any gap or error.' },
+    { name: 'Write a focused appeal to the insurer', text: 'State the decision you want, quote the relevant policy point, list the supporting evidence, and ask for acknowledgement, the review timeline and a written response.' },
+    { name: 'Submit and track the appeal', text: 'Use the insurer official complaint channel, keep proof of submission, and log every follow-up date, reference and reply.' },
+    { name: 'Use the right escalation path if needed', text: 'If the insurer does not resolve the appeal, use IRDAI Bima Bharosa or the Insurance Ombudsman if you are eligible, and keep all earlier correspondence handy.' }
+  ]
+};
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'How to Appeal a Rejected Insurance Claim', url: CANONICAL_URL }
+  ]} />
+  <script type="application/ld+json" set:html={JSON.stringify(ARTICLE_JSON_LD)} />
+  <script type="application/ld+json" set:html={JSON.stringify(FAQ_JSON_LD)} />
+  <HowToJsonLd name={HOW_TO_DATA.name} description={HOW_TO_DATA.description} steps={HOW_TO_DATA.steps} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog/" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Appeal Rejected Claim</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} · Published {PUBLISH_DATE} · Updated {MODIFIED_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed"><strong>A rejected insurance claim is not always the end of the road.</strong> Many denials are based on missing documents, a disputed clause interpretation, or a calculation error. A focused appeal can reopen the discussion and, in some cases, change the outcome. This guide explains the practical steps to follow when a health, life, motor, or other insurance claim is rejected in India.</p>
+
+      <div class="rounded-xl border border-blue-200 bg-blue-50 p-5">
+        <h2 class="text-xl font-bold text-blue-900 mt-0">Quick appeal checklist</h2>
+        <ol class="list-decimal list-inside space-y-2 pt-2">
+          <li>Read the rejection letter and note the cited clause and claim reference.</li>
+          <li>Compare the reason with your policy, schedule, and submitted documents.</li>
+          <li>Write a concise, factual appeal to the insurer grievance officer.</li>
+          <li>Keep proof of submission and every follow-up reply.</li>
+          <li>If unresolved, use IRDAI Bima Bharosa or the Insurance Ombudsman where eligible.</li>
+        </ol>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">1. Read the rejection letter carefully</h2>
+      <p>The first step is to understand exactly why the claim was rejected. Look for:</p>
+      <ul>
+        <li>The precise reason stated in the decision letter or message.</li>
+        <li>The policy clause or condition the insurer relied on.</li>
+        <li>The claim reference number and any deadline or next step mentioned.</li>
+      </ul>
+      <p>Do not rely on a verbal explanation alone. A written decision is easier to challenge and easier to track. Keep a copy of the rejection letter, email, SMS, or portal message, even if it is only a screenshot.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">2. Check the reason against your policy and documents</h2>
+      <p>Not every rejection is correct. Before you respond, compare the insurer's reason with:</p>
+      <ul>
+        <li>The policy wording, schedule, exclusions, waiting periods, limits, deductibles, and sub-limits.</li>
+        <li>The documents you submitted and any acknowledgement of receipt.</li>
+        <li>The facts of the event, treatment, loss, or incident.</li>
+      </ul>
+      <p>Common problems include a missing document that was actually submitted, a clause that is being read too broadly, a calculation error, or a coverage question that was not clearly answered. Note anything you can support with evidence.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8">3. Write a focused appeal to the insurer</h2>
+      <p>Write a short, factual appeal to the insurer's grievance or claims review channel
