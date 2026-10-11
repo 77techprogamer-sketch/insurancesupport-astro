@@ -36,9 +36,63 @@ export interface Props {
   skipDefaultHreflang?: boolean;
   pageLang?: string;   // e.g. "hi-IN", "bn-IN" — defaults to "en-IN"
   ogLocale?: string;   // e.g. "hi_IN", "bn_IN" — defaults to "en_IN"
+  pageType?: string;  // e.g. "homepage", "service", "city", "location", "compare", "faq", "blog-index", "search"
 }
 
-const { title, description = "Insurance Support by Hari Kotian provides insurance guidance and claim assistance from Bengaluru.", ogImage: pageOgImage, noIndex = false, keywords, canonical, dateModified, geoRegion = "IN-KA", geoPlaceName = "Bengaluru", geoPosition = "13.0159;77.5522", skipDefaultHreflang = false, pageLang = "en-IN", ogLocale = "en_IN" } = Astro.props;
+const pageLocale = ogLocale || 'en_IN';
+const pageLangCode = pageLang || 'en-IN';
+const pageMetaRegion = geoRegion || 'IN-KA';
+const pageMetaPlace = geoPlaceName || 'Bengaluru';
+const pageMetaPosition = geoPosition || '13.0159;77.5522';
+const pageDescription = description || 'Insurance Support by Hari Kotian provides insurance guidance and claim assistance from Bengaluru.';
+const pageOgImage = ogImage || 'https://insurancesupport.online/og-image.png';
+const pageNoIndex = noIndex || false;
+const pageCanonical = canonical || Astro.url.href;
+const pageDateModified = dateModified;
+const pageKeywords = keywords;
+const pageTitle = title;
+const pageSkipDefaultHreflang = skipDefaultHreflang || false;
+const effectiveKeywords = mergedKeywords({ keywords: pageKeywords, pageType: mergedProps.pageType });
+
+// High-intent keyword guidance for the page type. Only rendered where a page type is
+// supplied; otherwise omitted so individual pages keep the keywords they already define.
+import { PAGE_KEYWORDS } from '../data/page-keywords';
+
+interface KeywordMergeOptions {
+  keywords?: string;
+  pageType?: string;
+}
+
+const mergedKeywords = ({ keywords, pageType }: KeywordMergeOptions): string | undefined => {
+  if (!pageType) return keywords;
+  const existing = keywords ? new Set(keywords.split(',').map(k => k.trim()).filter(Boolean)) : new Set<string>();
+  const typeSet = PAGE_KEYWORDS[pageType];
+  if (typeSet) {
+    typeSet.forEach(k => existing.add(k));
+  }
+  // Deduplicate while preserving insertion order.
+  return [...existing].join(', ');
+};
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+  keywords?: string;
+  canonical?: string;
+  dateModified?: string;
+  geoRegion?: string;
+  geoPlaceName?: string;
+  geoPosition?: string;
+  skipDefaultHreflang?: boolean;
+  pageLang?: string;
+  ogLocale?: string;
+  pageType?: string;
+}
+
+const mergedProps = Astro.props as Props;
+const effectiveKeywords = mergedKeywords(mergedProps);
 
 // Google typically truncates meta descriptions at ~155 characters (desktop).
 // Truncate on a safe word boundary so CTAs/keywords aren't cut mid-word in the SERP.
@@ -82,7 +136,7 @@ const organizationSchema = {
   "description": "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
-  "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM/review"],
+  "sameAs": ["https://www.google.com/maps/place/Insurance+Support/@13.0159,77.5522,17z/data=!4m6!3m5!1s0x3bae1670c7b5d5f3:0x8b5e8c5f5c5f5c5f!8m2!3d13.0159!4d77.5544"],
   "telephone": phoneE164,
   "address": {
     "@type": "PostalAddress",
@@ -185,7 +239,8 @@ const pageSchema = dateModified ? {
     <meta name="title" content={fullTitle} />
     <meta name="description" content={metaDescription} />
     <meta name="author" content="Hari Kotian" />
-        <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+    {effectiveKeywords && <meta name="keywords" content={effectiveKeywords} />}
+        <meta name="robots" content={pageNoIndex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="author" href="https://insurancesupport.online/about" />
     {!skipDefaultHreflang && (

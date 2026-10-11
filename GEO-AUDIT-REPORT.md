@@ -5,6 +5,18 @@
 **Business type:** Local insurance advisory and publisher
 **Coverage:** Representative sample of 20+ public URLs, including the homepage, service, location, support, FAQ, case study, and article pages; robots.txt, sitemap.xml, and AI-discovery files were also checked. This is not a full-site crawl.
 
+## Follow-up check — 5 October 2026
+
+This follow-up supersedes several findings below that were recorded on 4 October:
+
+- The live homepage now states the GST exemption for individual life and health policies, including a link to the Government FAQ. The previous finding that its FAQ still said GST applied to health premiums is resolved.
+- The current cashless-denial article states the one-hour pre-authorisation and three-hour final discharge-authorisation timelines and links to IRDAI guidance. The previous 30-minute finding is stale.
+- The live homepage currently renders its headline trust metrics as nonzero values; the earlier report's zero-counter observation was not reproduced in this check.
+- The live homepage still makes prominent claims such as a 95% success rate, ₹50 Cr+ recovered, and 1,000+ families served. Keep these only with records that support their definitions, period, and calculation. A live-site check of the quote page could not be retrieved, so its prior observations remain unconfirmed.
+- Source review found that `src/pages/get-started.astro` presented a quote form that only hid itself in the browser and did not submit the lead. The form is now connected locally to the existing `/contact-submit` endpoint and is described as a callback request. This source change has not been deployed or tested against the production endpoint.
+
+The 53/100 score below is the provisional score from the 4 October sample; it has not been recalculated. Re-score after a fresh crawl and verification of the remaining claims and production lead flow.
+
 ---
 
 ## Executive Summary

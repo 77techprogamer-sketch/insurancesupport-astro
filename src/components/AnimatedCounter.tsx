@@ -9,23 +9,22 @@ interface Props {
 }
 
 export default function AnimatedCounter({ end, suffix = '', prefix = '', duration = 2000, label }: Props) {
-  const [count, setCount] = useState(end); // Start at final value for SSR
+  // Start at the final value for SSR so crawlers and first paint see correct numbers.
+  // After hydration, animate from 0 → end when the element enters the viewport.
+  const [count, setCount] = useState(end);
   const ref = useRef<HTMLDivElement>(null);
   const counted = useRef(false);
-  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    // Reset to 0 only after hydration, then animate up
-    if (!hasAnimated.current) {
-      hasAnimated.current = true;
-      setCount(0);
-    }
+    // Reset to 0 after hydration, then animate up when visible.
+    if (counted.current) return;
+    counted.current = true;
+    setCount(0);
 
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !counted.current) {
-        counted.current = true;
+      if (entry.isIntersecting) {
         const start = performance.now();
         const step = (now: number) => {
           const elapsed = now - start;
