@@ -66,7 +66,7 @@ If insurer delays beyond 30 days without valid reason, IRDAI mandates 12% penalt
 With 25+ years of experience as an IRDAI-certified insurance advisor (Reg: 0149161D), Hari Kotian provides:
 
 - **Policy comparison** across 30+ insurers based on your specific needs and budget
-- **Claim rejection appeal** assistance with 95% success rate for denied claims
+- **Claim rejection appeal** assistance with appeal documentation and insurer follow-up
 - **Portability guidance** for shifting between insurers mid-policy
 - **Cashless claim support** with network hospitals in Bengaluru
 - **Documentation assistance** ensuring no paperwork gaps that cause delays

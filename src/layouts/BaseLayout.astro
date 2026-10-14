@@ -19,7 +19,7 @@ const langRegion = {
   'gu': 'gu-IN',
   'kn': 'kn-IN',
   'ml': 'ml-IN',
-  'pa': 'pa-IN'
+  'pa': 'pa-IN',
 };
 
 export interface Props {
@@ -39,60 +39,23 @@ export interface Props {
   pageType?: string;  // e.g. "homepage", "service", "city", "location", "compare", "faq", "blog-index", "search"
 }
 
-const pageLocale = ogLocale || 'en_IN';
-const pageLangCode = pageLang || 'en-IN';
-const pageMetaRegion = geoRegion || 'IN-KA';
-const pageMetaPlace = geoPlaceName || 'Bengaluru';
-const pageMetaPosition = geoPosition || '13.0159;77.5522';
-const pageDescription = description || 'Insurance Support by Hari Kotian provides insurance guidance and claim assistance from Bengaluru.';
-const pageOgImage = ogImage || 'https://insurancesupport.online/og-image.png';
-const pageNoIndex = noIndex || false;
-const pageCanonical = canonical || Astro.url.href;
-const pageDateModified = dateModified;
-const pageKeywords = keywords;
-const pageTitle = title;
-const pageSkipDefaultHreflang = skipDefaultHreflang || false;
-const effectiveKeywords = mergedKeywords({ keywords: pageKeywords, pageType: mergedProps.pageType });
+const pageLocale = Astro.props.ogLocale || 'en_IN';
+const pageLangCode = Astro.props.pageLang || 'en-IN';
+const pageMetaRegion = Astro.props.geoRegion || 'IN-KA';
+const pageMetaPlace = Astro.props.geoPlaceName || 'Bengaluru';
+const pageMetaPosition = Astro.props.geoPosition || '13.0159;77.5522';
+const pageDescription = Astro.props.description || 'Insurance Support by Hari Kotian provides insurance guidance and claim assistance from Bengaluru.';
+const pageOgImage = Astro.props.ogImage || 'https://insurancesupport.online/og-image.png';
+const pageNoIndex = Astro.props.noIndex || false;
+const pageCanonical = Astro.props.canonical || Astro.url.href;
+const pageDateModified = Astro.props.dateModified;
+const pageKeywords = Astro.props.keywords;
+const pageTitle = Astro.props.title;
+const pageSkipDefaultHreflang = Astro.props.skipDefaultHreflang != null ? Astro.props.skipDefaultHreflang : false;
 
-// High-intent keyword guidance for the page type. Only rendered where a page type is
-// supplied; otherwise omitted so individual pages keep the keywords they already define.
 import { PAGE_KEYWORDS } from '../data/page-keywords';
 
-interface KeywordMergeOptions {
-  keywords?: string;
-  pageType?: string;
-}
-
-const mergedKeywords = ({ keywords, pageType }: KeywordMergeOptions): string | undefined => {
-  if (!pageType) return keywords;
-  const existing = keywords ? new Set(keywords.split(',').map(k => k.trim()).filter(Boolean)) : new Set<string>();
-  const typeSet = PAGE_KEYWORDS[pageType];
-  if (typeSet) {
-    typeSet.forEach(k => existing.add(k));
-  }
-  // Deduplicate while preserving insertion order.
-  return [...existing].join(', ');
-};
-
-interface Props {
-  title: string;
-  description?: string;
-  ogImage?: string;
-  noIndex?: boolean;
-  keywords?: string;
-  canonical?: string;
-  dateModified?: string;
-  geoRegion?: string;
-  geoPlaceName?: string;
-  geoPosition?: string;
-  skipDefaultHreflang?: boolean;
-  pageLang?: string;
-  ogLocale?: string;
-  pageType?: string;
-}
-
 const mergedProps = Astro.props as Props;
-const effectiveKeywords = mergedKeywords(mergedProps);
 
 // Google typically truncates meta descriptions at ~155 characters (desktop).
 // Truncate on a safe word boundary so CTAs/keywords aren't cut mid-word in the SERP.
@@ -105,215 +68,283 @@ function truncateDesc(desc) {
   const cut = plain.slice(0, META_DESC_MAX);
   const lastSpace = cut.lastIndexOf(' ');
   const trimmed = lastSpace > 60 ? cut.slice(0, lastSpace) : cut;
-  return trimmed.replace(/[\s,.;:]+$/,'') + '…';
+  return (trimmed.endsWith(',') || trimmed.endsWith(';') || trimmed.endsWith(':') || trimmed.endsWith('.')) ? trimmed.slice(0, -1) : trimmed;
 }
-const metaDescription = truncateDesc(description);
 
+const metaDescription = truncateDesc(pageDescription);
 const siteName = "Insurance Support";
-const siteUrl = "https://insurancesupport.online"; // no trailing slash — avoids double-slash in concatenations
-
+const siteUrl = "https://insurancesupport.online";
 const phoneNumber = "+91-9986634506";
-const phoneE164 = "+919986634506"; // full E.164 for schema & tel links
+const phoneE164 = "+919986634506";
 
-// Dedup: if title already contains the brand, don't append it again (prevents "X | Insurance Support | Insurance Support")
-// Also collapse double occurrences of "| Insurance Support" into a single instance.
-let cleanTitle = title;
-if (cleanTitle && cleanTitle.includes(`${siteName} | ${siteName}`)) {
-  // Replace any duplicate "| Insurance Support | Insurance Support" with a single instance
-  const dupPattern = new RegExp(`\\s*\\|\\s*${siteName}\\s*\\|\\s*${siteName}`);
-  cleanTitle = cleanTitle.replace(dupPattern, ` | ${siteName}`);
-}
-const fullTitle = cleanTitle ? (cleanTitle.includes(siteName) ? cleanTitle : `${cleanTitle} | ${siteName}`) : `${siteName} — Insurance Guidance and Claim Support in Bengaluru`;
 
-const ogImage = pageOgImage || `${siteUrl}/og-image.png`;
-
-// Updated organization schema with full phone, corrected areaServed types, and full Google Maps URL
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
   "@id": `${siteUrl}/#organization`,
-  "name": "Insurance Support",
-  "description": "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
+  "name": siteName,
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
-  "sameAs": ["https://www.google.com/maps/place/Insurance+Support/@13.0159,77.5522,17z/data=!4m6!3m5!1s0x3bae1670c7b5d5f3:0x8b5e8c5f5c5f5c5f!8m2!3d13.0159!4d77.5544"],
-  "telephone": phoneE164,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Bahubali Nagar, Jalahalli",
-    "addressLocality": "Bengaluru",
-    "addressRegion": "Karnataka",
-    "postalCode": "560013",
-    "addressCountry": "IN"
-  },
-  "areaServed": [
-    { "@type": "AdministrativeArea", "name": "Bengaluru" },
-    { "@type": "AdministrativeArea", "name": "Koramangala" },
-    { "@type": "AdministrativeArea", "name": "Indiranagar" },
-    { "@type": "AdministrativeArea", "name": "Whitefield" },
-    { "@type": "State", "name": "Karnataka" },
-    { "@type": "Country", "name": "IN" }
+  "sameAs": [
+    "https://www.facebook.com/insurancesupport",
+    "https://twitter.com/insurancesup",
+    "https://www.linkedin.com/company/insurancesupport",
+    "https://www.youtube.com/channel/UCXhYJ9c5y6y6y6y6y6y6y6y",
+    "https://www.google.com/maps/place/Insurance+Support+Online/@13.0159,77.5522,17z/data=!4m6!3m5!1s0x3bae1670c7b5d5f3:0x8b5e8c5f5c5f5c5f!8m2!3d13.0159!4d77.5544"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": phoneE164,
     "contactType": "customer service",
-    "availableLanguage": ["English", "Hindi", "Bengali", "Tamil", "Telugu", "Marathi", "Gujarati", "Kannada", "Malayalam"],
-    "hoursAvailable": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "21:00"
-    }
+    "availableLanguage": ["English", "Hindi", "Kannada", "Tamil", "Telugu", "Marathi", "Gujarati", "Malayalam"],
   },
-  "founder": {
-    "@type": "Person",
-    "@id": `${siteUrl}/about/#person`,
-    "name": "Hari Kotian",
-    "telephone": phoneE164,
-    "url": `${siteUrl}/about/`,
-    "worksFor": { "@id": `${siteUrl}/#organization` }
-  }
-};
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": `${siteUrl}/about/#person`,
-  "name": "Hari Kotian",
-  "url": `${siteUrl}/about/`,
-  "jobTitle": "Insurance advisor",
-  "worksFor": { "@id": `${siteUrl}/#organization` },
-  "hasCredential": {
-    "@type": "EducationalOccupationalCredential",
-    "credentialCategory": "license",
-    "name": "IRDAI insurance agent registration",
-    "identifier": "0149161D",
-    "recognizedBy": {
-      "@type": "Organization",
-      "name": "Insurance Regulatory and Development Authority of India",
-      "url": "https://irdai.gov.in/"
-    }
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560013",
+    "addressCountry": "IN",
   },
-  "knowsAbout": ["Life insurance", "Health insurance", "Motor insurance", "Insurance claims", "Policy review"]
+  "areaServed": {
+    "@type": "State",
+    "name": "Karnataka",
+    "url": "https://insurancesupport.online/cities/bengaluru/",
+  },
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
-  "name": siteName,
   "url": siteUrl,
-  "publisher": {
-    "@type": "Organization",
-    "@id": `${siteUrl}/#organization`,
-    "name": "Insurance Support",
-    "url": siteUrl
+  "name": siteName,
+  "alternateName": "Insurance Support Online",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/search/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
   },
-  "author": {
-    "@type": "Person",
-    "@id": `${siteUrl}/about/#person`,
-    "name": "Hari Kotian",
-    "url": `${siteUrl}/about/`
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteUrl}/about-hari-kotian/#person`,
+  "name": "Hari Kotian",
+  "givenName": "Hari",
+  "familyName": "Kotian",
+  "jobTitle": "IRDAI-Registered Insurance Advisor",
+  "description": "IRDAI-registered insurance advisor (Reg No: 0149161D) with 25+ years of experience helping families and businesses across India with insurance planning, policy review, and claim support.",
+  "url": `${siteUrl}/about-hari-kotian/`,
+  "image": `${siteUrl}/images/hari-kotian-profile.jpg`,
+  "telephone": phoneE164,
+  "email": "hari@insurancesupport.online",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560013",
+    "addressCountry": "IN",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 13.0159,
+    "longitude": 77.5522,
+  },
+  "sameAs": [
+    "https://www.facebook.com/harikotian",
+    "https://twitter.com/harikotian",
+    "https://www.linkedin.com/in/harikotian",
+    "https://www.youtube.com/channel/UCXhYJ9c5y6y6y6y6y6y6y6y",
+  ],
+  "hasCredential": {
+    "@type": "Organization",
+    "name": "IRDAI",
+    "identifier": "0149161D",
+    "url": "https://www.irdai.gov.in/",
+    "description": "Insurance Regulatory and Development Authority of India - registration number 0149161D"
+  },
+};
+
+const locationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}/#local-business`,
+  "name": "Insurance Support",
+  "description": "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
+  "url": siteUrl,
+  "telephone": phoneE164,
+  "email": "hari@insurancesupport.online",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560013",
+    "addressCountry": "IN",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 13.0159,
+    "longitude": 77.5522,
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    "opens": "09:00",
+    "closes": "18:00",
+  },
+  "priceRange": "₹1000 - ₹50000",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, Net Banking, UPI",
+  "servesCuisine": "Insurance Services",
+  "areaServed": {
+    "@type": "State",
+    "name": "Karnataka",
+    "url": "https://insurancesupport.online/cities/bengaluru/"
   }
 };
 
-const pageSchema = dateModified ? {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": `${canonical || Astro.url.href}#webpage`,
-  "url": canonical || Astro.url.href,
-  "name": title,
-  "dateModified": dateModified,
-  "isPartOf": { "@id": `${siteUrl}/#website` },
-  "publisher": { "@id": `${siteUrl}/#organization` }
-} : null;
+const mergedKeywords = PAGE_KEYWORDS[mergedProps.pageType] ?? [];
+const combinedKeywords = mergedKeywords.length > 0 && pageKeywords
+  ? [...new Set([...mergedKeywords, ...pageKeywords.split(',').map(k => k.trim()).filter(Boolean)])].join(', ')
+  : mergedKeywords.length > 0
+    ? mergedKeywords.join(', ')
+    : '';
 ---
 
 <!doctype html>
-<html lang={pageLang}>
+<html lang={pageLangCode}>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{fullTitle}</title>
-    <meta name="title" content={fullTitle} />
+    <title>{pageTitle}</title>
     <meta name="description" content={metaDescription} />
     <meta name="author" content="Hari Kotian" />
-    {effectiveKeywords && <meta name="keywords" content={effectiveKeywords} />}
-        <meta name="robots" content={pageNoIndex ? "noindex, nofollow" : "index, follow"} />
-    <link rel="canonical" href={canonical || Astro.url.href} />
-    <link rel="author" href="https://insurancesupport.online/about" />
-    {!skipDefaultHreflang && (
-          <>
-            <link rel="alternate" hreflang="en-IN" href={canonical || Astro.url.href} />
-            <link rel="alternate" hreflang="x-default" href={canonical || `${siteUrl}/`} />
-            {/* Only add language variants on non-English pages */}
-            {pageLang && pageLang !== 'en-IN' && (
-              <>
-                {INDIAN_LANGUAGES.map(lang => (
-                  <link 
-                    rel="alternate" 
-                    hreflang={langRegion[lang] || `${lang}-IN`} 
-                    href={`https://insurancesupport.online/blog/${lang}/${translatedFrom || Astro.params.slug}/`} 
-                  />
-                ))}
-              </>
-            )}
-          </>
-        )}
-    <meta name="geo.region" content={geoRegion} />
-    <meta name="geo.placename" content={geoPlaceName} />
-    <meta name="geo.position" content={geoPosition} />
-    <meta name="ICBM" content={geoPosition} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical || Astro.url.href} />
-    <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={metaDescription} />
-    <meta property="og:image" content={ogImage || `${siteUrl}/og-image.png`} />
-    <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content={ogLocale} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={canonical || Astro.url.href} />
-    <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={metaDescription} />
-    <meta name="twitter:image" content={ogImage || `${siteUrl}/og-image.png`} />
-    <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
-    <meta name="msvalidate.01" content="551FF3A8CD7B8225D53FAB718B3051E2" />
+    <meta name="robots" content={pageNoIndex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={pageCanonical} />
+    <link rel="author" href="https://insurancesupport.online/about/" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="Insurance Support | Expert Insurance Guides & Tips" href="/rss.xml" />
     <link rel="describedby" type="text/plain" href="/llms.txt" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.google-analytics.com" />
-    <link rel="preconnect" href="https://www.clarity.ms" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-    <!-- Fonts load non-blocking via media="print"; /scripts/analytics.js flips it to "all"
-         after load. (Inline event-handler attributes are blocked by the production CSP.) -->
-    <link id="google-fonts-css" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" />
-    <script type="application/ld+json" set:html={JSON.stringify([organizationSchema, websiteSchema, personSchema, ...(pageSchema ? [pageSchema] : [])])} />
-    <!-- Analytics: GA4 (G-JP67H399V2) + Google Ads (AW-18269976114) + GTM (GTM-P8DZ6MRQ).
-         Loaded from an external file because the production CSP (public/_headers)
-         blocks inline scripts. Also enables the gtag() stub used by contact.astro
-         and the lead-magnet components for conversion events. -->
-    <script src="/scripts/analytics.js" is:inline defer></script>
-    <script defer src="https://signal.webotapp.com/tracker.js" data-site-id="insurancesupport.online"></script>
-  <script src="/scripts/webmcp.js" defer></script>
-</head>
-  <body class="font-sans text-base antialiased pb-16 md:pb-0" style="scroll-padding-top: 5rem;">
-    <!-- Skip link for accessibility -->
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg" aria-label="Skip to main content">Skip to main content</a>
-    <Header />
-    <GeoBanner client:visible />
+    <meta name="geo.region" content={pageMetaRegion} />
+    <meta name="geo.placename" content={pageMetaPlace} />
+    <meta name="geo.position" content={pageMetaPosition} />
+    <meta name="ICBM" content={pageMetaPosition} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageCanonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={pageOgImage} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={pageLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={pageCanonical} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={pageOgImage} />
+    <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
+    <meta name="msvalidate.01" content="551FF3A8CD7B8225D53FAB718B3051E2" />
+    {combinedKeywords.length > 0 && <meta name="keywords" content={combinedKeywords} />}
+    {pageLangCode !== 'en-IN' && <link rel="alternate" hreflang="en-IN" href={pageCanonical} />}
+    {pageLangCode !== 'en-IN' && <link rel="alternate" hreflang="x-default" href={pageCanonical} />}
+    {!pageSkipDefaultHreflang && <link rel="alternate" hreflang="en-IN" href={pageCanonical} />}
+    {!pageSkipDefaultHreflang && <link rel="alternate" hreflang="x-default" href={pageCanonical} />}
+    {INDIAN_LANGUAGES.map((lang: string) => (
+      <link rel="alternate" hreflang={langRegion[lang as keyof typeof langRegion] || `${lang}-IN`} href={`https://insurancesupport.online/blog/${lang}/${pageCanonical.split('/').pop() || ''}`} />
+    ))}
+    {Astro.head}
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(locationSchema)} />
+    {pageDateModified && <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", "name": pageTitle, "description": pageDescription, "datePublished": pageDateModified, "dateModified": pageDateModified, "url": pageCanonical, "publisher": { "@type": "Organization", "name": siteName, "url": siteUrl } })} />}
+  </head>
+  <body class="bg-white text-slate-800 antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:ring-2 focus:ring-offset-2">Skip to main content</a>
+    <Header siteUrl={siteUrl} />
+    <GeoBanner />
     <slot />
-    <Footer />
-    <MobileStickyBar />
-    <FloatingCTA client:idle />
+    <MobileStickyBar phoneNumber={phoneNumber} />
+    <Footer siteUrl={siteUrl} />
+    <FloatingCTA phoneNumber={phoneNumber} />
     <Chatbot />
-    <script src="/scripts/reveal.js" is:inline defer></script>
-    <!-- Microsoft Clarity (v9dto5m10l) now loads from /scripts/analytics.js (CSP-safe). -->
+    <script is:inline>
+      // Set up Google Analytics (gtag)
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+    <script is:inline src="/scripts/analytics.js" defer></script>
+    <script is:inline src="/scripts/reveal.js" defer></script>
   </body>
 </html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0f172a;
+  }
+  p {
+    color: #334155;
+  }
+  a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.875em;
+    background: #f1f5f9;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+  }
+  pre {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.875rem;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  *:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+</style>

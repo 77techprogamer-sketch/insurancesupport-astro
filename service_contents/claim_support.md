@@ -21,12 +21,14 @@ Insurance claim rejection rates in India average 22-28% across all categories. A
 | Policy lapse during incident | 12% | Auto-debit setup for premium payments |
 | Fraud allegations | 7% | Maintain all original documents |
 
-### Our Claim Success Rate
+### What Claim Support Can Help With
 
-- **Health claim approval**: 95% success rate
-- **Life claim assistance**: 98% approval for properly documented claims
-- **Motor claim recovery**: 92% first-time approval rate
-- **Rejected claim appeal**: 78% overturn rate through IRDAI IGMS
+- **Health claims**: Documentation preparation, hospital coordination, and insurer follow-up
+- **Life claims**: Death claim document organization and submission support
+- **Motor claims**: Surveyor coordination, FIR assistance, and NCB recovery guidance
+- **Rejected claims**: Appeal documentation and IRDAI IGMS filing assistance
+
+Note: Claim outcomes are decided by the insurer under the policy terms and the evidence provided. Support can help with documents and process, but cannot guarantee a particular result.
 
 ### Step-by-Step Claim Process
 
@@ -83,6 +85,6 @@ If your claim is rejected, we follow a 3-tier resolution process:
 
 **Can I claim for pre-existing conditions?** After completing the waiting period (typically 2-4 years), pre-existing conditions are covered under all policies.
 
-**What if my claim is rejected?** We handle the entire appeal process through Insurance Ombudsman and IRDAI IGMS with 78% success rate.
+**What if my claim is rejected?** We help with the appeal process through the insurer's grievance channel, Insurance Ombudsman, and IRDAI IGMS. We prepare appeal documents and explain next steps, but the outcome depends on the policy terms and the evidence provided.
 
 **Do you charge for claim assistance?** Initial consultation is free. Documentation and follow-up services are charged only after successful settlement.

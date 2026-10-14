@@ -69,7 +69,7 @@ Professional indemnity insurance protects service-based businesses against claim
 - **Risk assessment**: We analyze your specific professional risks
 - **Coverage calculation**: Determine optimal sum insured based on business size
 - **Policy comparison**: Compare across 20+ professional indemnity products
-- **Claims support**: Dedicated claim management with 95% approval rate
+- **Claims support**: Documentation preparation and insurer communication for professional indemnity claims
 - **Policy renewal**: Annual review and renewal optimization
 
 We provide doorstep professional indemnity advisory in Bangalore: Koramangala, Indiranagar, Whitefield, HSR Layout, JP Nagar, BTM Layout, and more.

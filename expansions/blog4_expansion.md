@@ -11,7 +11,7 @@
 <ul>
     <li><strong>30-Day Settlement Mandate:</strong> Insurers must process and settle all valid event and general insurance claims within 30 days of receiving complete documentation.</li>
     <li><strong>Standardized Exclusions:</strong> IRDAI guidelines ensure transparent disclosure of exclusions, such as voluntary cancellation ("cold feet") or known pre-existing vendor disputes.</li>
-    <li><strong>Grievance Redressal:</strong> Unresolved claims can be escalated via the IRDAI Bima Bharosa portal or the Insurance Ombudsman (claims up to ₹30 lakh).</li>
+    <li><strong>Grievance Redressal:</strong> Unresolved claims can be escalated via the IRDAI Bima Bharosa portal or the Insurance Ombudsman (check current limit under the amended Rules).</li>
 </ul>
 
 <h2>Market Statistics and Cost Comparison</h2>

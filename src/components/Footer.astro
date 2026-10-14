@@ -21,26 +21,36 @@ const compareAlternatives = [
 
 ---
 
-<!-- GST Marquee Banner -->
-<div class="bg-primary text-primary-foreground px-4 py-2.5 text-center">
-  <div class="text-sm font-semibold tracking-wide">
-    GST treatment depends on the insurance product and policy type. <a class="underline" href="https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf" target="_blank" rel="noopener noreferrer">Check current GST Council guidance</a>.
+<!-- GST Info Banner with enhanced styling -->
+<div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white px-4 py-3 text-center">
+  <div class="text-sm font-medium tracking-wide flex items-center justify-center gap-2">
+    <svg class="w-4 h-4 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    <span>GST treatment depends on the insurance product and policy type.</span>
+    <a href="https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 decoration-amber-300/30 hover:decoration-amber-200 transition-all">Check current GST Council guidance</a>.
   </div>
 </div>
 
-<!-- Main Footer -->
-<footer class="bg-slate-900 text-slate-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-      <!-- Column 1: Company Info -->
+<!-- Enhanced Main Footer with gradient accents -->
+<footer class="bg-slate-900 text-slate-300 relative overflow-hidden">
+  <!-- Subtle decorative gradient -->
+  <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-600/5 to-transparent pointer-events-none"></div>
+  <div class="absolute -bottom-24 left-0 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 right-0 w-96 h-96 bg-amber-500/2 rounded-full blur-3xl pointer-events-none"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Column 1: Company Info with enhanced branding -->
       <div>
-        <div class="flex items-center gap-3 mb-6">
-          <div class="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">
-            IS
+        <div class="flex items-center gap-3 mb-6 animate-fade-in">
+          <div class="relative h-12 w-12 rounded-xl overflow-hidden" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+            <div class="h-full w-full flex items-center justify-center text-white font-bold text-xl" style="text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+              IS
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-xl"></div>
           </div>
           <div>
-            <div class="text-white font-bold text-lg font-jakarta">Insurance Support</div>
-            <div class="text-slate-500 text-xs">By Hari Kotian</div>
+            <div class="text-white font-bold text-xl tracking-tight">Insurance Support</div>
+            <div class="text-slate-400 text-sm font-medium">By Hari Kotian</div>
           </div>
         </div>
         <p class="text-sm text-slate-400 mb-6 leading-relaxed">
@@ -63,17 +73,20 @@ const compareAlternatives = [
         </div>
       </div>
 
-      <!-- Column 2: Quick Links -->
+      <!-- Column 2: Quick Links with enhanced styling -->
       <div>
-        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-6">Quick Links</h3>
-        <ul class="space-y-3">
+        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
+          <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+          Quick Links
+        </h3>
+        <ul class="space-y-2.5">
           {quickLinks.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-2">
-                <svg class="w-3 h-3 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <a href={link.href} class="text-sm text-slate-400 hover:text-white transition-all duration-200 flex items-center gap-2 group">
+                <svg class="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                {link.label}
+                <span class="group-hover:translate-x-1 transition-transform duration-200">{link.label}</span>
               </a>
             </li>
           ))}
@@ -86,55 +99,85 @@ const compareAlternatives = [
         <ul class="space-y-3">
           {compareAlternatives.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-2">
-                <svg class="w-3 h-3 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <a href={link.href} class="text-sm text-slate-400 hover:text-white transition-all duration-200 flex items-center gap-2 group">
+                <svg class="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                {link.label}
+                <span class="group-hover:translate-x-1 transition-transform duration-200">{link.label}</span>
               </a>
             </li>
           ))}
         </ul>
       </div>
 
-      <!-- Column 4: Contact & Share -->
+      <!-- Column 4: Contact with enhanced styling -->
       <div>
-        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-6">Contact</h3>
-        <div class="space-y-4">
+        <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          Contact
+        </h3>
+        <div class="space-y-5">
           <div>
-            <p class="text-sm text-slate-400 mb-1">Office Address</p>
-            <p class="text-sm text-slate-300">Bahubali Nagar, Jalahalli<br />Bengaluru, Karnataka<br />560013, India</p>
+            <p class="text-sm text-slate-400 mb-1.5 flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              Office Address
+            </p>
+            <p class="text-sm text-slate-300 leading-relaxed">Bahubali Nagar, Jalahalli<br />Bengaluru, Karnataka 560013<br />India</p>
           </div>
           <div>
-            <p class="text-sm text-slate-400 mb-1">Working Hours</p>
-            <p class="text-sm text-slate-300">Mon – Sat: 9:00 AM – 9:00 PM</p>
-            <p class="text-sm text-slate-300">Sunday: By appointment</p>
+            <p class="text-sm text-slate-400 mb-1.5 flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Working Hours
+            </p>
+            <div class="space-y-1">
+              <p class="text-sm text-slate-300 flex justify-between">
+                <span>Mon – Sat</span>
+                <span class="font-medium text-white">9:00 AM – 9:00 PM</span>
+              </p>
+              <p class="text-sm text-slate-300 flex justify-between">
+                <span>Sunday</span>
+                <span class="font-medium text-amber-400">By appointment</span>
+              </p>
+            </div>
           </div>
+          <a href="tel:+919986634506" class="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-amber-400 transition-colors group">
+            <svg class="w-4 h-4 group-hover:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            <span class="hover:underline undercline-offset-2">+91-99866 34506</span>
+          </a>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bottom Bar -->
-  <div class="border-t border-slate-800">
+  <!-- Enhanced Bottom Bar -->
+  <div class="border-t border-slate-800/50 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="text-sm text-slate-500">
-          © {currentYear} Insurance Support. All rights reserved.
-          <span class="block mt-1">IRDAI Registration No: 0149161D</span>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+        <div class="text-slate-500">
+          <p class="text-slate-400 group-hover:text-slate-300 transition-colors">
+            © {currentYear} Insurance Support. All rights reserved.
+          </p>
+          <p class="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>IRDAI Registration No: <strong class="text-slate-400">0149161D</strong></span>
+          </p>
         </div>
-        <div class="flex items-center gap-2 text-sm text-slate-500">
-          <span class="font-medium text-slate-400">Legacy</span>
-          <span class="text-slate-700">|</span>
-          <span class="font-medium text-slate-400">Trust</span>
-          <span class="text-slate-700">|</span>
-          <span class="font-medium text-slate-400">Excellence</span>
-        </div>
-        <div class="flex items-center gap-4 text-xs text-slate-500">
-          <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
-          <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
-          <a href="/rss.xml" class="hover:text-white transition-colors">RSS Feed</a>
+        <div class="flex items-center gap-4 text-xs">
+          <div class="hidden md:flex items-center gap-2 text-slate-500">
+            <span class="text-slate-400">Legacy</span>
+            <svg class="w-3.5 h-3.5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <span class="text-slate-400">Trust</span>
+            <svg class="w-3.5 h-3.5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <span class="text-slate-400">Excellence</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="/privacy-policy" class="text-slate-500 hover:text-white hover:bg-slate-800 px-3 py-1.5 rounded-lg transition-all duration-200">Privacy</a>
+            <a href="/terms" class="text-slate-500 hover:text-white hover:bg-slate-800 px-3 py-1.5 rounded-lg transition-all duration-200">Terms</a>
+            <a href="/disclaimer" class="text-slate-500 hover:text-white hover:bg-slate-800 px-3 py-1.5 rounded-lg transition-all duration-200">Disclaimer</a>
+            <a href="/rss.xml" class="text-slate-500 hover:text-white hover:bg-slate-800 px-3 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v6m0 0a5 5 0 005 5h2a5 5 0 005-5V2m0 0a5 5 0 015 5v6a5 5 0 01-5 5h-2a5 5 0 01-5-5V2m0 0a5 5 0 00-5 5h-2a5 5 0 00-5-5V2m0 0a5 5 0 015-5m-2 4l2 2h4l-2-2a5 5 0 10-5-5z" /></svg>
+              <span class="hidden sm:inline">RSS</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

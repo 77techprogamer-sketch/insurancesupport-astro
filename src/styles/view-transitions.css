@@ -50,6 +50,31 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.1); }
+}
+
 /* Container that reveals children with a slide-up fade-in */
 .animate-enter > * {
   animation: slideUpFadeIn 0.5s ease both;
@@ -59,3 +84,28 @@
 .animate-enter > *:nth-child(3) { animation-delay: 0.2s; }
 .animate-enter > *:nth-child(4) { animation-delay: 0.3s; }
 .animate-enter > *:nth-child(5) { animation-delay: 0.4s; }
+
+/* Fade in animation */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Scale in animation */
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Slide in from right */
+.animate-slide-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Slide in from bottom */
+.animate-slide-up {
+  animation: slideInUp 0.4s ease-out;
+}
+
+/* Glowing effect for important elements */
+.glow-anim {
+  animation: pulse-glow 3s ease-in-out infinite;
+}

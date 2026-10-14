@@ -67,7 +67,7 @@ If any step exceeds the timeline, IRDAi mandated penalties apply. Insurance comp
 As an IRDAI Certified Insurance Advisor with 25+ years of experience:
 
 - **No commission bias**: We compare across all 20+ life insurers objectively
-- **Claim support**: 96% claim approval rate for our clients
+- **Claim support**: Claim documentation and insurer follow-up assistance
 - **Family history handling**: Expert guidance on declaring medical history
 - **Premium optimization**: Save 15-30% by choosing the right plan structure
 

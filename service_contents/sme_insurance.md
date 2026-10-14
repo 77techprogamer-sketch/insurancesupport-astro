@@ -84,7 +84,7 @@ As an IRDAI-certified insurance advisor with 25+ years of experience:
 
 - **Risk assessment**: We analyze your business operations to identify critical insurance gaps
 - **Product comparison**: Compare policies across 30+ insurers for optimal coverage at competitive premiums
-- **Claims support**: Dedicated claim resolution for SME clients with 95% approval rate
+- **Claims support**: Documentation preparation and insurer follow-up for SME business insurance claims
 - **Policy management**: Annual policy review and renewal optimization
 - **Tax optimization**: Structure premiums for maximum tax benefits under Section 37(1)
 

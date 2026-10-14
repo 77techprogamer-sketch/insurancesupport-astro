@@ -96,7 +96,7 @@ With 25+ years as IRDAI-certified advisor (Reg: 0149161D):
 
 - **Zero commission bias**: We compare across 20+ insurers and recommend the most cost-effective plan
 - **Health declaration help**: Maximize chances of approval for complex cases like diabetes, hypertension, or obesity
-- **Claim support**: 98% claim approval rate for our clients, with direct coordination with claim departments
+- **Claim support**: Claim documentation and insurer follow-up assistance, with guidance on policy terms and evidence requirements
 - **Premium optimization**: Save 15-30% by choosing the right plan structure and premium payment mode
 - **Portability guidance**: Transfer existing policies to better plans without losing accrued benefits
 

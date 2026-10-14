@@ -4,7 +4,7 @@
 
 <p>The Insurance Regulatory and Development Authority of India (IRDAI), established in 1996, is the statutory guardian of every insurance buyer's interest. Under the <strong>IRDAI (Protection of Policyholders' Interests) Regulations, 2017</strong> (amended through 2026), your enforceable rights include the <strong>mandatory 30-day claim settlement timeline</strong> (from receipt of complete documents), the <strong>free-look period of 15 days (30 days for online purchases)</strong>, the <strong>moratorium period of eight years for health insurance</strong> (after which repudiation for non-disclosure cannot occur), and the <strong>right to a written reason for claim rejection</strong>. Since September 22, 2025, the GST Council cut GST on individual life and health insurance to 0% while motor insurance retains 18%.</p>
 
-<p>If an insurer fails to resolve your grievance within 15 days, escalate via the <strong>IRDAI Bima Bharosa portal</strong> (bimabharosa.irdai.gov.in). Complaints are tracked with reference numbers. The Insurance Ombudsman handles disputes up to ₹30 lakh without court fees.</p>
+<p>If an insurer fails to resolve your grievance within 15 days, escalate via the <strong>IRDAI Bima Bharosa portal</strong> (bimabharosa.irdai.gov.in). Complaints are tracked with reference numbers. The Insurance Ombudsman handles disputes up to the current limit set under the amended Insurance Ombudsman Rules. Check the Council for Insurance Ombudsmen or IRDAI guidance for the current limit before filing.</p>
 
 <h2>Insurer Claim Performance: Market Share & Settlement Data (2026)</h2>
 

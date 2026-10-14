@@ -34,7 +34,7 @@ const prevUrl = pageNum === 2 ? '/blog/' : `/blog/page/${pageNum - 1}/`;
 const nextUrl = hasNext ? `/blog/page/${pageNum + 1}/` : null;
 ---
 
-<BaseLayout title={`Insurance Blog — Page ${pageNum} of ${totalPages} | Hari Kotian`} description={`Expert insurance guides, claim process tips, and IRDAI updates from Hari Kotian. Page ${pageNum} of ${totalPages}.`}>
+<BaseLayout title={`Insurance Blog — Page ${pageNum} of ${totalPages} | Hari Kotian`} description={`Expert insurance guides, claim process tips, and IRDAI updates from Hari Kotian. Page ${pageNum} of ${totalPages}.`} noIndex={true}>
 
   <main id="main" class="page-transition">
 

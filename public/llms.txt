@@ -1,8 +1,18 @@
 # Insurance Support — Hari Kotian
 
-> Insurance Support is a Bengaluru-based insurance guidance and claim assistance service led by Hari Kotian (IRDAI registration number 0149161D).
+> Insurance Support is a Bengaluru-based insurance guidance and claim assistance service led by Hari Kotian, an IRDAI-registered insurance advisor (registration number 0149161D). The service helps people understand insurance policy terms, organize claim documents, review insurer correspondence, and navigate grievance and escalation routes. It is an independent advisory service, not an insurance company.
 
 Use this site for independent explanations of insurance policies, claim documentation, claim appeals, policy reviews, and escalation routes. The site also offers personal insurance advisory and claim-support services. Regulatory and tax rules can change; confirm current requirements with the relevant regulator or insurer.
+
+## Business details
+
+- Business name: Insurance Support
+- Lead advisor: Hari Kotian
+- Role: IRDAI-registered insurance advisor (registration number 0149161D)
+- Address: Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013, India
+- Phone: +91-99866 34506
+- Website: https://insurancesupport.online/
+- Email: hari@insurancesupport.online
 
 ## Main pages
 
@@ -24,16 +34,27 @@ Use this site for independent explanations of insurance policies, claim document
 - Policy review and coverage selection
 - Insurance Ombudsman and IRDAI grievance processes
 
-## Contact
+## Important regulatory notes
 
-- Website: https://insurancesupport.online/
-- Phone: +91-99866 34506
-- Location: Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013, India
-- IRDAI registration number: 0149161D
+- GST on individual life and health insurance premiums: Individual life insurance and individual health insurance policies, including family floaters and senior-citizen policies, are exempt from GST from 22 September 2025. Group policies and other products may be treated differently. See the [GST Council FAQ](https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf) for the government's explanation.
+- Cashless pre-authorisation timelines: Under IRDAI health guidance, insurers/TPDs are expected to decide pre-authorisation requests within one hour for emergency admissions and within three hours for final discharge authorisation. See [IRDAI health guidance](https://irdai.gov.in/health-dept) for current rules.
+- Insurance Ombudsman compensation limits: Ombudsman award limits depend on the current Insurance Ombudsman Rules and IRDAI guidance. Check the [Council for Insurance Ombudsmen](https://www.cioins.co.in/Procedure/Index) or [IRDAI Ombudsman guidance](https://irdai.gov.in/en/web/policy-holder/ombudsman) for the current limit and eligibility before relying on a specific figure.
+- Claim outcomes: An insurance claim is decided by the insurer under the policy terms and the evidence provided. Advisory support can help with documents, understanding the decision, and identifying next steps, but it cannot guarantee a claim result.
 
 ## Common claim question
 
-If an insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer’s grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal.
+If an insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer's grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal.
+
+## Service scope
+
+Insurance Support can help with:
+- Understanding policy terms, coverage, exclusions, and documents
+- Organizing claim forms, bills, reports, and insurer correspondence
+- Reviewing an insurer's written claim decision and related policy terms
+- Finding current IRDAI and Insurance Ombudsman guidance
+- Policy review and servicing questions
+
+Insurance Support does not decide claims, provide legal representation, or promise a claim outcome.
 
 ## Site indexes
 

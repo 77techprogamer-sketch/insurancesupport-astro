@@ -6,7 +6,7 @@
 
 <p>Under Section 45 of the Insurance Act, 1938, no life insurance claim can be called into question after <strong>3 years of continuous coverage</strong> from the date of policy issuance, except in cases of proven fraud. For health insurance claims, the IRDAI <strong>moratorium period</strong> of eight years protects policyholders: after eight continuous years, insurers cannot repudiate claims on grounds of non-disclosure or misrepresentation, except fraud.</p>
 
-<p>These statutory protections are enforced through the <strong>IRDAI Bima Bharosa portal</strong> (bimabharosa.irdai.gov.in, formerly IGMS). If an insurer fails to resolve a claim dispute within the stipulated period, policyholders can log a complaint online and expect acknowledgment with a reference number. The Insurance Ombudsman handles disputes up to ₹30 lakh without court fees, and its decisions are binding on the insurer.</p>
+<p>These statutory protections are enforced through the <strong>IRDAI Bima Bharosa portal</strong> (bimabharosa.irdai.gov.in, formerly IGMS). If an insurer fails to resolve a claim dispute within the stipulated period, policyholders can log a complaint online and expect acknowledgment with a reference number. The Insurance Ombudsman handles disputes up to the current limit set under the amended Insurance Ombudsman Rules. Check the Council for Insurance Ombudsmen or IRDAI guidance for the current limit before filing.</p>
 
 <h2>Understanding LIC Claim Status Categories and Processing Stages</h2>
 
@@ -75,7 +75,7 @@
 
 <p><strong>Q2: Why is my LIC claim status showing "Pending Investigation"?</strong><br>A: Early claims (within 3 years of policy issuance) undergo mandatory investigation per IRDAI norms. This can take up to 90 days.</p>
 
-<p><strong>Q3: What if LIC rejects my claim—what are my options?</strong><br>A: You can appeal through LIC's internal grievance cell, file a complaint on IRDAI Bima Bharosa portal, or approach the Insurance Ombudsman (for claims up to ₹30 lakh) or Consumer Forum.</p>
+<p><strong>Q3: What if LIC rejects my claim—what are my options?</strong><br>A: You can appeal through LIC's internal grievance cell, file a complaint on IRDAI Bima Bharosa portal, or approach the Insurance Ombudsman (check current limit under the amended Rules) or Consumer Forum.</p>
 
 <p><strong>Q4: Can I check claim status without registering on the LIC portal?</strong><br>A: Yes, use the quick-access "Claim Status" tool on licindia.in by entering your policy number, date of birth, and premium amount.</p>
 
