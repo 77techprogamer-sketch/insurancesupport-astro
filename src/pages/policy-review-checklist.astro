@@ -2,10 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LeadMagnetForm from '../components/LeadMagnetForm.astro';
 import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
+export const prerender = true;
 ---
 
-<BaseLayout title="Printable Insurance Policy Review Checklist | Insurance Support" description="Get a free printable insurance policy review checklist to organize policy documents, coverage limits, exclusions, renewal details, nominees, and claim records in India." keywords="insurance policy review checklist, insurance coverage review, policy document checklist India, health life motor insurance review">
+<BaseLayout title="Printable Insurance Policy Review Checklist | Insurance Support" description="Get a free printable insurance policy review checklist to organize policy documents, coverage limits, exclusions, renewal details, nominees, and claim records in India."  keywords="insurance policy review checklist, insurance coverage review, policy document checklist India, health life motor insurance review, free printable policy checklist, insurance document review guide">
   <LocalBusinessJsonLd />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Free Printable Insurance Policy Review Checklist",
+    "description": "Get a free printable insurance policy review checklist to organize policy documents, coverage limits, exclusions, renewal details, nominees, and claim records in India.",
+    "url": "https://insurancesupport.online/policy-review-checklist/",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
 
 
   <section class="min-h-screen py-20 bg-gradient-to-br from-slate-50 to-white">

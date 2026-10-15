@@ -4,10 +4,7 @@ import ContactSection from '../../components/sections/ContactSection.astro';
 ---
 
 <BaseLayout 
-  title="Is Your Family Truly Protected? | Free Risk Scorecard | Insurance Support"
-  description="Take our 30-second free Risk Scorecard to identify gaps in your family's financial security. Data-driven assessment based on 25+ years of insurance claim experience."
-  keywords="insurance risk scorecard, family protection assessment, insurance gap analysis, underinsurance check, life insurance coverage check, financial risk assessment, insurance needs analysis"
->
+  title="Free Insurance Risk Scorecard | Is Your Family Underinsured?" description="Take the 30-second free insurance risk scorecard to check for gaps in your life, health, and claim-protection coverage before they become a problem." keywords="insurance risk scorecard, underinsurance check, family protection assessment, insurance gap analysis, life insurance coverage check, insurance needs analysis">
   <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
     <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -127,40 +124,45 @@ import ContactSection from '../../components/sections/ContactSection.astro';
   <script>
     let riskScore = 0;
     let riskStep = 1;
-    function answer(step, value) {
+    function answer(step: number, value: boolean) {
       if (value === false) riskScore += 1;  // Each "no" = a gap
       if (step < 5) {
-        document.getElementById('risk-q' + step).classList.add('hidden');
-        document.getElementById('risk-q' + (step + 1)).classList.remove('hidden');
+        document.getElementById('risk-q' + step)?.classList.add('hidden');
+        document.getElementById('risk-q' + (step + 1))?.classList.remove('hidden');
         riskStep++;
-        document.getElementById('risk-step-num').textContent = riskStep;
-        document.getElementById('risk-progress').style.width = (riskStep * 20) + '%';
+        const stepNumEl = document.getElementById('risk-step-num');
+        if (stepNumEl) stepNumEl.textContent = String(riskStep);
+        const progressEl = document.getElementById('risk-progress');
+        if (progressEl) progressEl.style.width = (riskStep * 20) + '%';
       } else {
         showResult();
       }
     }
     function showResult() {
       for (let i = 1; i <= 5; i++) {
-        document.getElementById('risk-q' + i).classList.add('hidden');
+        document.getElementById('risk-q' + i)?.classList.add('hidden');
       }
-      document.getElementById('risk-result').classList.remove('hidden');
-      document.getElementById('risk-progress').style.width = '100%';
+      document.getElementById('risk-result')?.classList.remove('hidden');
+      const progressEl = document.getElementById('risk-progress');
+      if (progressEl) progressEl.style.width = '100%';
       const gaps = riskScore;
       const title = document.getElementById('risk-score-title');
       const text = document.getElementById('risk-score-text');
       const icon = document.getElementById('risk-score-display');
-      if (gaps === 0) {
-        title.textContent = 'Strong Protection!';
-        text.textContent = 'Your family has solid coverage. Get a periodic policy review to keep it that way as your income and family grow.';
-        icon.textContent = '🛡️';
-      } else if (gaps <= 2) {
-        title.textContent = 'Moderate Gaps Found';
-        text.textContent = 'You have ' + gaps + ' protection gap(s). A focused review can close them affordably — many families fix this with one well-structured term + health combination.';
-        icon.textContent = '⚠️';
-      } else {
-        title.textContent = 'Critical Gaps Found';
-        text.textContent = 'You have ' + gaps + ' protection gaps that could leave your family financially exposed. Book a free review now to build a claim-proof plan.';
-        icon.textContent = '🔴';
+      if (title && text && icon) {
+        if (gaps === 0) {
+          title.textContent = 'Strong Protection!';
+          text.textContent = 'Your family has solid coverage. Get a periodic policy review to keep it that way as your income and family grow.';
+          icon.textContent = '🛡️';
+        } else if (gaps <= 2) {
+          title.textContent = 'Moderate Gaps Found';
+          text.textContent = 'You have ' + gaps + ' protection gap(s). A focused review can close them affordably — many families fix this with one well-structured term + health combination.';
+          icon.textContent = '⚠️';
+        } else {
+          title.textContent = 'Critical Gaps Found';
+          text.textContent = 'You have ' + gaps + ' protection gaps that could leave your family financially exposed. Book a free review now to build a claim-proof plan.';
+          icon.textContent = '🔴';
+        }
       }
     }
   </script>

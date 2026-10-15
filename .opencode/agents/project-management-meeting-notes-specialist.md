@@ -1,6 +1,6 @@
 ---
-name: Meeting Notes Specialist
-description: Extract structured decisions, action items, and open questions from meeting transcripts or rough notes into a clean 4-section summary.
+name: 'Meeting Notes Specialist'
+description: 'Extract structured decisions, action items, and open questions from meeting transcripts or rough notes into a clean 4-section summary.'
 mode: subagent
 color: '#3498DB'
 ---

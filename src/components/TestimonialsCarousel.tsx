@@ -62,7 +62,7 @@ const slideVariants = {
   }),
 };
 
-const springTransition = {
+const springTransition: any = {
   x: { type: 'spring', stiffness: 300, damping: 30 },
   opacity: { duration: 0.35 },
   scale: { duration: 0.35 },
@@ -110,14 +110,14 @@ export default function TestimonialsCarousel() {
       {/* ── Previous / Next Buttons ── */}
       <button
         onClick={() => paginate(-1)}
-        className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:shadow-xl transition-all"
+        className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md shadow-lg border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:shadow-xl transition-all"
         aria-label="Previous testimonial"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={() => paginate(1)}
-        className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:shadow-xl transition-all"
+        className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md shadow-lg border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:shadow-xl transition-all"
         aria-label="Next testimonial"
       >
         <ChevronRight className="w-5 h-5" />
@@ -134,10 +134,10 @@ export default function TestimonialsCarousel() {
             animate="center"
             exit="exit"
             transition={springTransition}
-            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-slate-100"
+            className="bg-[rgba(255,255,255,0.04)] rounded-2xl p-8 md:p-10 shadow-xl border border-[rgba(255,255,255,0.1)]"
           >
             {/* Quote icon */}
-            <Quote className="w-8 h-8 text-blue-100 mb-4" />
+            <Quote className="w-8 h-8 text-[#10b981]/30 mb-4" />
 
             {/* Stars */}
             <div className="flex gap-1 mb-5">
@@ -148,28 +148,28 @@ export default function TestimonialsCarousel() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.1 + i * 0.08, type: 'spring', stiffness: 500, damping: 15 }}
                 >
-                  <Star className="w-5 h-5 text-amber-400 fill-current" />
+                  <Star className="w-5 h-5 text-[#10b981] fill-current" />
                 </motion.div>
               ))}
             </div>
 
             {/* Quote text */}
-            <p className="text-lg text-slate-700 leading-relaxed mb-8 italic">
+            <p className="text-lg text-[rgba(255,255,255,0.8)] leading-relaxed mb-8 italic">
               &ldquo;{t.text}&rdquo;
             </p>
 
             {/* Author */}
             <div className="flex items-center gap-3">
               <motion.div
-                className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm"
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-[#10b981] to-[#047857] flex items-center justify-center text-white font-bold text-sm"
                 whileHover={{ scale: 1.15, rotate: 10 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 10 }}
               >
                 {t.name.split(' ').map((n) => n[0]).join('')}
               </motion.div>
               <div>
-                <p className="font-semibold text-slate-900">{t.name}</p>
-                <p className="text-sm text-slate-500">{t.location}</p>
+                <p className="font-semibold text-white">{t.name}</p>
+                <p className="text-sm text-[rgba(255,255,255,0.5)]">{t.location}</p>
               </div>
             </div>
           </motion.div>
@@ -186,22 +186,22 @@ export default function TestimonialsCarousel() {
             animate={{
               width: i === current ? '2rem' : '0.625rem',
               height: '0.625rem',
-              backgroundColor: i === current ? '#2563eb' : '#cbd5e1',
+              backgroundColor: i === current ? '#10b981' : 'rgba(255,255,255,0.15)',
             }}
             transition={{ type: 'spring', stiffness: 500, damping: 25 }}
-            whileHover={{ scale: 1.2, backgroundColor: i === current ? '#2563eb' : '#94a3b8' }}
+            whileHover={{ scale: 1.2, backgroundColor: i === current ? '#10b981' : 'rgba(255,255,255,0.3)' }}
             aria-label={`Go to testimonial ${i + 1}`}
           />
         ))}
       </div>
 
-      {/* ���─ Progress bar ── */}
+      {/* Progress bar */}
       <motion.div
-        className="h-0.5 bg-blue-100 rounded-full mt-4 mx-auto max-w-xs overflow-hidden"
+        className="h-0.5 bg-[rgba(16,185,129,0.2)] rounded-full mt-4 mx-auto max-w-xs overflow-hidden"
         initial={false}
       >
         <motion.div
-          className="h-full bg-blue-600 rounded-full"
+          className="h-full bg-gradient-to-r from-[#10b981] to-[#047857] rounded-full"
           key={current}
           initial={{ width: '0%' }}
           animate={{ width: '100%' }}

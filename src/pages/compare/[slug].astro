@@ -15,9 +15,13 @@ if (!comparison) {
 }
 
 const pageUrl = `https://insurancesupport.online/compare/${slug}`;
+
+const titleWithoutBrand = comparison.title.replace(/\s*\|\s*Insurance Support\s*$/, '').trim();
+const pageTitle = `${titleWithoutBrand} | Insurance Support`;
+const pageDescription = `${comparison.description}${comparison.description.endsWith('.') ? '' : '.'} Get a free, needs-based comparison from an IRDAI-certified advisor.`;
 ---
 
-<BaseLayout title={`${comparison.title} | Insurance Support`} description={comparison.description} canonical={pageUrl}>
+<BaseLayout title={pageTitle} description={pageDescription} keywords={`${titleWithoutBrand.toLowerCase()}, insurance plan comparison India, compare ${titleWithoutBrand.toLowerCase().replace(/^[^:]+:\s*/, '')}`} canonical={pageUrl}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",

@@ -1,6 +1,6 @@
 ---
-name: Video Optimization Specialist
-description: Video marketing strategist specializing in YouTube algorithm optimization, audience retention, chaptering, thumbnail concepts, and cross-platform video syndication.
+name: 'Video Optimization Specialist'
+description: 'Video marketing strategist specializing in YouTube algorithm optimization, audience retention, chaptering, thumbnail concepts, and cross-platform video syndication.'
 mode: subagent
 color: '#E74C3C'
 ---

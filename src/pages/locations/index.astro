@@ -18,7 +18,7 @@ const sortedStates = Object.keys(states).sort();
 const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
 ---
 
-<BaseLayout title="Insurance Service Locations Bengaluru | Insurance Support" description={`Insurance advisory across ${cities.length} Bengaluru neighborhoods. Free doorstep service. IRDAI certified advisor Hari Kotian, 25+ years experience.`}>
+<BaseLayout title="Insurance Service Locations Bengaluru | Insurance Support" description={`Insurance advisory across ${cities.length} Bengaluru neighborhoods. Free doorstep service. IRDAI certified advisor Hari Kotian, 25+ years experience.`} pageType="city">
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

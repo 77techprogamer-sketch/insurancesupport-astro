@@ -16,10 +16,14 @@ if (!service) {
 }
 
 const serviceUrl = `https://insurancesupport.online/services/${slug}/`;
-const kwBase = (service.title || '').toLowerCase();
+const serviceKey = (service.title || '').replace(/\s+/g, ' ').trim();
+const serviceKeyLower = serviceKey.toLowerCase();
+const pageTitle = `${serviceKey} in Bengaluru - Compare Plans, Premiums & Claim Help | Insurance Support`;
+const pageDescription = `Compare ${serviceKey} plans in Bengaluru, estimate premiums, and get claim help from an IRDAI-certified advisor. Free consultation.`;
+const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} plan India, ${serviceKeyLower} advisor Bangalore, ${serviceKeyLower} claim help, ${serviceKeyLower} premium, buy ${serviceKeyLower} online, ${serviceKeyLower} agent in Bengaluru`;
 ---
 
-<BaseLayout title={`${service.title} in Bengaluru – Compare Plans, Premium & Claim Help | Insurance Support`} description={`${service.title} in Bengaluru — compare plans, premiums & claim help with an IRDAI-certified 25-year advisor. Free consultation.`} keywords={`${kwBase} in Bengaluru, best ${kwBase} plan India, ${kwBase} advisor, ${kwBase} claim help, ${kwBase} premium, buy ${kwBase} online, ${kwBase} agent Bangalore`}>
+<BaseLayout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",

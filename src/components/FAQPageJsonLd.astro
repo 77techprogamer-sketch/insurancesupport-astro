@@ -1,11 +1,16 @@
 ---
 // FAQPage JSON-LD structured data
-const { questions = [] } = Astro.props;
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const { questions = [] as FAQItem[] } = Astro.props;
 ---
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": questions.map(q => ({
+  "mainEntity": questions.map((q: FAQItem) => ({
     "@type": "Question",
     "name": q.question,
     "acceptedAnswer": {

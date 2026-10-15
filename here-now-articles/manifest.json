@@ -1,0 +1,92 @@
+[
+  {
+    "city": "ahmedabad",
+    "service": "health-insurance",
+    "file": "ahmedabad-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/health-insurance/"
+  },
+  {
+    "city": "ahmedabad",
+    "service": "life-insurance",
+    "file": "ahmedabad-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/life-insurance/"
+  },
+  {
+    "city": "ahmedabad",
+    "service": "motor-insurance",
+    "file": "ahmedabad-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/motor-insurance/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "health-insurance",
+    "file": "bangalore-bannerghatta-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/health-insurance/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "life-insurance",
+    "file": "bangalore-bannerghatta-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/life-insurance/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "motor-insurance",
+    "file": "bangalore-bannerghatta-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/motor-insurance/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "health-insurance",
+    "file": "bangalore-bellandur-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/health-insurance/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "life-insurance",
+    "file": "bangalore-bellandur-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/life-insurance/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "motor-insurance",
+    "file": "bangalore-bellandur-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/motor-insurance/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "health-insurance",
+    "file": "bangalore-devanahalli-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/health-insurance/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "life-insurance",
+    "file": "bangalore-devanahalli-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/life-insurance/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "motor-insurance",
+    "file": "bangalore-devanahalli-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/motor-insurance/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "health-insurance",
+    "file": "bangalore-electronic-city-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/health-insurance/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "life-insurance",
+    "file": "bangalore-electronic-city-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/life-insurance/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "motor-insurance",
+    "file": "bangalore-electronic-city-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/motor-insurance/"
+  }
+]

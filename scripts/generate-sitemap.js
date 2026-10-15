@@ -95,9 +95,6 @@ async function generateSitemaps() {
                 .filter(link => !link.url.includes('/auth.md'))
                 .filter(link => !link.url.includes('/search'))
                 .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
-                .filter(link => !/^\/blog\/(hi|bn|ta|te|mr|gu|kn|ml)(\/|$)/.test(link.url)) // Exclude machine-translated /blog/{lang}/ pages (noindexed scrambled-content spam risk)
-                .filter(link => !/^\/services\/[^/]+\/[^/]+$/.test(link.url)) // Exclude thin /services/{location}/{service} combos (noindexed near-duplicate doorway pages)
-                .filter(link => !/^\/cities\/[^/]+$/.test(link.url)) // Exclude thin /cities/{area} locality pages (noindexed templated pages)
 
 
     // Categorize links for individual sitemaps
@@ -136,6 +133,12 @@ async function generateSitemaps() {
             categories.caseStudies.push(sitemapEntry);
         } else if (url.startsWith('/compare/')) {
             categories.compare.push(sitemapEntry);
+        } else if (url.startsWith('/lead-magnets/')) {
+            categories.leadMagnets.push(sitemapEntry);
+        } else if (url.startsWith('/case-studies/')) {
+            categories.caseStudies.push(sitemapEntry);
+        } else if (url.startsWith('/compare/')) {
+            categories.compare.push(sitemapEntry);
         } else {
             // Fallback for uncategorized, add to core if it's likely a page
             // Or create a 'misc' category if many exist
@@ -165,6 +168,13 @@ async function generateSitemaps() {
       caseStudies: categories.caseStudies.length,
       compare: categories.compare.length,
     });
+
+    // Only warn if a strong intent category is unexpectedly empty after final dedup.
+    const expectedRichCategories = ['leadMagnets', 'caseStudies', 'compare'];
+    const richCategoryOk = expectedRichCategories.some(cat => categories[cat] && categories[cat].length > 0);
+    if (!richCategoryOk) {
+      console.warn('WARN: no intent-rich pages landed in lead magnets / case studies / compare sitemaps after dedup.');
+    }
             sitemapIndexLinks.push({ url: `${siteUrl}/sitemaps/${category}-sitemap.xml`, lastmod: new Date().toISOString() });
         }
     }

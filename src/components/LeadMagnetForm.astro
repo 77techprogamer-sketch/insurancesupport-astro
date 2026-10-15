@@ -126,7 +126,7 @@ const fieldLabels: Record<string, { label: string; type: string; placeholder: st
             <input
               id={`${magnetSlug}-${fieldName}`}
               name={fieldName}
-              type={config.type}
+              type={config.type as HTMLInputTypeAttribute | undefined}
               required={config.required}
               placeholder={config.placeholder}
               autocomplete={fieldName === 'email' ? 'email' : fieldName === 'phone' ? 'tel' : 'off'}

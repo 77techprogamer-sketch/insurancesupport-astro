@@ -6,6 +6,7 @@ const TITLE = "Insurance Claim Support: Guides for Rejected, Delayed, or Reduced
 const DESCRIPTION = "Insurance claim rejection help in India: understand a denied, delayed, or short-paid claim, organize evidence, contact the insurer, and check official escalation routes.";
 const KEYWORDS = "insurance claim rejection help India, denied insurance claim what to do, health claim appeal, delayed insurance claim, motor claim short settlement, insurance grievance, Insurance Ombudsman complaint";
 const CANONICAL_URL = "https://insurancesupport.online/claim-recovery/";
+const HUB_ID = `${CANONICAL_URL}#hub`;
 
 const HUB_FAMILY = [
   { title: 'Health Insurance Hub: Complete 2026 Guide to Medical Coverage, Claims & Portability', url: '/blog/health-insurance-hub-complete-2026-guide/' },
@@ -94,14 +95,20 @@ const FAQ = [
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
+    "@type": "WebPage",
+    "@id": HUB_ID,
     "name": TITLE,
     "description": DESCRIPTION,
     "url": CANONICAL_URL,
     "isPartOf": { "@type": "WebSite", "name": "Insurance Support", "url": "https://insurancesupport.online" },
     "about": { "@type": "Thing", "name": "Insurance claim recovery in India" },
-    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "Insurance advisor" },
-    "hasPart": [
+    "author": { "@type": "Person", "name": "Hari Kotian", "jobTitle": "IRDAI Certified Insurance Advisor" },
+    "mainEntity": {
+      "@type": "CollectionPage",
+      "name": TITLE,
+      "description": DESCRIPTION,
+      "url": CANONICAL_URL,
+      "hasPart": [
       ...GUIDES.flatMap(g => g.items).map(i => ({
         "@type": "Article",
         "headline": i.title,
@@ -113,6 +120,7 @@ const FAQ = [
         "url": `https://insurancesupport.online${h.url}`
       }))
     ]
+    }
   })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({

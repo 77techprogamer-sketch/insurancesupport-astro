@@ -21,7 +21,7 @@ const {
   datePublished,
   url,
   items,
-}: DatasetSchemaProps = Astro.props;
+}: DatasetSchemaProps = Astro.props as unknown as DatasetSchemaProps;
 
 const dataset = {
   "@context": "https://schema.org",

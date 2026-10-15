@@ -1,0 +1,106 @@
+{
+  "irdai-grievance-process-complaint-guide-2026": {
+    "name": "How to File an IRDAI Complaint Against Your Insurance Company",
+    "desc": "File a grievance against your insurer through the insurer first, then IRDAI Bima Bharosa and the Insurance Ombudsman.",
+    "steps": [
+      {
+        "name": "Raise the grievance with the insurer",
+        "text": "Use the insurer name grievance officer email and toll free number from your policy or website, quote your policy and claim numbers, state the decision you want, attach documents, and keep the acknowledgement."
+      },
+      {
+        "name": "Escalate to IRDAI Bima Bharosa",
+        "text": "If the insurer does not resolve or respond within a month, register the grievance on the IRDAI Bima Bharosa portal and track it with the acknowledgement details."
+      },
+      {
+        "name": "Record every communication",
+        "text": "Keep dates, reference numbers, screenshots and copies of every message, email, letter and portal submission in one folder for the same claim."
+      },
+      {
+        "name": "Check the insurer response against your policy",
+        "text": "Match the reason given with the policy wordings, exclusions, limits and documents, and note any clause you think is being misapplied."
+      },
+      {
+        "name": "Use the Ombudsman route if eligible",
+        "text": "If the dispute is within the Ombudsman limits and the insurer has rejected, ignored or given an unsatisfactory reply after a written complaint, you can approach the Council for Insurance Ombudsmen."
+      }
+    ]
+  },
+  "lic-policy-revival-complete-guide-2026": {
+    "name": "How to Revive a Lapsed LIC Policy",
+    "desc": "Bring a lapsed LIC policy back in force by clearing dues, paying revival arrears, submitting the request and getting written confirmation.",
+    "steps": [
+      {
+        "name": "Check the lapsed policy position",
+        "text": "Confirm the policy number, last premium paid, current status and any loan against the policy before starting the revival request."
+      },
+      {
+        "name": "Work out the amount needed to revive",
+        "text": "Ask LIC for the revival dues, including unpaid premiums, revival interest and any outstanding loan, so you know the total to pay before submitting."
+      },
+      {
+        "name": "Prepare the documents and payment",
+        "text": "Gather identity proof, policy bond or details, and any medical or other requirement LIC asks for, then arrange the revival payment."
+      },
+      {
+        "name": "Submit the revival request",
+        "text": "Submit the revival form or online request through LIC with the required documents and proof of payment, and keep the acknowledgement."
+      },
+      {
+        "name": "Confirm the policy is back in force",
+        "text": "After submission, monitor the status and get written confirmation that the policy has been revived and premiums are current."
+      }
+    ]
+  },
+  "cashless-health-insurance-claim-denied-hospital-2026": {
+    "name": "What to Do When a Cashless Claim Is Denied at the Hospital",
+    "desc": "Respond to a cashless pre-authorisation denial by getting the written reason, clarifying records, contacting the insurer, and protecting your reimbursement option.",
+    "steps": [
+      {
+        "name": "Get the written decision and reference",
+        "text": "Ask the hospital insurance desk for the pre-authorisation reference number and the insurer or TPA written reason, including any policy clause cited and the timestamps of the request and decision."
+      },
+      {
+        "name": "Find out what can be clarified or resubmitted",
+        "text": "Ask the treating doctor and hospital whether a clinical note, investigation report or form correction would help, and let the doctor give accurate information without altering facts."
+      },
+      {
+        "name": "Contact the insurer with the details",
+        "text": "Use the official care channel on your policy or health card, quote the policy and pre-authorisation numbers, ask for the specific reason and next step, and save the service ticket number."
+      },
+      {
+        "name": "Decide on reimbursement if you pay",
+        "text": "If you must pay, check the reimbursement process, form, document list and deadline in your policy, and keep itemised bills, receipts, discharge records and the cashless decision."
+      },
+      {
+        "name": "Raise a grievance if the reason is disputed",
+        "text": "If you disagree with the reason, complain in writing to the insurer grievance officer, then use Bima Bharosa or the Ombudsman if the grievance is not resolved and you are eligible."
+      }
+    ]
+  },
+  "lic-claim-rejection-appeal-guide-2026": {
+    "name": "How to Appeal a Rejected LIC Claim",
+    "desc": "Appeal a rejected LIC claim by getting the written reason, matching it to the policy and documents, lodging a formal complaint with LIC, then escalating if needed.",
+    "steps": [
+      {
+        "name": "Get the written rejection reason",
+        "text": "Ask LIC for the final written decision, the cited policy clause or reason, and the claim reference number, then keep a copy of everything sent and received."
+      },
+      {
+        "name": "Match the reason to the policy and evidence",
+        "text": "Compare the reason with the LIC policy bond, application details, proposal form where relevant and the documents already submitted, and list what supports or weakens the stated basis."
+      },
+      {
+        "name": "Prepare a focused appeal",
+        "text": "Write a concise appeal to LIC saying what decision you want, quoting the relevant policy point, listing the evidence by page or document name, and requesting acknowledgement and a review date."
+      },
+      {
+        "name": "Send the appeal through the official channel",
+        "text": "Submit the appeal to the LIC grievance or claim review channel for the branch or office handling the case, keep proof of delivery, and follow up in writing."
+      },
+      {
+        "name": "Escalate if LIC does not resolve it",
+        "text": "If LIC rejects, ignores or gives an unsatisfactory reply after a reasonable time, consider IRDAI Bima Bharosa or the Insurance Ombudsman, subject to eligibility and time limits."
+      }
+    ]
+  }
+}

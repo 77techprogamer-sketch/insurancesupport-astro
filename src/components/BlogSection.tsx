@@ -17,31 +17,32 @@ export default function BlogSection() {
   }, []);
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-3xl mx-auto px-4">
+    <section className="py-16 bg-[#0a0a0a]">
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/30 to-transparent" />
+      <div className="max-w-3xl mx-auto px-4 pt-12">
         <div className="text-center mb-10 reveal">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold mb-4">
+          <span className="label-aurora mb-4">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
-            Latest from Our Blog
+            Expert Insights
           </span>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">Expert Insurance Insights</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Expert Insurance Insights</h2>
         </div>
 
-        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden card-hover reveal">
+        <div className="bg-[rgba(255,255,255,0.03)] rounded-2xl border border-[rgba(255,255,255,0.08)] shadow-sm overflow-hidden card-aurora reveal">
           <div className="p-6 sm:p-8">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{post.title}</h3>
-            <p className={`text-slate-600 leading-relaxed mb-4 ${!expanded ? 'line-clamp-3' : ''}`}>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{post.title}</h3>
+            <p className={`text-[rgba(255,255,255,0.6)] leading-relaxed mb-4 ${!expanded ? 'line-clamp-3' : ''}`} style={{ fontFamily: "'Inter', sans-serif" }}>
               {post.summary}
             </p>
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setExpanded(!expanded)}
-                className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center gap-1"
+                className="text-[#10b981] hover:text-[#0d9f6a] font-medium text-sm flex items-center gap-1"
               >
                 {expanded ? 'Show Less' : 'Read More'}
                 <svg className={`w-4 h-4 transition-transform ${expanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
               </button>
-              <a href={`/blog/${post.slug}`} className="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1 ml-auto">
+              <a href={`/blog/${post.slug}`} className="text-sm font-semibold text-[#10b981] hover:text-[#0d9f6a] flex items-center gap-1 ml-auto">
                 Full Article
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
@@ -50,9 +51,9 @@ export default function BlogSection() {
         </div>
 
         <div className="text-center mt-8">
-          <a href="/blog" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">
+          <a href="/blog" className="btn-aurora-pill">
             View All Articles
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
       </div>

@@ -7,7 +7,9 @@ import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 const locality = "Malleshwaram";
 const description = "IRDAI-certified insurance advisor in Malleshwaram, Bengaluru for life, health, motor & term insurance, plus rejected-claim recovery. Free consultation, 25+ years experience.";
 const canonicalUrl = `https://insurancesupport.online/services/${locality.toLowerCase().replace(' ', '-')}`;
-const pageTitle = "Insurance Advisor in Malleshwaram, Bengaluru – Life, Health, Motor & Claim Recovery | Insurance Support";
+const pageServices = 'life insurance, health insurance, motor insurance, term insurance, ULIP, pension plans, travel insurance, SME and business insurance';
+const pageTitle = "Insurance Advisor in Malleshwaram, Bengaluru | Life, Health & Motor Cover";
+const pageKeywords = "insurance advisor Malleshwaram, Malleshwaram insurance agent, health insurance Malleshwaram, term insurance Malleshwaram, life insurance Malleshwaram, motor insurance Malleshwaram, LIC agent Malleshwaram, IRDAI certified insurance advisor Malleshwaram, insurance claim recovery Malleshwaram";
 const geoPlaceName = `${locality}, Bengaluru`;
 const successStory = `A retired teacher in Malleshwaram had her LIC pension payment stopped due to a KYC update requirement. We helped her complete the process and ensured back payments were credited within 10 days.`;
 const coordinates = {
@@ -19,11 +21,11 @@ const coordinates = {
 }[locality];
 ---
 
-<BaseLayout title={pageTitle} description={description} canonical={canonicalUrl} geoPlaceName={geoPlaceName} geoRegion="IN-KA">
+<BaseLayout title={pageTitle} description={description} keywords={pageKeywords} canonical={canonicalUrl} geoPlaceName={geoPlaceName} geoRegion="IN-KA">
   <LocalBusinessJsonLd />
   <FAQPageJsonLd questions={[
     { question: `How do I find an insurance advisor near me in ${locality}?`, answer: `Hari Kotian is an IRDAI-certified insurance advisor with 25+ years experience serving ${locality.toLowerCase()} residents. You can reach him via WhatsApp at +91-99866 34506 or visit insurancesupport.online for a free consultation.` },
-    { question: `What types of insurance are offered in ${locality}?`, answer: `We cover life insurance, health insurance, motor insurance, term insurance, ULIP, pension plans, travel insurance, and SME/business insurance for residents of ${locality.toLowerCase()} and surrounding areas.` },
+    { question: `What types of insurance are offered in ${locality}?`, answer: `We offer ${pageServices} for residents of ${locality.toLowerCase()} and surrounding areas.` },
     { question: `Can you help with rejected insurance claims in ${locality}?`, answer: `Yes. We specialize in recovering rejected claims. If your health or life insurance claim was rejected anywhere in Bangalore, including ${locality.toLowerCase()}, we can review your case and help you appeal.` }
   ]} />
 
@@ -55,11 +57,13 @@ const coordinates = {
       <div class="text-center mb-12">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-sm font-semibold mb-4">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-          Now Serving ${locality}
+          Now serving Malleshwaram, Bengaluru
         </span>
-        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">Insurance Advisor in ${locality}, Bengaluru</h1>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">Insurance Advisor in Malleshwaram, Bengaluru</h1>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          As an IRDAI-certified insurance advisor (Reg. No: 0149161D), I provide personalised life, health, motor, and term insurance guidance to families and professionals in ${locality.toLowerCase()} — backed by 25+ years of expertise.
+          Life, health, motor, and term insurance guidance for Malleshwaram families and professionals — plus claim-recovery support if a health, life, or motor claim has been delayed or rejected.
+        </p>
+        <p class="text-sm text-slate-500 mt-3">Based near Jalahalli and serving Malleshwaram residents with doorstep, phone, and WhatsApp consultations where convenient.
         </p>
       </div>
 
@@ -74,16 +78,16 @@ const coordinates = {
 
       <!-- Local Success Story -->
       <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-8 shadow-sm mb-12">
-        <h2 class="text-2xl font-bold text-amber-900 mb-4">Local Claim Recovery — ${locality}</h2>
+        <h2 class="text-2xl font-bold text-amber-900 mb-4">Local Claim Recovery — Malleshwaram</h2>
         <p class="text-slate-700 leading-relaxed mb-4">
-          ${successStory}
+          A retired teacher in Malleshwaram had her LIC pension payment stopped due to a KYC update requirement. We helped her complete the process and ensured the back payments were credited within ten days.
         </p>
-        <p class="text-sm text-slate-500 italic">— Verified Client, ${locality} (name withheld for privacy)</p>
+        <p class="text-sm text-slate-500 italic">— Verified Client, Malleshwaram (name withheld for privacy)</p>
       </div>
 
-      <!-- Services for ${locality} -->
+      <!-- Services for Malleshwaram -->
       <div class="mb-12">
-        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Insurance Services in ${locality}</h2>
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Insurance Services in Malleshwaram</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
             <h3 class="font-bold text-lg text-slate-900 mb-2">Life & Term Insurance</h3>
@@ -91,7 +95,7 @@ const coordinates = {
           </div>
           <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
             <h3 class="font-bold text-lg text-slate-900 mb-2">Health Insurance</h3>
-            <p class="text-sm text-slate-600">Family floater, individual, and senior citizen plans with cashless hospital access in ${locality.toLowerCase()}.</p>
+            <p class="text-sm text-slate-600">Family floater, individual, and senior citizen plans with cashless hospital access in Malleshwaram.</p>
           </div>
           <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
             <h3 class="font-bold text-lg text-slate-900 mb-2">Motor Insurance</h3>
@@ -110,7 +114,7 @@ const coordinates = {
       <!-- Claim Recovery Hub cross-link -->
       <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
         <p class="text-sm text-slate-700 mb-3">
-          Facing a claim problem in ${locality}? Our <strong>Claim Recovery Hub</strong> walks you through health, LIC, motor, travel, group-policy, and nominee disputes — with the exact escalation steps that work.
+          Facing a claim problem in Malleshwaram? Our <strong>Claim Recovery Hub</strong> walks you through health, LIC, motor, travel, group-policy, and nominee disputes — with the escalation steps that work most often for these cases.
         </p>
         <a href="/claim-recovery/" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 underline decoration-blue-300/50">
           Visit the Claim Recovery Hub
@@ -122,10 +126,13 @@ const coordinates = {
 
       <!-- CTA -->
       <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white">
-        <h2 class="text-2xl font-bold mb-3">Need Personalised Insurance Advice in ${locality}?</h2>
-        <p class="text-blue-100 mb-6">Free consultation. No obligation. Talk to a certified advisor with 25+ years of experience.</p>
+        <h2 class="text-2xl font-bold mb-3">Need Personalised Insurance Advice in Malleshwaram?</h2>
+        <p class="text-blue-100 mb-6">Free consultation with no obligation. Talk to a certified advisor with 25+ years of experience.
+        </p>
+        <p class="text-sm text-blue-200 mb-4">Most local clients prefer WhatsApp or a short phone call first; we can follow up with a bedside or home visit when that suits you better.
+        </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20insurance%20help%20in%20${locality.toLowerCase().replace(' ', '%20')}" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">WhatsApp Hari Kotian</a>
+          <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20insurance%20help%20in%20Malleshwaram" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">WhatsApp Hari Kotian</a>
           <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">Call +91-99866 34506</a>
         </div>
       </div>

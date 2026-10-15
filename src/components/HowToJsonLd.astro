@@ -29,7 +29,7 @@ const {
   supply,
   totalTime,
   url,
-}: HowToSchemaProps = Astro.props;
+}: HowToSchemaProps = Astro.props as unknown as HowToSchemaProps;
 
 const howToSteps = steps.map((step, index) => ({
   "@type": "HowToStep",

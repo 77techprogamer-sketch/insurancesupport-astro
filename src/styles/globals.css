@@ -1,6 +1,187 @@
 /* View Transitions — smooth page nav like Next.js/Framer Motion */
 @import './view-transitions.css';
 
+/* Aurora hero integration: hide default header on homepage since AuroraNavbar takes over */
+body[data-page="homepage"] #site-header {
+  display: none !important;
+}
+
+/* ============================================
+   AURORA DESIGN SYSTEM
+   Dark theme: #000 bg, #10b981 emerald accents,
+   Plus Jakarta Sans + Inter typography
+   ============================================ */
+
+/* Dark section backgrounds */
+.bg-aurora { background-color: #000; }
+.bg-aurora-slate { background-color: #0a0a0a; }
+.bg-aurora-card { background-color: rgba(255,255,255,0.04); }
+.bg-aurora-glass { background-color: rgba(255,255,255,0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.bg-aurora-border { border-color: rgba(255,255,255,0.12); }
+.bg-aurora-border-hover:hover { border-color: rgba(255,255,255,0.25); }
+
+/* Emerald accent */
+.text-aurora { color: #10b981; }
+.text-aurora-light { color: rgba(16,185,129,0.7); }
+.border-aurora { border-color: #10b981; }
+.bg-aurora-accent { background-color: #10b981; }
+.bg-aurora-accent-soft { background-color: rgba(16,185,129,0.12); }
+.shadow-aurora-glow { box-shadow: 0 0 24px rgba(16,185,129,0.25); }
+
+/* Text in dark sections */
+.text-white-muted { color: rgba(255,255,255,0.6); }
+.text-white-muted-sm { color: rgba(255,255,255,0.45); }
+.text-white-soft { color: rgba(255,255,255,0.85); }
+
+/* Aurora pill buttons */
+.btn-aurora-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-aurora-pill:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.btn-aurora-pill:active {
+  transform: scale(0.97);
+}
+
+/* Aurora CTA - emerald gradient pill */
+.btn-aurora-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #10b981, #047857);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(16,185,129,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-aurora-cta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(16,185,129,0.4);
+}
+.btn-aurora-cta:active {
+  transform: scale(0.97);
+}
+
+/* Aurora card - dark glass */
+.card-aurora {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-aurora:hover {
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+/* Aurora icon circle */
+.icon-aurora {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16,185,129,0.12);
+  border: 1px solid rgba(16,185,129,0.2);
+  color: #10b981;
+  font-size: 20px;
+}
+
+/* Aurora section header label */
+.label-aurora {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.2);
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Aurora underline link */
+.link-aurora {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.link-aurora:hover {
+  color: #fff;
+  border-bottom-color: rgba(255,255,255,0.3);
+}
+
+/* Aurora grid pattern overlay */
+.bg-aurora-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Aurora floating orbs */
+.orb-aurora-emerald {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.15), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.orb-aurora-amber {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251,191,36,0.1), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* Aurora step number circle */
+.step-aurora {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #047857);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 12px rgba(16,185,129,0.3);
+}
+
+/* ============================================ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

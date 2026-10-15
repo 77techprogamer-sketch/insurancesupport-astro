@@ -5,7 +5,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout 
   title="Contact Us | Insurance Support by Hari Kotian" 
   description="Get in touch with Hari Kotian, IRDAI-certified insurance advisor in Bengaluru with 25+ years experience. Free consultation for all insurance needs."
+  pageType="contact"
+  keywords="contact insurance advisor Bengaluru, Hari Kotian IRDAI advisor, insurance consultation free, claim help contact, LIC agent contact Bangalore, insurance help phone number"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Contact Insurance Support — Hari Kotian",
+    "description": "Get in touch with Hari Kotian, IRDAI-certified insurance advisor in Bengaluru with 25+ years experience. Free consultation for all insurance needs.",
+    "url": "https://insurancesupport.online/contact/",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
   <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden py-16 lg:py-24">
     <!-- Decorative background glows -->
     <div class="absolute top-10 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[140px] pointer-events-none" />

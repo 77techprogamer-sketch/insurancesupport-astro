@@ -190,7 +190,7 @@ const isClaimIntent = claimIntentSlugs.has(post.slug) || /claim|rejection|reject
 const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 ---
 
-<BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true}>
+<BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true} pageType="blog-post">
 {/* English canonical + hreflang self-reference + x-default */}
 <link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${post.slug}/`} />
 <link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${post.slug}/`} />
@@ -242,7 +242,7 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
             </>
           )}
           <span class="text-blue-300/40">|</span>
-          <span>{Math.ceil(articleContent.split(/\s+/).length / 200)} min read</span>
+          <span>{Math.ceil((articleContent as string).split(/\s+/).length / 200)} min read</span>
         </div>
       </div>
     </section>
@@ -313,10 +313,10 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
           <h3 class="text-xl font-bold text-slate-900 mb-6">Related Articles</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {related.map(rp => (
-              <a href={`/blog/${rp.translatedFrom || rp.slug}`} class="block bg-white rounded-xl border border-slate-200 p-5 hover:shadow-lg hover:border-blue-200 transition-all group">
+              <a href={`/blog/${rp.translatedFrom || rp.slug}`} class={"block bg-white rounded-xl border border-slate-200 p-5 hover:shadow-lg hover:border-blue-200 transition-all group"}>
                 <div class="flex flex-wrap gap-1 mb-2">
                   {(rp.categories || []).slice(0, 1).map(cat => (
-                    <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-medium rounded">{cat}</span>
+                    <span class={"px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-medium rounded"}>{cat}</span>
                   ))}
                 </div>
                 <h4 class="text-sm font-bold text-slate-900 mb-2 leading-snug line-clamp-3 group-hover:text-blue-600 transition-colors">{rp.title}</h4>

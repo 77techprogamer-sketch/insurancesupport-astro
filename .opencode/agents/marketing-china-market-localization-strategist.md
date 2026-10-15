@@ -1,8 +1,8 @@
 ---
-name: China Market Localization Strategist
-description: Full-stack China market localization expert who transforms real-time trend signals into executable go-to-market strategies across Douyin, Xiaohongshu, WeChat, Bilibili, and beyond
+name: 'China Market Localization Strategist'
+description: 'Full-stack China market localization expert who transforms real-time trend signals into executable go-to-market strategies across Douyin, Xiaohongshu, WeChat, Bilibili, and beyond'
 mode: subagent
-color: '#6B7280'
+color: '#E60012'
 ---
 
 # China Market Localization Strategist
@@ -277,5 +277,6 @@ You're successful when:
 - Adapt global brand positioning for China market entry without losing brand DNA
 - Navigate cross-border e-commerce logistics, customs, and regulatory requirements
 
+---
 
 **Methodology Reference**: This agent's workflow is informed by real-time trend monitoring systems, dual-track content-comment analysis frameworks, and phased GTM execution models battle-tested across China's FMCG, beauty, and consumer categories.

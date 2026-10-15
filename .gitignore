@@ -38,3 +38,7 @@ rag-backend/backend/logs/
 rag-backend/config/service_account.json
 rag-backend/.env
 rag-backend/.tmp/
+
+# Scratch / junk
+nul
+WORKSPACE_ROOT/

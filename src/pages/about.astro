@@ -9,8 +9,29 @@ import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
   description="Learn about Hari Kotian (IRDAI registration number 0149161D) and Insurance Support, a Bengaluru-based insurance guidance and claim assistance service."
   canonical="https://insurancesupport.online/about/"
   dateModified="2026-10-05"
+  pageType="contact"
+  keywords="about Hari Kotian insurance advisor, IRDAI advisor 0149161D, Insurance Support Bengaluru, insurance guidance claim assistance, insurance advisor about"
 >
   <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'About Hari Kotian', url: 'https://insurancesupport.online/about/' }]} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "About Hari Kotian — Insurance Support",
+    "description": "Learn about Hari Kotian (IRDAI registration number 0149161D) and Insurance Support, a Bengaluru-based insurance guidance and claim assistance service.",
+    "url": "https://insurancesupport.online/about/",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://insurancesupport.online/about-hari-kotian/#person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor",
+      "url": "https://insurancesupport.online/about-hari-kotian/"
+    }
+  })} />
   <main id="main" class="max-w-4xl mx-auto px-4 py-16">
     <h1 class="text-4xl font-bold text-slate-900 mb-4">About Hari Kotian</h1>
     <p class="text-lg text-slate-600 mb-8 leading-relaxed">Hari Kotian (IRDAI registration number <strong>0149161D</strong>) leads Insurance Support, a Bengaluru-based service offering insurance guidance and claim assistance.</p>

@@ -37,7 +37,7 @@ const description = `Get expert advisory for ${serviceData.title.toLowerCase()} 
 const serviceUrl = `https://insurancesupport.online/services/${location}/${service}/`;
 ---
 
-<BaseLayout title={title} description={description} canonical={serviceUrl} geoPlaceName={cityData.name} geoRegion="IN-KA" geoPosition={`${cityData.lat};${cityData.lng}`} noIndex={true}>
+<BaseLayout title={title} description={description} canonical={serviceUrl} geoPlaceName={cityData.name} geoRegion="IN-KA" geoPosition={`${cityData.lat};${cityData.lng}`} pageType="location">
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -57,6 +57,28 @@ const serviceUrl = `https://insurancesupport.online/services/${location}/${servi
   })} />
 
   <Breadcrumbs currentPage={serviceData.title} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": serviceUrl,
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": `IRDAI-certified ${serviceData.title} advisory and claim recovery in ${cityData.name}`
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
 
   <main id="main" class="page-transition">
     <div class="max-w-4xl mx-auto px-4 py-16">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, ShieldAlert, ShieldEllipsis, ArrowRight, RefreshCcw, FileText } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 
 interface QuizQuestion {
@@ -56,7 +56,8 @@ interface LeadMagnetQuizProps {
 }
 
 const LeadMagnetQuiz: React.FC<LeadMagnetQuizProps> = ({ onComplete }) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
+  const t: any = { };
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [isFinished, setIsFinished] = useState(false);

@@ -17,6 +17,13 @@ if (!cs) {
   throw new Error('Case study not found');
 }
 
+// Build a tight, intent-led title/description for the case-study page itself.
+const csBrandlessTitle = cs.title.replace(/\s*\|\s*Case Study\s*$/, '').trim();
+const csTitle = `${csBrandlessTitle} | Claim Case Study | Insurance Support`;
+const csMetaDescription = cs.seo?.metaDescription || cs.subtitle;
+const csKeywords = cs.seo?.keywords?.join(', ') ||
+  `${cs.category.toLowerCase()} claim recovery Bangalore, ${cs.insurer} claim help, ${cs.claimType.toLowerCase()} dispute}`;
+
 // Find related case studies
 const related = cs.relatedCaseStudies
   .map((slug) => caseStudies.find((c) => c.slug === slug))
@@ -24,8 +31,9 @@ const related = cs.relatedCaseStudies
 ---
 
 <BaseLayout
-  title={`${cs.title} | Case Study`}
-  description={cs.seo.metaDescription}
+  title={csTitle}
+  description={csMetaDescription}
+  keywords={csKeywords}
 >
 
   <Breadcrumbs currentPage={cs.title} />

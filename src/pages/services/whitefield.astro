@@ -5,11 +5,14 @@ import LocalBusinessJsonLd from '../../components/LocalBusinessJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 
 const locality = "Whitefield";
-const description = "IRDAI-certified insurance advisor in Whitefield, Bengaluru for life, health, motor & term insurance, plus rejected-claim recovery. Free consultation, 25+ years experience.";
+const description = "IRDAI-certified insurance advisor in Whitefield, Bengaluru for life, health, motor & term insurance, plus rejected-claim recovery. Free consultation for IT professionals, 25+ years experience.";
 const canonicalUrl = `https://insurancesupport.online/services/${locality.toLowerCase().replace(' ', '-')}`;
-const pageTitle = "Insurance Advisor in Whitefield, Bengaluru – Life, Health, Motor & Claim Recovery | Insurance Support";
+const pageTitle = `Insurance Advisor in ${locality}, Bengaluru | Life, Health & Motor Cover`;
+
 const geoPlaceName = `${locality}, Bengaluru`;
-const successStory = `A family in ${locality} had their health insurance claim rejected for a cataract surgery due to a sub-limit of Rs. 40,000. We helped them file an appeal citing medical necessity and got the claim approved for the full amount.`;
+const pageServices = 'life insurance, health insurance, motor insurance, term insurance, ULIP, pension plans, travel insurance, SME and business insurance';
+const pageKeywords = `insurance advisor ${locality}, ${locality} insurance agent, health insurance ${locality}, term insurance ${locality}, life insurance ${locality}, motor insurance ${locality}, LIC agent ${locality}, IRDAI certified insurance advisor ${locality}, insurance claim recovery ${locality}`;
+const successStory = `A family in ${locality} had their health insurance claim rejected for cataract surgery because of a Rs. 40,000 sub-limit. We helped them file an appeal citing medical necessity, and the claim was approved for the full amount.`;
 const coordinates = {
   Indiranagar: { lat: 12.9784, lng: 77.6408 },
   Whitefield: { lat: 12.9698, lng: 77.7500 },
@@ -19,12 +22,14 @@ const coordinates = {
 }[locality];
 ---
 
-<BaseLayout title={pageTitle} description={description} canonical={canonicalUrl} geoPlaceName={geoPlaceName} geoRegion="IN-KA">
+<BaseLayout title={pageTitle} description={description} keywords={pageKeywords} canonical={canonicalUrl} geoPlaceName={geoPlaceName} geoRegion="IN-KA">
   <LocalBusinessJsonLd />
   <FAQPageJsonLd questions={[
     { question: `How do I find an insurance advisor near me in ${locality}?`, answer: `Hari Kotian is an IRDAI-certified insurance advisor with 25+ years experience serving ${locality.toLowerCase()} residents. You can reach him via WhatsApp at +91-99866 34506 or visit insurancesupport.online for a free consultation.` },
-    { question: `What types of insurance are offered in ${locality}?`, answer: `We cover life insurance, health insurance, motor insurance, term insurance, ULIP, pension plans, travel insurance, and SME/business insurance for residents of ${locality.toLowerCase()} and surrounding areas.` },
-    { question: `Can you help with rejected insurance claims in ${locality}?`, answer: `Yes. We specialize in recovering rejected claims. If your health or life insurance claim was rejected anywhere in Bangalore, including ${locality.toLowerCase()}, we can review your case and help you appeal.` }
+    { question: `What types of insurance are offered in ${locality}?`, answer: `We offer ${pageServices} for residents of ${locality.toLowerCase()} and surrounding areas.` },
+    { question: `Can you help with rejected insurance claims in ${locality}?`, answer: `Yes. We specialize in recovering rejected claims. If your health or life insurance claim was rejected anywhere in Bangalore, including ${locality.toLowerCase()}, we can review your case and help you appeal.` },
+    { question: `Do you help IT professionals in ${locality} with group insurance?`, answer: `Yes. Many Whitefield residents work in IT companies with group health cover. We help you understand your group cover, check what happens when you leave the job, and plan personal cover alongside.` },
+    { question: `Which hospitals near ${locality} do you help with insurance claims?`, answer: `We help Whitefield residents with claims at Narayana Health City, Aster Whitefield, Sakra World Hospital, and Bengaluru Baptist Hospital — both cashless and reimbursement.` }
   ]} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -55,38 +60,83 @@ const coordinates = {
       <div class="text-center mb-12">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-sm font-semibold mb-4">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-          Now Serving ${locality}
+          Now serving Whitefield, Bengaluru
         </span>
-        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">Insurance Advisor in ${locality}, Bengaluru</h1>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">Insurance Advisor in Whitefield, Bengaluru</h1>
         <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          As an IRDAI-certified insurance advisor (Reg. No: 0149161D), I provide personalised life, health, motor, and term insurance guidance to families and professionals in ${locality.toLowerCase()} — backed by 25+ years of expertise.
+          Life, health, motor, and term insurance guidance for Whitefield families, IT professionals, and entrepreneurs — plus claim-recovery support if a health, life, or motor claim has been delayed or rejected.
         </p>
+        <p class="text-sm text-slate-500 mt-3">Based near Jalahalli and serving Whitefield residents with doorstep, phone, and WhatsApp consultations where convenient.</p>
       </div>
 
-            <!-- Google Map -->
+      <!-- Google Map -->
       <div class="rounded-2xl overflow-hidden shadow-lg mb-12 aspect-video">
         <iframe
           src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.35!2d${coordinates.lng}!3d${coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159c9f48f7ef%3A0x2e6d5f6c795b9c5a!2s${locality.replace(' ', '%20')}%2C%20Bengaluru!5e0!3m2!1sen!2sin`}
-          width="100%"
-          height="100%"
-          style="border:0;"
-          loading="lazy"
-          title="Insurance advisor location map"
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+          title={`Insurance advisor in ${locality}, Bengaluru`}
         ></iframe>
       </div>
 
       <!-- Local Success Story -->
       <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-8 shadow-sm mb-12">
-        <h2 class="text-2xl font-bold text-amber-900 mb-4">Local Claim Recovery — ${locality}</h2>
+        <h2 class="text-2xl font-bold text-amber-900 mb-4">Local Claim Recovery — Whitefield</h2>
         <p class="text-slate-700 leading-relaxed mb-4">
-          ${successStory}
+          A family in Whitefield had their health insurance claim rejected for cataract surgery because of a Rs. 40,000 sub-limit. We helped them file an appeal citing medical necessity, and the claim was approved for the full amount.
         </p>
-        <p class="text-sm text-slate-500 italic">— Verified Client, ${locality} (name withheld for privacy)</p>
+        <p class="text-sm text-slate-500 italic">— Verified Client, Whitefield (name withheld for privacy)</p>
       </div>
 
-      <!-- Services for ${locality} -->
+      <!-- Local Area Insurance Insights -->
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Hospitals Near Whitefield We Work With</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li><a href="/services/health-insurance" class="text-blue-700 hover:underline">Narayana Health City, Whitefield</a> — cashless health insurance claims</li>
+            <li><a href="/services/health-insurance" class="text-blue-700 hover:underline">Aster Whitefield Hospital</a> — pre-authorisation support</li>
+            <li><a href="/services/health-insurance" class="text-blue-700 hover:underline">Sakra World Hospital</a> — claim documentation help</li>
+            <li><a href="/services/health-insurance" class="text-blue-700 hover:underline">Bengaluru Baptist Hospital</a> — reimbursement and TPA claims</li>
+          </ul>
+          <p class="text-xs text-slate-500 mt-3">We help Whitefield residents with cashless and reimbursement claims at these and other hospitals.</p>
+        </div>
+        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Common Insurance Issues We See in Whitefield</h3>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li>IT professionals with group health cover — what happens when you leave the job</li>
+            <li>Health insurance portability from Whitefield IT companies to personal plans</li>
+            <li>Term insurance for young IT professionals — term cover based on income growth</li>
+            <li>Motor insurance for cars in Whitefield traffic — own-damage claims and NCB protection</li>
+          </ul>
+          <p class="text-xs text-slate-500 mt-3">Whitefield has many IT professionals. We see their specific insurance needs — group cover gaps, portability, and term planning.</p>
+        </div>
+      </div>
+
+      <!-- Local Insurance Tips -->
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-12">
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Insurance Tips for Whitefield Residents</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="font-semibold text-slate-800 mb-1">💼 IT professional group cover</p>
+            <p class="text-slate-600">Whitefield has many tech companies. Group health cover is useful but stops when you leave. We help plan personal cover to avoid gaps.</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-800 mb-1">🏥 Cashless hospital access</p>
+            <p class="text-slate-600">Narayana Health City and Aster Whitefield are major centres. We help check your policy's network before planned procedures.</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-800 mb-1">👨‍👩‍👧‍👦 Young family term cover</p>
+            <p class="text-slate-600">Young IT couples in Whitefield often need higher term cover. We review cover based on income, loans, and family goals.</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-800 mb-1">🚗 Motor insurance in traffic</p>
+            <p class="text-slate-600">Whitefield traffic leads to wear and minor accidents. We help with own-damage claims, NCB protection, and zero-depreciation add-ons.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services for Whitefield -->
       <div class="mb-12">
-        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Insurance Services in ${locality}</h2>
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Insurance Services in Whitefield</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
             <h3 class="font-bold text-lg text-slate-900 mb-2">Life & Term Insurance</h3>
@@ -94,7 +144,7 @@ const coordinates = {
           </div>
           <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
             <h3 class="font-bold text-lg text-slate-900 mb-2">Health Insurance</h3>
-            <p class="text-sm text-slate-600">Family floater, individual, and senior citizen plans with cashless hospital access in ${locality.toLowerCase()}.</p>
+            <p class="text-sm text-slate-600">Family floater, individual, and senior citizen plans with cashless hospital access in Whitefield.</p>
           </div>
           <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
             <h3 class="font-bold text-lg text-slate-900 mb-2">Motor Insurance</h3>
@@ -113,7 +163,7 @@ const coordinates = {
       <!-- Claim Recovery Hub cross-link -->
       <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
         <p class="text-sm text-slate-700 mb-3">
-          Facing a claim problem in ${locality}? Our <strong>Claim Recovery Hub</strong> walks you through health, LIC, motor, travel, group-policy, and nominee disputes — with the exact escalation steps that work.
+          Facing a claim problem in Whitefield? Our <strong>Claim Recovery Hub</strong> walks you through health, LIC, motor, travel, group-policy, and nominee disputes — with the escalation steps that work most often for these cases.
         </p>
         <a href="/claim-recovery/" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 underline decoration-blue-300/50">
           Visit the Claim Recovery Hub
@@ -125,10 +175,11 @@ const coordinates = {
 
       <!-- CTA -->
       <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white">
-        <h2 class="text-2xl font-bold mb-3">Need Personalised Insurance Advice in ${locality}?</h2>
-        <p class="text-blue-100 mb-6">Free consultation. No obligation. Talk to a certified advisor with 25+ years of experience.</p>
+        <h2 class="text-2xl font-bold mb-3">Need Personalised Insurance Advice in Whitefield?</h2>
+        <p class="text-blue-100 mb-6">Free consultation with no obligation. Talk to a certified advisor with 25+ years of experience.</p>
+        <p class="text-sm text-blue-200 mb-4">Most local clients prefer WhatsApp or a short phone call first; we can follow up with a home visit when that suits you better.</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20insurance%20help%20in%20${locality.toLowerCase().replace(' ', '%20')}" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">WhatsApp Hari Kotian</a>
+          <a href={`https://wa.me/919986634506?text=Hi%20Hari,%20I%20need%20insurance%20help%20in%20${locality}`} target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">WhatsApp Hari Kotian</a>
           <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">Call +91-99866 34506</a>
         </div>
       </div>

@@ -1,247 +1,222 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
-// ─── Stagger Animation Variants ───────────────────────────────
+// ─── Aurora Hero - dark video background, emerald accents ──
+
 const container = {
   hidden: {},
   show: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.1, delayChildren: 0.15 },
   },
 };
 
 const fadeUp: any = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
 };
 
-const fadeUpScale: any = {
-  hidden: { opacity: 0, y: 40, scale: 0.92 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-};
-
 const slideLeft: any = {
-  hidden: { opacity: 0, x: -60 },
+  hidden: { opacity: 0, x: -40 },
   show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
 };
 
-const statCard: any = {
-  hidden: { opacity: 0, scale: 0.85, y: 30 },
-  show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1] } },
+const statEnter: any = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] } },
 };
 
-const glowPulseVariants: any = {
-  animate: {
-    boxShadow: [
-      '0 0 20px rgba(251,191,36,0.15)',
-      '0 0 40px rgba(251,191,36,0.3), 0 0 80px rgba(251,191,36,0.1)',
-      '0 0 20px rgba(251,191,36,0.15)',
-    ],
-    transition: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
-  },
-};
-
-// ─── Floating Background Orbs - Enhanced with more depth ───
 function FloatingOrbs() {
   return (
     <>
-      {/* Primary amber glow */}
       <motion.div
-        className="absolute top-[15%] left-[5%] w-72 h-72 rounded-full opacity-[0.15] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(251,191,36,0.3), transparent 70%)' }}
-        animate={{ x: [0, 30, -20, 10, 0], y: [0, -40, 20, -30, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      {/* Primary blue glow */}
-      <motion.div
-        className="absolute bottom-[10%] right-[8%] w-96 h-96 rounded-full opacity-[0.15] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.3), transparent 70%)' }}
-        animate={{ x: [0, -40, 30, -20, 0], y: [0, 30, -50, 20, 0] }}
-        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      {/* Secondary purple glow */}
-      <motion.div
-        className="absolute top-[40%] right-[20%] w-48 h-48 rounded-full opacity-[0.08] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(167,139,250,0.4), transparent 70%)' }}
-        animate={{ scale: [1, 1.3, 0.9, 1.1, 1], opacity: [0.08, 0.15, 0.06, 0.12, 0.08] }}
+        className="absolute top-[10%] right-[10%] w-96 h-96 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.15), transparent 70%)', filter: 'blur(40px)' }}
+        animate={{ scale: [1, 1.15, 1], x: [0, -20, 0], y: [0, -30, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
-      {/* Subtle grid overlay for tech pattern */}
-      <div className="absolute inset-0 hero-grid-overlay opacity-40"></div>
+      <motion.div
+        className="absolute bottom-[15%] left-[8%] w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(251,191,36,0.08), transparent 70%)', filter: 'blur(40px)' }}
+        animate={{ scale: [1, 1.2, 1], x: [0, 30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px',
+        }}
+      />
     </>
   );
 }
 
-// ─── Main Component ───────────────────────────────────────────
 export default function AnimatedHero() {
   return (
-    <section className="min-h-[85vh] flex items-center relative overflow-hidden hero-gradient">
+    <section style={{
+      position: 'relative',
+      width: '100%',
+      height: '100svh',
+      background: '#000',
+      overflow: 'hidden',
+    }}>
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlays */}
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.10)', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.13)', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.19)', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.07)', zIndex: 1 }} />
+
+      {/* Emerald glow */}
+      <div style={{
+        position: 'absolute',
+        top: '10%',
+        right: '10%',
+        width: '600px',
+        height: '600px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, rgba(16,185,129,0.05) 60%, transparent 80%)',
+        filter: 'blur(40px)',
+        zIndex: 1,
+        pointerEvents: 'none',
+      }} />
+
       <FloatingOrbs />
 
       <motion.div
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 py-20"
+        style={{ position: 'absolute', top: '24vh', left: '64px', zIndex: 10, maxWidth: '480px', width: '100%' }}
         variants={container}
-        initial={false}
+        initial="hidden"
         animate="show"
       >
-        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12">
-          {/* ─── LEFT: Main Content ────────────────────────── */}
-          <div className="w-full lg:w-3/5 text-center lg:text-left lg:self-center">
-            {/* Badges with enhanced styling */}
-            <motion.div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
-              variants={fadeUp}
-            >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-amber-300 backdrop-blur-md hover:bg-white/15 transition-all duration-200">
-                <svg className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                <span className="relative z-10">Insurance advisory and claim support</span>
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-sm font-medium text-green-300 backdrop-blur-md hover:bg-green-500/15 transition-all duration-200">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                <span className="relative z-10">Insurance guidance and claim support</span>
-              </span>
-            </motion.div>
+        {/* Label */}
+        <motion.div variants={fadeUp} style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: "'Inter', sans-serif" }}>
+          Insurance Advisory
+        </motion.div>
 
-            {/* Headline */}
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] mb-6 text-white"
-              variants={fadeUp}
-            >
-              Claim Rejection{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">
-                Recovery Experts
-              </span>
-            </motion.h1>
+        {/* Headline */}
+        <motion.h1
+          variants={fadeUp}
+          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 500, fontSize: 'clamp(2.4rem, 4.6vw, 4.1rem)', lineHeight: 1.08, letterSpacing: '-0.02em', color: '#fff', marginTop: '22px', maxWidth: '560px' }}
+        >
+          Claim Rejection{' '}
+          <span style={{ color: '#10b981' }}>Recovery Experts</span>
+        </motion.h1>
 
-            {/* Keep the service description in the server-rendered HTML. */}
-            <motion.div variants={fadeUp} className="mb-8 min-h-[3rem]">
-              <p className="text-lg text-blue-200/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Insurance Support, led by Hari Kotian, helps people understand policy options, prepare claim documents, and navigate insurer follow-up.
-              </p>
-            </motion.div>
+        {/* Description */}
+        <motion.p
+          variants={fadeUp}
+          style={{ marginTop: '16px', fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', fontFamily: "'Inter', sans-serif", maxWidth: '340px' }}
+        >
+          Insurance Support, led by Hari Kotian, helps people understand policy options, prepare claim documents, and navigate insurer follow-up.
+        </motion.p>
 
-            {/* CTAs with enhanced visual effects */}
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              variants={fadeUp}
-            >
-              {/* Primary CTA - Gradient button with glow */}
-              <motion.a
-                href="/contact"
-                className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-900 font-bold rounded-full text-lg shadow-lg shadow-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{ background: 'linear-gradient(135deg, #f59e0b, #fbbf24, #f97316)', backgroundSize: '200% 200%' }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundPosition = '100% 50%')}
-                onMouseLeave={e => (e.currentTarget.style.backgroundPosition = '0% 50%')}
-              >
-                {/* Shine effect overlay */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-500"></span>
-                Request Free Case Assessment
-                <motion.svg
-                  className="w-5 h-5 relative z-10"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse' }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </motion.svg>
-              </motion.a>
-              <!-- Secondary CTA - Glass effect phone button */}
-              <motion.a
-                href="tel:+919986634506"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-full backdrop-blur-md hover:bg-white/15 hover:border-white/30 hover:shadow-lg hover:shadow-white/10 transition-all duration-300"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-                <svg className="w-5 h-5 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                <span className="relative z-10">+91-99866 34506</span>
-              </motion.a>
-            </motion.div>
+        {/* CTAs */}
+        <motion.div
+          variants={fadeUp}
+          style={{ display: 'flex', alignItems: 'center', gap: '14px', marginTop: '30px', flexWrap: 'wrap' }}
+        >
+          <motion.a
+            href="/contact"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            style={{ padding: '14px 26px', borderRadius: '999px', background: '#0a0a0a', color: '#fff', fontSize: '14px', fontWeight: 600, fontFamily: "'Inter', sans-serif", textDecoration: 'none', border: '1px solid rgba(255,255,255,0.15)' }}
+          >
+            Request Free Case Assessment
+          </motion.a>
+          <motion.a
+            href="tel:+919986634506"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.93 }}
+            style={{ width: '44px', height: '44px', borderRadius: '999px', background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}
+            aria-label="Call now"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" /></svg>
+          </motion.a>
+        </motion.div>
 
-            {/* Trust signature */}
-            <motion.div
-              className="flex items-center gap-3 mt-8 justify-center lg:justify-start"
-              variants={slideLeft}
-            >
-              <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                HK
-                <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
-              </div>
-              <div className="text-left">
-                <p className="text-base font-bold text-white">Hari Kotian</p>
-                <p className="text-sm text-blue-200/80 font-medium">Insurance advisor</p>
-                <div className="flex items-center gap-2 mt-1">
-                  <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                  <span className="text-xs font-semibold text-amber-300">View customer feedback</span>
-                </div>
-              </div>
-            </motion.div>
+        {/* Trust signature */}
+        <motion.div
+          variants={slideLeft}
+          style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '24px' }}
+        >
+          <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'linear-gradient(135deg, #10b981, #047857)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '16px', fontFamily: "'Inter', sans-serif", boxShadow: '0 4px 12px rgba(16,185,129,0.3)', flexShrink: 0 }}>
+            HK
+            <span style={{ position: 'absolute', bottom: '-2px', right: '-2px', width: '12px', height: '12px', borderRadius: '50%', background: '#10b981', border: '2px solid #000' }} />
           </div>
-
-          {/* ─── RIGHT: Stat Card ──────────────────────────── */}
-          <div className="w-full lg:w-2/5 lg:self-center">
-            <motion.div className="relative" variants={statCard}>
-              <motion.div
-                className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-2xl gradient-border"
-                variants={glowPulseVariants}
-                animate="animate"
-              >
-                {/* Main stat */}
-                <div className="text-center mb-6">
-                  <motion.div
-                    className="text-5xl font-extrabold text-amber-400 tracking-tight"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  >
-                    Claim support
-                  </motion.div>
-                  <div className="text-sm text-blue-200 mt-1">Understand your next steps</div>
-                </div>
-
-                {/* Sub-stats */}
-                <div className="grid grid-cols-2 gap-6 text-center">
-                  <motion.div
-                    className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 1.5 }}
-                  >
-                    <div className="text-3xl font-bold text-white">Policy</div>
-                    <div className="text-xs text-blue-300 mt-1">terms review</div>
-                  </motion.div>
-                  <motion.div
-                    className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 1.7 }}
-                  >
-                    <div className="text-3xl font-bold text-white">Claim</div>
-                    <div className="text-xs text-blue-300 mt-1">document help</div>
-                  </motion.div>
-                </div>
-
-                {/* Success rate */}
-                <motion.div
-                  className="mt-6 pt-4 border-t border-white/10 text-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 2.0 }}
-                >
-                  <div className="flex items-center justify-center gap-2 text-sm text-blue-200/80">
-                    <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                    <span>Outcome depends on policy terms</span>
-                  </div>
-                </motion.div>
-              </motion.div>
-            </motion.div>
+          <div style={{ flex: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontWeight: 700, color: '#fff', fontSize: '14px', fontFamily: "'Inter', sans-serif" }}>Hari Kotian</span>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }} />
+            </div>
+            <p style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.6)', fontFamily: "'Inter', sans-serif", marginTop: '2px' }}>IRDAI-Registered Insurance Advisor</p>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
+
+      {/* Bottom-left avatar badge */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
+        style={{ position: 'absolute', bottom: '34px', left: '64px', zIndex: 10, display: 'flex', alignItems: 'center', gap: '10px' }}
+      >
+        <div style={{ display: 'flex' }}>
+          {[1, 2, 3].map((i) => (
+            <div
+              key={i}
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '999px',
+                border: '2px solid rgba(255,255,255,0.25)',
+                background: i === 1 ? 'linear-gradient(135deg, #10b981, #047857)' : i === 2 ? '#1a1a2e' : '#16213e',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginLeft: i === 1 ? '0' : '-12px',
+                zIndex: 3 - i + 1,
+                position: 'relative',
+              }}
+            >
+              <span style={{ color: i === 1 ? '#fff' : 'rgba(255,255,255,0.85)', fontSize: '12px', fontWeight: 600, fontFamily: "'Inter', sans-serif" }}>
+                {String.fromCharCode(64 + i)}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <span style={{ fontSize: '12.5px', color: 'rgba(255,255,255,0.75)', fontFamily: "'Inter', sans-serif" }}>
+          We&apos;re trusted by <strong style={{ color: '#fff', fontWeight: 600 }}>teams across India</strong>
+        </span>
+      </motion.div>
+
+      {/* Social icons */}
+      <div style={{ position: 'absolute', bottom: '34px', left: '64px', zIndex: 10, display: 'flex', gap: '10px' }}>
+        {['X', 'LinkedIn', 'Instagram'].map((label) => (
+          <a
+            key={label}
+            href="#"
+            aria-label={label}
+            style={{ width: '34px', height: '34px', borderRadius: '999px', border: '1px solid rgba(255,255,255,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.75)' }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+          </a>
+        ))}
+      </div>
     </section>
   );
 }

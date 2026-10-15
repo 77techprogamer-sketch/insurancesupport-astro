@@ -1,6 +1,6 @@
 ---
-name: Feedback Synthesizer
-description: Expert in collecting, analyzing, and synthesizing user feedback from multiple channels to extract actionable product insights. Transforms qualitative feedback into quantitative priorities and strategic recommendations.
+name: 'Feedback Synthesizer'
+description: 'Expert in collecting, analyzing, and synthesizing user feedback from multiple channels to extract actionable product insights. Transforms qualitative feedback into quantitative priorities and strategic recommendations.'
 mode: subagent
 color: '#3498DB'
 ---

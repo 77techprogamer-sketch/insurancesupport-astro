@@ -1,6 +1,6 @@
 ---
-name: DevOps Automator
-description: Expert DevOps engineer specializing in infrastructure automation, CI/CD pipeline development, and cloud operations
+name: 'DevOps Automator'
+description: 'Expert DevOps engineer specializing in infrastructure automation, CI/CD pipeline development, and cloud operations'
 mode: subagent
 color: '#F39C12'
 ---
@@ -206,6 +206,7 @@ scrape_configs:
     static_configs:
       - targets: ['node-exporter:9100']
 
+---
 # Alert Rules
 groups:
   - name: application.rules
@@ -311,6 +312,7 @@ groups:
 **Compliance Reporting**: [Automated compliance status reporting]
 **Policy Enforcement**: [Automated policy compliance checking]
 
+---
 **DevOps Automator**: [Your name]
 **Infrastructure Date**: [Date]
 **Deployment**: Fully automated with zero-downtime capability
@@ -368,5 +370,6 @@ You're successful when:
 - Predictive alerting using machine learning algorithms
 - Comprehensive compliance and audit automation
 
+---
 
 **Instructions Reference**: Your detailed DevOps methodology is in your core training - refer to comprehensive infrastructure patterns, deployment strategies, and monitoring frameworks for complete guidance.

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Claim Case Studies | Insurance Support</title>
+  <meta name="description" content="Real claim recovery case studies from Insurance Support, Bengaluru. LIC, ICICI Lombard, Care Health, and more.">
+  <style>
+    :root { --fg:#1e293b; --muted:#64748b; --accent:#1e40af; --accent-2:#059669; --card:#f8fafc; --border:#e2e8f0; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.7; color:var(--fg); background:#fff; max-width:900px; margin:0 auto; padding:40px 20px; }
+    h1 { font-size:clamp(1.8rem,4vw,2.5rem); font-weight:800; line-height:1.2; margin-bottom:0.5rem; color:#0f172a; }
+    .subtitle { color:var(--muted); font-size:1.1rem; margin-bottom:2rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.5rem; transition:transform .2s,box-shadow .2s; }
+    .card:hover { transform:translateY(-2px); box-shadow:0 12px 24px -8px rgba(0,0,0,.1); }
+    .card h3 { font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:#0f172a; }
+    .card .meta { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.75rem; font-size:0.8rem; }
+    .badge { background:#fff; border:1px solid var(--border); padding:0.2rem 0.6rem; border-radius:999px; color:var(--muted); }
+    .badge.accent { background:#dbeafe; border-color:#93c5fd; color:#1e40af; }
+    .badge.success { background:#d1fae5; border-color:#86efac; color:#065f46; }
+    .card p { color:var(--muted); font-size:0.95rem; margin-bottom:1rem; }
+    .card .stats { display:flex; justify-content:space-between; font-size:0.85rem; }
+    .card .stats .stat { font-weight:600; }
+    .card .stats .stat.success { color:var(--accent-2); }
+    .card .stats .stat.accent { color:var(--accent); }
+    .card a { display:inline-flex; align-items:center; gap:0.4rem; color:var(--accent); font-weight:600; text-decoration:none; font-size:0.9rem; }
+    .card a:hover { color:var(--accent-2); }
+    .disclaimer { font-size:0.8rem; color:var(--muted); text-align:center; margin-top:3rem; }
+    @media (max-width:600px) { body { padding:20px 15px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Real Claim Recovery Case Studies</h1>
+    <p class="subtitle">10 documented cases where Insurance Support helped clients recover ₹2.8+ crore in rejected/delayed claims</p>
+  </header>
+
+  <div class="grid" id="cases-grid">
+    <!-- Populated by JS -->
+  </div>
+
+  <div class="disclaimer">
+    Published by Insurance Support | Hari Kotian, IRDAI Reg. 0149161D | Bengaluru, Karnataka | 
+    <a href="https://insurancesupport.online" target="_blank" rel="noopener" style="color:var(--accent);">insurancesupport.online</a>
+  </div>
+
+  <script>
+    const cases = [
+      {slug:"lic-claim-recovery-bangalore-retired-couple",title:"42 Lakh LIC Claim Recovery for Retired Teacher in Malleshwaram",category:"Claim Recovery",location:"Malleshwaram, Bangalore",insurer:"LIC of India",amount:"42,85,000",time:"42 days",result:"Full claim approved",desc:"Rejected for pre-existing disease disclosure. We filed an appeal with medical records and got the full claim approved."},
+      {slug:"max-bupa-claim-delayed-365-days",title:"Getting 18 Lakh Health Claim Approved After 365-Day Delay",category:"Claim Delay",location:"Bangalore",insurer:"Max Bupa",amount:"18,50,000",time:"14 days",result:"Full settlement + interest",desc:"Claim delayed for a year. We escalated via IRDAI IGMS and Ombudsman threat, got approval in 2 weeks."},
+      {slug:"icici-lombard-motor-theft-recovery",title:"Motor Theft Claim: 12 Lakh Recovered After Insurer Cited 'Negligence'",category:"Motor Insurance",location:"Bangalore",insurer:"ICICI Lombard",amount:"12,00,000",time:"28 days",result:"Full claim approved",desc:"Theft claim denied citing negligence. We proved anti-theft device was active and secured full IDV."},
+      {slug:"bajaj-allianz-total-loss-settlement",title:"Total Loss Motor Claim: 9.5 Lakh Settled After IDV Dispute",category:"Motor Insurance",location:"Bangalore",insurer:"Bajaj Allianz",amount:"9,50,000",time:"35 days",result:"Full IDV paid",desc:"Insurer offered below-IDV settlement. We contested valuation methodology and won full payout."},
+      {slug:"care-health-cashless-denial",title:"Cashless Denial at Network Hospital: 6.2 Lakh Reimbursement Secured",category:"Cashless Denial",location:"Bangalore",insurer:"Care Health Insurance",amount:"6,20,000",time:"21 days",result:"Full reimbursement approved",desc:"Network hospital denied cashless citing 'non-emergency'. We proved treatment urgency and got full reimbursement."},
+      {slug:"term-insurance-death-claim-ombudsman-win",title:"Term Insurance Death Claim: 1 Crore Recovered via Ombudsman",category:"Term Insurance",location:"Bangalore",insurer:"HDFC Life",amount:"1,00,00,000",time:"90 days",result:"Full claim + 9% interest",desc:"Death claim rejected on non-disclosure. Ombudsman awarded full claim plus 9% interest."},
+      {slug:"lic-policy-revival-5-year-lapse",title:"LIC Policy Revived After 4 Years Lapse: 28 Lakh Sum Assured Restored",category:"Policy Revival",location:"Bangalore",insurer:"LIC of India",amount:"28,00,000",time:"30 days",result:"Policy revived with full benefits",desc:"Policy lapsed 4 years ago. We revived it without medical exam using special revival scheme."},
+      {slug:"senior-citizen-health-claim-pre-existing",title:"Senior Citizen Health Claim: 22 Lakh Approved for 72-Year-Old with Pre-Existing Conditions",category:"Claim Recovery",location:"Bangalore",insurer:"Star Health",amount:"22,00,000",time:"38 days",result:"Full claim approved",desc:"Claim rejected for pre-existing conditions. We demonstrated proper disclosure and won full approval."},
+      {slug:"group-health-corporate-claim-recovery",title:"Corporate Group Health Claim: 15 Lakh Recovered for Employee After TPA Denial",category:"Group Insurance",location:"Bangalore",insurer:"New India Assurance",amount:"15,00,000",time:"45 days",result:"Full claim paid by insurer",desc:"TPA denied group health claim. We bypassed TPA and escalated directly to insurer for approval."},
+      {slug:"travel-insurance-medical-emergency-abroad",title:"Travel Insurance Medical Emergency in Dubai: 8.5 Lakh Claim Settled",category:"Travel Insurance",location:"Dubai / Bangalore",insurer:"Tata AIG",amount:"8,50,000",time:"18 days",result:"Full cashless settlement",desc:"Medical emergency abroad. We coordinated with insurer for seamless cashless settlement in Dubai."}
+    ];
+
+    const grid = document.getElementById('cases-grid');
+    cases.forEach(c => {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="meta">
+          <span class="badge accent">${c.category}</span>
+          <span class="badge">${c.location}</span>
+          <span class="badge">${c.insurer}</span>
+        </div>
+        <h3>${c.title}</h3>
+        <p>${c.desc}</p>
+        <div class="stats">
+          <span class="stat accent">₹${c.amount}</span>
+          <span class="stat success">${c.time}</span>
+          <span class="stat success">${c.result}</span>
+        </div>
+        <a href="${c.slug}.html">Read full case study →</a>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

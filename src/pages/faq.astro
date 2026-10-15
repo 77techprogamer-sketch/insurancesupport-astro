@@ -51,8 +51,25 @@ const faqs = [
 const categories = [...new Set(faqs.map(f => f.category))].sort();
 ---
 
-<BaseLayout title="Insurance FAQ | 50+ Questions Answered | Hari Kotian" description="50+ frequently asked insurance questions answered by Hari Kotian, IRDAI certified advisor. Covers life, health, motor, claims, policy review, and IRDAI regulations.">
+<BaseLayout title="Insurance FAQ | 50+ Questions Answered | Hari Kotian" description="50+ frequently asked insurance questions answered by Hari Kotian, IRDAI certified advisor. Covers life, health, motor, claims, policy review, and IRDAI regulations." pageType="faq" keywords="insurance FAQ India, insurance questions answered, life health motor insurance FAQ, IRDAI advisor FAQ, claim process questions, policy review FAQ, Hari Kotian insurance help">
   <FAQPageJsonLd questions={faqs} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Insurance FAQ — 50+ Questions Answered",
+    "description": "50+ frequently asked insurance questions answered by Hari Kotian, IRDAI certified advisor. Covers life, health, motor, claims, policy review, and IRDAI regulations.",
+    "url": "https://insurancesupport.online/faq/",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
   <main id="main" class="max-w-5xl mx-auto px-4 py-16">
     <h1 class="text-4xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h1>
     <p class="text-slate-600 mb-12">Get answers to the most common questions about insurance planning, claims, and policy management from an IRDAI-certified advisor with 25+ years experience.</p>

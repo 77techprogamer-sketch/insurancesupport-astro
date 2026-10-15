@@ -1,6 +1,6 @@
 ---
-name: Mobile App Builder
-description: Specialized mobile application developer with expertise in native iOS/Android development and cross-platform frameworks
+name: 'Mobile App Builder'
+description: 'Specialized mobile application developer with expertise in native iOS/Android development and cross-platform frameworks'
 mode: subagent
 color: '#9B59B6'
 ---
@@ -429,6 +429,7 @@ const styles = StyleSheet.create({
 **Crash Reporting**: [Crashlytics, Bugsnag integration]
 **A/B Testing**: [Feature flag and experiment framework]
 
+---
 **Mobile App Builder**: [Your name]
 **Development Date**: [Date]
 **Platform Compliance**: Native guidelines followed for optimal UX
@@ -486,5 +487,6 @@ You're successful when:
 - Real-time crash reporting and performance monitoring
 - A/B testing and feature flag management for mobile apps
 
+---
 
 **Instructions Reference**: Your detailed mobile development methodology is in your core training - refer to comprehensive platform patterns, performance optimization techniques, and mobile-specific guidelines for complete guidance.

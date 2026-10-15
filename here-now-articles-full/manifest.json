@@ -1,0 +1,1658 @@
+[
+  {
+    "city": "ahmedabad",
+    "service": "health-insurance",
+    "file": "ahmedabad-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/health-insurance/"
+  },
+  {
+    "city": "ahmedabad",
+    "service": "life-insurance",
+    "file": "ahmedabad-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/life-insurance/"
+  },
+  {
+    "city": "ahmedabad",
+    "service": "motor-insurance",
+    "file": "ahmedabad-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/motor-insurance/"
+  },
+  {
+    "city": "ahmedabad",
+    "service": "travel-insurance",
+    "file": "ahmedabad-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/travel-insurance/"
+  },
+  {
+    "city": "ahmedabad",
+    "service": "claim-support",
+    "file": "ahmedabad-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/claim-support/"
+  },
+  {
+    "city": "ahmedabad",
+    "service": "policy-review",
+    "file": "ahmedabad-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/ahmedabad/policy-review/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "health-insurance",
+    "file": "bangalore-bannerghatta-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/health-insurance/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "life-insurance",
+    "file": "bangalore-bannerghatta-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/life-insurance/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "motor-insurance",
+    "file": "bangalore-bannerghatta-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/motor-insurance/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "travel-insurance",
+    "file": "bangalore-bannerghatta-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/travel-insurance/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "claim-support",
+    "file": "bangalore-bannerghatta-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/claim-support/"
+  },
+  {
+    "city": "bangalore-bannerghatta",
+    "service": "policy-review",
+    "file": "bangalore-bannerghatta-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bannerghatta/policy-review/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "health-insurance",
+    "file": "bangalore-bellandur-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/health-insurance/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "life-insurance",
+    "file": "bangalore-bellandur-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/life-insurance/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "motor-insurance",
+    "file": "bangalore-bellandur-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/motor-insurance/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "travel-insurance",
+    "file": "bangalore-bellandur-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/travel-insurance/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "claim-support",
+    "file": "bangalore-bellandur-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/claim-support/"
+  },
+  {
+    "city": "bangalore-bellandur",
+    "service": "policy-review",
+    "file": "bangalore-bellandur-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-bellandur/policy-review/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "health-insurance",
+    "file": "bangalore-devanahalli-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/health-insurance/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "life-insurance",
+    "file": "bangalore-devanahalli-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/life-insurance/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "motor-insurance",
+    "file": "bangalore-devanahalli-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/motor-insurance/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "travel-insurance",
+    "file": "bangalore-devanahalli-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/travel-insurance/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "claim-support",
+    "file": "bangalore-devanahalli-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/claim-support/"
+  },
+  {
+    "city": "bangalore-devanahalli",
+    "service": "policy-review",
+    "file": "bangalore-devanahalli-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-devanahalli/policy-review/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "health-insurance",
+    "file": "bangalore-electronic-city-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/health-insurance/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "life-insurance",
+    "file": "bangalore-electronic-city-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/life-insurance/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "motor-insurance",
+    "file": "bangalore-electronic-city-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/motor-insurance/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "travel-insurance",
+    "file": "bangalore-electronic-city-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/travel-insurance/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "claim-support",
+    "file": "bangalore-electronic-city-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/claim-support/"
+  },
+  {
+    "city": "bangalore-electronic-city",
+    "service": "policy-review",
+    "file": "bangalore-electronic-city-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-electronic-city/policy-review/"
+  },
+  {
+    "city": "bangalore-hebbal",
+    "service": "health-insurance",
+    "file": "bangalore-hebbal-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hebbal/health-insurance/"
+  },
+  {
+    "city": "bangalore-hebbal",
+    "service": "life-insurance",
+    "file": "bangalore-hebbal-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hebbal/life-insurance/"
+  },
+  {
+    "city": "bangalore-hebbal",
+    "service": "motor-insurance",
+    "file": "bangalore-hebbal-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hebbal/motor-insurance/"
+  },
+  {
+    "city": "bangalore-hebbal",
+    "service": "travel-insurance",
+    "file": "bangalore-hebbal-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hebbal/travel-insurance/"
+  },
+  {
+    "city": "bangalore-hebbal",
+    "service": "claim-support",
+    "file": "bangalore-hebbal-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hebbal/claim-support/"
+  },
+  {
+    "city": "bangalore-hebbal",
+    "service": "policy-review",
+    "file": "bangalore-hebbal-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hebbal/policy-review/"
+  },
+  {
+    "city": "bangalore-hsr-layout",
+    "service": "health-insurance",
+    "file": "bangalore-hsr-layout-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hsr-layout/health-insurance/"
+  },
+  {
+    "city": "bangalore-hsr-layout",
+    "service": "life-insurance",
+    "file": "bangalore-hsr-layout-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hsr-layout/life-insurance/"
+  },
+  {
+    "city": "bangalore-hsr-layout",
+    "service": "motor-insurance",
+    "file": "bangalore-hsr-layout-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hsr-layout/motor-insurance/"
+  },
+  {
+    "city": "bangalore-hsr-layout",
+    "service": "travel-insurance",
+    "file": "bangalore-hsr-layout-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hsr-layout/travel-insurance/"
+  },
+  {
+    "city": "bangalore-hsr-layout",
+    "service": "claim-support",
+    "file": "bangalore-hsr-layout-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hsr-layout/claim-support/"
+  },
+  {
+    "city": "bangalore-hsr-layout",
+    "service": "policy-review",
+    "file": "bangalore-hsr-layout-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-hsr-layout/policy-review/"
+  },
+  {
+    "city": "bangalore-indiranagar",
+    "service": "health-insurance",
+    "file": "bangalore-indiranagar-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-indiranagar/health-insurance/"
+  },
+  {
+    "city": "bangalore-indiranagar",
+    "service": "life-insurance",
+    "file": "bangalore-indiranagar-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-indiranagar/life-insurance/"
+  },
+  {
+    "city": "bangalore-indiranagar",
+    "service": "motor-insurance",
+    "file": "bangalore-indiranagar-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-indiranagar/motor-insurance/"
+  },
+  {
+    "city": "bangalore-indiranagar",
+    "service": "travel-insurance",
+    "file": "bangalore-indiranagar-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-indiranagar/travel-insurance/"
+  },
+  {
+    "city": "bangalore-indiranagar",
+    "service": "claim-support",
+    "file": "bangalore-indiranagar-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-indiranagar/claim-support/"
+  },
+  {
+    "city": "bangalore-indiranagar",
+    "service": "policy-review",
+    "file": "bangalore-indiranagar-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-indiranagar/policy-review/"
+  },
+  {
+    "city": "bangalore-jayanagar",
+    "service": "health-insurance",
+    "file": "bangalore-jayanagar-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jayanagar/health-insurance/"
+  },
+  {
+    "city": "bangalore-jayanagar",
+    "service": "life-insurance",
+    "file": "bangalore-jayanagar-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jayanagar/life-insurance/"
+  },
+  {
+    "city": "bangalore-jayanagar",
+    "service": "motor-insurance",
+    "file": "bangalore-jayanagar-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jayanagar/motor-insurance/"
+  },
+  {
+    "city": "bangalore-jayanagar",
+    "service": "travel-insurance",
+    "file": "bangalore-jayanagar-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jayanagar/travel-insurance/"
+  },
+  {
+    "city": "bangalore-jayanagar",
+    "service": "claim-support",
+    "file": "bangalore-jayanagar-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jayanagar/claim-support/"
+  },
+  {
+    "city": "bangalore-jayanagar",
+    "service": "policy-review",
+    "file": "bangalore-jayanagar-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jayanagar/policy-review/"
+  },
+  {
+    "city": "bangalore-jp-nagar",
+    "service": "health-insurance",
+    "file": "bangalore-jp-nagar-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jp-nagar/health-insurance/"
+  },
+  {
+    "city": "bangalore-jp-nagar",
+    "service": "life-insurance",
+    "file": "bangalore-jp-nagar-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jp-nagar/life-insurance/"
+  },
+  {
+    "city": "bangalore-jp-nagar",
+    "service": "motor-insurance",
+    "file": "bangalore-jp-nagar-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jp-nagar/motor-insurance/"
+  },
+  {
+    "city": "bangalore-jp-nagar",
+    "service": "travel-insurance",
+    "file": "bangalore-jp-nagar-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jp-nagar/travel-insurance/"
+  },
+  {
+    "city": "bangalore-jp-nagar",
+    "service": "claim-support",
+    "file": "bangalore-jp-nagar-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jp-nagar/claim-support/"
+  },
+  {
+    "city": "bangalore-jp-nagar",
+    "service": "policy-review",
+    "file": "bangalore-jp-nagar-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-jp-nagar/policy-review/"
+  },
+  {
+    "city": "bangalore-koramangala",
+    "service": "health-insurance",
+    "file": "bangalore-koramangala-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-koramangala/health-insurance/"
+  },
+  {
+    "city": "bangalore-koramangala",
+    "service": "life-insurance",
+    "file": "bangalore-koramangala-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-koramangala/life-insurance/"
+  },
+  {
+    "city": "bangalore-koramangala",
+    "service": "motor-insurance",
+    "file": "bangalore-koramangala-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-koramangala/motor-insurance/"
+  },
+  {
+    "city": "bangalore-koramangala",
+    "service": "travel-insurance",
+    "file": "bangalore-koramangala-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-koramangala/travel-insurance/"
+  },
+  {
+    "city": "bangalore-koramangala",
+    "service": "claim-support",
+    "file": "bangalore-koramangala-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-koramangala/claim-support/"
+  },
+  {
+    "city": "bangalore-koramangala",
+    "service": "policy-review",
+    "file": "bangalore-koramangala-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-koramangala/policy-review/"
+  },
+  {
+    "city": "bangalore-marathahalli",
+    "service": "health-insurance",
+    "file": "bangalore-marathahalli-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-marathahalli/health-insurance/"
+  },
+  {
+    "city": "bangalore-marathahalli",
+    "service": "life-insurance",
+    "file": "bangalore-marathahalli-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-marathahalli/life-insurance/"
+  },
+  {
+    "city": "bangalore-marathahalli",
+    "service": "motor-insurance",
+    "file": "bangalore-marathahalli-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-marathahalli/motor-insurance/"
+  },
+  {
+    "city": "bangalore-marathahalli",
+    "service": "travel-insurance",
+    "file": "bangalore-marathahalli-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-marathahalli/travel-insurance/"
+  },
+  {
+    "city": "bangalore-marathahalli",
+    "service": "claim-support",
+    "file": "bangalore-marathahalli-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-marathahalli/claim-support/"
+  },
+  {
+    "city": "bangalore-marathahalli",
+    "service": "policy-review",
+    "file": "bangalore-marathahalli-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-marathahalli/policy-review/"
+  },
+  {
+    "city": "bangalore-sarjapur",
+    "service": "health-insurance",
+    "file": "bangalore-sarjapur-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-sarjapur/health-insurance/"
+  },
+  {
+    "city": "bangalore-sarjapur",
+    "service": "life-insurance",
+    "file": "bangalore-sarjapur-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-sarjapur/life-insurance/"
+  },
+  {
+    "city": "bangalore-sarjapur",
+    "service": "motor-insurance",
+    "file": "bangalore-sarjapur-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-sarjapur/motor-insurance/"
+  },
+  {
+    "city": "bangalore-sarjapur",
+    "service": "travel-insurance",
+    "file": "bangalore-sarjapur-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-sarjapur/travel-insurance/"
+  },
+  {
+    "city": "bangalore-sarjapur",
+    "service": "claim-support",
+    "file": "bangalore-sarjapur-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-sarjapur/claim-support/"
+  },
+  {
+    "city": "bangalore-sarjapur",
+    "service": "policy-review",
+    "file": "bangalore-sarjapur-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-sarjapur/policy-review/"
+  },
+  {
+    "city": "bangalore-whitefield",
+    "service": "health-insurance",
+    "file": "bangalore-whitefield-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-whitefield/health-insurance/"
+  },
+  {
+    "city": "bangalore-whitefield",
+    "service": "life-insurance",
+    "file": "bangalore-whitefield-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-whitefield/life-insurance/"
+  },
+  {
+    "city": "bangalore-whitefield",
+    "service": "motor-insurance",
+    "file": "bangalore-whitefield-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-whitefield/motor-insurance/"
+  },
+  {
+    "city": "bangalore-whitefield",
+    "service": "travel-insurance",
+    "file": "bangalore-whitefield-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-whitefield/travel-insurance/"
+  },
+  {
+    "city": "bangalore-whitefield",
+    "service": "claim-support",
+    "file": "bangalore-whitefield-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-whitefield/claim-support/"
+  },
+  {
+    "city": "bangalore-whitefield",
+    "service": "policy-review",
+    "file": "bangalore-whitefield-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-whitefield/policy-review/"
+  },
+  {
+    "city": "bangalore-yelahanka",
+    "service": "health-insurance",
+    "file": "bangalore-yelahanka-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-yelahanka/health-insurance/"
+  },
+  {
+    "city": "bangalore-yelahanka",
+    "service": "life-insurance",
+    "file": "bangalore-yelahanka-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-yelahanka/life-insurance/"
+  },
+  {
+    "city": "bangalore-yelahanka",
+    "service": "motor-insurance",
+    "file": "bangalore-yelahanka-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-yelahanka/motor-insurance/"
+  },
+  {
+    "city": "bangalore-yelahanka",
+    "service": "travel-insurance",
+    "file": "bangalore-yelahanka-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-yelahanka/travel-insurance/"
+  },
+  {
+    "city": "bangalore-yelahanka",
+    "service": "claim-support",
+    "file": "bangalore-yelahanka-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-yelahanka/claim-support/"
+  },
+  {
+    "city": "bangalore-yelahanka",
+    "service": "policy-review",
+    "file": "bangalore-yelahanka-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bangalore-yelahanka/policy-review/"
+  },
+  {
+    "city": "bhopal",
+    "service": "health-insurance",
+    "file": "bhopal-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhopal/health-insurance/"
+  },
+  {
+    "city": "bhopal",
+    "service": "life-insurance",
+    "file": "bhopal-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhopal/life-insurance/"
+  },
+  {
+    "city": "bhopal",
+    "service": "motor-insurance",
+    "file": "bhopal-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhopal/motor-insurance/"
+  },
+  {
+    "city": "bhopal",
+    "service": "travel-insurance",
+    "file": "bhopal-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhopal/travel-insurance/"
+  },
+  {
+    "city": "bhopal",
+    "service": "claim-support",
+    "file": "bhopal-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bhopal/claim-support/"
+  },
+  {
+    "city": "bhopal",
+    "service": "policy-review",
+    "file": "bhopal-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bhopal/policy-review/"
+  },
+  {
+    "city": "bhubaneswar",
+    "service": "health-insurance",
+    "file": "bhubaneswar-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhubaneswar/health-insurance/"
+  },
+  {
+    "city": "bhubaneswar",
+    "service": "life-insurance",
+    "file": "bhubaneswar-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhubaneswar/life-insurance/"
+  },
+  {
+    "city": "bhubaneswar",
+    "service": "motor-insurance",
+    "file": "bhubaneswar-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhubaneswar/motor-insurance/"
+  },
+  {
+    "city": "bhubaneswar",
+    "service": "travel-insurance",
+    "file": "bhubaneswar-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/bhubaneswar/travel-insurance/"
+  },
+  {
+    "city": "bhubaneswar",
+    "service": "claim-support",
+    "file": "bhubaneswar-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/bhubaneswar/claim-support/"
+  },
+  {
+    "city": "bhubaneswar",
+    "service": "policy-review",
+    "file": "bhubaneswar-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/bhubaneswar/policy-review/"
+  },
+  {
+    "city": "chandigarh",
+    "service": "health-insurance",
+    "file": "chandigarh-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chandigarh/health-insurance/"
+  },
+  {
+    "city": "chandigarh",
+    "service": "life-insurance",
+    "file": "chandigarh-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chandigarh/life-insurance/"
+  },
+  {
+    "city": "chandigarh",
+    "service": "motor-insurance",
+    "file": "chandigarh-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chandigarh/motor-insurance/"
+  },
+  {
+    "city": "chandigarh",
+    "service": "travel-insurance",
+    "file": "chandigarh-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chandigarh/travel-insurance/"
+  },
+  {
+    "city": "chandigarh",
+    "service": "claim-support",
+    "file": "chandigarh-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/chandigarh/claim-support/"
+  },
+  {
+    "city": "chandigarh",
+    "service": "policy-review",
+    "file": "chandigarh-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/chandigarh/policy-review/"
+  },
+  {
+    "city": "chennai",
+    "service": "health-insurance",
+    "file": "chennai-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chennai/health-insurance/"
+  },
+  {
+    "city": "chennai",
+    "service": "life-insurance",
+    "file": "chennai-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chennai/life-insurance/"
+  },
+  {
+    "city": "chennai",
+    "service": "motor-insurance",
+    "file": "chennai-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chennai/motor-insurance/"
+  },
+  {
+    "city": "chennai",
+    "service": "travel-insurance",
+    "file": "chennai-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/chennai/travel-insurance/"
+  },
+  {
+    "city": "chennai",
+    "service": "claim-support",
+    "file": "chennai-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/chennai/claim-support/"
+  },
+  {
+    "city": "chennai",
+    "service": "policy-review",
+    "file": "chennai-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/chennai/policy-review/"
+  },
+  {
+    "city": "coimbatore",
+    "service": "health-insurance",
+    "file": "coimbatore-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/coimbatore/health-insurance/"
+  },
+  {
+    "city": "coimbatore",
+    "service": "life-insurance",
+    "file": "coimbatore-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/coimbatore/life-insurance/"
+  },
+  {
+    "city": "coimbatore",
+    "service": "motor-insurance",
+    "file": "coimbatore-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/coimbatore/motor-insurance/"
+  },
+  {
+    "city": "coimbatore",
+    "service": "travel-insurance",
+    "file": "coimbatore-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/coimbatore/travel-insurance/"
+  },
+  {
+    "city": "coimbatore",
+    "service": "claim-support",
+    "file": "coimbatore-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/coimbatore/claim-support/"
+  },
+  {
+    "city": "coimbatore",
+    "service": "policy-review",
+    "file": "coimbatore-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/coimbatore/policy-review/"
+  },
+  {
+    "city": "dehradun",
+    "service": "health-insurance",
+    "file": "dehradun-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/dehradun/health-insurance/"
+  },
+  {
+    "city": "dehradun",
+    "service": "life-insurance",
+    "file": "dehradun-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/dehradun/life-insurance/"
+  },
+  {
+    "city": "dehradun",
+    "service": "motor-insurance",
+    "file": "dehradun-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/dehradun/motor-insurance/"
+  },
+  {
+    "city": "dehradun",
+    "service": "travel-insurance",
+    "file": "dehradun-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/dehradun/travel-insurance/"
+  },
+  {
+    "city": "dehradun",
+    "service": "claim-support",
+    "file": "dehradun-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/dehradun/claim-support/"
+  },
+  {
+    "city": "dehradun",
+    "service": "policy-review",
+    "file": "dehradun-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/dehradun/policy-review/"
+  },
+  {
+    "city": "delhi-ncr",
+    "service": "health-insurance",
+    "file": "delhi-ncr-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/delhi-ncr/health-insurance/"
+  },
+  {
+    "city": "delhi-ncr",
+    "service": "life-insurance",
+    "file": "delhi-ncr-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/delhi-ncr/life-insurance/"
+  },
+  {
+    "city": "delhi-ncr",
+    "service": "motor-insurance",
+    "file": "delhi-ncr-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/delhi-ncr/motor-insurance/"
+  },
+  {
+    "city": "delhi-ncr",
+    "service": "travel-insurance",
+    "file": "delhi-ncr-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/delhi-ncr/travel-insurance/"
+  },
+  {
+    "city": "delhi-ncr",
+    "service": "claim-support",
+    "file": "delhi-ncr-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/delhi-ncr/claim-support/"
+  },
+  {
+    "city": "delhi-ncr",
+    "service": "policy-review",
+    "file": "delhi-ncr-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/delhi-ncr/policy-review/"
+  },
+  {
+    "city": "goa",
+    "service": "health-insurance",
+    "file": "goa-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/goa/health-insurance/"
+  },
+  {
+    "city": "goa",
+    "service": "life-insurance",
+    "file": "goa-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/goa/life-insurance/"
+  },
+  {
+    "city": "goa",
+    "service": "motor-insurance",
+    "file": "goa-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/goa/motor-insurance/"
+  },
+  {
+    "city": "goa",
+    "service": "travel-insurance",
+    "file": "goa-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/goa/travel-insurance/"
+  },
+  {
+    "city": "goa",
+    "service": "claim-support",
+    "file": "goa-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/goa/claim-support/"
+  },
+  {
+    "city": "goa",
+    "service": "policy-review",
+    "file": "goa-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/goa/policy-review/"
+  },
+  {
+    "city": "hosur",
+    "service": "health-insurance",
+    "file": "hosur-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hosur/health-insurance/"
+  },
+  {
+    "city": "hosur",
+    "service": "life-insurance",
+    "file": "hosur-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hosur/life-insurance/"
+  },
+  {
+    "city": "hosur",
+    "service": "motor-insurance",
+    "file": "hosur-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hosur/motor-insurance/"
+  },
+  {
+    "city": "hosur",
+    "service": "travel-insurance",
+    "file": "hosur-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hosur/travel-insurance/"
+  },
+  {
+    "city": "hosur",
+    "service": "claim-support",
+    "file": "hosur-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/hosur/claim-support/"
+  },
+  {
+    "city": "hosur",
+    "service": "policy-review",
+    "file": "hosur-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/hosur/policy-review/"
+  },
+  {
+    "city": "hyderabad",
+    "service": "health-insurance",
+    "file": "hyderabad-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hyderabad/health-insurance/"
+  },
+  {
+    "city": "hyderabad",
+    "service": "life-insurance",
+    "file": "hyderabad-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hyderabad/life-insurance/"
+  },
+  {
+    "city": "hyderabad",
+    "service": "motor-insurance",
+    "file": "hyderabad-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hyderabad/motor-insurance/"
+  },
+  {
+    "city": "hyderabad",
+    "service": "travel-insurance",
+    "file": "hyderabad-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/hyderabad/travel-insurance/"
+  },
+  {
+    "city": "hyderabad",
+    "service": "claim-support",
+    "file": "hyderabad-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/hyderabad/claim-support/"
+  },
+  {
+    "city": "hyderabad",
+    "service": "policy-review",
+    "file": "hyderabad-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/hyderabad/policy-review/"
+  },
+  {
+    "city": "indore",
+    "service": "health-insurance",
+    "file": "indore-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/indore/health-insurance/"
+  },
+  {
+    "city": "indore",
+    "service": "life-insurance",
+    "file": "indore-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/indore/life-insurance/"
+  },
+  {
+    "city": "indore",
+    "service": "motor-insurance",
+    "file": "indore-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/indore/motor-insurance/"
+  },
+  {
+    "city": "indore",
+    "service": "travel-insurance",
+    "file": "indore-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/indore/travel-insurance/"
+  },
+  {
+    "city": "indore",
+    "service": "claim-support",
+    "file": "indore-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/indore/claim-support/"
+  },
+  {
+    "city": "indore",
+    "service": "policy-review",
+    "file": "indore-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/indore/policy-review/"
+  },
+  {
+    "city": "jaipur",
+    "service": "health-insurance",
+    "file": "jaipur-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/jaipur/health-insurance/"
+  },
+  {
+    "city": "jaipur",
+    "service": "life-insurance",
+    "file": "jaipur-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/jaipur/life-insurance/"
+  },
+  {
+    "city": "jaipur",
+    "service": "motor-insurance",
+    "file": "jaipur-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/jaipur/motor-insurance/"
+  },
+  {
+    "city": "jaipur",
+    "service": "travel-insurance",
+    "file": "jaipur-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/jaipur/travel-insurance/"
+  },
+  {
+    "city": "jaipur",
+    "service": "claim-support",
+    "file": "jaipur-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/jaipur/claim-support/"
+  },
+  {
+    "city": "jaipur",
+    "service": "policy-review",
+    "file": "jaipur-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/jaipur/policy-review/"
+  },
+  {
+    "city": "kochi",
+    "service": "health-insurance",
+    "file": "kochi-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kochi/health-insurance/"
+  },
+  {
+    "city": "kochi",
+    "service": "life-insurance",
+    "file": "kochi-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kochi/life-insurance/"
+  },
+  {
+    "city": "kochi",
+    "service": "motor-insurance",
+    "file": "kochi-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kochi/motor-insurance/"
+  },
+  {
+    "city": "kochi",
+    "service": "travel-insurance",
+    "file": "kochi-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kochi/travel-insurance/"
+  },
+  {
+    "city": "kochi",
+    "service": "claim-support",
+    "file": "kochi-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/kochi/claim-support/"
+  },
+  {
+    "city": "kochi",
+    "service": "policy-review",
+    "file": "kochi-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/kochi/policy-review/"
+  },
+  {
+    "city": "kolkata",
+    "service": "health-insurance",
+    "file": "kolkata-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kolkata/health-insurance/"
+  },
+  {
+    "city": "kolkata",
+    "service": "life-insurance",
+    "file": "kolkata-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kolkata/life-insurance/"
+  },
+  {
+    "city": "kolkata",
+    "service": "motor-insurance",
+    "file": "kolkata-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kolkata/motor-insurance/"
+  },
+  {
+    "city": "kolkata",
+    "service": "travel-insurance",
+    "file": "kolkata-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/kolkata/travel-insurance/"
+  },
+  {
+    "city": "kolkata",
+    "service": "claim-support",
+    "file": "kolkata-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/kolkata/claim-support/"
+  },
+  {
+    "city": "kolkata",
+    "service": "policy-review",
+    "file": "kolkata-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/kolkata/policy-review/"
+  },
+  {
+    "city": "lucknow",
+    "service": "health-insurance",
+    "file": "lucknow-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/lucknow/health-insurance/"
+  },
+  {
+    "city": "lucknow",
+    "service": "life-insurance",
+    "file": "lucknow-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/lucknow/life-insurance/"
+  },
+  {
+    "city": "lucknow",
+    "service": "motor-insurance",
+    "file": "lucknow-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/lucknow/motor-insurance/"
+  },
+  {
+    "city": "lucknow",
+    "service": "travel-insurance",
+    "file": "lucknow-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/lucknow/travel-insurance/"
+  },
+  {
+    "city": "lucknow",
+    "service": "claim-support",
+    "file": "lucknow-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/lucknow/claim-support/"
+  },
+  {
+    "city": "lucknow",
+    "service": "policy-review",
+    "file": "lucknow-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/lucknow/policy-review/"
+  },
+  {
+    "city": "ludhiana",
+    "service": "health-insurance",
+    "file": "ludhiana-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ludhiana/health-insurance/"
+  },
+  {
+    "city": "ludhiana",
+    "service": "life-insurance",
+    "file": "ludhiana-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ludhiana/life-insurance/"
+  },
+  {
+    "city": "ludhiana",
+    "service": "motor-insurance",
+    "file": "ludhiana-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ludhiana/motor-insurance/"
+  },
+  {
+    "city": "ludhiana",
+    "service": "travel-insurance",
+    "file": "ludhiana-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ludhiana/travel-insurance/"
+  },
+  {
+    "city": "ludhiana",
+    "service": "claim-support",
+    "file": "ludhiana-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/ludhiana/claim-support/"
+  },
+  {
+    "city": "ludhiana",
+    "service": "policy-review",
+    "file": "ludhiana-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/ludhiana/policy-review/"
+  },
+  {
+    "city": "madurai",
+    "service": "health-insurance",
+    "file": "madurai-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/madurai/health-insurance/"
+  },
+  {
+    "city": "madurai",
+    "service": "life-insurance",
+    "file": "madurai-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/madurai/life-insurance/"
+  },
+  {
+    "city": "madurai",
+    "service": "motor-insurance",
+    "file": "madurai-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/madurai/motor-insurance/"
+  },
+  {
+    "city": "madurai",
+    "service": "travel-insurance",
+    "file": "madurai-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/madurai/travel-insurance/"
+  },
+  {
+    "city": "madurai",
+    "service": "claim-support",
+    "file": "madurai-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/madurai/claim-support/"
+  },
+  {
+    "city": "madurai",
+    "service": "policy-review",
+    "file": "madurai-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/madurai/policy-review/"
+  },
+  {
+    "city": "mangalore",
+    "service": "health-insurance",
+    "file": "mangalore-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mangalore/health-insurance/"
+  },
+  {
+    "city": "mangalore",
+    "service": "life-insurance",
+    "file": "mangalore-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mangalore/life-insurance/"
+  },
+  {
+    "city": "mangalore",
+    "service": "motor-insurance",
+    "file": "mangalore-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mangalore/motor-insurance/"
+  },
+  {
+    "city": "mangalore",
+    "service": "travel-insurance",
+    "file": "mangalore-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mangalore/travel-insurance/"
+  },
+  {
+    "city": "mangalore",
+    "service": "claim-support",
+    "file": "mangalore-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/mangalore/claim-support/"
+  },
+  {
+    "city": "mangalore",
+    "service": "policy-review",
+    "file": "mangalore-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/mangalore/policy-review/"
+  },
+  {
+    "city": "mumbai",
+    "service": "health-insurance",
+    "file": "mumbai-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mumbai/health-insurance/"
+  },
+  {
+    "city": "mumbai",
+    "service": "life-insurance",
+    "file": "mumbai-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mumbai/life-insurance/"
+  },
+  {
+    "city": "mumbai",
+    "service": "motor-insurance",
+    "file": "mumbai-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mumbai/motor-insurance/"
+  },
+  {
+    "city": "mumbai",
+    "service": "travel-insurance",
+    "file": "mumbai-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mumbai/travel-insurance/"
+  },
+  {
+    "city": "mumbai",
+    "service": "claim-support",
+    "file": "mumbai-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/mumbai/claim-support/"
+  },
+  {
+    "city": "mumbai",
+    "service": "policy-review",
+    "file": "mumbai-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/mumbai/policy-review/"
+  },
+  {
+    "city": "mysore",
+    "service": "health-insurance",
+    "file": "mysore-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mysore/health-insurance/"
+  },
+  {
+    "city": "mysore",
+    "service": "life-insurance",
+    "file": "mysore-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mysore/life-insurance/"
+  },
+  {
+    "city": "mysore",
+    "service": "motor-insurance",
+    "file": "mysore-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mysore/motor-insurance/"
+  },
+  {
+    "city": "mysore",
+    "service": "travel-insurance",
+    "file": "mysore-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/mysore/travel-insurance/"
+  },
+  {
+    "city": "mysore",
+    "service": "claim-support",
+    "file": "mysore-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/mysore/claim-support/"
+  },
+  {
+    "city": "mysore",
+    "service": "policy-review",
+    "file": "mysore-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/mysore/policy-review/"
+  },
+  {
+    "city": "nagpur",
+    "service": "health-insurance",
+    "file": "nagpur-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nagpur/health-insurance/"
+  },
+  {
+    "city": "nagpur",
+    "service": "life-insurance",
+    "file": "nagpur-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nagpur/life-insurance/"
+  },
+  {
+    "city": "nagpur",
+    "service": "motor-insurance",
+    "file": "nagpur-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nagpur/motor-insurance/"
+  },
+  {
+    "city": "nagpur",
+    "service": "travel-insurance",
+    "file": "nagpur-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nagpur/travel-insurance/"
+  },
+  {
+    "city": "nagpur",
+    "service": "claim-support",
+    "file": "nagpur-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/nagpur/claim-support/"
+  },
+  {
+    "city": "nagpur",
+    "service": "policy-review",
+    "file": "nagpur-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/nagpur/policy-review/"
+  },
+  {
+    "city": "nashik",
+    "service": "health-insurance",
+    "file": "nashik-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nashik/health-insurance/"
+  },
+  {
+    "city": "nashik",
+    "service": "life-insurance",
+    "file": "nashik-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nashik/life-insurance/"
+  },
+  {
+    "city": "nashik",
+    "service": "motor-insurance",
+    "file": "nashik-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nashik/motor-insurance/"
+  },
+  {
+    "city": "nashik",
+    "service": "travel-insurance",
+    "file": "nashik-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/nashik/travel-insurance/"
+  },
+  {
+    "city": "nashik",
+    "service": "claim-support",
+    "file": "nashik-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/nashik/claim-support/"
+  },
+  {
+    "city": "nashik",
+    "service": "policy-review",
+    "file": "nashik-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/nashik/policy-review/"
+  },
+  {
+    "city": "pune",
+    "service": "health-insurance",
+    "file": "pune-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/pune/health-insurance/"
+  },
+  {
+    "city": "pune",
+    "service": "life-insurance",
+    "file": "pune-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/pune/life-insurance/"
+  },
+  {
+    "city": "pune",
+    "service": "motor-insurance",
+    "file": "pune-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/pune/motor-insurance/"
+  },
+  {
+    "city": "pune",
+    "service": "travel-insurance",
+    "file": "pune-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/pune/travel-insurance/"
+  },
+  {
+    "city": "pune",
+    "service": "claim-support",
+    "file": "pune-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/pune/claim-support/"
+  },
+  {
+    "city": "pune",
+    "service": "policy-review",
+    "file": "pune-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/pune/policy-review/"
+  },
+  {
+    "city": "surat",
+    "service": "health-insurance",
+    "file": "surat-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/surat/health-insurance/"
+  },
+  {
+    "city": "surat",
+    "service": "life-insurance",
+    "file": "surat-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/surat/life-insurance/"
+  },
+  {
+    "city": "surat",
+    "service": "motor-insurance",
+    "file": "surat-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/surat/motor-insurance/"
+  },
+  {
+    "city": "surat",
+    "service": "travel-insurance",
+    "file": "surat-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/surat/travel-insurance/"
+  },
+  {
+    "city": "surat",
+    "service": "claim-support",
+    "file": "surat-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/surat/claim-support/"
+  },
+  {
+    "city": "surat",
+    "service": "policy-review",
+    "file": "surat-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/surat/policy-review/"
+  },
+  {
+    "city": "thane",
+    "service": "health-insurance",
+    "file": "thane-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thane/health-insurance/"
+  },
+  {
+    "city": "thane",
+    "service": "life-insurance",
+    "file": "thane-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thane/life-insurance/"
+  },
+  {
+    "city": "thane",
+    "service": "motor-insurance",
+    "file": "thane-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thane/motor-insurance/"
+  },
+  {
+    "city": "thane",
+    "service": "travel-insurance",
+    "file": "thane-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thane/travel-insurance/"
+  },
+  {
+    "city": "thane",
+    "service": "claim-support",
+    "file": "thane-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/thane/claim-support/"
+  },
+  {
+    "city": "thane",
+    "service": "policy-review",
+    "file": "thane-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/thane/policy-review/"
+  },
+  {
+    "city": "thiruvananthapuram",
+    "service": "health-insurance",
+    "file": "thiruvananthapuram-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thiruvananthapuram/health-insurance/"
+  },
+  {
+    "city": "thiruvananthapuram",
+    "service": "life-insurance",
+    "file": "thiruvananthapuram-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thiruvananthapuram/life-insurance/"
+  },
+  {
+    "city": "thiruvananthapuram",
+    "service": "motor-insurance",
+    "file": "thiruvananthapuram-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thiruvananthapuram/motor-insurance/"
+  },
+  {
+    "city": "thiruvananthapuram",
+    "service": "travel-insurance",
+    "file": "thiruvananthapuram-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thiruvananthapuram/travel-insurance/"
+  },
+  {
+    "city": "thiruvananthapuram",
+    "service": "claim-support",
+    "file": "thiruvananthapuram-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/thiruvananthapuram/claim-support/"
+  },
+  {
+    "city": "thiruvananthapuram",
+    "service": "policy-review",
+    "file": "thiruvananthapuram-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/thiruvananthapuram/policy-review/"
+  },
+  {
+    "city": "thrissur",
+    "service": "health-insurance",
+    "file": "thrissur-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thrissur/health-insurance/"
+  },
+  {
+    "city": "thrissur",
+    "service": "life-insurance",
+    "file": "thrissur-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thrissur/life-insurance/"
+  },
+  {
+    "city": "thrissur",
+    "service": "motor-insurance",
+    "file": "thrissur-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thrissur/motor-insurance/"
+  },
+  {
+    "city": "thrissur",
+    "service": "travel-insurance",
+    "file": "thrissur-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/thrissur/travel-insurance/"
+  },
+  {
+    "city": "thrissur",
+    "service": "claim-support",
+    "file": "thrissur-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/thrissur/claim-support/"
+  },
+  {
+    "city": "thrissur",
+    "service": "policy-review",
+    "file": "thrissur-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/thrissur/policy-review/"
+  },
+  {
+    "city": "ujjain",
+    "service": "health-insurance",
+    "file": "ujjain-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ujjain/health-insurance/"
+  },
+  {
+    "city": "ujjain",
+    "service": "life-insurance",
+    "file": "ujjain-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ujjain/life-insurance/"
+  },
+  {
+    "city": "ujjain",
+    "service": "motor-insurance",
+    "file": "ujjain-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ujjain/motor-insurance/"
+  },
+  {
+    "city": "ujjain",
+    "service": "travel-insurance",
+    "file": "ujjain-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/ujjain/travel-insurance/"
+  },
+  {
+    "city": "ujjain",
+    "service": "claim-support",
+    "file": "ujjain-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/ujjain/claim-support/"
+  },
+  {
+    "city": "ujjain",
+    "service": "policy-review",
+    "file": "ujjain-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/ujjain/policy-review/"
+  },
+  {
+    "city": "vadodara",
+    "service": "health-insurance",
+    "file": "vadodara-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vadodara/health-insurance/"
+  },
+  {
+    "city": "vadodara",
+    "service": "life-insurance",
+    "file": "vadodara-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vadodara/life-insurance/"
+  },
+  {
+    "city": "vadodara",
+    "service": "motor-insurance",
+    "file": "vadodara-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vadodara/motor-insurance/"
+  },
+  {
+    "city": "vadodara",
+    "service": "travel-insurance",
+    "file": "vadodara-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vadodara/travel-insurance/"
+  },
+  {
+    "city": "vadodara",
+    "service": "claim-support",
+    "file": "vadodara-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/vadodara/claim-support/"
+  },
+  {
+    "city": "vadodara",
+    "service": "policy-review",
+    "file": "vadodara-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/vadodara/policy-review/"
+  },
+  {
+    "city": "vellore",
+    "service": "health-insurance",
+    "file": "vellore-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vellore/health-insurance/"
+  },
+  {
+    "city": "vellore",
+    "service": "life-insurance",
+    "file": "vellore-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vellore/life-insurance/"
+  },
+  {
+    "city": "vellore",
+    "service": "motor-insurance",
+    "file": "vellore-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vellore/motor-insurance/"
+  },
+  {
+    "city": "vellore",
+    "service": "travel-insurance",
+    "file": "vellore-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vellore/travel-insurance/"
+  },
+  {
+    "city": "vellore",
+    "service": "claim-support",
+    "file": "vellore-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/vellore/claim-support/"
+  },
+  {
+    "city": "vellore",
+    "service": "policy-review",
+    "file": "vellore-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/vellore/policy-review/"
+  },
+  {
+    "city": "vizag",
+    "service": "health-insurance",
+    "file": "vizag-health-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vizag/health-insurance/"
+  },
+  {
+    "city": "vizag",
+    "service": "life-insurance",
+    "file": "vizag-life-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vizag/life-insurance/"
+  },
+  {
+    "city": "vizag",
+    "service": "motor-insurance",
+    "file": "vizag-motor-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vizag/motor-insurance/"
+  },
+  {
+    "city": "vizag",
+    "service": "travel-insurance",
+    "file": "vizag-travel-insurance.html",
+    "canonical": "https://insurancesupport.online/locations/vizag/travel-insurance/"
+  },
+  {
+    "city": "vizag",
+    "service": "claim-support",
+    "file": "vizag-claim-support.html",
+    "canonical": "https://insurancesupport.online/locations/vizag/claim-support/"
+  },
+  {
+    "city": "vizag",
+    "service": "policy-review",
+    "file": "vizag-policy-review.html",
+    "canonical": "https://insurancesupport.online/locations/vizag/policy-review/"
+  }
+]

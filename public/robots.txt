@@ -3,19 +3,71 @@ Allow: /
 
 Sitemap: https://insurancesupport.online/sitemap.xml
 
-# Disallow crawling of admin pages
+# Admin and system paths only
 Disallow: /admin/
 Disallow: /cgi-bin/
 
-# Allow indexing of public content
+# Public content paths
+Allow: /
 Allow: /blog/
 Allow: /services/
 Allow: /cities/
+Allow: /locations/
+Allow: /compare/
+Allow: /case-studies/
+Allow: /lead-magnets/
+Allow: /resources/
+Allow: /support/
+Allow: /tools/
+Allow: /faq/
+Allow: /about/
+Allow: /contact/
+Allow: /policy-review-checklist/
+Allow: /terms
+Allow: /privacy-policy
+Allow: /disclaimer
+Allow: /expert-insights/
 
 # Google AdsBot
 User-agent: AdsBot-Google
 Allow: /
 
-# Google Mobile AdsBot 
+# Google Mobile AdsBot
 User-agent: AdsBot-Google-Mobile
 Allow: /
+
+# AI Search Crawlers (CRITICAL - without these, ChatGPT Search, Perplexity, Claude, etc. cannot index your site)
+User-agent: OAI-SearchBot          # ChatGPT Search
+Allow: /
+User-agent: ChatGPT-User           # ChatGPT research mode
+Allow: /
+User-agent: PerplexityBot          # Perplexity crawler
+Allow: /
+User-agent: Perplexity-User        # Perplexity direct queries
+Allow: /
+User-agent: ClaudeBot              # Claude web search
+Allow: /
+User-agent: Claude-Web             # Claude web fetch
+Allow: /
+User-agent: Applebot-Extended      # Apple Intelligence
+Allow: /
+User-agent: Amazonbot              # Amazon Alexa
+Allow: /
+User-agent: Bytespider             # ByteDance/TikTok
+Allow: /
+User-agent: YandexBot              # Yandex (uses IndexNow)
+Allow: /
+User-agent: meta-externalagent     # Meta AI
+Allow: /
+User-agent: FacebookBot            # Facebook/Meta
+Allow: /
+User-agent: Omgilibot              # Omgili
+Allow: /
+User-agent: Google-Extended        # Google AI (Bard/Vertex)
+Allow: /
+
+# Content-Signal (agent-readiness check) — tells AI engines how content may be used
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+# IndexNow key for instant Bing/Yandex recrawl
+IndexNow: 6f345ded6a94be2d28ae371306ffcd79

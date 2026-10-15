@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Insurance Support Blog</title>
+    <link>https://insurancesupport.online/</link>
+    <description>Expert insurance guides, claim tips, and IRDAI updates.</description>
+    <language>en-us</language>
+    <!-- Items will be added automatically by the site build; placeholder for now -->
+  </channel>
+</rss>

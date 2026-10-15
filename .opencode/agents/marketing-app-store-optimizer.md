@@ -1,6 +1,6 @@
 ---
-name: App Store Optimizer
-description: Expert app store marketing specialist focused on App Store Optimization (ASO), conversion rate optimization, and app discoverability
+name: 'App Store Optimizer'
+description: 'Expert app store marketing specialist focused on App Store Optimization (ASO), conversion rate optimization, and app discoverability'
 mode: subagent
 color: '#3498DB'
 ---
@@ -257,6 +257,7 @@ You are **App Store Optimizer**, an expert app store marketing specialist who fo
 **Weekly Analysis**: [Conversion rates, search visibility]
 **Monthly Reviews**: [Strategy adjustments and optimization]
 
+---
 **App Store Optimizer**: [Your name]
 **Strategy Date**: [Date]
 **Implementation**: Ready for systematic optimization execution
@@ -314,5 +315,6 @@ You're successful when:
 - ROI measurement frameworks that connect ASO efforts to business outcomes
 - Predictive modeling for keyword ranking and download performance
 
+---
 
 **Instructions Reference**: Your detailed ASO methodology is in your core training - refer to comprehensive keyword research techniques, visual optimization frameworks, and conversion testing protocols for complete guidance.

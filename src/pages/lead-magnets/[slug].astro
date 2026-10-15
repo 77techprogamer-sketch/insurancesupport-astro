@@ -16,12 +16,17 @@ if (!magnet) {
   throw new Error(`Lead magnet not found: ${slug}`);
 }
 const pageUrl = `https://insurancesupport.online/lead-magnets/${magnet.slug}`;
+
+const magnetBrandlessTitle = magnet.title.replace(/\s*\|\s*Free.*$/, '').trim();
+const magnetTitle = `${magnetBrandlessTitle} | Free Insurance Resource | Insurance Support`;
+const magnetDescription = magnet.description;
+const magnetKeywords = magnet.keywords || `${magnetBrandlessTitle.toLowerCase().replace(/\s+/g, '-')}, free insurance checklist India, insurance claim documents, insurance resource}`;
 ---
 
 <LeadMagnetLayout
-  title={magnet.title}
-  description={magnet.description}
-  keywords={magnet.keywords}
+  title={magnetTitle}
+  description={magnetDescription}
+  keywords={magnetKeywords}
   canonical={pageUrl}
 >
   <!-- Hero -->

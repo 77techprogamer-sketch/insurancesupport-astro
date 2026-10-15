@@ -5,7 +5,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="About Hari Kotian | Insurance Support"
   description="Hari Kotian leads Insurance Support, a Bengaluru-based insurance guidance and claim assistance service."
   canonical="https://insurancesupport.online/about/"
+  keywords="about Hari Kotian insurance advisor, IRDAI registration 0149161D, Insurance Support Bengaluru, insurance claim assistance advisor"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "About Hari Kotian — Insurance Support",
+    "description": "Hari Kotian leads Insurance Support, a Bengaluru-based insurance guidance and claim assistance service.",
+    "url": "https://insurancesupport.online/about-hari-kotian/",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://insurancesupport.online/claim-recovery/",
+      "name": "Insurance Claim Recovery Hub"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://insurancesupport.online/about-hari-kotian/#person",
+      "name": "Hari Kotian",
+      "jobTitle": "IRDAI Certified Insurance Advisor"
+    }
+  })} />
   <main id="main" class="max-w-3xl mx-auto px-4 py-16">
     <h1 class="text-3xl font-bold text-slate-900 mb-4">About Hari Kotian</h1>
     <p class="text-lg text-slate-700 mb-6">Hari Kotian (IRDAI registration number 0149161D) leads Insurance Support, which provides insurance guidance and claim assistance from Bengaluru.</p>
