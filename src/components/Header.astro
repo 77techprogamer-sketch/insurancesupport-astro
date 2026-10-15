@@ -9,7 +9,7 @@ import { formatLabel } from '@/utils/formatText';
 <div class="w-full sticky top-0 z-50" id="site-header">
   <TopNotificationBar />
   <!-- Enhanced header with glass effect and subtle border glow */
-  <header class="w-full bg-white/90 backdrop-blur-xl shadow-sm border-b border-slate-200/50 transition-shadow duration-300">
+  <header class="w-full bg-[#0a0a0a]/88 backdrop-blur-xl shadow-sm border-b border-[rgba(255,255,255,0.10)] transition-shadow duration-300">
     <div class="container mx-auto px-4 h-16 flex justify-between items-center">
 
       <!-- Logo with enhanced styling */
@@ -18,7 +18,7 @@ import { formatLabel } from '@/utils/formatText';
                 <Image src="/logo.png" alt="Insurance Support" width={40} height={40} class="object-cover" loading="eager" fetchpriority="high" />
                 <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-xl"></div>
               </div>
-              <span class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors duration-200">
+              <span class="text-xl font-bold tracking-tight text-white group-hover:text-[#10b981] transition-colors duration-200">
                 Insurance Support
               </span>
             </a>
@@ -26,44 +26,44 @@ import { formatLabel } from '@/utils/formatText';
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
         <!-- Google Rating Badge -->
-        <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-sm font-medium text-amber-600 hover:text-amber-700 hover:bg-amber-50 px-3 py-1.5 rounded-full transition-all duration-200">
+        <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-sm font-medium text-[#10b981] hover:text-[#34d399] hover:bg-[rgba(16,185,129,0.10)] px-3 py-1.5 rounded-full transition-all duration-200">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <span>Google Reviews</span>
         </a>
 
         <!-- Services Dropdown with enhanced styling -->
         <div class="relative group">
-          <button class="flex items-center gap-1.5 text-slate-700 hover:text-blue-600 transition-colors py-1" aria-label="Services offered" aria-expanded="false" aria-haspopup="true">
+          <button class="flex items-center gap-1.5 text-[rgba(255,255,255,0.78)] hover:text-[#10b981] transition-colors py-1" aria-label="Services offered" aria-expanded="false" aria-haspopup="true">
             Services
             <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          <div class="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-slate-100 p-1.5 z-10 hidden group-hover:block group-focus-within:block transition-all duration-200 group-hover:shadow-xl" role="menu" style="animation: fadeIn 0.2s ease-out;">
+          <div class="absolute left-0 mt-2 w-56 bg-[#0d0f0e] rounded-xl shadow-lg border border-[rgba(255,255,255,0.12)] p-1.5 z-10 hidden group-hover:block group-focus-within:block transition-all duration-200 group-hover:shadow-xl" role="menu" style="animation: fadeIn 0.2s ease-out;">
             {[
               "life_insurance", "health_insurance", "term_insurance", "motor_insurance", 
               "sme_insurance", "travel_insurance", "pension_plans", "ulip_plans"
             ].map((key) => (
-              <a href={`/services/${slugify(key)}`} class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 group/link" role="menuitem" style="padding-left: 12px;">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover/link:bg-blue-500 transition-colors duration-200"></span>
+              <a href={`/services/${slugify(key)}`} class="flex items-center gap-3 px-4 py-2.5 text-sm text-[rgba(255,255,255,0.72)] hover:bg-[rgba(16,185,129,0.12)] hover:text-[#34d399] rounded-lg transition-all duration-200 group/link" role="menuitem" style="padding-left: 12px;">
+                <span class="w-1.5 h-1.5 rounded-full bg-[rgba(255,255,255,0.30)] group-hover/link:bg-[#10b981] transition-colors duration-200"></span>
                 {formatLabel(key)}
               </a>
             ))}
           </div>
         </div>
 
-        <a href="/claim-recovery" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-all duration-200">Claim Help</a>
-        <a href="/support" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-all duration-200">Support</a>
-        <a href="/resources" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-all duration-200">Resources</a>
-        <a href="/blog" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-all duration-200">Blog</a>
-        <a href="/about" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-all duration-200">About</a>
+        <a href="/claim-recovery" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Claim Help</a>
+        <a href="/support" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Support</a>
+        <a href="/resources" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Resources</a>
+        <a href="/blog" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Blog</a>
+        <a href="/about" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">About</a>
 
-        <div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+        <div class="flex items-center gap-3 pl-4 border-l border-[rgba(255,255,255,0.14)]">
           <!-- Search Icon with enhanced hover -->
-          <a href="/search" class="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200" aria-label="Search">
+          <a href="/search" class="p-2 text-[rgba(255,255,255,0.6)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] rounded-lg transition-all duration-200" aria-label="Search">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
           </a>
 
           <!-- Enhanced CTA button -->
-          <a href="/contact" class="flex items-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-900 px-5 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 active:scale-95" style="background: linear-gradient(135deg, #f59e0b, #fbbf24, #f97316); background-size: 200% 200%;" onmouseover="this.style.backgroundPosition='100% 50%'" onmouseout="this.style.backgroundPosition='0% 50%'">
+          <a href="/contact" class="flex items-center gap-2 bg-gradient-to-r from-[#10b981] to-[#047857] text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md shadow-[rgba(16,185,129,0.30)] hover:shadow-xl hover:shadow-[rgba(16,185,129,0.45)] hover:scale-105 active:scale-95" style="background: linear-gradient(135deg, #10b981, #047857); background-size: 200% 200%;" onmouseover="this.style.backgroundPosition='100% 50%'" onmouseout="this.style.backgroundPosition='0% 50%'">
             Contact
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
@@ -71,7 +71,7 @@ import { formatLabel } from '@/utils/formatText';
       </nav>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="block lg:hidden p-2 text-slate-600" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-btn" class="block lg:hidden p-2 text-[rgba(255,255,255,0.85)]" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
@@ -80,20 +80,20 @@ import { formatLabel } from '@/utils/formatText';
 
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 lg:hidden hidden z-40 transition-opacity duration-300" aria-hidden="true" role="dialog" aria-modal="true">
-  <div id="mobile-menu" class="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl transform transition-transform duration-300 ease-out translate-x-full lg:hidden" aria-label="Mobile menu">
-    <div class="p-4 border-b border-slate-100 flex justify-between items-center">
-      <h2 class="text-lg font-bold text-slate-900">Menu</h2>
-      <button id="mobile-menu-close" class="p-2 text-slate-500 hover:text-slate-700 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Close menu">
+  <div id="mobile-menu" class="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-[#0a0a0a] border-l border-[rgba(255,255,255,0.12)] shadow-2xl transform transition-transform duration-300 ease-out translate-x-full lg:hidden" aria-label="Mobile menu">
+    <div class="p-4 border-b border-[rgba(255,255,255,0.10)] flex justify-between items-center">
+      <h2 class="text-lg font-bold text-white">Menu</h2>
+      <button id="mobile-menu-close" class="p-2 text-[rgba(255,255,255,0.6)] hover:text-white rounded-lg hover:bg-white/10 transition-colors" aria-label="Close menu">
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
     </div>
     <nav class="p-4 space-y-2">
-      <a href="/services" class="block p-3 hover:bg-blue-50 rounded-lg">Services</a>
-      <a href="/claim-recovery" class="block p-3 hover:bg-blue-50 rounded-lg">Claim Help</a>
-      <a href="/support" class="block p-3 hover:bg-blue-50 rounded-lg">Support</a>
-      <a href="/blog" class="block p-3 hover:bg-blue-50 rounded-lg">Blog</a>
-      <a href="/search" class="block p-3 hover:bg-blue-50 rounded-lg">Search</a>
-      <a href="/contact" class="block p-3 bg-blue-600 text-white rounded-lg text-center font-bold">Contact</a>
+      <a href="/services" class="block p-3 text-[rgba(255,255,255,0.8)] hover:bg-white/[0.06] hover:text-[#10b981] rounded-lg transition-colors">Services</a>
+      <a href="/claim-recovery" class="block p-3 text-[rgba(255,255,255,0.8)] hover:bg-white/[0.06] hover:text-[#10b981] rounded-lg transition-colors">Claim Help</a>
+      <a href="/support" class="block p-3 text-[rgba(255,255,255,0.8)] hover:bg-white/[0.06] hover:text-[#10b981] rounded-lg transition-colors">Support</a>
+      <a href="/blog" class="block p-3 text-[rgba(255,255,255,0.8)] hover:bg-white/[0.06] hover:text-[#10b981] rounded-lg transition-colors">Blog</a>
+      <a href="/search" class="block p-3 text-[rgba(255,255,255,0.8)] hover:bg-white/[0.06] hover:text-[#10b981] rounded-lg transition-colors">Search</a>
+      <a href="/contact" class="block p-3 bg-gradient-to-r from-[#10b981] to-[#047857] text-white rounded-lg text-center font-bold">Contact</a>
     </nav>
   </div>
 </div>

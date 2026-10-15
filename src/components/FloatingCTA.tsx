@@ -37,7 +37,7 @@ export default function FloatingCTA() {
             href="/contact"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold rounded-full py-2.5 px-4 shadow-[0_4px_20px_rgba(234,179,8,0.4)] transition-all flex items-center justify-center gap-2 group text-sm"
+            className="bg-gradient-to-r from-[#10b981] to-[#047857] hover:from-[#0d9f6a] hover:to-[#046c4e] text-white font-bold rounded-full py-2.5 px-4 shadow-[0_4px_20px_rgba(16,185,129,0.40)] transition-all flex items-center justify-center gap-2 group text-sm border border-[rgba(255,255,255,0.16)]"
           >
             <span className="whitespace-nowrap">Get a Quote</span>
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -49,7 +49,7 @@ export default function FloatingCTA() {
             aria-label="Call us"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-[0_4px_20px_rgba(0,0,0,0.2)] transition-all flex items-center justify-center"
+            className="bg-[rgba(255,255,255,0.10)] hover:bg-[rgba(255,255,255,0.20)] text-white rounded-full p-4 shadow-[0_4px_20px_rgba(0,0,0,0.35)] border border-[rgba(255,255,255,0.22)] backdrop-blur-md transition-all flex items-center justify-center"
           >
             <Phone className="h-5 w-5" aria-hidden="true" />
           </motion.a>

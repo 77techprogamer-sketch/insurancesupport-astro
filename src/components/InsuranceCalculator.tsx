@@ -166,13 +166,13 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
 
   return (
     <div
-      className={`bg-gradient-to-br from-white to-blue-50 rounded-3xl border border-blue-100 shadow-2xl overflow-hidden ${className}`}
+      className={`bg-gradient-to-br from-[#0e1110] to-[#0a0a0a] rounded-3xl border border-[rgba(255,255,255,0.10)] shadow-2xl overflow-hidden ${className}`}
     >
       <div className="p-6 md:p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Policy Type Selection */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Policy Type</label>
+            <label className="block text-sm font-medium text-[rgba(255,255,255,0.7)] mb-2">Policy Type</label>
             <div className="grid grid-cols-2 gap-2">
               {([
                 { val: 'life', label: 'Life' },
@@ -188,8 +188,8 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                   }}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                     policyType === p.val
-                      ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      ? 'bg-gradient-to-r from-[#10b981] to-[#047857] text-white shadow-md shadow-[0_4px_14px_rgba(16,185,129,0.3)]'
+                      : 'bg-[rgba(255,255,255,0.06)] text-[rgba(255,255,255,0.7)] hover:bg-[rgba(255,255,255,0.12)] hover:text-white'
                   }`}
                 >
                   {p.label}
@@ -200,7 +200,7 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
 
           {/* Age Slider */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Age</label>
+            <label className="block text-sm font-medium text-[rgba(255,255,255,0.7)] mb-2">Age</label>
             <div className="flex items-center gap-4">
               <input
                 type="range"
@@ -208,19 +208,19 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                 max="80"
                 value={age}
                 onChange={(e) => setAge(parseInt(e.target.value))}
-                className="w-full h-2 bg-gradient-to-r from-blue-200 to-blue-400 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-2 bg-gradient-to-r from-[#10b981]/40 to-[#10b981] rounded-lg appearance-none cursor-pointer"
               />
-              <span className="text-slate-900 font-medium w-12 text-right">{age}</span>
+              <span className="text-white font-medium w-12 text-right">{age}</span>
             </div>
           </div>
 
           {/* Coverage / SA Amount */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">
+            <label className="block text-sm font-medium text-[rgba(255,255,255,0.7)] mb-2">
               {policyType === 'motor' ? 'Car Value (₹)' : 'Coverage Amount (₹)'}
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">₹</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[rgba(255,255,255,0.5)]">₹</span>
               <input
                 type="number"
                 min={policyType === 'motor' ? 100000 : 100000}
@@ -232,14 +232,14 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                     ? setCarValue(parseInt(e.target.value) || 1000000)
                     : setCoverage(parseInt(e.target.value) || 500000)
                 }
-                className="w-full pl-8 pr-3 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                className="w-full pl-8 pr-3 py-2 border border-[rgba(255,255,255,0.12)] rounded-lg focus:ring-2 focus:ring-[#10b981] focus:border-[#10b981] bg-[rgba(255,255,255,0.05)] text-white placeholder-[rgba(255,255,255,0.4)]"
               />
             </div>
           </div>
 
           {/* Term Length */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Term Length (Years)</label>
+            <label className="block text-sm font-medium text-[rgba(255,255,255,0.7)] mb-2">Term Length (Years)</label>
             <div className="flex items-center gap-4">
               <input
                 type="range"
@@ -247,15 +247,15 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                 max="35"
                 value={termLength}
                 onChange={(e) => setTermLength(parseInt(e.target.value))}
-                className="w-full h-2 bg-gradient-to-r from-blue-200 to-blue-400 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-2 bg-gradient-to-r from-[#10b981]/40 to-[#10b981] rounded-lg appearance-none cursor-pointer"
               />
-              <span className="text-slate-900 font-medium w-12 text-right">{termLength}</span>
+              <span className="text-white font-medium w-12 text-right">{termLength}</span>
             </div>
           </div>
 
           {/* Smoker Status */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2">Smoker Status</label>
+            <label className="block text-sm font-medium text-[rgba(255,255,255,0.7)] mb-2">Smoker Status</label>
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-2">
                 <input
@@ -263,9 +263,9 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                   name="smoker"
                   checked={!smoker}
                   onChange={() => setSmoker(false)}
-                  className="form-radio"
+                  className="form-radio accent-[#10b981]"
                 />
-                <span className="text-sm text-slate-700">Non-Smoker</span>
+                <span className="text-sm text-[rgba(255,255,255,0.75)]">Non-Smoker</span>
               </label>
               <label className="flex items-center gap-2">
                 <input
@@ -273,9 +273,9 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
                   name="smoker"
                   checked={smoker}
                   onChange={() => setSmoker(true)}
-                  className="form-radio"
+                  className="form-radio accent-[#10b981]"
                 />
-                <span className="text-sm text-slate-700">Smoker</span>
+                <span className="text-sm text-[rgba(255,255,255,0.75)]">Smoker</span>
               </label>
             </div>
           </div>
@@ -284,13 +284,13 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
         <div className="mt-6 flex gap-3">
           <button
             onClick={calculatePremium}
-            className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-lg"
+            className="flex-1 px-4 py-3 bg-gradient-to-r from-[#10b981] to-[#047857] text-white font-medium rounded-full hover:from-[#0d9f6a] hover:to-[#046c4e] transition-all focus:ring-2 focus:ring-[#10b981] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] shadow-lg shadow-[0_6px_20px_rgba(16,185,129,0.32)]"
           >
             Calculate Premium
           </button>
           <button
             onClick={resetCalculator}
-            className="px-4 py-3 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 shadow-sm"
+            className="px-4 py-3 bg-[rgba(255,255,255,0.07)] text-[rgba(255,255,255,0.75)] font-medium rounded-full hover:bg-[rgba(255,255,255,0.13)] hover:text-white transition-colors focus:ring-2 focus:ring-[rgba(255,255,255,0.3)] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] border border-[rgba(255,255,255,0.10)]"
           >
             Reset
           </button>
@@ -298,26 +298,26 @@ const InsuranceCalculator: React.FC<InsuranceCalculatorProps> = ({ className }) 
 
         {/* Result Display */}
         {showResult && (
-          <div className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200 shadow-lg">
+          <div className="mt-6 p-4 bg-gradient-to-br from-[rgba(16,185,129,0.12)] to-[rgba(16,185,129,0.04)] rounded-2xl border border-[rgba(16,185,129,0.3)] shadow-lg">
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <div className="w-8 h-8 bg-[rgba(16,185,129,0.18)] rounded-full flex items-center justify-center">
+                <svg className="w-5 h-5 text-[#10b981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 8l3 5m0 0l3-5m-3 5v4" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-blue-800">Estimated Annual Premium</h3>
+              <h3 className="text-lg font-semibold text-white">Estimated Annual Premium</h3>
             </div>
-            <p className="text-3xl font-bold text-blue-600">₹{premium.toLocaleString()}</p>
+            <p className="text-3xl font-bold text-[#10b981]">₹{premium.toLocaleString()}</p>
 
-            <p className="text-sm text-slate-600 mt-2">
+            <p className="text-sm text-[rgba(255,255,255,0.6)] mt-2">
               Calculated from LIC 2026 actuarial tables — {calcNote}.
             </p>
 
             <div className="mt-4 flex items-start gap-2">
-              <svg className="w-4 h-4 text-blue-500 mt-0.5 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg className="w-4 h-4 text-[#10b981] mt-0.5 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-[rgba(255,255,255,0.6)]">
                 Premiums shown are indicative and based on standard rates.
                 Final rates depend on health questionnaires, medical underwriting,
                 and specific product choices. Review the policy terms with a qualified insurance professional.
