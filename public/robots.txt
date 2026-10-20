@@ -66,8 +66,38 @@ Allow: /
 User-agent: Google-Extended        # Google AI (Bard/Vertex)
 Allow: /
 
+# AI Training / Pretraining Crawlers (LLM datasets)
+User-agent: GPTBot                # OpenAI training crawler
+Allow: /
+User-agent: CCBot                 # Common Crawl (used by most LLM training sets)
+Allow: /
+User-agent: anthropic-ai          # Anthropic (legacy)
+Allow: /
+User-agent: cohere-ai             # Cohere
+Allow: /
+User-agent: meta-externalagent    # Meta AI (case-insensitive match)
+Allow: /
+User-agent: YouBot                # You.com / AI answers
+Allow: /
+User-agent: DuckAssistBot         # DuckDuckGo AI Answers
+Allow: /
+User-agent: Diffbot               # Knowledge graph extraction
+Allow: /
+User-agent: ImagesiftBot          # Image AI
+Allow: /
+
+# SEO / Marketing Crawlers (so backlink & ranking tools see your link graph)
+User-agent: semrushbot
+Allow: /
+User-agent: AhrefsBot
+Allow: /
+User-agent: DotBot
+Allow: /
+User-agent: Rogerbot              # Moz
+Allow: /
+
 # Content-Signal (agent-readiness check) — tells AI engines how content may be used
-Content-Signal: ai-train=no, search=yes, ai-input=no
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 # IndexNow key for instant Bing/Yandex recrawl
 IndexNow: 6f345ded6a94be2d28ae371306ffcd79
