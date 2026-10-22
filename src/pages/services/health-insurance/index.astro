@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TrustStrip from '../../../components/TrustStrip';
+import InsuranceCalculator from '../../../components/InsuranceCalculator';
+---
+
+<BaseLayout
+  title="Health Insurance Plans in Bangalore | Family Floater 10L–2Cr | Insurance Support"
+  description="Compare health insurance plans in Bangalore. Individual & family floater ₹10L–2Cr. Cashless at 10,000+ hospitals. PED cover after 2–4 years. Maternity, OPD, wellness. IRDAI advisor Suhas K."
+  canonical="https://insurancesupport.online/services/health-insurance/"
+  ogImage="https://insurancesupport.online/images/og/health-insurance.png"
+  pageType="service-detail"
+  keywords="health insurance Bangalore, family floater health plan, cashless hospital network, pre-existing disease cover, maternity insurance India"
+  dateModified="2026-10-22"
+  geoPlaceName="Jalahalli, Bengaluru"
+  geoPosition="13.0159;77.5522"
+  lang="en-IN"
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Health Insurance Advisory",
+    "description": "Comprehensive health coverage for individuals and families. Individual & family floater plans ₹10L–2Cr. Cashless at 10,000+ hospitals. Pre-existing disease cover after 2–4 years. Maternity, OPD, wellness benefits. Restoration benefit.",
+    "url": "https://insurancesupport.online/services/health-insurance/",
+    "provider": {
+      "@type": "Person",
+      "name": "Suhas K.",
+      "jobTitle": "IRDAI Certified Insurance Advisor",
+      "identifier": "0149161D",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Insurance Support",
+        "url": "https://insurancesupport.online"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bengaluru"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "Health Insurance Consultation",
+      "description": "Free consultation to compare plans from Care Health, ICICI Lombard, Star Health, HDFC ERGO, Bajaj Allianz, Niva Bupa, Aditya Birla",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between individual and family floater health insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Individual: separate sum insured per person. Family floater: shared sum insured for all members (usually 2 adults + 2 children). Floater is cost-effective for young families; individual better for senior citizens or members with existing conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long is the waiting period for pre-existing diseases?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically 2–4 years for pre-existing diseases (PED). Some insurers reduce to 1–2 years with specific riders. Diabetes, hypertension, thyroid usually covered after wait. Declare all conditions honestly — non-disclosure leads to claim rejection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does health insurance cover maternity expenses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only specific plans with maternity benefit (usually 9–24 month waiting period). Covers normal delivery ~₹25–50k, C-section ~₹50–75k. Newborn covered from day 1 for 90 days. Not all plans include it — check before buying."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is restoration benefit in health insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you exhaust your sum insured in a year, the insurer restores it (usually 100%) for subsequent claims in the same year — even for unrelated illnesses. Available in most comprehensive plans. One restoration per policy year typically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I claim OPD expenses under health insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only plans with OPD benefit (usually add-on or built-in). Covers doctor consultations, diagnostics, pharmacy up to specified limit (₹5k–20k/year). Claim via reimbursement (submit bills) or cashless at network clinics. Not standard in base plans."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/services/" class="hover:text-amber-300">Services</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Health Insurance</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
+          10,000+ Cashless Hospitals · PED 2–4 Yrs · Restoration Benefit
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          Health Insurance <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Plans</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Protect your family's health and savings. Individual & family floater plans with cashless network, restoration benefit, and comprehensive coverage for pre-existing conditions after waiting period.
+        </p>
+      </div>
+
+      <TrustStrip client:visible />
+
+      <section class="mb-12" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading" class="text-2xl font-bold text-center mb-8">Top Health Plans Comparison (Family Floater ₹20L, 2 Adults + 1 Child, Age 35)</h2>
+        <div class="overflow-x-auto rounded-2xl border border-white/10">
+          <table class="w-full min-w-[800px] text-sm text-slate-200">
+            <thead class="bg-white/5">
+              <tr class="border-b border-white/10">
+                <th class="text-left p-4 font-semibold">Insurer / Plan</th>
+                <th class="text-left p-4 font-semibold">Annual Premium</th>
+                <th class="text-left p-4 font-semibold">Cashless Network</th>
+                <th class="text-left p-4 font-semibold">PED Wait</th>
+                <th class="text-left p-4 font-semibold">Key Features</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Care Health - Care Supreme</td><td class="p-4">~₹28,000</td><td class="p-4">19,000+</td><td class="p-4">2 years</td><td class="p-4">Unlimited restoration, OPD ₹10k, wellness</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Star Health - Family Health Optima</td><td class="p-4">~₹25,500</td><td class="p-4">14,000+</td><td class="p-4">3 years</td><td class="p-4">Assisted reproduction, organ donor, restore</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">ICICI Lombard - Complete Health</td><td class="p-4">~₹26,800</td><td class="p-4">6,500+</td><td class="p-4">2 years</td><td class="p-4">Unlimited restore, global cover, OPD</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">HDFC ERGO - Optima Secure</td><td class="p-4">~₹27,200</td><td class="p-4">13,000+</td><td class="p-4">3 years</td><td class="p-4">100% restore, no claim bonus 50%, wellness</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Niva Bupa - ReAssure 2.0</td><td class="p-4">~₹24,500</td><td class="p-4">10,000+</td><td class="p-4">2 years</td><td class="p-4">Infinite restore, booster, live healthy</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Aditya Birla - Activ Health</td><td class="p-4">~₹23,800</td><td class="p-4">10,500+</td><td class="p-4">3 years</td><td class="p-4">Chronic mgmt, daycare, health returns</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-sm text-slate-400 mt-3">Premiums indicative (Oct 2024, 2A+1C, ₹20L floater). <a href="/get-started/" class="text-emerald-300 hover:underline">Get personalized quote →</a></p>
+      </section>
+
+      <section class="mb-16" aria-labelledby="features-heading">
+        <h2 id="features-heading" class="text-3xl font-bold text-center mb-10">What to Look for in a Health Plan</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">🏥 Cashless Network Breadth</h3>
+            <p class="text-slate-300">10,000+ hospitals across India. Check if your preferred hospitals (Manipal, Fortis, Apollo, Narayana, Aster, Columbia Asia) are in-network for planned surgeries.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">🔄 Restoration Benefit</h3>
+            <p class="text-slate-300">Replenishes sum insured after a claim. Unlimited restoration (Care, ICICI, Niva Bupa) > single restoration. Critical for families with multiple health events in a year.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">👶 Maternity & Newborn</h3>
+            <p class="text-slate-300">9–24 month wait. Covers delivery, pre/post-natal, newborn (90 days). If planning family, buy 2+ years before. Some plans cover assisted reproduction (IVF/IUI).</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">💊 OPD & Wellness</h3>
+            <p class="text-slate-300">Consultations, diagnostics, pharmacy. Annual limit ₹5k–20k. Wellness: health checkups, gym, yoga discounts. Reduces out-of-pocket for routine care.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="process-heading">
+        <h2 id="process-heading" class="text-3xl font-bold text-center mb-10">How We Help You Choose the Right Health Plan</h2>
+        <div class="space-y-6">
+          {[
+            { step: 1, title: 'Family Health Profile', desc: 'Map ages, existing conditions, family history, preferred hospitals, budget. Identify must-haves: maternity, OPD, critical illness, global cover.' },
+            { step: 2, title: 'Plan Matching', desc: 'Compare 8–10 plans on premium, network, PED wait, restoration, sub-limits (room rent, ICU, specific diseases), co-pay, zone pricing.' },
+            { step: 3, title: 'Application & Disclosure', desc: 'Accurate health declaration for all members. We guide on what to disclose, how to answer medical questions, avoid non-disclosure rejection risk.' },
+            { step: 4, title: 'Policy Issuance & Cards', desc: 'Digital health cards, network hospital list, claim process guide. We explain cashless vs reimbursement, pre-auth timelines (1hr emergency, 3hr discharge).' },
+            { step: 5, title: 'Claim & Renewal Support', desc: 'Cashless coordination, document checklists, follow-up with TPA/insurer. Annual renewal review: sum insured adequacy, new members, portability options.' }
+          ].map(s => (
+            <div class="flex gap-4 bg-white/5 rounded-2xl p-6 border border-white/10">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-2xl font-bold text-emerald-300 flex-shrink-0">{s.step}</div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">{s.title}</h3>
+                <p class="text-slate-300 text-sm">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="quote-heading">
+        <h2 id="quote-heading" class="text-3xl font-bold text-center mb-10">Get Your Personalized Health Insurance Quote</h2>
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-6 md:p-8 max-w-xl mx-auto">
+          <form id="healthQuoteForm" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="h-eldest-age" class="block text-sm font-semibold text-slate-300 mb-2">Eldest Member Age <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="number" id="h-eldest-age" name="eldest_age" min="18" max="80" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="35" />
+              </div>
+              <div>
+                <label for="h-members" class="block text-sm font-semibold text-slate-300 mb-2">Members to Cover <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="h-members" name="members" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="1A">1 Adult</option>
+                  <option value="2A">2 Adults</option>
+                  <option value="2A1C">2 Adults + 1 Child</option>
+                  <option value="2A2C">2 Adults + 2 Children</option>
+                  <option value="parents">Parents (Senior Citizens)</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="h-cover" class="block text-sm font-semibold text-slate-300 mb-2">Sum Insured <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="h-cover" name="cover" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="10L">₹10 Lakh</option>
+                  <option value="15L">₹15 Lakh</option>
+                  <option value="20L">₹20 Lakh</option>
+                  <option value="25L">₹25 Lakh</option>
+                  <option value="50L">₹50 Lakh</option>
+                  <option value="1Cr">₹1 Crore</option>
+                </select>
+              </div>
+              <div>
+                <label for="h-type" class="block text-sm font-semibold text-slate-300 mb-2">Plan Type <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="h-type" name="plan_type" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="floater">Family Floater</option>
+                  <option value="individual">Individual (per person)</option>
+                  <option value="senior">Senior Citizen Plan</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="h-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="text" id="h-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
+              </div>
+              <div>
+                <label for="h-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="tel" id="h-phone" name="phone" autocomplete="tel" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="h-dpdp" name="dpdp_consent" required class="mt-1 w-4 h-4 accent-emerald-500 border-white/20 rounded bg-slate-800 focus:ring-2 focus:ring-emerald-400" />
+              <label htmlFor="h-dpdp" class="text-sm text-slate-300">I consent to being contacted per the <a href="/privacy-policy/" class="underline hover:text-emerald-300">Privacy Policy</a> and DPDP Act 2023.</label>
+            </div>
+            <div class="text-center pt-2">
+              <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+                Get Free Comparison & Quote
+              </button>
+            </div>
+            <div id="h-error" class="hidden rounded-xl border border-red-400/40 bg-red-500/10 p-4 text-center text-red-200" role="alert"></div>
+          </form>
+        </div>
+      </section>
+
+      <InsuranceCalculator client:load />
+    </div>
+  </main>
+</BaseLayout>
+
+<script is:inline>
+  document.getElementById('healthQuoteForm')?.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    const form = this;
+    const button = form.querySelector('button[type="submit"]');
+    const error = document.getElementById('h-error');
+    const originalLabel = button.textContent;
+    error.classList.add('hidden');
+    button.disabled = true;
+    button.textContent = 'Sending request...';
+
+    try {
+      const values = new FormData(form);
+      const response = await fetch('/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: values.get('name'),
+          phone: values.get('phone'),
+          category: 'Health Insurance',
+          message: `Health quote: Eldest ${values.get('eldest_age')}, Members ${values.get('members')}, Cover ${values.get('cover')}, Type ${values.get('plan_type')}`,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not send your request. Please try again or call us directly.');
+      }
+      alert('Thank you! We will send you a personalized health insurance comparison within 4 hours.');
+      form.reset();
+    } catch (submissionError) {
+      error.textContent = submissionError.message || 'We could not send your request. Please try again or call us directly.';
+      error.classList.remove('hidden');
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
+  });
+</script>

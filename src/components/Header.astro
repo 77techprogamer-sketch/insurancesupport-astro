@@ -12,68 +12,70 @@ import { formatLabel } from '@/utils/formatText';
   <header class="w-full bg-[#0a0a0a]/88 backdrop-blur-xl shadow-sm border-b border-[rgba(255,255,255,0.10)] transition-shadow duration-300">
     <div class="container mx-auto px-4 h-16 flex justify-between items-center">
 
-      <!-- Logo with enhanced styling */
-            <a href="/" class="flex items-center gap-2.5 group" aria-label="Insurance Support">
-              <div class="relative h-10 w-10 rounded-xl overflow-hidden shrink-0 group-hover:scale-105 transition-transform duration-300" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
-                <Image src="/logo.png" alt="Insurance Support" width={40} height={40} class="object-cover" loading="eager" fetchpriority="high" />
-                <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-xl"></div>
-              </div>
-              <span class="text-xl font-bold tracking-tight text-white group-hover:text-[#10b981] transition-colors duration-200">
-                Insurance Support
-              </span>
+          <!-- Logo with enhanced styling -->
+          <a href="/" class="flex items-center gap-2.5 group" aria-label="Insurance Support">
+            <div class="relative h-10 w-10 rounded-xl overflow-hidden shrink-0 group-hover:scale-105 transition-transform duration-300" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">
+              <Image src="/logo.png" alt="Insurance Support" width={40} height={40} class="object-cover" loading="eager" fetchpriority="high" />
+              <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-xl"></div>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-white group-hover:text-[#10b981] transition-colors duration-200">
+              Insurance Support
+            </span>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden lg:flex items-center gap-4 text-sm font-medium">
+            <!-- Google Rating Badge -->
+            <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-sm font-medium text-[#10b981] hover:text-[#34d399] hover:bg-[rgba(16,185,129,0.10)] px-3 py-1.5 rounded-full transition-all duration-200">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Google Reviews</span>
             </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-        <!-- Google Rating Badge -->
-        <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-sm font-medium text-[#10b981] hover:text-[#34d399] hover:bg-[rgba(16,185,129,0.10)] px-3 py-1.5 rounded-full transition-all duration-200">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>Google Reviews</span>
-        </a>
+            <!-- Services Dropdown with enhanced styling -->
+            <div class="relative group">
+              <button class="flex items-center gap-1.5 text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200" aria-label="Services offered" aria-expanded="false" aria-haspopup="true">
+                Services
+                <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-[#0d0f0e] rounded-xl shadow-lg border border-[rgba(255,255,255,0.12)] p-1.5 z-10 hidden group-hover:block group-focus-within:block transition-all duration-200 group-hover:shadow-xl" role="menu" style="animation: fadeIn 0.2s ease-out;">
+                {[
+                  "life_insurance", "health_insurance", "term_insurance", "motor_insurance", 
+                  "sme_insurance", "travel_insurance", "pension_plans", "ulip_plans"
+                ].map((key) => (
+                  <a href={`/services/${slugify(key)}`} class="flex items-center gap-3 px-4 py-2.5 text-sm text-[rgba(255,255,255,0.72)] hover:bg-[rgba(16,185,129,0.12)] hover:text-[#34d399] rounded-lg transition-all duration-200 group/link" role="menuitem">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[rgba(255,255,255,0.30)] group-hover/link:bg-[#10b981] transition-colors duration-200"></span>
+                    {formatLabel(key)}
+                  </a>
+                ))}
+              </div>
+            </div>
 
-        <!-- Services Dropdown with enhanced styling -->
-        <div class="relative group">
-          <button class="flex items-center gap-1.5 text-[rgba(255,255,255,0.78)] hover:text-[#10b981] transition-colors py-1" aria-label="Services offered" aria-expanded="false" aria-haspopup="true">
-            Services
-            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-56 bg-[#0d0f0e] rounded-xl shadow-lg border border-[rgba(255,255,255,0.12)] p-1.5 z-10 hidden group-hover:block group-focus-within:block transition-all duration-200 group-hover:shadow-xl" role="menu" style="animation: fadeIn 0.2s ease-out;">
-            {[
-              "life_insurance", "health_insurance", "term_insurance", "motor_insurance", 
-              "sme_insurance", "travel_insurance", "pension_plans", "ulip_plans"
-            ].map((key) => (
-              <a href={`/services/${slugify(key)}`} class="flex items-center gap-3 px-4 py-2.5 text-sm text-[rgba(255,255,255,0.72)] hover:bg-[rgba(16,185,129,0.12)] hover:text-[#34d399] rounded-lg transition-all duration-200 group/link" role="menuitem" style="padding-left: 12px;">
-                <span class="w-1.5 h-1.5 rounded-full bg-[rgba(255,255,255,0.30)] group-hover/link:bg-[#10b981] transition-colors duration-200"></span>
-                {formatLabel(key)}
+            <!-- Primary nav links -->
+            <a href="/claim-recovery" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Claim Help</a>
+            <a href="/support" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Support</a>
+            <a href="/resources" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Resources</a>
+            <a href="/blog" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Blog</a>
+            <a href="/about" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">About</a>
+
+            <!-- Divider + Search + CTA group -->
+            <div class="flex items-center gap-3 pl-4 border-l border-[rgba(255,255,255,0.14)]">
+              <!-- Search Icon -->
+              <a href="/search" class="flex items-center justify-center w-10 h-10 text-[rgba(255,255,255,0.6)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] rounded-lg transition-all duration-200" aria-label="Search">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </a>
-            ))}
-          </div>
-        </div>
 
-        <a href="/claim-recovery" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Claim Help</a>
-        <a href="/support" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Support</a>
-        <a href="/resources" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Resources</a>
-        <a href="/blog" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">Blog</a>
-        <a href="/about" class="text-[rgba(255,255,255,0.78)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] px-3 py-1.5 rounded-lg transition-all duration-200">About</a>
+              <!-- CTA button - gradient via Tailwind, no inline styles -->
+              <a href="/contact" class="flex items-center gap-2 bg-gradient-to-r from-[#10b981] to-[#047857] hover:from-[#047857] hover:to-[#10b981] text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md shadow-[rgba(16,185,129,0.30)] hover:shadow-xl hover:shadow-[rgba(16,185,129,0.45)] hover:scale-105 active:scale-95">
+                Contact
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+            </div>
+          </nav>
 
-        <div class="flex items-center gap-3 pl-4 border-l border-[rgba(255,255,255,0.14)]">
-          <!-- Search Icon with enhanced hover -->
-          <a href="/search" class="p-2 text-[rgba(255,255,255,0.6)] hover:text-[#10b981] hover:bg-[rgba(16,185,129,0.09)] rounded-lg transition-all duration-200" aria-label="Search">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-          </a>
-
-          <!-- Enhanced CTA button -->
-          <a href="/contact" class="flex items-center gap-2 bg-gradient-to-r from-[#10b981] to-[#047857] text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md shadow-[rgba(16,185,129,0.30)] hover:shadow-xl hover:shadow-[rgba(16,185,129,0.45)] hover:scale-105 active:scale-95" style="background: linear-gradient(135deg, #10b981, #047857); background-size: 200% 200%;" onmouseover="this.style.backgroundPosition='100% 50%'" onmouseout="this.style.backgroundPosition='0% 50%'">
-            Contact
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-        </div>
-      </nav>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="block lg:hidden p-2 text-[rgba(255,255,255,0.85)]" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-      </button>
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="block lg:hidden p-2 text-[rgba(255,255,255,0.85)]" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
     </div>
   </header>
 </div>

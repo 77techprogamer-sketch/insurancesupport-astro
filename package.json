@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node ./scripts/generate-sitemap.js && (npx pagefind --site dist || echo 'Pagefind skipped - continuing build') && (node ./scripts/indexnow-notify.js || echo 'IndexNow ping skipped - continuing build') && node ./scripts/verify-no-templates.js",
+    "build": "astro build && node ./scripts/inject-csp-hashes.cjs && node ./scripts/generate-sitemap.js && (npx pagefind --site dist || echo 'Pagefind skipped - continuing build') && (node ./scripts/indexnow-notify.js || echo 'IndexNow ping skipped - continuing build') && node ./scripts/verify-no-templates.js",
     "verify-no-templates": "node scripts/verify-no-templates.js",
     "preview": "astro preview",
     "astro": "astro"

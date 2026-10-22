@@ -1,54 +1,546 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
-
-const services = [
-  { title: 'Life Insurance', desc: 'Secure your family\'s future with customized term and endowment plans.' },
-  { title: 'Health Insurance', desc: 'Comprehensive coverage for medical emergencies and hospital expenses.' },
-  { title: 'Motor Insurance', desc: 'Robust protection for your car and two-wheeler against accidents and theft.' },
-  { title: 'Pension Plans', desc: 'Build a steady stream of income for your golden years.' },
-  { title: 'Claim Support', desc: 'Expert assistance for claim settlement and documentation.' },
-  { title: 'Policy Review', desc: 'Personalized audits to ensure your existing policies meet your current needs.' },
-  { title: 'Child Education Plans', desc: 'Invest in your child\'s future with secure education-focused insurance.' },
-  { title: 'Investment Plans', desc: 'Maximize your returns while securing your financial future.' },
-  { title: 'Travel Insurance', desc: 'Peace of mind for your domestic and international travel.' },
-  { title: 'Professional Indemnity', desc: 'Tailored protection for professionals in high-liability fields.' }
-];
+import TrustStrip from '../../components/TrustStrip';
+import InsuranceCalculator from '../../components/InsuranceCalculator';
 ---
 
-<BaseLayout title="Our Insurance Services" description="All insurance services in Bangalore: life, health, motor, term, pension & claim recovery. IRDAI advisor, free consultation." pageType="service"
-  keywords="insurance services Bangalore, buy insurance online, health insurance agent, term insurance plans, motor insurance advisor, claim recovery service, pension plan advisor, LIC policy assistance">
+<BaseLayout
+  title="Insurance Services in Bangalore | Life, Health, Motor, Term & Claim Recovery"
+  description="Explore 10+ comprehensive insurance services by Suhas K., IRDAI-registered advisor in Bengaluru. Life, health, motor, term, pension, claim support & more. Free consultation."
+  canonical="https://insurancesupport.online/services/"
+  ogImage="https://insurancesupport.online/images/og/services.png"
+  pageType="service"
+  keywords="insurance services Bangalore, buy insurance online, health insurance agent, term insurance plans, motor insurance advisor, claim recovery service, pension plan advisor, LIC policy assistance, child education insurance"
+  dateModified="2026-10-22"
+  geoPlaceName="Jalahalli, Bengaluru"
+  geoPosition="13.0159;77.5522"
+  lang="en-IN"
+>
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Our Insurance Services",
-    "description": "Explore our 10 comprehensive insurance services in Bangalore, including life, health, motor, and pension plans.",
+    "@type": "Service",
+    "name": "Insurance Advisory Services",
+    "description": "Comprehensive insurance advisory services in Bangalore by IRDAI-registered advisor Suhas K. Life, health, motor, term, pension, claim support, policy review.",
     "url": "https://insurancesupport.online/services/",
-    "isPartOf": {
-      "@type": "WebPage",
-      "@id": "https://insurancesupport.online/claim-recovery/",
-      "name": "Insurance Claim Recovery Hub"
-    },
-    "author": {
+    "provider": {
       "@type": "Person",
-      "name": "Hari Kotian",
-      "jobTitle": "IRDAI Certified Insurance Advisor"
+      "name": "Suhas K.",
+      "jobTitle": "IRDAI Certified Insurance Advisor",
+      "identifier": "0149161D",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Insurance Support",
+        "url": "https://insurancesupport.online"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bengaluru"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Insurance Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Term Insurance", "description": "Pure protection term plans with high coverage at low premiums"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Health Insurance", "description": "Comprehensive health coverage for individuals and families"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Life Insurance", "description": "Endowment, whole life, and money-back plans for savings and protection"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Motor Insurance", "description": "Car and two-wheeler insurance with cashless garage network"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pension Plans", "description": "Retirement plans for guaranteed income post-retirement"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Claim Support", "description": "End-to-end claim assistance and documentation support"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Policy Review", "description": "Personalized audit of existing insurance portfolio"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Child Education Plans", "description": "Secure education funding with guaranteed returns"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Investment Plans", "description": "ULIPs and guaranteed return plans for wealth creation"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Travel Insurance", "description": "Domestic and international travel coverage"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Professional Indemnity", "description": "Liability protection for professionals"}}
+      ]
     }
   })} />
 
-  <main id="main" class="max-w-5xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-extrabold text-slate-900 mb-8">Our Insurance Services</h1>
-    <p class="text-lg text-slate-600 mb-12">We provide 10 comprehensive insurance solutions tailored to protect what matters most to you. From life and health covers to specialized investment and claim recovery services, our IRDAI-certified expertise ensures you get the right advice.</p>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {services.map(service => (
-        <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-          <h2 class="text-xl font-bold text-blue-900 mb-3">{service.title}</h2>
-          <p class="text-slate-600 leading-relaxed">{service.desc}</p>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What insurance services do you offer in Bangalore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer 11 core services: Term Insurance, Health Insurance, Life Insurance, Motor Insurance, Pension Plans, Claim Support, Policy Review, Child Education Plans, Investment Plans, Travel Insurance, and Professional Indemnity Insurance. All services are provided by IRDAI-registered advisor Suhas K. (Reg: 0149161D) based in Jalahalli, Bengaluru."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you help with claim rejection and claim settlement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our Claim Support service specializes in claim rejection appeals, documentation guidance, insurer follow-up, and escalation to ombudsman or IRDAI when needed. We assist with health, motor, life, and property claim disputes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a free insurance consultation before buying?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Every engagement starts with a free, no-obligation consultation to understand your needs, assess existing policies, and recommend suitable options. Book a call back or call +91-9986634506 directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which insurers do you work with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We work with all major Indian insurers including LIC, ICICI Lombard, Care Health, HDFC Life, Star Health, Bajaj Allianz, Max Life, TATA AIA, SBI Life, and more. Recommendations are based on your needs, not commissions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is your advisory service available online for clients outside Bangalore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. While our office is in Jalahalli, Bengaluru, we serve clients across India via phone, video call, and email. Digital documentation and e-signatures make the process fully remote-friendly."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Our Services</span>
+      </nav>
+
+      <!-- ===== HERO ===== -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
+          11 Core Services · IRDAI Reg: 0149161D · Bengaluru Based
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          Insurance Services <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Tailored for You</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          From pure protection term plans to complex claim recovery — every recommendation is backed by 12+ years of experience, 2,800+ families served, and ₹500+ Cr of coverage managed. No commissions influence our advice.
+        </p>
+      </div>
+
+      <!-- ===== TRUST STRIP ===== -->
+      <TrustStrip client:visible />
+
+      <!-- ===== LEAD FORM (STICKY ON MOBILE) ===== -->
+      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-6 md:p-8 mb-10" id="free-claim-tools">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">Get a Free Service Recommendation</h2>
+        <form id="serviceQuoteForm" class="space-y-5 max-w-xl mx-auto">
+          <fieldset>
+            <legend class="block text-sm font-semibold text-slate-300 mb-3">What do you need help with? <span class="text-emerald-400" aria-hidden="true">*</span></legend>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" role="radiogroup" aria-label="Service category" id="service-category-options">
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Term Insurance" required class="sr-only peer" aria-label="Term Insurance" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">🛡️</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Term Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Health Insurance" required class="sr-only peer" aria-label="Health Insurance" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">🏥</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Health Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Life Insurance" required class="sr-only peer" aria-label="Life Insurance" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">👨‍👩‍👧</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Life Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Motor Insurance" required class="sr-only peer" aria-label="Motor Insurance" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">🚗</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Motor Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Pension Plans" required class="sr-only peer" aria-label="Pension Plans" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">📈</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Pension Plans</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Claim Support" required class="sr-only peer" aria-label="Claim Support" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">📋</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Claim Support</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Policy Review" required class="sr-only peer" aria-label="Policy Review" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">🔍</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Policy Review</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Child Education Plan" required class="sr-only peer" aria-label="Child Education" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">🎓</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Child Education</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="service_category" value="Other" required class="sr-only peer" aria-label="Other" />
+                <div class="w-full p-3 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-xl mb-1">💬</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Other</div>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label for="svc-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name <span class="text-emerald-400" aria-hidden="true">*</span></label>
+              <input type="text" id="svc-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
+            </div>
+            <div>
+              <label for="svc-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number <span class="text-emerald-400" aria-hidden="true">*</span></label>
+              <input type="tel" id="svc-phone" name="phone" autocomplete="tel" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="svc-dpdp" name="dpdp_consent" required class="mt-1 w-4 h-4 accent-emerald-500 border-white/20 rounded bg-slate-800 focus:ring-2 focus:ring-emerald-400" />
+            <label htmlFor="svc-dpdp" class="text-sm text-slate-300">I consent to being contacted per the <a href="/privacy-policy/" class="underline hover:text-emerald-300">Privacy Policy</a> and DPDP Act 2023.</label>
+          </div>
+
+          <div class="text-center pt-2">
+            <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+              Request a Call Back
+            </button>
+          </div>
+
+          <div id="svc-error" class="hidden rounded-xl border border-red-400/40 bg-red-500/10 p-4 text-center text-red-200" role="alert"></div>
+        </form>
+      </div>
+
+      <!-- ===== QUICK COMPARISON TABLES ===== -->
+      <section class="mb-16" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading" class="text-3xl font-bold text-center mb-10">Quick Comparison: Choose the Right Coverage</h2>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <!-- Health Insurance Comparison -->
+          <div class="bg-white/5 rounded-2xl border border-white/10 p-6">
+            <h3 class="text-xl font-bold text-emerald-300 mb-4 flex items-center gap-2">🏥 Health Insurance</h3>
+            <table class="w-full text-sm text-slate-200">
+              <thead><tr class="border-b border-white/10"><th class="text-left pb-2 font-semibold">Feature</th><th class="text-left pb-2 font-semibold">Individual</th><th class="text-left pb-2 font-semibold">Family Floater</th></tr></thead>
+              <tbody class="divide-y divide-white/5">
+                <tr><td class="py-2">Best For</td><td class="py-2">Single person</td><td class="py-2">2+ family members</td></tr>
+                <tr><td class="py-2">Sum Insured</td><td class="py-2">₹5L–1Cr</td><td class="py-2">₹10L–2Cr (shared)</td></tr>
+                <tr><td class="py-2">Pre-existing Wait</td><td class="py-2">2–4 years</td><td class="py-2">2–4 years</td></tr>
+                <tr><td class="py-2">Cashless Network</td><td class="py-2">10,000+ hospitals</td><td class="py-2">10,000+ hospitals</td></tr>
+                <tr><td class="py-2">No-Claim Bonus</td><td class="py-2">Up to 100%</td><td class="py-2">Up to 100%</td></tr>
+              </tbody>
+            </table>
+            <a href="/services/health-insurance/" class="inline-block mt-4 text-emerald-300 hover:text-emerald-100 font-medium">View Health Plans →</a>
+          </div>
+
+          <!-- Term vs Endowment -->
+          <div class="bg-white/5 rounded-2xl border border-white/10 p-6">
+            <h3 class="text-xl font-bold text-emerald-300 mb-4 flex items-center gap-2">🛡️ Term vs Endowment</h3>
+            <table class="w-full text-sm text-slate-200">
+              <thead><tr class="border-b border-white/10"><th class="text-left pb-2 font-semibold">Factor</th><th class="text-left pb-2 font-semibold">Term Plan</th><th class="text-left pb-2 font-semibold">Endowment</th></tr></thead>
+              <tbody class="divide-y divide-white/5">
+                <tr><td class="py-2">Primary Goal</td><td class="py-2">Pure protection</td><td class="py-2">Protection + savings</td></tr>
+                <tr><td class="py-2">Premium (₹1Cr cover, age 30)</td><td class="py-2">~₹8,000–12,000/yr</td><td class="py-2">~₹80,000–1,20,000/yr</td></tr>
+                <tr><td class="py-2">Maturity Benefit</td><td class="py-2">None (unless ROP)</td><td class="py-2">Sum assured + bonus</td></tr>
+                <tr><td class="py-2">Tax Benefit</td><td class="py-2">80C + 10(10D)</td><td class="py-2">80C + 10(10D)</td></tr>
+                <tr><td class="py-2">Best For</td><td class="py-2">Income replacement</td><td class="py-2">Disciplined savings</td></tr>
+              </tbody>
+            </table>
+            <a href="/services/term-insurance/" class="inline-block mt-4 text-emerald-300 hover:text-emerald-100 font-medium">View Term Plans →</a>
+          </div>
+
+          <!-- Motor Insurance Comparison -->
+          <div class="bg-white/5 rounded-2xl border border-white/10 p-6">
+            <h3 class="text-xl font-bold text-emerald-300 mb-4 flex items-center gap-2">🚗 Motor Insurance</h3>
+            <table class="w-full text-sm text-slate-200">
+              <thead><tr class="border-b border-white/10"><th class="text-left pb-2 font-semibold">Coverage</th><th class="text-left pb-2 font-semibold">Third-Party</th><th class="text-left pb-2 font-semibold">Comprehensive</th></tr></thead>
+              <tbody class="divide-y divide-white/5">
+                <tr><td class="py-2">Legal Requirement</td><td class="py-2">Mandatory</td><td class="py-2">Optional</td></tr>
+                <tr><td class="py-2">Own Damage</td><td class="py-2">Not covered</td><td class="py-2">Covered</td></tr>
+                <tr><td class="py-2">Theft</td><td class="py-2">Not covered</td><td class="py-2">Covered</td></tr>
+                <tr><td class="py-2">Add-ons Available</td><td class="py-2">No</td><td class="py-2">Yes (Zero Dep, Consumables, etc.)</td></tr>
+                <tr><td class="py-2">Premium (avg car)</td><td class="py-2">~₹2,500–5,000</td><td class="py-2">~₹8,000–20,000</td></tr>
+              </tbody>
+            </table>
+            <a href="/services/motor-insurance/" class="inline-block mt-4 text-emerald-300 hover:text-emerald-100 font-medium">View Motor Plans →</a>
+          </div>
         </div>
-      ))}
+      </section>
+
+      <!-- ===== DETAILED SERVICE GRID ===== -->
+      <section class="mb-16" aria-labelledby="services-heading">
+        <h2 id="services-heading" class="text-3xl font-bold text-center mb-10">All Insurance Services</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="/services/term-insurance/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">🛡️</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Term Insurance</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Most Popular</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Pure protection at lowest cost. ₹1Cr cover from ~₹8,000/year (age 30, non-smoker). Return of Premium (ROP) option available. Tax benefit under 80C & 10(10D). Ideal for income replacement.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ High cover, low premium</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ ROP option returns premiums</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Terminal illness benefit</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Tax-free death benefit</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/health-insurance/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">🏥</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Health Insurance</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Essential</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Individual & family floater plans. Cashless at 10,000+ hospitals. Pre-existing disease cover after 2–4 years. Maternity, OPD, wellness benefits. Restoration benefit restores sum insured after claim.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Cashless network 10,000+</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ PED wait 2–4 years</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Restoration benefit</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ No-claim bonus up to 100%</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/life-insurance/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">👨‍👩‍👧</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Life Insurance (Endowment/Whole Life)</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Savings + Cover</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Savings + protection. Guaranteed maturity value. Money-back plans for liquidity. Loan against policy after 3 years. Tax-free maturity under 10(10D). Disciplined wealth creation.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Guaranteed returns</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Money-back options</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Loan facility</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Tax-free maturity</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/motor-insurance/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">🚗</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Motor Insurance</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Mandatory</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Car & two-wheeler. Third-party (mandatory) or comprehensive. Add-ons: Zero Dep, Consumables, Engine Protect, Return to Invoice. Cashless at 5,000+ garages. NCB up to 50%.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Zero Dep add-on</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Engine protect</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Return to Invoice</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ 5,000+ cashless garages</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/pension-plans/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">📈</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Pension / Retirement Plans</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Retirement</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Immediate & deferred annuity. Guaranteed monthly income for life. Joint life & return of purchase price options. NPS Tier I & II available. Tax benefit under 80CCD(1B) up to ₹50k extra.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Guaranteed income for life</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Joint life option</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Return of purchase price</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ 80CCD(1B) tax benefit</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/claim-support/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">📋</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Claim Support & Recovery</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">High Demand</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">End-to-end claim help: intimation, documentation, follow-up, escalation. Health, motor, life, property claims. Rejected claim appeals to ombudsman & IRDAI. 94%+ settlement assistance rate.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Documentation guidance</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Ombudsman escalation</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ IRDAI complaint filing</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ 94%+ assist rate</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/policy-review/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">🔍</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Policy Review & Audit</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Diagnostic</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Portfolio analysis: coverage gaps, overlapping policies, nominee updates, premium optimization. Written report with action items. One-time fee, no product sales. Annual review recommended.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Gap analysis</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Nominee audit</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Premium optimization</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Written report</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/child-education/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">🎓</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Child Education Plans</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Future Secure</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Guaranteed maturity at key milestones (age 18, 21, 25). Premium waiver on parent death/disability. Partial withdrawals for education. Tax benefit 80C. SIP-like discipline.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Milestone payouts</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Premium waiver</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Partial withdrawal</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ 80C tax benefit</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/investment-plans/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">💰</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Investment Plans (ULIP/Guaranteed)</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Wealth Creation</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Market-linked ULIPs or guaranteed return plans. Fund switching flexibility. Loyalty additions & wealth boosters. 5-year lock-in. Tax-free maturity under 10(10D) if conditions met.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Fund switching</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Loyalty additions</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ 5-year lock-in</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Tax-free maturity*</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/travel-insurance/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">✈️</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Travel Insurance</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Peace of Mind</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Single-trip & multi-trip. Medical emergencies abroad, trip cancellation, baggage loss, passport loss. COVID-19 cover included. Schengen-compliant plans. 24/7 global assistance.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Schengen compliant</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ COVID-19 cover</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Trip cancellation</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ 24/7 global assist</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/professional-indemnity/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">📋</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">Professional Indemnity</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Liability Shield</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Doctors, CAs, architects, engineers, consultants. Covers legal liability for errors/omissions. Retroactive date option. Defense costs included. Limits up to ₹10Cr. Mandatory for many professions.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Errors & omissions</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Defense costs</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Retroactive cover</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Up to ₹10Cr limit</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+
+          <a href="/services/business-insurance/" class="group bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all">
+            <div class="text-3xl mb-3">🏢</div>
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">SME / Business Insurance</h3>
+              <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full">Business</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">Fire, burglary, money, fidelity, workmen compensation, cyber liability. Package policies for retail, manufacturing, services. Group health for employees. Business interruption cover.</p>
+            <ul class="space-y-1.5 mb-4" role="list">
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Package policies</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Group health</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Cyber liability</li>
+              <li class="text-xs text-slate-400 flex items-center gap-1.5">→ Business interruption</li>
+            </ul>
+            <span class="inline-flex items-center gap-1 text-emerald-300 font-medium text-sm hover:text-emerald-100">Explore →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== WHY CHOOSE US ===== -->
+      <section class="mb-16" aria-labelledby="why-heading">
+        <h2 id="why-heading" class="text-3xl font-bold text-center mb-10">Why Choose Insurance Support?</h2>
+        <div class="grid md:grid-cols-4 gap-6 text-center">
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10"><div class="text-3xl mb-3">🎯</div><h3 class="text-lg font-bold text-white mb-2">Need-Based Advice</h3><p class="text-slate-400 text-sm">No product pushing. We analyze your situation first.</p></div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10"><div class="text-3xl mb-3">🏢</div><h3 class="text-lg font-bold text-white mb-2">All Major Insurers</h3><p class="text-slate-400 text-sm">LIC, ICICI, Care, HDFC, Star, Bajaj, Max, Tata AIA, SBI Life...</p></div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10"><div class="text-3xl mb-3">📋</div><h3 class="text-lg font-bold text-white mb-2">Claim-First Approach</h3><p class="text-slate-400 text-sm">We structure policies for smooth claims, not just sales.</p></div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10"><div class="text-3xl mb-3">📍</div><h3 class="text-lg font-bold text-white mb-2">Bengaluru Based</h3><p class="text-slate-400 text-sm">Jalahalli office. In-person or video consultation across India.</p></div>
+        </div>
+      </section>
+
+      <InsuranceCalculator client:load />
     </div>
   </main>
-
 </BaseLayout>
+
+<script is:inline>
+  // Radio group visual feedback for service form
+  document.querySelectorAll('#service-category-options input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('#service-category-options label').forEach(l => l.classList.remove('ring-2', 'ring-emerald-400'));
+      radio.closest('label')?.classList.add('ring-2', 'ring-emerald-400');
+    });
+  });
+
+  document.getElementById('serviceQuoteForm')?.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    const form = this;
+    const button = form.querySelector('button[type="submit"]');
+    const error = document.getElementById('svc-error');
+    const originalLabel = button.textContent;
+    error.classList.add('hidden');
+    button.disabled = true;
+    button.textContent = 'Sending request...';
+
+    try {
+      const values = new FormData(form);
+      const response = await fetch('/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: values.get('name'),
+          phone: values.get('phone'),
+          category: values.get('service_category'),
+          message: `Service inquiry: ${values.get('service_category')}`,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not send your request. Please try again or call us directly.');
+      }
+      alert('Thank you! We will contact you shortly about your ' + values.get('service_category') + ' inquiry.');
+      form.reset();
+    } catch (submissionError) {
+      error.textContent = submissionError.message || 'We could not send your request. Please try again or call us directly.';
+      error.classList.remove('hidden');
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
+  });
+</script>

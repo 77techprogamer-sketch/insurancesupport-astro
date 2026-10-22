@@ -1,0 +1,320 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TrustStrip from '../../../components/TrustStrip';
+import InsuranceCalculator from '../../../components/InsuranceCalculator';
+---
+
+<BaseLayout
+  title="Child Education Plans in Bangalore | Milestone Payouts, Premium Waiver | Insurance Support"
+  description="Compare child education plans in Bangalore. Milestone payouts (Class 10, 12, graduation), premium waiver on parent death, guaranteed returns. LIC Kanyadan, HDFC YoungStar, ICICI SmartKid, Bajaj Allianz YoungAssure. IRDAI advisor Suhas K."
+  canonical="https://insurancesupport.online/services/child-education/"
+  ogImage="https://insurancesupport.online/images/og/child-education.png"
+  pageType="service-detail"
+  keywords="child education plan Bangalore, child insurance plan, milestone payout policy, premium waiver benefit, LIC Kanyadan, HDFC YoungStar"
+  dateModified="2026-10-22"
+  geoPlaceName="Jalahalli, Bengaluru"
+  geoPosition="13.0159;77.5522"
+  lang="en-IN"
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Child Education Planning",
+    "description": "Goal-based child plans with milestone payouts. Class 10, 12, graduation, marriage. Premium waiver on parent death/disability. Guaranteed returns ~4–5%. LIC Kanyadan, HDFC Life YoungStar, ICICI Pru SmartKid, Bajaj Allianz YoungAssure, SBI Life Smart Scholar.",
+    "url": "https://insurancesupport.online/services/child-education/",
+    "provider": {
+      "@type": "Person",
+      "name": "Suhas K.",
+      "jobTitle": "IRDAI Certified Insurance Advisor",
+      "identifier": "0149161D",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Insurance Support",
+        "url": "https://insurancesupport.online"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bengaluru"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "Child Plan Consultation",
+      "description": "Free consultation to calculate education corpus and compare child plans",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between child plan and term + mutual fund?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Child plan: guaranteed payouts at milestones, premium waiver on parent death (policy continues, insurer pays premiums), tax-free maturity. Term+MF: higher potential return (10–12%), no guarantee, no waiver (family must continue SIP), LTCG tax 10% >₹1L. Child plan = certainty; MF = growth potential."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does premium waiver work in child plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On parent's death (or CI/disability in some plans): all future premiums paid by insurer. Policy continues with full benefits. Milestone payouts happen as scheduled. Maturity paid to child. Essential feature — verify it's included (not all plans have it by default)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I start a child education plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ideally at child's birth (18–20 year horizon). Next best: now. Delay of 5 years reduces corpus by ~40% (compounding). For older kids (10+), consider shorter-term guaranteed plans or debt funds. We calculate required monthly investment for target corpus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are child plan returns guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Traditional child plans (endowment/money-back type): guaranteed sum assured + reversionary bonuses. IRR ~4–5%. ULIP child plans: market-linked, no guarantee. We recommend traditional for education goals (certainty > returns)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I take loan against child plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, after 3 years (traditional plans). Loan up to 80–90% surrender value at ~9–11%. Useful for emergency without breaking education corpus. ULIPs: partial withdrawal after 5 years (lock-in)."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/services/" class="hover:text-amber-300">Services</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Child Education Plans</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
+          Milestone Payouts · Premium Waiver · Guaranteed Returns
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          Child Education <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Plans</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Secure your child's dreams regardless of life's uncertainties. Milestone payouts for Class 10, 12, graduation. Premium waiver on parent's death — policy continues, insurer pays. Guaranteed returns, tax-free maturity.
+        </p>
+      </div>
+
+      <TrustStrip client:visible />
+
+      <section class="mb-12" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading" class="text-2xl font-bold text-center mb-8">Top Child Plans Comparison (₹50L Target, 15-Year Term, Parent Age 35)</h2>
+        <div class="overflow-x-auto rounded-2xl border border-white/10">
+          <table class="w-full min-w-[700px] text-sm text-slate-200">
+            <thead class="bg-white/5">
+              <tr class="border-b border-white/10">
+                <th class="text-left p-4 font-semibold">Plan</th>
+                <th class="text-left p-4 font-semibold">Annual Premium</th>
+                <th class="text-left p-4 font-semibold">Milestone Payouts</th>
+                <th class="text-left p-4 font-semibold">Premium Waiver</th>
+                <th class="text-left p-4 font-semibold">Key Feature</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">LIC Kanyadan / Jeevan Tarun</td><td class="p-4">~₹1.8L</td><td class="p-4">At 18, 20, 22, 25 yrs age</td><td class="p-4">Yes (death)</td><td class="p-4">Trusted, high bonus history</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">HDFC YoungStar Super</td><td class="p-4">~₹1.7L</td><td class="p-4">Class 10, 12, Graduation, PG</td><td class="p-4">Yes (death/CI/disability)</td><td class="p-4">Flexible milestones, top-up</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">ICICI Pru SmartKid</td><td class="p-4">~₹1.75L</td><td class="p-4">4 milestones (customizable)</td><td class="p-4">Yes (death/CI/TPD)</td><td class="p-4">Booster additions, loyalty</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Bajaj Allianz YoungAssure</td><td class="p-4">~₹1.65L</td><td class="p-4">5 milestones (15,18,21,24,27)</td><td class="p-4">Yes (death/CI/TPD)</td><td class="p-4">High guaranteed additions</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">SBI Life Smart Scholar</td><td class="p-4">~₹1.72L</td><td class="p-4">4 milestones + maturity</td><td class="p-4">Yes (death/CI/TPD)</td><td class="p-4">SBI trust, simple structure</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-sm text-slate-400 mt-3">Premiums indicative (Oct 2024). Milestone ages customizable. <a href="/get-started/" class="text-emerald-300 hover:underline">Get personalized calculation →</a></p>
+      </section>
+
+      <section class="mb-16" aria-labelledby="features-heading">
+        <h2 id="features-heading" class="text-3xl font-bold text-center mb-10">Why a Dedicated Child Plan?</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">🎯 Goal-Linked Payouts</h3>
+            <p class="text-slate-300">Money arrives exactly when needed: board exams, college admission, post-grad, marriage. No market timing risk. Cannot be diverted for other expenses.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">🛡️ Premium Waiver (Critical)</h3>
+            <p class="text-slate-300">If parent dies, insurer pays ALL remaining premiums. Child gets every milestone + maturity. Term insurance covers family expenses; child plan covers education. Both needed.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">📊 Tax-Free Certainty</h3>
+            <p class="text-slate-300">Maturity & milestones tax-free (Sec 10(10D)). No LTCG tax like equity MFs. Premium deduction Sec 80C (₹1.5L). Predictable, inflation-beating corpus.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">🔒 Discipline Enforced</h3>
+            <p class="text-slate-300">Premium commitment = forced savings. No SIP pause, no redemption temptation. Works for parents who struggle with voluntary investing discipline.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="education-costs-heading">
+        <h2 id="education-costs-heading" class="text-3xl font-bold text-center mb-10">Estimated Education Costs (2024, Tier-1 Cities)</h2>
+        <div class="overflow-x-auto rounded-2xl border border-white/10">
+          <table class="w-full min-w-[600px] text-sm text-slate-200">
+            <thead class="bg-white/5">
+              <tr class="border-b border-white/10">
+                <th class="text-left p-4 font-semibold">Course</th>
+                <th class="text-left p-4 font-semibold">Current Cost</th>
+                <th class="text-left p-4 font-semibold">Cost in 15 Yrs (8% inflation)</th>
+                <th class="text-left p-4 font-semibold">Monthly SIP Needed (12% return)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5"><td class="p-4">Engineering (Private)</td><td class="p-4">₹12–18L</td><td class="p-4">₹38–57L</td><td class="p-4">₹8,500–13,000</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">Medical (Private)</td><td class="p-4">₹60–90L</td><td class="p-4">₹1.9–2.9Cr</td><td class="p-4">₹43,000–65,000</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">MBA (Top B-School)</td><td class="p-4">₹20–30L</td><td class="p-4">₹63–95L</td><td class="p-4">₹14,000–21,000</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">UG Abroad (US/UK)</td><td class="p-4">₹1–1.5Cr</td><td class="p-4">₹3.2–4.8Cr</td><td class="p-4">₹72,000–1.08L</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-sm text-slate-400 mt-3">Child plans cover part; balance via SIP/PPF. <a href="/get-started/" class="text-emerald-300 hover:underline">Calculate your child's exact need →</a></p>
+      </section>
+
+      <section class="mb-16" aria-labelledby="process-heading">
+        <h2 id="process-heading" class="text-3xl font-bold text-center mb-10">How We Build Your Child's Education Corpus</h2>
+        <div class="space-y-6">
+          {[
+            { step: 1, title: 'Cost Projection', desc: 'Target course, college tier, location, inflation (8–10% education). Calculate future cost at each milestone age.' },
+            { step: 2, title: 'Existing Assets Audit', desc: 'PPF, SSY, MF, FD, grandparents gifts, existing child plans. Gap = target – existing projected value.' },
+            { step: 3, title: 'Plan Selection', desc: 'Traditional child plan (guaranteed milestones + waiver) for 50–70% of gap. Balance in SIP (equity) for growth. Term insurance for parent life cover.' },
+            { step: 4, title: 'Application & Waiver Setup', desc: 'Parent as proposer, child as life assured. Nominee = parent/trust. Premium waiver rider confirmed. Digital policy, auto-pay.' },
+            { step: 5, title: 'Milestone Tracking', desc: 'Annual statement review. Payout claim assistance at each milestone. Maturity claim. Tax certificate (Form 16A) for withdrawals.' }
+          ].map(s => (
+            <div class="flex gap-4 bg-white/5 rounded-2xl p-6 border border-white/10">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-2xl font-bold text-emerald-300 flex-shrink-0">{s.step}</div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">{s.title}</h3>
+                <p class="text-slate-300 text-sm">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="quote-heading">
+        <h2 id="quote-heading" class="text-3xl font-bold text-center mb-10">Calculate Your Child's Education Corpus</h2>
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-6 md:p-8 max-w-xl mx-auto">
+          <form id="childQuoteForm" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="ch-age" class="block text-sm font-semibold text-slate-300 mb-2">Child's Current Age <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="number" id="ch-age" name="child_age" min="0" max="17" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="3" />
+              </div>
+              <div>
+                <label for="ch-parent-age" class="block text-sm font-semibold text-slate-300 mb-2">Parent's Age <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="number" id="ch-parent-age" name="parent_age" min="25" max="55" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="35" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="ch-target" class="block text-sm font-semibold text-slate-300 mb-2">Target Corpus <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="ch-target" name="target_corpus" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="25L">₹25 Lakh</option>
+                  <option value="50L">₹50 Lakh</option>
+                  <option value="75L">₹75 Lakh</option>
+                  <option value="1Cr">₹1 Crore</option>
+                  <option value="1.5Cr">₹1.5 Crore</option>
+                  <option value="2Cr+">₹2 Crore+</option>
+                </select>
+              </div>
+              <div>
+                <label for="ch-existing" class="block text-sm font-semibold text-slate-300 mb-2">Existing Savings <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="ch-existing" name="existing_savings" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="none">None</option>
+                  <option value="<5L">Below ₹5 Lakh</option>
+                  <option value="5L-15L">₹5–15 Lakh</option>
+                  <option value="15L-30L">₹15–30 Lakh</option>
+                  <option value="30L+">₹30 Lakh+</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="ch-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="text" id="ch-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
+              </div>
+              <div>
+                <label for="ch-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="tel" id="ch-phone" name="phone" autocomplete="tel" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="ch-dpdp" name="dpdp_consent" required class="mt-1 w-4 h-4 accent-emerald-500 border-white/20 rounded bg-slate-800 focus:ring-2 focus:ring-emerald-400" />
+              <label htmlFor="ch-dpdp" class="text-sm text-slate-300">I consent to being contacted per the <a href="/privacy-policy/" class="underline hover:text-emerald-300">Privacy Policy</a> and DPDP Act 2023.</label>
+            </div>
+            <div class="text-center pt-2">
+              <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+                Get Free Education Plan
+              </button>
+            </div>
+            <div id="ch-error" class="hidden rounded-xl border border-red-400/40 bg-red-500/10 p-4 text-center text-red-200" role="alert"></div>
+          </form>
+        </div>
+      </section>
+
+      <InsuranceCalculator client:load />
+    </div>
+  </main>
+</BaseLayout>
+
+<script is:inline>
+  document.getElementById('childQuoteForm')?.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    const form = this;
+    const button = form.querySelector('button[type="submit"]');
+    const error = document.getElementById('ch-error');
+    const originalLabel = button.textContent;
+    error.classList.add('hidden');
+    button.disabled = true;
+    button.textContent = 'Sending request...';
+
+    try {
+      const values = new FormData(form);
+      const response = await fetch('/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: values.get('name'),
+          phone: values.get('phone'),
+          category: 'Child Education Plans',
+          message: `Child Plan: Child ${values.get('child_age')}yr, Parent ${values.get('parent_age')}yr, Target ${values.get('target_corpus')}, Existing ${values.get('existing_savings')}`,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not send your request. Please try again or call us directly.');
+      }
+      alert('Thank you! We will send you a personalized child education plan within 4 hours.');
+      form.reset();
+    } catch (submissionError) {
+      error.textContent = submissionError.message || 'We could not send your request. Please try again or call us directly.';
+      error.classList.remove('hidden');
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
+  });
+</script>

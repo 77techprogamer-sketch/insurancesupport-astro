@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TrustStrip from '../../../components/TrustStrip';
+import InsuranceCalculator from '../../../components/InsuranceCalculator';
+---
+
+<BaseLayout
+  title="Life Insurance Plans in Bangalore | Endowment, Whole Life, Money-Back | Insurance Support"
+  description="Compare life insurance plans in Bangalore. Endowment, whole life, money-back, child plans. Guaranteed returns, tax-free maturity, loan facility. LIC, HDFC Life, ICICI Prudential, Max Life, TATA AIA. IRDAI advisor Suhas K."
+  canonical="https://insurancesupport.online/services/life-insurance/"
+  ogImage="https://insurancesupport.online/images/og/life-insurance.png"
+  pageType="service-detail"
+  keywords="life insurance Bangalore, endowment plan, whole life insurance, money back policy, child education plan, guaranteed return plan"
+  dateModified="2026-10-22"
+  geoPlaceName="Jalahalli, Bengaluru"
+  geoPosition="13.0159;77.5522"
+  lang="en-IN"
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Life Insurance Advisory",
+    "description": "Traditional life insurance for savings + protection. Endowment, whole life, money-back, child plans. Guaranteed returns, tax-free maturity under Sec 10(10D), loan facility after 3 years. LIC, HDFC Life, ICICI Prudential, Max Life, TATA AIA, SBI Life.",
+    "url": "https://insurancesupport.online/services/life-insurance/",
+    "provider": {
+      "@type": "Person",
+      "name": "Suhas K.",
+      "jobTitle": "IRDAI Certified Insurance Advisor",
+      "identifier": "0149161D",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Insurance Support",
+        "url": "https://insurancesupport.online"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bengaluru"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "Life Insurance Consultation",
+      "description": "Free consultation to compare traditional life plans with guaranteed returns",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between term insurance and endowment plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Term: pure protection, no maturity value, lowest premium. Endowment: protection + savings, guaranteed maturity benefit, premium 8–10x term for same cover. Choose term for protection, endowment for forced savings with guaranteed return."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are endowment plan returns guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Traditional endowment plans offer guaranteed sum assured on maturity + reversionary bonuses (declared annually) + terminal bonus. Returns ~4–5% IRR. Not market-linked — no risk of capital loss. ULIPs are market-linked (different category)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I take a loan against my life insurance policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, after 3 policy years (2 years for some). Loan up to 80–90% of surrender value. Interest ~9–11% p.a. (lower than personal loan). Policy continues; unpaid interest deducted from claim/maturity. Not available on pure term plans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is maturity amount from life insurance tax-free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, under Section 10(10D) if annual premium ≤10% of sum assured (20% for policies before April 2012). Death benefit always tax-free. TDS @5% on maturity if premium >10% of SA (Section 194DA)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I stop paying premiums after 3 years?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Policy becomes paid-up: sum assured reduces proportionally (premiums paid / premiums payable). No further premiums needed. Surrender value available. Revival possible within 5 years (medical + pending premiums + interest)."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/services/" class="hover:text-amber-300">Services</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Life Insurance</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
+          Guaranteed Returns · Tax-Free Maturity · Loan Facility
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          Life Insurance <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Plans</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Traditional savings + protection plans with guaranteed returns. Endowment, whole life, money-back, child plans. Tax-free maturity, loan facility, disciplined wealth creation.
+        </p>
+      </div>
+
+      <TrustStrip client:visible />
+
+      <section class="mb-12" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading" class="text-2xl font-bold text-center mb-8">Plan Types Comparison</h2>
+        <div class="overflow-x-auto rounded-2xl border border-white/10">
+          <table class="w-full min-w-[700px] text-sm text-slate-200">
+            <thead class="bg-white/5">
+              <tr class="border-b border-white/10">
+                <th class="text-left p-4 font-semibold">Plan Type</th>
+                <th class="text-left p-4 font-semibold">Best For</th>
+                <th class="text-left p-4 font-semibold">Maturity Payout</th>
+                <th class="text-left p-4 font-semibold">Liquidity</th>
+                <th class="text-left p-4 font-semibold">Typical IRR</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Endowment</td><td class="p-4">Goal-based savings (10–20 yr)</td><td class="p-4">Lump sum at maturity</td><td class="p-4">Loan after 3 yrs</td><td class="p-4">4–5%</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Whole Life</td><td class="p-4">Lifelong cover + legacy</td><td class="p-4">At 100 yrs age / death</td><td class="p-4">Loan after 3 yrs</td><td class="p-4">4–5%</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Money-Back</td><td class="p-4">Regular income needs</td><td class="p-4">Survival benefits every 5 yrs</td><td class="p-4">Periodic payouts</td><td class="p-4">3–4%</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Child Plan</td><td class="p-4">Education/marriage corpus</td><td class="p-4">Milestone payouts (18, 21, 25)</td><td class="p-4">Partial withdrawals</td><td class="p-4">4–5%</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4 font-medium">Pension/Annuity</td><td class="p-4">Retirement income</td><td class="p-4">Monthly/annual for life</td><td class="p-4">No surrender (some)</td><td class="p-4">5–6%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-sm text-slate-400 mt-3">IRR indicative. Actual depends on bonuses, age, term. <a href="/get-started/" class="text-emerald-300 hover:underline">Get personalized illustration →</a></p>
+      </section>
+
+      <section class="mb-16" aria-labelledby="features-heading">
+        <h2 id="features-heading" class="text-3xl font-bold text-center mb-10">Why Traditional Life Plans Still Matter</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">📊 Guaranteed Returns</h3>
+            <p class="text-slate-300">No market risk. Sum assured + bonuses guaranteed. Unlike mutual funds or ULIPs, your capital is protected. Ideal for conservative goals: child education, retirement corpus, legacy.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">💰 Tax Efficiency</h3>
+            <p class="text-slate-300">Premium deduction up to ₹1.5L (Sec 80C). Maturity tax-free (Sec 10(10D)). Death benefit tax-free. One of few EEE (Exempt-Exempt-Exempt) instruments left.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">🏦 Loan Facility</h3>
+            <p class="text-slate-300">Borrow up to 90% surrender value at ~9–11% after 3 years. Lower than personal loans. Policy stays active. Useful for emergencies without breaking investments.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">🎯 Forced Discipline</h3>
+            <p class="text-slate-300">Annual premium commitment builds corpus automatically. No market timing, no SIP pauses. Works for those who struggle with voluntary investing.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="process-heading">
+        <h2 id="process-heading" class="text-3xl font-bold text-center mb-10">How We Help You Choose</h2>
+        <div class="space-y-6">
+          {[
+            { step: 1, title: 'Goal Mapping', desc: 'Identify goals: child education (year), marriage, retirement corpus, legacy. Assign time horizon and amount needed.' },
+            { step: 2, title: 'Product Matching', desc: 'Match goals to plan type: endowment for lump sum, money-back for periodic needs, child plan for milestones, whole life for estate.' },
+            { step: 3, title: 'Insurer Comparison', desc: 'Compare LIC, HDFC, ICICI, Max, TATA AIA on bonus history, persistency, claim ratio, service. We show 10-year bonus track record.' },
+            { step: 4, title: 'Illustration & Decision', desc: 'Provide benefit illustration with guaranteed + reversionary bonuses at different rates. You decide; we process application.' },
+            { step: 5, title: 'Ongoing Service', desc: 'Premium reminders, bonus tracking, loan assistance, nomination updates, claim support for nominees.' }
+          ].map(s => (
+            <div class="flex gap-4 bg-white/5 rounded-2xl p-6 border border-white/10">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-2xl font-bold text-emerald-300 flex-shrink-0">{s.step}</div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">{s.title}</h3>
+                <p class="text-slate-300 text-sm">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="quote-heading">
+        <h2 id="quote-heading" class="text-3xl font-bold text-center mb-10">Get Your Personalized Life Insurance Illustration</h2>
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-6 md:p-8 max-w-xl mx-auto">
+          <form id="lifeQuoteForm" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="l-age" class="block text-sm font-semibold text-slate-300 mb-2">Age <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="number" id="l-age" name="age" min="18" max="60" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="30" />
+              </div>
+              <div>
+                <label for="l-goal" class="block text-sm font-semibold text-slate-300 mb-2">Primary Goal <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="l-goal" name="goal" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="child-education">Child Education</option>
+                  <option value="retirement">Retirement Corpus</option>
+                  <option value="legacy">Legacy / Estate</option>
+                  <option value="forced-savings">Forced Savings Discipline</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="l-premium" class="block text-sm font-semibold text-slate-300 mb-2">Annual Premium Budget <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="l-premium" name="premium" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="50k-1L">₹50,000 – 1 Lakh</option>
+                  <option value="1L-2L">₹1 – 2 Lakh</option>
+                  <option value="2L-5L">₹2 – 5 Lakh</option>
+                  <option value="5L+">₹5 Lakh+</option>
+                </select>
+              </div>
+              <div>
+                <label for="l-term" class="block text-sm font-semibold text-slate-300 mb-2">Policy Term <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="l-term" name="term" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="10-15">10–15 years</option>
+                  <option value="15-20">15–20 years</option>
+                  <option value="20-25">20–25 years</option>
+                  <option value="whole-life">Whole Life (99/100 age)</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="l-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="text" id="l-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
+              </div>
+              <div>
+                <label for="l-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="tel" id="l-phone" name="phone" autocomplete="tel" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="l-dpdp" name="dpdp_consent" required class="mt-1 w-4 h-4 accent-emerald-500 border-white/20 rounded bg-slate-800 focus:ring-2 focus:ring-emerald-400" />
+              <label htmlFor="l-dpdp" class="text-sm text-slate-300">I consent to being contacted per the <a href="/privacy-policy/" class="underline hover:text-emerald-300">Privacy Policy</a> and DPDP Act 2023.</label>
+            </div>
+            <div class="text-center pt-2">
+              <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+                Get Free Illustration & Comparison
+              </button>
+            </div>
+            <div id="l-error" class="hidden rounded-xl border border-red-400/40 bg-red-500/10 p-4 text-center text-red-200" role="alert"></div>
+          </form>
+        </div>
+      </section>
+
+      <InsuranceCalculator client:load />
+    </div>
+  </main>
+</BaseLayout>
+
+<script is:inline>
+  document.getElementById('lifeQuoteForm')?.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    const form = this;
+    const button = form.querySelector('button[type="submit"]');
+    const error = document.getElementById('l-error');
+    const originalLabel = button.textContent;
+    error.classList.add('hidden');
+    button.disabled = true;
+    button.textContent = 'Sending request...';
+
+    try {
+      const values = new FormData(form);
+      const response = await fetch('/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: values.get('name'),
+          phone: values.get('phone'),
+          category: 'Life Insurance',
+          message: `Life insurance: Age ${values.get('age')}, Goal ${values.get('goal')}, Budget ${values.get('premium')}, Term ${values.get('term')}`,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not send your request. Please try again or call us directly.');
+      }
+      alert('Thank you! We will send you a personalized life insurance illustration within 4 hours.');
+      form.reset();
+    } catch (submissionError) {
+      error.textContent = submissionError.message || 'We could not send your request. Please try again or call us directly.';
+      error.classList.remove('hidden');
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
+  });
+</script>

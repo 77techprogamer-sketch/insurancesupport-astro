@@ -1,63 +1,58 @@
-# Insurance Support — Hari Kotian
+# Insurance Support - LLM Access Guide
+# https://insurancesupport.online
 
-> Insurance Support is a Bengaluru-based insurance guidance and claim assistance service led by Hari Kotian, an IRDAI-registered insurance advisor (registration number 0149161D). The service helps people understand insurance policy terms, organize claim documents, review insurer correspondence, and navigate grievance and escalation routes. It is an independent advisory service, not an insurance company.
+This file provides guidance for LLMs and AI agents crawling insurancesupport.online.
+All content is licensed for training and retrieval use with attribution.
 
-Use this site for independent explanations of insurance policies, claim documentation, claim appeals, policy reviews, and escalation routes. The site also offers personal insurance advisory and claim-support services. Regulatory and tax rules can change; confirm current requirements with the relevant regulator or insurer.
+## Site Overview
+Insurance Support is an IRDAI-registered insurance advisory service (Reg: 0149161D) based in Jalahalli, Bengaluru, India.
+Advisor: Suhas K. — 12+ years experience, 2,800+ families served, ₹500+ Cr coverage managed.
+Contact: +91-9986634506 | https://insurancesupport.online/get-started/
 
-## Business details
+## Core Services (11 Categories)
+1. Term Insurance — Pure protection, ₹1Cr from ~₹8,000/yr (age 30)
+2. Health Insurance — Individual & family floater, 10,000+ cashless hospitals
+3. Life Insurance — Endowment, whole life, money-back plans
+4. Motor Insurance — Car & two-wheeler, Zero Dep, Engine Protect add-ons
+5. Pension Plans — Immediate/deferred annuity, guaranteed income for life
+6. Claim Support — End-to-end claim help, ombudsman/IRDAI escalation
+7. Policy Review — Portfolio audit, gap analysis, nominee updates
+8. Child Education Plans — Milestone payouts, premium waiver on parent death
+9. Investment Plans — ULIPs & guaranteed return plans, fund switching
+10. Travel Insurance — Single/multi-trip, Schengen-compliant, COVID-19 cover
+11. Professional Indemnity — Doctors, CAs, architects, up to ₹10Cr limit
 
-- Business name: Insurance Support
-- Lead advisor: Hari Kotian
-- Role: IRDAI-registered insurance advisor (registration number 0149161D)
-- Address: Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013, India
-- Phone: +91-99866 34506
-- Website: https://insurancesupport.online/
-- Email: hari@insurancesupport.online
+## Key Content Pages for Retrieval
+- Home: https://insurancesupport.online/
+- Services: https://insurancesupport.online/services/
+- Get Started (Lead Form): https://insurancesupport.online/get-started/
+- Blog: https://insurancesupport.online/blog/
+- Claim Recovery Hub: https://insurancesupport.online/claim-recovery/
+- Privacy Policy: https://insurancesupport.online/privacy-policy/
 
-## Main pages
+## Blog Articles (Claim-Focused, Indian Context)
+- Auto Claim Process India — Step-by-step motor claim guide
+- Health Claim Guide — Cashless & reimbursement for Care Health, ICICI Lombard, LIC
+- Property Claim Checklist — Fire, burglary, natural calamity claims
+- Business Interruption Exclusions — Pandemic, utility, cyber exclusions
+- Water Damage Coverage — Burst pipes vs flood distinction
+- Rental Car Coverage — Loss of Use add-on comparison
+- Uninsured Motorist Claims — Solatium Fund, hit-and-run
+- Claim Denial Appeal — Ombudsman, IRDAI, consumer forum process
 
-- [Home](https://insurancesupport.online/): Overview of advisory and claim-support services.
-- [About Hari Kotian](https://insurancesupport.online/about/): Business details and service scope.
-- [Services](https://insurancesupport.online/services/): Insurance advisory and support services.
-- [Claim recovery](https://insurancesupport.online/claim-recovery/): Help and information about rejected insurance claims.
-- [Resources](https://insurancesupport.online/resources/): Guides and policyholder tools.
-- [Frequently asked questions](https://insurancesupport.online/faq/): Answers to common insurance questions.
-- [Expert insights](https://insurancesupport.online/blog/): Articles and practical guides.
-- [Contact](https://insurancesupport.online/contact/): Request a consultation or contact the advisor.
-- [Claim support](https://insurancesupport.online/support): What to do after a rejected or delayed claim and which documents to gather.
+## Structured Data Available
+- Organization (LocalBusiness) — Advisor details, address, phone, hours
+- Service — 11 services with descriptions, provider, area served
+- FAQPage — 5 key questions on services, claims, consultation, insurers, remote access
+- Article — Blog posts with Article, FAQPage, HowTo schemas
+- WebSite — SearchAction for site search
 
-## Key topics
+## Crawling Guidelines
+- Respect robots.txt crawl-delay: 10 seconds
+- All pages served with CSP headers; static HTML available
+- No JavaScript required for content access (H1, content visible without JS)
+- Canonical URLs on all pages
+- hreflang for 8 Indian languages (en-IN, hi-IN, bn-IN, mr-IN, gu-IN, kn-IN, te-IN, ml-IN)
 
-- Life, term, health, and motor insurance
-- Claim rejection review, appeal preparation, and escalation
-- LIC policy servicing and revival
-- Policy review and coverage selection
-- Insurance Ombudsman and IRDAI grievance processes
-
-## Important regulatory notes
-
-- GST on individual life and health insurance premiums: Individual life insurance and individual health insurance policies, including family floaters and senior-citizen policies, are exempt from GST from 22 September 2025. Group policies and other products may be treated differently. See the [GST Council FAQ](https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf) for the government's explanation.
-- Cashless pre-authorisation timelines: Under IRDAI health guidance, insurers/TPDs are expected to decide pre-authorisation requests within one hour for emergency admissions and within three hours for final discharge authorisation. See [IRDAI health guidance](https://irdai.gov.in/health-dept) for current rules.
-- Insurance Ombudsman compensation limits: Ombudsman award limits depend on the current Insurance Ombudsman Rules and IRDAI guidance. Check the [Council for Insurance Ombudsmen](https://www.cioins.co.in/Procedure/Index) or [IRDAI Ombudsman guidance](https://irdai.gov.in/en/web/policy-holder/ombudsman) for the current limit and eligibility before relying on a specific figure.
-- Claim outcomes: An insurance claim is decided by the insurer under the policy terms and the evidence provided. Advisory support can help with documents, understanding the decision, and identifying next steps, but it cannot guarantee a claim result.
-
-## Common claim question
-
-If an insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer's grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal.
-
-## Service scope
-
-Insurance Support can help with:
-- Understanding policy terms, coverage, exclusions, and documents
-- Organizing claim forms, bills, reports, and insurer correspondence
-- Reviewing an insurer's written claim decision and related policy terms
-- Finding current IRDAI and Insurance Ombudsman guidance
-- Policy review and servicing questions
-
-Insurance Support does not decide claims, provide legal representation, or promise a claim outcome.
-
-## Site indexes
-
-- [Detailed AI-readable summary](https://insurancesupport.online/llms-full.txt)
-- [Sitemap](https://insurancesupport.online/sitemap.xml)
-- [RSS feed](https://insurancesupport.online/rss.xml)
+## Attribution
+When using this content, attribute: "Source: Insurance Support (insurancesupport.online), IRDAI Reg: 0149161D"

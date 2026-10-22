@@ -8,15 +8,16 @@ export default function AuroraHero() {
   return (
     <section style={{ position: 'relative', width: '100%', height: '100svh', background: '#000', overflow: 'hidden' }}>
       {/* Background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-      >
-        <source src="/hero.mp4" type="video/mp4" />
-      </video>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/og-image.png"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+            >
+              <source src="/hero.mp4" type="video/mp4" />
+            </video>
 
       {/* Dark overlays */}
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.10)', zIndex: 1 }} />
@@ -39,12 +40,12 @@ export default function AuroraHero() {
       }} />
 
       {/* Trusted-by avatar badge — bottom-left */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
-        style={{ position: 'absolute', bottom: '34px', left: '64px', zIndex: 10, display: 'flex', alignItems: 'center', gap: '10px' }}
-      >
+            <motion.div
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
+              style={{ position: 'absolute', bottom: '34px', left: '64px', zIndex: 10, display: 'flex', alignItems: 'center', gap: '10px', opacity: 1, transform: 'translateY(0)' }}
+            >
         {/* Avatar stack */}
         <div style={{ display: 'flex' }}>
           {[1, 2, 3].map((i) => (
@@ -90,65 +91,71 @@ export default function AuroraHero() {
       </motion.div>
 
       {/* Hero content — top-left anchored */}
-      <div style={{ position: 'absolute', top: '24vh', left: '64px', zIndex: 10, maxWidth: '480px' }}>
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.18, ease: 'easeOut' }}
-          style={{
-            fontSize: '13px',
-            fontWeight: 500,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.6)',
-            fontFamily: "'Inter', sans-serif",
-          }}
-        >
-          Insurance Advisor · Bengaluru
-        </motion.div>
+            <div style={{ position: 'absolute', top: '24vh', left: '64px', zIndex: 10, maxWidth: '480px' }}>
+              <motion.div
+                initial={false}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.18, ease: 'easeOut' }}
+                style={{
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.6)',
+                  fontFamily: "'Inter', sans-serif",
+                  opacity: 1,
+                  transform: 'translateY(0)',
+                }}
+              >
+                Insurance Advisor · Bengaluru
+              </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 22 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
-          style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontWeight: 500,
-            fontSize: 'clamp(2.4rem, 4.6vw, 4.1rem)',
-            lineHeight: 1.08,
-            letterSpacing: '-0.02em',
-            color: '#fff',
-            marginTop: '22px',
-            maxWidth: '560px',
-          }}
-        >
+                  initial={false}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 500,
+                    fontSize: 'clamp(2.4rem, 4.6vw, 4.1rem)',
+                    lineHeight: 1.08,
+                    letterSpacing: '-0.02em',
+                    color: '#fff',
+                    marginTop: '22px',
+                    maxWidth: '560px',
+                    opacity: 1,
+                    transform: 'translateY(0)',
+                  }}
+                >
           Claims Denied?<br />
           <span style={{ color: '#10b981' }}>We Help You Recover.</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.42, ease: 'easeOut' }}
-          style={{
-            marginTop: '16px',
-            fontSize: '15px',
-            lineHeight: 1.6,
-            color: 'rgba(255,255,255,0.6)',
-            fontFamily: "'Inter', sans-serif",
-            maxWidth: '380px',
-          }}
-        >
+                  initial={false}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.42, ease: 'easeOut' }}
+                  style={{
+                    marginTop: '16px',
+                    fontSize: '15px',
+                    lineHeight: 1.6,
+                    color: 'rgba(255,255,255,0.6)',
+                    fontFamily: "'Inter', sans-serif",
+                    maxWidth: '380px',
+                    opacity: 1,
+                    transform: 'translateY(0)',
+                  }}
+                >
           LIC • ICICI Lombard • Care Health — 25+ years navigating rejections, 
           documentation gaps, and insurer grievance processes. No jargon, just results.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.58, ease: 'easeOut' }}
-          style={{ display: 'flex', alignItems: 'center', gap: '14px', marginTop: '30px' }}
-        >
+                  initial={false}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.58, ease: 'easeOut' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '14px', marginTop: '30px', opacity: 1, transform: 'translateY(0)' }}
+                >
           <motion.a
             href="#free-claim-tools"
             whileHover={{ scale: 1.03 }}
@@ -193,12 +200,12 @@ export default function AuroraHero() {
       </div>
 
       {/* IRDAI badge — bottom-right */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.95, ease: 'easeOut' }}
-        style={{ position: 'absolute', bottom: '34px', right: '64px', zIndex: 10 }}
-      >
+            <motion.div
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.95, ease: 'easeOut' }}
+              style={{ position: 'absolute', bottom: '34px', right: '64px', zIndex: 10, opacity: 1, transform: 'translateY(0)' }}
+            >
         <div style={{
           display: 'flex',
           alignItems: 'center',

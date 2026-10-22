@@ -10,6 +10,7 @@ import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import AdvisorVsPortalSection from '../components/AdvisorVsPortalSection.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 
+import TrustStrip from '../components/TrustStrip';
 import InsuranceCalculator from '../components/InsuranceCalculator';
 
 // Homepage FAQ data — used BOTH for the visible FAQ section AND the FAQPage JSON-LD schema
@@ -71,9 +72,12 @@ const homepageFaqs = [
   <main id="main" class="page-transition">
 
     <!-- ===== AURORA HERO ===== -->
-    <AuroraHero client:visible />
+        <AuroraHero client:visible />
 
-    <!-- ===== CLAIM REJECTED FAQ SNIPPET ===== -->
+        <!-- ===== TRUST STRIP ===== -->
+        <TrustStrip client:visible />
+
+        <!-- ===== CLAIM REJECTED FAQ SNIPPET ===== -->
     <section class="py-16 bg-[#0a0a0a] relative overflow-hidden">
       <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
       <div class="max-w-4xl mx-auto px-4 relative z-10">

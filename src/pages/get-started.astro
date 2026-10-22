@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
+import TrustStrip from '../components/TrustStrip';
 ---
 
-<BaseLayout 
+<BaseLayout
   title="Request an Insurance Call Back | Insurance Support"
-  description="Request a free insurance consultation from Hari Kotian, an IRDAI-registered advisor based in Bengaluru. Share your insurance need and preferred contact number."
+  description="Request a free insurance consultation from Suhas K., an IRDAI-registered advisor based in Bengaluru. Share your insurance need and preferred contact number."
+  canonical="https://insurancesupport.online/get-started/"
+  ogImage="https://insurancesupport.online/images/og/get-started.png"
+  pageType="lead-form"
+  keywords="insurance consultation Bangalore, free insurance quote India, insurance advisor call back, claim rejection help, policy review Bengaluru"
+  dateModified="2026-10-22"
+  geoPlaceName="Jalahalli, Bengaluru"
+  geoPosition="13.0159;77.5522"
+  lang="en-IN"
 >
   <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
     <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -14,72 +23,154 @@ import ContactSection from '../components/sections/ContactSection.astro';
       <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
         <a href="/" class="hover:text-amber-300">Home</a>
         <span class="mx-2">›</span>
-        <span class="text-slate-200" aria-current="page">Get Free Quote</span>
+        <span class="text-slate-200" aria-current="page">Request a Call Back</span>
       </nav>
 
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <!-- ===== HERO / VALUE PROP ===== -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
-          Free, No-Obligation Consultation
+          Free, No-Obligation Consultation · IRDAI Reg: 0149161D
         </span>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">
           Request a <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Call Back</span>
         </h1>
         <p class="text-lg text-slate-300 leading-relaxed">
-          Tell us what you need help with and the best number to reach you. Hari Kotian or an advisor will follow up about your request.
+          Tell us what you need help with and the best number to reach you. Suhas K. or an advisor will follow up about your request.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12" aria-label="Types of insurance support available">
-        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-amber-300">Policy guidance</div><div class="text-xs text-slate-400 mt-1">Understand coverage and terms</div></div>
-        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-amber-300">Claim support</div><div class="text-xs text-slate-400 mt-1">Organize documents and questions</div></div>
-        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-amber-300">Insurer follow-up</div><div class="text-xs text-slate-400 mt-1">Understand available next steps</div></div>
-        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-amber-300">Bengaluru</div><div class="text-xs text-slate-400 mt-1">Based in Jalahalli</div></div>
-      </div>
+      <!-- ===== TRUST STRIP (ABOVE FORM) ===== -->
+      <TrustStrip client:visible />
 
-      <!-- Quote form -->
-      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-8 md:p-10 mb-14">
+      <!-- ===== QUOTE FORM (ABOVE FOLD ON MOBILE) ===== -->
+      <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-6 md:p-8 mb-10" id="free-claim-tools">
         <h2 class="text-2xl font-bold text-white mb-6 text-center">Request a Free Consultation</h2>
-        <form id="quoteForm" class="grid md:grid-cols-2 gap-6">
-          <div class="md:col-span-2">
-            <label for="quote-type" class="block text-sm font-semibold text-slate-300 mb-2">Select Insurance Need</label>
-            <select id="quote-type" name="category" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
-              <option value="">Select your insurance need</option>
-              <option>Term Insurance</option>
-              <option>Health Insurance</option>
-              <option>Life Insurance</option>
-              <option>Motor Insurance</option>
-              <option>Pension / Retirement Plans</option>
-              <option>Child Education Plan</option>
-              <option>SME / Business Insurance</option>
-              <option>Claim Support / Rejected Claim</option>
-              <option>Policy Review</option>
-              <option>Other</option>
-            </select>
+
+        <form id="quoteForm" class="space-y-5">
+          <!-- Insurance Need: Visual Option Chips instead of native select -->
+          <fieldset>
+            <legend class="block text-sm font-semibold text-slate-300 mb-3">Select Insurance Need <span class="text-emerald-400" aria-hidden="true">*</span></legend>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" role="radiogroup" aria-label="Insurance category" id="category-options">
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Term Insurance" required class="sr-only peer" aria-label="Term Insurance" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">🛡️</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Term Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Health Insurance" required class="sr-only peer" aria-label="Health Insurance" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">🏥</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Health Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Life Insurance" required class="sr-only peer" aria-label="Life Insurance" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">👨‍👩‍👧</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Life Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Motor Insurance" required class="sr-only peer" aria-label="Motor Insurance" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">🚗</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Motor Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Pension / Retirement Plans" required class="sr-only peer" aria-label="Pension Plans" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">📈</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Pension Plans</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Child Education Plan" required class="sr-only peer" aria-label="Child Education" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">🎓</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Child Education</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="SME / Business Insurance" required class="sr-only peer" aria-label="Business Insurance" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">🏢</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Business Insurance</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Claim Support / Rejected Claim" required class="sr-only peer" aria-label="Claim Support" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">📋</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Claim Support</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Policy Review" required class="sr-only peer" aria-label="Policy Review" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">🔍</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Policy Review</div>
+                </div>
+              </label>
+              <label class="relative cursor-pointer group">
+                <input type="radio" name="category" value="Other" required class="sr-only peer" aria-label="Other" />
+                <div class="w-full p-4 rounded-xl bg-slate-800/80 border-2 border-white/10 text-center transition-all peer-checked:border-emerald-400 peer-checked:bg-emerald-500/20 peer-focus:ring-2 peer-focus:ring-emerald-400 peer-focus:outline-none">
+                  <div class="text-2xl mb-1">💬</div>
+                  <div class="text-sm font-medium text-white peer-checked:text-emerald-100">Other</div>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label for="quote-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name <span class="text-emerald-400" aria-hidden="true">*</span></label>
+              <input type="text" id="quote-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
+            </div>
+            <div>
+              <label for="quote-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number <span class="text-emerald-400" aria-hidden="true">*</span></label>
+              <input type="tel" id="quote-phone" name="phone" autocomplete="tel" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
+            </div>
           </div>
-          <div>
-            <label for="quote-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name</label>
-            <input type="text" id="quote-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
-          </div>
-          <div>
-            <label for="quote-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number</label>
-            <input type="tel" id="quote-phone" name="phone" autocomplete="tel" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
-          </div>
-          <div class="md:col-span-2 text-center pt-2">
-            <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+
+          <!-- DPDP Act 2023 Consent Checkbox -->
+          <fieldset class="pt-2">
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="dpdp-consent" name="dpdp_consent" required class="mt-1 w-4 h-4 accent-emerald-500 border-white/20 rounded bg-slate-800 focus:ring-2 focus:ring-emerald-400" />
+              <label htmlFor="dpdp-consent" class="text-sm text-slate-300 leading-relaxed">
+                I consent to being contacted by Insurance Support regarding my insurance query, in accordance with the <a href="/privacy-policy/" class="underline hover:text-emerald-300">Privacy Policy</a> and India's <a href="https://digitalpersonaldata.gov.in/" target="_blank" rel="noopener" class="underline hover:text-emerald-300">Digital Personal Data Protection Act, 2023</a>. My data will not be shared with third parties for marketing.
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="text-center pt-2">
+            <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]" id="quote-submit">
               Request a Call Back
             </button>
-            <p class="text-xs text-slate-400 mt-4">Your details will be used to respond to this request. See our <a class="underline hover:text-white" href="/privacy-policy/">Privacy Policy</a>.</p>
+            <p class="text-xs text-slate-400 mt-3">Your details are used only to respond to this request. No spam, no third-party sharing.</p>
           </div>
-          <div id="quote-error" class="hidden md:col-span-2 rounded-xl border border-red-400/40 bg-red-500/10 p-4 text-center text-red-200" role="alert"></div>
+
+          <div id="quote-error" class="hidden rounded-xl border border-red-400/40 bg-red-500/10 p-4 text-center text-red-200" role="alert"></div>
         </form>
+
         <div id="quote-success" class="hidden text-center py-10">
           <div class="text-5xl mb-4">✅</div>
           <h3 class="text-2xl font-bold text-white mb-3">Thank You!</h3>
-          <p class="text-slate-300 mb-6">Your request has been received. Hari Kotian or an advisor will contact you about your insurance need.</p>
+          <p class="text-slate-300 mb-6">Your request has been received. Suhas K. or an advisor will contact you about your insurance need.</p>
           <a href="tel:+919986634506" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-xl text-lg hover:scale-[1.02] transition-all">
             Or Call Now: +91-9986634506
           </a>
         </div>
+      </div>
+
+      <!-- ===== SERVICE CARDS (BELOW FORM) ===== -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10" aria-label="Types of insurance support available">
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-amber-300">Policy Guidance</div><div class="text-xs text-slate-400 mt-1">Understand coverage and terms</div></div>
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-amber-300">Claim Support</div><div class="text-xs text-slate-400 mt-1">Organize documents and questions</div></div>
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-amber-300">Insurer Follow-up</div><div class="text-xs text-slate-400 mt-1">Understand available next steps</div></div>
+        <div class="bg-white/5 rounded-2xl p-4 text-center border border-white/10"><div class="text-lg font-bold text-emerald-300">Bengaluru Based</div><div class="text-xs text-slate-400 mt-1">Based in Jalahalli</div></div>
       </div>
 
       <ContactSection />
@@ -88,15 +179,23 @@ import ContactSection from '../components/sections/ContactSection.astro';
 </BaseLayout>
 
 <script is:inline>
+  // Radio group visual feedback
+  document.querySelectorAll('#category-options input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('#category-options label').forEach(l => l.classList.remove('ring-2', 'ring-emerald-400'));
+      radio.closest('label')?.classList.add('ring-2', 'ring-emerald-400');
+    });
+  });
+
   document.getElementById('quoteForm')?.addEventListener('submit', async function (event) {
     event.preventDefault();
     const form = this;
-    const button = form.querySelector('button[type="submit"]');
+    const button = document.getElementById('quote-submit');
     const error = document.getElementById('quote-error');
     const originalLabel = button.textContent;
     error.classList.add('hidden');
     button.disabled = true;
-    button.textContent = 'Sending request…';
+    button.textContent = 'Sending request...';
 
     try {
       const values = new FormData(form);

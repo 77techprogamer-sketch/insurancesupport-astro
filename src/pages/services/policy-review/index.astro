@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TrustStrip from '../../../components/TrustStrip';
+import InsuranceCalculator from '../../../components/InsuranceCalculator';
+---
+
+<BaseLayout
+  title="Policy Review in Bangalore | Portfolio Audit, Gap Analysis, Nominee Update | Insurance Support"
+  description="Comprehensive policy review in Bangalore. Portfolio audit, gap analysis, nominee updates, premium optimization, consolidation. LIC, ICICI, HDFC, Max, TATA, SBI, Bajaj, Star, Care. IRDAI advisor Suhas K."
+  canonical="https://insurancesupport.online/services/policy-review/"
+  ogImage="https://insurancesupport.online/images/og/policy-review.png"
+  pageType="service-detail"
+  keywords="policy review Bangalore, insurance portfolio audit, gap analysis insurance, nominee update, premium optimization, policy consolidation"
+  dateModified="2026-10-22"
+  geoPlaceName="Jalahalli, Bengaluru"
+  geoPosition="13.0159;77.5522"
+  lang="en-IN"
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Policy Review & Portfolio Audit",
+    "description": "Comprehensive insurance portfolio review. Gap analysis (under/over insured), nominee verification, premium optimization, duplicate cover elimination, consolidation. All insurers: LIC, ICICI, HDFC, Max, TATA, SBI, Bajaj, Star, Care. Actionable report with priorities.",
+    "url": "https://insurancesupport.online/services/policy-review/",
+    "provider": {
+      "@type": "Person",
+      "name": "Suhas K.",
+      "jobTitle": "IRDAI Certified Insurance Advisor",
+      "identifier": "0149161D",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Insurance Support",
+        "url": "https://insurancesupport.online"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bengaluru"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "Policy Review Consultation",
+      "description": "Free initial portfolio health check — identify top 3 gaps",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a policy review include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1) Coverage adequacy vs human life value/health needs. 2) Duplicate/overlapping covers. 3) Nominee correctness & Witness signatures. 4) Premium efficiency (surrender value vs paid-up). 5) Missing critical riders (CI, ADB, WoP). 6) Policy document organization. 7) Actionable 30/60/90-day plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I review my insurance portfolio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Annually, or after major life events: marriage, childbirth, job change, home loan, parents' retirement, inheritance, health diagnosis. IRDAI recommends annual review. We send automated reminders."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help update nominees across all policies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We prepare nominee change forms for all insurers (LIC, private), get signatures witnessed, submit, track acknowledgment. Critical: nominee must be immediate family for life insurance; friend/relative allowed for health/motor with insurer approval."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I have policies from agents who are no longer reachable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common issue. We liaise directly with insurer servicing branches/central teams. Policy number + PAN + KYC sufficient. We retrieve policy details, update contact, set up digital access (customer portal, app)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you recommend surrendering traditional policies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only if: premium >15% income, policy <3 years (low surrender value), better term+MF alternative exists, or goal changed. We calculate surrender value vs paid-up vs continue IRR. Many 10+ year policies better continued."
+        }
+      }
+    ]
+  })} />
+
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden pt-16 pb-24">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <nav class="text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/services/" class="hover:text-amber-300">Services</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Policy Review</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-400/20 text-emerald-300 text-sm font-semibold mb-4 border border-emerald-400/30">
+          All Insurers · Gap Analysis · Nominee Update · Premium Optimization
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          Policy Review & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Portfolio Audit</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Your insurance portfolio deserves a health check. Comprehensive review across all insurers: coverage gaps, nominee errors, premium leaks, duplicate covers. Actionable report with prioritized fixes.
+        </p>
+      </div>
+
+      <TrustStrip client:visible />
+
+      <section class="mb-12" aria-labelledby="checklist-heading">
+        <h2 id="checklist-heading" class="text-2xl font-bold text-center mb-8">What We Audit — 7-Point Checklist</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { icon: '🎯', title: 'Coverage Adequacy', desc: 'Human Life Value (15–20x income) vs actual life cover. Health sum insured vs family age/history. Property reinstatement value vs market value.' },
+            { icon: '👥', title: 'Nominee & Witness', desc: 'Nominee name, relationship, % share, contact. Witness signatures valid. Contingent nominee for life. Minor nominee guardian appointed.' },
+            { icon: '💰', title: 'Premium Efficiency', desc: 'Term vs endowment cost comparison. Rider value (CI, ADB, WoP). Premium as % of income (target <10%). Payment mode (annual saves 5%).' },
+            { icon: '🔄', title: 'Duplication & Overlap', desc: 'Employer + personal health. Multiple term plans (waste). Rider overlap (CI in life + standalone). Same risk covered twice.' },
+            { icon: '📄', title: 'Document Organization', desc: 'Digital + physical copies. Policy number, premium due dates, maturity dates, login credentials. Shared access with spouse/nominee.' },
+            { icon: '🏷️', title: 'Rider & Feature Gaps', desc: 'Critical illness (25L+). Accidental death (1x base). Waiver of premium. Hospital cash (if no OPD). Return of premium (if savings goal).' },
+            { icon: '📋', title: 'Action Plan', desc: 'Immediate (30 days): nominee fix, premium mode. Short (60 days): gap cover, rider add. Long (90 days): restructure, consolidate, surrender decision.' }
+          ].map(item => (
+            <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+              <div class="text-3xl mb-3">{item.icon}</div>
+              <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+              <p class="text-slate-300 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="common-heading">
+        <h2 id="common-heading" class="text-3xl font-bold text-center mb-10">Common Issues We Find (90% of Portfolios)</h2>
+        <div class="overflow-x-auto rounded-2xl border border-white/10">
+          <table class="w-full min-w-[700px] text-sm text-slate-200">
+            <thead class="bg-white/5">
+              <tr class="border-b border-white/10">
+                <th class="text-left p-4 font-semibold">Issue</th>
+                <th class="text-left p-4 font-semibold">Frequency</th>
+                <th class="text-left p-4 font-semibold">Risk</th>
+                <th class="text-left p-4 font-semibold">Fix</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5"><td class="p-4">Nominee = parent (not spouse/child)</td><td class="p-4">65%</td><td class="p-4">Claim delay, legal dispute</td><td class="p-4">Change to spouse/child + contingent</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">Only employer health cover</td><td class="p-4">55%</td><td class="p-4">Zero cover on job loss/retirement</td><td class="p-4">Buy personal floater + top-up</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">Term cover <10x income</td><td class="p-4">70%</td><td class="p-4">Family financial crisis on death</td><td class="p-4">Top-up term to 15–20x income</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">Endowment sold as 'investment'</td><td class="p-4">60%</td><td class="p-4">Low return (4%), high premium</td><td class="p-4">Continue if >10yr, else paid-up</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">No critical illness rider</td><td class="p-4">80%</td><td class="p-4">Savings wiped out on diagnosis</td><td class="p-4">Add ₹25–50L CI cover</td></tr>
+              <tr class="hover:bg-white/5"><td class="p-4">Parents uninsured / underinsured</td><td class="p-4">50%</td><td class="p-4">Medical debt on children</td><td class="p-4">Senior citizen plan + critical illness</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="process-heading">
+        <h2 id="process-heading" class="text-3xl font-bold text-center mb-10">Our Review Process</h2>
+        <div class="space-y-6">
+          {[
+            { step: 1, title: 'Document Collection', desc: 'Policy docs, premium receipts, nominee forms, employer benefits letter. We provide secure upload link. Physical docs scanned if needed.' },
+            { step: 2, title: 'Data Extraction & Mapping', desc: 'Extract: sum assured, premium, term, riders, nominee, maturity, surrender value. Map to family needs, goals, liabilities.' },
+            { step: 3, title: 'Gap Analysis Report', desc: 'Visual dashboard: coverage ratio, premium burden, nominee status, rider gaps, duplication. Priority-coded: Critical / Important / Optional.' },
+            { step: 4, title: 'Recommendation Meeting', desc: 'Walkthrough via video/in-person. Explain each gap, cost to fix, insurer options. You approve action items.' },
+            { step: 5, title: 'Implementation & Tracking', desc: 'We execute: nominee changes, rider additions, new policies, surrenders. Track till acknowledgment. Annual auto-review reminder.' }
+          ].map(s => (
+            <div class="flex gap-4 bg-white/5 rounded-2xl p-6 border border-white/10">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-2xl font-bold text-emerald-300 flex-shrink-0">{s.step}</div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">{s.title}</h3>
+                <p class="text-slate-300 text-sm">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16" aria-labelledby="quote-heading">
+        <h2 id="quote-heading" class="text-3xl font-bold text-center mb-10">Get Your Free Portfolio Health Check</h2>
+        <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl p-6 md:p-8 max-w-xl mx-auto">
+          <form id="reviewQuoteForm" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="r-policies" class="block text-sm font-semibold text-slate-300 mb-2">Number of Policies <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="r-policies" name="policy_count" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="1-3">1–3 Policies</option>
+                  <option value="4-6">4–6 Policies</option>
+                  <option value="7-10">7–10 Policies</option>
+                  <option value="10+">10+ Policies</option>
+                </select>
+              </div>
+              <div>
+                <label for="r-insurers" class="block text-sm font-semibold text-slate-300 mb-2">Insurers Involved <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="r-insurers" name="insurers" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="lic-only">Only LIC</option>
+                  <option value="private-only">Only Private</option>
+                  <option value="mixed">Mix of LIC + Private</option>
+                  <option value="employer">Employer + Personal</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="r-last-review" class="block text-sm font-semibold text-slate-300 mb-2">Last Review <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="r-last-review" name="last_review" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="never">Never Reviewed</option>
+                  <option value="1yr">Within 1 Year</option>
+                  <option value="1-3yr">1–3 Years Ago</option>
+                  <option value="3yr+">3+ Years Ago</option>
+                </select>
+              </div>
+              <div>
+                <label for="r-concern" class="block text-sm font-semibold text-slate-300 mb-2">Top Concern <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <select id="r-concern" name="concern" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none">
+                  <option value="">Select</option>
+                  <option value="coverage">Adequacy of Coverage</option>
+                  <option value="nominee">Nominee / Legal Issues</option>
+                  <option value="premium">Premium Cost / Value</option>
+                  <option value="claims">Claim Readiness</option>
+                  <option value="organization">Document Organization</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="r-name" class="block text-sm font-semibold text-slate-300 mb-2">Your Name <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="text" id="r-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="Full name" />
+              </div>
+              <div>
+                <label for="r-phone" class="block text-sm font-semibold text-slate-300 mb-2">Mobile Number <span class="text-emerald-400" aria-hidden="true">*</span></label>
+                <input type="tel" id="r-phone" name="phone" autocomplete="tel" required pattern="[0-9+ -]{10,15}" class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-white/10 text-white focus:border-emerald-400 focus:outline-none" placeholder="+91 XXXXX XXXXX" />
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="r-dpdp" name="dpdp_consent" required class="mt-1 w-4 h-4 accent-emerald-500 border-white/20 rounded bg-slate-800 focus:ring-2 focus:ring-emerald-400" />
+              <label htmlFor="r-dpdp" class="text-sm text-slate-300">I consent to being contacted per the <a href="/privacy-policy/" class="underline hover:text-emerald-300">Privacy Policy</a> and DPDP Act 2023.</label>
+            </div>
+            <div class="text-center pt-2">
+              <button type="submit" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl text-lg shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+                Get Free Portfolio Health Check
+              </button>
+            </div>
+            <div id="r-error" class="hidden rounded-xl border border-red-400/40 bg-red-500/10 p-4 text-center text-red-200" role="alert"></div>
+          </form>
+        </div>
+      </section>
+
+      <InsuranceCalculator client:load />
+    </div>
+  </main>
+</BaseLayout>
+
+<script is:inline>
+  document.getElementById('reviewQuoteForm')?.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    const form = this;
+    const button = form.querySelector('button[type="submit"]');
+    const error = document.getElementById('r-error');
+    const originalLabel = button.textContent;
+    error.classList.add('hidden');
+    button.disabled = true;
+    button.textContent = 'Sending request...';
+
+    try {
+      const values = new FormData(form);
+      const response = await fetch('/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: values.get('name'),
+          phone: values.get('phone'),
+          category: 'Policy Review',
+          message: `Review: ${values.get('policy_count')} policies, ${values.get('insurers')}, Last review ${values.get('last_review')}, Concern ${values.get('concern')}`,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'We could not send your request. Please try again or call us directly.');
+      }
+      alert('Thank you! We will send your portfolio health check within 4 hours.');
+      form.reset();
+    } catch (submissionError) {
+      error.textContent = submissionError.message || 'We could not send your request. Please try again or call us directly.';
+      error.classList.remove('hidden');
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
+  });
+</script>
