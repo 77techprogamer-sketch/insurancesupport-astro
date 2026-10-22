@@ -79,7 +79,7 @@ export default function AuroraHero() {
             marginBottom: '16px',
           }}
         >
-          Expert Claim Assistance . Bengaluru
+          Insurance Support
         </motion.div>
 
         {/* Main H1 - positive, outcome-focused */}

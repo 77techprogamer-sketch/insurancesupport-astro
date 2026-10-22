@@ -18,7 +18,7 @@ export default function TrustStrip() {
           />
           <div>
             <p style={{ margin: 0, fontSize: '14px', color: 'rgba(255,255,255,0.5)', fontFamily: "'Inter', sans-serif" }}>Advised by</p>
-            <p style={{ margin: '4px 0 0', fontSize: '18px', fontWeight: 600, color: '#fff', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Suhas K.</p>
+            <p style={{ margin: '4px 0 0', fontSize: '18px', fontWeight: 600, color: '#fff', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Insurance Support</p>
             <p style={{ margin: '2px 0 0', fontSize: '13px', color: 'rgba(255,255,255,0.5)', fontFamily: "'Inter', sans-serif" }}>25+ years · LIC · ICICI Lombard · Care Health</p>
           </div>
         </div>
