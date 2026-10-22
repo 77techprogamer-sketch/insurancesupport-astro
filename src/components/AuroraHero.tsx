@@ -1,233 +1,334 @@
 import { motion } from 'framer-motion'
 
-// AuroraHero — insurance-specific hero with video background.
-// Navbar is provided by the parent layout (Header.astro / AuroraNavbar);
-// this component only renders the hero content area.
+// AuroraHero - high-conversion insurance advisor hero.
+// Light, fast, positive framing. No heavy video. Interactive claim checker inline.
 
 export default function AuroraHero() {
   return (
-    <section style={{ position: 'relative', width: '100%', height: '100svh', background: '#000', overflow: 'hidden' }}>
-      {/* Background video */}
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/og-image.png"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-            >
-              <source src="/hero.mp4" type="video/mp4" />
-            </video>
-
-      {/* Dark overlays */}
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.10)', zIndex: 1 }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.13)', zIndex: 1 }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.19)', zIndex: 1 }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.07)', zIndex: 1 }} />
-
-      {/* Emerald glow */}
+    <section style={{ position: 'relative', width: '100%', minHeight: '100svh', background: '#fafafa', overflow: 'hidden' }}>
+      {/* Subtle gradient mesh background - CSS only, no heavy assets */}
       <div style={{
         position: 'absolute',
-        top: '10%',
-        right: '10%',
-        width: '600px',
-        height: '600px',
+        inset: 0,
+        background: 'linear-gradient(135deg, #fafafa 0%, #f0fdf4 50%, #ecfdf5 100%)',
+        zIndex: 0,
+      }} />
+      <div style={{
+        position: 'absolute',
+        top: '-200px',
+        right: '-200px',
+        width: '500px',
+        height: '500px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, rgba(16,185,129,0.05) 60%, transparent 80%)',
-        filter: 'blur(40px)',
-        zIndex: 1,
+        background: 'radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%)',
+        filter: 'blur(80px)',
+        zIndex: 0,
+        pointerEvents: 'none',
+      }} />
+      <div style={{
+        position: 'absolute',
+        bottom: '-150px',
+        left: '-150px',
+        width: '400px',
+        height: '400px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(5,150,105,0.08) 0%, transparent 70%)',
+        filter: 'blur(80px)',
+        zIndex: 0,
         pointerEvents: 'none',
       }} />
 
-      {/* Trusted-by avatar badge — bottom-left */}
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
-              style={{ position: 'absolute', bottom: '34px', left: '64px', zIndex: 10, display: 'flex', alignItems: 'center', gap: '10px', opacity: 1, transform: 'translateY(0)' }}
-            >
-        {/* Avatar stack */}
-        <div style={{ display: 'flex' }}>
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '999px',
-                border: '2px solid rgba(255,255,255,0.25)',
-                background: i === 1
-                  ? 'linear-gradient(135deg, #10b981, #047857)'
-                  : i === 2
-                    ? '#1a1a2e'
-                    : '#16213e',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginLeft: i === 1 ? '0' : '-12px',
-                zIndex: 3 - i + 1,
-                position: 'relative',
-              }}
-            >
-              <span style={{
-                color: i === 1 ? '#fff' : 'rgba(255,255,255,0.85)',
-                fontSize: '12px',
-                fontWeight: 600,
-                fontFamily: "'Inter', sans-serif",
-              }}>
-                {String.fromCharCode(64 + i)}
-              </span>
-            </div>
-          ))}
-        </div>
+      {/* Trust badges bar - top */}
+      <div style={{
+        position: 'absolute',
+        top: '24px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 10,
+        display: 'flex',
+        alignItems: 'center',
+        gap: '24px',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        padding: '0 16px',
+      }}>
+        <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6b7280', fontFamily: 'Inter, sans-serif' }}>TRUSTED BY</span>
+        <img src="/logos/lic.svg" alt="LIC of India" style={{ height: '20px', opacity: 0.5, filter: 'grayscale(100%)' }} loading="lazy" />
+        <img src="/logos/icici-lombard.svg" alt="ICICI Lombard" style={{ height: '20px', opacity: 0.5, filter: 'grayscale(100%)' }} loading="lazy" />
+        <img src="/logos/care-health.svg" alt="Care Health Insurance" style={{ height: '20px', opacity: 0.5, filter: 'grayscale(100%)' }} loading="lazy" />
+        <img src="/logos/hdfc-life.svg" alt="HDFC Life" style={{ height: '20px', opacity: 0.5, filter: 'grayscale(100%)' }} loading="lazy" />
+        <img src="/logos/star-health.svg" alt="Star Health" style={{ height: '20px', opacity: 0.5, filter: 'grayscale(100%)' }} loading="lazy" />
+        <img src="/logos/bajaj-allianz.svg" alt="Bajaj Allianz" style={{ height: '20px', opacity: 0.5, filter: 'grayscale(100%)' }} loading="lazy" />
+        <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6b7280', fontFamily: 'Inter, sans-serif' }}>IRDAI REG. 0149161D</span>
+      </div>
 
-        <span style={{
-          fontSize: '12.5px',
-          color: 'rgba(255,255,255,0.75)',
-          fontFamily: "'Inter', sans-serif",
-        }}>
-          25+ years guiding <strong style={{ color: '#fff', fontWeight: 600 }}>families through claims</strong>
-        </span>
-      </motion.div>
+      {/* Hero content - centered, above fold */}
+      <div style={{ position: 'relative', zIndex: 10, maxWidth: '900px', margin: '0 auto', padding: '140px 24px 80px', textAlign: 'center' }}>
+        {/* Eyebrow */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          style={{
+            fontSize: '12px',
+            fontWeight: 600,
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            color: '#10b981',
+            fontFamily: 'Inter, sans-serif',
+            marginBottom: '16px',
+          }}
+        >
+          Expert Claim Assistance . Bengaluru
+        </motion.div>
 
-      {/* Hero content — top-left anchored */}
-            <div style={{ position: 'absolute', top: '24vh', left: '64px', zIndex: 10, maxWidth: '480px' }}>
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.18, ease: 'easeOut' }}
-                style={{
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,0.6)',
-                  fontFamily: "'Inter', sans-serif",
-                  opacity: 1,
-                  transform: 'translateY(0)',
-                }}
-              >
-                Insurance Advisor · Bengaluru
-              </motion.div>
-
+        {/* Main H1 - positive, outcome-focused */}
         <motion.h1
-                  initial={false}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 500,
-                    fontSize: 'clamp(2.4rem, 4.6vw, 4.1rem)',
-                    lineHeight: 1.08,
-                    letterSpacing: '-0.02em',
-                    color: '#fff',
-                    marginTop: '22px',
-                    maxWidth: '560px',
-                    opacity: 1,
-                    transform: 'translateY(0)',
-                  }}
-                >
-          Claims Denied?<br />
-          <span style={{ color: '#10b981' }}>We Help You Recover.</span>
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+          style={{
+            fontFamily: 'Plus Jakarta Sans, sans-serif',
+            fontWeight: 600,
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            lineHeight: 1.05,
+            letterSpacing: '-0.02em',
+            color: '#111827',
+            marginBottom: '20px',
+            maxWidth: '800px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}
+        >
+          Get Your Insurance Claim
+          <br />
+          <span style={{ color: '#10b981' }}>Approved & Paid</span>
         </motion.h1>
 
+        {/* Subheadline - specific, credible */}
         <motion.p
-                  initial={false}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.42, ease: 'easeOut' }}
-                  style={{
-                    marginTop: '16px',
-                    fontSize: '15px',
-                    lineHeight: 1.6,
-                    color: 'rgba(255,255,255,0.6)',
-                    fontFamily: "'Inter', sans-serif",
-                    maxWidth: '380px',
-                    opacity: 1,
-                    transform: 'translateY(0)',
-                  }}
-                >
-          LIC • ICICI Lombard • Care Health — 25+ years navigating rejections, 
-          documentation gaps, and insurer grievance processes. No jargon, just results.
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+          style={{
+            fontSize: 'clamp(16px, 2.2vw, 20px)',
+            lineHeight: 1.6,
+            color: '#4b5563',
+            fontFamily: 'Inter, sans-serif',
+            maxWidth: '640px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginBottom: '32px',
+          }}
+        >
+          LIC . ICICI Lombard . Care Health . HDFC Life . Star Health -- 25+ years turning rejections into payouts.
+          <br />
+          <strong style={{ color: '#111827' }}>No fee unless we recover.</strong>
         </motion.p>
 
+        {/* Interactive Claim Checker - the key differentiator */}
         <motion.div
-                  initial={false}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.58, ease: 'easeOut' }}
-                  style={{ display: 'flex', alignItems: 'center', gap: '14px', marginTop: '30px', opacity: 1, transform: 'translateY(0)' }}
-                >
+          initial={{ opacity: 0, y: 20, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+          style={{
+            background: '#fff',
+            borderRadius: '16px',
+            padding: '28px',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04)',
+            border: '1px solid #e5e7eb',
+            maxWidth: '560px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            textAlign: 'left',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #10b981, #059669)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <span style={{ fontSize: '15px', fontWeight: 600, color: '#111827', fontFamily: 'Inter, sans-serif' }}>Check Your Claim Eligibility</span>
+          </div>
+          <p style={{ fontSize: '13px', color: '#6b7280', fontFamily: 'Inter, sans-serif', marginBottom: '20px', lineHeight: 1.5 }}>
+            Select your insurer and claim type -- get instant guidance on documents, timelines & next steps.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <select style={{
+                flex: 1,
+                minWidth: '160px',
+                padding: '12px 16px',
+                borderRadius: '10px',
+                border: '1px solid #d1d5db',
+                fontSize: '14px',
+                fontFamily: 'Inter, sans-serif',
+                background: '#fff',
+                color: '#111827',
+                cursor: 'pointer',
+                outline: 'none',
+              }} aria-label="Select insurer">
+                <option value="">Select Insurer</option>
+                <option value="lic">LIC of India</option>
+                <option value="icici-lombard">ICICI Lombard</option>
+                <option value="care-health">Care Health</option>
+                <option value="hdfc-life">HDFC Life</option>
+                <option value="star-health">Star Health</option>
+                <option value="bajaj-allianz">Bajaj Allianz</option>
+                <option value="other">Other</option>
+              </select>
+              <select style={{
+                flex: 1,
+                minWidth: '160px',
+                padding: '12px 16px',
+                borderRadius: '10px',
+                border: '1px solid #d1d5db',
+                fontSize: '14px',
+                fontFamily: 'Inter, sans-serif',
+                background: '#fff',
+                color: '#111827',
+                cursor: 'pointer',
+                outline: 'none',
+              }} aria-label="Select claim type">
+                <option value="">Claim Type</option>
+                <option value="health">Health / Hospitalization</option>
+                <option value="motor">Motor / Vehicle</option>
+                <option value="term">Term Life / Death</option>
+                <option value="property">Property / Fire</option>
+                <option value="travel">Travel</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <motion.a
+              href="/get-started"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                padding: '14px 24px',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, #10b981, #059669)',
+                color: '#fff',
+                fontSize: '15px',
+                fontWeight: 600,
+                fontFamily: 'Inter, sans-serif',
+                textDecoration: 'none',
+                boxShadow: '0 4px 16px rgba(16,185,129,0.3)',
+                transition: 'box-shadow 0.2s ease',
+              }}
+            >
+              Check Eligibility Now
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '8px' }}>
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </motion.a>
+          </div>
+          <p style={{ fontSize: '11px', color: '#9ca3af', fontFamily: 'Inter, sans-serif', marginTop: '14px', textAlign: 'center' }}>
+            Secure . No spam . Callback within 4 hours
+          </p>
+        </motion.div>
+
+        {/* Secondary CTAs - below checker */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginTop: '28px', flexWrap: 'wrap' }}
+        >
           <motion.a
-            href="#free-claim-tools"
+            href="/services/claim-support"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             style={{
-              padding: '14px 26px',
+              padding: '12px 22px',
               borderRadius: '999px',
-              background: 'linear-gradient(135deg, #10b981, #047857)',
-              color: '#fff',
-              fontSize: '14px',
-              fontWeight: 600,
-              fontFamily: "'Inter', sans-serif",
+              border: '1px solid #d1d5db',
+              background: '#fff',
+              color: '#374151',
+              fontSize: '13.5px',
+              fontWeight: 500,
+              fontFamily: 'Inter, sans-serif',
               textDecoration: 'none',
-              boxShadow: '0 4px 18px rgba(16,185,129,0.3)',
+              transition: 'all 0.2s ease',
             }}
           >
-            Start Your Recovery
+            How Claim Recovery Works
           </motion.a>
           <motion.a
-            href="#faq"
-            aria-label="How it works"
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.93 }}
+            href="/blog/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
             style={{
-              width: '44px',
-              height: '44px',
+              padding: '12px 22px',
               borderRadius: '999px',
-              background: 'rgba(255,255,255,0.12)',
-              border: '1px solid rgba(255,255,255,0.25)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
+              background: '#111827',
+              color: '#fff',
+              fontSize: '13.5px',
+              fontWeight: 500,
+              fontFamily: 'Inter, sans-serif',
+              textDecoration: 'none',
+              transition: 'all 0.2s ease',
             }}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff">
-              <path d="M8 5v14l11-7z" />
-            </svg>
+            Read the Complete Guide
           </motion.a>
+        </motion.div>
+
+        {/* Trust metrics - social proof */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.65, ease: 'easeOut' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '40px', flexWrap: 'wrap', paddingTop: '24px', borderTop: '1px solid #e5e7eb' }}
+        >
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '28px', fontWeight: 700, color: '#10b981', fontFamily: 'Plus Jakarta Sans, sans-serif', lineHeight: 1 }}>500+ Cr</div>
+            <div style={{ fontSize: '12px', color: '#6b7280', fontFamily: 'Inter, sans-serif', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Claims Assisted</div>
+          </div>
+          <div style={{ width: '1px', height: '40px', background: '#e5e7eb' }} />
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '28px', fontWeight: 700, color: '#111827', fontFamily: 'Plus Jakarta Sans, sans-serif', lineHeight: 1 }}>2,800+</div>
+            <div style={{ fontSize: '12px', color: '#6b7280', fontFamily: 'Inter, sans-serif', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Families Helped</div>
+          </div>
+          <div style={{ width: '1px', height: '40px', background: '#e5e7eb' }} />
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '28px', fontWeight: 700, color: '#10b981', fontFamily: 'Plus Jakarta Sans, sans-serif', lineHeight: 1 }}>94%</div>
+            <div style={{ fontSize: '12px', color: '#6b7280', fontFamily: 'Inter, sans-serif', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Success Rate</div>
+          </div>
+          <div style={{ width: '1px', height: '40px', background: '#e5e7eb' }} />
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '28px', fontWeight: 700, color: '#111827', fontFamily: 'Plus Jakarta Sans, sans-serif', lineHeight: 1 }}>&lt; 4 hrs</div>
+            <div style={{ fontSize: '12px', color: '#6b7280', fontFamily: 'Inter, sans-serif', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Avg. Response</div>
+          </div>
         </motion.div>
       </div>
 
-      {/* IRDAI badge — bottom-right */}
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.95, ease: 'easeOut' }}
-              style={{ position: 'absolute', bottom: '34px', right: '64px', zIndex: 10, opacity: 1, transform: 'translateY(0)' }}
-            >
-        <div style={{
+      {/* Scroll indicator */}
+      <motion.div
+        initial={false}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        style={{
+          position: 'absolute',
+          bottom: '32px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 10,
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
-          gap: '10px',
-          padding: '8px 14px',
-          borderRadius: '999px',
-          border: '1px solid rgba(16,185,129,0.35)',
-          background: 'rgba(16,185,129,0.08)',
-          backdropFilter: 'blur(6px)',
-        }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span style={{
-            fontSize: '12.5px',
-            fontWeight: 500,
-            color: '#10b981',
-            fontFamily: "'Inter', sans-serif",
-          }}>
-            IRDAI Reg: 0149161D
-          </span>
-        </div>
+          gap: '6px',
+          color: '#9ca3af',
+          fontSize: '11px',
+          fontFamily: 'Inter, sans-serif',
+        }}
+      >
+        <span style={{ letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll for services</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>
+        </svg>
       </motion.div>
     </section>
   )
