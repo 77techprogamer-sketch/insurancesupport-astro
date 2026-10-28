@@ -94,7 +94,7 @@ Maintain a simple chronology with four columns: date, event, person or channel, 
 
 ### Choose the guide for your claim type
 
-- For a [health insurance claim rejection, read the step-by-step appeal guide](/blog/health-insurance-claim-rejected-appeal-guide-2026/).
+- For a [health insurance claim rejection, read the step-by-step appeal guide](/blog/health-insurance-claim-rejection-rights-2026/).
 - For a [cashless claim denied at a hospital, use the hospital-day checklist](/blog/cashless-health-insurance-claim-denied-hospital-2026/).
 - For a [LIC death claim dispute, follow the nominee guide](/blog/lic-death-claim-rejected-nominee-guide-2026/).
 - For a [motor claim or surveyor dispute, review the motor claim guide](/blog/motor-insurance-claim-denied-surveyor-dispute-2026/).

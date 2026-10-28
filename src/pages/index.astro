@@ -1,314 +1,423 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AuroraHero from '../components/AuroraHero';
-import ServicesGrid from '../components/ServicesGrid';
-import FeaturesSection from '../components/sections/FeaturesSection.astro';
-import TestimonialsCarousel from '../components/TestimonialsCarousel';
-import BlogSection from '../components/BlogSection';
-import NewsletterSection from '../components/NewsletterSection';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
-import AdvisorVsPortalSection from '../components/AdvisorVsPortalSection.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
+import Icon from '../components/icons/Icon.astro';
 
-import TrustStrip from '../components/TrustStrip';
-import InsuranceCalculator from '../components/InsuranceCalculator';
+const pageTitle = 'Insurance Claim Help & Advisory India | Free Review by IRDAI Advisor';
+const pageDescription = 'Insurance claim rejected, delayed or underpaid? Get free case review from Hari Kotian, IRDAI-certified advisor (Reg No: 0149161D). We handle health, life, motor, term claim disputes across India. No fee for first review.';
+const pageKeywords = 'insurance claim help India, claim rejection appeal, IRDAI advisor, insurance claim recovery, health claim rejected, life insurance claim dispute, motor claim settlement, term insurance claim help';
 
-// Homepage FAQ data — used BOTH for the visible FAQ section AND the FAQPage JSON-LD schema
-const homepageFaqs = [
+const services = [
   {
-    question: "How much does insurance cost and what affects the premium?",
-    answer: "Premiums vary by coverage, sum assured, age, health, occupation, and location. Since 22 September 2025, GST has been exempt on individual life insurance and individual health insurance policies, including family floaters and senior-citizen policies. Group policies and other insurance products may be treated differently, so check the insurer's current quote."
+    title: 'Health & Mediclaim Claims',
+    desc: 'Pre-existing disease exclusions, room-rent capping, cashless denials, non-disclosure allegations.',
+    icon: 'heart-pulse',
+    href: '/services/health-insurance',
   },
   {
-    question: "How do I know which insurance is best for my family and needs?",
-    answer: "The best insurance depends on your family size, age, income, existing assets, health conditions, and goals. For health coverage, choose between individual and family floater plans based on budget. Motor insurance should include third-party liability and suitable own-damage coverage. We provide personalized guidance based on your situation."
+    title: 'Life & Term Insurance Claims',
+    desc: 'Death claim repudiation, contestability period disputes, nominee disputes, mis-selling cases.',
+    icon: 'user-check',
+    href: '/services/life-insurance',
   },
   {
-    question: "What documents are needed for insurance claims and the process?",
-    answer: "Common documents include the claim form, policy document, medical records and bills for health claims, FIR and survey report for some motor claims, and a death certificate for life claims. Requirements vary by policy and claim. We can help organize documents and follow up; the insurer makes the claim decision under the policy terms."
+    title: 'Motor Insurance Claims',
+    desc: 'Total loss undervaluation, surveyor deductions, own-damage repudiation, third-party disputes.',
+    icon: 'car',
+    href: '/services/motor-insurance',
   },
   {
-    question: "Can you help with existing policy review and switching insurers?",
-    answer: "Yes. We can review your policy terms, coverage gaps, and potential alternatives. Switching may affect waiting-period credits, exclusions, or other benefits, so compare the terms carefully before replacing existing cover."
-  },
-  {
-    question: "What is the difference between term insurance and whole life insurance?",
-    answer: "Term insurance provides coverage for a specified period, usually at a lower premium. Whole-life insurance can provide lifelong coverage and may include a cash value element, depending on the product. Compare policy terms and suitability before deciding."
-  },
-  {
-    question: "What should I do if my insurance claim is rejected?",
-    answer: "If your insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer’s grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal."
-  },
-  {
-    question: "What can I do about a delayed insurance claim?",
-    answer: "For a delayed claim, keep the claim reference, submission receipts, and insurer or TPA replies. Ask the insurer’s grievance redressal officer for a written status and next step. If the issue remains unresolved, check the current IRDAI complaint and Insurance Ombudsman routes, including their eligibility and time limits, before filing."
-  },
-  {
-    question: "What is the Insurance Ombudsman?",
-    answer: "The Insurance Ombudsman is an external forum for eligible insurance policyholder complaints. First use the insurer’s grievance process and keep its written response and your supporting documents. Eligibility, jurisdiction, and filing time limits depend on current rules and the case, so check the Council for Insurance Ombudsmen guidance before submitting a complaint."
-  }
+      title: 'Claim Rejection Appeals',
+      desc: "IRDAI Bima Bharosa filing, Insurance Ombudsman representation, grievance redressal escalation.",
+      icon: 'gavel',
+      href: '/services/claim-support',
+    },
 ];
----
 
-<BaseLayout
-  title="Insurance Claim Support in Bengaluru | Insurance Support"
-  description="Insurance Support helps people understand policy options, organize claim documents, and navigate insurer follow-up. Based in Jalahalli, Bengaluru."
-  keywords="insurance claim support Bengaluru, rejected insurance claim help India, insurance claim rejection guidance, health insurance claim documents, insurance advisor Bangalore, policy review Bengaluru"
-  pageType="homepage"
-  canonical="https://insurancesupport.online/"
-  dateModified="2026-10-05"
-  geoPlaceName="Jalahalli, Bengaluru"
-  geoPosition="13.0159;77.5522"
-  ogImage="https://insurancesupport.online/images/og/homepage.png"
-  tags="insurance claim support Bengaluru, rejected insurance claim help India, insurance claim rejection guidance, health insurance claim documents, insurance advisor Bangalore, policy review Bengaluru"
-  ogLocale="en_IN"
-  lang="en-IN"
-  skipDefaultHreflang={true}
-  noIndex={false}
->
-  <meta property="og:type" content="website" />
-  <!-- ===== HEADER ===== -->
+const trustSignals = [
+  { label: 'IRDAI Registered', detail: 'Advisor Reg No: 0149161D' },
+  { label: '25+ Years Experience', detail: 'Insurance advisory & claims' },
+  { label: 'Pan-India Service', detail: 'Remote & doorstep in Bengaluru' },
+  { label: 'No Fee First Review', detail: 'Honest assessment in 24 hrs' },
+];
 
-  <main id="main" class="page-transition">
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Case Review',
+    desc: 'Send your rejection letter & policy copy. We respond within 24 hours with an honest assessment.',
+  },
+  {
+    number: '02',
+    title: 'Policy & Ground Analysis',
+    desc: 'Clause-by-clause review to identify where the insurer\'s reasoning fails.',
+  },
+  {
+    number: '03',
+    title: 'Documentation & Representation',
+    desc: 'Medical records, doctor certificates, structured grievance to the insurer\'s GRO.',
+  },
+  {
+    number: '04',
+    title: 'Regulatory Escalation',
+    desc: 'IRDAI Bima Bharosa complaint and Insurance Ombudsman filing on your behalf.',
+  },
+  {
+    number: '05',
+    title: 'Resolution & Follow-up',
+    desc: 'We track every hearing and reminder until settlement lands in your account.',
+  },
+];
 
-    <!-- ===== AURORA HERO ===== -->
-        <AuroraHero client:visible />
+const testimonials = [
+  {
+    content: 'The insurer said my angioplasty was a pre-existing condition after four years of clean renewals. Insurance Support pulled my old records, drafted the representation, and the amount was credited before the Ombudsman hearing.',
+    name: 'R. Sharma',
+    role: 'Health Insurance Claim, Bangalore',
+  },
+  {
+    content: 'After my husband\'s death the claim was repudiated for non-disclosure. I had given up. Hari Kotian\'s team handled the Ombudsman filing end to end and explained every step in simple language.',
+    name: 'M. Patel',
+    role: 'Term Insurance Claim, Mumbai',
+  },
+  {
+    content: 'The surveyor\'s IDV was far below market. They challenged the deductions with valuation evidence and the insurer revised the settlement in six weeks.',
+    name: 'A. Reddy',
+    role: 'Motor Insurance Claim, Hyderabad',
+  },
+];
 
-        <!-- ===== TRUST STRIP ===== -->
-        <TrustStrip client:visible />
+const faqs = [
+  {
+    question: 'My claim was rejected. Is it worth fighting?',
+    answer: 'Yes. A significant percentage of rejected claims are overturned on appeal, especially when the rejection is based on vague grounds like "non-disclosure" or "pre-existing condition" without specific evidence. Our free review tells you honestly if you have a case.',
+  },
+  {
+    question: 'How long does the appeal process take?',
+    answer: 'Insurer GRO: 15-30 days. IRDAI Bima Bharosa: 30-45 days. Insurance Ombudsman: 3-6 months typically. We manage the entire timeline and keep you updated at every stage.',
+  },
+  {
+    question: 'What documents do I need to start?',
+    answer: 'Rejection letter, policy document, claim form submitted, medical records (for health/life), FIR/survey report (for motor), and any correspondence with the insurer. We guide you on exactly what\'s needed.',
+  },
+  {
+    question: 'Do you charge for the initial review?',
+    answer: 'No. The first case review is completely free. We only discuss fees if we take up your case, and the structure is transparent — typically a percentage of recovered amount or a fixed fee agreed upfront.',
+  },
+  {
+    question: 'Can you help with claims outside Bengaluru?',
+        answer: 'Yes. We handle claims across India remotely. For Bengaluru clients, we offer doorstep document collection and in-person meetings. All regulatory filings (IRDAI, Ombudsman) are done online.',
+      },
+    ];
+    ---
 
-        <!-- ===== CLAIM REJECTED FAQ SNIPPET ===== -->
-    <section class="py-16 bg-[#0a0a0a] relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-      <div class="max-w-4xl mx-auto px-4 relative z-10">
-        <div class="max-w-3xl mx-auto text-center">
-          <span class="label-aurora mb-4">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            Claim Rejections
-          </span>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>What should I do if my insurance claim is rejected?</h2>
-          <p class="text-lg leading-relaxed text-[rgba(255,255,255,0.6)]" style={{ fontFamily: "'Inter', sans-serif" }}>If your insurance claim is rejected, ask the insurer for the written decision and the policy clause it relied on. Compare that reason with your policy, submit any missing evidence, and use the insurer’s grievance channel if needed. Escalation options depend on the policy, facts, and applicable deadlines; claim support cannot guarantee reversal.</p>
-          <a class="inline-block mt-6 text-[#10b981] font-semibold hover:text-[#0d9f6a] transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>See how Insurance Support can help with a claim →</a>
-        </div>
-      </div>
-    </section>
+<BaseLayout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' }
+  ]} />
 
-        <!-- ===== INSURANCE CALCULATOR ===== -->
-        <section class="py-16 bg-[#0a0a0a] relative overflow-hidden">
-          <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-          <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/40 to-transparent" />
-          <div class="max-w-6xl mx-auto px-4 relative z-10">
-            <!-- Value Proposition Content -->
-            <div class="text-center mb-16 reveal">
-              <h2 class="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Insurance guidance and claim support in Bengaluru</h2>
-              <p class="text-lg text-[rgba(255,255,255,0.6)] max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                Insurance Support is led by Hari Kotian and provides insurance guidance and claim assistance from Bengaluru. We help people understand policy terms, organize relevant documents, and follow up with insurers. Each claim is decided by the insurer under the policy terms and available evidence.
-              </p>
-              <p class="text-xs text-[rgba(255,255,255,0.4)] mt-4 italic max-w-3xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
-                IRDAI registration number: 0149161D. Specialisation areas: term insurance, health insurance, claim support, and policy review.
-              </p>
-            </div>
-            <div class="text-center mb-12 reveal" style="transition-delay:0.1s">
-              <span class="label-aurora mb-4">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-                Quick Estimate
-          </span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Insurance Premium Calculator</h2>
-          <p class="text-lg text-[rgba(255,255,255,0.6)] max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>Get an instant estimate for your insurance needs. Select your policy type and fill in the details below.</p>
-        </div>
-        <InsuranceCalculator client:load />
-      </div>
-    </section>
-
-    <!-- ===== GOOGLE RATING TRUST BAR ===== -->
-    <section class="py-6 bg-[#0a0a0a] border-y border-[rgba(255,255,255,0.08)] relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-      <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-        <div class="inline-flex items-center gap-3 px-6 py-3 bg-[rgba(16,185,129,0.08)] border border-[rgba(16,185,129,0.2)] rounded-full">
-          <svg class="w-5 h-5 text-[#10b981]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <a href="https://g.page/r/CRDgJanrKjRhEBM/review" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#10b981] font-semibold transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>Read Insurance Support customer feedback on Google</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TRUST COUNTER BAR ===== -->
-    <!-- ===== TRUST INDICATORS ===== -->
-    <section class="py-12 bg-[#0a0a0a] border-y border-[rgba(255,255,255,0.08)] relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-      <div class="max-w-6xl mx-auto px-4 relative z-10">
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-          <div class="reveal p-6 hover:bg-[rgba(255,255,255,0.04)] rounded-2xl border border-[rgba(255,255,255,0.08)] transition-all">
-            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-[rgba(16,185,129,0.12)] border border-[rgba(16,185,129,0.2)] flex items-center justify-center">
-              <svg class="w-7 h-7 text-[#10b981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Claim Process Guidance</h3>
-            <p class="text-sm text-[rgba(255,255,255,0.55)]" style={{ fontFamily: "'Inter', sans-serif" }}>Guidance on policy terms and insurer processes</p>
-          </div>
-          <div class="reveal p-6 hover:bg-[rgba(255,255,255,0.04)] rounded-2xl border border-[rgba(255,255,255,0.08)] transition-all" style="transition-delay:0.08s">
-            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-[rgba(16,185,129,0.12)] border border-[rgba(16,185,129,0.2)] flex items-center justify-center">
-              <svg class="w-7 h-7 text-[#10b981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Policy Guidance</h3>
-            <p class="text-sm text-[rgba(255,255,255,0.55)]" style={{ fontFamily: "'Inter', sans-serif" }}>Understand coverage, exclusions, and documents</p>
-          </div>
-          <div class="reveal p-6 hover:bg-[rgba(255,255,255,0.04)] rounded-2xl border border-[rgba(255,255,255,0.08)] transition-all" style="transition-delay:0.16s">
-            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-[rgba(16,185,129,0.12)] border border-[rgba(16,185,129,0.2)] flex items-center justify-center">
-              <svg class="w-7 h-7 text-[#10b981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Claim Assistance</h3>
-            <p class="text-sm text-[rgba(255,255,255,0.55)]" style={{ fontFamily: "'Inter', sans-serif" }}>Help organizing documents and insurer follow-up</p>
-          </div>
-        </div>
-        <div class="mt-8 text-center reveal">
-          <p class="text-xs text-[rgba(255,255,255,0.4)] font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>Based in Jalahalli, Bengaluru, Karnataka</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SERVICES ===== -->
-    <ServicesGrid client:load />
-
-    <!-- ===== ADVISOR VS PORTAL ===== -->
-    <AdvisorVsPortalSection />
-
-    <!-- ===== FEATURES ===== -->
-    <FeaturesSection />
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="py-20 lg:py-28 bg-[#0a0a0a] relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/40 to-transparent" />
-      <div class="max-w-5xl mx-auto px-4 relative z-10">
-        <div class="text-center mb-12 reveal">
-          <span class="label-aurora mb-4">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-            Testimonials
-          </span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>What Our Clients Say</h2>
-          <p class="text-lg text-[rgba(255,255,255,0.6)]" style={{ fontFamily: "'Inter', sans-serif" }}>Real stories from families we've helped protect and recover.</p>
-        </div>
-        <TestimonialsCarousel client:load />
-      </div>
-    </section>
-
-    <!-- ===== HOW IT WORKS (Timeline) ===== -->
-    <section class="py-20 lg:py-28 bg-[#0a0a0a] relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-      <div class="absolute top-20 left-10 w-64 h-64 bg-[#10b981]/[0.06] rounded-full blur-3xl" />
-      <div class="absolute bottom-20 right-10 w-80 h-80 bg-[#10b981]/[0.04] rounded-full blur-3xl" />
-
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="text-center mb-16 reveal">
-          <span class="label-aurora mb-4">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-            Simple Process
-          </span>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>How It Works</h2>
-          <p class="text-lg text-[rgba(255,255,255,0.6)] max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>Getting expert insurance support is simple and stress-free.</p>
-        </div>
-
-        <!-- Timeline Steps -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 stagger-children relative">
-          <!-- Connector line (desktop only) -->
-          <div class="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#10b981]/0 via-[#10b981]/50 to-[#10b981]/0" />
-
-          <div class="text-center reveal relative">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-[#10b981] to-[#047857] rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-[#10b981]/30 relative z-10 hover:scale-110 transition-transform">1</div>
-            <h3 class="text-lg font-bold text-white mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Free Consultation</h3>
-            <p class="text-sm text-[rgba(255,255,255,0.55)] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Call or book online for a no-obligation discussion of your needs.</p>
-          </div>
-
-          <div class="text-center reveal relative" style="transition-delay:0.1s">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-[#10b981] to-[#047857] rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-[#10b981]/30 relative z-10 hover:scale-110 transition-transform">2</div>
-            <h3 class="text-lg font-bold text-white mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Expert Analysis</h3>
-            <p class="text-sm text-[rgba(255,255,255,0.55)] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>We review your questions, policy documents, and possible next steps.</p>
-          </div>
-
-          <div class="text-center reveal relative" style="transition-delay:0.2s">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-[#10b981] to-[#047857] rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-[#10b981]/30 relative z-10 hover:scale-110 transition-transform">3</div>
-            <h3 class="text-lg font-bold text-white mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Take Action</h3>
-            <p class="text-sm text-[rgba(255,255,255,0.55)] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>We help organize relevant documents and explain insurer follow-up options.</p>
-          </div>
-
-          <div class="text-center reveal relative" style="transition-delay:0.3s">
-            <div class="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-[#10b981] to-[#047857] rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-[#10b981]/30 relative z-10 hover:scale-110 transition-transform">4</div>
-            <h3 class="text-lg font-bold text-white mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Get Results</h3>
-            <p class="text-sm text-[rgba(255,255,255,0.55)] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>We explain follow-up options and coordinate with the insurer; the insurer decides the claim under the policy terms.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-12 bg-[#0a0a0a] border-t border-[rgba(255,255,255,0.08)] relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-      <div class="mx-auto flex max-w-6xl flex-col gap-5 px-4 md:flex-row md:items-center md:justify-between relative z-10">
-        <div>
-          <h2 id="free-claim-tools" class="text-2xl font-bold text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Free insurance claim checklists and policy tools</h2>
-          <p class="mt-2 text-[rgba(255,255,255,0.6)]" style={{ fontFamily: "'Inter', sans-serif" }}>Find a claim rejection checklist, health claim document guide, complaint toolkit, or term insurance review checklist.</p>
-        </div>
-        <a href="/resources" class="btn-aurora-cta shrink-0" style={{ padding: '12px 22px', fontSize: '14px' }}>
-          Browse free insurance resources
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== BLOG ===== -->
-    <BlogSection client:visible />
-
-    <!-- ===== NEWSLETTER ===== -->
-    <NewsletterSection />
-
-    <!-- ===== CLAIM REJECTION QUIZ ===== -->
-    <ClaimRejectionQuiz />
-
-    <!-- ===== FAQ (visible accordion + FAQPage JSON-LD from shared data) ===== -->
-    <section class="py-20 lg:py-28 bg-[#0a0a0a] relative overflow-hidden" id="faq">
-      <div class="absolute inset-0 opacity-10 bg-aurora-grid" />
-      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#10b981]/40 to-transparent" />
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16">
-          <span class="label-aurora mb-4">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
-            Common Questions
-          </span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-jakarta mb-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Frequently Asked Questions</h2>
-          <p class="text-lg text-[rgba(255,255,255,0.6)] max-w-2xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>Get answers to the most common questions about insurance planning and our services.</p>
-        </div>
-        <div class="space-y-4">
-          {homepageFaqs.map(faq => (
-            <div class="card-aurora">
-              <details class="group">
-                <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:border-[rgba(255,255,255,0.2)] transition-colors">
-                  <h3 class="text-lg font-semibold text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{faq.question}</h3>
-                  <svg class="w-5 h-5 text-[#10b981] group-open:rotate-180 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                </summary>
-                <div class="px-6 pb-6">
-                <p class="text-[rgba(255,255,255,0.6)] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>{faq.answer}</p>
-                {faq.question === "How much does insurance cost and what affects the premium?" && (
-                  <p class="text-xs text-[rgba(255,255,255,0.4)] mt-3" style={{ fontFamily: "'Inter', sans-serif" }}>See the <a class="text-[#10b981] hover:text-[#0d9f6a] underline" href="https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf" target="_blank" rel="noopener noreferrer">GST Council FAQ</a> for the government’s explanation of the exemption.</p>
-                )}
-                {faq.question === "What can I do about a delayed insurance claim?" && (
-                  <p class="text-xs text-[rgba(255,255,255,0.4)] mt-3" style={{ fontFamily: "'Inter', sans-serif" }}>For current regulatory grievance guidance, see <a class="text-[#10b981] hover:text-[#0d9f6a] underline" href="https://bimabharosa.irdai.gov.in/" target="_blank" rel="noopener noreferrer">IRDAI Bima Bharosa</a>.</p>
-                )}
-                {faq.question === "What is the Insurance Ombudsman?" && (
-                  <p class="text-xs text-[rgba(255,255,255,0.4)] mt-3" style={{ fontFamily: "'Inter', sans-serif" }}>See the <a class="text-[#10b981] hover:text-[#0d9f6a] underline" href="https://www.cioins.co.in/Procedure/Index" target="_blank" rel="noopener noreferrer">Council for Insurance Ombudsmen complaint procedure</a> for current eligibility and filing steps.</p>
-                )}
+  <main id="main" role="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <div class="hero-badge animate-fade-in" style="font-family: var(--font-sans);">
+                  <Icon name="shield-check" size="sm" />
+                  <span>IRDAI Registered Advisor · Reg No: 0149161D</span>
                 </div>
-              </details>
-            </div>
+
+                <h1 id="hero-title" class="hero-title animate-slide-up stagger-1" style="font-family: var(--font-display);">
+                  Your claim was rejected.<br /><span style="color: var(--color-primary);">That is not the final word.</span>
+                </h1>
+
+                <p class="hero-desc animate-slide-up stagger-2" style="font-family: var(--font-sans);">
+                  Insurance Support helps Indian policyholders challenge rejected, delayed, and underpaid claims — with clause-level policy analysis, airtight documentation, and escalation up to the Insurance Ombudsman.
+                </p>
+
+                <div class="hero-actions animate-slide-up stagger-3">
+                          <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20my%20claim%20was%20rejected.%20I%20need%20help." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="font-family: var(--font-sans);" aria-label="Start free case review on WhatsApp">
+                            <Icon name="whatsapp" size="sm" />
+                            Free Case Review on WhatsApp
+                          </a>
+                          <a href="tel:+919986634506" class="btn btn-outline btn-lg" style="font-family: var(--font-sans);" aria-label="Call +91 99866 34506">
+                            <Icon name="phone" size="sm" />
+                            Call +91 99866 34506
+                          </a>
+                        </div>
+
+                <!-- Trust Bar -->
+                <div class="hero-trust animate-slide-up stagger-4" role="list" aria-label="Trust indicators">
+                  {trustSignals.map((signal, i) => (
+                    <div class="hero-trust-item" role="listitem" style="font-family: var(--font-sans);">
+                      <Icon name="check" size="sm" />
+                      <span><strong>{signal.label}</strong> — {signal.detail}</span>
+                    </div>
+                  ))}
+                </div>
+      </div>
+    </section>
+
+    <!-- What We Handle -->
+    <section class="section" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label" style="font-family: var(--font-sans);">What We Handle</span>
+          <h2 id="services-title" class="section-title" style="font-family: var(--font-display);">Every kind of claim dispute Indian policyholders run into</h2>
+          <p class="section-desc" style="font-family: var(--font-sans);">From health claim denials to life insurance repudiations — we know the clauses, the process, and how to win.</p>
+        </header>
+
+        <div class="grid-auto">
+                  {services.map((service, i) => (
+                    <article class="card animate-slide-up" style={`animation-delay: ${(i + 1) * 100}ms`}>
+                      <div class="icon icon-primary mb-4" aria-hidden="true">
+                        <Icon name={service.icon} size="md" />
+                      </div>
+                      <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: var(--space-3);">{service.title}</h3>
+                      <p style="font-family: var(--font-sans); color: var(--color-text-secondary); margin-bottom: var(--space-4);">{service.desc}</p>
+                      <a href={service.href} class="link-aurora" style="font-family: var(--font-sans);">Learn more →</a>
+                    </article>
+                  ))}
+                </div>
+      </div>
+    </section>
+
+    <!-- Claim Rejection Quiz -->
+    <section class="section" style="background: var(--color-bg-alt);" aria-labelledby="quiz-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label" style="font-family: var(--font-sans);">Free Assessment</span>
+          <h2 id="quiz-title" class="section-title" style="font-family: var(--font-display);">Quick quiz: How strong is your claim appeal?</h2>
+          <p class="section-desc" style="font-family: var(--font-sans);">Answer 5 questions. Get an honest potential score in 60 seconds.</p>
+        </header>
+        <div style="max-width: 560px; margin: 0 auto;">
+          <ClaimRejectionQuiz />
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" style="background: var(--color-bg-alt);" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label" style="font-family: var(--font-sans);">How It Works</span>
+          <h2 id="process-title" class="section-title" style="font-family: var(--font-display);">From rejection letter to resolution, in five steps</h2>
+          <p class="section-desc" style="font-family: var(--font-sans);">A clear, structured process — no surprises, no jargon.</p>
+        </header>
+
+        <div class="steps">
+          {processSteps.map((step, i) => (
+            <article class="card animate-slide-up" style={`animation-delay: ${(i + 1) * 100}ms`}>
+              <div class="step-number" aria-label="Step {step.number}">{step.number}</div>
+              <h3 class="step-title" style="font-family: var(--font-display);">{step.title}</h3>
+              <p class="step-desc" style="font-family: var(--font-sans);">{step.desc}</p>
+            </article>
           ))}
         </div>
-        <div class="text-center mt-12">
-          <a href="/faq" class="btn-aurora-pill">
-            View All 50+ FAQs
-            <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
+      </div>
+    </section>
+
+    <!-- Insurers We Deal With -->
+    <section class="section" aria-labelledby="insurers-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label" style="font-family: var(--font-sans);">Insurers & Regulators</span>
+          <h2 id="insurers-title" class="section-title" style="font-family: var(--font-display);">We know how each insurer's grievance desk works</h2>
+          <p class="section-desc" style="font-family: var(--font-sans);">Our team has taken up matters against most major Indian insurers and TPAs. We use the official route every time.</p>
+        </header>
+
+        <div class="trust-bar" role="list" aria-label="Insurers we handle">
+          {[
+            'Star Health', 'HDFC ERGO', 'LIC of India', 'ICICI Lombard',
+            'Niva Bupa', 'New India Assurance', 'Bajaj Allianz', 'Care Health',
+            'SBI General', 'Tata AIG', 'Oriental Insurance', 'Max Life'
+          ].map(insurer => (
+            <span role="listitem" class="badge badge-primary" style="font-family: var(--font-sans);">{insurer}</span>
+          ))}
+        </div>
+
+        <p style="text-align: center; margin-top: var(--space-6); font-size: 0.875rem; color: var(--color-text-muted); font-family: var(--font-sans);">
+          Insurer names listed only to describe matters we assist with. No affiliation, partnership, or endorsement implied.
+        </p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background: var(--color-bg-alt);" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label" style="font-family: var(--font-sans);">Case Outcomes</span>
+          <h2 id="testimonials-title" class="section-title" style="font-family: var(--font-display);">Policyholders who were told no — and did not stop there</h2>
+          <p class="section-desc" style="font-family: var(--font-sans);">Names changed on request. Past outcomes do not predict the result of your claim.</p>
+        </header>
+
+        <div class="grid-3">
+          {testimonials.map((testimonial, i) => (
+            <article class="testimonial animate-slide-up" style={`animation-delay: ${(i + 1) * 100}ms`}>
+              <p class="testimonial-content" style="font-family: var(--font-sans);">"{testimonial.content}"</p>
+              <div class="testimonial-author" style="font-family: var(--font-sans);">
+                <div class="testimonial-avatar" aria-hidden="true">{testimonial.name.charAt(0)}</div>
+                <div>
+                  <div class="testimonial-name">{testimonial.name}</div>
+                  <div class="testimonial-role">{testimonial.role}</div>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
-    <FAQPageJsonLd questions={homepageFaqs} />
+
+    <!-- FAQ -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label" style="font-family: var(--font-sans);">Common Questions</span>
+          <h2 id="faq-title" class="section-title" style="font-family: var(--font-display);">Straight answers, no fine print</h2>
+        </header>
+
+        <div class="grid-2" style="max-width: 900px; margin: 0 auto;">
+          <FAQPageJsonLd questions={faqs} />
+          {faqs.map((faq, i) => (
+                      <details class="faq-item animate-slide-up" style={`animation-delay: ${(i + 1) * 100}ms`}>
+                        <summary class="faq-question" style="font-family: var(--font-sans);">
+                          {faq.question}
+                          <Icon name="arrow-right" size="sm" class="faq-icon" />
+                        </summary>
+                        <div class="faq-answer" style="font-family: var(--font-sans);">{faq.answer}</div>
+                      </details>
+                    ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--gradient-hero);" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+          <h2 id="cta-title" class="section-title" style="color: var(--color-text-inverse); font-family: var(--font-display);">Ready to challenge the rejection?</h2>
+          <p class="section-desc" style="color: rgba(255,255,255,0.9); font-family: var(--font-sans);">Get your free case review within 24 hours. No obligation, no pressure — just an honest assessment.</p>
+          <div class="hero-actions" style="margin-top: var(--space-8);">
+                                <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20my%20claim%20was%20rejected.%20I%20need%20help." target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-lg" style="font-family: var(--font-sans);">
+                                  <Icon name="whatsapp" size="sm" />
+                                  Start Free Review on WhatsApp
+                                </a>
+                                <a href="tel:+919986634506" class="btn btn-outline btn-lg" style="font-family: var(--font-sans); border-color: var(--color-text-inverse); color: var(--color-text-inverse);">
+                                  <Icon name="phone" size="sm" />
+                                  Call +91 99866 34506
+                                </a>
+                              </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Insurance Support",
+    "url": "https://insurancesupport.online/",
+    "description": pageDescription,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://insurancesupport.online/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Insurance Support",
+      "logo": "https://insurancesupport.online/logo.png"
+    }
+  })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://insurancesupport.online/#organization",
+    "name": "Insurance Support",
+    "description": "Insurance guidance and claim assistance by IRDAI-certified advisor Hari Kotian",
+    "url": "https://insurancesupport.online/",
+    "logo": "https://insurancesupport.online/logo.png",
+    "telephone": "+91-9986634506",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "KA",
+      "addressCountry": "IN"
+    },
+    "areaServed": "India",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Insurance Advisor License",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "IRDAI",
+        "url": "https://www.irdai.gov.in/"
+      },
+      "credentialNumber": "0149161D"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/hari-kotian",
+      "https://twitter.com/harikotian",
+      "https://wa.me/919986634506"
+    ]
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://insurancesupport.online/#localbusiness",
+    "name": "Insurance Support",
+    "description": "Insurance advisory and claim recovery services in Bengaluru, Karnataka",
+    "url": "https://insurancesupport.online/",
+    "telephone": "+91-9986634506",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "KA",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "geoRadius": "50000"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "₹₹",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Insurance Broker License",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "IRDAI",
+        "url": "https://www.irdai.gov.in/"
+      }
+    },
+    "knowsAbout": [
+      "Insurance Claim Recovery",
+      "Health Insurance Claims",
+      "Life Insurance Claims",
+      "Motor Insurance Claims",
+      "IRDAI Bima Bharosa",
+      "Insurance Ombudsman",
+      "Claim Rejection Appeals"
+    ]
+  })} />
 </BaseLayout>

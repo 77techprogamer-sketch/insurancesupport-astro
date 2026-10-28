@@ -1,0 +1,40 @@
+{
+  "slug": "bijapur",
+  "name": "Bijapur",
+  "state": "Karnataka",
+  "address": "Station Road, Bijapur, Karnataka 586101",
+  "desc": "Families and professionals in Bijapur, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Navaraspur",
+    "Gol Gumbaz Area",
+    "Sholapur Road",
+    "Bagalkot Road",
+    "Asar Mahal Road",
+    "Torvi",
+    "Sainik School Area"
+  ],
+  "nearby": [
+    "gulbarga",
+    "belgaum"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at BLDE University, Bijapur engineering colleges, and growing service sector near Sholapur Road.",
+  "senior_focus": "Doorstep assistance for retired residents in Navaraspur, Gol Gumbaz Area, and Sholapur Road for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Bijapur at Station Road and insurer offices near Navaraspur.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Bijapur?",
+      "answer": "Yes, our team visits your home in Bijapur for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Bijapur offer cashless treatment?",
+      "answer": "Cashless treatment is available at BLDE Hospital Bijapur, Al-Ameen Medical College Hospital, and District Hospital Bijapur."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Bijapur",
+  "lic_addr": "Station Road, Bijapur, Karnataka 586101",
+  "nearbyLocations": [],
+  "lat": 16.8302,
+  "lng": 75.71
+}

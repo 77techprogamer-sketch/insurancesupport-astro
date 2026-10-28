@@ -90,7 +90,6 @@
 /locations/begusarai /locations/ 301
 /locations/belagavi /locations/ 301
 /locations/belagavi/term-insurance /services/ 301
-/locations/bellary /locations/ 301
 /locations/berhampore /locations/ 301
 /locations/bhagalpur /locations/ 301
 /locations/bhagalpur/travel-insurance /services/ 301
@@ -111,7 +110,6 @@
 /locations/bhusawal /locations/ 301
 /locations/bidhan-nagar /locations/ 301
 /locations/bihar-sharif /locations/ 301
-/locations/bijapur /locations/ 301
 /locations/bikaner /locations/ 301
 /locations/brahmapur /locations/ 301
 /locations/bulandshahr /locations/ 301
@@ -183,7 +181,6 @@
 /locations/goa/life-insurance /locations/goa/ 301
 /locations/goa/pension-plans /locations/goa/ 301
 /locations/goa/sme-insurance /locations/goa/ 301
-/locations/gulbarga /locations/ 301
 /locations/guna /locations/ 301
 /locations/guntur /locations/ 301
 /locations/guntur/sme-insurance /services/ 301
@@ -202,7 +199,6 @@
 /locations/hosur/term-insurance /locations/hosur/ 301
 /locations/hosur/travel-insurance /locations/hosur/ 301
 /locations/howrah /locations/ 301
-/locations/hubli-dharwad /locations/ 301
 /locations/hugli-chinsurah /locations/ 301
 /locations/hyderabad /locations/hyderabad/ 301
 /locations/hyderabad-hitech-city /locations/hyderabad/ 301
@@ -415,7 +411,6 @@
 /locations/shahjahanpur /locations/ 301
 /locations/shahjahanpur/health-insurance /services/ 301
 /locations/shillong /locations/ 301
-/locations/shimoga /locations/ 301
 /locations/shivpuri /locations/ 301
 /locations/sikar /locations/ 301
 /locations/sikar/health-insurance /services/ 301
@@ -463,7 +458,6 @@
 /locations/trivandrum/sme-insurance /services/ 301
 /locations/trivandrum/term-insurance /services/ 301
 /locations/trivandrum/travel-insurance /services/ 301
-/locations/tumkur /locations/ 301
 /locations/udupi-manipal /locations/ 301
 /locations/ujjain /locations/ujjain/ 301
 /locations/ujjain/life-insurance /locations/ujjain/ 301
@@ -617,7 +611,6 @@
 /locations/begusarai/ /locations/ 301
 /locations/belagavi/ /locations/ 301
 /locations/belagavi/term-insurance/ /services/ 301
-/locations/bellary/ /locations/ 301
 /locations/berhampore/ /locations/ 301
 /locations/bhagalpur/ /locations/ 301
 /locations/bhagalpur/travel-insurance/ /services/ 301
@@ -636,7 +629,6 @@
 /locations/bhusawal/ /locations/ 301
 /locations/bidhan-nagar/ /locations/ 301
 /locations/bihar-sharif/ /locations/ 301
-/locations/bijapur/ /locations/ 301
 /locations/bikaner/ /locations/ 301
 /locations/brahmapur/ /locations/ 301
 /locations/bulandshahr/ /locations/ 301
@@ -702,7 +694,6 @@
 /locations/goa/life-insurance/ /locations/goa/ 301
 /locations/goa/pension-plans/ /locations/goa/ 301
 /locations/goa/sme-insurance/ /locations/goa/ 301
-/locations/gulbarga/ /locations/ 301
 /locations/guna/ /locations/ 301
 /locations/guntur/ /locations/ 301
 /locations/guntur/sme-insurance/ /services/ 301
@@ -720,7 +711,6 @@
 /locations/hosur/term-insurance/ /locations/hosur/ 301
 /locations/hosur/travel-insurance/ /locations/hosur/ 301
 /locations/howrah/ /locations/ 301
-/locations/hubli-dharwad/ /locations/ 301
 /locations/hugli-chinsurah/ /locations/ 301
 /locations/hyderabad-hitech-city/ /locations/hyderabad/ 301
 /locations/hyderabad/health-insurance/ /locations/hyderabad/ 301
@@ -919,7 +909,6 @@
 /locations/shahjahanpur/ /locations/ 301
 /locations/shahjahanpur/health-insurance/ /services/ 301
 /locations/shillong/ /locations/ 301
-/locations/shimoga/ /locations/ 301
 /locations/shivpuri/ /locations/ 301
 /locations/sikar/ /locations/ 301
 /locations/sikar/health-insurance/ /services/ 301
@@ -963,7 +952,6 @@
 /locations/trivandrum/sme-insurance/ /services/ 301
 /locations/trivandrum/term-insurance/ /services/ 301
 /locations/trivandrum/travel-insurance/ /services/ 301
-/locations/tumkur/ /locations/ 301
 /locations/udupi-manipal/ /locations/ 301
 /locations/ujjain/life-insurance/ /locations/ujjain/ 301
 /locations/ulhasnagar/ /locations/ 301

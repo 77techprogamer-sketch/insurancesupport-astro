@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
 import FloatingCTA from '../components/FloatingCTA.tsx';
 import Chatbot from '../components/Chatbot.astro';
-import GeoBanner from '../components/GeoBanner';
 
 // Define Indian languages and their regions for hreflang
 const INDIAN_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa'];
@@ -34,6 +33,8 @@ export interface Props {
   geoPlaceName?: string;
   geoPosition?: string;
   skipDefaultHreflang?: boolean;
+  skipGlobalLocationSchema?: boolean;
+  skipGlobalOrgSchema?: boolean;
   pageLang?: string;   // e.g. "hi-IN", "bn-IN" — defaults to "en-IN"
   ogLocale?: string;   // e.g. "hi_IN", "bn_IN" — defaults to "en_IN"
   pageType?: string;  // e.g. "homepage", "service", "city", "location", "compare", "faq", "blog-index", "search"
@@ -52,6 +53,8 @@ const pageDateModified = Astro.props.dateModified;
 const pageKeywords = Astro.props.keywords;
 const pageTitle = Astro.props.title;
 const pageSkipDefaultHreflang = Astro.props.skipDefaultHreflang != null ? Astro.props.skipDefaultHreflang : false;
+const pageSkipGlobalLocationSchema = Astro.props.skipGlobalLocationSchema != null ? Astro.props.skipGlobalLocationSchema : false;
+const pageSkipGlobalOrgSchema = Astro.props.skipGlobalOrgSchema != null ? Astro.props.skipGlobalOrgSchema : false;
 
 import { PAGE_KEYWORDS } from '../data/page-keywords';
 
@@ -111,6 +114,33 @@ const organizationSchema = {
     "name": "Karnataka",
     "url": "https://insurancesupport.online/cities/bengaluru/",
   },
+  "knowsAbout": [
+    "Insurance Claim Assistance",
+    "Insurance Policy Review",
+    "Health Insurance Planning",
+    "Life Insurance Advisory",
+    "Motor Insurance Claims",
+    "IRDAI Grievance Redressal",
+    "Insurance Ombudsman Process",
+    "Bima Bharosa Portal",
+    "LIC Policy Services",
+    "Policy Revival",
+    "Claim Rejection Appeals"
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Insurance Broker License",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "IRDAI",
+      "url": "https://www.irdai.gov.in/"
+    }
+  },
+  "foundingDate": "1998",
+  "numberOfEmployees": "1-10",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, Net Banking, UPI",
+  "priceRange": "₹1000 - ₹50000"
 };
 
 const websiteSchema = {
@@ -162,13 +192,29 @@ const personSchema = {
     "https://www.linkedin.com/in/harikotian",
     "https://www.youtube.com/channel/UCXhYJ9c5y6y6y6y6y6y6y6y",
   ],
+  "knowsAbout": [
+    "Insurance Planning",
+    "Claim Assistance",
+    "Policy Review",
+    "IRDAI Compliance",
+    "Health Insurance",
+    "Life Insurance",
+    "Motor Insurance",
+    "Insurance Grievance Redressal",
+    "Insurance Ombudsman Process",
+    "Bima Bharosa Portal"
+  ],
   "hasCredential": {
-    "@type": "Organization",
-    "name": "IRDAI",
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Insurance Advisor Registration",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "IRDAI",
+      "url": "https://www.irdai.gov.in/"
+    },
     "identifier": "0149161D",
-    "url": "https://www.irdai.gov.in/",
     "description": "Insurance Regulatory and Development Authority of India - registration number 0149161D"
-  },
+  }
 };
 
 const locationSchema = {
@@ -213,7 +259,31 @@ const locationSchema = {
     "@type": "State",
     "name": "Karnataka",
     "url": "https://insurancesupport.online/cities/bengaluru/"
-  }
+  },
+  "knowsAbout": [
+    "Insurance Claim Assistance",
+    "Insurance Policy Review",
+    "Health Insurance Planning",
+    "Life Insurance Advisory",
+    "Motor Insurance Claims",
+    "IRDAI Grievance Redressal",
+    "Insurance Ombudsman Process",
+    "Bima Bharosa Portal",
+    "LIC Policy Services",
+    "Policy Revival",
+    "Claim Rejection Appeals"
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Insurance Broker License",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "IRDAI",
+      "url": "https://www.irdai.gov.in/"
+    }
+  },
+  "foundingDate": "1998",
+  "currenciesAccepted": "INR"
 };
 
 const mergedKeywords = PAGE_KEYWORDS[mergedProps.pageType] ?? [];
@@ -270,88 +340,29 @@ const combinedKeywords = mergedKeywords.length > 0 && pageKeywords
       <link rel="alternate" hreflang={langRegion[lang as keyof typeof langRegion] || `${lang}-IN`} href={`https://insurancesupport.online/blog/${lang}/${pageCanonical.split('/').pop() || ''}`} />
     ))}
     {Astro.head}
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(locationSchema)} />
-    {pageDateModified && <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", "name": pageTitle, "description": pageDescription, "datePublished": pageDateModified, "dateModified": pageDateModified, "url": pageCanonical, "publisher": { "@type": "Organization", "name": siteName, "url": siteUrl } })} />}
+        {!pageSkipGlobalOrgSchema && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
+        <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+        {!pageSkipGlobalLocationSchema && <script type="application/ld+json" set:html={JSON.stringify(locationSchema)} />}
+        {pageDateModified && <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", "name": pageTitle, "description": pageDescription, "datePublished": pageDateModified, "dateModified": pageDateModified, "url": pageCanonical, "publisher": { "@type": "Organization", "name": siteName, "url": siteUrl } })} />}
   </head>
-  <body class="bg-[#0a0a0a] text-white antialiased" data-page={Astro.props.pageType || ''}>
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:ring-2 focus:ring-offset-2">Skip to main content</a>
-    <Header siteUrl={siteUrl} />
-    <GeoBanner />
-    <slot />
-    <MobileStickyBar phoneNumber={phoneNumber} />
-    <Footer siteUrl={siteUrl} />
-    <FloatingCTA phoneNumber={phoneNumber} />
-    <Chatbot />
-    <script is:inline>
-      // Set up Google Analytics (gtag)
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-XXXXXXX');
-    </script>
-    <script is:inline src="/scripts/analytics.js" defer></script>
-    <script is:inline src="/scripts/reveal.js" defer></script>
-  </body>
-</html>
-
-<style is:global>
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: #0a0a0a;
-    color: #fff;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #fff;
-  }
-  p {
-    color: rgba(255,255,255,0.6);
-  }
-  a {
-    color: #10b981;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #0d9f6a;
-  }
-  code {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.875em;
-    background: rgba(255,255,255,0.05);
-    padding: 0.125rem 0.25rem;
-    border-radius: 0.25rem;
-    color: rgba(255,255,255,0.8);
-  }
-  pre {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.875rem;
-    background: #000;
-    color: #e2e8f0;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    overflow-x: auto;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  *:focus-visible {
-    outline: 2px solid #10b981;
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-</style>
+  <body data-page={Astro.props.pageType || ''}>
+        <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-inverse focus:rounded focus:ring-2 focus:ring-offset-2">Skip to main content</a>
+        <Header siteUrl={siteUrl} />
+        <slot />
+      <MobileStickyBar phoneNumber={phoneNumber} />
+            <Footer siteUrl={siteUrl} />
+            <FloatingCTA phoneNumber={phoneNumber} client:visible />
+            <Chatbot />
+      <script is:inline>
+        // Set up Google Analytics (gtag)
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXXXXX');
+      </script>
+      <script is:inline src="/scripts/analytics.js" defer></script>
+      <script is:inline src="/scripts/reveal.js" defer></script>
+    </body>
+  </html>

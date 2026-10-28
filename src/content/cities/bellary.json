@@ -1,0 +1,40 @@
+{
+  "slug": "bellary",
+  "name": "Bellary",
+  "state": "Karnataka",
+  "address": "Brucepet, Bellary, Karnataka 583101",
+  "desc": "Families and professionals in Bellary, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Brucepet",
+    "Gandhi Nagar",
+    "Kappagal Road",
+    "Cantonment",
+    "Parvathi Nagar",
+    "Toranagallu",
+    "Sandur Road"
+  ],
+  "nearby": [
+    "hubli",
+    "raichur"
+  ],
+  "it_focus": "Health insurance and term plans for mining/steel industry professionals at JSW Steel Toranagallu, NMDC, and Bellary engineering colleges.",
+  "senior_focus": "Doorstep assistance for retired mining and railway families in Brucepet, Gandhi Nagar, and Cantonment for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Bellary at Brucepet and insurer offices near Gandhi Nagar.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Bellary?",
+      "answer": "Yes, our team visits your home in Bellary for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Bellary offer cashless treatment?",
+      "answer": "Cashless treatment is available at VIMS Bellary, Jayadeva Hospital, Life Care Hospital, and Government Medical College Bellary."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Bellary",
+  "lic_addr": "Brucepet, Bellary, Karnataka 583101",
+  "nearbyLocations": [],
+  "lat": 15.1394,
+  "lng": 76.9214
+}

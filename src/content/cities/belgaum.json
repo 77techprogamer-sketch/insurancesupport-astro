@@ -1,0 +1,40 @@
+{
+  "slug": "belgaum",
+  "name": "Belgaum",
+  "state": "Karnataka",
+  "address": "College Road, Belgaum, Karnataka 590001",
+  "desc": "Families and professionals in Belgaum, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Tilakwadi",
+    "Shahapur",
+    "Khanapur Road",
+    "Camp Area",
+    "Auto Nagar",
+    "Machhe",
+    "Hindalga"
+  ],
+  "nearby": [
+    "hubli",
+    "goa"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at Belgaum IT Park, KLE Tech Park, and Auto Nagar industrial area.",
+  "senior_focus": "Doorstep assistance for retired defence and civilian families in Tilakwadi, Shahapur, and Camp Area for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Belgaum at College Road and insurer offices in Shahapur.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Belgaum?",
+      "answer": "Yes, our team visits your home in Belgaum for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Belgaum offer cashless treatment?",
+      "answer": "Cashless treatment is available at KLE Dr. Prabhakar Kore Hospital, JN Medical College, Ashwini Hospital, and Belgaum Institute of Medical Sciences."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Belgaum",
+  "lic_addr": "College Road, Belgaum, Karnataka 590001",
+  "nearbyLocations": [],
+  "lat": 15.8497,
+  "lng": 74.4977
+}

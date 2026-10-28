@@ -1,0 +1,40 @@
+{
+  "slug": "hubli",
+  "name": "Hubli",
+  "state": "Karnataka",
+  "address": "Station Road, Hubli, Karnataka 580020",
+  "desc": "Families and professionals in Hubli, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Unkal",
+    "Vidyanagar",
+    "Gokul Road",
+    "Navanagar",
+    "Lakammanahalli",
+    "Old Hubli",
+    "Gabbur"
+  ],
+  "nearby": [
+    "belgaum",
+    "davangere"
+  ],
+  "it_focus": "Health insurance and term plans for IT/engineering professionals at Hubli-Dharwad IT Park and nearby industrial estates.",
+  "senior_focus": "Doorstep assistance for retired residents in Unkal, Vidyanagar, and Old Hubli for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Direct coordination with LIC Divisional Office Hubli at Station Road and major insurer branches in Navanagar.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Hubli?",
+      "answer": "Yes, our team visits your home in Hubli for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Hubli offer cashless treatment?",
+      "answer": "Cashless treatment is available at KIMS Hospital Hubli, SDM Medical College, Vivekananda General Hospital, and Rotary Eye Hospital."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Divisional Office Hubli",
+  "lic_addr": "Station Road, Hubli, Karnataka 580020",
+  "nearbyLocations": [],
+  "lat": 15.3647,
+  "lng": 75.124
+}

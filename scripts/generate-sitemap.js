@@ -95,6 +95,9 @@ async function generateSitemaps() {
                 .filter(link => !link.url.includes('/auth.md'))
                 .filter(link => !link.url.includes('/search'))
                 .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
+                .filter(link => !link.url.includes('/lead-magnets/insurance-ombudsman-complaint/')) // 404 - wrong slug
+                .filter(link => !link.url.includes('/blog/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026/')) // wrong slug (apostrophe encoded as here-s)
+                .filter(link => !link.url.includes('/bn/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026/')) // 404 - bn prefix with wrong slug
 
 
     // Categorize links for individual sitemaps

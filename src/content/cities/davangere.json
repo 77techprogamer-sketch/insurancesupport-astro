@@ -1,0 +1,40 @@
+{
+  "slug": "davangere",
+  "name": "Davangere",
+  "state": "Karnataka",
+  "address": "P.J. Extension, Davangere, Karnataka 577002",
+  "desc": "Families and professionals in Davangere, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "P.J. Extension",
+    "MCC Layout",
+    "Anebagilu",
+    "Gandhi Nagar",
+    "Vinoba Nagar",
+    "Kunduvada",
+    "Harihar Road"
+  ],
+  "nearby": [
+    "hubli",
+    "shimoga"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at Bapuji Institute of Technology, Davangere University, and textile/industrial corridor near Harihar Road.",
+  "senior_focus": "Doorstep assistance for retired residents in P.J. Extension, MCC Layout, and Gandhi Nagar for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Davangere at P.J. Extension and insurer offices near MCC Layout.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Davangere?",
+      "answer": "Yes, our team visits your home in Davangere for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Davangere offer cashless treatment?",
+      "answer": "Cashless treatment is available at Bapuji Hospital, SS Institute of Medical Sciences, J.J. Hospital, and Karnataka Cancer Therapy & Research Institute."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Davangere",
+  "lic_addr": "P.J. Extension, Davangere, Karnataka 577002",
+  "nearbyLocations": [],
+  "lat": 14.4674,
+  "lng": 75.9218
+}

@@ -5,7 +5,7 @@ export const prerender = true;
 
 ---<BaseLayout 
   pageType="search"
-  title="Search Insurance Guides & Articles | Insurance Support" description="Search across all expert insurance guides, claim tips, and IRDAI updates from Hari Kotian." noIndex={true}>
+  title="Search Insurance Guides & Articles | Insurance Support" description="Search across all expert insurance guides, claim tips, and IRDAI updates from Hari Kotian.">
 
   <main id="main" class="page-transition">
     <!-- Hero -->
@@ -46,6 +46,26 @@ export const prerender = true;
       </div>
     </div>
   </main>
+
+  <!-- Server-rendered popular search topics for crawlers -->
+  <section class="hidden" aria-hidden="true">
+    <h2>Popular Search Topics</h2>
+    <ul>
+      <li><a href="/blog/lic-claim-rejection-appeal-process-2026/">LIC Claim Rejection Appeal Process</a></li>
+      <li><a href="/blog/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026/">Health Insurance Claim Rejected Solution</a></li>
+      <li><a href="/blog/icici-lombard-cashless-denied-hospital-guide-2026/">Motor Insurance Claim Process India</a></li>
+      <li><a href="/blog/irdai-bima-bharosa-complaint-filing-2026/">IRDAI Complaint Process Bima Bharosa</a></li>
+      <li><a href="/blog/insurance-ombudsman-bangalore-guide-2026/">Insurance Ombudsman Complaint Procedure</a></li>
+      <li><a href="/services/claim-support/">Claim Support Service</a></li>
+      <li><a href="/locations/bangalore-koramangala/">Bangalore Koramangala Insurance Support</a></li>
+    </ul>
+    <h2>Top Insurance Guides</h2>
+    <ul>
+      <li><a href="/blog/claim-recovery-hub-complete-2026-guide/">Insurance Claim Recovery Complete Guide</a></li>
+      <li><a href="/blog/health-insurance-hub-complete-2026-guide/">Health Insurance Hub Complete Guide</a></li>
+      <li><a href="/blog/lic-policy-hub-complete-guide-2026/">LIC Policy Hub Complete Guide</a></li>
+    </ul>
+  </section>
 
   <script is:inline>
     let pagefind = null;

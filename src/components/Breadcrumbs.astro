@@ -33,18 +33,21 @@ function getAutoBreadcrumbs(): Array<{ label: string; href: string }> {
     }
     
     // Format the label - keep specific names readable
-    let label: string;
-    if (segment === 'services') label = 'Services';
-    else if (segment === 'blog') label = 'Blog';
-    else if (segment === 'locations') label = 'Locations';
-    else if (segment === 'cities') label = 'Cities';
-    else if (segment === 'contact') label = 'Contact';
-    else if (segment === 'about') label = 'About';
-    else if (segment === 'faq') label = 'FAQ';
-    else if (segment === 'support') label = 'Support';
-    else label = formatLabel(segment);
-    
-    crumbs.push({ label, href: currentPath });
+        let label: string;
+        let shouldLink = true;
+        if (segment === 'services') label = 'Services';
+        else if (segment === 'blog') label = 'Blog';
+        else if (segment === 'locations') label = 'Locations';
+        else if (segment === 'cities') label = 'Cities';
+        else if (segment === 'contact') label = 'Contact';
+        else if (segment === 'about') label = 'About';
+        else if (segment === 'faq') label = 'FAQ';
+        else if (segment === 'support') label = 'Support';
+        else if (segment === 'compare') { label = 'Compare'; shouldLink = false; }
+            else if (segment === 'lead-magnets') { label = 'Free Resources'; shouldLink = false; }
+            else label = formatLabel(segment);
+
+        crumbs.push({ label, href: currentPath, link: shouldLink });
   }
   
   // Add current page with custom label if provided
@@ -76,15 +79,17 @@ const jsonLdItems = breadcrumbs.map(c => ({ label: c.label, url: `https://insura
            </svg>
           )}
           {index === breadcrumbs.length - 1 ? (
-            <span class="text-slate-900 font-semibold" aria-current="page">{crumb.label}</span>
-          ) : (
-            <a 
-              href={crumb.href}
-              class="text-slate-500 hover:text-blue-600 transition-colors font-medium"
-            >
-              {crumb.label}
-           </a>
-          )}
+                      <span class="text-slate-900 font-semibold" aria-current="page">{crumb.label}</span>
+                    ) : crumb.link !== false ? (
+                      <a
+                        href={crumb.href}
+                        class="text-slate-500 hover:text-blue-600 transition-colors font-medium"
+                      >
+                        {crumb.label}
+                      </a>
+                    ) : (
+                      <span class="text-slate-500 font-medium">{crumb.label}</span>
+                    )}
        </li>
       ))}
    </ol>

@@ -1,0 +1,40 @@
+{
+  "slug": "gulbarga",
+  "name": "Gulbarga",
+  "state": "Karnataka",
+  "address": "Station Bazaar, Gulbarga, Karnataka 585101",
+  "desc": "Families and professionals in Gulbarga, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Jagat",
+    "Brahmpur",
+    "Super Market",
+    "Shah Bazaar",
+    "Ganesh Nagar",
+    "Rajapur",
+    "Afzalpur Road"
+  ],
+  "nearby": [
+    "hubli",
+    "bidar"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at Gulbarga University, KBN Engineering College, and growing industrial corridor near Afzalpur Road.",
+  "senior_focus": "Doorstep assistance for retired residents in Jagat, Brahmpur, and Super Market for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Gulbarga at Station Bazaar and insurer offices near Super Market.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Gulbarga?",
+      "answer": "Yes, our team visits your home in Gulbarga for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Gulbarga offer cashless treatment?",
+      "answer": "Cashless treatment is available at Gulbarga Institute of Medical Sciences (GIMS), Basaveshwar Teaching Hospital, and multiple private hospitals near Super Market."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Gulbarga",
+  "lic_addr": "Station Bazaar, Gulbarga, Karnataka 585101",
+  "nearbyLocations": [],
+  "lat": 17.3297,
+  "lng": 76.8343
+}

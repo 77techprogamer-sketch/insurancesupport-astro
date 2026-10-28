@@ -1,0 +1,40 @@
+{
+  "slug": "bidar",
+  "name": "Bidar",
+  "state": "Karnataka",
+  "address": "Udgir Road, Bidar, Karnataka 585401",
+  "desc": "Families and professionals in Bidar, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Udgir Road",
+    "Civil Station",
+    "Gandhi Gunj",
+    "Mansoor Gunj",
+    "Old Bidar",
+    "Hyderabad Road",
+    "Nanded Road"
+  ],
+  "nearby": [
+    "gulbarga",
+    "raichur"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at Bidar University, engineering colleges near Udgir Road, and pharmaceutical sector near Hyderabad Road.",
+  "senior_focus": "Doorstep assistance for retired residents in Civil Station, Gandhi Gunj, and Old Bidar for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Bidar at Udgir Road and insurer offices near Civil Station.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Bidar?",
+      "answer": "Yes, our team visits your home in Bidar for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Bidar offer cashless treatment?",
+      "answer": "Cashless treatment is available at Bidar Institute of Medical Sciences (BRIMS), District Hospital Bidar, and private hospitals near Civil Station."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Bidar",
+  "lic_addr": "Udgir Road, Bidar, Karnataka 585401",
+  "nearbyLocations": [],
+  "lat": 17.9104,
+  "lng": 77.5199
+}

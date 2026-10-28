@@ -1,0 +1,40 @@
+{
+  "slug": "raichur",
+  "name": "Raichur",
+  "state": "Karnataka",
+  "address": "Station Road, Raichur, Karnataka 584101",
+  "desc": "Families and professionals in Raichur, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "Station Road",
+    "Shivaji Nagar",
+    "Hutti Road",
+    "Manvi Road",
+    "Lingsugur Road",
+    "Nehru Gunj",
+    "University Campus"
+  ],
+  "nearby": [
+    "bellary",
+    "gulbarga"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at Raichur Thermal Power Station, Raichur University, and agricultural sector near Hutti Road.",
+  "senior_focus": "Doorstep assistance for retired residents in Station Road, Shivaji Nagar, and Nehru Gunj for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Raichur at Station Road and insurer offices near Shivaji Nagar.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Raichur?",
+      "answer": "Yes, our team visits your home in Raichur for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Raichur offer cashless treatment?",
+      "answer": "Cashless treatment is available at Raichur Institute of Medical Sciences (RIMS), District Hospital Raichur, and private clinics near Station Road."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Raichur",
+  "lic_addr": "Station Road, Raichur, Karnataka 584101",
+  "nearbyLocations": [],
+  "lat": 16.214,
+  "lng": 77.3554
+}

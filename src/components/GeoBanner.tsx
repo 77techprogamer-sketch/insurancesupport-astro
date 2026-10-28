@@ -86,22 +86,22 @@ export default function GeoBanner() {
     <div
       role="status"
       aria-label={`Insurance advisor available in ${geo.name}`}
-      className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-r from-[#06281f] via-[#0a0a0a] to-[#06281f] border-b border-[rgba(16,185,129,0.30)] text-white shadow-lg animate-slideDown"
+      className="fixed top-0 left-0 right-0 z-[9999] bg-primary-bg border-b border-primary-border text-white shadow-lg animate-slideDown"
       style={{ animation: 'slideDown 0.4s ease-out' }}
     >
       <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3 text-sm">
         {/* Left: text + link */}
         <div className="flex items-center gap-2 min-w-0 flex-1">
           {/* Location pin icon */}
-          <svg className="w-4 h-4 text-[#10b981] shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <svg className="icon-sm text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
           </svg>
-          <span className="text-[rgba(255,255,255,0.68)] hidden sm:inline">
+          <span className="text-muted hidden sm:inline">
             Serving families in {geo.name} —
           </span>
           <a
             href={geo.url}
-            className="font-bold text-white underline underline-offset-2 decoration-[#10b981]/70 hover:decoration-[#10b981] transition-colors whitespace-nowrap"
+            className="font-bold text-white underline underline-offset-2 decoration-accent/70 hover:decoration-accent transition-colors whitespace-nowrap"
           >
             View Local Advisor Page →
           </a>
@@ -113,7 +113,7 @@ export default function GeoBanner() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold rounded-full transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent hover:bg-accent-hover text-white text-xs font-bold rounded-full transition-colors"
           >
             {/* WhatsApp icon */}
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -124,9 +124,9 @@ export default function GeoBanner() {
           <button
             onClick={handleDismiss}
             aria-label="Dismiss location banner"
-            className="p-1 rounded-full hover:bg-white/10 transition-colors text-[rgba(255,255,255,0.6)] hover:text-white"
+            className="p-1 rounded-full hover:bg-white/10 transition-colors text-muted hover:text-white"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+            <svg className="icon-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>

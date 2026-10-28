@@ -28,13 +28,13 @@ const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} p
     "@context": "https://schema.org",
     "@type": "Service",
     name: `${service.title} in Bengaluru`,
-    serviceType: service.title, // Add serviceType
+    serviceType: service.title,
     description: service.desc,
     provider: {
       "@type": "LocalBusiness",
       name: "Insurance Support",
       url: "https://insurancesupport.online",
-      telephone: "+91-9986634506", // Corrected phone number
+      telephone: "+91-9986634506",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bengaluru",
@@ -43,7 +43,35 @@ const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} p
       }
     },
     areaServed: "Bengaluru, Karnataka, India",
-    url: serviceUrl
+    url: serviceUrl,
+    category: "Insurance Advisory",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.title} Services`,
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `${service.title} Consultation`,
+            description: `Free initial consultation for ${service.title.toLowerCase()}`
+          },
+          price: "0",
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `${service.title} Claim Support`,
+            description: `End-to-end claim assistance for ${service.title.toLowerCase()}`
+          },
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock"
+        }
+      ]
+    }
   })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -53,10 +81,10 @@ const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} p
     "description": service.desc,
     "url": serviceUrl,
     "isPartOf": {
-      "@type": "WebPage",
-      "@id": "https://insurancesupport.online/claim-recovery/",
-      "name": "Insurance Claim Recovery Hub"
-    },
+              "@type": "WebPage",
+              "@id": "https://insurancesupport.online/claim-recovery/",
+              "name": "Insurance Claim Recovery Hub"
+            },
     "about": {
       "@type": "Thing",
       "name": `IRDAI-certified ${service.title} advisory and claim recovery in Bengaluru`
@@ -115,9 +143,27 @@ const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} p
             </div>
           </section>
         </>
-      )}
+              )}
 
-      <!-- CTA -->
+              <!-- Related Services for internal linking -->
+              {service.relatedServices && service.relatedServices.length > 0 && (
+                <section class="mt-12 mb-12">
+                  <h2 class="text-2xl font-bold text-slate-900 mb-6">Related Services</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {service.relatedServices.map(relatedSlug => {
+                      const related = services.find(s => s.slug === relatedSlug);
+                      return related && (
+                        <a href={`/services/${related.slug}/`} class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-400 hover:shadow-lg transition-all">
+                          <h3 class="font-semibold text-slate-900 mb-1">{related.title}</h3>
+                          <p class="text-sm text-slate-600">{related.desc}</p>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </section>
+              )}
+
+              <!-- CTA -->
       <section class="mt-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden shadow-2xl">
         <div class="absolute -top-10 -right-10 w-48 h-48 bg-amber-400/10 rounded-full blur-2xl" />
         <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/20 rounded-full blur-2xl" />

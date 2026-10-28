@@ -29,7 +29,20 @@ const effectiveModified = modifiedDate || date;
     "@type": "Person",
     "@id": "https://insurancesupport.online/about-hari-kotian/#person",
     name: authorName,
-    url: "https://insurancesupport.online/about-hari-kotian/"
+    url: "https://insurancesupport.online/about-hari-kotian/",
+    jobTitle: "IRDAI-Registered Insurance Advisor",
+    description: "IRDAI-registered insurance advisor (Reg No: 0149161D) with 25+ years of experience helping families and businesses across India with insurance planning, policy review, and claim support.",
+    knowsAbout: ["Insurance Planning", "Claim Assistance", "Policy Review", "IRDAI Compliance", "Health Insurance", "Life Insurance", "Motor Insurance", "Insurance Grievance Redressal"],
+    credential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Insurance Advisor Registration",
+      recognizedBy: {
+        "@type": "Organization",
+        "name": "IRDAI",
+        "url": "https://www.irdai.gov.in/"
+      },
+      identifier: "0149161D"
+    }
   },
   publisher: {
     "@type": "Organization",

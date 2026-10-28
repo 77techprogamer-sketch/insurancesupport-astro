@@ -1,0 +1,40 @@
+{
+  "slug": "shimoga",
+  "name": "Shimoga",
+  "state": "Karnataka",
+  "address": "B.H. Road, Shimoga, Karnataka 577201",
+  "desc": "Families and professionals in Shimoga, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "B.H. Road",
+    "Vinoba Nagar",
+    "Gandhi Nagar",
+    "R.M.L. Layout",
+    "Sagar Road",
+    "Kuvempu Nagar",
+    "Seegehatti"
+  ],
+  "nearby": [
+    "davangere",
+    "mangalore"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at Kuvempu University, Shimoga engineering colleges, and areca/agro-industrial sector near Sagar Road.",
+  "senior_focus": "Doorstep assistance for retired residents in B.H. Road, Vinoba Nagar, and Gandhi Nagar for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Shimoga at B.H. Road and insurer offices near Vinoba Nagar.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Shimoga?",
+      "answer": "Yes, our team visits your home in Shimoga for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Shimoga offer cashless treatment?",
+      "answer": "Cashless treatment is available at McGann Hospital Shimoga, Sharavathi Dental College Hospital, and multiple private hospitals near B.H. Road."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Shimoga",
+  "lic_addr": "B.H. Road, Shimoga, Karnataka 577201",
+  "nearbyLocations": [],
+  "lat": 13.9299,
+  "lng": 75.5681
+}

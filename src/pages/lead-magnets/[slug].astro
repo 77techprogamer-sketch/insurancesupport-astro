@@ -4,6 +4,7 @@ import LeadMagnetLayout from '../../layouts/LeadMagnetLayout.astro';
 import LeadMagnetForm from '../../components/LeadMagnetForm.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import magnets from '../../data/lead-magnets.json';
+import { marked } from 'marked';
 
 export function getStaticPaths() {
   return magnets.map((m) => ({ params: { slug: m.slug } }));
@@ -21,6 +22,79 @@ const magnetBrandlessTitle = magnet.title.replace(/\s*\|\s*Free.*$/, '').trim();
 const magnetTitle = `${magnetBrandlessTitle} | Free Insurance Resource | Insurance Support`;
 const magnetDescription = magnet.description;
 const magnetKeywords = magnet.keywords || `${magnetBrandlessTitle.toLowerCase().replace(/\s+/g, '-')}, free insurance checklist India, insurance claim documents, insurance resource}`;
+
+// Configure marked for clean server-side rendering
+marked.setOptions({
+  gfm: true,
+  breaks: false,
+});
+
+const renderer = new marked.Renderer();
+
+// Headings
+renderer.heading = function({ text, depth }) {
+  const cls = {
+    1: 'text-3xl font-extrabold text-slate-900 mt-12 mb-5 leading-tight',
+    2: 'text-2xl font-bold text-slate-900 mt-12 mb-4 pb-3 border-b border-slate-100',
+    3: 'text-xl font-bold text-slate-900 mt-8 mb-3',
+    4: 'text-lg font-bold text-slate-900 mt-6 mb-2',
+  };
+  return `<h${depth} class="${cls[depth] || cls[4]}">${text}</h${depth}>`;
+};
+
+// Paragraphs
+renderer.paragraph = function({ text }) {
+  if (text.startsWith('<div') || text.startsWith('<table') || text.startsWith('<ul') || text.startsWith('<ol') || text.startsWith('<blockquote') || text.startsWith('<pre') || text.startsWith('<figure') || text.startsWith('<hr') || text.startsWith('<h')) {
+    return text;
+  }
+  return `<p class="text-slate-600 leading-relaxed mb-5 text-[15px]">${text}</p>`;
+};
+
+// Lists
+renderer.list = function({ ordered, items }) {
+  const tag = ordered ? 'ol' : 'ul';
+  const style = ordered ? 'list-decimal' : 'list-disc';
+  const lis = items.map(item => `<li class="pl-1">${item.text}</li>`).join('');
+  return `<${tag} class="${style} pl-6 my-5 space-y-2 text-slate-600 leading-relaxed text-[15px]">${lis}</${tag}>`;
+};
+
+// Blockquotes
+renderer.blockquote = function({ raw, text }) {
+  return `<blockquote class="border-l-4 border-blue-500 bg-blue-50/50 rounded-r-xl px-6 py-4 my-6 text-slate-700 italic leading-relaxed">${text}</blockquote>`;
+};
+
+// Code
+renderer.code = function({ text, lang }) {
+  return `<pre class="bg-slate-900 text-slate-100 rounded-xl p-5 my-6 overflow-x-auto text-sm leading-relaxed"><code>${text}</code></pre>`;
+};
+renderer.codespan = function({ text }) {
+  return `<code class="bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-sm font-mono">${text}</code>`;
+};
+
+// Links
+renderer.link = function({ href, title, text }) {
+  const t = title ? ` title="${title}"` : '';
+  return `<a href="${href}"${t} class="text-blue-600 hover:text-blue-800 underline decoration-blue-300/50 hover:decoration-blue-500 transition-colors">${text}</a>`;
+};
+
+// Tables
+renderer.table = function({ header, rows }) {
+  const ths = header.map(cell => `<th class="px-4 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider bg-slate-50 border-b border-slate-200">${cell.text}</th>`).join('');
+  const trs = rows.map(row => {
+    const tds = row.map(cell => `<td class="px-4 py-3 text-sm text-slate-700 border-b border-slate-100">${cell.text}</td>`).join('');
+    return `<tr class="hover:bg-slate-50/50 transition-colors">${tds}</tr>`;
+  }).join('');
+  return `<div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm"><table class="min-w-full"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
+};
+
+// HR
+renderer.hr = function() {
+  return `<hr class="my-10 border-t border-slate-200" />`;
+};
+
+marked.use({ renderer });
+
+const htmlContent = magnet.content ? marked.parse(magnet.content) : '';
 ---
 
 <LeadMagnetLayout
@@ -200,7 +274,15 @@ const magnetKeywords = magnet.keywords || `${magnetBrandlessTitle.toLowerCase().
             ))}
           </div>
         </div>
-      </section>
-    </>
-  )}
-</LeadMagnetLayout>
+              </section>
+            </>
+          )}
+  
+          {htmlContent && (
+            <section class="py-16 bg-white" aria-labelledby="toolkit-content">
+              <div class="max-w-4xl mx-auto px-4">
+                <div class="prose prose-slate max-w-none blog-content" set:html={htmlContent} />
+              </div>
+            </section>
+          )}
+        </LeadMagnetLayout>

@@ -11,6 +11,7 @@ const citiesCollection = defineCollection({
     slug: z.string(),
     name: z.string(),
     state: z.string(),
+    address: z.string().optional(),
     desc: z.string(),
     phone: z.string(),
     areas: z.array(z.string()),

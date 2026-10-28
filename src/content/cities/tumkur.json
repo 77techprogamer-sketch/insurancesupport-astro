@@ -1,0 +1,40 @@
+{
+  "slug": "tumkur",
+  "name": "Tumkur",
+  "state": "Karnataka",
+  "address": "B.H. Road, Tumkur, Karnataka 572101",
+  "desc": "Families and professionals in Tumkur, Karnataka trust Insurance Support for transparent, independent insurance advisory. From policy selection to complex claim recoveries, our IRDAI-certified experts provide dedicated doorstep service.",
+  "phone": "+91-99866 34506",
+  "areas": [
+    "B.H. Road",
+    "Gandhi Nagar",
+    "K.I.A.D.B. Industrial Area",
+    "Siddaganga Layout",
+    "Kuvempu Nagar",
+    "Maralur",
+    "Tiptur Road"
+  ],
+  "nearby": [
+    "bangalore-koramangala",
+    "davangere"
+  ],
+  "it_focus": "Health insurance and term plans for professionals at Tumkur Machine Tool Park, Siddaganga Institute of Technology, and KIADB industrial area.",
+  "senior_focus": "Doorstep assistance for retired residents in B.H. Road, Gandhi Nagar, and Siddaganga Layout for LIC policy revivals and medical claim processing.",
+  "branch_dets": "Coordination with LIC Branch Tumkur at B.H. Road and insurer offices near Siddaganga Layout.",
+  "local_faqs": [
+    {
+      "question": "Can I get doorstep service for my LIC policy in Tumkur?",
+      "answer": "Yes, our team visits your home in Tumkur for policy servicing, maturity claims, revival calculations, and new consultations."
+    },
+    {
+      "question": "Which hospitals in Tumkur offer cashless treatment?",
+      "answer": "Cashless treatment is available at District Hospital Tumkur, Siddaganga Hospital, and multiple private hospitals near B.H. Road."
+    }
+  ],
+  "long_count": 0,
+  "lic_name": "LIC Branch Tumkur",
+  "lic_addr": "B.H. Road, Tumkur, Karnataka 572101",
+  "nearbyLocations": [],
+  "lat": 13.3397,
+  "lng": 77.1139
+}

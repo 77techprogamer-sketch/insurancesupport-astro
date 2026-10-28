@@ -70,7 +70,7 @@ Submit the claim through the insurer's current channel and follow the policy's s
 
 First distinguish a pending file from a final rejection. Request the insurer's written status, the exact missing items, or the reason and policy clause for a reduction or denial. Compare the decision with the schedule and wording. For a partial settlement, ask for an itemized calculation. For a medical issue, obtain a treating doctor's note that addresses the specific question; a general certificate may not answer the insurer's concern.
 
-Send a formal grievance through the insurer's process with the claim number, a short chronology, the clause you rely on, the evidence, and the remedy requested. Keep the grievance reference. If unresolved, the [IRDAI Bima Bharosa portal](https://bimabharosa.irdai.gov.in/) can register and track a grievance. Eligible disputes may also be considered through the [Insurance Ombudsman](https://www.cioins.co.in/), subject to its current rules and jurisdiction. See our [health claim appeal guide](/blog/health-insurance-claim-rejected-appeal-guide-2026/) for a focused checklist.
+Send a formal grievance through the insurer's process with the claim number, a short chronology, the clause you rely on, the evidence, and the remedy requested. Keep the grievance reference. If unresolved, the [IRDAI Bima Bharosa portal](https://bimabharosa.irdai.gov.in/) can register and track a grievance. Eligible disputes may also be considered through the [Insurance Ombudsman](https://www.cioins.co.in/), subject to its current rules and jurisdiction. See our [health claim appeal guide](/blog/health-insurance-claim-rejection-rights-2026/) for a focused checklist.
 
 ### Portability and changing insurers
 
@@ -105,7 +105,7 @@ The first-year premium is only one part of the decision. Compare the premium at 
 - [Pre-existing disease waiting periods](/blog/health-insurance-pre-existing-disease-waiting-period-guide-2026/)
 - [Health insurance portability and switching](/blog/health-insurance-portability-india-2026-switch-insurer-without-losing-benefits/)
 - [Cashless claim authorization and denial](/blog/irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026/)
-- [Health claim rejection and appeal steps](/blog/health-insurance-claim-rejected-appeal-guide-2026/)
+- [Health claim rejection and appeal steps](/blog/health-insurance-claim-rejection-rights-2026/)
 
 ## FAQ
 
