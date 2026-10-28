@@ -211,41 +211,43 @@ const navItems = [
   }
 
   /* Mobile */
-  @media (max-width: 768px) {
-    .mobile-menu-btn {
-      display: flex;
-    }
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
 
-    .nav {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
-      flex-direction: column;
-      padding: var(--space-4);
-      gap: var(--space-2);
-      box-shadow: var(--shadow-lg);
-      display: none;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all var(--transition-base);
-    }
+      .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        padding: var(--space-4);
+        gap: var(--space-2);
+        box-shadow: var(--shadow-lg);
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all var(--transition-base);
+      }
 
-    .nav.open {
-      display: flex;
-      opacity: 1;
-      transform: translateY(0);
-    }
+      .nav.open {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-    .nav-link {
-      width: 100%;
-      justify-content: center;
-    }
+      .nav-link {
+        width: 100%;
+        justify-content: center;
+      }
 
-    .header-actions .btn-ghost span:last-child {
-      display: none;
+      /* Hide phone/WhatsApp buttons in header on mobile - mobile sticky bar handles this */
+      .header-actions .btn-ghost,
+      .header-actions .btn-primary {
+        display: none;
+      }
     }
-  }
 </style>
