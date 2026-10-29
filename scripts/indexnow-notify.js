@@ -49,7 +49,7 @@ async function collectUrls() {
 
 async function pingIndexNow() {
   const urlList = await collectUrls();
-  console.log(`IndexNow: submitting ${urlList.length} URLs to Bing/Yandex/Seznam`);
+  console.log(`IndexNow: submitting ${urlList.length} URLs to Bing/Seznam/IndexNow.org`);
 
   const payload = JSON.stringify({
     host: SITE_URL.replace('https://', ''),
@@ -61,7 +61,6 @@ async function pingIndexNow() {
   const endpoints = [
     'https://api.indexnow.org/indexnow',
     'https://www.bing.com/indexnow',
-    'https://search.yandex.com/indexnow',
     'https://search.seznam.cz/indexnow'
   ];
 
