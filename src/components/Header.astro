@@ -27,10 +27,10 @@ const navItems = [
 <header class="header" id="site-header" role="banner">
   <div class="container header-inner">
     <!-- Logo -->
-    <a href="/" class="logo" aria-label="Insurance Support - Home">
-      <span class="logo-mark" aria-hidden="true">IS</span>
-      <span style="font-family: var(--font-display);">Insurance Support</span>
-    </a>
+        <a href="/" class="logo" aria-label="Insurance Support - Home">
+          <Icon name="shield" size="lg" class="logo-mark" aria-hidden="true" />
+          <span style="font-family: var(--font-display);">Insurance Support</span>
+        </a>
 
     <!-- Navigation -->
         <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
@@ -142,23 +142,14 @@ const navItems = [
   }
 
   .logo-mark {
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-lg);
-    background: var(--gradient-primary);
-    color: var(--color-text-inverse);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1rem;
-    box-shadow: var(--shadow-sm);
-  }
+      color: var(--color-primary);
+      transition: all var(--transition-fast);
+    }
 
-  .logo:hover .logo-mark {
-    box-shadow: var(--shadow-glow-primary);
-  }
+    .logo:hover .logo-mark {
+      color: var(--color-primary-dark);
+      transform: scale(1.05);
+    }
 
   .nav {
     display: flex;

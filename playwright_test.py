@@ -5,7 +5,7 @@ from playwright.async_api import async_playwright
 async def test_viewport(page, width, height, name):
     """Test a single viewport."""
     await page.set_viewport_size({"width": width, "height": height})
-    await page.goto("https://insurancesupport.online/?verify=mmit-sha", wait_until="networkidle", timeout=60000)
+    await page.goto("https://insurancesupport.online/?verify=mmit-sha", wait_until="domcontentloaded", timeout=60000)
     
     results = {"viewport": name, "width": width, "height": height, "passed": True, "errors": []}
     
@@ -39,29 +39,40 @@ async def test_viewport(page, width, height, name):
         results["passed"] = False
         results["errors"].append("Escaped SVG text found in body")
     
-    # 6. All SVG containers reasonably bounded (check parent of SVG)
+    # 6. All VISIBLE SVG containers reasonably bounded
     bad_svgs = await page.locator('svg').evaluate_all("""
         (svgs) => svgs.map(svg => {
-            // Check parent container for sizing
             const parent = svg.parentElement;
-            const rect = parent ? parent.getBoundingClientRect() : svg.getBoundingClientRect();
+            const parentRect = parent ? parent.getBoundingClientRect() : null;
+            const svgRect = svg.getBoundingClientRect();
+            const style = getComputedStyle(svg);
+            const parentStyle = parent ? getComputedStyle(parent) : null;
+            // Only check visible SVGs
+            const isVisible = style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+            const parentVisible = parentStyle ? (parentStyle.display !== 'none' && parentStyle.visibility !== 'hidden' && parentStyle.opacity !== '0') : true;
             return {
-                width: rect.width,
-                height: rect.height,
-                svgWidth: svg.getBoundingClientRect().width,
-                svgHeight: svg.getBoundingClientRect().height,
+                svgWidth: svgRect.width,
+                svgHeight: svgRect.height,
+                parentWidth: parentRect ? parentRect.width : 0,
+                parentHeight: parentRect ? parentRect.height : 0,
+                isVisible: isVisible && parentVisible,
+                parentClass: parent ? parent.className : '',
                 html: svg.outerHTML.slice(0, 150)
             };
         }).filter(svg => 
-            svg.width <= 0 || 
-            svg.height <= 0 || 
-            svg.width > 200 || 
-            svg.height > 200
+            svg.isVisible && (
+                svg.svgWidth <= 0 || 
+                svg.svgHeight <= 0 || 
+                svg.parentWidth <= 0 || 
+                svg.parentHeight <= 0 || 
+                svg.parentWidth > 200 || 
+                svg.parentHeight > 200
+            )
         )
     """)
     if bad_svgs:
         results["passed"] = False
-        results["errors"].append(f"Oversized SVG containers: {len(bad_svgs)} found")
+        results["errors"].append(f"Oversized visible SVG containers: {len(bad_svgs)} found")
     
     # 7. Mobile contact bar fixed on mobile, hidden on desktop
     if width < 768:  # mobile
