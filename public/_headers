@@ -58,6 +58,7 @@
 /robots.txt
   Cache-Control: public, max-age=3600
   IndexNow: 6f345ded6a94be2d28ae371306ffcd79
+  Content-Type: text/plain; charset=utf-8
 
 /llms.txt
   Cache-Control: public, max-age=3600
@@ -134,6 +135,7 @@
 /.well-known/api-catalog
   Content-Type: application/linkset+json
   Cache-Control: public, max-age=3600
+
 /pagefind/*
   Cache-Control: no-store, max-age=0, must-revalidate
 

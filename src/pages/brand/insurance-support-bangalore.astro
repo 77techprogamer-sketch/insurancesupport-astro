@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const siteUrl = "https://insurancesupport.online";
+const breadcrumbs = [
+  { label: 'Home', url: siteUrl },
+  { label: 'Insurance Support Bangalore', url: `${siteUrl}/brand/insurance-support-bangalore` }
+];
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "Insurance Support Bangalore",
+  "description": "IRDAI-certified insurance advisor in Jalahalli, Bengaluru. Free claim recovery, policy advisory, and insurance comparison for Bangalore residents.",
+  "url": `${siteUrl}/brand/insurance-support-bangalore`,
+  "telephone": "+91-9986634506",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bahubali Nagar, Jalahalli",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560013",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "13.0159",
+    "longitude": "77.5522"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bengaluru" },
+    { "@type": "AdministrativeArea", "name": "Koramangala" },
+    { "@type": "AdministrativeArea", "name": "Indiranagar" },
+    { "@type": "AdministrativeArea", "name": "Whitefield" },
+    { "@type": "AdministrativeArea", "name": "Jayanagar" },
+    { "@type": "AdministrativeArea", "name": "HSR Layout" },
+    { "@type": "AdministrativeArea", "name": "Marathahalli" },
+    { "@type": "AdministrativeArea", "name": "MG Road" },
+    { "@type": "AdministrativeArea", "name": "JP Nagar" },
+    { "@type": "AdministrativeArea", "name": "BTM Layout" },
+    { "@type": "AdministrativeArea", "name": "Malleswaram" },
+    { "@type": "AdministrativeArea", "name": "Yelahanka" },
+    { "@type": "AdministrativeArea", "name": "Electronic City" },
+    { "@type": "AdministrativeArea", "name": "Hebbal" },
+    { "@type": "AdministrativeArea", "name": "Bannerghatta Road" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "21:00"
+  },
+  "priceRange": "Free consultation",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Cash, UPI, Card, Online Transfer",
+  "founder": {
+    "@type": "Person",
+    "name": "Hari Kotian",
+    "jobTitle": "IRDAI Certified Insurance Advisor",
+    "url": `${siteUrl}/about`
+  }
+};
+---
+
+<BaseLayout 
+  title="Insurance Support Bangalore" 
+  description="Insurance Support by Hari Kotian — IRDAI certified insurance advisor in Jalahalli, Bengaluru. Free claim recovery help, LIC policy revival, health insurance appeals, and unbiased policy comparison for Bangalore residents. 25+ years experience, ₹50Cr+ claims recovered."
+  canonical={`${siteUrl}/brand/insurance-support-bangalore`}
+  keywords="Insurance Support Bangalore, insurance advisor Jalahalli, claim recovery Bangalore, LIC agent Bengaluru, health insurance advisor Bangalore, motor insurance Koramangala"
+>
+  <BreadcrumbJsonLd items={breadcrumbs} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <!-- Hero Section -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-blue-600 via-indigo-700 to-blue-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
+        <div class="relative z-10">
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-medium mb-6 border border-white/20">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Serving All Bangalore Neighborhoods
+          </span>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Insurance Support <span class="text-amber-300">Bangalore</span></h1>
+          <p class="text-xl md:text-2xl text-blue-100/90 mb-6 max-w-2xl leading-relaxed">
+            Your local IRDAI-certified insurance advisor in Jalahalli. Free claim recovery, LIC policy revival, health insurance appeals — serving Koramangala, Indiranagar, Whitefield, and all 46+ Bangalore neighborhoods.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-400 text-slate-900 font-bold rounded-full text-lg shadow-lg hover:bg-amber-300 transition-colors">
+              Book Free Consultation
+            </a>
+            <a href="tel:+919986634506" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full text-lg border border-white/20 hover:bg-white/20 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Call: +91-99866 34506
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-blue-600 mb-1">25+</div>
+        <p class="text-slate-600">Years Serving Bangalore</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-emerald-600 mb-1">50Cr+</div>
+        <p class="text-slate-600">Claims Recovered for Clients</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-amber-600 mb-1">46+</div>
+        <p class="text-slate-600">Bangalore Areas Covered</p>
+      </div>
+    </section>
+
+    <!-- Why Choose Local Advisor -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Why Choose a Local Bangalore Insurance Advisor?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">In-Person Claim Support</h3>
+          <p class="text-slate-600">Visit our Jalahalli office or we meet you at your Bangalore location. Face-to-face claim documentation beats call centers every time.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">IRDAI/ombudsman Representation</h3>
+          <p class="text-slate-600">We physically attend hearings at Bangalore IRDAI office and Insurance Ombudsman (Karnataka). You don't travel — we do.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Hospital Network Knowledge</h3>
+          <p class="text-slate-600">We know which Bangalore hospitals are cashless-network for ICICI Lombard, Care Health, Star, Niva Bupa — save hours at admission.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Local Language Support</h3>
+          <p class="text-slate-600">Consultations in Kannada, Hindi, English, Tamil, Telugu. No language barriers when explaining policy terms or claim processes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services for Bangalore Residents -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Services Popular with Bangalore Clients</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/services/claim-support" class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl hover:border-blue-300 transition-all group">
+          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Claim Recovery & Appeal</h3>
+          <p class="text-slate-600 mb-4">Rejected health/life/motor claims — we file appeals, represent at IRDAI/ombudsman, negotiate settlements.</p>
+          <span class="text-blue-600 font-medium group-hover:underline">Get Help →</span>
+        </a>
+        <a href="/services/life-insurance" class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl hover:border-blue-300 transition-all group">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">LIC Policy Revival</h3>
+          <p class="text-slate-600 mb-4">Lapsed LIC policies revived — Jeevan Anand, Jeevan Labh, Money Back, Endowment. Loan & surrender guidance.</p>
+          <span class="text-blue-600 font-medium group-hover:underline">Revive Policy →</span>
+        </a>
+        <a href="/services/health-insurance" class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl hover:border-blue-300 transition-all group">
+          <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Health Insurance for Families</h3>
+          <p class="text-slate-600 mb-4">Family floater, senior citizen parents, maternity, critical illness — unbiased comparison across 15+ insurers.</p>
+          <span class="text-blue-600 font-medium group-hover:underline">Compare Plans →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bangalore Neighborhoods Served -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-6">We Serve All Bangalore Neighborhoods</h2>
+      <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">From Koramangala to Yelahanka, Whitefield to Jayanagar — Insurance Support helps Bangalore families with claims, policies, and unbiased advice.</p>
+      <div class="flex flex-wrap justify-center gap-2 mb-8">
+        {["Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "HSR Layout", "Marathahalli", "MG Road", "JP Nagar", "BTM Layout", "Malleswaram", "Yelahanka", "Electronic City", "Hebbal", "Bannerghatta", "Bellandur", "Sarjapur", "Kengeri", "Rajajinagar", "RT Nagar", "Kalyan Nagar", "HRBR Layout", "Cooke Town", "Frazer Town", "Cox Town", "Richmond Town", "Wilson Garden", "Jayanagar 4th Block", "Jayanagar 9th Block", "Banaswadi", "Kammanahalli", "Lingarajapuram", "Hoodi", "ITPL", "KR Puram", "Ramamurthy Nagar", "Bommanahalli", "Kudlu Gate", "Attibele", "Hosur Road", "Mysore Road", "Magadi Road", "Tumkur Road", "Yeshwantpur", "Peenya", "Dasarahalli"].map(area => (
+          <a href={`/cities/${area.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')}`} class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors">{area}</a>
+        ))}
+      </div>
+      <p class="text-center text-slate-500">View all <a href="/cities" class="text-blue-600 font-medium underline">46+ Bangalore areas →</a></p>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-r from-slate-900 to-blue-900 rounded-3xl p-8 md:p-12 text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Need Insurance Help in Bangalore?</h2>
+      <p class="text-blue-200/80 mb-8 max-w-2xl mx-auto">Free consultation — no obligation. Whether it's a rejected claim, a lapsed LIC policy, or finding the right health plan for your parents — we're here to help.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-400 text-slate-900 font-bold rounded-full text-lg shadow-lg hover:bg-amber-300 transition-colors">
+          Book Free Consultation
+        </a>
+        <a href="https://wa.me/919986634506?text=Hi%20Insurance%20Support%2C%20I%20need%20help%20with%20insurance%20in%20Bangalore" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:bg-green-600 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.4c-1.543 0-2.96-.078-4.23-.572l-3.675 1.034a.51.51 0 01-.558-.52l1.02-3.545c-.874-1.62-1.437-3.636-1.544-5.757a9.04 9.04 0 011.967-5.159 9.04 9.04 0 015.159-1.967 9.04 9.04 0 015.159 1.967 9.04 9.04 0 011.967 5.159c-.107 2.123-.67 4.139-1.544 5.757l-1.02 3.545a.51.51 0 01-.558.52l-3.675-1.034c-1.27.494-2.687.572-4.23.572z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

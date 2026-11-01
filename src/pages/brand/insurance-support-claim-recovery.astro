@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const siteUrl = "https://insurancesupport.online";
+const breadcrumbs = [
+  { label: 'Home', url: siteUrl },
+  { label: 'Claim Recovery', url: `${siteUrl}/services/claim-support` },
+  { label: 'Insurance Support Claim Recovery', url: `${siteUrl}/brand/insurance-support-claim-recovery` }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Insurance Support Claim Recovery",
+  "description": "Expert claim recovery service by Insurance Support (IRDAI Reg 0149161D). Rejected health, life, motor insurance claims — appeals to IRDAI, Insurance Ombudsman, Consumer Court. ₹50Cr+ recovered. Free consultation.",
+  "url": `${siteUrl}/brand/insurance-support-claim-recovery`,
+  "provider": {
+    "@type": "Organization",
+    "name": "Insurance Support",
+    "url": siteUrl
+  },
+  "areaServed": "IN",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": `${siteUrl}/contact`,
+    "servicePhone": "+91-9986634506",
+    "servicePostalAddress": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bahubali Nagar, Jalahalli",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560013",
+      "addressCountry": "IN"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "name": "Free Claim Assessment",
+    "description": "Free initial consultation to assess your rejected claim viability",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock"
+  }
+};
+---
+
+<BaseLayout 
+  title="Insurance Support Claim Recovery" 
+  description="Insurance Support Claim Recovery — IRDAI certified expert help for rejected health, life, motor insurance claims. Appeals to IRDAI, Ombudsman, Consumer Court. ₹50Cr+ recovered for 1000+ families. Free consultation."
+  canonical={`${siteUrl}/brand/insurance-support-claim-recovery`}
+  keywords="Insurance Support claim recovery, claim recovery expert Bangalore, rejected insurance claim help, IRDAI appeal assistance, insurance ombudsman representation, claim settlement expert"
+>
+  <BreadcrumbJsonLd items={breadcrumbs} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-red-600 via-red-700 to-red-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
+        <div class="relative z-10">
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-medium mb-6 border border-white/20">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Insurance Support Brand Service
+          </span>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Insurance Support <span class="text-amber-300">Claim Recovery</span></h1>
+          <p class="text-xl md:text-2xl text-red-100/90 mb-6 max-w-2xl leading-relaxed">
+            Your claim was rejected? We fight for you. IRDAI appeals, Ombudsman hearings, Consumer Court — ₹50Cr+ recovered for families across India. Free assessment.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-400 text-slate-900 font-bold rounded-full text-lg shadow-lg hover:bg-amber-300 transition-colors">
+              Get Free Claim Assessment
+            </a>
+            <a href="https://wa.me/919986634506?text=Hi%20Insurance%20Support%2C%20my%20claim%20was%20rejected%20and%20I%20need%20help" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full text-lg border border-white/20 hover:bg-white/20 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+              WhatsApp Rejection Letter
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Stats -->
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-emerald-600 mb-1">₹50Cr+</div>
+        <p class="text-slate-600">Total Claims Recovered</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-blue-600 mb-1">90%+</div>
+        <p class="text-slate-600">Success Rate on Valid Claims</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-amber-600 mb-1">1000+</div>
+        <p class="text-slate-600">Families Helped</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-red-600 mb-1">₹0</div>
+        <p class="text-slate-600">Upfront Fee (Free Assessment)</p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Our Claim Recovery Process</h2>
+      <div class="space-y-6">
+        {[
+          { step: "01", title: "Free Claim Assessment", desc: "Send us your rejection letter, policy documents, and medical/bill records. We assess viability within 24 hours — no charge.", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+          { step: "02", title: "Strategy & Documentation", desc: "We identify the exact regulatory violation, gather missing evidence, prepare appeal with IRDAI circulars, policy terms, and precedent cases.", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-4 0v12M9 5l4 4 6-6" },
+          { step: "03", title: "IRDAI Appeal Filing", desc: "Formal appeal to insurer's Grievance Redressal Officer, then IRDAI Consumer Affairs Department. We track every acknowledgment and deadline.", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+          { step: "04", title: "Ombudsman / Consumer Court", desc: "If IRDAI appeal fails, we represent you at Insurance Ombudsman (your jurisdiction) or Consumer Commission. Physical hearings attended by us — you don't travel.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+          { step: "05", title: "Settlement & Disbursement", desc: "We negotiate settlement terms, verify calculation (principal + interest + costs), ensure clean disbursement to your account. Case closed only when money hits your bank.", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }
+        ].map((step, i) => (
+          <div class="flex gap-6 bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">{step.step}</div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon}/></svg>
+                <h3 class="text-xl font-bold text-slate-900">{step.title}</h3>
+              </div>
+              <p class="text-slate-600 ml-9">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Claim Types We Handle -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Claim Types Insurance Support Recovers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { color: "red", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", title: "Health Insurance Claims", items: ["Cashless denial at network hospital", "Reimbursement rejected - 'not covered'", "Pre-existing disease exclusions", "Maternity / newborn claim issues", "Critical illness lump sum denial", "Senior citizen policy disputes", "OPD / daycare claim rejections"] },
+          { color: "blue", icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", title: "Life Insurance Claims", items: ["Death claim rejected - 'non-disclosure'", "Suicide clause disputes (1-year)", "Nominee / legal heir conflicts", "Policy lapse before death", "Early death investigation delays", "Term plan claim rejections", "ULIP / endowment maturity issues"] },
+          { color: "orange", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", title: "Motor Insurance Claims", items: ["Own damage - 'depreciation' disputes", "Zero dep / nil dep claim gaps", "Cashless garage network issues", "Third party liability delays", "Total loss / theft claim settlement", "NCB protection claims", "Add-on cover (engine, consumables)"] }
+        ].map((cat, i) => (
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl transition-shadow">
+            <div class={`w-12 h-12 bg-${cat.color}-100 rounded-xl flex items-center justify-center mb-4`}>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={cat.icon}/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-4">{cat.title}</h3>
+            <ul class="space-y-2 text-slate-600">
+              {cat.items.map(item => <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-{cat.color}-500 rounded-full mt-2 shrink-0" /><span class="text-sm">{item}</span></li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why Insurance Support for Claims -->
+    <section class="mb-16 bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Why Families Choose Insurance Support for Claim Recovery</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">No Win, No Fee Structure</h4><p class="text-slate-600">Free assessment. Transparent success-fee only if we recover. No hidden charges.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">Local Presence, National Reach</h4><p class="text-slate-600">Bangalore office, but we handle IRDAI appeals and Ombudsman cases across all India jurisdictions.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">Regulatory Expertise</h4><p class="text-slate-600">We cite exact IRDAI circulars, Master Circulars, and Ombudsman precedents — insurers can't ignore regulatory citations.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">End-to-End Handling</h4><p class="text-slate-600">From document collection to bank disbursement — you provide documents, we do everything else.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-r from-red-600 to-red-800 rounded-3xl p-8 md:p-12 text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Claim Rejected? Don't Accept It.</h2>
+      <p class="text-red-100/80 mb-8 max-w-2xl mx-auto">Insurance Support has recovered ₹50Cr+ for families like yours. Free assessment — send your rejection letter today.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-400 text-slate-900 font-bold rounded-full text-lg shadow-lg hover:bg-amber-300 transition-colors">
+          Get Free Claim Assessment
+        </a>
+        <a href="https://wa.me/919986634506?text=Hi%20Insurance%20Support%2C%20I%20need%20claim%20recovery%20help" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full text-lg border border-white/20 hover:bg-white/20 transition-colors">
+          WhatsApp Rejection Letter
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const siteUrl = "https://insurancesupport.online";
+const breadcrumbs = [
+  { label: 'Home', url: siteUrl },
+  { label: 'Hari Kotian - Insurance Advisor', url: `${siteUrl}/brand/hari-kotian-insurance-advisor` }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hari Kotian",
+  "alternateName": "Hari Kotian Insurance Advisor",
+  "description": "IRDAI Certified Insurance Advisor (Reg 0149161D) with 25+ years experience. Founder of Insurance Support. Specializes in claim recovery, LIC policy revival, health insurance appeals. Recovered ₹50Cr+ in claims for 1000+ families across India.",
+  "url": `${siteUrl}/brand/hari-kotian-insurance-advisor`,
+  "sameAs": [
+    "https://www.linkedin.com/in/insurance-support",
+    "https://twitter.com/insurancehq",
+    "https://www.facebook.com/insurancesupport"
+  ],
+  "jobTitle": "IRDAI Certified Insurance Advisor",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Insurance Support",
+    "url": siteUrl
+  },
+  "credential": {
+    "@type": "EducationalOccupationalCredential",
+    "name": "IRDAI Insurance Advisor License",
+    "credentialNumber": "0149161D",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "Insurance Regulatory and Development Authority of India"
+    },
+    "dateCreated": "1999-01-01"
+  },
+  "knowsAbout": [
+    "Insurance Claim Recovery",
+    "LIC Policy Revival",
+    "Health Insurance Claims",
+    "Motor Insurance Claims",
+    "IRDAI Regulations",
+    "Insurance Ombudsman Process",
+    "Policy Comparison",
+    "Senior Citizen Health Insurance",
+    "Family Floater Plans",
+    "Term Insurance"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bahubali Nagar, Jalahalli",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560013",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91-9986634506",
+  "email": "hari@insurancesupport.online"
+};
+---
+
+<BaseLayout 
+  title="Hari Kotian - IRDAI Certified Insurance Advisor" 
+  description="Hari Kotian — IRDAI Certified Insurance Advisor (Reg 0149161D) with 25+ years experience. Founder of Insurance Support. Recovered ₹50Cr+ in claims for 1000+ families. Free consultation on LIC, health, motor insurance across India."
+  canonical={`${siteUrl}/brand/hari-kotian-insurance-advisor`}
+  keywords="Hari Kotian insurance advisor, IRDAI certified advisor Bangalore, Hari Kotian LIC agent, insurance advisor Hari Kotian, claim recovery expert Bangalore"
+>
+  <BreadcrumbJsonLd items={breadcrumbs} />
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
+        <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+          <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-6xl md:text-8xl font-bold text-slate-900 shadow-2xl">
+            HK
+          </div>
+          <div class="text-center md:text-left">
+            <span class="inline-flex items-center gap-2 px-4 py-2 bg-amber-400/20 text-amber-300 rounded-full text-sm font-medium mb-4 border border-amber-400/30">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              IRDAI Certified • Reg 0149161D
+            </span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-3">Hari Kotian</h1>
+            <p class="text-xl text-blue-200/80 mb-4">Insurance Advisor • Claim Recovery Expert • Insurance Support Founder</p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-blue-100/80">
+              <span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 25+ Years Experience</span>
+              <span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg> 1000+ Families Served</span>
+              <span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> ₹50Cr+ Claims Recovered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="mb-16">
+      <div class="prose prose-slate max-w-none">
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          With over <strong>25 years</strong> in the Indian insurance industry, I've dedicated my career to helping families across India secure their financial future and — when things go wrong — fight for every rupee they're owed.
+        </p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          I founded <strong>Insurance Support</strong> because I saw too many honest policyholders struggle with rejected claims, confusing policy terms, and unresponsive insurers. My mission is simple: be the expert in your corner who knows the rules, speaks the language, and gets results.
+        </p>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          As an <strong>IRDAI-certified advisor (Registration 0149161D)</strong> and <strong>LIC authorized agent</strong>, I offer unbiased advice across all insurance types — life, health, motor, travel, and general. I don't work for any one insurance company; I work for <em>you</em>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Specializations -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Areas of Expertise</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", color: "red", title: "Claim Recovery & Appeals", desc: "Rejected health, life, motor claims — appeals to IRDAI, Ombudsman, Consumer Court. 90%+ success rate on valid claims." },
+          { icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", color: "blue", title: "LIC Policy Revival & Management", desc: "Lapsed policies revived — Jeevan Anand, Labh, Money Back, Endowment. Loan, surrender, nomination, maturity guidance." },
+          { icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", color: "emerald", title: "Health Insurance for Families", desc: "Family floater, senior citizen parents, maternity, critical illness, super top-up — unbiased comparison across 15+ insurers." },
+          { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", color: "amber", title: "Motor Insurance Claims", desc: "Own damage, third party, zero depreciation, NCB protection — claim filing, surveyor coordination, cashless garage network." }
+        ].map((spec, i) => (
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl transition-shadow">
+            <div class={`w-12 h-12 bg-${spec.color}-100 rounded-xl flex items-center justify-center mb-4`}>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={spec.icon}/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{spec.title}</h3>
+            <p class="text-slate-600">{spec.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Credentials & Trust -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Credentials & Trust Signals</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">IRDAI Certified</h3>
+          <p class="text-slate-600">Registration: <strong>0149161D</strong><br/>Validated on IRDAI public register</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">LIC Authorized Advisor</h3>
+          <p class="text-slate-600">Directly appointed by Life Insurance Corporation of India</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">ICICI Lombard & Care Health</h3>
+          <p class="text-slate-600">Authorized partner for health & motor insurance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Stories / Testimonials -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">What Clients Say About Hari Kotian</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { name: "Rajesh K.", location: "Koramangala, Bangalore", claim: "Health Insurance - ₹12.5 Lakhs", text: "My father's critical illness claim was rejected twice. Hari Kotian personally handled the appeal at IRDAI Bangalore. We got the full amount plus interest. He knows the system inside out." },
+          { name: "Priya S.", location: "Whitefield, Bangalore", claim: "LIC Policy Revival - ₹8 Lakhs", text: "Two lapsed LIC policies from 2015. Everyone said impossible. Hari revived both within 45 days. Saved our family's life savings. Worth every bit of trust." },
+          { name: "Amit & Sunita R.", location: "Jayanagar, Bangalore", claim: "Motor Insurance - ₹3.2 Lakhs", text: "Car accident claim delayed for 4 months by insurer. Hari coordinated with surveyor, garage, and IRDAI ombudsman. Settled in 3 weeks. His local Bangalore presence made all the difference." }
+        ].map(testimonial => (
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-center gap-2 mb-3">
+              <svg class="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="text-slate-700 italic mb-4">"{testimonial.text}"</p>
+            <div class="border-t border-slate-100 pt-4">
+              <p class="font-medium text-slate-900">{testimonial.name}</p>
+              <p class="text-sm text-slate-500">{testimonial.location} • {testimonial.claim}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-r from-slate-900 to-blue-900 rounded-3xl p-8 md:p-12 text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Work Directly with Hari Kotian</h2>
+      <p class="text-blue-200/80 mb-8 max-w-2xl mx-auto">Free initial consultation. No obligation. Whether you need claim help, policy advice, or just a second opinion — book a 15-minute call.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-400 text-slate-900 font-bold rounded-full text-lg shadow-lg hover:bg-amber-300 transition-colors">
+          Book Free Consultation
+        </a>
+        <a href="https://wa.me/919986634506?text=Hi%20Hari%2C%20I%20need%20insurance%20advice" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-full text-lg shadow-lg hover:bg-green-600 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.4c-1.543 0-2.96-.078-4.23-.572l-3.675 1.034a.51.51 0 01-.558-.52l1.02-3.545c-.874-1.62-1.437-3.636-1.544-5.757a9.04 9.04 0 011.967-5.159 9.04 9.04 0 015.159-1.967 9.04 9.04 0 015.159 1.967 9.04 9.04 0 011.967 5.159c-.107 2.123-.67 4.139-1.544 5.757l-1.02 3.545a.51.51 0 01-.558.52l-3.675-1.034c-1.27.494-2.687.572-4.23.572z"/></svg>
+          WhatsApp Hari Directly
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

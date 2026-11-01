@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+
+const siteUrl = "https://insurancesupport.online";
+const breadcrumbs = [
+  { label: 'Home', url: siteUrl },
+  { label: 'Life Insurance', url: `${siteUrl}/services/life-insurance` },
+  { label: 'Insurance Support LIC Expert', url: `${siteUrl}/brand/insurance-support-lic-expert` }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Insurance Support LIC Expert Advisory",
+  "description": "LIC authorized advisor (Insurance Support, IRDAI Reg 0149161D). LIC policy revival, new purchases, claims, loans, surrender, nomination, maturity. Jeevan Anand, Jeevan Labh, Money Back, Endowment, Term. Free consultation.",
+  "url": `${siteUrl}/brand/insurance-support-lic-expert`,
+  "provider": {
+    "@type": "Organization",
+    "name": "Insurance Support",
+    "url": siteUrl
+  },
+  "areaServed": "IN",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": `${siteUrl}/contact`,
+    "servicePhone": "+91-9986634506",
+    "servicePostalAddress": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bahubali Nagar, Jalahalli",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560013",
+      "addressCountry": "IN"
+    }
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "LIC Policy Revival",
+      "description": "Revive lapsed LIC policies - special revival, medical revival, loan-cum-revival",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Free LIC Consultation",
+      "description": "Free advice on LIC plan selection, comparison, and portfolio review",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title="Insurance Support LIC Expert" 
+  description="LIC authorized advisor - Insurance Support (IRDAI Reg 0149161D). LIC policy revival, Jeevan Anand, Jeevan Labh, Money Back, Endowment, Term plans. New purchases, claims, loans, surrender, nomination. Free consultation across India."
+  canonical={`${siteUrl}/brand/insurance-support-lic-expert`}
+  keywords="Insurance Support LIC expert, LIC advisor Bangalore, LIC policy revival, Jeevan Anand advisor, LIC agent Hari Kotian, LIC authorized advisor, LIC claim help"
+>
+  <BreadcrumbJsonLd items={breadcrumbs} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-amber-600 via-amber-700 to-yellow-700 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-medium border border-white/20">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              LIC Authorized Advisor
+            </span>
+            <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-medium border border-white/20">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              IRDAI Reg: 0149161D
+            </span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Insurance Support <span class="text-slate-100">LIC Expert</span></h1>
+          <p class="text-xl md:text-2xl text-amber-100/90 mb-6 max-w-2xl leading-relaxed">
+            Your trusted LIC authorized advisor. Policy revival, new purchases, claims, maturity — Jeevan Anand, Jeevan Labh, Money Back, Endowment, Tech Term. 25+ years LIC expertise. Free consultation.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-amber-700 font-bold rounded-full text-lg shadow-lg hover:bg-amber-50 transition-colors">
+              Book Free LIC Consultation
+            </a>
+            <a href="https://wa.me/919986634506?text=Hi%20Insurance%20Support%2C%20I%20need%20help%20with%20LIC%20policy" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full text-lg border border-white/20 hover:bg-white/20 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+              WhatsApp LIC Query
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Stats -->
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-amber-600 mb-1">25+</div>
+        <p class="text-slate-600">Years LIC Experience</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-blue-600 mb-1">500+</div>
+        <p class="text-slate-600">LIC Policies Serviced</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-emerald-600 mb-1">200+</div>
+        <p class="text-slate-600">Lapsed Policies Revived</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-shadow">
+        <div class="text-4xl font-extrabold text-red-600 mb-1">₹0</div>
+        <p class="text-slate-600">Consultation Fee</p>
+      </div>
+    </section>
+
+    <!-- LIC Services -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Complete LIC Services by Insurance Support</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { icon: "M13 2L3 14h9l-1 8 10-12h-9l1-8z", color: "amber", title: "Policy Revival", desc: "Lapsed LIC policies revived — Special Revival, Medical Revival, Loan-cum-Revival, Installment Revival. Jeevan Anand, Jeevan Labh, Money Back, Endowment, Jeevan Saral, Jeevan Shree." },
+          { icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", color: "blue", title: "New Policy Purchase", desc: "Unbiased LIC plan selection — Tech Term, Jeevan Amar, Jeevan Umang, Jeevan Lakshya, New Jeevan Anand, Aadhaar Shila, Aadhaar Stambh. Comparison with private term plans." },
+          { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", color: "red", title: "Death & Maturity Claims", desc: "Death claim filing, nominee assistance, early death investigation support, maturity payout, survival benefit, money back installments. Documentation & IRDAI follow-up." },
+          { icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2M17 9h2a2 2 0 012 2v6a2 2 0 01-2 2h-2m-6-6H9m4 0v-2m0 0L5 3m12 4l-4 4", color: "emerald", title: "Policy Servicing", desc: "Loan against policy, surrender value, nomination change, address update, bank mandate, duplicate policy, premium payment modes, GST on premiums." }
+        ].map(svc => (
+          <a href={`/services/${svc.title.toLowerCase().replace(/\s+/g, '-').replace('&', '')}`} class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl hover:border-amber-300 transition-all group">
+            <div class={`w-12 h-12 bg-${svc.color}-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={svc.icon}/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{svc.title}</h3>
+            <p class="text-slate-600 mb-4">{svc.desc}</p>
+            <span class="text-amber-600 font-medium group-hover:underline">Explore →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Popular LIC Plans Comparison -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Popular LIC Plans We Advise On</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-2xl border border-slate-200 overflow-hidden">
+          <thead class="bg-slate-900 text-white">
+            <tr>
+              <th class="p-4 text-left font-semibold">Plan</th>
+              <th class="p-4 text-left font-semibold">Type</th>
+              <th class="p-4 text-left font-semibold">Best For</th>
+              <th class="p-4 text-left font-semibold">Key Feature</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            {[
+              ["Tech Term (854)", "Pure Term", "Income replacement", "Lowest premium, online only"],
+              ["Jeevan Amar (855)", "Term + Return of Premium", "Return seekers", "ROP at maturity, flexible payout"],
+              ["New Jeevan Anand (915)", "Endowment", "Savings + protection", "Bonus + loyalty addition"],
+              ["Jeevan Labh (936)", "Money Back", "Regular income", "Survival benefits every 5 yrs"],
+              ["Jeevan Umang (945)", "Whole Life", "Lifelong cover", "Cover till 100, survival benefits"],
+              ["Aadhaar Shila (944)", "Women Micro Insurance", "Women savers", "Low premium, loyalty additions"],
+              ["Bachat Plus (978)", "Micro Endowment", "Small savings", "Auto-cover, flexible premium"],
+              ["Jeevan Shanti (850)", "Deferred Annuity", "Retirement planning", "Pension start age flexible"]
+            ].map((row, i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50"} onMouseOver={e => e.currentTarget.classList.add("bg-amber-50")} onMouseOut={e => e.currentTarget.classList.remove("bg-amber-50")}>
+                {row.map((cell, j) => <td class="p-4">{j === 0 ? <strong>{cell}</strong> : cell}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-slate-500 mt-6">Need help choosing? <a href="/contact" class="text-blue-600 font-medium underline">Free LIC plan comparison →</a></p>
+    </section>
+
+    <!-- Policy Revival Deep Dive -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">LIC Policy Revival — How Insurance Support Helps</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { title: "Special Revival (Within 6 Months)", details: ["No medical exam required", "Pay arrears + interest (9% p.a.)", "Fastest revival option", "All plan types eligible"], icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+          { title: "Medical Revival (6 Months - 3 Years)", details: ["Medical exam at LIC empanelled center", "Arrears + interest + medical fees", "Most common revival route", "We coordinate doctor appointment"], icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
+          { title: "Loan-cum-Revival (3-5 Years)", details: ["Policy loan covers revival arrears", "No out-of-pocket if surrender value sufficient", "Interest on loan + revival interest", "Complex — we handle paperwork"], icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" }
+        ].map((revival, i) => (
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={revival.icon}/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">{revival.title}</h3>
+            <ul class="space-y-2 text-slate-600">
+              {revival.details.map(detail => <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 shrink-0" /><span class="text-sm">{detail}</span></li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why Insurance Support for LIC -->
+    <section class="mb-16 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl p-8">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Why Choose Insurance Support for Your LIC Needs?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">Direct LIC Authorization</h4><p class="text-slate-600">Officially appointed LIC advisor — not an aggregator. Direct access to LIC branch officers for faster servicing.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">Portfolio-Level Advice</h4><p class="text-slate-600">We review ALL your LIC policies together — avoid overlaps, optimize premiums, align with goals.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">Private Term Comparison</h4><p class="text-slate-600">Honest comparison: LIC Tech Term vs HDFC Click2Protect vs ICICI iProtect — we show real numbers, not sales pitches.</p></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <div><h4 class="font-bold text-slate-900">Claim Support Included</h4><p class="text-slate-600">Buy through us, claim support is free. We handle death claim documentation, nominee coordination, IRDAI escalation if needed.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-r from-amber-600 to-amber-800 rounded-3xl p-8 md:p-12 text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Need LIC Help? Talk to Your Authorized Advisor.</h2>
+      <p class="text-amber-100/80 mb-8 max-w-2xl mx-auto">Policy revival, new purchase, claim, or just a portfolio review — Insurance Support is your direct line to LIC expertise. Free consultation.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-amber-700 font-bold rounded-full text-lg shadow-lg hover:bg-amber-50 transition-colors">
+          Book Free LIC Consultation
+        </a>
+        <a href="https://wa.me/919986634506?text=Hi%20Insurance%20Support%2C%20I%20need%20LIC%20advice" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full text-lg border border-white/20 hover:bg-white/20 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+          WhatsApp LIC Query
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

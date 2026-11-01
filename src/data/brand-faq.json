@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Insurance Support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Insurance Support is an IRDAI-registered (Reg 0149161D) independent insurance advisory firm founded by Hari Kotian. Based in Jalahalli, Bengaluru, we provide free expert guidance on life, health, motor, travel, and general insurance - specializing in claim recovery, policy revival, and unbiased product comparisons across LIC, ICICI Lombard, Care Health, and all major Indian insurers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is Hari Kotian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hari Kotian is an IRDAI Certified Insurance Advisor (Registration 0149161D) with 25+ years of experience in the Indian insurance industry. He founded Insurance Support to help families navigate claim rejections, choose the right policies, and recover over INR 50 Crores in settled claims. He specializes in LIC policy revival, health insurance claim appeals, and motor insurance disputes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Insurance Support located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Insurance Support is located at Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013, India. We serve clients across India remotely via phone, WhatsApp, and video consultation. Local clients from Koramangala, Indiranagar, Whitefield, Jayanagar, HSR Layout, and all Bangalore neighborhoods can visit for in-person meetings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Insurance Support charge fees for consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Insurance Support offers free initial consultations with no obligation. We are an independent advisory - we do not charge advisory fees. Our revenue comes from standard insurer commissions when you purchase a policy through us, at no extra cost to you compared to buying directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What insurance companies does Insurance Support work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Insurance Support works with all major Indian insurers including LIC (Life Insurance Corporation), ICICI Lombard, Care Health (formerly Religare), HDFC ERGO, Bajaj Allianz, SBI Life, Max Life, Tata AIG, and 20+ other IRDAI-registered companies. We are authorized advisors for LIC, ICICI Lombard, and Care Health."
+      }
+    }
+  ]
+}

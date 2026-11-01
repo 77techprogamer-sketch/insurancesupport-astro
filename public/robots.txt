@@ -1,35 +1,10 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://insurancesupport.online/sitemap.xml
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
-# Admin and system paths only
-Disallow: /admin/
-Disallow: /cgi-bin/
-
-# Public content paths
-Allow: /
-Allow: /blog/
-Allow: /services/
-Allow: /cities/
-Allow: /locations/
-Allow: /compare/
-Allow: /case-studies/
-Allow: /lead-magnets/
-Allow: /resources/
-Allow: /support/
-Allow: /tools/
-Allow: /faq/
-Allow: /about/
-Allow: /contact/
-Allow: /policy-review-checklist/
-Allow: /terms
-Allow: /privacy-policy
-Allow: /disclaimer
-Allow: /expert-insights/
-
-# Google AdsBot
-User-agent: AdsBot-Google
+# === Search Engine Crawlers ===
+User-agent: Googlebot
 Allow: /
 
 # Google Mobile AdsBot
@@ -60,6 +35,8 @@ Allow: /
 User-agent: meta-externalagent     # Meta AI
 Allow: /
 User-agent: FacebookBot            # Facebook/Meta
+Allow: /
+User-agent: cohere-ai              # Cohere
 Allow: /
 User-agent: Omgilibot              # Omgili
 Allow: /
@@ -101,3 +78,5 @@ Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 # IndexNow key for instant Bing/Yandex recrawl
 IndexNow: 6f345ded6a94be2d28ae371306ffcd79
+
+Sitemap: https://insurancesupport.online/sitemap-index.xml

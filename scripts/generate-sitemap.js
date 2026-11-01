@@ -82,23 +82,22 @@ async function generateSitemaps() {
     }
 
     const uniqueLinks = Array.from(linkMap.values())
-                .filter(link => !link.url.includes('/test'))
-                .filter(link => !link.url.includes('/404'))
-                .filter(link => !link.url.includes('fbed68329c17dcd9'))
-                .filter(link => !link.url.includes('/robots.txt'))
-                .filter(link => !link.url.includes('/_headers'))
-                .filter(link => !link.url.includes('/_redirects'))
-                .filter(link => link.url !== '/index')
-                .filter(link => !link.url.includes('/api-docs'))
-                .filter(link => !link.url.includes('/openapi.json'))
-                .filter(link => !link.url.includes('/health.json'))
-                .filter(link => !link.url.includes('/auth.md'))
-                .filter(link => !link.url.includes('/search'))
-                .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
-                .filter(link => !link.url.includes('/lead-magnets/insurance-ombudsman-complaint/')) // 404 - wrong slug
-                .filter(link => !link.url.includes('/blog/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026/')) // wrong slug (apostrophe encoded as here-s)
-                .filter(link => !link.url.includes('/bn/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026/')) // 404 - bn prefix with wrong slug
-
+        .filter(link => !link.url.includes('/test'))
+        .filter(link => !link.url.includes('/404'))
+        .filter(link => !link.url.includes('fbed68329c17dcd9'))
+        .filter(link => !link.url.includes('/robots.txt'))
+        .filter(link => !link.url.includes('/_headers'))
+        .filter(link => !link.url.includes('/_redirects'))
+        .filter(link => link.url !== '/index')
+        .filter(link => !link.url.includes('/api-docs'))
+        .filter(link => !link.url.includes('/openapi.json'))
+        .filter(link => !link.url.includes('/health.json'))
+        .filter(link => !link.url.includes('/auth.md'))
+        .filter(link => !link.url.includes('/search'))
+        .filter(link => !/^\/blog\/[a-z]{2}-/.test(link.url)) // Exclude old dash-prefixed blog URLs (e.g. /blog/bn-foo)
+        .filter(link => !link.url.includes('/lead-magnets/insurance-ombudsman-complaint/')) // 404 - wrong slug
+        .filter(link => !link.url.includes('/blog/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026/')) // wrong slug (apostrophe encoded as here-s)
+        .filter(link => !link.url.includes('/bn/insurance-claim-rejected-here-s-your-complete-legal-practical-fight-back-guide-2026/')); // 404 - bn prefix with wrong slug
 
     // Categorize links for individual sitemaps
     const categories = {
@@ -110,11 +109,12 @@ async function generateSitemaps() {
         leadMagnets: [],
         caseStudies: [],
         compare: [],
+        brand: [],
     };
 
     uniqueLinks.forEach(linkObj => {
-            const url = linkObj.url;
-            const finalUrl = url.endsWith('/') ? url : url + '/';
+        const url = linkObj.url;
+        const finalUrl = url.endsWith('/') ? url : url + '/';
         const sitemapEntry = { url: finalUrl, changefreq: 'weekly', priority: 0.7, ...(linkObj.lastmod ? { lastmod: linkObj.lastmod } : {}) };
 
         if (url === '/' || url === '/about' || url === '/contact' || url === '/faq' ||
@@ -136,12 +136,8 @@ async function generateSitemaps() {
             categories.caseStudies.push(sitemapEntry);
         } else if (url.startsWith('/compare/')) {
             categories.compare.push(sitemapEntry);
-        } else if (url.startsWith('/lead-magnets/')) {
-            categories.leadMagnets.push(sitemapEntry);
-        } else if (url.startsWith('/case-studies/')) {
-            categories.caseStudies.push(sitemapEntry);
-        } else if (url.startsWith('/compare/')) {
-            categories.compare.push(sitemapEntry);
+        } else if (url.startsWith('/brand/')) {
+            categories.brand.push({ ...sitemapEntry, priority: 0.8 });
         } else {
             // Fallback for uncategorized, add to core if it's likely a page
             // Or create a 'misc' category if many exist
@@ -170,13 +166,14 @@ async function generateSitemaps() {
       leadMagnets: categories.leadMagnets.length,
       caseStudies: categories.caseStudies.length,
       compare: categories.compare.length,
+      brand: categories.brand.length,
     });
 
     // Only warn if a strong intent category is unexpectedly empty after final dedup.
-    const expectedRichCategories = ['leadMagnets', 'caseStudies', 'compare'];
+    const expectedRichCategories = ['leadMagnets', 'caseStudies', 'compare', 'brand'];
     const richCategoryOk = expectedRichCategories.some(cat => categories[cat] && categories[cat].length > 0);
     if (!richCategoryOk) {
-      console.warn('WARN: no intent-rich pages landed in lead magnets / case studies / compare sitemaps after dedup.');
+      console.warn('WARN: no intent-rich pages landed in lead magnets / case studies / compare / brand sitemaps after dedup.');
     }
             sitemapIndexLinks.push({ url: `${siteUrl}/sitemaps/${category}-sitemap.xml`, lastmod: new Date().toISOString() });
         }
