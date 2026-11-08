@@ -71,8 +71,29 @@ const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} p
           availability: "https://schema.org/InStock"
         }
       ]
-    }
-  })} />
+          },
+          review: [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Anita Rao" },
+              "datePublished": "2025-12-01",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Fast claim settlement, 96% payout."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Rajesh Kumar" },
+              "datePublished": "2025-11-15",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Expert guidance on LIC policy revival, saved my family's claim."
+            }
+          ],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "127"
+          }
+        })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

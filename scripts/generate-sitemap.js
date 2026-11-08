@@ -136,11 +136,11 @@ async function generateSitemaps() {
             categories.caseStudies.push(sitemapEntry);
         } else if (url.startsWith('/compare/')) {
             categories.compare.push(sitemapEntry);
-        } else if (url.startsWith('/brand/')) {
+} else if (url.startsWith('/brand/')) {
             categories.brand.push({ ...sitemapEntry, priority: 0.8 });
         } else {
             // Fallback for uncategorized, add to core if it's likely a page
-            // Or create a 'misc' category if many exist
+            // Or create a "misc" category if many exist
             if (!path.extname(url)) { // If it doesn't have an extension, assume it's a page
                 categories.core.push(sitemapEntry);
             }

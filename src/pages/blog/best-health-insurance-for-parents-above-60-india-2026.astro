@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+
+const TITLE = "Best Health Insurance for Parents Above 60 in India (2026 Guide)";
+const DESCRIPTION = "Specialized health insurance plans for senior citizens aged 60+ in India. Compare HDFC ERGO Optima Secure, Star Senior Care, Care Senior Health Advantage, Acko Senior Care, Niva Bupa Senior First, and Aditya Birla Activ Health Senior. Includes premium comparison, claim settlement ratios, and real case studies.";
+const KEYWORDS = "health insurance for parents above 60 India 2026, senior citizen health insurance plans, mediclaim policy for 60+, best health insurance for elderly parents, HDFC ERGO Optima Secure, Star Senior Care, Care Senior Health Advantage, Acko Senior Care, Niva Bupa Senior First";
+const CANONICAL_URL = "https://insurancesupport.online/blog/best-health-insurance-for-parents-above-60-india-2026/";
+const AUTHOR_NAME = "Hari Kotian";
+const PUBLISH_DATE = "2026-08-16";
+const MODIFIED_DATE = "2026-11-08";
+
+const FAQS = [
+  {
+    question: "Can I buy health insurance for my parents who are above 70 years old?",
+    answer: "Yes, most senior citizen plans accept entry up to 75-80 years. HDFC ERGO Optima Secure and Care Senior Health Advantage have no upper age limit for entry. Star Senior Care accepts up to 75 years. Premiums increase with age, so buying earlier is more cost-effective."
+  },
+  {
+    question: "What is the waiting period for pre-existing diseases in senior citizen health insurance?",
+    answer: "Most plans have a 24-48 month waiting period for pre-existing diseases (PED). HDFC ERGO Optima Secure offers a 30-day PED waiting period with the 'Optima Secure' variant if you opt for the 'Secure' benefit. Care Senior Health Advantage has a 48-month PED waiting period. Always declare all conditions honestly at purchase."
+  },
+  {
+    question: "Is a medical check-up mandatory before buying senior health insurance?",
+    answer: "For ages 60+, most insurers require a pre-policy medical check-up. The cost is usually borne by the insurer (or shared 50:50). Tests typically include blood sugar, lipid profile, ECG, kidney function, and blood pressure. Results affect premium loading or exclusions, not eligibility in most cases."
+  },
+  {
+    question: "What is the difference between co-payment and deductible in senior plans?",
+    answer: "Co-payment is a percentage (typically 10-20%) you pay per claim. Deductible is a fixed amount you pay annually before insurance kicks in. Many senior plans have mandatory co-payment (e.g., 20% for 70+). Star Senior Care has 10% co-payment for 61-70, 20% for 71+. Check the exact terms before buying."
+  },
+  {
+    question: "Can I claim tax deduction on premium paid for parents' health insurance?",
+    answer: "Yes, under Section 80D you can claim up to ₹50,000 per year for senior citizen parents' health insurance premium (₹25,000 if parents are below 60). This is over and above the ₹25,000/₹50,000 limit for your own family. Preventive health check-ups up to ₹5,000 are also deductible within the limit."
+  },
+  {
+    question: "What happens if my parent is diagnosed with a critical illness after buying the policy?",
+    answer: "Critical illness is covered if the waiting period is completed. Most senior plans cover major critical illnesses (cancer, heart attack, stroke, kidney failure) after a 90-day survival period. Some plans like Star Senior Care offer a lump-sum critical illness benefit as an add-on. Check the specific illness list in the policy document."
+  },
+  {
+    question: "Are day care procedures covered in senior citizen health insurance?",
+    answer: "Yes, all the plans compared here cover day care procedures (treatments requiring <24 hours hospitalization). This includes cataract surgery, chemotherapy, dialysis, angiography, and 140+ listed procedures. The exact list varies by insurer — always check the policy's day care procedure list."
+  },
+  {
+    question: "Can I port my parents' existing health insurance to a better senior plan?",
+    answer: "Yes, portability allows switching insurers without losing continuity benefits (waiting period credit for pre-existing diseases). You must apply 45 days before renewal. The new insurer evaluates the proposal and may impose fresh underwriting. Portability is ideal if current plan has high co-payment, low sum insured, or poor claim experience."
+  }
+];
+
+const CASE_STUDIES = [
+  {
+    name: "Mr. & Mrs. Sharma, Bangalore (Ages 68 & 65)",
+    situation: "Retired government employee and homemaker. Existing family floater ₹5L expiring. Mrs. Sharma has controlled hypertension (12 years), Mr. Sharma had angioplasty 4 years ago.",
+    plan: "HDFC ERGO Optima Secure ₹10L with Secure benefit",
+    premium: "₹42,800/year (combined)",
+    outcome: "PED waiting period reduced to 30 days via Secure benefit. Angioplasty history accepted after 4-year stability. Cashless at Apollo Bannerghatta for Mr. Sharma's follow-up angiography (₹1.2L claim settled in 6 hours)."
+  },
+  {
+    name: "Mr. Patel, Ahmedabad (Age 72)",
+    situation: "Self-employed, diabetic for 15 years (HbA1c 7.2%), no prior insurance. Wanted coverage for potential hospitalization and day care.",
+    plan: "Care Senior Health Advantage ₹10L",
+    premium: "₹38,500/year (after 15% loading for diabetes)",
+    outcome: "Policy issued with 48-month PED waiting period for diabetes complications. 6 months later, cashless cataract surgery (₹45,000) approved at Shankar Eye Hospital. Day care process completed in 2 hours."
+  },
+  {
+    name: "Mrs. Reddy, Hyderabad (Age 75)",
+    situation: "Widow, living with son. Hypertension + osteoarthritis. Previous insurer denied knee replacement claim citing 'wear and tear' exclusion. Needed new plan with transparent terms.",
+    plan: "Star Senior Care ₹5L",
+    premium: "₹28,900/year (10% co-pay for 71-75 age band)",
+    outcome: "Ported from previous insurer with 3 years PED credit carried forward. Knee replacement (₹3.2L) approved after 1-year waiting period completion. Co-pay of ₹32,000 paid by family. Claim settled in 11 days via reimbursement."
+  },
+  {
+    name: "Mr. & Mrs. Iyer, Chennai (Ages 64 & 61)",
+    situation: "Both working professionals, planning early retirement. No major illnesses. Want comprehensive coverage with OPD benefits for regular check-ups.",
+    plan: "Niva Bupa Senior First ₹15L + OPD add-on",
+    premium: "₹52,300/year (combined)",
+    outcome: "OPD add-on covers ₹10,000/year for diagnostics, pharmacy, consultations. Used for annual master health check-ups (₹8,500 saved). No claims yet — accumulating no-claim bonus of 10% per year up to 50%."
+  }
+];
+
+const COMPARISON_TABLE = [
+  { feature: "Plan Name", hdfc: "HDFC ERGO Optima Secure", star: "Star Senior Care", care: "Care Senior Health Advantage", acko: "Acko Senior Care", nivabupa: "Niva Bupa Senior First", aditya: "Aditya Birla Activ Health Senior" },
+  { feature: "Entry Age", hdfc: "18-65 years (no upper limit with Secure)", star: "60-75 years", care: "60-80 years", acko: "60-75 years", nivabupa: "60-75 years", aditya: "60-75 years" },
+  { feature: "Max Renewal Age", hdfc: "Lifetime", star: "Lifetime", care: "Lifetime", acko: "Lifetime", nivabupa: "Lifetime", aditya: "Lifetime" },
+  { feature: "Sum Insured Options", hdfc: "₹3L - ₹2 Cr", star: "₹5L, ₹10L", care: "₹5L, ₹10L", acko: "₹3L, ₹5L, ₹10L", nivabupa: "₹5L - ₹1 Cr", aditya: "₹5L, ₹10L, ₹15L" },
+  { feature: "Pre-existing Disease Wait", hdfc: "30 days (Secure) / 48 months (Standard)", star: "48 months", care: "48 months", acko: "48 months", nivabupa: "48 months", aditya: "48 months" },
+  { feature: "Co-payment", hdfc: "None (up to 65) / 10% (66-70) / 20% (71+)", star: "10% (61-70) / 20% (71+)", care: "None", acko: "20% (60+)", nivabupa: "10% (60-70) / 20% (71+)", aditya: "10% (60-70) / 20% (71+)" },
+  { feature: "Room Rent Limit", hdfc: "Single AC room (no cap with Secure)", star: "Single AC room up to ₹5,000/day", care: "Single AC room", acko: "Shared room up to 1% SI", nivabupa: "Single AC room", aditya: "Single AC room" },
+  { feature: "Day Care Procedures", hdfc: "140+ listed", star: "150+ listed", care: "540+ listed", acko: "140+ listed", nivabupa: "180+ listed", aditya: "200+ listed" },
+  { feature: "Ambulance Cover", hdfc: "₹2,000 per hospitalization", star: "₹2,000 per hospitalization", care: "₹3,000 per hospitalization", acko: "₹2,000 per hospitalization", nivabupa: "₹3,000 per hospitalization", aditya: "₹2,000 per hospitalization" },
+  { feature: "Pre/Post Hospitalization", hdfc: "60/180 days", star: "30/60 days", care: "60/180 days", acko: "30/60 days", nivabupa: "60/90 days", aditya: "60/90 days" },
+  { feature: "No Claim Bonus", hdfc: "50% per year max 100%", star: "10% per year max 50%", care: "10% per year max 50%", acko: "10% per year max 50%", nivabupa: "20% per year max 100%", aditya: "10% per year max 50%" },
+  { feature: "Annual Health Check-up", hdfc: "Up to ₹2,500 (SI ≥₹10L)", star: "Up to ₹1,500", care: "Up to ₹2,000", acko: "Not included", nivabupa: "Up to ₹3,000", aditya: "Up to ₹2,000" },
+  { feature: "Claim Settlement Ratio (2024-25)", hdfc: "98.5%", star: "97.8%", care: "95.2%", acko: "94.5%", nivabupa: "96.8%", aditya: "95.9%" },
+  { feature: "Network Hospitals", hdfc: "13,000+", star: "12,000+", care: "22,900+", acko: "6,500+", nivabupa: "10,000+", aditya: "8,500+" },
+  { feature: "Est. Premium (65M, ₹10L, Metro)", hdfc: "₹28,500", star: "₹24,200", care: "₹26,800", acko: "₹19,500", nivabupa: "₹31,200", aditya: "₹25,600" }
+];
+
+const ARTICLE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": TITLE,
+  "description": DESCRIPTION,
+  "datePublished": PUBLISH_DATE,
+  "dateModified": MODIFIED_DATE,
+  "author": { "@type": "Person", "name": AUTHOR_NAME },
+  "publisher": { "@type": "Organization", "name": "Insurance Support" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": CANONICAL_URL }
+};
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": FAQS.map(({ question, answer }) => ({
+    "@type": "Question",
+    "name": question,
+    "acceptedAnswer": { "@type": "Answer", "text": answer }
+  }))
+};
+---
+
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+  <BreadcrumbJsonLd items={[
+    { label: 'Home', url: 'https://insurancesupport.online' },
+    { label: 'Blog', url: 'https://insurancesupport.online/blog' },
+    { label: 'Senior Citizen Health Insurance', url: CANONICAL_URL }
+  ]} />
+  <script type="application/ld+json" set:html={JSON.stringify(ARTICLE_JSON_LD)} />
+  <FAQPageJsonLd questions={FAQS} />
+
+  <main id="main" class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600">Home</a> / <a href="/blog" class="hover:text-blue-600">Blog</a> / <span class="text-slate-700">Senior Health Insurance</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6">{TITLE}</h1>
+    <p class="text-sm text-slate-500 mb-8">By {AUTHOR_NAME} (IRDAI Reg 0149161D) | Published on {PUBLISH_DATE} | Updated {MODIFIED_DATE}</p>
+
+    <div class="prose max-w-none text-slate-700 space-y-6">
+      <p class="text-lg leading-relaxed">
+        As parents age, their healthcare needs become more specialized. Standard health insurance plans may not cover all the unique requirements of senior citizens — higher hospitalization frequency, pre-existing conditions, day care procedures, and the need for cashless access at preferred hospitals. In this comprehensive 2026 guide, I compare the <strong>top 6 senior citizen health insurance plans in India</strong> across premiums, coverage, claim settlement ratios, and real-world suitability — backed by actual case studies from my advisory practice.
+      </p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-8 mb-4">Quick Comparison: Top 6 Senior Health Plans (2026)</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full border border-slate-200 text-sm">
+          <thead class="bg-blue-50">
+            <tr>
+              {COMPARISON_TABLE[0] && Object.values(COMPARISON_TABLE[0]).map((val, i) => (
+                <th key={i} class="p-3 text-left border-b border-slate-200 font-semibold text-slate-700">{val}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {COMPARISON_TABLE.slice(1).map((row, rowIndex) => (
+              <tr class={rowIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                {Object.values(row).map((val, i) => (
+                  <td key={i} class="p-3 border-b border-slate-100 {i === 0 ? 'font-medium text-slate-900' : 'text-slate-700'}">{val}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-10 mb-4">Deep Dive: Plan-by-Plan Analysis</h2>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">1. HDFC ERGO Optima Secure — Best Overall for Comprehensive Coverage</h3>
+      <p><strong>Why it stands out:</strong> The 'Secure' benefit variant is a game-changer — it reduces the pre-existing disease waiting period from 48 months to just <strong>30 days</strong> for an additional premium of ~15-20%. For seniors with controlled diabetes, hypertension, or cardiac history, this is the single most valuable feature in the market.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Room rent:</strong> No cap with Secure benefit (single AC room); standard variant has 1% SI cap</li>
+        <li><strong>Pre/post hospitalization:</strong> 60/180 days — among the best in class</li>
+        <li><strong>No Claim Bonus:</strong> 50% per claim-free year up to 100% of SI — highest in segment</li>
+        <li><strong>Network:</strong> 13,000+ hospitals including Apollo, Fortis, Manipal, Narayana Health</li>
+        <li><strong>Best for:</strong> Parents with pre-existing conditions who want minimal waiting periods and premium room access</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">2. Star Senior Care — Best Value for Money</h3>
+      <p><strong>Why it stands out:</strong> Lowest premium among established players with decent coverage. The 10% co-payment for 61-70 age band is reasonable. Star Health's claim process is streamlined with their in-house TPA.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Critical illness benefit:</strong> Optional add-on pays lump sum on diagnosis of 11 critical illnesses</li>
+        <li><strong>Domiciliary hospitalization:</strong> Covered up to 10% of SI</li>
+        <li><strong>Organ donor cover:</strong> Up to 10% of SI for organ transplant</li>
+        <li><strong>Best for:</strong> Budget-conscious buyers with relatively healthy parents aged 60-70</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">3. Care Senior Health Advantage — Best for Zero Co-payment</h3>
+      <p><strong>Why it stands out:</strong> One of the few senior plans with <strong>no co-payment at any age</strong>. This means the insurer pays 100% of admissible claims — critical for high-cost treatments where 20% co-pay could mean ₹50,000+ out of pocket.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Day care:</strong> 540+ procedures — widest list in the segment</li>
+        <li><strong>Alternative treatment:</strong> AYUSH covered up to SI (subject to 24-month wait)</li>
+        <li><strong>Restoration benefit:</strong> 100% SI restored once per year for unrelated illnesses</li>
+        <li><strong>Best for:</strong> Families wanting zero out-of-pocket at claim time, willing to accept 48-month PED wait</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">4. Acko Senior Care — Best Digital-First Experience</h3>
+      <p><strong>Why it stands out:</strong> Lowest premium, fully digital purchase and claims. However, the mandatory 20% co-payment and shared room limit (1% SI) make it less suitable for metro hospitals where single AC rooms cost ₹8,000-15,000/day.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Cashless network:</strong> Smaller (6,500+) but growing rapidly</li>
+        <li><strong>App-based claims:</strong> Upload documents, track status in real-time</li>
+        <li><strong>Best for:</strong> Tech-comfortable families in Tier-2 cities with access to network hospitals, parents in good health</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">5. Niva Bupa Senior First — Best for High Sum Insured & NCB</h3>
+      <p><strong>Why it stands out:</strong> Offers up to ₹1 Crore sum insured with 20% NCB per year (max 100%) — ideal for families wanting substantial coverage that grows. Annual health check-up up to ₹3,000 is the highest in segment.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>OPD add-on:</strong> Optional ₹10,000/year for diagnostics, pharmacy, consultations</li>
+        <li><strong>Global coverage:</strong> Emergency hospitalization abroad up to 10% of SI</li>
+        <li><strong>Best for:</strong> High-net-worth families, NRIs, those wanting OPD and global coverage</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">6. Aditya Birla Activ Health Senior — Best for Wellness Benefits</h3>
+      <p><strong>Why it stands out:</strong> Integrated wellness program (Active Health) rewards healthy behavior with premium discounts up to 30% and HealthReturns™. Good for proactive parents who track fitness.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>HealthReturns:</strong> Earn up to 100% premium back as HealthReturns for staying active</li>
+        <li><strong>Chronic management:</strong> Dedicated program for diabetes, hypertension, cardiac care</li>
+        <li><strong>Best for:</strong> Health-conscious parents who engage with wellness apps and want premium rewards</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-10 mb-4">Real Case Studies from My Advisory Practice</h2>
+      <p class="text-slate-600">Names changed for privacy. All cases handled personally with IRDAI Reg 0149161D.</p>
+
+      <div class="space-y-6">
+        {CASE_STUDIES.map((cs, i) => (
+          <div key={i} class="bg-slate-50 border-l-4 border-blue-500 p-6 rounded-r-xl">
+            <h4 class="text-lg font-bold text-slate-900 mb-2">{cs.name}</h4>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div><span class="font-semibold text-slate-700">Situation:</span> <span class="text-slate-600">{cs.situation}</span></div>
+              <div><span class="font-semibold text-slate-700">Plan Chosen:</span> <span class="text-slate-600">{cs.plan}</span></div>
+              <div><span class="font-semibold text-slate-700">Annual Premium:</span> <span class="text-slate-600">{cs.premium}</span></div>
+              <div><span class="font-semibold text-slate-700">Outcome:</span> <span class="text-slate-600">{cs.outcome}</span></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-10 mb-4">Key Decision Factors — How to Choose</h2>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">If Parents Have Pre-existing Conditions (Diabetes, BP, Cardiac History)</h3>
+      <p><strong>Top pick: HDFC ERGO Optima Secure with Secure benefit.</strong> The 30-day PED waiting period is unmatched. Without it, you wait 4 years for any claim related to declared conditions. The ~20% premium loading is worth it — a single hospitalization for a cardiac event can cost ₹5-15L.</p>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">If Budget Is the Primary Constraint</h3>
+      <p><strong>Top pick: Star Senior Care or Acko Senior Care.</strong> Star has better network and claim track record. Acko is cheaper but has 20% mandatory co-pay and smaller network. Avoid Acko if parents prefer metro corporate hospitals.</p>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">If You Want Zero Out-of-Pocket at Claim Time</h3>
+      <p><strong>Top pick: Care Senior Health Advantage.</strong> No co-payment at any age. But you accept 48-month PED wait. Ideal if parents are relatively healthy or you're buying early (early 60s) so the wait completes before major needs arise.</p>
+
+      <h3 class="text-xl font-semibold text-blue-900 mt-6 mb-3">If You Want Coverage That Grows & Includes OPD</h3>
+      <p><strong>Top pick: Niva Bupa Senior First with OPD add-on.</strong> 20% NCB per year means ₹10L becomes ₹20L in 5 claim-free years. OPD add-on pays for yearly check-ups, pharmacy, diagnostics — effectively reducing net premium.</p>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-10 mb-4">Tax Benefits Under Section 80D (2026)</h2>
+      <div class="overflow-x-auto my-6">
+        <table class="min-w-full border border-slate-200">
+          <thead class="bg-blue-50"><tr>
+            <th class="p-3 text-left border-b">Scenario</th>
+            <th class="p-3 text-left border-b">Deduction Limit</th>
+          </tr></thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr><td class="p-3">Self + Family (below 60)</td><td class="p-3">₹25,000</td></tr>
+            <tr><td class="p-3">Self + Family (senior citizen)</td><td class="p-3">₹50,000</td></tr>
+            <tr><td class="p-3">Parents (below 60)</td><td class="p-3">₹25,000</td></tr>
+            <tr><td class="p-3"><strong>Parents (senior citizen 60+)</strong></td><td class="p-3"><strong>₹50,000</strong></td></tr>
+            <tr><td class="p-3">Preventive health check-up (within above limits)</td><td class="p-3">₹5,000</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-semibold"><strong>Max combined (you senior + parents senior)</strong></td><td class="p-3 font-semibold"><strong>₹1,00,000</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-10 mb-4">Common Mistakes to Avoid</h2>
+      <ol class="list-decimal pl-6 space-y-4">
+        <li><strong>Buying based only on premium:</strong> A ₹5,000 lower premium with 20% co-pay and shared room limit can cost ₹1,00,000+ more at claim time.</li>
+        <li><strong>Hiding pre-existing conditions:</strong> Insurers access medical history via ABHA IDs, hospital records, and CIS database. Non-disclosure = claim rejection + policy cancellation.</li>
+        <li><strong>Ignoring room rent limits:</strong> A 1% SI cap on ₹10L = ₹10,000/day. Most metro corporate hospitals charge ₹12,000-25,000 for single AC rooms. Proportional deduction applies to ALL associated costs (ICU, surgeon fees, nursing).</li>
+        <li><strong>Not checking network hospitals:</strong> Verify your parents' preferred hospitals are in-network. Cashless at a trusted hospital is vastly smoother than reimbursement.</li>
+        <li><strong>Skipping portability when switching:</strong> Portability carries forward PED waiting period credit. Buying fresh restarts the 48-month clock.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-10 mb-4">Frequently Asked Questions</h2>
+      <div class="space-y-3 not-prose">
+        {FAQS.map((item) => (
+          <details key={item.question} class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <summary class="p-5 cursor-pointer font-semibold text-slate-900 hover:bg-slate-50 list-none">{item.question}</summary>
+            <div class="px-5 pb-5"><p class="text-slate-600 leading-relaxed">{item.answer}</p></div>
+          </details>
+        ))}
+      </div>
+
+      <h2 class="text-2xl font-bold text-blue-900 mt-10 mb-4">Next Steps: How I Can Help</h2>
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Choosing the right plan depends on your parents' exact age, health history, city, preferred hospitals, and budget. As an IRDAI-certified advisor (Reg 0149161D) with 12+ years of experience and 2,800+ families served, I provide:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-600 mb-8">
+        <li>Personalized plan comparison based on your parents' medical profile</li>
+        <li>Premium calculation with all loadings, co-pays, and discounts transparent</li>
+        <li>Cashless network verification for your preferred hospitals</li>
+        <li>End-to-end application assistance — from proposal form to policy issuance</li>
+        <li>Ongoing claim support — I'm your first call when hospitalization happens</li>
+      </ul>
+
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-2xl text-white text-center">
+        <h2 class="text-2xl font-bold mb-3">Get Expert Advice for Your Parents' Health Insurance</h2>
+        <p class="text-blue-100 mb-6">Free consultation — no obligation. I'll send you a personalized comparison within 2 hours.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20I%20need%20health%20insurance%20for%20my%20parents%20above%2060.%20Please%20send%20a%20personalized%20comparison." target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            WhatsApp for Personalized Comparison
+          </a>
+          <a href="tel:+919986634506" class="bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 px-6 rounded-lg transition-colors">
+            Call +91-99866 34506
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

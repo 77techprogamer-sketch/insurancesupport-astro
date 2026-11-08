@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import posts from '../../data/blogs.json';
 
 
+import { INDIAN_LANGUAGES } from '../../data/languages';
 import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
@@ -206,6 +207,9 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 {/* English canonical + hreflang self-reference + x-default */}
 <link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${post.slug}/`} />
 <link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${post.slug}/`} />
+{INDIAN_LANGUAGES.map(l => (
+  <link rel="alternate" hreflang={`${l}-IN`} href={`https://insurancesupport.online/blog/${l}/${post.slug}/`} />
+))}
 
   <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} isPartOf={postIsHubArticle ? { "@type": "WebPage", "@id": CLAIM_HUB_URL, name: 'Insurance Claim Recovery Hub' } : undefined} />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}

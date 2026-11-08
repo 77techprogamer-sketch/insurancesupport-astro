@@ -5,7 +5,7 @@ import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 import Icon from '../components/icons/Icon.astro';
 
-const pageTitle = 'Insurance Claim Help & Advisory India | Free Review by IRDAI Advisor';
+const pageTitle = 'Insurance Support | Insurance Claim Help & Advisory India | Free Review by IRDAI Advisor';
 const pageDescription = 'Insurance claim rejected, delayed or underpaid? Get free case review from Hari Kotian, IRDAI-certified advisor (Reg No: 0149161D). We handle health, life, motor, term claim disputes across India. No fee for first review.';
 const pageKeywords = 'insurance claim help India, claim rejection appeal, IRDAI advisor, insurance claim recovery, health claim rejected, life insurance claim dispute, motor claim settlement, term insurance claim help';
 
@@ -33,6 +33,12 @@ const services = [
       desc: "IRDAI Bima Bharosa filing, Insurance Ombudsman representation, grievance redressal escalation.",
       icon: 'gavel',
       href: '/services/claim-support',
+    },
+  {
+      title: 'All Services — Insurance Support Hub',
+      desc: 'Complete overview of every claim type we handle, insurers we deal with, and how we work.',
+      icon: 'shield-check',
+      href: '/insurance-support/',
     },
 ];
 
@@ -113,7 +119,7 @@ const faqs = [
     ];
     ---
 
-<BaseLayout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+<BaseLayout title={pageTitle} description={pageDescription} keywords={pageKeywords} skipGlobalOrgSchema={true} skipGlobalLocationSchema={true}>
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' }
   ]} />
@@ -310,114 +316,5 @@ const faqs = [
         </div>
       </div>
     </section>
-  </main>
-
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Insurance Support",
-    "url": "https://insurancesupport.online/",
-    "description": pageDescription,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://insurancesupport.online/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Insurance Support",
-      "logo": "https://insurancesupport.online/logo.png"
-    }
-  })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://insurancesupport.online/#organization",
-    "name": "Insurance Support",
-    "description": "Insurance guidance and claim assistance by IRDAI-certified advisor Hari Kotian",
-    "url": "https://insurancesupport.online/",
-    "logo": "https://insurancesupport.online/logo.png",
-    "telephone": "+91-9986634506",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bengaluru",
-      "addressRegion": "KA",
-      "addressCountry": "IN"
-    },
-    "areaServed": "India",
-    "hasCredential": {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Insurance Advisor License",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "IRDAI",
-        "url": "https://www.irdai.gov.in/"
-      },
-      "credentialNumber": "0149161D"
-    },
-    "sameAs": [
-      "https://linkedin.com/in/hari-kotian",
-      "https://twitter.com/harikotian",
-      "https://wa.me/919986634506"
-    ]
-  })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://insurancesupport.online/#localbusiness",
-    "name": "Insurance Support",
-    "description": "Insurance advisory and claim recovery services in Bengaluru, Karnataka",
-    "url": "https://insurancesupport.online/",
-    "telephone": "+91-9986634506",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bengaluru",
-      "addressRegion": "KA",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 12.9716,
-      "longitude": 77.5946
-    },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 12.9716,
-        "longitude": 77.5946
-      },
-      "geoRadius": "50000"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    ],
-    "priceRange": "₹₹",
-    "hasCredential": {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Insurance Broker License",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "IRDAI",
-        "url": "https://www.irdai.gov.in/"
-      }
-    },
-    "knowsAbout": [
-      "Insurance Claim Recovery",
-      "Health Insurance Claims",
-      "Life Insurance Claims",
-      "Motor Insurance Claims",
-      "IRDAI Bima Bharosa",
-      "Insurance Ombudsman",
-      "Claim Rejection Appeals"
-    ]
-  })} />
-</BaseLayout>
+      </main>
+    </BaseLayout>

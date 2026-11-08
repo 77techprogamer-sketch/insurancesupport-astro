@@ -1,32 +1,117 @@
 ---
-// Keep this entity aligned with the visible business details and BaseLayout graph.
+// LocalBusiness JSON-LD structured data - accepts props for page-specific overrides
+interface Props {
+  name?: string;
+  description?: string;
+  url?: string;
+  telephone?: string;
+  email?: string;
+  address?: {
+    streetAddress?: string;
+    addressLocality?: string;
+    addressRegion?: string;
+    postalCode?: string;
+    addressCountry?: string;
+  };
+  geo?: {
+    latitude: number;
+    longitude: number;
+  };
+  openingHours?: Array<{
+    dayOfWeek: string[];
+    opens: string;
+    closes: string;
+  }>;
+  priceRange?: string;
+  areaServed?: string | string[];
+  knowsAbout?: string[];
+  hasCredential?: {
+    credentialCategory: string;
+    recognizedBy: {
+      "@type": string;
+      name: string;
+      url: string;
+    };
+    identifier?: string;
+  };
+}
+
+const {
+  name = "Insurance Support",
+  description = "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
+  url = "https://insurancesupport.online/",
+  telephone = "+919****4506",
+  email = "hari@insurancesupport.online",
+  address = {
+    streetAddress: "Bahubali Nagar, Jalahalli",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    postalCode: "560013",
+    addressCountry: "IN"
+  },
+  geo = { latitude: 13.0159, longitude: 77.5522 },
+  openingHours = [
+    { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "18:00" }
+  ],
+  priceRange = "₹1000 - ₹50000",
+  areaServed = "India",
+  knowsAbout = [
+    "Insurance Claim Assistance",
+    "Insurance Policy Review",
+    "Health Insurance Planning",
+    "Life Insurance Advisory",
+    "Motor Insurance Claims",
+    "IRDAI Grievance Redressal",
+    "Insurance Ombudsman Process",
+    "Bima Bharosa Portal",
+    "LIC Policy Services",
+    "Policy Revival",
+    "Claim Rejection Appeals"
+  ],
+  hasCredential = {
+    credentialCategory: "Insurance Broker License",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "IRDAI",
+      url: "https://www.irdai.gov.in/"
+    }
+  }
+} = Astro.props;
 ---
+
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
-  "@id": "https://insurancesupport.online/#organization",
-  "name": "Insurance Support",
-  "description": "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
-  "url": "https://insurancesupport.online/",
-  "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM/review"],
-  "telephone": "+919986634506",
-  "address": {
+  "@type": "LocalBusiness",
+  "@id": `${url}#local-business`,
+  name,
+  description,
+  url,
+  telephone,
+  email,
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "Bahubali Nagar, Jalahalli",
-    "addressLocality": "Bengaluru",
-    "addressRegion": "Karnataka",
-    "postalCode": "560013",
-    "addressCountry": "IN"
+    streetAddress: address.streetAddress,
+    addressLocality: address.addressLocality,
+    addressRegion: address.addressRegion,
+    postalCode: address.postalCode,
+    addressCountry: address.addressCountry
   },
-  "openingHoursSpecification": {
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: geo.latitude,
+    longitude: geo.longitude
+  },
+  openingHoursSpecification: openingHours.map(h => ({
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    "opens": "09:00",
-    "closes": "21:00"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Bengaluru" },
-    { "@type": "State", "name": "Karnataka" },
-    { "@type": "Country", "name": "India" }
-  ]
+    dayOfWeek: h.dayOfWeek,
+    opens: h.opens,
+    closes: h.closes
+  })),
+  priceRange,
+  paymentAccepted: "Cash, Credit Card, Debit Card, Net Banking, UPI",
+  areaServed: Array.isArray(areaServed) ? areaServed.map(a => ({ "@type": "City", name: a })) : { "@type": "Country", name: areaServed },
+  knowsAbout,
+  hasCredential,
+  foundingDate: "1998",
+  currenciesAccepted: "INR"
 })} />
