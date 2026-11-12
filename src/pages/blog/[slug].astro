@@ -9,6 +9,7 @@ import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
+import RelatedCaseStudies from '../../components/RelatedCaseStudies.astro';
 import LanguageSidebar from '../../components/LanguageSidebar.astro';
 import Infographic from '../../components/Infographic.astro';
 import { getInfographic } from '../../data/infographics';
@@ -265,6 +266,8 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
             <span class="text-white font-medium group-hover:text-amber-300 transition-colors">{post.author || 'Hari Kotian'}</span>
           </a>
           <span class="text-blue-300/40">|</span>
+          <span class="text-blue-100/80">IRDAI Reg. <strong class="font-semibold text-white">0149161D</strong></span>
+          <span class="text-blue-300/40">|</span>
           <time>{post.date}</time>
           {post.modifiedDate && post.modifiedDate !== post.date && (
             <>
@@ -288,6 +291,14 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 
       <!-- Claim Review CTA (high-intent posts only) -->
       {isClaimIntent && <ClaimReviewCTA />}
+
+      <!-- Real settled cases, matched to this article's topic -->
+      <RelatedCaseStudies
+        title={post.title}
+        summary={post.summary}
+        categories={post.categories}
+        tags={post.tags}
+      />
 
       <!-- Author Box -->
       <div class="max-w-3xl mx-auto px-4 mt-12">
