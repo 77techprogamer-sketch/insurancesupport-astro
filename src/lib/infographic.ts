@@ -600,6 +600,9 @@ function stepsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: '
 
 /* -------------------------------- ladder ---------------------------------- */
 
+/** Widest the tier badge may grow before the type is scaled down. */
+const TIER_MAX = 160;
+
 function ladderBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 'ladder' }>): { svg: string; h: number } {
   const out: string[] = [];
   const gapY = 30;
@@ -611,7 +614,21 @@ function ladderBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 
     const cardX = x + inset / 2;
     const cardW = CW - inset;
     const metaW = item.meta ? 150 : 0;
-    const detailMax = cardW - 96 - metaW - 24;
+
+    // The badge grows to fit its label, and shrinks the type if the tier text is
+    // very long — a fixed 62px badge let long tiers run straight into the title.
+    const tierText = String(item.tier);
+    let tierFont = 11;
+    let tierW = Math.ceil(charW(tierFont, true) * tierText.length) + 20;
+    if (tierW > TIER_MAX) {
+      tierFont = Math.max(8.5, tierFont * ((TIER_MAX - 20) / (tierW - 20)));
+      tierW = TIER_MAX;
+    }
+    tierW = Math.max(62, tierW);
+
+    const badgeX = cardX + 14;
+    const textX = badgeX + tierW + 12;
+    const detailMax = cardW - (textX - cardX) - 14 - metaW - 24;
 
     const titleLines = wrap(item.title, detailMax, 13.5, true);
     const detailLines = wrap(item.detail, detailMax, 12);
@@ -622,13 +639,13 @@ function ladderBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 
     out.push(roundRect(cardX, cy, cardW, cardH, 12, p.fill, p.stroke));
 
     // Tier badge
-    out.push(roundRect(cardX + 14, cy + 16, 62, 24, 7, C.white, p.stroke));
+    out.push(roundRect(cardX + 14, cy + 16, tierW, 24, 7, C.white, p.stroke));
     out.push(
-      `<text x="${cardX + 45}" y="${cy + 32}" font-family="${FONT_DISPLAY()}" font-size="11" font-weight="700" fill="${p.text}" text-anchor="middle">${esc(item.tier)}</text>`,
+      `<text x="${badgeX + tierW / 2}" y="${cy + 32}" font-family="${FONT_DISPLAY()}" font-size="${Number(tierFont.toFixed(2))}" font-weight="700" fill="${p.text}" text-anchor="middle">${esc(tierText)}</text>`,
     );
 
     out.push(
-      textBlock(cardX + 88, cy + 26, titleLines, {
+      textBlock(textX, cy + 26, titleLines, {
         size: 13.5,
         bold: true,
         fill: C.ink,
@@ -637,7 +654,7 @@ function ladderBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 
       }),
     );
     out.push(
-      textBlock(cardX + 88, cy + 28 + titleLines.length * 18, detailLines, {
+      textBlock(textX, cy + 28 + titleLines.length * 18, detailLines, {
         size: 12,
         fill: C.body,
         lh: 15,
@@ -688,11 +705,16 @@ function compareBlock(
   const rowPad = 10;
 
   const CELL = colW - 32; // 16px padding each side of a data cell
-  const rowHeights = b.rows.map((r) => {
-    const l = wrap(r.left, CELL, 12).length;
-    const rr = wrap(r.right, CELL, 12).length;
-    return Math.max(l, rr) * 15 + rowPad * 2;
-  });
+  // Row height has to cover the wrapped *label* too, otherwise a two-line label
+  // spills out of the bottom of its row band.
+  const rowLines = b.rows.map((r) => ({
+    label: wrap(r.label, labelW - 28, 12.5, true).length,
+    left: wrap(r.left, CELL, 12).length,
+    right: wrap(r.right, CELL, 12).length,
+  }));
+  const rowHeights = rowLines.map(
+    (n) => Math.max(n.label, n.left, n.right) * 15 + rowPad * 2,
+  );
 
   // Head
   out.push(roundRect(x, y, labelW, headH, 10, '#f8fafc', C.line));
@@ -726,8 +748,12 @@ function compareBlock(
   b.rows.forEach((row, i) => {
     const rh = rowHeights[i];
     if (i % 2 === 0) out.push(roundRect(x, ry, CW, rh, 8, '#fbfcfe'));
+    const n = rowLines[i];
+    const nMax = Math.max(n.label, n.left, n.right);
+    const baseY = (lines: number) => ry + 20 + ((nMax - lines) * 15) / 2;
+
     out.push(
-      textBlock(x + 14, ry + 20, wrap(row.label, labelW - 28, 12.5, true), {
+      textBlock(x + 14, baseY(n.label), wrap(row.label, labelW - 28, 12.5, true), {
         size: 12.5,
         bold: true,
         fill: C.ink,
@@ -735,7 +761,7 @@ function compareBlock(
       }),
     );
     out.push(
-      textBlock(x + labelW + 16, ry + 20, wrap(row.left, CELL, 12), {
+      textBlock(x + labelW + 16, baseY(n.left), wrap(row.left, CELL, 12), {
         size: 12,
         fill: C.body,
         lh: 15,
@@ -745,7 +771,7 @@ function compareBlock(
       `<line x1="${x + labelW + colW}" y1="${ry + 4}" x2="${x + labelW + colW}" y2="${ry + rh - 4}" stroke="${C.lineSoft}" stroke-width="1"/>`,
     );
     out.push(
-      textBlock(x + labelW + colW + 16, ry + 20, wrap(row.right, CELL, 12), {
+      textBlock(x + labelW + colW + 16, baseY(n.right), wrap(row.right, CELL, 12), {
         size: 12,
         fill: C.body,
         lh: 15,

@@ -1489,6 +1489,559 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
       },
     ],
   },
+  {
+    slug: 'lic-accidental-death-disability-rider-guide-2026',
+    eyebrow: 'LIC riders',
+    title: 'What ₹2,500 a Year Buys: The ADB and PD Rider Math',
+    source:
+      'LIC rider costs for a 35-year-old non-smoker on a ₹50 lakh base sum assured with a 25-year term, as published in this guide, 2026.',
+    summary:
+      'Accidents cause only 5–8% of deaths in India, which is why LIC prices accidental death and permanent disability cover so cheaply. Around ₹1,800–3,500 a year adds ₹1 crore of extra protection on top of a ₹50 lakh base policy.',
+    anchor: 'How Much Do ADB and PD Riders Cost?',
+    blocks: [
+      {
+        kind: 'stats',
+        heading: 'The cost of doubling your cover',
+        columns: 3,
+        items: [
+          { value: '₹800–1,500', label: 'ADB rider, ₹50 lakh accidental death cover, per year', tone: 'accent' },
+          { value: '₹1,000–2,000', label: 'PD rider, ₹50 lakh permanent disability cover, per year', tone: 'accent' },
+          { value: '₹1,800–3,500', label: 'Both riders together — ₹1 crore of extra cover', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'Why the riders are this cheap',
+        columns: 3,
+        items: [
+          { value: '5–8%', label: 'Share of all deaths in India that are accidental', note: 'Low probability keeps the premium low', tone: 'warn' },
+          { value: '₹6,000–8,000', label: 'Base LIC term premium for ₹50 lakh, 35-year-old', tone: 'neutral' },
+          { value: '₹8,500–10,500', label: 'All-in annual premium once both riders are added', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'ladder',
+        heading: 'What the permanent disability rider actually pays',
+        items: [
+          { tier: '100%', title: 'Total permanent disability', detail: 'Loss of both hands or both feet, loss of one hand and one foot, loss of sight in both eyes, or paralysis.', tone: 'accent' },
+          { tier: '50%', title: 'Partial permanent disability', detail: 'Loss of one hand or one foot, loss of sight in one eye, or loss of hearing in both ears.', tone: 'warn' },
+          { tier: '0%', title: 'Not covered', detail: 'Death or disability from illness, suicide in the first year, self-inflicted injury, crime, substance abuse, hazardous sports, war or terrorism.', tone: 'danger' },
+        ],
+        note: 'Exact percentages vary by plan. LIC assesses the degree of disability through a medical board or panel doctor.',
+      },
+      {
+        kind: 'steps',
+        heading: 'Filing an ADB or PD rider claim',
+        items: [
+          { title: 'Intimate LIC immediately', detail: 'Call the toll-free number 1800-258-5577, visit your branch, or file online.', tone: 'primary' },
+          { title: 'Submit the documents', detail: 'Claim form 3783, death certificate, the FIR, post-mortem and hospital records, nominee ID and the original policy bond.', tone: 'primary' },
+          { title: 'LIC investigates', detail: 'A surveyor may verify police and hospital records to confirm the death was accidental.', tone: 'warn' },
+          { title: 'Settlement', detail: 'Base sum assured plus the rider amount, paid to the nominee — typically within 30 days of receiving all documents.', tone: 'accent' },
+        ],
+        note: 'Riders must be bought with the policy. You cannot add ADB or PD to an existing LIC policy later.',
+      },
+    ],
+  },
+  {
+    slug: 'money-back-policy-vs-term-insurance-sip-which-better-returns-2026',
+    eyebrow: 'Returns compared',
+    title: 'Money-Back Policy vs Term + SIP: 25 Years, ₹5 Lakh of Premium',
+    source:
+      'Worked example from this article: a 30-year-old investing ₹20,000 a year for 25 years. SIP returns assumed at a conservative 12% CAGR.',
+    summary:
+      'Both routes cost the same ₹5 lakh over 25 years. The money-back policy returns ₹11.25 lakh and covers ₹5 lakh of life risk. Term insurance plus a SIP returns ₹13.27 lakh and covers ₹1 crore — 20 times the life cover and nearly double the return.',
+    anchor: 'Head-to-Head Comparison',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Total money received after 25 years on ₹5 lakh of premium',
+        items: [
+          { label: 'Money-back: survival + maturity', value: 1125000, display: '₹11,25,000', note: '₹75,000 every 5 years plus ₹7.5 lakh at maturity', tone: 'warn' },
+          { label: 'Term + SIP: corpus at 12% CAGR', value: 1327000, display: '₹13,27,000', note: '₹8,000 a year invested, ₹12,000 a year for cover', tone: 'accent' },
+          { label: 'Premiums paid (identical in both)', value: 500000, display: '₹5,00,000', tone: 'neutral' },
+        ],
+        note: 'Net gain: ₹6,25,000 on the money-back policy against ₹8,27,000 from the SIP.',
+      },
+      {
+        kind: 'compare',
+        heading: 'The verdict, line by line',
+        leftTitle: 'Money-back policy',
+        rightTitle: 'Term insurance + SIP',
+        rows: [
+          { label: 'Life cover', left: '₹5,00,000', right: '₹1,00,00,000' },
+          { label: 'Effective annual return', left: '~4.5–5.0%', right: '~8.5–9.0%' },
+          { label: 'Liquidity if you need money early', left: 'Low — surrender penalty', right: 'High — partial withdrawal possible' },
+          { label: 'Tax on the maturity proceeds', left: 'Exempt under Sec 10(10D)', right: 'LTCG above ₹1.25 lakh taxed at 12.5%' },
+          { label: 'Transparency', left: 'Low — bonuses are not guaranteed', right: 'High — NAV is visible daily' },
+        ],
+        note: 'Twenty times the life cover and nearly twice the return for the same outlay.',
+      },
+      {
+        kind: 'stats',
+        heading: 'When the money-back policy still wins',
+        columns: 3,
+        items: [
+          { value: '20x', label: 'More life cover from the term + SIP route', tone: 'accent' },
+          { value: '₹667', label: 'Monthly SIP in the comparison, after paying for term cover', tone: 'primary' },
+          { value: '5', label: 'Situations where money-back still makes sense, including forced discipline and age above 55', note: 'See the article for the full list', tone: 'warn' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'lic-premium-payment-modes-2026',
+    eyebrow: 'LIC premiums',
+    title: 'The LIC Payment Clock: Grace Period, Interest, Lapse',
+    source:
+      'LIC grace period, late-fee interest and payment-mode rules as published in this 2026 guide. Interest is charged at 10% p.a. simple on the overdue premium.',
+    summary:
+      'You get 30 days of grace after the due date on annual, half-yearly and quarterly premiums — 15 days if you pay monthly — with the policy still fully active. Miss it and LIC charges 10% a year on the overdue premium, backdated to the due date.',
+    anchor: 'LIC Premium Payment Grace Period',
+    blocks: [
+      {
+        kind: 'stats',
+        heading: 'Grace, interest and the minimum charge',
+        columns: 3,
+        items: [
+          { value: '30 days', label: 'Grace on yearly, half-yearly and quarterly premiums', note: 'Policy stays active, no late fee', tone: 'accent' },
+          { value: '15 days', label: 'Grace if you pay monthly', tone: 'warn' },
+          { value: '10% p.a.', label: 'Simple interest on overdue premium after grace', note: 'Charged from the due date, minimum ₹5 a month', tone: 'danger' },
+        ],
+      },
+      {
+        kind: 'timeline',
+        heading: 'What happens after your due date',
+        items: [
+          { marker: 'Due date', title: 'Premium falls due', detail: 'Interest on any late payment is calculated from this date, not from the end of the grace period.', tone: 'neutral' },
+          { marker: '+15 / 30 days', title: 'Grace period ends', detail: 'Cover continues and a claim is still payable, minus the unpaid premium. No penalty yet.', tone: 'accent' },
+          { marker: 'After grace', title: 'Interest starts', detail: '10% a year simple on the overdue amount. A ₹50,000 premium paid 30 days late costs ₹411 extra.', tone: 'warn' },
+          { marker: 'Lapse', title: 'Policy lapses', detail: 'To revive you must clear every overdue premium with interest, plus a Good Health Certificate above ₹5 lakh.', tone: 'danger' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Setting it and forgetting it: ECS vs Auto-Pay',
+        leftTitle: 'ECS (bank mandate)',
+        rightTitle: 'Auto-Pay (LIC portal)',
+        rows: [
+          { label: 'Works for monthly premiums?', left: 'Yes', right: 'No — yearly, half-yearly and quarterly only' },
+          { label: 'Where you set it up', left: 'LIC branch or your bank branch', right: 'Online through the LIC customer portal' },
+          { label: 'How long until it goes live', left: '15–30 days', right: 'Immediately after OTP authentication' },
+          { label: 'How you cancel it', left: 'Branch visit', right: 'Online, any time' },
+          { label: 'If the debit fails', left: 'The bank returns the debit', right: 'LIC may cancel the mandate after two consecutive failures' },
+        ],
+        note: 'Whichever you choose, keep the due date funded — a failed mandate still needs a manual payment inside the grace period.',
+      },
+    ],
+  },
+  {
+    slug: 'zero-depreciation-car-insurance-add-on-cover-guide-2026',
+    eyebrow: 'Motor add-ons',
+    title: 'Zero Depreciation: What the Standard Policy Deducts',
+    source:
+      'Depreciation schedules and 2026 add-on premium ranges as published in this guide. Rates are indicative and vary by insurer.',
+    summary:
+      'A standard comprehensive policy applies 10–50% depreciation to the parts replaced in a claim, so a ₹15,000 bumper can leave you ₹4,500–6,000 out of pocket. The zero depreciation add-on removes that deduction and typically costs ₹1,500–7,000 a year.',
+    anchor: 'How Does Zero Depreciation Cover Work?',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'The same ₹15,000 bumper claim, two years into the policy',
+        leftTitle: 'Standard comprehensive',
+        rightTitle: 'With zero depreciation',
+        rows: [
+          { label: 'Depreciation applied to the plastic part', left: '30–40%', right: 'None' },
+          { label: 'Insurer pays', left: '₹9,000 – ₹10,500', right: '₹15,000' },
+          { label: 'Shortfall you bear', left: '₹4,500 – ₹6,000', right: 'Nil' },
+          { label: 'Add-on premium for a 0–3 year sedan', left: '—', right: '₹2,000 – ₹3,500 a year' },
+        ],
+        note: 'One mid-range sedan bumper claim saves ₹4,000–8,000 — more than a year of add-on premium.',
+      },
+      {
+        kind: 'bars',
+        heading: 'Depreciation the standard policy applies, by component',
+        max: 50,
+        items: [
+          { label: 'Engine & transmission, after 3 years', value: 50, display: '50%', tone: 'danger' },
+          { label: 'Rubber & nylon parts', value: 50, display: 'up to 50%', tone: 'danger' },
+          { label: 'Batteries & tyres', value: 40, display: '30–50%', tone: 'warn' },
+          { label: 'Fibre & plastic, per year', value: 30, display: '15–30%', tone: 'warn' },
+          { label: 'Paint & upholstery, per year', value: 15, display: '15%', tone: 'neutral' },
+          { label: 'Metal body panels, per year', value: 15, display: '10–15%', tone: 'neutral' },
+          { label: 'Glass & headlights', value: 0, display: 'nil*', tone: 'accent' },
+        ],
+        note: '*No depreciation on glass, but a standard policy covers only 50% of the cost. Zero depreciation lifts this too.',
+      },
+      {
+        kind: 'stats',
+        heading: 'What the add-on costs for a 0–3 year car',
+        items: [
+          { value: '₹1,500–3,500', label: 'Hatchback, per year', tone: 'accent' },
+          { value: '₹2,500–5,000', label: 'Sedan, per year', tone: 'accent' },
+          { value: '₹3,500–7,000', label: 'SUV, per year', tone: 'primary' },
+          { value: '₹5,000–15,000', label: 'Luxury car, per year', note: 'Premiums vary 15–30% between insurers for identical cover', tone: 'warn' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'section-80c-insurance-premium-deduction-2026-save-tax-life-insurance',
+    eyebrow: 'Tax planning',
+    title: 'The 10% Cap That Silently Shrinks Your 80C Claim',
+    source:
+      'Section 80C rules, the 10%/20% sum-assured caps and the regime comparison as published in this 2026 guide.',
+    summary:
+      'For policies issued on or after 1 April 2012, only premium up to 10% of the sum assured qualifies for 80C. A typical endowment with ₹8 lakh of cover and a ₹1.4 lakh premium qualifies for just ₹80,000 — ₹60,000 of the premium earns no deduction at all.',
+    anchor: 'The 10% Sum Assured Cap',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'How the cap bites, three worked cases',
+        items: [
+          { tier: 'Under cap', title: '₹50 lakh cover, ₹4.5 lakh premium', detail: 'The 10% cap is ₹5,00,000, so the full ₹4,50,000 qualifies for deduction.', meta: 'Full claim', tone: 'accent' },
+          { tier: 'Over cap', title: '₹50 lakh cover, ₹6 lakh premium', detail: 'Only ₹5,00,000 qualifies. The remaining ₹1,00,000 earns no deduction.', meta: '₹1L wasted', tone: 'warn' },
+          { tier: 'The endowment trap', title: '₹8 lakh cover, ₹1.4 lakh premium', detail: 'The 10% cap is just ₹80,000, so ₹60,000 of what you pay is outside 80C entirely.', meta: '₹60,000 wasted', tone: 'danger' },
+        ],
+        note: 'Policies issued before 1 April 2012 get the older, more generous 20% of sum assured cap.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The deductions that share the ₹1.5 lakh bucket',
+        columns: 3,
+        items: [
+          { value: '₹1,50,000', label: 'Section 80C ceiling — LIC, PPF, ELSS, NSC, tuition fees, home loan principal', tone: 'primary' },
+          { value: 'Shared', label: '80CCC pension premiums and 80CCD(1) NPS contributions come out of the same ₹1.5 lakh', tone: 'warn' },
+          { value: '₹50,000', label: 'Section 80CCD(1B) — the one NPS deduction that sits outside the bucket', tone: 'accent' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Old vs new regime on ₹15 lakh of income',
+        leftTitle: 'Old tax regime',
+        rightTitle: 'New tax regime',
+        rows: [
+          { label: '80C deduction', left: '₹1,50,000 allowed', right: 'Not allowed' },
+          { label: 'Standard deduction', left: '₹50,000', right: '₹50,000' },
+          { label: 'Taxable income', left: '₹13,00,000', right: '₹14,50,000' },
+          { label: 'Tax payable (approx)', left: '₹1,72,500', right: '₹2,02,500' },
+        ],
+        note: 'Staying on the old regime saves about ₹30,000 at this income level — and more as income rises.',
+      },
+    ],
+  },
+  {
+    slug: 'life-insurance-in-india-2026-complete-guide-to-choosing-the-right-policy',
+    eyebrow: 'Buying guide',
+    title: 'How Much Cover You Need, and What to Check Before You Buy',
+    source:
+      'Cover-sizing rules, IRDAI solvency requirements and 2026 claim settlement ratios as published in this guide.',
+    summary:
+      'Target 15–20 times your annual income, or liabilities plus 20 years of expenses plus future goals, less liquid assets. Then check the insurer on claim settlement ratio, amount settlement ratio and a solvency ratio comfortably above the IRDAI minimum of 1.5.',
+    anchor: 'Key Metrics to Evaluate Life Insurers in 2026',
+    blocks: [
+      {
+        kind: 'steps',
+        heading: 'Sizing your cover in five moves',
+        items: [
+          { title: 'Start with the income multiplier', detail: 'Aim for 15–20 times your annual income, especially while you carry loans.', tone: 'primary' },
+          { title: 'Add every outstanding liability', detail: 'Home loan, car loan and personal loan balances.', tone: 'primary' },
+          { title: 'Add 20 years of household expenses', detail: 'Current annual expense multiplied by 20.', tone: 'primary' },
+          { title: 'Add future goals', detail: "Children's education and marriage funds.", tone: 'primary' },
+          { title: 'Subtract what you already have', detail: 'Existing liquid assets your family could draw on immediately.', tone: 'accent' },
+        ],
+        note: 'The guide’s worked case: ₹15 lakh income, a ₹50 lakh home loan and two children points to ₹2–2.5 crore of term cover.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'Term, ULIP or endowment',
+        items: [
+          { tier: 'Term', title: 'Pure risk protection', detail: '₹1 crore to ₹5 crore+ of cover for a small premium, with no maturity value. Extremely cost-efficient.', meta: '80C + 10(10D)', tone: 'accent' },
+          { tier: 'ULIP', title: 'Wealth creation plus cover', detail: 'Market-linked returns with cover around 10x the annual premium. Charges are high, so cost efficiency is only moderate.', meta: '80C + 10(10D)', tone: 'primary' },
+          { tier: 'Endowment', title: 'Guaranteed savings plus cover', detail: 'Fixed but low-IRR returns, cover around 10x premium, and heavy agent commission. The least cost-efficient of the three.', meta: '80C + 10(10D)', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'What to check on the insurer',
+        columns: 3,
+        items: [
+          { value: '99.72%', label: 'LIC claim settlement ratio — HDFC Life 99.7%, ICICI Prudential 97.9%', note: 'Top Indian insurers sit above 97%', tone: 'accent' },
+          { value: '1.5', label: 'IRDAI minimum solvency ratio — top-tier insurers run 1.8 to 2.1', tone: 'primary' },
+          { value: '₹18,000', label: 'Annual premium in the case study for ₹2 crore of term cover to age 65', tone: 'accent' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'lic-lapsed-policy-revival-loan-interest-rate-2026',
+    eyebrow: 'LIC revival',
+    title: 'What a Lapsed LIC Policy Costs to Bring Back',
+    source:
+      'LIC revival routes and the 10.50% p.a. interest rate compounded half-yearly, as published in this 2026 guide.',
+    summary:
+      'LIC charges 10.50% a year, compounded half-yearly, on overdue premiums. ₹50,000 of arrears left for three years costs ₹17,834 in interest — and there are four different revival routes depending on how long the policy has been lapsed.',
+    anchor: 'Interest Rate on Lapsed LIC Policy Premiums (2026)',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'What the arrears grow to at 10.50% p.a., compounded half-yearly',
+        items: [
+          { label: '₹50,000 arrears, lapsed 1 year', value: 55378, display: '₹55,378', note: '₹5,378 interest', tone: 'warn' },
+          { label: '₹50,000 arrears, lapsed 2 years', value: 61313, display: '₹61,313', note: '₹11,313 interest', tone: 'warn' },
+          { label: '₹50,000 arrears, lapsed 3 years', value: 67834, display: '₹67,834', note: '₹17,834 interest', tone: 'danger' },
+          { label: '₹1,00,000 arrears, lapsed 1 year', value: 110756, display: '₹1,10,756', note: '₹10,756 interest', tone: 'warn' },
+          { label: '₹1,00,000 arrears, lapsed 2 years', value: 122625, display: '₹1,22,625', note: '₹22,625 interest', tone: 'danger' },
+        ],
+        note: 'Actual amounts vary slightly with the exact date of payment. Get the figure confirmed by the branch or the online revival calculator.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'Four ways back from a lapse',
+        items: [
+          { tier: 'Route 1', title: 'Ordinary revival', detail: 'Pay every overdue premium with interest. No fresh medical if the revival amount is under ₹2 lakh and the policy was issued within the last 5 years.', meta: 'Within 5 years', tone: 'accent' },
+          { tier: 'Route 2', title: 'Loan-cum-revival', detail: 'Use the surrender value your policy has built up as a loan to clear the arrears, when you have no liquid cash.', tone: 'primary' },
+          { tier: 'Route 3', title: 'Instalment revival', detail: 'Pay part of the arrears upfront and the rest in monthly instalments spread over the remaining premium-paying term.', tone: 'primary' },
+          { tier: 'Route 4', title: 'Revival by fresh medical', detail: 'Required once the policy has been lapsed for more than 2 years or the sum assured crosses LIC thresholds.', meta: 'Lapsed 2+ years', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Six steps to reinstate the policy',
+        items: [
+          { title: 'Check the policy status', detail: 'licindia.in or the LIC app — confirm the lapse and note the first unpaid premium date.', tone: 'primary' },
+          { title: 'Calculate the outstanding amount', detail: 'Use the online revival calculator or ask the branch for the exact figure including interest.', tone: 'primary' },
+          { title: 'Gather the documents', detail: 'Original policy bond, ID and address proof, a recent photograph, medical reports if required, and the loan form if you are using loan-cum-revival.', tone: 'primary' },
+          { title: 'Pay the revival amount', detail: 'LIC e-Services with net banking, card, or a demand draft at any branch.', tone: 'warn' },
+          { title: 'Submit the revival application', detail: 'File it with the branch along with the payment receipt.', tone: 'primary' },
+          { title: 'Collect the revival confirmation', detail: 'The policy is reinstated once LIC accepts the application.', tone: 'accent' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'nps-section-80ccd1b-extra-50000-tax-deduction-india-2026',
+    eyebrow: 'NPS tax break',
+    title: 'The ₹50,000 Deduction That Sits Outside Your 80C Limit',
+    source:
+      'Section 80CCD(1B) rules, NPS tax treatment and return data as published in this 2026 guide. Sources: PFRDA annual reports, NPS Trust data.',
+    summary:
+      'Section 80CCD(1B) gives NPS investors an extra ₹50,000 deduction on top of the ₹1.5 lakh 80C ceiling — worth about ₹15,000 of tax, an instant 30% return. At 60 you can take 60% of the corpus completely tax-free.',
+    anchor: 'NPS vs Other 80C Investments',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'Three retirement buckets, not one',
+        items: [
+          { tier: 'Bucket 1', title: 'Section 80C', detail: 'PPF, ELSS, life insurance premiums, EPF and home loan principal all compete for the same ceiling.', meta: 'Up to ₹1,50,000', tone: 'primary' },
+          { tier: 'Bucket 2', title: 'Section 80CCD(1B)', detail: 'Your own NPS contribution, entirely separate from 80C. Locked till 60, with partial withdrawal allowed.', meta: 'Up to ₹50,000', tone: 'accent' },
+          { tier: 'Bucket 3', title: 'Section 80CCD(2)', detail: "Your employer's NPS contribution — never counted against your own ₹1.5 lakh limit.", meta: '10–14% of basic', tone: 'accent' },
+        ],
+        note: 'The three buckets alone can cross ₹2,00,000 of annual deductions before 80D, HRA, LTA or home loan interest.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'NPS against the usual alternatives',
+        items: [
+          { tier: 'NPS', title: 'Tier-I retirement account', detail: 'Up to 75% equity, locked till age 60, partially taxable on withdrawal. Carries the extra ₹50,000 deduction.', meta: '9–12% expected', tone: 'accent' },
+          { tier: 'ELSS', title: 'Equity mutual fund', detail: '100% equity with a 3-year lock-in. Long-term gains above ₹1.25 lakh are taxed at 12.5%.', meta: '12–15% expected', tone: 'primary' },
+          { tier: 'PPF', title: 'Government-backed savings', detail: 'No equity exposure and a 15-year lock-in, but the proceeds are fully tax-free.', meta: '7.1%', tone: 'neutral' },
+        ],
+        note: 'NPS is not the highest-returning option — the deduction is what makes it competitive.',
+      },
+      {
+        kind: 'stats',
+        heading: 'Tax treatment at each stage',
+        columns: 3,
+        items: [
+          { value: '₹50,000', label: 'Deducted at contribution — worth about ₹15,000 of tax saved', note: 'A 30% instant return', tone: 'accent' },
+          { value: '60%', label: 'Lump sum at 60 that is entirely tax-free', note: 'Raised from 40% by Budget 2024', tone: 'accent' },
+          { value: '25%', label: 'Of your own contributions, withdrawable tax-free after 3 years for specified goals', tone: 'primary' },
+        ],
+        note: 'The remaining 40% must go into an annuity, and that annuity income is taxed at your slab rate.',
+      },
+    ],
+  },
+  {
+    slug: 'deferred-vs-immediate-annuity-tax-section-80ccc-10-10a-2026',
+    eyebrow: 'Annuity taxation',
+    title: 'How Much of Your Annuity Is Actually Taxed',
+    source:
+      'Section 80CCC deduction rules and the Section 10(10A) exemption formula, with the worked example from this 2026 guide.',
+    summary:
+      'Section 80CCC lets you deduct up to ₹1.5 lakh of annuity premium, shared with 80C and only under the old regime. When the income starts, Section 10(10A) exempts the purchase-price proportion of each payment — in the guide’s example just ₹12,000 of ₹72,000 a year is taxable.',
+    anchor: 'How Annuity Income Is Taxed Under Section 10(10A)',
+    blocks: [
+      {
+        kind: 'stats',
+        heading: 'The numbers that matter',
+        columns: 3,
+        items: [
+          { value: '₹1,50,000', label: 'Maximum 80CCC deduction, shared with 80C and 80CCD(1)', note: 'Old tax regime only', tone: 'primary' },
+          { value: '₹60,000', label: 'Exempt share of ₹72,000 annual annuity in the guide’s example', tone: 'accent' },
+          { value: '₹12,000', label: 'Left to add to your taxable income for the year', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Working out your taxable portion',
+        items: [
+          { title: 'Find the purchase price', detail: 'What you paid for the annuity contract — ₹10,00,000 in the guide’s example.', tone: 'primary' },
+          { title: 'Find the total expected return', detail: 'The actuarial total you are projected to receive, stated in the contract — ₹12,00,000 here.', tone: 'primary' },
+          { title: 'Apply the exemption formula', detail: 'Exempt = (purchase price ÷ total expected return) × annuity received = ₹60,000.', tone: 'accent' },
+          { title: 'Subtract to get taxable income', detail: 'Annuity received minus the exempt portion leaves ₹12,000 to declare.', tone: 'warn' },
+        ],
+        note: 'An annuity received without consideration — by inheritance or gift — is taxable in full, with no exempt portion.',
+      },
+      {
+        kind: 'compare',
+        heading: 'Deferred or immediate',
+        leftTitle: 'Deferred annuity',
+        rightTitle: 'Immediate annuity',
+        rows: [
+          { label: 'How you pay', left: 'Premiums over several years', right: 'One lump sum' },
+          { label: 'When the 80CCC deduction lands', left: 'Claimed annually through the accumulation phase', right: 'Claimed once, in the year you pay' },
+          { label: 'Accumulation phase', left: 'Fund grows tax-deferred', right: 'None — income starts at once' },
+          { label: 'Commutation on payout', left: 'Exempt under 10(10A) up to one-third, one-half in some cases', right: 'Exempt under 10(10A) up to one-third' },
+          { label: 'Best suited to', left: 'Someone still working, with years to retirement', right: 'Someone already retired who needs income now' },
+        ],
+        note: 'Either way the annuity income is taxed under Section 10(10A), not exempt.',
+      },
+    ],
+  },
+  {
+    slug: 'lic-maturity-amount-calculator-bonus-rates-2026',
+    eyebrow: 'LIC maturity',
+    title: 'Inside Your LIC Maturity Payout: SA, Bonus, FAB and LA',
+    source:
+      'LIC bonus rates declared for 2025-26 and the worked Jeevan Anand example, as published in this 2026 guide. Rates are indicative — confirm on licindia.in.',
+    summary:
+      'A maturity payout is not just the sum assured. In the guide’s 20-year Jeevan Anand example, ₹10 lakh of sum assured becomes ₹24.5 lakh once ₹10 lakh of vested bonuses and ₹4.5 lakh of Final Addition Bonus are added.',
+    anchor: 'LIC Bonus Rates 2025-26',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Bonus declared for 2025-26, per ₹1,000 of sum assured',
+        max: 60,
+        items: [
+          { label: 'Jeevan Anand (915)', value: 52, display: '₹52', note: 'FAB ₹36–60 per ₹1,000', tone: 'accent' },
+          { label: 'Jeevan Lakshya (870)', value: 50, display: '₹50', note: 'FAB ₹30–55 per ₹1,000', tone: 'primary' },
+          { label: 'New Endowment (914)', value: 50, display: '₹50', note: 'FAB ₹28–52 per ₹1,000', tone: 'primary' },
+          { label: 'Jeevan Utsav (871)', value: 50, display: '₹50', note: 'FAB ₹40–65 per ₹1,000', tone: 'primary' },
+          { label: 'Amritbaal (873)', value: 48, display: '₹48', note: 'No Final Addition Bonus', tone: 'neutral' },
+        ],
+        note: 'Index Plus (950) is a ULIP — no reversionary bonus, the payout is market-linked. LIC revises rates every year.',
+      },
+      {
+        kind: 'steps',
+        heading: 'The four components of the payout',
+        items: [
+          { title: 'Basic sum assured', detail: 'The guaranteed floor printed on your policy bond — you never receive less than this at maturity.', tone: 'accent' },
+          { title: 'Reversionary bonuses', detail: 'Declared each year as a rate per ₹1,000 of sum assured. They accrue annually, pay out at maturity, and are guaranteed once vested.', tone: 'primary' },
+          { title: 'Final Addition Bonus', detail: 'A one-time bonus on policies completing 15+ years, higher for longer terms. Not guaranteed — it depends on LIC’s performance in your maturity year.', tone: 'warn' },
+          { title: 'Loyalty Addition', detail: 'Plan-specific and newer, generally seen on plans launched after 2015.', tone: 'neutral' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'The guide’s worked example: Jeevan Anand, ₹10 lakh, 20 years',
+        columns: 3,
+        items: [
+          { value: '₹10,00,000', label: 'Basic sum assured', tone: 'accent' },
+          { value: '₹10,00,000', label: 'Vested bonus — ₹50 per ₹1,000 a year, over 20 years', tone: 'primary' },
+          { value: '₹24,50,000', label: 'Total payout once ₹4,50,000 of Final Addition Bonus is added', note: 'Before any outstanding loan or advance is deducted', tone: 'accent' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'health-insurance-portability-india-2026-switch-insurer-without-losing-benefits',
+    eyebrow: 'Portability',
+    title: 'The 60-Day Porting Clock, and What Follows You to the New Insurer',
+    source:
+      'IRDAI health insurance portability timelines, transfer rules and rejection grounds as published in this 2026 guide.',
+    summary:
+      'Start researching 60 days before renewal, apply to the new insurer by 45 days, and they must decide within 15 days. Waiting-period credit, accumulated no-claim bonus and covered pre-existing conditions all follow you across.',
+    anchor: 'Health Insurance Portability Process',
+    blocks: [
+      {
+        kind: 'timeline',
+        heading: 'The porting countdown',
+        items: [
+          { marker: '60 days', title: 'Research and compare', detail: 'Coverage, network hospitals in your city, claim settlement ratio, exclusions and waiting periods.', tone: 'primary' },
+          { marker: '45 days', title: 'Apply to the new insurer', detail: 'Portability form, proposal form, previous policy copy, renewal notice, claim history and ID proof.', tone: 'warn' },
+          { marker: '15 days', title: 'The new insurer must decide', detail: 'They pull your claims data through the IRDAI Health Insurance Portability Portal and must reply in writing if rejecting.', tone: 'primary' },
+          { marker: 'Renewal', title: 'The switch completes', detail: 'The new policy takes effect and the old one is deemed ported.', tone: 'accent' },
+        ],
+        note: 'An insurer cannot reject you only because of your claims history or pre-existing conditions — only for a policy-type mismatch, incomplete documents, or underwriting on a sum-insured increase.',
+      },
+      {
+        kind: 'compare',
+        heading: 'What crosses over and what does not',
+        leftTitle: 'Transfers',
+        rightTitle: 'Does not transfer',
+        rows: [
+          { label: 'Waiting-period credit', left: 'Years already served count — 2 of 3 leaves 1', right: 'Extra waits can be imposed for conditions your old plan never covered' },
+          { label: 'No-claim bonus', left: 'The full accumulated NCB carries over', right: 'Nothing — a brand new policy starts at zero' },
+          { label: 'Pre-existing disease cover', left: 'Conditions already covered stay covered', right: 'Anything not previously covered resets' },
+          { label: 'Sum insured', left: 'Carries over and can be increased', right: 'Sub-limits and room rent caps are set afresh' },
+          { label: 'Premium and riders', left: '—', right: 'New rates by age and city; old benefits like maternity or OPD may not exist' },
+          { label: 'Free-look period', left: '—', right: 'The old window is gone; a fresh 15-day one applies' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'The deadlines people miss',
+        columns: 3,
+        items: [
+          { value: '45 days', label: 'Apply by this point before your renewal date', note: 'Applying too late is the most common mistake', tone: 'warn' },
+          { value: '15 days', label: 'The insurer’s deadline to accept or reject, with reasons in writing', tone: 'primary' },
+          { value: '3–4 years', label: 'Claim history the new insurer pulls through the IRDAI portal', tone: 'neutral' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'pension-plans-india-2026-nps-annuity-pension-insurance-complete-guide',
+    eyebrow: 'Retirement',
+    title: 'What It Costs to Retire on ₹3 Crore, by the Age You Start',
+    source:
+      'Corpus and contribution examples from this 2026 guide. Assumes a ₹3 crore target at age 60 with market-linked returns.',
+    summary:
+      'Delay is expensive. Reaching the same ₹3 crore corpus takes roughly ₹5,000 a month from age 25, ₹15,000 from age 35, and ₹45,000 from age 45. The guide recommends splitting the corpus across NPS for growth and pension insurance for guaranteed income.',
+    anchor: 'How Much Pension Do You Need?',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Monthly investment needed for a ₹3 crore corpus at 60',
+        items: [
+          { label: 'Starting at 25', value: 5000, display: '₹5,000/mo', note: 'Builds ₹3+ crore', tone: 'accent' },
+          { label: 'Starting at 35', value: 15000, display: '₹15,000/mo', note: 'Three times the monthly outlay', tone: 'warn' },
+          { label: 'Starting at 45', value: 45000, display: '₹45,000/mo', note: 'Almost unaffordable for the same corpus', tone: 'danger' },
+        ],
+        note: 'Rule of thumb: plan for a monthly pension of 70–80% of your last drawn salary. At ₹50,000 of monthly expenses today, 6% inflation and retirement at 60, the guide puts the corpus at roughly ₹3–4 crore.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'The three pension vehicles',
+        items: [
+          { tier: 'NPS', title: 'National Pension System', detail: 'A 0.01% fund management fee, market-linked returns, government backing and flexible investment choice.', meta: 'Growth engine', tone: 'accent' },
+          { tier: 'Pension insurance', title: 'Traditional pension plan', detail: 'Guaranteed returns with no market risk, life cover included, and no investment decisions to make.', meta: 'Guaranteed floor', tone: 'primary' },
+          { tier: 'Annuity', title: 'Annuity plan', detail: 'Converts the corpus you have built into an income stream that lasts as long as you do.', meta: 'Income for life', tone: 'neutral' },
+        ],
+        note: 'The guide’s recommendation: combine them — NPS for growth, pension insurance for guaranteed income.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The tax treatment',
+        columns: 3,
+        items: [
+          { value: '₹1.5L', label: 'Section 80C deduction on the premium paid', tone: 'primary' },
+          { value: '₹50,000', label: 'Extra Section 80CCD(1B) deduction for NPS contributions', tone: 'accent' },
+          { value: '1/3', label: 'Of the maturity amount is tax-free under Section 10(10A)', note: 'Annuity income is taxable as regular income', tone: 'warn' },
+        ],
+      },
+    ],
+  },
 ];
 
 /* -------------------------------------------------------------------------- */

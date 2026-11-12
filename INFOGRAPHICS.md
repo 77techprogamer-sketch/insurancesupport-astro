@@ -87,7 +87,7 @@ A standalone page can also be placed before a non-heading element (for example t
 CSR table on `term-insurance-claim-settlement-ratio-2026`) — pick whatever reads best
 in the article body.
 
-## Coverage so far — 31 English articles + 5 Hindi
+## Coverage so far — 43 English articles + 5 Hindi
 
 **Claim rejection and appeal** — insurance claim rejection rates · how to appeal a
 rejected claim · 15 real rejection reasons · health claim rejection rights · the
@@ -101,13 +101,38 @@ family floater vs individual · restoration benefit · portability guide · port
 rejected · tax benefits under 80D · cashless claim denied at hospital · group policy
 claim issues · best plans for parents above 60
 
-**LIC** — policy revival · revival after 5 years · maturity claim process · death
-claim rejected or delayed · how to file a death claim
+**LIC** — policy revival · revival after 5 years · lapsed-policy revival interest
+and loan options · maturity claim process · maturity amount calculator and bonus
+rates · death claim rejected or delayed · how to file a death claim · accidental
+death and permanent disability riders · premium payment modes and grace periods
 
-**Motor** — claim process · surveyor dispute · how to calculate IDV
+**Motor** — claim process · surveyor dispute · how to calculate IDV · zero
+depreciation add-on
+
+**Tax and retirement** — Section 80C insurance deduction · NPS 80CCD(1B) ·
+deferred vs immediate annuity under 80CCC and 10(10A) · pension plans
+
+**Choosing cover** — life insurance buyer's guide · money-back policy vs term
+insurance plus SIP
 
 **Other** — nominee vs legal heirs · mis-selling complaints and refunds · term
-insurance claim settlement ratio
+insurance claim settlement ratio · health insurance portability (switching
+insurers)
+
+### Renderer invariants
+
+Two bugs found by the validators are worth remembering, because both were
+invisible in the source and only showed up in the rendered SVG:
+
+- **A ladder's tier badge must size to its text.** The badge was a fixed 62px,
+  so a tier label like "Pension insurance" overflowed the badge and ran straight
+  into the title beside it. `ladderBlock` now measures the tier, grows the badge
+  up to `TIER_MAX` (160px), scales the type down past that, and starts the
+  title after the badge.
+- **A compare row's height must include the wrapped label.** Row height was
+  computed only from the left and right cells, so a two-line row label spilled
+  out of the bottom of its band. `compareBlock` now measures all three columns
+  and vertically centres the shorter ones.
 
 ### Translated specs
 
@@ -150,9 +175,9 @@ policy revival · health claim settlement ratio · how to appeal a rejected clai
 - **Scale translations.** 20 English articles have translations in all 8 languages,
   so full coverage is 160 translated specs. Hindi is the pilot; the remaining
   15 Hindi specs and the other 7 languages are outstanding.
-- **Remaining English articles:** term insurance and ULIP comparisons, life
-  insurance buyer's guides, pension and annuity planning, rider and add-on guides,
-  tax sections 80C and 80CCD(1B).
+- **Remaining English articles:** ULIP and whole-life comparisons, life
+  insurance buyer's guides, SME and niche covers (cyber, travel, wedding),
+  city pages, and a few hub/roundup posts.
 
 ## Verifying changes
 
