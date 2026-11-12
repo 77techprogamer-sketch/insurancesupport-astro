@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node ./scripts/inject-csp-hashes.cjs && node ./scripts/generate-sitemap.js && python ./scripts/generate_all_urls.py && node ./scripts/ping_google.js && node ./scripts/indexnow-notify.js && node ./scripts/verify-no-templates.js",
+    "build": "astro build && npx --no-install pagefind --site dist --exclude-selectors 'nav,header,footer,.gst-banner,.header-actions' && node ./scripts/inject-csp-hashes.cjs && node ./scripts/generate-sitemap.js && python ./scripts/generate_all_urls.py && node ./scripts/indexnow-notify.js && node ./scripts/verify-no-templates.js",
     "verify-no-templates": "node scripts/verify-no-templates.js",
     "preview": "astro preview",
     "astro": "astro"

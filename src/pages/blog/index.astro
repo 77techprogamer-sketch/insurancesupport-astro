@@ -8,7 +8,7 @@ const INDIAN_LANGUAGES = ['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml'];
 
 // Only show English posts in the main listing
 const englishPosts = posts.filter(p => (p.lang || 'en') === 'en');
-const sorted = englishPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+const sorted = englishPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 const allCategories = [...new Set(sorted.flatMap(p => p.categories || []))].sort();
 const latestPost = sorted[0];
 const remainingPosts = sorted.slice(1);
@@ -23,12 +23,9 @@ function formatDate(dateStr: string) {
 <BaseLayout title="Insurance Guides & Claim Tips | Expert Blog | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience."pageType="blog-index"
   keywords="insurance guides India, insurance claim tips, IRDAI updates, term insurance guides, health insurance guides, LIC claim guides" skipDefaultHreflang={true}>
   <meta name="description" content="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience." />
-  {/* English blog index hreflang cluster: en-IN self + x-default + all 8 language indexes */}
   <link rel="alternate" hreflang="en-IN" href="https://insurancesupport.online/blog/" />
-  <link rel="alternate" hreflang="x-default" href="https://insurancesupport.online/blog/" />
-  {['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml'].map(l => (
-    <link rel="alternate" hreflang={`${l}-IN`} href={`https://insurancesupport.online/blog/${l}/`} />
-  ))}
+<link rel="alternate" hreflang="x-default" href="https://insurancesupport.online/blog/" />
+
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",

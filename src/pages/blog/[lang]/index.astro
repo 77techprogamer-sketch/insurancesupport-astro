@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import posts from '../../../data/blogs.json';
 import languagesData from '../../../data/languages.json';
+import { ogImageIfExists, DEFAULT_OG } from '../../../utils/ogImage';
 import { INDIAN_LANGUAGES } from '../../../data/languages';
 
 // Generate static paths for each language index
@@ -45,7 +46,7 @@ function formatDate(dateStr: string, lang: string) {
 }
 
 // Get translated posts for this language
-const langPosts = posts.filter(p => p.lang === lang).sort((a, b) => new Date(b.date) - new Date(a.date));
+const langPosts = posts.filter(p => p.lang === lang).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 const allCategories = [...new Set(langPosts.flatMap(p => p.categories || []))].sort();
 const latestPost = langPosts[0];
 const remainingPosts = langPosts.slice(1);
@@ -61,15 +62,9 @@ const ogLocaleMap: Record<string, string> = {
 };
 ---
 
-<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={`https://insurancesupport.online/images/og/${lang}-blog.jpg`} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"}  ogLocale={ogLocaleMap[lang] || "en_IN"} pageType="blog-index">
+<BaseLayout title={`${langName} Insurance Blog | विशेषज्ञ गाइड | Hari Kotian`} description={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} ogImage={ogImageIfExists(`${lang}-blog.jpg`) || DEFAULT_OG} skipDefaultHreflang={true} pageLang={langRegion[lang] || "en-IN"}  ogLocale={ogLocaleMap[lang] || "en_IN"} pageType="blog-index" noIndex={true}>
   <meta name="description" content={`${langName} में बीमा गाइड, दावा प्रक्रिया युक्तियाँ, IRDAI अपडेट, और Hari Kotian से सलाह। 25+ वर्षों का अनुभव।`} />
-  {/* Language index hreflang set: self + English index + x-default + all other 7 language indexes */}
-  <link rel="alternate" hreflang={langRegion[lang] || "en-IN"} href={`https://insurancesupport.online/blog/${lang}/`} />
-  <link rel="alternate" hreflang="en-IN" href="https://insurancesupport.online/blog/" />
-  <link rel="alternate" hreflang="x-default" href="https://insurancesupport.online/blog/" />
-  {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => (
-    <link rel="alternate" hreflang={langRegion[l] || `${l}-IN`} href={`https://insurancesupport.online/blog/${l}/`} />
-  ))}
+  {/* Language hubs are noindexed (machine-translated content). */}
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",

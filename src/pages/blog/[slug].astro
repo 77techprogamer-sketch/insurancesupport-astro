@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import posts from '../../data/blogs.json';
+import { renderMarkdown } from '../../utils/markdown';
+import { ogImageForSlug } from '../../utils/ogImage';
 
 
-import { INDIAN_LANGUAGES } from '../../data/languages';
 import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
 import LanguageSidebar from '../../components/LanguageSidebar.astro';
-import { marked } from 'marked';
 import claimRecoveryPillar from '../../content/pillars/claim-recovery-hub.md?raw';
 import healthInsurancePillar from '../../content/pillars/health-insurance-hub.md?raw';
 import licPolicyPillar from '../../content/pillars/lic-policy-hub.md?raw';
@@ -56,87 +56,10 @@ const siblingHubs = HUB_FAMILY.filter(h => h.slug !== post.slug);
 
 // Build OG image URL for this article
 const safeSlug = post.slug.replace(/[/\\?%*:|"<>]/g, '-');
-const ogImageUrl = `https://insurancesupport.online/images/og/${safeSlug}.png`;
+// Only point social crawlers at an OG image that was actually generated.
+const ogImageUrl = ogImageForSlug(safeSlug);
 
-// Configure marked for clean server-side rendering
-marked.setOptions({
-  gfm: true,
-  breaks: false,
-});
-
-const renderer = new marked.Renderer();
-
-// Tables
-renderer.table = function({ header, rows }) {
-  const ths = header.map(cell => `<th class="px-4 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider bg-slate-50 border-b border-slate-200">${cell.text}</th>`).join('');
-  const trs = rows.map(row => {
-    const tds = row.map(cell => `<td class="px-4 py-3 text-sm text-slate-700 border-b border-slate-100">${cell.text}</td>`).join('');
-    return `<tr class="hover:bg-slate-50/50 transition-colors">${tds}</tr>`;
-  }).join('');
-  return `<div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm"><table class="min-w-full"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
-};
-
-// Blockquotes
-renderer.blockquote = function({ raw, text }) {
-  return `<blockquote class="border-l-4 border-blue-500 bg-blue-50/50 rounded-r-xl px-6 py-4 my-6 text-slate-700 italic leading-relaxed">${text}</blockquote>`;
-};
-
-// Code
-renderer.code = function({ text, lang }) {
-  return `<pre class="bg-slate-900 text-slate-100 rounded-xl p-5 my-6 overflow-x-auto text-sm leading-relaxed"><code>${text}</code></pre>`;
-};
-renderer.codespan = function({ text }) {
-  return `<code class="bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-sm font-mono">${text}</code>`;
-};
-
-// Links
-renderer.link = function({ href, title, text }) {
-  const t = title ? ` title="${title}"` : '';
-  return `<a href="${href}"${t} class="text-blue-600 hover:text-blue-800 underline decoration-blue-300/50 hover:decoration-blue-500 transition-colors">${text}</a>`;
-};
-
-// Images
-renderer.image = function({ href, title, text }) {
-  const t = title ? ` title="${title}"` : '';
-  // Add width/height placeholder to prevent CLS (CSS overrides to 100% width)
-  return `<figure class="my-8"><img src="${href}" alt="${text || ''}"${t} class="w-full h-auto rounded-xl shadow-md" width="1200" height="630" loading="lazy" decoding="async" />${text ? `<figcaption class="text-center text-sm text-slate-500 mt-2">${text}</figcaption>` : ''}</figure>`;
-};
-
-// Headings
-renderer.heading = function({ text, depth }) {
-  const cls = {
-    1: 'text-3xl font-extrabold text-slate-900 mt-12 mb-5 leading-tight',
-    2: 'text-2xl font-bold text-slate-900 mt-12 mb-4 pb-3 border-b border-slate-100',
-    3: 'text-xl font-bold text-slate-900 mt-8 mb-3',
-    4: 'text-lg font-bold text-slate-900 mt-6 mb-2',
-  };
-  return `<h${depth} class="${cls[depth] || cls[4]}">${text}</h${depth}>`;
-};
-
-// Lists
-renderer.list = function({ ordered, items }) {
-  const tag = ordered ? 'ol' : 'ul';
-  const style = ordered ? 'list-decimal' : 'list-disc';
-  const lis = items.map(item => `<li class="pl-1">${item.text}</li>`).join('');
-  return `<${tag} class="${style} pl-6 my-5 space-y-2 text-slate-600 leading-relaxed text-[15px]">${lis}</${tag}>`;
-};
-
-// HR
-renderer.hr = function() {
-  return `<hr class="my-10 border-t border-slate-200" />`;
-};
-
-// Paragraphs
-renderer.paragraph = function({ text }) {
-  if (text.startsWith('<div') || text.startsWith('<table') || text.startsWith('<ul') || text.startsWith('<ol') || text.startsWith('<blockquote') || text.startsWith('<pre') || text.startsWith('<figure') || text.startsWith('<hr') || text.startsWith('<h')) {
-    return text;
-  }
-  return `<p class="text-slate-600 leading-relaxed mb-5 text-[15px]">${text}</p>`;
-};
-
-marked.use({ renderer });
-
-const htmlContent = marked.parse(articleContent);
+const htmlContent = renderMarkdown(articleContent);
 
 // Parse FAQ section from markdown: "## FAQ" followed by **Q: ...** / answer paragraphs
 const faqs = [];
@@ -204,12 +127,8 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 ---
 
 <BaseLayout title={post.title} description={post.summary} ogImage={ogImageUrl} keywords={(post.tags || []).join(', ')} canonical={canonical || Astro.url.href} skipDefaultHreflang={true} pageType="blog-post">
-{/* English canonical + hreflang self-reference + x-default */}
-<link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${post.slug}/`} />
-<link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${post.slug}/`} />
-{INDIAN_LANGUAGES.map(l => (
-  <link rel="alternate" hreflang={`${l}-IN`} href={`https://insurancesupport.online/blog/${l}/${post.slug}/`} />
-))}
+<link rel="alternate" hreflang="en-IN" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
 
   <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} isPartOf={postIsHubArticle ? { "@type": "WebPage", "@id": CLAIM_HUB_URL, name: 'Insurance Claim Recovery Hub' } : undefined} />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}

@@ -1,0 +1,199 @@
+// src/utils/markdown.ts
+// One markdown renderer for every page that displays authored markdown.
+//
+// The previous per-page renderers read `token.text` (the RAW source) instead of
+// re-parsing inline tokens, so `**bold**`, `*italic*` and inline code leaked to
+// the page as literal asterisks — visible on ~600 blog pages — and the service
+// pages injected markdown straight into the DOM without parsing it at all.
+//
+// Always parse inline tokens with `this.parser.parseInline(token.tokens)` and
+// block tokens with `this.parser.parse(token.tokens)`.
+
+import { Marked } from 'marked';
+
+// Machine-translated posts rewrote internal link paths into the target language
+// (`/संपर्क` instead of `/contact/`), which 404s. Map the top-level route back to
+// the real English path; anything we cannot resolve is rendered as plain text.
+const TRANSLATED_ROUTES: Record<string, string> = {
+  // services
+  'सेवा': 'services', 'सेवाएं': 'services', 'सेवाएँ': 'services', 'સેવાઓ': 'services',
+  'சேவைகள்': 'services', 'సేవలు': 'services', 'సర్వీసెస్': 'services', 'సర్వీసులు': 'services',
+  'ಸೇವೆಗಳು': 'services', 'ಸೇವೆಗಳನ್ನು': 'services', 'സേവനങ്ങൾ': 'services', 'സർവീസുകൾ': 'services',
+  'পরিষেবা': 'services', 'পরিষেবাগুলি': 'services', 'সেবা': 'services',
+  // contact
+  'संपर्क': 'contact', 'যোগাযোগ': 'contact', 'સંપર્ક': 'contact', 'தொடர்பு': 'contact',
+  'தொடர்புக்கு': 'contact', 'సంప్రదింపు': 'contact', 'కాంటాక్ట్': 'contact', 'ಸಂಪರ್ಕ': 'contact',
+  'ಸಂಪರ್ಕಿಸಿ': 'contact', 'ബന്ധപ്പെടുക': 'contact', 'കോൺടാക്റ്റ്': 'contact',
+  // about
+  'बद्दल': 'about', 'பற்றி': 'about', 'વિશે': 'about', 'अबाउट': 'about', 'ಬಗ್ಗೆ': 'about',
+  'കുറിച്ച്': 'about',
+  // case studies
+  'कcaseస్టడీస్': 'case-studies', 'केस-स्टडीज': 'case-studies', 'కేస్-స్టడీస్': 'case-studies',
+  'કેસ-સ્ટડીઝ': 'case-studies', 'கேஸ்-ஸ்டடீஸ்': 'case-studies', 'ಕೇಸ್-ಸ್ಟಡೀಸ್': 'case-studies',
+  'കേസ്-സ്റ്റഡീസ്': 'case-studies', 'কেস-স্টাডিজ': 'case-studies', 'வழக்கு-ஆய்வுகள்': 'case-studies',
+  // blog
+  'ब्लॉग': 'blog', 'બ્લોગ': 'blog', 'ப்லாக்': 'blog', 'బ్లాగ్': 'blog', 'ಬ್ಲಾಗ್': 'blog',
+  'ബ്ലോഗ്': 'blog', 'ব্লগ': 'blog',
+  // locations / resources
+  'स्थान': 'locations', 'లొకేషన్స్': 'locations', 'ಸ್ಥಳಗಳು': 'locations',
+  'ലൊക്കേഷനുകൾ': 'locations', 'இடங்கள்': 'locations',
+  'संसाधन': 'resources', 'সম্পদ': 'resources', 'వనరులు': 'resources', 'સંસાધન': 'resources',
+  'ಸಂಪನ್ಮೂಲಗಳು': 'resources',
+};
+
+/** Resolve a link target, or return null when it cannot be trusted. */
+function resolveHref(href: string): string | null {
+  if (!href || /^[a-z]+:/i.test(href) || href.startsWith('#') || href.startsWith('//')) return href;
+  // Malformed nested markdown, spaces, or stray brackets in a path.
+  if (/[\s\[\]]/.test(href)) return null;
+  if (!/[^\x00-\x7F]/.test(href)) return href;
+  const [first] = href.split('/').filter(Boolean);
+  const route = first ? TRANSLATED_ROUTES[first] : undefined;
+  return route ? `/${route}/` : null;
+}
+
+const H = {
+  1: 'text-3xl font-extrabold text-slate-900 mt-12 mb-5 leading-tight',
+  2: 'text-2xl font-bold text-slate-900 mt-12 mb-4 pb-3 border-b border-slate-100',
+  3: 'text-xl font-bold text-slate-900 mt-8 mb-3',
+  4: 'text-lg font-bold text-slate-900 mt-6 mb-2',
+  5: 'text-base font-bold text-slate-900 mt-5 mb-2',
+  6: 'text-base font-semibold text-slate-900 mt-5 mb-2',
+} as const;
+
+const P = 'text-slate-600 leading-relaxed mb-5 text-[15px]';
+const UL = 'list-disc pl-6 my-5 space-y-2 text-slate-600 leading-relaxed text-[15px]';
+const OL = 'list-decimal pl-6 my-5 space-y-2 text-slate-600 leading-relaxed text-[15px]';
+const A = 'text-blue-600 hover:text-blue-800 underline decoration-blue-300/50 hover:decoration-blue-500 transition-colors';
+const CODE = 'bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-sm font-mono';
+const PRE = 'bg-slate-900 text-slate-100 rounded-xl p-5 my-6 overflow-x-auto text-sm leading-relaxed';
+
+function buildRenderer() {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
+  const renderer: any = {
+    heading(token: any) {
+      const cls = (H as any)[token.depth] || H[4];
+      return `<h${token.depth} class="${cls}">${this.parser.parseInline(token.tokens)}</h${token.depth}>\n`;
+    },
+
+    paragraph(token: any) {
+      // Passthrough for HTML blocks emitted by other renderers.
+      if (/^<(div|table|ul|ol|blockquote|pre|figure|hr|h[1-6])/.test(token.text || '')) return token.text;
+      return `<p class="${P}">${this.parser.parseInline(token.tokens)}</p>\n`;
+    },
+
+    list(token: any) {
+      const tag = token.ordered ? 'ol' : 'ul';
+      const cls = token.ordered ? OL : UL;
+      const lis = token.items
+        .map((item: any) => {
+          const tokens = item.tokens || [];
+          const body = tokens
+            .map((t: any) => {
+              if (t.type === 'text' || t.type === 'escape') return this.parser.parseInline(t.tokens || [t]);
+              return this.parser.parse([t], false);
+            })
+            .join('');
+          return `<li class="pl-1">${body}</li>`;
+        })
+        .join('');
+      return `<${tag} class="${cls}">${lis}</${tag}>\n`;
+    },
+
+    table(token: any) {
+      const cell = (c: any, tagName: 'th' | 'td') =>
+        `<${tagName} class="${
+          tagName === 'th'
+            ? 'px-4 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider bg-slate-50 border-b border-slate-200'
+            : 'px-4 py-3 text-sm text-slate-700 border-b border-slate-100'
+        }">${this.parser.parseInline(c.tokens || [])}</${tagName}>`;
+      const head = token.header.map((c: any) => cell(c, 'th')).join('');
+      const body = token.rows
+        .map((row: any[]) => `<tr class="hover:bg-slate-50/50 transition-colors">${row.map((c) => cell(c, 'td')).join('')}</tr>`)
+        .join('');
+      return `<div class="overflow-x-auto my-8 rounded-xl border border-slate-200 shadow-sm"><table class="min-w-full"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>\n`;
+    },
+
+    blockquote(token: any) {
+      return `<blockquote class="border-l-4 border-blue-500 bg-blue-50/50 rounded-r-xl px-6 py-4 my-6 text-slate-700 italic leading-relaxed">${this.parser.parse(token.tokens)}</blockquote>\n`;
+    },
+
+    code(token: any) {
+      return `<pre class="${PRE}"><code>${token.escaped ? token.text : escapeHtml(token.text)}</code></pre>\n`;
+    },
+
+    codespan(token: any) {
+      return `<code class="${CODE}">${escapeHtml(token.text)}</code>`;
+    },
+
+    link(token: any) {
+      const inner = this.parser.parseInline(token.tokens || []);
+      const href = resolveHref(token.href || '');
+      if (href === null) return `<span class="text-slate-500">${inner}</span>`;
+      const title = token.title ? ` title="${escapeHtml(token.title)}"` : '';
+      const external = /^[a-z]+:/i.test(href);
+      const rel = external ? ' rel="noopener noreferrer"' : '';
+      return `<a href="${escapeHtml(href)}"${title}${rel} class="${A}">${inner}</a>`;
+    },
+
+    image(token: any) {
+      const alt = escapeHtml(token.text || '');
+      const title = token.title ? ` title="${escapeHtml(token.title)}"` : '';
+      return `<figure class="my-8"><img src="${escapeHtml(token.href)}" alt="${alt}"${title} class="w-full h-auto rounded-xl shadow-md" width="1200" height="630" loading="lazy" decoding="async" />${
+        alt ? `<figcaption class="text-center text-sm text-slate-500 mt-2">${alt}</figcaption>` : ''
+      }</figure>\n`;
+    },
+
+    hr() {
+      return '<hr class="my-10 border-t border-slate-200" />\n';
+    },
+
+    strong(token: any) {
+      return `<strong class="font-semibold text-slate-900">${this.parser.parseInline(token.tokens)}</strong>`;
+    },
+
+    em(token: any) {
+      return `<em>${this.parser.parseInline(token.tokens)}</em>`;
+    },
+  };
+
+  return renderer;
+}
+
+function escapeHtml(value: string): string {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/**
+ * Some authored/translated strings contain unmatched `**`, which marked cannot
+ * pair and would otherwise print as literal asterisks. Drop stray markers, but
+ * leave code blocks alone.
+ */
+function cleanStrayEmphasis(html: string): string {
+  // The site has no source code samples — fenced blocks hold letter/claim
+  // templates, where authors still use ** around headings. Strip everywhere.
+  return html.replace(/\*\*/g, '');
+}
+
+/** Render authored markdown to the site's styled HTML. */
+export function renderMarkdown(md: string | undefined | null): string {
+  if (!md) return '';
+  const instance = new Marked({ gfm: true, breaks: false });
+  instance.use({ renderer: buildRenderer() });
+  return cleanStrayEmphasis(instance.parse(String(md)) as string);
+}
+
+/** Remove markdown emphasis/link syntax for places that must stay plain text (JSON-LD, meta). */
+export function stripMarkdown(md: string | undefined | null): string {
+  return String(md ?? '')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1$2')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/^#{1,6}\s+/gm, '')
+    .trim();
+}

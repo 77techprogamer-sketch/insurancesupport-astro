@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { renderMarkdown } from "../../utils/markdown";
 import services from "../../data/services.json";
 import FAQPageJsonLd from "../../components/FAQPageJsonLd.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
@@ -125,7 +126,7 @@ const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} p
       <p class="text-lg text-slate-600 mb-12">{service.desc}</p>
 
       {service.content && (
-        <div class="prose prose-lg max-w-none mb-12" set:html={service.content.replace(/\n/g, '<br/>')} />
+        <div class="prose prose-lg max-w-none mb-12" set:html={renderMarkdown(service.content)} />
       )}
 
       {service.benefits && service.benefits.length > 0 && (
