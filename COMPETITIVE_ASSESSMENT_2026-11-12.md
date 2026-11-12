@@ -364,3 +364,42 @@ Placed at: homepage (§ "On Google"), `/about/`, `/contact/` (rating plus a Dire
 3. **Five photos, mostly street view.** Real interior and portrait photos would fill the visual gap noted in §15; Google-hosted images cannot be reused on the site.
 
 One file holds all of this — `src/data/google-profile.ts`. When the review count changes, that line changes and every page follows.
+
+## 17. Karnataka: twelve cities, one honest service model
+
+The site already had 56 `/locations/` pages. They were one template: 750 words each, identical structure, old spellings, and a promise of doorstep service in cities where there is no office. That last part is why they were never going to work — a Jalahalli agency claiming home visits in Raichur is the same failure as the invented testimonials, and Google reads twelve near-identical pages as one page.
+
+### What replaced them
+
+A state hub at `/karnataka/` and twelve city pages underneath it:
+
+Mysuru · Mangaluru · Hubballi-Dharwad · Belagavi · Kalaburagi · Ballari · Davanagere · Tumakuru · Shivamogga · Vijayapura · Bidar · Raichur
+
+Each is 1,061–1,107 words and carries four things that are true only of that place:
+
+| Element | Source |
+|---|---|
+| District consumer commission and its limit | Consumer Protection Act 2019, 2021 jurisdiction rules |
+| LIC divisional office that holds the file | LIC's own published divisional-office list — named only where it exists (Mysuru, Mangaluru, Dharwad, Belagavi, Kalaburagi, Shivamogga, Raichur) |
+| The failure pattern that turns up there | Written as description, no volumes, no rates |
+| Two questions the district actually asks | City-specific |
+
+The hub carries the state-level material: the four-step route with deadlines, a forum table (Ombudsman ₹50 lakh / District ₹50 lakh / State ₹2 crore / National), the city grid, and a section that says plainly what remote working does and does not include.
+
+### The service model, stated instead of implied
+
+One office, at Jalahalli. No branches. Every filing in the route is by email, post or portal anyway, so distance changes the logistics and not the law. The city pages say this in a box titled *What we will not claim*: no doorstep visit, no promised outcome, no filing without your signature, no fee before the free first read.
+
+That is a weaker promise than the competitors make. It is also the only one that survives contact with a client in Kalaburagi.
+
+### Verified, not assumed
+
+The Insurance Ombudsman at Bengaluru — Jeevan Soudha, JP Nagar 1st Phase — has jurisdiction over **Karnataka only**, confirmed against the Council for Insurance Ombudsmen's office list. The `/bangalore/` page had claimed it "also covers Goa"; corrected.
+
+### Nothing lost in the move
+
+The twelve old URLs 301 to the new ones in `public/_redirects`, and the pages themselves carry `noindex` plus a canonical to the replacement, so both readers and crawlers land on the better page. Sitemap: **234 URLs**, all self-canonical. Indexable inventory: **236 pages**. Broken links: 0. Titles over 60 characters: 0.
+
+### What this is worth, and what it is not
+
+Twelve city pages do not create twelve ranking signals by themselves — they create twelve *places where the same proof can be seen*. The constraint is the one from §16: the profile's reviews are about LIC policy advice, and a Kalaburagi policyholder searching "claim rejected" has no reason yet to believe this office is better than the local agent. What the pages can do is be the only result for that query that tells the truth about the route and the deadline.
