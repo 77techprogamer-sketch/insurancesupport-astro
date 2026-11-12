@@ -293,5 +293,224 @@
         "answer": "At least once a year, or after major life events — marriage, childbirth, home loan, job change. Premiums, plans, and your needs change. A free annual policy review can save you lakhs over time."
       }
     ]
+  },
+  {
+    "slug": "aggregator-vs-advisor",
+    "title": "Insurance Aggregator vs Advisor: Who Actually Helps at Claim Time",
+    "description": "A price-comparison portal and an IRDAI-certified advisor are two different businesses. Compare what each one does before the sale, who answers when a claim is questioned, and how to choose.",
+    "intro": "Both models are legitimate, and both are regulated. The difference shows up later: at renewal, and above all on the day a claim is questioned. This page sets out what each model actually does, without pretending one is a villain.",
+    "comparison": [
+      {
+        "feature": "How the intermediary is paid",
+        "companyA": "Portal earns commission from the insurer on the policy it sells.",
+        "companyB": "Advisor is also paid commission by the insurer — the premium you pay is normally identical either way.",
+        "note": "Neither model should charge you a fee to quote."
+      },
+      {
+        "feature": "Work done before you buy",
+        "companyA": "Shows quotes across many insurers; you compare price and features yourself.",
+        "companyB": "Reviews existing cover, family health history and preferred hospitals, then recommends a shortlist.",
+        "note": "Portals are excellent when you already know the product you want."
+      },
+      {
+        "feature": "Who answers at claim time",
+        "companyA": "A call centre passes you to the insurer's claims team, which decides.",
+        "companyB": "The advisor who wrote the policy reads the repudiation letter with you.",
+        "note": "The insurer always decides the claim — no intermediary can overrule it."
+      },
+      {
+        "feature": "Help with a rejection",
+        "companyA": "Explains the process; escalation is between you and the insurer.",
+        "companyB": "Checks whether the cited clause applies, drafts the grievance, and escalates to Bima Bharosa or the Ombudsman.",
+        "note": "This is the single biggest practical difference."
+      },
+      {
+        "feature": "Range of products",
+        "companyA": "Almost every retail product in the market.",
+        "companyB": "A deliberately short list chosen for your profile — not every brand.",
+        "note": "A short list is a feature, not a gap: fewer moving parts to service."
+      },
+      {
+        "feature": "What it costs you",
+        "companyA": "Free to use.",
+        "companyB": "Free consultation; commission is paid by the insurer.",
+        "note": "Ask any advisor to state the commission in writing."
+      },
+      {
+        "feature": "After the sale",
+        "companyA": "Renewal reminders and a service number.",
+        "companyB": "Renewal, nomination, address changes, maturity and claim follow-through.",
+        "note": "Most complaints in this industry are servicing complaints, not price complaints."
+      },
+      {
+        "feature": "Best for",
+        "companyA": "A commodity product you already understand and will service yourself.",
+        "companyB": "Claims, rejections, LIC servicing, or a family with mixed needs.",
+        "note": "Many households sensibly use both."
+      }
+    ],
+    "verdict": "Use a portal when you want a price check and know exactly what you are buying. Use an advisor when the relationship has to survive a bad day — a rejected claim, a lapsed policy, a nominee dispute. The honest test is not which site quotes lower; it is who picks up the phone when the insurer sends a repudiation letter.",
+    "faqs": [
+      {
+        "question": "Is it cheaper to buy insurance through an aggregator than an advisor?",
+        "answer": "For the same plan from the same insurer, the premium is normally identical. The insurer pays the intermediary's commission out of the premium, so buying direct, through a portal or through an advisor rarely changes the price. What changes is who services the policy afterwards."
+      },
+      {
+        "question": "Can an advisor force an insurer to pay a rejected claim?",
+        "answer": "No. The insurer decides claims under the policy wording. What an advisor can do is verify that the rejection cites the correct clause, assemble the documents the insurer actually asked for, and pursue the grievance, Bima Bharosa and Ombudsman routes within their deadlines."
+      },
+      {
+        "question": "What should I ask an advisor before buying?",
+        "answer": "Ask three things: their IRDAI registration number, which insurers they place business with and why, and how much commission the recommended product pays. A straight answer to the third question tells you most of what you need to know."
+      },
+      {
+        "question": "I already bought through a portal. Should I switch?",
+        "answer": "Not necessarily. If the policy suits you and claims have been paid, keep it. Switching mid-term rarely helps. Revisit it at renewal, and only if your needs or the servicing have changed."
+      },
+      {
+        "question": "Is an advisor's help with a claim free?",
+        "answer": "The initial review is free. Where a recovery involves substantial documentation work, the scope and any fee are agreed in writing before work starts — never as a percentage of the claim."
+      }
+    ]
+  },
+  {
+    "slug": "lic-online-vs-agent",
+    "title": "LIC Policy Online vs Through an Agent: What Changes at Claim Time",
+    "description": "Buying and servicing LIC through the portal, a bank or an agent changes little at the proposal stage and a lot at maturity and death-claim stage. Here is the practical difference.",
+    "intro": "LIC is the one insurer where the channel matters more than the price, because most of the work happens years later: maturity claims, survival benefits, nominee changes and revival of lapsed policies. This page compares the channels on that later work.",
+    "comparison": [
+      {
+        "feature": "Buying the policy",
+        "companyA": "LIC's own portal or app: you fill the proposal and complete medicals yourself.",
+        "companyB": "An agent files the proposal, arranges the medical and follows the policy document to your door.",
+        "note": "Both issue the same policy from the same insurer at the same premium."
+      },
+      {
+        "feature": "Understanding the illustration",
+        "companyA": "You read the benefit illustration and schedule on screen.",
+        "companyB": "The agent is required to explain the illustration, guaranteed versus non-guaranteed benefits and the surrender value.",
+        "note": "Ask for the illustration in writing in both cases."
+      },
+      {
+        "feature": "Servicing in later years",
+        "companyA": "You use the LIC portal or a branch queue for nominee, address and bank-mandate changes.",
+        "companyB": "Changes are filed for you, with the right forms and KYC.",
+        "note": "Mis-filed servicing requests are a common cause of delayed payouts."
+      },
+      {
+        "feature": "Reviving a lapsed policy",
+        "companyA": "You calculate the revival amount and file the health declaration yourself.",
+        "companyB": "The revival amount, interest and medical requirements are worked out and filed together.",
+        "note": "Revival windows and interest calculations are where lapsed policies are lost."
+      },
+      {
+        "feature": "Maturity or survival benefit",
+        "companyA": "You submit the claim form, policy and bank details at the branch or online.",
+        "companyB": "The claim set is assembled, checked against the policy schedule, and tracked until credit.",
+        "note": "Missing a single KYC document is the usual cause of a repeat visit."
+      },
+      {
+        "feature": "Death claim and nominee support",
+        "companyA": "The nominee deals with the branch and the documentation alone.",
+        "companyB": "The nominee is guided through forms, affidavits and the insurer's queries.",
+        "note": "This is the situation families most often need help with."
+      },
+      {
+        "feature": "Cost",
+        "companyA": "No intermediary involved; commission stays with the insurer.",
+        "companyB": "The premium is the same; the insurer pays the agent's commission.",
+        "note": "You are not charged extra for the service."
+      }
+    ],
+    "verdict": "If you are comfortable with portals, filing your own servicing requests and chasing the branch, buying direct is fine. If your policy is old, was sold by an agent who has since left, or has lapsed, the channel that matters is the one that still knows how the branch works — and that is usually an advisor.",
+    "faqs": [
+      {
+        "question": "Is an LIC policy bought online cheaper than one bought through an agent?",
+        "answer": "No. The premium is set by LIC for the plan, age and term, and does not change with the channel. The insurer pays commission to the agent out of the same premium."
+      },
+      {
+        "question": "Can an agent service a policy they did not sell?",
+        "answer": "Yes. Servicing, revival and claim assistance do not depend on who sold the policy. The agent needs the policy number and the documents; the insurer's forms are the same."
+      },
+      {
+        "question": "What if my LIC agent has stopped working?",
+        "answer": "The policy remains valid — it is a contract with LIC, not with the agent. Servicing can be done at any branch, through the LIC portal, or through another advisor."
+      },
+      {
+        "question": "How long does an LIC maturity claim take?",
+        "answer": "LIC usually processes a complete maturity claim within about 7–15 working days of receiving the discharge form and documents. Incomplete KYC or a mismatch in the bank details is the usual cause of delay."
+      },
+      {
+        "question": "Does buying through an agent affect claim settlement?",
+        "answer": "The decision is made by LIC under the policy terms, not by the agent. What the agent affects is how completely and how quickly the documents reach the right desk."
+      }
+    ]
+  },
+  {
+    "slug": "claim-lawyer-vs-advisor",
+    "title": "Do You Need a Lawyer for a Rejected Insurance Claim?",
+    "description": "Most rejected claims are resolved through the insurer's grievance cell, IRDAI's Bima Bharosa and the Insurance Ombudsman — no lawyer required. Here is when legal help is genuinely worth the cost.",
+    "intro": "A rejection letter reads like a legal document, so the first instinct is to call a lawyer. For most individual claims that is the wrong order of operations: the free routes are faster, and they are decided on documents rather than argument. Here is the sequence that works, and where a lawyer genuinely earns a fee.",
+    "comparison": [
+      {
+        "feature": "Insurer's grievance cell",
+        "companyA": "Lawyer may draft a notice; the insurer answers the same either way.",
+        "companyB": "Free. Written grievance quoting the policy clause and Regulation 8.",
+        "note": "Start here — it resolves a meaningful share of disputes."
+      },
+      {
+        "feature": "IRDAI Bima Bharosa",
+        "companyA": "A lawyer's letter adds little at this stage.",
+        "companyB": "Free portal complaint; IRDAI routes it to the insurer's nodal officer.",
+        "note": "Costs nothing but time, and creates a dated record."
+      },
+      {
+        "feature": "Insurance Ombudsman",
+        "companyA": "Lawyers are permitted but usually unnecessary; the process is document-led.",
+        "companyB": "Free, no court fees, and the award binds the insurer up to the monetary limit.",
+        "note": "The strongest free lever available to an individual policyholder."
+      },
+      {
+        "feature": "Consumer Commission",
+        "companyA": "A lawyer or a consumer-rights group is genuinely useful here.",
+        "companyB": "Supported filing, with documents prepared for the hearing.",
+        "note": "Right route when the Ombudsman route is unavailable or the amount is large."
+      },
+      {
+        "feature": "Civil suit",
+        "companyA": "Necessary where the claim is disputed on fraud or contract grounds.",
+        "companyB": "Referred to counsel — this is outside advisory scope.",
+        "note": "Slow and expensive; the last resort, not the first."
+      },
+      {
+        "feature": "Cost to you",
+        "companyA": "Typically a consultation fee and a percentage of the recovery.",
+        "companyB": "The first review and the escalation letters are free.",
+        "note": "Be wary of anyone taking a percentage of a claim the insurer has not yet decided."
+      }
+    ],
+    "verdict": "Work in order: insurer's written reasons, then Bima Bharosa, then the Ombudsman. That sequence costs nothing and settles most individual disputes. Bring in a lawyer when you are before a consumer commission or a court, when fraud is alleged, or when the amount is large enough that a percentage fee is worth it.",
+    "faqs": [
+      {
+        "question": "Can I fight a rejected insurance claim without a lawyer?",
+        "answer": "Yes. The insurer's grievance cell, IRDAI's Bima Bharosa portal and the Insurance Ombudsman are designed for individuals without legal representation. The Ombudsman process in particular is document-led and free."
+      },
+      {
+        "question": "Is the Insurance Ombudsman really free?",
+        "answer": "There is no fee to file and no court fee. You bear your own costs of copying and couriering documents. Awards bind the insurer up to the monetary limit set by the Insurance Ombudsman Rules."
+      },
+      {
+        "question": "How long does an Ombudsman complaint take?",
+        "answer": "It varies by centre and by how complete the file is. A clean file with a written repudiation, the policy and an indexed document list moves faster than an incomplete one. Expect weeks rather than days."
+      },
+      {
+        "question": "Do I need a lawyer for the consumer commission?",
+        "answer": "Not strictly — you can appear yourself — but a commission is a formal forum, and a lawyer or consumer-rights group is worth the cost where the amount justifies it."
+      },
+      {
+        "question": "What documents should I gather first?",
+        "answer": "The policy schedule and wording, the complete claim file, the repudiation letter, and every piece of correspondence with the insurer, with dates. This is the same set every forum will ask for."
+      }
+    ]
   }
 ]

@@ -1,0 +1,157 @@
+---
+// src/components/CallbackForm.astro
+// Two-field callback request: name + phone. The cheapest commitment a visitor
+// can make, used inline on comparison pages and inside the exit-intent modal.
+interface Props {
+  source: string;           // where the form lives, e.g. "compare:policybazaar-alternative"
+  heading?: string;
+  subheading?: string;
+  buttonLabel?: string;
+  variant?: 'card' | 'bare';
+  showTimeSlot?: boolean;
+  leadType?: 'callback' | 'quiz';
+  captureQuiz?: boolean;    // pull answers from #quizForm when present
+}
+const {
+  source,
+  heading = 'Get a free 15-minute claim review',
+  subheading = 'An IRDAI-certified advisor calls you back. No obligation, no sales script.',
+  buttonLabel = 'Request my callback',
+  variant = 'card',
+  showTimeSlot = true,
+  leadType = 'callback',
+  captureQuiz = false,
+} = Astro.props;
+const uid = `cb-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div class={variant === 'card' ? 'rounded-2xl border border-slate-200 bg-white shadow-sm p-6' : ''} data-callback-block>
+  <form data-callback-form data-source={source} data-lead-type={leadType} novalidate class="space-y-3">
+    {captureQuiz && <input type="hidden" name="quizAnswers" data-quiz-answers value="" />}
+    <div>
+      <p class="font-bold text-slate-900 text-lg leading-snug">{heading}</p>
+      <p class="text-sm text-slate-600 mt-1">{subheading}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3">
+      <div>
+        <label for={`${uid}-name`} class="sr-only">Your name</label>
+        <input id={`${uid}-name`} name="name" type="text" autocomplete="name" required
+               placeholder="Your name"
+               class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none" />
+      </div>
+      <div>
+        <label for={`${uid}-phone`} class="sr-only">Mobile number</label>
+        <input id={`${uid}-phone`} name="phone" type="tel" inputmode="numeric" autocomplete="tel"
+               required placeholder="10-digit mobile"
+               class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none" />
+      </div>
+    </div>
+
+    {showTimeSlot && (
+      <div>
+        <label for={`${uid}-time`} class="sr-only">Best time to call</label>
+        <select id={`${uid}-time`} name="timeSlot"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-700 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+          <option value="anytime">Best time: any time</option>
+          <option value="morning">Morning (9am – 12pm)</option>
+          <option value="afternoon">Afternoon (12pm – 4pm)</option>
+          <option value="evening">Evening (4pm – 8pm)</option>
+        </select>
+      </div>
+    )}
+
+    <button type="submit"
+            class="w-full rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3.5 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+      {buttonLabel}
+    </button>
+
+    <p class="text-xs text-slate-500 leading-relaxed">
+      We call once, and only about your question. Your number is never sold or shared.
+      Prefer to write? <a class="underline text-blue-700" href="https://wa.me/919986634506" rel="noopener">WhatsApp us</a>.
+    </p>
+
+    <p data-callback-msg class="hidden text-sm rounded-xl px-4 py-3" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<script>
+  (function () {
+    function track(event: string, params: Record<string, unknown>) {
+      const wAny = window as any;
+      wAny.dataLayer = wAny.dataLayer || [];
+      wAny.dataLayer.push({ event, ...params });
+      if (typeof wAny.gtag === 'function') wAny.gtag('event', event, params);
+    }
+
+    document.addEventListener('submit', async (e) => {
+      const form = e.target as HTMLFormElement | null;
+      if (!form || !form.matches('[data-callback-form]')) return;
+      e.preventDefault();
+
+      const msg = form.querySelector('[data-callback-msg]') as HTMLElement | null;
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      const data = new FormData(form);
+      const name = String(data.get('name') || '').trim();
+      const phoneRaw = String(data.get('phone') || '').replace(/[\s-]/g, '');
+
+      const show = (text: string, ok: boolean) => {
+        if (!msg) return;
+        msg.textContent = text;
+        msg.className = `text-sm rounded-xl px-4 py-3 ${ok
+          ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+          : 'bg-red-50 text-red-800 border border-red-200'}`;
+      };
+
+      if (!name) return show('Please tell us your name.', false);
+      if (!/^(\+91|91|0)?[6-9]\d{9}$/.test(phoneRaw)) {
+        return show('That mobile number does not look right — enter 10 digits.', false);
+      }
+
+      const source = form.getAttribute('data-source') || 'unknown';
+      const leadType = form.getAttribute('data-lead-type') || 'callback';
+
+      // Fold in the claim-quiz answers when this form sits inside its result.
+      const quizField = form.querySelector('[data-quiz-answers]') as HTMLInputElement | null;
+      if (quizField) {
+        const quizForm = document.getElementById('quizForm');
+        if (quizForm) {
+          const answers: Record<string, string> = {};
+          quizForm.querySelectorAll('select').forEach((sel) => {
+            const el = sel as HTMLSelectElement;
+            if (el.name) answers[el.name] = el.value;
+          });
+          quizField.value = JSON.stringify(answers);
+        }
+      }
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ''; btn.textContent = 'Sending…'; }
+      track('callback_form_submit', { source });
+
+      try {
+        const res = await fetch('/lead-capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            leadType,
+            name,
+            phone: phoneRaw,
+            timeSlot: String(data.get('timeSlot') || 'anytime'),
+            source,
+            page: location.pathname,
+          }),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+
+        form.reset();
+        show('Thank you — we have your number and will call you back shortly.', true);
+        track('generate_lead', { form: 'callback', source, value: 1, currency: 'INR' });
+        document.dispatchEvent(new CustomEvent('lead-captured', { detail: { source } }));
+      } catch {
+        show('Could not send that. Please WhatsApp us on +91 99866 34506 instead.', false);
+        track('callback_form_error', { source });
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || 'Request my callback'; }
+      }
+    });
+  })();
+</script>

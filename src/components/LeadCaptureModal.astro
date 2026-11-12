@@ -1,0 +1,134 @@
+---
+// src/components/LeadCaptureModal.astro
+// A single, dismissible capture prompt for content pages: exit intent on
+// desktop, deep scroll or dwell time on mobile. Never shown twice in a
+// fortnight, never shown after a form has already been submitted.
+import CallbackForm from './CallbackForm.astro';
+
+interface Props {
+  pageType?: string;
+}
+const { pageType = 'page' } = Astro.props;
+---
+
+<div id="leadCaptureModal" class="fixed inset-0 z-[70] hidden" role="dialog" aria-modal="true"
+     aria-labelledby="leadCaptureTitle" data-page-type={pageType}>
+  <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" data-lc-close></div>
+
+  <div class="relative mx-auto mt-[8vh] w-[min(92vw,540px)]">
+    <div class="rounded-3xl bg-white shadow-2xl overflow-hidden">
+      <div class="flex items-start justify-between gap-4 px-6 pt-6">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.14em] text-blue-700">Insurance Support</p>
+          <h2 id="leadCaptureTitle" class="mt-2 text-2xl font-extrabold text-slate-900 leading-tight">
+            Claim rejected, delayed or short-paid?
+          </h2>
+        </div>
+        <button type="button" data-lc-close aria-label="Close"
+                class="-mt-1 -mr-1 rounded-full p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="px-6 pb-6 pt-3">
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+          An IRDAI-certified advisor with 25+ years on the policyholder side will look at your
+          repudiation letter and tell you, in one call, whether there are grounds to appeal.
+        </p>
+
+        <CallbackForm
+          source={`modal:${pageType}`}
+          heading="Talk to a claim advisor"
+          subheading="Leave your number — we call back the same working day."
+          buttonLabel="Call me back"
+          variant="bare"
+          showTimeSlot={false}
+        />
+
+        <button type="button" data-lc-close
+                class="mt-4 w-full text-center text-xs text-slate-400 hover:text-slate-600 underline">
+          No thanks, I'll keep reading
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const KEY = 'is_lead_modal_seen';
+    const modal = document.getElementById('leadCaptureModal');
+    if (!modal) return;
+
+    const pageType = modal.getAttribute('data-page-type') || 'page';
+    const suppressed = ['contact', 'lead-magnet', 'thank-you', 'checkout', 'search', 'homepage'];
+    if (suppressed.includes(pageType)) return;
+
+    // Once per fortnight, and never again after any form on the page converts.
+    try {
+      const seen = Number(localStorage.getItem(KEY) || 0);
+      if (seen && Date.now() - seen < 14 * 24 * 60 * 60 * 1000) return;
+    } catch { /* storage blocked — carry on */ }
+
+    let shown = false;
+    let closed = false;
+
+    const track = (event: string, params: Record<string, unknown> = {}) => {
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({ event, pageType, ...params });
+      if (typeof w.gtag === 'function') w.gtag('event', event, { pageType, ...params });
+    };
+
+    const show = () => {
+      if (shown || closed) return;
+      shown = true;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      track('lead_modal_shown', { trigger: 'auto' });
+      const first = modal.querySelector('input[name="name"]') as HTMLInputElement | null;
+      if (first) setTimeout(() => first.focus({ preventScroll: true }), 60);
+    };
+
+    const hide = (reason: string) => {
+      if (closed) return;
+      closed = true;
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      try { localStorage.setItem(KEY, String(Date.now())); } catch { /* ignore */ }
+      track('lead_modal_dismissed', { reason });
+    };
+
+    modal.querySelectorAll('[data-lc-close]').forEach((el) => {
+      el.addEventListener('click', () => hide('close'));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) hide('escape');
+    });
+
+    // A conversion anywhere on the page retires the prompt for good.
+    document.addEventListener('lead-captured', () => hide('converted'));
+
+    // 1) Exit intent (desktop pointers only)
+    document.addEventListener('mouseout', (e) => {
+      const ev = e as MouseEvent;
+      if (ev.relatedTarget || (ev.clientY ?? 1) > 12) return;
+      if (window.matchMedia('(min-width: 1024px)').matches) show();
+    });
+
+    // 2) Deep scroll
+    let deepScroll = false;
+    const onScroll = () => {
+      if (deepScroll) return;
+      const scrolled = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+      if (scrolled > 0.6) { deepScroll = true; show(); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // 3) Dwell time fallback for readers who never leave the top of the page
+    setTimeout(show, 45000);
+  })();
+</script>

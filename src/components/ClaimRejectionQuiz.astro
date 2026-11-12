@@ -2,6 +2,7 @@
 // src/components/ClaimRejectionQuiz.astro
 // Interactive quiz to assess claim appeal potential.
 import Icon from '../components/icons/Icon.astro';
+import CallbackForm from './CallbackForm.astro';
 ---
 
 <div id="claimRejectionQuiz" class="max-w-xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border mb-12 bg-surface">
@@ -53,6 +54,19 @@ import Icon from '../components/icons/Icon.astro';
           <div id="potentialBar" class="h-full bg-accent rounded-full transition-all duration-1000" style="width:0%"></div>
         </div>
         <p id="potentialMessage" class="text-secondary mb-6 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}></p>
+
+        <div class="mt-6 rounded-2xl border border-border bg-surface p-5">
+          <CallbackForm
+            source="quiz:claim-rejection"
+            heading="Want a human to check this?"
+            subheading="Leave your number — we will go through your answers and tell you what to file first."
+            buttonLabel="Review my case"
+            variant="bare"
+            showTimeSlot={false}
+            leadType="quiz"
+            captureQuiz={true}
+          />
+        </div>
         <a id="whatsappCta" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 btn btn-accent hover:scale-105 transition-all" style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px' }}>
           <Icon name="whatsapp" size="md" />
           Get Expert Help on WhatsApp
