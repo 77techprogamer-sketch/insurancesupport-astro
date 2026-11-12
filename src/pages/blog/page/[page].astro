@@ -5,7 +5,7 @@ import posts from '../../../data/blogs.json';
 
 const POSTS_PER_PAGE = 12;
 const englishPosts = posts.filter(p => (p.lang || 'en') === 'en');
-const sorted = englishPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+const sorted = englishPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 const totalPages = Math.ceil(sorted.length / POSTS_PER_PAGE);
 
 // NOTE: getStaticPaths is hoisted above module-level consts by the Astro
@@ -14,7 +14,7 @@ const totalPages = Math.ceil(sorted.length / POSTS_PER_PAGE);
 export function getStaticPaths() {
   const POSTS_PER_PAGE_LOCAL = 12;
   const englishOnly = posts.filter(p => (p.lang || 'en') === 'en');
-  const sortedPosts = englishOnly.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedPosts = englishOnly.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   const total = Math.ceil(sortedPosts.length / POSTS_PER_PAGE_LOCAL);
   const paths = [];
   for (let page = 2; page <= total; page++) {

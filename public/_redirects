@@ -997,18 +997,18 @@
 /terms-of-service/ /terms/ 301
 
 # ---- Removed Bengaluru locality pages ----
-/locations/bangalore-btm-layout /services/btm-layout/ 301
-/locations/bangalore-btm-layout/ /services/btm-layout/ 301
-/locations/bangalore-domlur /services/indiranagar/ 301
-/locations/bangalore-domlur/ /services/indiranagar/ 301
-/locations/bangalore-hoodi /services/whitefield/ 301
-/locations/bangalore-hoodi/ /services/whitefield/ 301
+/locations/bangalore-btm-layout /cities/btm-layout/ 301
+/locations/bangalore-btm-layout/ /cities/btm-layout/ 301
+/locations/bangalore-domlur /cities/indiranagar/ 301
+/locations/bangalore-domlur/ /cities/indiranagar/ 301
+/locations/bangalore-hoodi /cities/whitefield/ 301
+/locations/bangalore-hoodi/ /cities/whitefield/ 301
 /locations/bangalore-jalahalli /locations/ 301
 /locations/bangalore-jalahalli/ /locations/ 301
 /locations/bangalore-kammanahalli /locations/ 301
 /locations/bangalore-kammanahalli/ /locations/ 301
-/locations/bangalore-kr-puram /services/whitefield/ 301
-/locations/bangalore-kr-puram/ /services/whitefield/ 301
+/locations/bangalore-kr-puram /cities/whitefield/ 301
+/locations/bangalore-kr-puram/ /cities/whitefield/ 301
 /locations/bangalore-yelahanka-new-town /locations/bangalore-yelahanka/ 301
 /locations/bangalore-yelahanka-new-town/ /locations/bangalore-yelahanka/ 301
 
@@ -1145,8 +1145,8 @@
 /blog/complete-insurance-support-guide-for-india-free-tools-resources-city-wise-services/ /resources/ 301
 
 # Retired tools with relevant current equivalents.
-/tools/investment-returns /services/investment-plans/ 301
-/tools/investment-returns/ /services/investment-plans/ 301
+/tools/investment-returns /services/ulip-plans/ 301
+/tools/investment-returns/ /services/ulip-plans/ 301
 /tools/lic/lic-ulip-calculator /services/ulip-plans/ 301
 /tools/lic/lic-ulip-calculator/ /services/ulip-plans/ 301
 /tools/insurance/health-insurance-calculator /services/health-insurance/ 301
@@ -1341,8 +1341,8 @@
 /tools/insurance/idv-calculator/ /services/motor-insurance/ 301
 /tools/lic/lic-jeevan-utsav-premium-calculator /blog/lic-policy-hub-complete-guide-2026/ 301
 /tools/lic/lic-jeevan-utsav-premium-calculator/ /blog/lic-policy-hub-complete-guide-2026/ 301
-/tools/savings/savings-calculator /services/investment-plans/ 301
-/tools/savings/savings-calculator/ /services/investment-plans/ 301
+/tools/savings/savings-calculator /services/ulip-plans/ 301
+/tools/savings/savings-calculator/ /services/ulip-plans/ 301
 /blog/port-health-insurance-without-losing-waiting-period /blog/health-insurance-portability-rejected-2026/ 301
 /blog/port-health-insurance-without-losing-waiting-period/ /blog/health-insurance-portability-rejected-2026/ 301
 /blog/case-study-lic-death-claim-recovery-8-months /blog/lic-death-claim-rejected-nominee-guide-2026/ 301
@@ -1393,8 +1393,8 @@
 
 /tools/pension/birla-sun-life-wealth-nps-calculator /blog/retirement-pension-planning-hub-2026/ 301
 /tools/pension/birla-sun-life-wealth-nps-calculator/ /blog/retirement-pension-planning-hub-2026/ 301
-/tools/investment/income-tax-calculator /services/investment-plans/ 301
-/tools/investment/income-tax-calculator/ /services/investment-plans/ 301
+/tools/investment/income-tax-calculator /services/ulip-plans/ 301
+/tools/investment/income-tax-calculator/ /services/ulip-plans/ 301
 /hi/tools/pension/nps-vs-kvp-calculator-2 /blog/retirement-pension-planning-hub-2026/ 301
 /hi/tools/pension/nps-vs-kvp-calculator-2/ /blog/retirement-pension-planning-hub-2026/ 301
 /resources/guides/lic-jeevan-lakshya /blog/lic-policy-hub-complete-guide-2026/ 301

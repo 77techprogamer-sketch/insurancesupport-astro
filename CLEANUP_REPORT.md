@@ -112,3 +112,65 @@ modified: src/pages/blog/[slug].astro
           src/pages/lead-magnets/[slug].astro
           package.json
 ```
+
+---
+
+# Round 2 — titles and internal linking
+
+Applied after the first pass went green, on the same branch.
+
+## Titles
+
+New `src/utils/seoTitle.ts`, wired into `BaseLayout.astro`, so **no page can ship a
+title longer than 60 characters** — now or in future templates.
+
+It shortens in this order: brand/boilerplate suffix (`| Insurance Support`,
+`| Hari Kotian`, `| Claim Case Study`, …) → trailing parenthetical → clause after a
+colon → trailing comma-separated region → word-boundary trim. It keeps the year
+when the source had one, budgets for `&` → `&amp;` expansion, and never cuts mid-word.
+A `TITLE_OVERRIDES` map carries ~35 hand-written titles where a mechanical cut read badly.
+
+| | Before | After |
+|---|---:|---:|
+| Titles over 60 characters | 193 of 220 | **0** |
+| Titles in the 30–60 sweet spot | 20 | **210** |
+
+Template-level fixes: the 57 location pages rendered
+*"Insurance Advisor in Bannerghatta Road, Bangalore, Karnataka – Plans, Claims & Free Review | Hari Kotian"* (110 chars);
+they now render *"Insurance Advisor in Bannerghatta Road, Bangalore"*. The 9 city pages
+lost *"— Block-Level Guidance | Insurance Support"* the same way.
+
+## Orphan pages
+
+| | Before | After |
+|---|---:|---:|
+| Indexable pages with zero internal links | 16 | **1** |
+
+- `/services/ulip-plans/` — was missing from the services index entirely; card added.
+- `/expert-insights/` — now linked from the blog hero.
+- `/resources/how-it-works/` — now linked from `/resources/`.
+- Four `/brand/*` pages — now listed on `/about/` under "Brand and reference pages".
+- `/blog/lic-jeevan-anand-vs-jeevan-labh-comparison/` and
+  `/blog/lic-jeevan-labh-maturity-calculator-guide/` — added to the LIC pillar's
+  service-guide list.
+- `/downloads/policy-review-checklist.html` — linked from the checklist page.
+- `/search/`, `/api-docs.html`, the Google and Bing verification files and the
+  printable HTML are now `noindex` instead of being counted as thin indexable pages.
+
+The one remaining orphan, `/blog/irdai-policyholders-guide-india-2026/`, is a
+canonical duplicate of the 2026 IRDAI guide — it is intentionally left for Google to
+consolidate rather than linked.
+
+## Round-2 verification
+
+```
+astro build ............... 836 pages, 0 errors
+pagefind .................. 838 pages / 101,757 words
+sitemap ................... 214 URLs
+indexable 216 / noindex 623
+literal ** pages .......... 0
+hreflang .................. 594 tags, 0 broken
+broken internal links ..... 44 (unchanged — the /downloads/*.pdf content gap)
+titles > 60 chars ......... 0
+orphan indexable pages .... 1
+```

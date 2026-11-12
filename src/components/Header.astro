@@ -45,7 +45,7 @@ const navItems = [
 
     <!-- Header Actions -->
             <div class="header-actions">
-              <a href="tel:+919****4506" class="btn btn-ghost btn-sm" style="font-family: var(--font-sans);" aria-label="Call us: +91 99866 34506">
+              <a href="tel:+919986634506" class="btn btn-ghost btn-sm" style="font-family: var(--font-sans);" aria-label="Call us: +91 99866 34506">
                 <Icon name="phone" size="sm" />
                 <span>+91 99866 34506</span>
               </a>
@@ -71,7 +71,7 @@ const navItems = [
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', isOpen);
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
       menuBtn.innerHTML = isOpen
         ? '<svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>'
         : '<svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>';
@@ -95,7 +95,7 @@ const navItems = [
     link.addEventListener('click', () => {
       nav.classList.remove('open');
       menuBtn?.setAttribute('aria-expanded', 'false');
-      menuBtn.innerHTML = '<svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>';
+      if (menuBtn) menuBtn.innerHTML = '<svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>';
     });
   });
 </script>

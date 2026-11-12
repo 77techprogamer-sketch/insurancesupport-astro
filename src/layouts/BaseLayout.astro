@@ -6,21 +6,6 @@ import '../styles/globals.css';
 import FloatingCTA from '../components/FloatingCTA.tsx';
 import Chatbot from '../components/Chatbot.astro';
 
-// Define Indian languages and their regions for hreflang
-const INDIAN_LANGUAGES = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa'];
-const langRegion = {
-  'en': 'en-IN',
-  'hi': 'hi-IN',
-  'bn': 'bn-IN',
-  'ta': 'ta-IN',
-  'te': 'te-IN',
-  'mr': 'mr-IN',
-  'gu': 'gu-IN',
-  'kn': 'kn-IN',
-  'ml': 'ml-IN',
-  'pa': 'pa-IN',
-};
-
 export interface Props {
   title: string;
   description?: string;
@@ -36,12 +21,13 @@ export interface Props {
   skipGlobalLocationSchema?: boolean;
   skipGlobalOrgSchema?: boolean;
   pageLang?: string;   // e.g. "hi-IN", "bn-IN" — defaults to "en-IN"
+  lang?: string;       // alias for pageLang, kept for backwards compatibility
   ogLocale?: string;   // e.g. "hi_IN", "bn_IN" — defaults to "en_IN"
   pageType?: string;  // e.g. "homepage", "service", "city", "location", "compare", "faq", "blog-index", "search"
 }
 
 const pageLocale = Astro.props.ogLocale || 'en_IN';
-const pageLangCode = Astro.props.pageLang || 'en-IN';
+const pageLangCode = Astro.props.pageLang || Astro.props.lang || 'en-IN';
 const pageMetaRegion = Astro.props.geoRegion || 'IN-KA';
 const pageMetaPlace = Astro.props.geoPlaceName || 'Bengaluru';
 const pageMetaPosition = Astro.props.geoPosition || '13.0159;77.5522';
@@ -51,12 +37,15 @@ const pageNoIndex = Astro.props.noIndex || false;
 const pageCanonical = Astro.props.canonical || Astro.url.href;
 const pageDateModified = Astro.props.dateModified;
 const pageKeywords = Astro.props.keywords;
-const pageTitle = Astro.props.title;
+// Keep <title> under the ~60-character SERP limit: page-specific overrides first,
+// then an automatic clamp that drops brand suffixes and sub-clauses.
+const pageTitle = TITLE_OVERRIDES[Astro.url.pathname] || clampTitle(Astro.props.title);
 const pageSkipDefaultHreflang = Astro.props.skipDefaultHreflang != null ? Astro.props.skipDefaultHreflang : false;
 const pageSkipGlobalLocationSchema = Astro.props.skipGlobalLocationSchema != null ? Astro.props.skipGlobalLocationSchema : false;
 const pageSkipGlobalOrgSchema = Astro.props.skipGlobalOrgSchema != null ? Astro.props.skipGlobalOrgSchema : false;
 
 import { PAGE_KEYWORDS } from '../data/page-keywords';
+import { clampTitle, TITLE_OVERRIDES } from '../utils/seoTitle';
 
 const mergedProps = Astro.props as Props;
 
@@ -332,14 +321,15 @@ const combinedKeywords = mergedKeywords.length > 0 && pageKeywords
     <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
     <meta name="msvalidate.01" content="551FF3A8CD7B8225D53FAB718B3051E2" />
     {combinedKeywords.length > 0 && <meta name="keywords" content={combinedKeywords} />}
-    {pageLangCode !== 'en-IN' && <link rel="alternate" hreflang="en-IN" href={pageCanonical} />}
-    {pageLangCode !== 'en-IN' && <link rel="alternate" hreflang="x-default" href={pageCanonical} />}
-    {!pageSkipDefaultHreflang && <link rel="alternate" hreflang="en-IN" href={pageCanonical} />}
-    {!pageSkipDefaultHreflang && <link rel="alternate" hreflang="x-default" href={pageCanonical} />}
-    {INDIAN_LANGUAGES.map((lang: string) => (
-      <link rel="alternate" hreflang={langRegion[lang as keyof typeof langRegion] || `${lang}-IN`} href={`https://insurancesupport.online/blog/${lang}/${pageCanonical.split('/').pop() || ''}`} />
-    ))}
-    {Astro.head}
+    {!pageSkipDefaultHreflang && (
+      <>
+        {/* Self-referential hreflang. Pages that publish real translations pass
+            skipDefaultHreflang and emit their own, complete alternate set. */}
+        <link rel="alternate" hreflang={pageLangCode} href={pageCanonical} />
+        {pageLangCode !== 'en-IN' && <link rel="alternate" hreflang="en-IN" href={pageCanonical} />}
+        <link rel="alternate" hreflang="x-default" href={pageCanonical} />
+      </>
+    )}
         {!pageSkipGlobalOrgSchema && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
         <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
         <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
@@ -360,7 +350,7 @@ const combinedKeywords = mergedKeywords.length > 0 && pageKeywords
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-XXXXXXX');
+        })(window,document,'script','dataLayer','GTM-P8DZ6MRQ');
       </script>
       <script is:inline src="/scripts/analytics.js" defer></script>
       <script is:inline src="/scripts/reveal.js" defer></script>

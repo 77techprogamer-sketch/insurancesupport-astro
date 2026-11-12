@@ -56,7 +56,7 @@ export default function GeoBanner() {
       return;
     }
 
-    fetch('/api/geo')
+    fetch('/geo')
       .then(r => r.json())
       .then((data: GeoData) => {
         setGeo(data);

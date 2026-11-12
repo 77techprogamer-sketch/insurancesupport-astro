@@ -13,21 +13,3 @@ declare module 'react-i18next' {
   export { useTranslation };
   export type { UseTranslationHandler };
 }
-
-// Type shim for @/lib/utilsdeclare module '@/lib/utils' {
-  export function cn(...classes: (string | undefined | null | false)[]): string;
-  export function formatCurrency(amount: number, currency?: string): string;
-  export function formatDate(date: Date | string, options?: Intl.DateTimeFormatOptions): string;
-  export function slugToTitle(slug: string): string;
-  export function truncate(text: string, maxLength: number): string;
-  export function getInitials(name: string, maxLength?: number): string;
-}
-
-declare module '@/lib/utils' {
-  export function cn(...classes: (string | undefined | null | false)[]): string;
-  export function formatCurrency(amount: number, currency?: string): string;
-  export function formatDate(date: Date | string, options?: Intl.DateTimeFormatOptions): string;
-  export function slugToTitle(slug: string): string;
-  export function truncate(text: string, maxLength: number): string;
-  export function getInitials(name: string, maxLength?: number): string;
-}

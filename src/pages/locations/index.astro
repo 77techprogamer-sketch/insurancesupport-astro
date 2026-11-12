@@ -128,14 +128,18 @@ const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
 
 <script>
 function filterCities() {
-  const q = document.getElementById('citySearch')?.value.toLowerCase() || '';
-  document.querySelectorAll('.city-card').forEach(card => {
+  const input = document.getElementById('citySearch') as HTMLInputElement | null;
+  const q = input ? input.value.toLowerCase() : '';
+  document.querySelectorAll<HTMLElement>('.city-card').forEach(card => {
     const name = card.querySelector('h3')?.textContent?.toLowerCase() || '';
     card.style.display = name.includes(q) ? 'block' : 'none';
   });
-  document.querySelectorAll('[data-state]').forEach(section => {
-    const visible = [...section.querySelectorAll('.city-card')].some(c => c.style.display !== 'none');
+  document.querySelectorAll<HTMLElement>('[data-state]').forEach(section => {
+    const visible = [...section.querySelectorAll<HTMLElement>('.city-card')].some(c => c.style.display !== 'none');
     section.style.display = visible ? 'block' : 'none';
   });
 }
+// Astro hoists this into a module scope, so the inline onkeyup="filterCities()"
+// attribute cannot see it unless we explicitly publish it on window.
+(window as any).filterCities = filterCities;
 </script>

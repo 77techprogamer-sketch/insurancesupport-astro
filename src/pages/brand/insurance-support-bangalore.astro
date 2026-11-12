@@ -1,6 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import { AREAS } from '../../data/areas';
+
+// Neighbourhood chips must never link to a page we don't build. Resolve each
+// display name to a real /cities/ route; fall back to the locations hub.
+const CITY_SLUGS = new Set(AREAS.map(a => a.slug));
+const AREA_ALIASES: Record<string, string> = {
+  'jp-nagar': 'j-p-nagar',
+  'malleswaram': 'malleshwaram',
+  'cooke-town': 'cox-town',
+  'jayanagar-4th-block': 'jayanagar',
+  'jayanagar-9th-block': 'jayanagar',
+};
+function areaHref(area: string): string {
+  const base = area.toLowerCase().replace(/\./g, '').trim().replace(/\s+/g, '-');
+  const slug = AREA_ALIASES[base] || base;
+  return CITY_SLUGS.has(slug) ? `/cities/${slug}/` : '/locations/';
+}
 
 const siteUrl = "https://insurancesupport.online";
 const breadcrumbs = [
@@ -187,7 +204,7 @@ const localBusinessSchema = {
       <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">From Koramangala to Yelahanka, Whitefield to Jayanagar — Insurance Support helps Bangalore families with claims, policies, and unbiased advice.</p>
       <div class="flex flex-wrap justify-center gap-2 mb-8">
         {["Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "HSR Layout", "Marathahalli", "MG Road", "JP Nagar", "BTM Layout", "Malleswaram", "Yelahanka", "Electronic City", "Hebbal", "Bannerghatta", "Bellandur", "Sarjapur", "Kengeri", "Rajajinagar", "RT Nagar", "Kalyan Nagar", "HRBR Layout", "Cooke Town", "Frazer Town", "Cox Town", "Richmond Town", "Wilson Garden", "Jayanagar 4th Block", "Jayanagar 9th Block", "Banaswadi", "Kammanahalli", "Lingarajapuram", "Hoodi", "ITPL", "KR Puram", "Ramamurthy Nagar", "Bommanahalli", "Kudlu Gate", "Attibele", "Hosur Road", "Mysore Road", "Magadi Road", "Tumkur Road", "Yeshwantpur", "Peenya", "Dasarahalli"].map(area => (
-          <a href={`/cities/${area.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')}`} class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors">{area}</a>
+          <a href={areaHref(area)} class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors">{area}</a>
         ))}
       </div>
       <p class="text-center text-slate-500">View all <a href="/cities" class="text-blue-600 font-medium underline">46+ Bangalore areas →</a></p>

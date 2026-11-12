@@ -11,6 +11,11 @@ export default defineConfig({
   integrations: [
     react(),
   ],
+  // Astro's dev server rejects unknown Host headers by default, which blocks
+  // proxied preview/dev hosts. Accept any host in development.
+  server: {
+    allowedHosts: true,
+  },
   vite: {
     build: {
       cssCodeSplit: false,
@@ -24,7 +29,7 @@ export default defineConfig({
       nonce: true,
       directives: {
         'default-src': ["'self'"],
-        'script-src': ["'self'", "'nonce-'", 'https://www.googletagmanager.com', 'https://www.google-analytics.com', 'https://clarity.ms', 'https://www.google.com', 'https://app.artibot.ai', 'https://*.artibot.ai'],
+        'script-src': ["'self'", "'nonce-'", "'wasm-unsafe-eval'", 'https://www.googletagmanager.com', 'https://www.google-analytics.com', 'https://clarity.ms', 'https://www.google.com', 'https://app.artibot.ai', 'https://*.artibot.ai'],
         'style-src': ["'self'", "'nonce-'", 'https://fonts.googleapis.com', 'https://app.artibot.ai', 'https://*.artibot.ai'],
         'img-src': ["'self'", 'data:', 'blob:', 'https://www.google-analytics.com', 'https://www.googletagmanager.com', 'https://*.artibot.ai'],
         'font-src': ["'self'", 'https://fonts.gstatic.com'],

@@ -138,6 +138,10 @@ import ContactSection from '../../components/sections/ContactSection.astro';
         showResult();
       }
     }
+    // The step buttons call answer() from inline onclick attributes; module scope
+    // is private, so publish it globally or every click is a no-op.
+    (window as any).answer = answer;
+
     function showResult() {
       for (let i = 1; i <= 5; i++) {
         document.getElementById('risk-q' + i)?.classList.add('hidden');

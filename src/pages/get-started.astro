@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { DEFAULT_OG } from '../utils/ogImage';
 import ContactSection from '../components/sections/ContactSection.astro';
 import TrustStrip from '../components/TrustStrip';
 ---
@@ -8,7 +9,7 @@ import TrustStrip from '../components/TrustStrip';
   title="Request an Insurance Call Back | Insurance Support"
   description="Request a free insurance consultation from Insurance Support, an IRDAI-registered advisor based in Bengaluru. Share your insurance need and preferred contact number."
   canonical="https://insurancesupport.online/get-started/"
-  ogImage="https://insurancesupport.online/images/og/get-started.png"
+  ogImage={DEFAULT_OG}
   pageType="lead-form"
   keywords="insurance consultation Bangalore, free insurance quote India, insurance advisor call back, claim rejection help, policy review Bengaluru"
   dateModified="2026-10-22"
