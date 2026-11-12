@@ -249,3 +249,41 @@ The instruction: `/contact` should be a top-priority page in Google, not an afte
 **NAPs must match.** The address, phone and hours on this page now match the organisation schema and the Google Business Profile. If those three drift apart, Google trusts all of them less — that is the one thing to keep in step manually.
 
 **What is still missing for contact-intent ranking:** the Google Business Profile needs its own posts and photos, the site needs a handful of Bengaluru citations, and the reviews have to be real. A page cannot signal local trust on its own.
+
+---
+
+## 14. Keywords: what was asked for, and what actually helps
+
+The request was "strong keywords on all pages". The honest version of that sentence matters, so here it is first.
+
+**Meta keywords do nothing on Google.** The `<meta name="keywords">` tag has been ignored since 2009 and stuffing it would be a waste of a day. Bing reads it faintly; that is the whole of its value. It is still emitted, because it costs nothing and the file is already there.
+
+**What does move traffic, in order of effect:**
+
+1. **The title tag.** It is the single strongest on-page signal and the only one a searcher sees before deciding to click.
+2. **The H1.** Google treats it as the page's own statement of its subject.
+3. **The first hundred words.** Whether the page answers the query or merely mentions it.
+4. **Internal anchor text.** What other pages call this one.
+5. **Content that is better than the result above it.** Nothing on this list substitutes for that.
+
+So the work went there.
+
+**Rewritten keyword sets** (`src/data/page-keywords.ts`) now describe intent rather than products — "claim rejected what to do India", "insurance ombudsman complaint", "cashless claim rejected hospital", "section 45 insurance act" — instead of "life insurance premium 2026". A keyword list that could belong to any insurance site is not a brief.
+
+**H1s now name the query** on the pages where they named nothing searchable: the tools index ("tools that answer a question"), policy recovery ("Find Your Lost Wealth"), the risk scorecard ("Is Your Family Truly Protected?"), the comparison index ("Compare the choices"), the guides index, the services index, the claim-recovery hub, the brand hub and the FAQ.
+
+**Titles rebuilt where they were weak or stale:**
+
+| Page | Before | After |
+|---|---|---|
+| Service pages | Health Insurance in Bengaluru - Compare Plans | Health Insurance in Bengaluru \| Advisor, Claims & Renewal |
+| 10 case studies | "Total Loss Motor Claim: 9.5 Lakh Settled After IDV Dispute" | "Bajaj Allianz Total Loss: ₹9.5 Lakh IDV Dispute Settled" |
+| Comparison | Best Insurance Plans 2025 | Best Insurance Plans 2026 |
+| IRDAI post | How to File an IRDAI Grievance Against Your Insurance 2026 | IRDAI Grievance Complaint: How to File in 2026 |
+| About pages | both "About Hari Kotian \| Insurance Support" | two distinct titles, both keyword-bearing |
+
+**One remove, not an add:** the services index claimed "12+ years of experience, 2,800+ families served, ₹500+ Cr of coverage managed". Those numbers contradicted the 25-year byline and nothing supports them. Replaced with the IRDAI registration number and the years stated everywhere else.
+
+**The map.** `seo/keyword-map.csv` assigns every indexable page a primary query, an intent and a check: does the title contain it, does the H1 contain it. 235 pages mapped, 28 flagged at the start, 24 now — and roughly twenty of the remaining flags are artefacts of the script deriving a query from a hub URL ("blog", "case studies"), not real gaps.
+
+**What this is worth.** Titles and H1s decide whether a page can rank; they do not decide whether it will. That still comes down to links, reviews and being the best answer — sections 6, 10 and 13.
