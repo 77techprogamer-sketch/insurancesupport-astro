@@ -8,6 +8,9 @@ import ArticleJsonLd from '../../../components/ArticleJsonLd.astro';
 import LanguageSidebar from '../../../components/LanguageSidebar.astro';
 import BreadcrumbJsonLd from '../../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../../components/FAQPageJsonLd.astro';
+import Infographic from '../../../components/Infographic.astro';
+import { getInfographic } from '../../../data/infographics';
+import { splitAtHeading } from '../../../lib/infographic';
 import { marked } from 'marked';
 
 // Generate static paths for all translated posts
@@ -93,6 +96,15 @@ renderer.paragraph = function({ text }) {
 };
 marked.use({ renderer });
 const htmlContent = marked.parse(post.content || '');
+
+// ---- Article infographic -------------------------------------------------
+// Translated posts keep the English slug in `translatedFrom`, which is also the
+// key used for the spec. A missing translation renders nothing rather than
+// dropping an English graphic into a translated page.
+const infographic = getInfographic(slug, lang);
+const articleParts = infographic
+  ? splitAtHeading(htmlContent, infographic.anchor)
+  : { before: htmlContent, after: '' };
 
 const faqs = [];
 const faqSection = (post.content || '').split(/^##\s*FAQ\s*$/im)[1];
@@ -233,7 +245,11 @@ const ogLocaleMap: Record<string, string> = {
 
     <!-- Article Body -->
     <article class="py-12 lg:py-16 bg-white">
-      <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
+      {articleParts.before && <div class="max-w-3xl mx-auto px-4 blog-content" set:html={articleParts.before} />}
+
+      {infographic && <Infographic slug={slug} lang={lang} />}
+
+      {articleParts.after && <div class="max-w-3xl mx-auto px-4 blog-content" set:html={articleParts.after} />}
 
       <!-- Keyword Tags (SEO + User Signal) -->
       {post.tags && post.tags.length > 0 && (

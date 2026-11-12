@@ -51,6 +51,21 @@ const pageNoIndex = Astro.props.noIndex || false;
 const pageCanonical = Astro.props.canonical || Astro.url.href;
 const pageDateModified = Astro.props.dateModified;
 const pageKeywords = Astro.props.keywords;
+
+// Indic-script pages need a web font that covers the script, otherwise the
+// infographic (and the article) fall back to whatever the device has. Only the
+// font for the current language is requested, so English pages are unaffected.
+const SCRIPT_FONTS: Record<string, string> = {
+  hi: 'Noto+Sans+Devanagari',
+  mr: 'Noto+Sans+Devanagari',
+  bn: 'Noto+Sans+Bengali',
+  ta: 'Noto+Sans+Tamil',
+  te: 'Noto+Sans+Telugu',
+  gu: 'Noto+Sans+Gujarati',
+  kn: 'Noto+Sans+Kannada',
+  ml: 'Noto+Sans+Malayalam',
+};
+const pageScriptFont = SCRIPT_FONTS[pageLangCode.split('-')[0]];
 const pageTitle = Astro.props.title;
 const pageSkipDefaultHreflang = Astro.props.skipDefaultHreflang != null ? Astro.props.skipDefaultHreflang : false;
 const pageSkipGlobalLocationSchema = Astro.props.skipGlobalLocationSchema != null ? Astro.props.skipGlobalLocationSchema : false;
@@ -310,6 +325,12 @@ const combinedKeywords = mergedKeywords.length > 0 && pageKeywords
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    {pageScriptFont && (
+      <link
+        href={`https://fonts.googleapis.com/css2?family=${pageScriptFont}:wght@400;500;600;700&display=swap`}
+        rel="stylesheet"
+      />
+    )}
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="Insurance Support | Expert Insurance Guides & Tips" href="/rss.xml" />
     <link rel="describedby" type="text/plain" href="/llms.txt" />

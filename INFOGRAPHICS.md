@@ -13,7 +13,8 @@ LLM answer engines.
 | `src/data/infographics.ts` | One spec per article (the only file you edit to add content) |
 | `src/components/Infographic.astro` | `<figure>` wrapper: SVG + caption + accessible data table |
 | `src/pages/blog/[slug].astro` | Injects the figure into every `blogs.json` post |
-| `src/pages/blog/[lang]/[slug].astro` | Translated posts (not yet wired — see below) |
+| `src/pages/blog/[lang]/[slug].astro` | Injects the figure into translated posts |
+| `src/layouts/BaseLayout.astro` | Loads the Noto Sans script font for non-English pages |
 
 ## Adding an infographic to an article
 
@@ -86,7 +87,7 @@ A standalone page can also be placed before a non-heading element (for example t
 CSR table on `term-insurance-claim-settlement-ratio-2026`) — pick whatever reads best
 in the article body.
 
-## Coverage so far — 31 of ~75 English articles
+## Coverage so far — 31 English articles + 5 Hindi
 
 **Claim rejection and appeal** — insurance claim rejection rates · how to appeal a
 rejected claim · 15 real rejection reasons · health claim rejection rights · the
@@ -108,14 +109,50 @@ claim rejected or delayed · how to file a death claim
 **Other** — nominee vs legal heirs · mis-selling complaints and refunds · term
 insurance claim settlement ratio
 
+### Translated specs
+
+Translated figures live in `TRANSLATED_INFOGRAPHICS` and are keyed by
+**language + the English slug**, because a translated post lives at
+`/blog/<lang>/<english-slug>/` while its own slug is prefixed
+(`hi-insurance-claim-rejection-rate-india-2026-data`).
+
+```ts
+{
+  slug: '<english-slug>',
+  lang: 'hi',
+  eyebrow: '...', title: '...', source: '...', summary: '...',
+  anchor: '...',   // MUST be in the target language — see below
+  blocks: [ ... ],
+}
+```
+
+Four things to get right on a translated spec:
+
+1. **Repeat `anchor` in the target language.** Translated articles have translated
+   headings, so an English anchor will not be found and the figure silently falls
+   back to the top of the post. Check the article's own headings first.
+2. **Translate against the translated article, not the English one.** Some Hindi
+   posts are not literal translations of their English counterparts — for example
+   `how-to-appeal-rejected-insurance-claim-india-2026` runs a 4-step escalation with
+   a ₹30 lakh Ombudsman limit in Hindi, while the English original runs a different
+   structure. The spec follows whatever the page in that language actually says.
+3. **A missing translation renders nothing.** `getInfographic(slug, lang)` does not
+   fall back to English, so a translated page never gets an English graphic.
+4. **Script fonts and metrics are handled centrally.** `SCRIPTS` in
+   `src/lib/infographic.ts` carries the Noto family per language plus a per-script
+   width factor used for wrapping; BaseLayout loads only the font that page needs.
+
+Hindi pilot (5): insurance claim rejection rates · IRDAI grievance process · LIC
+policy revival · health claim settlement ratio · how to appeal a rejected claim.
+
 ## Not yet done
 
-- **Translated posts** (`/blog/<lang>/<slug>/`) do not render infographics yet. This is
-  the next piece of work: the specs are English, so it needs translated spec variants
-  keyed off `post.translatedFrom` in `src/pages/blog/[lang]/[slug].astro`.
-- Remaining English articles: term insurance and ULIP comparisons, life insurance
-  buyer's guides, pension and annuity planning, rider and add-on guides, tax sections
-  80C and 80CCD(1B).
+- **Scale translations.** 20 English articles have translations in all 8 languages,
+  so full coverage is 160 translated specs. Hindi is the pilot; the remaining
+  15 Hindi specs and the other 7 languages are outstanding.
+- **Remaining English articles:** term insurance and ULIP comparisons, life
+  insurance buyer's guides, pension and annuity planning, rider and add-on guides,
+  tax sections 80C and 80CCD(1B).
 
 ## Verifying changes
 

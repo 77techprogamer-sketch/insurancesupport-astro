@@ -11,11 +11,13 @@
  * so the same facts are exposed to crawlers and LLM answer engines.
  */
 import { getInfographic } from '../data/infographics';
-import { renderInfographicSvg } from '../lib/infographic';
+import { renderInfographicSvg, uiString } from '../lib/infographic';
 
 export interface Props {
   /** Article slug — must match an entry in src/data/infographics.ts */
   slug: string;
+  /** Language code. Defaults to 'en'; pass `lang` for translated posts. */
+  lang?: string;
   /** Override the <figcaption> summary (defaults to the spec's summary). */
   caption?: string;
   /** Extra classes for the <figure> wrapper. */
@@ -24,15 +26,16 @@ export interface Props {
 
 const {
   slug,
+  lang = 'en',
   caption,
   class: className = 'max-w-3xl mx-auto px-4',
 } = Astro.props;
-const spec = getInfographic(slug);
+const spec = getInfographic(slug, lang);
 
 let svg = '';
 let height = 0;
 if (spec) {
-  const out = renderInfographicSvg(spec);
+  const out = renderInfographicSvg(spec, lang);
   svg = out.svg;
   height = out.height;
 }
@@ -74,7 +77,7 @@ function tableRows(spec: NonNullable<typeof spec>) {
 
 const rows = spec ? tableRows(spec) : [];
 const captionText = caption ?? spec?.summary ?? '';
-const tableId = `ig-data-${slug.replace(/[^a-zA-Z0-9]/g, '-').slice(0, 48)}`;
+const tableId = `ig-data-${slug.replace(/[^a-zA-Z0-9]/g, '-').slice(0, 48)}-${lang}`;
 ---
 
 {
@@ -82,6 +85,7 @@ const tableId = `ig-data-${slug.replace(/[^a-zA-Z0-9]/g, '-').slice(0, 48)}`;
     <figure
       class:list={['infographic not-prose my-10 scroll-mt-24', className]}
       data-infographic={spec.slug}
+      lang={lang}
     >
       <div class="infographic__frame overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         {svg && <Fragment set:html={svg} />}
@@ -103,7 +107,7 @@ const tableId = `ig-data-${slug.replace(/[^a-zA-Z0-9]/g, '-').slice(0, 48)}`;
             <svg class="h-3.5 w-3.5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
-            View this infographic as data
+            {uiString(lang, 'viewAsData')}
           </summary>
           <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
             <table id={tableId} class="w-full border-collapse text-left text-[13px]">

@@ -15,8 +15,75 @@
 /* Design tokens (mirrors src/styles/globals.css — Insurance Support v2)        */
 /* -------------------------------------------------------------------------- */
 
-const FONT_DISPLAY = "'Plus Jakarta Sans','Inter',system-ui,-apple-system,sans-serif";
-const FONT_BODY = "'Inter','Plus Jakarta Sans',system-ui,-apple-system,sans-serif";
+const LATIN_DISPLAY = "'Plus Jakarta Sans','Inter',system-ui,-apple-system,sans-serif";
+const LATIN_BODY = "'Inter','Plus Jakarta Sans',system-ui,-apple-system,sans-serif";
+
+/* -------------------------------------------------------------------------- */
+/* Script support for translated infographics                                  */
+/* -------------------------------------------------------------------------- */
+
+export type LangCode = 'en' | 'hi' | 'bn' | 'ta' | 'te' | 'mr' | 'gu' | 'kn' | 'ml';
+
+type Script = {
+  /** Web font family prepended to the stack, and loaded by BaseLayout. */
+  family: string;
+  /** Average advance width of this script relative to Latin, used for wrapping. */
+  width: number;
+};
+
+/**
+ * Indic scripts are wider per character than Latin and use combining marks, so
+ * the Latin wrap heuristic would overflow. The width factors below are
+ * deliberately conservative — over-wrapping costs a line, under-wrapping clips
+ * the text.
+ */
+const SCRIPTS: Record<LangCode, Script> = {
+  en: { family: '', width: 1 },
+  hi: { family: 'Noto Sans Devanagari', width: 1.24 },
+  mr: { family: 'Noto Sans Devanagari', width: 1.24 },
+  bn: { family: 'Noto Sans Bengali', width: 1.2 },
+  ta: { family: 'Noto Sans Tamil', width: 1.18 },
+  te: { family: 'Noto Sans Telugu', width: 1.2 },
+  gu: { family: 'Noto Sans Gujarati', width: 1.2 },
+  kn: { family: 'Noto Sans Kannada', width: 1.28 },
+  ml: { family: 'Noto Sans Malayalam', width: 1.3 },
+};
+
+export const LANG_CODES = Object.keys(SCRIPTS) as LangCode[];
+
+/**
+ * Font family to request for a language. Empty for Latin, which is already
+ * covered by the site's default stack.
+ */
+export const scriptFontFamily = (lang: string): string =>
+  (SCRIPTS[lang as LangCode] ?? SCRIPTS.en).family;
+
+/** Chrome strings that appear around the graphic rather than inside it. */
+const UI_STRINGS: Record<LangCode, { viewAsData: string }> = {
+  en: { viewAsData: 'View this infographic as data' },
+  hi: { viewAsData: 'इस इन्फोग्राफ़िक को डेटा के रूप में देखें' },
+  mr: { viewAsData: 'हा इन्फोग्राफिक डेटा म्हणून पहा' },
+  bn: { viewAsData: 'এই ইনফোগ্রাফিকটি ডেটা হিসেবে দেখুন' },
+  ta: { viewAsData: 'இந்த இன்ஃபோகிராஃபிக்கை தரவாகக் காண' },
+  te: { viewAsData: 'ఈ ఇన్ఫోగ్రాఫిక్‌ను డేటాగా చూడండి' },
+  gu: { viewAsData: 'આ ઇન્ફોગ્રાફિકને ડેટા તરીકે જુઓ' },
+  kn: { viewAsData: 'ಈ ಇನ್ಫೋಗ್ರಾಫಿಕ್ ಅನ್ನು ಡೇಟಾವಾಗಿ ನೋಡಿ' },
+  ml: { viewAsData: 'ഈ ഇൻഫോഗ്രാഫിക് ഡാറ്റയായി കാണുക' },
+};
+
+export const uiString = (lang: string, key: keyof typeof UI_STRINGS.en): string =>
+  (UI_STRINGS[lang as LangCode] ?? UI_STRINGS.en)[key];
+
+/**
+ * Set for the duration of one render. Rendering is synchronous, so a module
+ * scoped value stays correct and keeps the helper signatures simple.
+ */
+let SCRIPT: Script = SCRIPTS.en;
+
+const FONT_DISPLAY = () =>
+  SCRIPT.family ? `'${SCRIPT.family}','Plus Jakarta Sans',system-ui,sans-serif` : LATIN_DISPLAY;
+const FONT_BODY = () =>
+  SCRIPT.family ? `'${SCRIPT.family}','Inter',system-ui,sans-serif` : LATIN_BODY;
 
 const C = {
   ink: '#0f172a',
@@ -83,7 +150,7 @@ const esc = (s: string): string =>
     .replace(/"/g, '&quot;');
 
 /** Approximate glyph width factor per font-size for the two brand faces. */
-const charW = (size: number, bold = false) => size * (bold ? 0.575 : 0.535);
+const charW = (size: number, bold = false) => size * (bold ? 0.575 : 0.535) * SCRIPT.width;
 
 /**
  * Greedy word wrap. Returns lines that fit within `maxW` px at `size`px.
@@ -141,7 +208,7 @@ function textBlock(
     .map((l, i) => `<tspan x="${x}" dy="${i === 0 ? 0 : lh}">${esc(l)}</tspan>`)
     .join('');
   return (
-    `<text x="${x}" y="${y}" font-family="${opts.family ?? FONT_BODY}" font-size="${size}"` +
+    `<text x="${x}" y="${y}" font-family="${opts.family ?? FONT_BODY()}" font-size="${size}"` +
     ` fill="${opts.fill ?? C.body}" font-weight="${opts.bold ? 700 : 400}"` +
     ` text-anchor="${anchor}"${opts.opacity != null ? ` opacity="${opts.opacity}"` : ''}>${ts}</text>`
   );
@@ -250,6 +317,8 @@ export type InfographicBlock =
 export type ArticleInfographic = {
   /** Blog post slug (blogs.json) or the slug of a standalone .astro page. */
   slug: string;
+  /** Language of this spec. Defaults to 'en'. */
+  lang?: LangCode;
   /** Small uppercase kicker, e.g. "Claim data". */
   eyebrow: string;
   title: string;
@@ -275,7 +344,7 @@ function sectionHeading(x: number, y: number, heading: string): { svg: string; h
       size: 15.5,
       bold: true,
       fill: C.ink,
-      family: FONT_DISPLAY,
+      family: FONT_DISPLAY(),
       lh: 20,
     }),
     h: wrap(heading, CW - 8, 15.5, true).length * 20 + 14,
@@ -328,7 +397,7 @@ function statsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: '
         size: 27,
         bold: true,
         fill: p.text,
-        family: FONT_DISPLAY,
+        family: FONT_DISPLAY(),
       }),
     );
     out.push(
@@ -386,7 +455,7 @@ function barsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 'b
         size: 12.5,
         bold: true,
         fill: p.text,
-        family: FONT_DISPLAY,
+        family: FONT_DISPLAY(),
       }),
     );
   });
@@ -435,7 +504,7 @@ function timelineBlock(
         bold: true,
         fill: p.text,
         anchor: 'middle',
-        family: FONT_DISPLAY,
+        family: FONT_DISPLAY(),
         lh: 15,
       }),
     );
@@ -490,7 +559,7 @@ function stepsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: '
     // Numbered badge
     out.push(`<circle cx="${x + badge / 2}" cy="${cy + badge / 2}" r="${badge / 2}" fill="${p.dot}"/>`);
     out.push(
-      `<text x="${x + badge / 2}" y="${cy + badge / 2 + 5}" font-family="${FONT_DISPLAY}" font-size="14" font-weight="700" fill="${C.white}" text-anchor="middle">${i + 1}</text>`,
+      `<text x="${x + badge / 2}" y="${cy + badge / 2 + 5}" font-family="${FONT_DISPLAY()}" font-size="14" font-weight="700" fill="${C.white}" text-anchor="middle">${i + 1}</text>`,
     );
 
     // Connector to the next step
@@ -506,7 +575,7 @@ function stepsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: '
         size: 13.5,
         bold: true,
         fill: C.ink,
-        family: FONT_DISPLAY,
+        family: FONT_DISPLAY(),
         lh: 18,
       }),
     );
@@ -555,7 +624,7 @@ function ladderBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 
     // Tier badge
     out.push(roundRect(cardX + 14, cy + 16, 62, 24, 7, C.white, p.stroke));
     out.push(
-      `<text x="${cardX + 45}" y="${cy + 32}" font-family="${FONT_DISPLAY}" font-size="11" font-weight="700" fill="${p.text}" text-anchor="middle">${esc(item.tier)}</text>`,
+      `<text x="${cardX + 45}" y="${cy + 32}" font-family="${FONT_DISPLAY()}" font-size="11" font-weight="700" fill="${p.text}" text-anchor="middle">${esc(item.tier)}</text>`,
     );
 
     out.push(
@@ -563,7 +632,7 @@ function ladderBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 
         size: 13.5,
         bold: true,
         fill: C.ink,
-        family: FONT_DISPLAY,
+        family: FONT_DISPLAY(),
         lh: 18,
       }),
     );
@@ -630,7 +699,7 @@ function compareBlock(
   out.push(roundRect(x + labelW + 4, y, colW - 4, headH, 10, C.blueSoft, C.blueLine));
   out.push(roundRect(x + labelW + colW + 4, y, colW - 4, headH, 10, C.emeraldSoft, C.emeraldLine));
   out.push(
-    `<text x="${x + labelW / 2}" y="${y + headH / 2 + 4}" font-family="${FONT_DISPLAY}" font-size="11" font-weight="700" fill="${C.muted}" text-anchor="middle" letter-spacing="0.6">FACTOR</text>`,
+    `<text x="${x + labelW / 2}" y="${y + headH / 2 + 4}" font-family="${FONT_DISPLAY()}" font-size="11" font-weight="700" fill="${C.muted}" text-anchor="middle" letter-spacing="0.6">FACTOR</text>`,
   );
   out.push(
     textBlock(x + labelW + 4 + (colW - 4) / 2, y + headH / 2 + 5, wrap(b.leftTitle, colW - 28, 13, true), {
@@ -638,7 +707,7 @@ function compareBlock(
       bold: true,
       fill: C.blue,
       anchor: 'middle',
-      family: FONT_DISPLAY,
+      family: FONT_DISPLAY(),
       lh: 16,
     }),
   );
@@ -648,7 +717,7 @@ function compareBlock(
       bold: true,
       fill: C.emerald,
       anchor: 'middle',
-      family: FONT_DISPLAY,
+      family: FONT_DISPLAY(),
       lh: 16,
     }),
   );
@@ -732,7 +801,7 @@ function donutBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: '
 
   if (b.centerValue) {
     out.push(
-      `<text x="${cx}" y="${cy + 2}" font-family="${FONT_DISPLAY}" font-size="24" font-weight="700" fill="${C.ink}" text-anchor="middle">${esc(b.centerValue)}</text>`,
+      `<text x="${cx}" y="${cy + 2}" font-family="${FONT_DISPLAY()}" font-size="24" font-weight="700" fill="${C.ink}" text-anchor="middle">${esc(b.centerValue)}</text>`,
     );
   }
   if (b.centerLabel) {
@@ -753,10 +822,10 @@ function donutBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: '
     const pct = `${Math.round((item.value / total) * 100)}%`;
     out.push(`<rect x="${legendX}" y="${ly - 8}" width="11" height="11" rx="3" fill="${p.dot}"/>`);
     out.push(
-      `<text x="${legendX + 20}" y="${ly + 1}" font-family="${FONT_BODY}" font-size="12" font-weight="600" fill="${C.ink}">${esc(item.label)}</text>`,
+      `<text x="${legendX + 20}" y="${ly + 1}" font-family="${FONT_BODY()}" font-size="12" font-weight="600" fill="${C.ink}">${esc(item.label)}</text>`,
     );
     out.push(
-      `<text x="${legendX + legendW}" y="${ly + 1}" font-family="${FONT_DISPLAY}" font-size="12.5" font-weight="700" fill="${p.text}" text-anchor="end">${pct}</text>`,
+      `<text x="${legendX + legendW}" y="${ly + 1}" font-family="${FONT_DISPLAY()}" font-size="12.5" font-weight="700" fill="${p.text}" text-anchor="end">${pct}</text>`,
     );
     ly += 30;
   });
@@ -783,7 +852,7 @@ function decisionBlock(
 
   out.push(roundRect(x, y, CW, qH, 12, C.blueSoft, C.blueLine));
   out.push(
-    textBlock(x + 20, y + 26, qLines, { size: 13.5, bold: true, fill: C.blue, lh: 18, family: FONT_DISPLAY }),
+    textBlock(x + 20, y + 26, qLines, { size: 13.5, bold: true, fill: C.blue, lh: 18, family: FONT_DISPLAY() }),
   );
 
   let cy = y + qH + 24;
@@ -822,7 +891,7 @@ function decisionBlock(
         bold: true,
         fill: C.ink,
         lh: 17,
-        family: FONT_DISPLAY,
+        family: FONT_DISPLAY(),
       }),
     );
     out.push(
@@ -853,7 +922,12 @@ export type { ArticleInfographic as Spec };
  * Render an article infographic spec into a self-contained, responsive inline
  * <svg> string (plus nothing else — the caller wraps it in a <figure>).
  */
-export function renderInfographicSvg(spec: ArticleInfographic): { svg: string; height: number } {
+export function renderInfographicSvg(
+  spec: ArticleInfographic,
+  lang: string = spec.lang ?? 'en',
+): { svg: string; height: number } {
+  SCRIPT = SCRIPTS[lang as LangCode] ?? SCRIPTS.en;
+
   const out: string[] = [];
   let y = PAD;
 
@@ -865,12 +939,12 @@ export function renderInfographicSvg(spec: ArticleInfographic): { svg: string; h
 
   // Eyebrow + title
   body.push(
-    `<text x="${PAD}" y="${by}" font-family="${FONT_DISPLAY}" font-size="10.5" font-weight="700" fill="${C.blueMid}" letter-spacing="1.4">${esc(spec.eyebrow.toUpperCase())}</text>`,
+    `<text x="${PAD}" y="${by}" font-family="${FONT_DISPLAY()}" font-size="10.5" font-weight="700" fill="${C.blueMid}" letter-spacing="1.4">${esc(spec.eyebrow.toUpperCase())}</text>`,
   );
   by += 24;
   const titleLines = wrap(spec.title, CW - 30, 19.5, true);
   body.push(
-    textBlock(PAD, by, titleLines, { size: 19.5, bold: true, fill: C.ink, family: FONT_DISPLAY, lh: 25 }),
+    textBlock(PAD, by, titleLines, { size: 19.5, bold: true, fill: C.ink, family: FONT_DISPLAY(), lh: 25 }),
   );
   by += titleLines.length * 25 - 4;
 
@@ -928,11 +1002,12 @@ export function renderInfographicSvg(spec: ArticleInfographic): { svg: string; h
   const height = Math.ceil(by + PAD);
 
   // ---- Frame (painted first) ------------------------------------------------
+  const key = `${slugKey(spec.slug)}-${lang}`;
   out.push(
-    `<defs><linearGradient id="ig-${slugKey(spec.slug)}-g" x1="0" y1="0" x2="1" y2="1">` +
+    `<defs><linearGradient id="ig-${key}-g" x1="0" y1="0" x2="1" y2="1">` +
       `<stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f8fafc"/></linearGradient></defs>`,
   );
-  out.push(roundRect(1, 1, W - 2, height - 2, 16, `url(#ig-${slugKey(spec.slug)}-g)`, C.line, 1));
+  out.push(roundRect(1, 1, W - 2, height - 2, 16, `url(#ig-${key}-g)`, C.line, 1));
   // Accent bar on the left edge
   out.push(
     `<path d="M1 17 L1 ${height - 17} A16 16 0 0 1 17 1 L17 1 L17 ${height - 1} L17 1 Z" fill="none"/>`,
@@ -944,9 +1019,9 @@ export function renderInfographicSvg(spec: ArticleInfographic): { svg: string; h
   const label = `${spec.title}${spec.source ? `. Source: ${spec.source}` : ''}`;
   const svg =
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${height}" width="100%" height="auto"` +
-    ` role="img" aria-labelledby="ig-t-${slugKey(spec.slug)}" preserveAspectRatio="xMidYMid meet"` +
+    ` lang="${lang}" role="img" aria-labelledby="ig-t-${key}" preserveAspectRatio="xMidYMid meet"` +
     ` style="display:block;width:100%;height:auto;font-synthesis:none">` +
-    `<title id="ig-t-${slugKey(spec.slug)}">${esc(label)}</title>` +
+    `<title id="ig-t-${key}">${esc(label)}</title>` +
     out.join('') +
     `</svg>`;
 
