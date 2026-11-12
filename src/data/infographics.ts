@@ -2089,6 +2089,517 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
       },
     ],
   },
+  {
+    slug: 'whole-life-vs-term-vs-endowment-insurance-comparison-2026',
+    eyebrow: 'Choosing cover',
+    title: 'Term, Whole Life or Endowment: What ₹1 Crore Costs',
+    source:
+      'Premium bands, returns and the "buy term and invest the rest" math as published in this 2026 guide. Premiums are for a 30-year-old.',
+    summary:
+      'For ₹1 crore of cover at age 30, term insurance costs ₹800–1,200 a month against ₹8,000–15,000 for whole life and ₹6,000–12,000 for endowment. The gap is the argument for buying term and investing the difference.',
+    anchor: 'Head-to-Head Comparison Table',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Monthly premium for ₹1 crore of cover, age 30 (upper end of each band)',
+        items: [
+          { label: 'Term insurance', value: 1200, display: '₹800–1,200', note: '10–40 years of cover, no maturity value', tone: 'accent' },
+          { label: 'Endowment plan', value: 12000, display: '₹6,000–12,000', note: 'Sum assured plus bonuses at maturity', tone: 'warn' },
+          { label: 'Whole life insurance', value: 15000, display: '₹8,000–15,000', note: 'Cover to age 99–100 with a cash value', tone: 'danger' },
+        ],
+        note: 'Both whole life and endowment give you the cover and a 4–6% return on the savings built up inside the policy.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'What each one is actually for',
+        items: [
+          { tier: 'Term', title: 'Pure protection', detail: '10–40 years of cover, no maturity benefit and no cash value, but high flexibility through riders. Best for income replacement.', meta: 'Section 80C', tone: 'accent' },
+          { tier: 'Whole life', title: 'Lifetime protection plus savings', detail: 'Cover runs to age 99–100. A cash value builds at roughly 4–6% and can be tapped in an emergency. Best for estate planning and legacy.', meta: 'Section 80C', tone: 'primary' },
+          { tier: 'Endowment', title: 'Goal-based savings plus cover', detail: 'A 10–30 year term paying sum assured plus bonuses at maturity, with a surrender value if you exit early. Roughly 4–6% and the least flexible of the three.', meta: 'Section 80C', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'Buy term and invest the rest',
+        columns: 3,
+        items: [
+          { value: '₹7,000/mo', label: 'The gap between a ₹1 crore term plan and a ₹10 lakh endowment, at age 30', tone: 'accent' },
+          { value: '₹1.15 crore', label: 'What that gap becomes over 25 years at an assumed 12%', tone: 'accent' },
+          { value: '₹10–15 lakh', label: 'What the endowment plan itself would have paid at maturity', note: 'And you keep the ₹1 crore of term cover either way', tone: 'warn' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'lic-joint-life-policy-benefits-eligibility-2026',
+    eyebrow: 'LIC joint life',
+    title: 'One Policy for Two Lives: What LIC Joint Life Costs and Saves',
+    source:
+      'LIC joint life eligibility rules and the premium comparison as published in this 2026 guide. Figures are the guide’s worked example over a 25-year term.',
+    summary:
+      'A joint life policy covers two lives on one contract. In the guide’s example it costs ₹1,85,000 a year against ₹4,40,000 for two separate policies — but pays once on first death, and only a handful of LIC plans offer it.',
+    anchor: 'Eligibility Criteria for LIC Joint Life Policies',
+    blocks: [
+      {
+        kind: 'stats',
+        heading: 'Who qualifies',
+        items: [
+          { value: '18–50', label: 'Entry age for both lives', note: 'Neither life may be above 70 at maturity', tone: 'primary' },
+          { value: '20 years', label: 'Maximum age difference between the two lives', tone: 'primary' },
+          { value: '₹5 lakh', label: 'Sum assured above which both lives must be medically examined', tone: 'warn' },
+          { value: '₹2 lakh', label: 'Minimum combined sum assured', note: 'Typically up to ₹50 lakh for non-medical cases', tone: 'neutral' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Joint life against two individual policies',
+        leftTitle: 'Joint life policy',
+        rightTitle: 'Two individual policies',
+        rows: [
+          { label: 'Annual premium', left: '₹1,85,000 combined', right: '₹2,20,000 each — ₹4,40,000' },
+          { label: 'Total over 25 years', left: '₹46.25 lakh', right: '₹1.10 crore' },
+          { label: 'Payout on first death', left: '₹50 lakh, one single payout', right: '₹50 lakh, and the other policy carries on' },
+          { label: 'Cover for the survivor', left: 'Continues free', right: 'Must keep paying premiums' },
+          { label: 'Section 80C', left: 'One claim between you', right: 'Two separate claims' },
+          { label: 'Choice of plan', left: 'Only a few LIC plans offer it', right: 'Any plan you like' },
+          { label: 'If both survive to maturity', left: 'One joint payout', right: 'Two separate payouts' },
+        ],
+        note: 'Drawbacks the guide flags: a single point of failure, limited plan selection, a more complicated claim for the survivor, and no separate bonus accumulation.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'LIC plans that offer the joint life option',
+        items: [
+          { tier: '915', title: 'Jeevan Anand', detail: 'Endowment with a whole-life extension. Sum assured plus bonuses pay out on first death and cover continues for the survivor.', meta: 'From inception', tone: 'accent' },
+          { tier: '870', title: 'Jeevan Lakshya', detail: 'Endowment with an income benefit — an annual payout after maturity, with joint life lowering the premium burden.', meta: 'Available as an option', tone: 'primary' },
+          { tier: '914', title: 'New Endowment Plan', detail: 'A simple pure endowment with guaranteed additions and the lowest premium of the three.', meta: 'Available on request', tone: 'primary' },
+          { tier: '873', title: 'Amritbaal', detail: 'A non-linked child endowment, letting a parent cover themselves with the child as secondary life.', meta: 'Limited — check the branch', tone: 'neutral' },
+        ],
+        note: 'LIC accepts spouses, business partners with insurable-interest documentation, and in some variants a parent and adult child. One of the two lives must be the proposer.',
+      },
+    ],
+  },
+  {
+    slug: 'motor-insurance-in-india-2026-car-and-two-wheeler-insurance-complete-guide',
+    eyebrow: 'Motor insurance',
+    title: 'The No-Claim Bonus Ladder and What Add-Ons Really Cost',
+    source:
+      'NCB discount slabs and 2026 add-on pricing as published in this guide. Costs are indicative and vary by insurer, IDV and city.',
+    summary:
+      'Every claim-free year moves you up the no-claim bonus ladder, from 20% after one year to a 50% discount on your own-damage premium after five. The right add-ons cost a few hundred rupees; NCB protection costs ₹300–800.',
+    anchor: 'No Claim Bonus (NCB) Explained',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Discount on your own-damage premium, by claim-free years',
+        max: 50,
+        items: [
+          { label: 'After 1 claim-free year', value: 20, display: '20%', tone: 'primary' },
+          { label: 'After 2 claim-free years', value: 25, display: '25%', tone: 'primary' },
+          { label: 'After 3 claim-free years', value: 35, display: '35%', tone: 'accent' },
+          { label: 'After 4 claim-free years', value: 45, display: '45%', tone: 'accent' },
+          { label: 'After 5 claim-free years', value: 50, display: '50%', tone: 'accent' },
+        ],
+        note: 'NCB belongs to you, not the insurer — it transfers when you change insurer or buy a new vehicle.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'The add-ons worth knowing, and what they add to the premium',
+        items: [
+          { tier: '+15–20%', title: 'Zero Depreciation', detail: 'Full replacement cost of parts with no depreciation deducted. Best for new cars.', meta: 'Up to 5–7 years', tone: 'accent' },
+          { tier: '+₹500–1,500', title: 'Engine Protection', detail: 'Water ingression and oil-leakage damage. Best for flood-prone areas.', meta: 'Up to 7–10 years', tone: 'primary' },
+          { tier: '+10–15%', title: 'Return to Invoice', detail: 'Bridges the gap between the IDV and what you actually paid. Best for new cars.', meta: 'Up to 3 years', tone: 'primary' },
+          { tier: '+₹300–800', title: 'NCB Protection', detail: 'Keeps your accumulated no-claim bonus intact after one claim.', meta: 'Any age', tone: 'primary' },
+          { tier: '+₹200–500', title: 'Roadside Assistance', detail: 'Towing, tyre change, battery jump and fuel delivery. Best for highway travellers.', meta: 'Any age', tone: 'neutral' },
+        ],
+        note: 'Percentage add-ons are charged on the own-damage premium; the rest are flat fees. A ₹15 lakh personal accident cover for the owner-driver is mandatory, not optional.',
+      },
+      {
+        kind: 'compare',
+        heading: 'Comprehensive, or third-party plus pick-and-choose?',
+        leftTitle: 'Comprehensive policy',
+        rightTitle: 'Third-party + selective add-ons',
+        rows: [
+          { label: 'Vehicle age', left: 'New to 5–7 years old', right: 'Older than 7–8 years' },
+          { label: 'Vehicle value', left: 'High value — premium cars and SUVs', right: 'Low market value' },
+          { label: 'Usage', left: 'Daily commute, long drives', right: 'Occasional use, city only' },
+          { label: 'Risk profile', left: 'Flood-prone or high-theft area', right: 'Secure parking, low-risk area' },
+          { label: 'Budget', left: 'Can afford 1.5–2x the third-party premium', right: 'Tight budget, minimum compliance' },
+          { label: 'Add-ons that fit', left: 'Zero dep, engine protect, RTI, NCB protect', right: 'Engine protect if flood-prone, roadside assistance' },
+        ],
+        note: 'The guide’s recommendation: for most private cars under 7 years, comprehensive with zero depreciation and engine protection is the sweet spot.',
+      },
+    ],
+  },
+  {
+    slug: 'sme-insurance-in-india-2026-complete-guide-for-small-and-medium-businesses',
+    eyebrow: 'Business cover',
+    title: 'Building an SME Insurance Portfolio by Business Type',
+    source:
+      'SME insurance products, IRDAI standardised Bharat packages and portfolio design steps as published in this 2026 guide.',
+    summary:
+      'The right portfolio depends on what the business does: a factory needs fire, machinery and Workmen’s Compensation, a services firm needs professional indemnity and cyber, a retailer needs burglary and goods in transit. Underinsurance triggers the average clause.',
+    anchor: 'Decision Framework',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'Highest-priority covers, by what you do',
+        items: [
+          { tier: 'Manufacturing', title: 'Fire, machinery, people', detail: 'Fire and allied perils, machinery breakdown, burglary, Workmen’s Compensation and business interruption.', meta: 'Highest priority', tone: 'danger' },
+          { tier: 'IT / services', title: 'Advice, data, decisions', detail: 'Professional indemnity, cyber liability, Directors & Officers cover and an office package.', meta: 'Highest priority', tone: 'primary' },
+          { tier: 'Retail / wholesale', title: 'Stock, on site and in transit', detail: 'Burglary, fire, goods in transit (marine) and public liability.', meta: 'Highest priority', tone: 'warn' },
+        ],
+        note: 'Workmen’s Compensation is mandatory under the Factories Act and labour law; public liability is mandatory for hazardous industries under the Public Liability Insurance Act.',
+      },
+      {
+        kind: 'compare',
+        heading: 'A packaged policy or covers bought one at a time',
+        leftTitle: 'Bharat package policy',
+        rightTitle: 'Standalone covers',
+        rows: [
+          { label: 'What it is', left: 'One bundled policy — Bharat Sookshma or Laghu Udyam Suraksha', right: 'Individual policies bought one at a time' },
+          { label: 'Sum insured ceiling', left: '₹5 crore (Sookshma) or ₹50 crore (Laghu)', right: 'No statutory ceiling' },
+          { label: 'Administration', left: 'One policy, one renewal date', right: 'Several policies and renewal dates' },
+          { label: 'Cover design', left: 'Standardised wordings set by IRDAI', right: 'Tailored to your specific risk' },
+          { label: 'Best for', left: 'Micro and small enterprises wanting breadth cheaply', right: 'Larger businesses or unusual risks' },
+        ],
+        note: 'The guide’s rule: value assets at current replacement cost, not book value. Underinsurance triggers the average clause, which cuts every claim in proportion to what you under-declared.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The numbers behind the advice',
+        columns: 3,
+        items: [
+          { value: '30%+', label: 'Of India’s GDP comes from SMEs', tone: 'primary' },
+          { value: '₹50 crore', label: 'Sum insured ceiling under Bharat Laghu Udyam Suraksha', note: '₹5 crore under Bharat Sookshma', tone: 'accent' },
+          { value: '18%', label: 'GST on commercial insurance premiums', note: 'Reclaimable as ITC if you are GST-registered', tone: 'warn' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'lic-latest-plans-2026-jeevan-utsav-amritbaal-index-plus',
+    eyebrow: 'LIC plans',
+    title: 'LIC’s 2026 Flagships: Income, a Child’s Corpus, or Market Growth',
+    source:
+      'LIC plan features, premium paying terms and the retirement case study as published in this 2026 guide.',
+    summary:
+      'Jeevan Utsav is a whole-life plan built for guaranteed lifetime income, Amritbaal a child endowment with guaranteed additions of about ₹80 per ₹1,000, and Index Plus a unit-linked plan for long-term market growth.',
+    anchor: 'Comparison Table',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'The three flagship plans',
+        items: [
+          { tier: '871', title: 'Jeevan Utsav', detail: 'Whole life with fixed guaranteed additions, not linked to markets. Built for a lifelong regular cash flow.', meta: '5–16 year PPT', tone: 'accent' },
+          { tier: '876', title: 'Amritbaal', detail: 'A child endowment with guaranteed additions of roughly ₹80 per ₹1,000 of sum assured. Built for an education corpus.', meta: '5–7 year PPT', tone: 'primary' },
+          { tier: '829', title: 'Index Plus', detail: 'Unit-linked, so the value tracks the market and moves with it. Built for long-term wealth creation.', meta: '10–25 year PPT', tone: 'warn' },
+        ],
+        note: 'PPT is the premium paying term — the number of years you pay, which is shorter than the policy term on the traditional plans.',
+      },
+      {
+        kind: 'compare',
+        heading: 'Guaranteed or market-linked',
+        leftTitle: 'Guaranteed (Utsav, Amritbaal)',
+        rightTitle: 'Market-linked (Index Plus)',
+        rows: [
+          { label: 'How the return is set', left: 'Fixed guaranteed additions declared up front', right: 'Tracks the index and moves with the market' },
+          { label: 'Premium paying term', left: '5–16 years (Utsav), 5–7 years (Amritbaal)', right: '10–25 years' },
+          { label: 'Who it suits', left: 'Retirees, income seekers, parents funding a child’s education', right: 'Long-term equity investors comfortable with volatility' },
+          { label: 'The trade-off', left: 'Returns may trail inflation over long periods', right: 'The value can fall as well as rise' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'The guide’s retirement case study',
+        columns: 3,
+        items: [
+          { value: '15 years', label: 'Premium paying term on the Jeevan Utsav plan', tone: 'accent' },
+          { value: '10%', label: 'Guaranteed annual payout from age 60, for life', tone: 'accent' },
+          { value: '6 years', label: 'Premium paying term on the Amritbaal plan for his daughter', note: 'Ramesh, 45, a Nagpur contractor, combined lifelong income with his 12-year-old’s education fund', tone: 'primary' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'bike-insurance-engine-protection-cover-guide-2026',
+    eyebrow: 'Two-wheeler add-ons',
+    title: 'Why a Comprehensive Bike Policy Still Rejects Engine Claims',
+    source:
+      'Standard policy exclusions, add-on coverage and 2026 pricing as published in this guide. Repair costs vary by bike model.',
+    summary:
+      'A standard comprehensive policy classes water-damaged engines as mechanical breakdown and excludes them. Engine protection costs ₹150–500 a year and covers what a hydrolocked engine costs to fix: ₹15,000 to over ₹1,00,000.',
+    anchor: 'How Much Does Engine Protection Cover Cost?',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'A hydrolocked engine, with and without the add-on',
+        leftTitle: 'Standard comprehensive',
+        rightTitle: 'With engine protection',
+        rows: [
+          { label: 'How it is classified', left: 'Mechanical or electrical breakdown — an exclusion', right: 'A covered peril once the add-on is attached' },
+          { label: 'Water ingression', left: 'Not covered', right: 'Cylinders, pistons and crankshaft covered' },
+          { label: 'Hydrostatic lock', left: 'Not covered', right: 'Covered' },
+          { label: 'Oil leakage causing seizure', left: 'Not covered', right: 'Covered' },
+          { label: 'Gearbox damage from water', left: 'Not covered', right: 'Covered by some insurers — check the wording' },
+        ],
+        note: 'Ride through a flooded underpass without the add-on and the claim is rejected outright.',
+      },
+      {
+        kind: 'stats',
+        heading: 'A few hundred rupees against a five-figure repair',
+        columns: 3,
+        items: [
+          { value: '₹150–500', label: 'Annual cost of engine protection for a standard bike', tone: 'accent' },
+          { value: '₹200–300', label: 'Typical premium on a bike with ₹1 lakh IDV', tone: 'primary' },
+          { value: '₹15k–1L', label: 'Cost to repair a hydrolocked engine, by model', note: 'The guide puts the typical repair at ₹30,000–80,000', tone: 'danger' },
+        ],
+      },
+      {
+        kind: 'decision',
+        heading: 'Should you add it?',
+        question: 'Where do you ride, and where does the bike sit?',
+        branches: [
+          { condition: 'You ride in a flood-prone city', outcome: 'Yes — strongly', detail: 'Mumbai, Chennai, Kolkata, Bengaluru and Hyderabad during heavy monsoons.', tone: 'accent' },
+          { condition: 'It is parked in a basement or low-lying area', outcome: 'Yes', detail: 'Standing water is the most common route to hydrostatic lock.', tone: 'accent' },
+          { condition: 'You commute through the monsoon', outcome: 'Yes', detail: 'A flooded underpass is exactly the scenario the add-on exists for.', tone: 'primary' },
+          { condition: 'You own a premium bike', outcome: 'Yes', detail: 'Engine repair and replacement costs scale sharply with the model.', tone: 'primary' },
+          { condition: 'Arid region, dry-season riding, or a very old bike', outcome: 'You can skip it', detail: 'Low water exposure, or the engine is worth less than the claim.', tone: 'neutral' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'loan-against-insurance-policy-in-india-2026-get-instant-funds-without-surrendering',
+    eyebrow: 'Policy loans',
+    title: 'Borrowing Against a Policy: Rates, Limits and Why Lenders Say No',
+    source:
+      'LIP eligibility, 2026 insurer rates and rejection reasons as published in this guide. GST treatment as of 22 September 2025.',
+    summary:
+      'You can borrow 15–90% of a policy’s surrender value at 9.5–12.5% a year, with approval in 24–48 hours for existing customers. Most rejections come from a lapsed policy, overdue premiums or fewer than two years left to maturity.',
+    anchor: 'Loan Against Insurance Policy (LIP)',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Interest rates by insurer, 2026',
+        max: 13,
+        items: [
+          { label: 'SBI Life', value: 11.5, display: '11.5%', note: '₹250–500 fee, ₹10,000 minimum', tone: 'warn' },
+          { label: 'Tata AIA', value: 11.25, display: '11.25%', note: '₹300–600 fee, ₹10,000 minimum', tone: 'warn' },
+          { label: 'LIC', value: 11.0, display: '11.0%', note: 'No processing fee, ₹5,000 minimum', tone: 'primary' },
+          { label: 'ICICI Pru', value: 10.75, display: '10.75%', note: 'No processing fee, ₹5,000 minimum', tone: 'primary' },
+          { label: 'HDFC Life', value: 10.5, display: '10.5%', note: 'No processing fee, ₹5,000 minimum', tone: 'accent' },
+          { label: 'Max Life', value: 10.5, display: '10.5%', note: 'No processing fee, ₹5,000 minimum', tone: 'accent' },
+        ],
+        note: 'Rates across the market run from 9.5% to 12.5% a year. GST at 18% applies to the interest and any processing fee; there is no TDS on policy loans.',
+      },
+      {
+        kind: 'stats',
+        heading: 'How much you can get, and how fast',
+        items: [
+          { value: '3 years', label: 'Minimum completed policy term before you can borrow', tone: 'primary' },
+          { value: '90%', label: 'Maximum loan, as a share of surrender value', note: 'The floor is 15%', tone: 'accent' },
+          { value: '24–48 hrs', label: 'Approval time for existing customers', tone: 'accent' },
+          { value: '9.5–12.5%', label: 'Interest rate range across insurers in 2026', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'How to apply',
+        items: [
+          { title: 'Request a quote', detail: 'Through the insurer’s portal or at a branch.', tone: 'primary' },
+          { title: 'Submit the documents', detail: 'Application form, the policy document, your latest premium receipt, plus ID and address proof.', tone: 'primary' },
+          { title: 'Valuation', detail: 'The insurer values the policy using the 2026 reversionary bonus rate.', tone: 'primary' },
+          { title: 'Approval', detail: '24–48 hours if you are already a customer of that insurer.', tone: 'accent' },
+          { title: 'Sign the agreement', detail: 'Executed on the insurer’s letterhead.', tone: 'primary' },
+          { title: 'Disbursal', detail: 'By NEFT, cheque or demand draft.', tone: 'accent' },
+        ],
+        note: 'Common rejection reasons: the policy has been lapsed more than 2 years, premiums are overdue by more than 30 days, fewer than 2 years remain to maturity, the nomination is wrong, or the policy is already pledged.',
+      },
+    ],
+  },
+  {
+    slug: 'term-life-insurance-complete-guide',
+    eyebrow: 'Term insurance',
+    title: 'How Much Cover to Buy, and What a Lakh of Premium Buys',
+    source:
+      'Human Life Value formula, age-based multiples and premium comparison as published in this 2026 guide.',
+    summary:
+      'A quick rule is 15–20 times annual income in your twenties and thirties, tapering to 5–10 times by your fifties. One lakh of annual premium buys ₹1 crore of term cover against ₹5–7 lakh in an endowment plan.',
+    anchor: 'How Much Life Cover Do You Need?',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'The income multiple, by age',
+        items: [
+          { tier: '25–35', title: '15–20x annual income', detail: 'Your earning years are at their longest and dependents are youngest, so the multiple is highest.', meta: 'Highest', tone: 'accent' },
+          { tier: '35–45', title: '10–15x annual income', detail: 'Fewer working years remain and there is usually some savings built up to offset the gap.', meta: 'Mid', tone: 'primary' },
+          { tier: '45–55', title: '5–10x annual income', detail: 'Children are closer to independence and outstanding liabilities are smaller.', meta: 'Lowest', tone: 'warn' },
+        ],
+        note: 'Human Life Value = (annual income × years left) + debts + future expenses − savings. The guide’s example: ₹10 lakh income, 25 years left, ₹40 lakh home loan, ₹30 lakh education, ₹10 lakh savings — ₹3 crore of cover.',
+      },
+      {
+        kind: 'bars',
+        heading: 'Cover bought with ₹1 lakh of annual premium',
+        items: [
+          { label: 'Term insurance', value: 10000000, display: '₹1 crore', note: '₹10–15 of premium per ₹1 lakh of cover', tone: 'accent' },
+          { label: 'ULIP', value: 2500000, display: '₹15–25 lakh', note: '₹500–800 per ₹1 lakh of cover', tone: 'primary' },
+          { label: 'Endowment plan', value: 700000, display: '₹5–7 lakh', note: '₹1,500–2,000 per ₹1 lakh of cover', tone: 'warn' },
+          { label: 'Money-back plan', value: 400000, display: '₹3–4 lakh', note: '₹2,000–3,000 per ₹1 lakh of cover', tone: 'danger' },
+        ],
+        note: 'Bar lengths use the upper end of each band. The bottom line in the guide: buy term for cover, invest the rest, and you get 3–5x the cover and better returns.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The tax position',
+        columns: 3,
+        items: [
+          { value: '₹1.5 lakh', label: 'Section 80C deduction on premiums, per year', tone: 'accent' },
+          { value: '10(10D)', label: 'The death benefit your nominee receives is entirely tax-free', tone: 'accent' },
+          { value: '10%', label: 'Premium must not exceed this share of sum assured for tax-free maturity', tone: 'warn' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'health-insurance-in-india-2026-complete-buyer-s-guide-with-tax-benefits',
+    eyebrow: 'Health cover',
+    title: 'When Your Health Policy Actually Starts Paying',
+    source:
+      'Waiting periods, cashless process and 2025-26 claim settlement ratios as published in this 2026 guide.',
+    summary:
+      'Cover is not immediate: accidents are covered from day one, everything else waits 30 days, named conditions wait 1–2 years and pre-existing diseases 2–4 years. On the settlement side, HDFC Ergo leads 2025-26 at 99%.',
+    anchor: 'Waiting Period in Health Insurance',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'The waiting periods, shortest to longest',
+        items: [
+          { tier: 'Day 1', title: 'Accidents', detail: 'The one thing the initial wait does not apply to — accident cover starts immediately.', meta: 'Immediate', tone: 'accent' },
+          { tier: '30 days', title: 'Initial waiting period', detail: 'Nothing else is covered for the first month of the policy.', meta: 'Except accidents', tone: 'warn' },
+          { tier: '1–2 years', title: 'Specific disease waiting period', detail: 'Named conditions such as cataract or hernia are excluded until this runs out.', meta: 'Varies by condition', tone: 'warn' },
+          { tier: '2–4 years', title: 'Pre-existing disease', detail: 'Anything you were already living with when you proposed for the policy.', meta: 'Longest wait', tone: 'danger' },
+        ],
+        note: 'Top-up and super top-up plans sit above a deductible you choose; group health cover is provided by your employer and ends when you leave.',
+      },
+      {
+        kind: 'bars',
+        heading: 'Claim settlement ratios, 2025-26',
+        max: 100,
+        items: [
+          { label: 'HDFC Ergo (Health)', value: 99, display: '99%', note: 'Fastest cashless processing', tone: 'accent' },
+          { label: 'Aditya Birla Health', value: 94, display: '94%', note: 'Strong network in tier-2 cities', tone: 'primary' },
+          { label: 'Star Health', value: 92, display: '92%', note: 'Widest hospital network', tone: 'primary' },
+          { label: 'Niva Bupa', value: 91, display: '91%', note: 'Strong pre-existing disease cover', tone: 'primary' },
+          { label: 'Care Health', value: 90, display: '90%', note: 'Best senior citizen plans', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'The cashless route, step by step',
+        items: [
+          { title: 'Go to a network hospital', detail: 'Cashless only works inside the insurer’s network.', tone: 'primary' },
+          { title: 'Show your card at the TPA desk', detail: 'Your insurance card or policy number identifies the cover.', tone: 'primary' },
+          { title: 'The hospital seeks pre-authorisation', detail: 'IRDAI timelines: within 1 hour for planned treatment, 2 hours in an emergency.', tone: 'warn' },
+          { title: 'Get treated', detail: 'The hospital bills the insurer directly. A surveyor, if needed, is appointed within 48 hours.', tone: 'primary' },
+          { title: 'Pay only what is not covered', detail: 'Final settlement must happen within 30 days of the insurer receiving documents.', tone: 'accent' },
+        ],
+        note: 'Intimate the insurer within 24–48 hours of hospitalisation.',
+      },
+    ],
+  },
+  {
+    slug: 'critical-illness-insurance-in-india-2026-do-you-really-need-it-complete-guide',
+    eyebrow: 'Critical illness',
+    title: 'What a Critical Illness Payout Is Actually For',
+    source:
+      'CI structures, the 37 mandated illnesses and the case study as published in this 2026 guide.',
+    summary:
+      'Mediclaim reimburses the hospital. A critical illness policy pays the full sum insured on diagnosis, to spend on anything — lost salary, EMIs, school fees. In the guide’s case study, ₹25 lakh arrived 14 days after diagnosis.',
+    anchor: 'Comparison Table',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'Reimbursement against a lump sum',
+        leftTitle: 'Indemnity (mediclaim)',
+        rightTitle: 'Critical illness (benefit)',
+        rows: [
+          { label: 'What triggers the payout', left: 'You run up a hospital bill', right: 'You are diagnosed with a listed illness' },
+          { label: 'How much you receive', left: 'The actual bill, up to your sum insured', right: 'The whole sum insured, as a lump sum' },
+          { label: 'What the money is for', left: 'The hospital', right: 'Anything — treatment, lost income, EMIs' },
+          { label: 'Employer overlap', left: 'Often already provided by your employer', right: 'Employer group CI is usually small or absent' },
+        ],
+        note: 'India mandates a standard list of 37 critical illnesses, so definitions are consistent across insurers.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'Three ways to buy it',
+        items: [
+          { tier: 'Standalone', title: '₹10 lakh to ₹2 crore+', detail: 'Runs on its own and is renewable for life — it does not depend on any other policy.', meta: 'Moderate to high cost', tone: 'accent' },
+          { tier: 'Health rider', title: '₹5 lakh to ₹25 lakh', detail: 'Cheaper, but it ends if the base health policy pays out, and renewal is tied to that policy.', meta: 'Low to moderate cost', tone: 'primary' },
+          { tier: 'Term rider', title: 'Equal to term cover, or capped', detail: 'The cheapest route, but it usually terminates the base term plan on payout and only runs for the term.', meta: 'Lowest cost', tone: 'warn' },
+        ],
+        note: 'Check two clauses before buying: the survival period — how long you must live after diagnosis — and the waiting period for pre-existing disease.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The guide’s case study',
+        columns: 3,
+        items: [
+          { value: '₹6 lakh', label: 'Hospital bill covered by his corporate health policy', tone: 'primary' },
+          { value: '14 days', label: 'From diagnosis and verification to ₹25 lakh in his bank account', tone: 'accent' },
+          { value: '₹1.2 lakh', label: 'Monthly outgo — EMIs, household costs and school fees — during six months off work', note: 'Vikram, 39, was diagnosed with early-stage colon cancer in 2025', tone: 'warn' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'term-insurance-vs-life-insurance-key-differences-every-indian-must-know-2026',
+    eyebrow: 'Term vs traditional',
+    title: 'Term vs Traditional Cover: The Same Lakh, Very Different Outcomes',
+    source:
+      'Premium and cover comparison as published in this 2026 guide. Premiums quoted for a 30-year-old non-smoker.',
+    summary:
+      'Term insurance buys up to ₹10 crore of cover; a traditional plan buys ₹10–20 lakh for a far larger premium. The difference, invested, is what makes "buy term and invest the rest" work.',
+    anchor: 'Life Insurance FAQ',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'Term against traditional life insurance',
+        leftTitle: 'Term insurance',
+        rightTitle: 'Traditional plans',
+        rows: [
+          { label: 'Cover you can buy', left: 'Up to ₹10 crore or more for a modest premium', right: 'Sum assured is limited relative to the premium' },
+          { label: 'Monthly premium at 30', left: '₹500–800 for ₹1 crore of cover', right: '₹5,000–15,000 for ₹10–20 lakh of cover' },
+          { label: 'Maturity benefit', left: 'None — it is pure protection', right: 'Guaranteed returns plus bonuses' },
+          { label: 'Investment component', left: 'None', right: 'A significant savings component' },
+          { label: 'Policy terms', left: '10–40 years, some running to age 99', right: 'Endowment, money-back or whole life' },
+          { label: 'If you survive the term', left: 'Nothing is payable', right: 'Sum assured plus bonuses at maturity' },
+        ],
+        note: 'Both get Section 80C on premiums up to ₹1.5 lakh and Section 10(10D) on the proceeds.',
+      },
+      {
+        kind: 'bars',
+        heading: 'Monthly premium for the cover each one provides, upper end of each band',
+        items: [
+          { label: 'Term — ₹1 crore of cover', value: 800, display: '₹500–800', tone: 'accent' },
+          { label: 'Traditional — ₹10–20 lakh of cover', value: 15000, display: '₹5,000–15,000', tone: 'danger' },
+        ],
+        note: 'Bar lengths use the upper end of each band. Roughly twenty times the premium for one-tenth to one-fiftieth of the cover.',
+      },
+      {
+        kind: 'stats',
+        heading: 'Buy term and invest the rest',
+        columns: 3,
+        items: [
+          { value: '₹10,000', label: 'A year for ₹1 crore of term cover, in the guide’s example', tone: 'accent' },
+          { value: '₹1,50,000', label: 'A year for a ₹20 lakh endowment plan', tone: 'warn' },
+          { value: '₹3.8 crore', label: 'What the ₹1.4 lakh yearly difference builds in 20 years at 12%', tone: 'accent' },
+        ],
+        note: 'Traditional cover still suits four groups: people who struggle to invest on their own, conservative investors who want guaranteed returns, estate planning, and anyone who needs a forced savings mechanism.',
+      },
+    ],
+  },
 ];
 
 /* -------------------------------------------------------------------------- */

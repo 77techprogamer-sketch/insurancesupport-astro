@@ -87,7 +87,7 @@ A standalone page can also be placed before a non-heading element (for example t
 CSR table on `term-insurance-claim-settlement-ratio-2026`) — pick whatever reads best
 in the article body.
 
-## Coverage so far — 44 English articles + 5 Hindi
+## Coverage so far — 55 English articles + 5 Hindi
 
 **Claim rejection and appeal** — insurance claim rejection rates · how to appeal a
 rejected claim · 15 real rejection reasons · health claim rejection rights · the
@@ -104,21 +104,33 @@ claim issues · best plans for parents above 60
 **LIC** — policy revival · revival after 5 years · lapsed-policy revival interest
 and loan options · maturity claim process · maturity amount calculator and bonus
 rates · death claim rejected or delayed · how to file a death claim · accidental
-death and permanent disability riders · premium payment modes and grace periods
+death and permanent disability riders · premium payment modes and grace periods ·
+joint life policies · 2026 flagship plans
+
+**Business and niche** — SME insurance portfolios · loan against an insurance
+policy
 
 **Motor** — claim process · surveyor dispute · how to calculate IDV · zero
-depreciation add-on
+depreciation add-on · engine protection for bikes · car and two-wheeler guide
+(NCB ladder and add-ons)
 
 **Tax and retirement** — Section 80C insurance deduction · GST on life insurance
 premium · NPS 80CCD(1B) · deferred vs immediate annuity under 80CCC and 10(10A) ·
 pension plans
 
 **Choosing cover** — life insurance buyer's guide · money-back policy vs term
-insurance plus SIP
+insurance plus SIP · term vs whole life vs endowment · term vs traditional life
+insurance · term life insurance guide · critical illness cover
 
 **Other** — nominee vs legal heirs · mis-selling complaints and refunds · term
 insurance claim settlement ratio · health insurance portability (switching
 insurers)
+
+- **Bar values must be right-aligned.** `barsBlock` used to left-align the
+  value in a fixed 66px gutter, so any `display` string longer than about nine
+  characters ran off the canvas. The gutter is now 96px and the value is
+  anchored `end` at the content edge, so a long value grows leftwards into its
+  own space instead of over the edge.
 
 ### Correcting the source article
 
@@ -201,9 +213,10 @@ policy revival · health claim settlement ratio · how to appeal a rejected clai
 - **Scale translations.** 20 English articles have translations in all 8 languages,
   so full coverage is 160 translated specs. Hindi is the pilot; the remaining
   15 Hindi specs and the other 7 languages are outstanding.
-- **Remaining English articles:** ULIP and whole-life comparisons, life
-  insurance buyer's guides, SME and niche covers (cyber, travel, wedding),
-  city pages, and a few hub/roundup posts.
+- **Remaining English articles:** ULIP guides and the ULIP-vs-term comparison,
+  IRDAI standardised policy wordings, claim-status and revival how-tos,
+  cyber / travel / wedding cover, city pages, and seven hub roundups. Five
+  further slugs are empty stubs with no body text to illustrate.
 
 ## Verifying changes
 

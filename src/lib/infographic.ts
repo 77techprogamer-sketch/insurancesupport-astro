@@ -428,7 +428,7 @@ function barsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 'b
   const rowH = 34;
   const barH = 17;
   const labelW = 196;
-  const valueW = 66;
+  const valueW = 96;
   const trackW = CW - labelW - valueW - 14;
   const max = b.max ?? Math.max(...b.items.map((i) => i.value), 1);
   const out: string[] = [];
@@ -450,12 +450,15 @@ function barsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 'b
     out.push(roundRect(x + labelW, ry + 6, trackW, barH, 5, C.lineSoft));
     // Bar with a soft "shadow" tail for depth.
     out.push(roundRect(x + labelW, ry + 6, barW, barH, 5, p.dot));
+    // Right-aligned against the content edge: a long display string then grows
+    // leftwards into its own gutter instead of off the canvas.
     out.push(
-      textBlock(x + labelW + trackW + 10, ry + 19, [item.display ?? `${item.value}`], {
+      textBlock(x + CW, ry + 19, [item.display ?? `${item.value}`], {
         size: 12.5,
         bold: true,
         fill: p.text,
         family: FONT_DISPLAY(),
+        anchor: 'end',
       }),
     );
   });
