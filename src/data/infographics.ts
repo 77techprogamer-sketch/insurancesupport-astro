@@ -2600,6 +2600,473 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
       },
     ],
   },
+  {
+    slug: 'lic-claim-status-check-online',
+    eyebrow: 'LIC claims',
+    title: 'Four Ways to Track an LIC Claim, and Why It Stalls',
+    source:
+      'LIC claim tracking methods and delay causes as published in this 2026 guide.',
+    summary:
+      'You can check an LIC claim on the e-Services portal, without registration, by SMS to 9222492224, or on the helpline at 022-68276827. If the status sits at Pending beyond 15 days, the cause is almost always a missing NEFT mandate or a name mismatch.',
+    anchor: 'Method 1',
+    blocks: [
+      {
+        kind: 'steps',
+        heading: 'Four ways to check your claim',
+        items: [
+          { title: 'The LIC e-Services portal', detail: 'Log in at licindia.in, open Policy Status or Claim Status, and pick the policy. This is the most detailed view.', tone: 'accent' },
+          { title: 'Without registering', detail: 'Use the Claim Status quick link with your 9-digit policy number, date of birth, and premium amount excluding taxes.', tone: 'primary' },
+          { title: 'By SMS', detail: 'From your registered mobile, send LICHELP <policy number> CLAIM to 9222492224 or 56677.', tone: 'primary' },
+          { title: 'Customer care helpline', detail: 'Call 022-68276827 with the policy bond, policy number, and the life assured’s date of birth.', tone: 'neutral' },
+        ],
+      },
+      {
+        kind: 'timeline',
+        heading: 'The stages you will see',
+        items: [
+          { marker: 'Intimated', title: 'Claim intimated', detail: 'LIC has logged the claim against your policy number.', tone: 'primary' },
+          { marker: 'Processing', title: 'Under processing', detail: 'Documents are being checked and, where applicable, investigated.', tone: 'warn' },
+          { marker: 'Approved', title: 'Approved', detail: 'The claim has been sanctioned and moves to payment.', tone: 'accent' },
+          { marker: 'Settled', title: 'Settled', detail: 'The money reaches the nominee’s bank account by NEFT.', tone: 'accent' },
+        ],
+        note: 'If the status reads Pending for more than 15 days, check the NEFT mandate and the name match before anything else.',
+      },
+      {
+        kind: 'stats',
+        heading: 'Why claims sit still',
+        columns: 3,
+        items: [
+          { value: '15 days', label: 'Pending beyond this usually means a document problem', tone: 'warn' },
+          { value: '90 days', label: 'How long a mandatory early-claim investigation can run — death within 3 years of issue', tone: 'danger' },
+          { value: '2', label: 'Faults behind most delays: a missing NEFT mandate or a cancelled cheque, or a name mismatch with KYC', tone: 'primary' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-to-revive-a-lapsed-lic-policy-in-india-2026-complete-step-by-step-guide',
+    eyebrow: 'LIC revival',
+    title: 'LIC’s 2026 Revival Norms: Three Years, 6.5% Interest',
+    source:
+      'LIC revival eligibility, interest rate and process as published in this 2026 guide. Interest at 6.5% p.a. compounded quarterly, effective April 2026.',
+    summary:
+      'LIC extended the revival window from two years to three, charges 6.5% a year compounded quarterly on overdue premiums, and has waived revival fees on policies lapsed less than a year. Medicals are relaxed up to ₹25 lakh of cover.',
+    anchor: 'Step 1: Check Eligibility for Revival',
+    blocks: [
+      {
+        kind: 'stats',
+        heading: 'What changed in 2026',
+        items: [
+          { value: '3 years', label: 'Lapse period within which revival is allowed', note: 'Extended from 2 years under the previous norms', tone: 'accent' },
+          { value: '6.5% p.a.', label: 'Interest on overdue premiums, compounded quarterly', note: 'Effective April 2026', tone: 'warn' },
+          { value: '₹25 lakh', label: 'Sum assured up to which medicals are relaxed, if lapsed under 2 years', tone: 'primary' },
+          { value: 'Waived', label: 'Revival fees on policies lapsed within 1 year, as of June 2026', tone: 'accent' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Six steps back to an in-force policy',
+        items: [
+          { title: 'Check you are eligible', detail: 'Lapsed no more than 3 years, all unpaid premiums plus interest cleared, and a revival application with a health declaration where required.', tone: 'primary' },
+          { title: 'Calculate what you owe', detail: 'Every overdue premium from the first unpaid one, plus interest at 6.5% a year compounded quarterly, plus any penalty. Use the online revival calculator or ask your branch.', tone: 'warn' },
+          { title: 'Submit the revival application', detail: 'Online at licindia.in under Policy Services → Revival of Lapsed Policy, or Form 680 at your branch. Attach ID, the original policy document, address proof, and a health declaration if cover exceeds ₹10 lakh or the lapse is over 2 years.', tone: 'primary' },
+          { title: 'Medical examination, if required', detail: 'Driven by your age, the sum assured and how long the policy has been lapsed.', tone: 'neutral' },
+          { title: 'Pay the revival premium', detail: 'Net banking, UPI, card, cheque or DD, or ECS auto-debit. You get a revival receipt and the status moves to In Force.', tone: 'primary' },
+          { title: 'Collect the paperwork', detail: 'A revival endorsement letter, an updated policy document, and a revised premium notice. Keep all three.', tone: 'accent' },
+        ],
+        note: 'Policies lapsed beyond 3 years may still be revived in special circumstances, subject to underwriting approval.',
+      },
+    ],
+  },
+  {
+    slug: 'lic-claim-rejection-appeal-guide-2026',
+    eyebrow: 'LIC appeals',
+    title: 'Why LIC Rejects a Claim, and the Ladder You Climb Next',
+    source:
+      'Rejection grounds, Section 45 of the Insurance Act and the appeal escalation as published in this 2026 guide.',
+    summary:
+      'LIC rejects on four grounds, and three of them are answerable. Get the rejection letter in writing, appeal to the branch Grievance Redressal Officer, escalate to the Customer Zone after 15 days, then the Ombudsman after 30 — where policyholders win over 60% of the time.',
+    anchor: 'Common Reasons LIC Rejects Claims',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'The four grounds, and the answer to each',
+        items: [
+          { tier: 'Reason 1', title: 'Non-disclosure of material facts', detail: 'The most common ground. Get a copy of the proposal form you submitted — if it is disclosed there, the ground collapses. Under Section 45 of the Insurance Act, after 3 years LIC cannot void the policy except for proven fraud.', meta: 'Most common', tone: 'danger' },
+          { tier: 'Reason 2', title: 'Policy lapse', detail: 'Check whether the policy can still be revived, usually up to 5 years from lapse depending on the plan. If the event fell inside the grace period, you have grounds.', meta: 'Often fixable', tone: 'warn' },
+          { tier: 'Reason 3', title: 'Exclusion clause', detail: 'Read the original wording. If the exclusion is ambiguous, contra proferentem says it is read against whoever drafted it.', meta: 'Check the wording', tone: 'warn' },
+          { tier: 'Reason 4', title: 'Incomplete documentation', detail: 'Ask LIC for the required list, submit everything, and take a written acknowledgement of receipt.', meta: 'Easiest to fix', tone: 'accent' },
+        ],
+      },
+      {
+        kind: 'timeline',
+        heading: 'The escalation ladder',
+        items: [
+          { marker: 'Day 0', title: 'Get the rejection letter', detail: 'LIC must explain the reason in writing. If they will not, ask under the RTI Act or through IRDAI.', tone: 'danger' },
+          { marker: 'Appeal', title: 'Write to the Grievance Redressal Officer', detail: 'At the branch that rejected the claim. Cite the policy and claim numbers, the date and reason, why it is wrong, and your evidence.', tone: 'warn' },
+          { marker: '15 days', title: 'Escalate to the LIC Customer Zone', detail: 'If the branch has not resolved it. Eight zones cover all of India, and you can file online or in person.', tone: 'primary' },
+          { marker: '30 days', title: 'Approach the Insurance Ombudsman', detail: 'If LIC has not resolved it within 30 days of escalation. Free to file, and the decision binds LIC.', tone: 'accent' },
+          { marker: 'IGMS', title: 'Lodge it with IRDAI', detail: 'Through the Integrated Grievance Management System at igms.irda.gov.in. IRDAI requires insurers to resolve within 15 days.', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'Three numbers worth knowing',
+        columns: 3,
+        items: [
+          { value: '3 years', label: 'After this, Section 45 stops LIC voiding the policy except for proven fraud', tone: 'accent' },
+          { value: '>60%', label: 'Success rate for policyholders who take a rejection to the Ombudsman', tone: 'accent' },
+          { value: '8', label: 'LIC Customer Zones covering the whole of India', tone: 'primary' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'ulip-plans-india-2026-complete-guide-to-unit-linked-insurance-plans',
+    eyebrow: 'ULIPs',
+    title: 'Where Your ULIP Premium Actually Goes',
+    source:
+      'ULIP charge structure, fund options, tax rules and the comparison as published in this 2026 guide.',
+    summary:
+      'Four charges come out before and during a ULIP — premium allocation, mortality, policy administration and fund management — leaving the balance to buy units. The guide puts total ULIP charges at roughly 2.5% a year against 0.5% for a direct mutual fund.',
+    anchor: 'ULIP vs Term + SIP Comparison',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'What happens to every rupee you pay',
+        items: [
+          { tier: 'First', title: 'Premium allocation charge', detail: 'Deducted before a single rupee is invested — 0–5% depending on the plan.', meta: 'Upfront', tone: 'danger' },
+          { tier: 'Next', title: 'Mortality charge', detail: 'The cost of the life cover inside the policy. It rises as you get older.', meta: 'Buys the cover', tone: 'warn' },
+          { tier: 'Then', title: 'Policy administration charge', detail: 'A recurring fee for running the policy, on top of everything else.', meta: 'Ongoing', tone: 'warn' },
+          { tier: 'Annually', title: 'Fund management charge', detail: 'A yearly fee on assets under management, capped at 1.35% for equity funds.', meta: 'Capped at 1.35%', tone: 'warn' },
+          { tier: 'Finally', title: 'The balance buys units', detail: 'Whatever is left is invested at that day’s NAV in the funds you picked. On maturity you get the fund value; on death your nominee gets the higher of sum assured or fund value.', meta: 'Your money', tone: 'accent' },
+        ],
+        note: 'Fund choices run from equity (80–100% in stocks) through balanced and debt to liquid. Partial withdrawals are allowed after the 5-year lock-in.',
+      },
+      {
+        kind: 'compare',
+        heading: 'ULIP against term plus a SIP',
+        leftTitle: 'ULIP',
+        rightTitle: 'Term + mutual fund',
+        rows: [
+          { label: 'Life cover', left: '₹15–20 lakh', right: '₹2 crore' },
+          { label: 'Charges', left: 'About 2.5% a year', right: 'About 0.5% a year in a direct fund' },
+          { label: 'Lock-in', left: '5 years, mandatory', right: 'None — redeem any time' },
+          { label: 'Flexibility', left: 'Switch funds, top up, withdraw after year 5', right: 'Full control throughout' },
+          { label: 'Tax', left: 'EEE if the conditions are met', right: 'EEE in ELSS, EET otherwise' },
+        ],
+        note: 'The guide’s own recommendation: buy term plus a mutual fund if you want pure investment; choose a ULIP if you want a disciplined combined product.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The tax rules, and one trap',
+        columns: 3,
+        items: [
+          { value: '₹1.5 lakh', label: 'Section 80C deduction on the premium you pay', tone: 'accent' },
+          { value: '10(10D)', label: 'Maturity is tax-free only if the premium stays under 10% of the sum assured', tone: 'warn' },
+          { value: '₹2.5 lakh', label: 'Premium above which the 2021 Budget amendment taxes maturity like an equity fund', tone: 'danger' },
+        ],
+        note: 'The death benefit is tax-free for your nominee in every case.',
+      },
+    ],
+  },
+  {
+    slug: 'irdai-standardized-health-insurance-policy-wordings-2026',
+    eyebrow: 'IRDAI standards',
+    title: 'What Every Health Policy in India Must Now Cover',
+    source:
+      'IRDAI standardised inclusions, exclusions, waiting periods and the moratorium rule as published in this 2026 guide.',
+    summary:
+      'IRDAI has fixed the core definitions across insurers: 30 days of pre-hospitalisation and 60 after, 541 day-care procedures, and a 36-month wait for pre-existing disease — cut from 48. After 8 continuous years, the moratorium bars almost every exclusion.',
+    anchor: 'What Is Now Uniformly Covered',
+    blocks: [
+      {
+        kind: 'stats',
+        heading: 'The numbers that are now identical everywhere',
+        items: [
+          { value: '30 / 60', label: 'Days of pre-hospitalisation and post-hospitalisation cover, fixed across insurers', tone: 'accent' },
+          { value: '541', label: 'Day-care procedures on IRDAI’s standardised list', tone: 'primary' },
+          { value: '36 months', label: 'Pre-existing disease waiting period — reduced from the previous 48', tone: 'accent' },
+          { value: '24 months', label: 'Specific disease waiting period', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'timeline',
+        heading: 'From day one to the moratorium',
+        items: [
+          { marker: 'Day 1', title: 'Accidents', detail: 'Covered immediately — the initial wait does not apply to accident claims.', tone: 'accent' },
+          { marker: '30 days', title: 'Initial waiting period ends', detail: 'Illness claims become payable from here.', tone: 'warn' },
+          { marker: '24 months', title: 'Specific disease wait ends', detail: 'Named conditions such as cataract or hernia stop being excluded.', tone: 'warn' },
+          { marker: '36 months', title: 'Pre-existing disease cover begins', detail: 'Cut from the old 48-month standard.', tone: 'accent' },
+          { marker: '8 years', title: 'The moratorium', detail: 'After 8 continuous years, no exclusion can be invoked except the permanent list — and it carries over when you port.', tone: 'accent' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Included by every policy, or excluded by all',
+        leftTitle: 'Standard inclusions',
+        rightTitle: 'Permanent exclusions',
+        rows: [
+          { label: 'Hospitalisation', left: 'Room rent, ICU, surgeon, anaesthesia, blood, oxygen and theatre', right: '—' },
+          { label: 'Around the stay', left: '30 days before admission, 60 days after discharge', right: '—' },
+          { label: 'Ambulance', left: 'Typically ₹2,000–5,000 per hospitalisation', right: '—' },
+          { label: 'AYUSH treatment', left: 'Up to 10–25% of the sum insured', right: '—' },
+          { label: 'Organ donor expenses', left: 'Covered when you are the recipient', right: '—' },
+          { label: 'Mental illness and HIV/AIDS', left: 'Must be covered on par with physical illness', right: '—' },
+          { label: 'Cosmetic, dental and vision correction', left: 'Only if it follows an accident', right: 'Excluded otherwise' },
+          { label: 'Adventure sports, war, self-harm, substance abuse', left: '—', right: 'Excluded by every policy' },
+          { label: 'Pregnancy, IVF, genetic disorders', left: 'Only through a maternity rider with a 9-month wait', right: 'Excluded otherwise' },
+        ],
+        note: 'What standardisation did not change: premiums still vary, hospital networks differ, service quality differs, and add-ons remain insurer-specific.',
+      },
+    ],
+  },
+  {
+    slug: 'cyber-insurance-india-2026-protect-your-business-from-digital-threats',
+    eyebrow: 'Cyber cover',
+    title: 'What Cyber Insurance Pays For, and Who Needs It Most',
+    source:
+      'Cyber cover structure, exclusions and market figures as published in this 2026 guide. Breach cost figure cited to IBM, 2023.',
+    summary:
+      'A cyber policy pays on two sides: your own costs — investigation, restoration, ransomware, business interruption — and your liability to others. SMEs are the most exposed: 43% of attacks target them and 60% shut within six months of a major breach.',
+    anchor: 'What Cyber Insurance Covers',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'The two halves of a cyber policy',
+        leftTitle: 'First-party (your own losses)',
+        rightTitle: 'Third-party (liability to others)',
+        rows: [
+          { label: 'Investigation and repair', left: 'Data breach investigation and remediation, data restoration', right: '—' },
+          { label: 'Ransom and extortion', left: 'Ransomware payments within policy limits, extortion expenses', right: '—' },
+          { label: 'Lost income', left: 'Business interruption caused by a cyber event', right: '—' },
+          { label: 'Reputation', left: 'Crisis communication and reputational harm management', right: 'Media liability for digital content' },
+          { label: 'Client data', left: '—', right: 'Client data breach liability, network security liability' },
+          { label: 'Legal and regulatory', left: '—', right: 'Legal defence costs, regulatory fines and penalties' },
+          { label: 'Cyber fraud', left: 'Social engineering and fraud-driven losses', right: '—' },
+        ],
+        note: 'Standard exclusions: intentional acts by the insured, bodily injury and property damage (other policies cover those), and infrastructure failure not caused by a cyber event.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The exposure in numbers',
+        items: [
+          { value: '43%', label: 'Share of cyber attacks that target small and medium enterprises', tone: 'danger' },
+          { value: '60%', label: 'Of SMEs close within six months of a major attack', tone: 'danger' },
+          { value: '₹17.9 crore', label: 'Average cost of a data breach in India (IBM, 2023)', tone: 'warn' },
+          { value: '300%', label: 'Rise in cyber crime in India since 2020', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Choosing a policy',
+        items: [
+          { title: 'Set the cover amount', detail: 'A minimum of ₹1 crore for SMEs, and ₹5–50 crore for larger businesses.', tone: 'primary' },
+          { title: 'Insist on business interruption cover', detail: 'Essential if the business depends on being online.', tone: 'accent' },
+          { title: 'Check ransomware is included', detail: 'The policy must cover ransomware and extortion explicitly, within limits.', tone: 'accent' },
+          { title: 'Look for incident response', detail: 'Does it include a 24/7 cyber incident response team?', tone: 'primary' },
+          { title: 'Confirm regulatory cover', detail: 'It should cover fines and penalties under the DPDP Act 2023.', tone: 'primary' },
+        ],
+        note: 'SME cyber cover starts at roughly ₹5,000–20,000 a year. Assess your risk first: critical data assets, data flows and third-party access, existing controls, and what a shutdown would cost.',
+      },
+    ],
+  },
+  {
+    slug: 'travel-insurance-india-2026-why-you-must-buy-before-your-next-trip',
+    eyebrow: 'Travel cover',
+    title: 'What Travel Insurance Covers, and What It Will Not',
+    source:
+      'Travel cover types, inclusions and exclusions as published in this 2026 guide.',
+    summary:
+      'Indians made over 27 million international departures in 2025, yet fewer than 15% buy travel insurance. Medical cover is the point: a hospitalisation in the US or Europe can run to ₹5–50 lakh, and a Schengen visa requires at least EUR 30,000 of medical cover.',
+    anchor: 'Coverage Comparison',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'Seven things a travel policy pays for',
+        items: [
+          { tier: 'Medical', title: 'Medical emergency and evacuation', detail: 'Hospitalisation, treatment and getting you home. The single most important cover on the list.', meta: 'Most critical', tone: 'danger' },
+          { tier: 'Trip', title: 'Cancellation and interruption', detail: 'Non-refundable costs if you cancel or cut the trip short for illness, injury, a family death or a natural disaster.', meta: 'High value', tone: 'warn' },
+          { tier: 'Baggage', title: 'Baggage loss and delay', detail: 'Lost, stolen or delayed bags and personal belongings.', meta: 'Common claim', tone: 'primary' },
+          { tier: 'Flight', title: 'Flight delay or cancellation', detail: 'The extra food and accommodation you end up paying for.', meta: 'Common claim', tone: 'primary' },
+          { tier: 'Accident', title: 'Personal accident', detail: 'A lump sum for accidental death or permanent disability during the trip.', meta: 'Fixed benefit', tone: 'primary' },
+          { tier: 'Passport', title: 'Loss of passport', detail: 'The cost of replacing a passport while you are abroad.', meta: 'Low value', tone: 'neutral' },
+          { tier: 'Cash', title: 'Emergency cash advance', detail: 'Funds if you are robbed or lose your wallet.', meta: 'Low value', tone: 'neutral' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Domestic or international',
+        leftTitle: 'Domestic travel policy',
+        rightTitle: 'International travel policy',
+        rows: [
+          { label: 'Medical cover', left: 'Emergencies within India', right: 'Far higher limits — a US or European hospitalisation can run to ₹5–50 lakh' },
+          { label: 'Visa requirement', left: 'Not required', right: 'Schengen requires a minimum of EUR 30,000 medical cover' },
+          { label: 'Trip cancellation and delay', left: 'Covered', right: 'Covered, usually more comprehensively' },
+          { label: 'Baggage loss', left: 'Covered', right: 'Covered' },
+          { label: 'Cost', left: 'Generally cheaper', right: 'Higher, driven by the medical limit' },
+        ],
+        note: 'Policy shapes available: single trip, annual multi-trip, student, senior citizen (above 60) and family.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The coverage gap',
+        columns: 3,
+        items: [
+          { value: '27 million', label: 'International departures from India in 2025', tone: 'primary' },
+          { value: '<15%', label: 'Share of Indian travellers who buy travel insurance', tone: 'danger' },
+          { value: 'EUR 30,000', label: 'Minimum medical cover a Schengen visa requires', tone: 'warn' },
+        ],
+        note: 'Standard exclusions: pre-existing conditions unless declared and covered for an extra premium, travel to war zones or areas under official advisories, and adventure sports unless specifically added.',
+      },
+    ],
+  },
+  {
+    slug: 'term-insurance-premium-calculator-2026',
+    eyebrow: 'Term premiums',
+    title: 'What ₹1 Crore of Term Cover Costs at Every Age',
+    source:
+      'Indicative 2026 premium table for a healthy non-smoker, ₹1 crore cover, 30-year term, as published in this guide. Excludes GST.',
+    summary:
+      'Age is the dominant factor: ₹1 crore of cover costs a healthy 25-year-old man about ₹4,800 a year and a 55-year-old about ₹38,000 — nearly eight times as much. Smoking alone can double or triple the premium.',
+    anchor: 'Average Premium Rates for 2026',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Annual premium for ₹1 crore, 30-year term — male, non-smoker',
+        items: [
+          { label: 'Age 25', value: 4800, display: '₹4,800', tone: 'accent' },
+          { label: 'Age 30', value: 5600, display: '₹5,600', tone: 'accent' },
+          { label: 'Age 35', value: 7200, display: '₹7,200', tone: 'primary' },
+          { label: 'Age 40', value: 10500, display: '₹10,500', tone: 'primary' },
+          { label: 'Age 45', value: 15800, display: '₹15,800', tone: 'warn' },
+          { label: 'Age 50', value: 24500, display: '₹24,500', tone: 'warn' },
+          { label: 'Age 55', value: 38000, display: '₹38,000', tone: 'danger' },
+        ],
+        note: 'Female rates run lower at every age: ₹4,200 at 25 rising to ₹31,500 at 55.',
+      },
+      {
+        kind: 'ladder',
+        heading: 'Loadings that push the premium up',
+        items: [
+          { tier: 'Smoking', title: '+100% to +200%', detail: 'The single largest loading. It can double or triple the base premium.', meta: 'Biggest', tone: 'danger' },
+          { tier: 'Adventure sports', title: '+50% to +100%', detail: 'Sometimes applied as an exclusion rather than a loading.', meta: 'Or excluded', tone: 'warn' },
+          { tier: 'BMI above 30', title: '+20% to +50%', detail: 'Assessed at underwriting.', meta: 'Common', tone: 'warn' },
+          { tier: 'Controlled hypertension or diabetes', title: '+10% to +30%', detail: 'Usually the smallest of the four.', meta: 'Smallest', tone: 'neutral' },
+        ],
+        note: 'High-risk occupations — construction, mining, aviation, oil rigs — may also attract loadings or require special underwriting.',
+      },
+      {
+        kind: 'steps',
+        heading: 'Estimating your own premium',
+        items: [
+          { title: 'Set the sum assured', detail: 'A common rule is 10–15 times annual income, plus outstanding loans and future obligations. On ₹12 lakh of income, 12x is ₹1.44 crore — round up to ₹1.5 crore.', tone: 'primary' },
+          { title: 'Choose the term', detail: 'Run the cover to retirement or until the financial dependencies end. At 35 with retirement at 60, that is 25 years.', tone: 'primary' },
+          { title: 'Apply health and lifestyle loadings', detail: 'Add for smoking, high BMI, controlled conditions or adventure sport.', tone: 'warn' },
+          { title: 'Factor in occupation', detail: 'High-risk jobs may attract loadings or need special underwriting.', tone: 'neutral' },
+          { title: 'Get quotes from several insurers', detail: 'Premiums vary significantly because risk models differ.', tone: 'accent' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'ulip-vs-term-insurance-which-is-right-for-you-a-deep-dive-comparison-for-indian-investors-2026',
+    eyebrow: 'ULIP vs term',
+    title: 'ULIP or Term: What Your Premium Buys',
+    source:
+      'Head-to-head comparison parameters as published in this 2026 guide.',
+    summary:
+      'Term insurance is a pure risk product — the sum assured can be 500 to 1,000 times the annual premium, and there is no lock-in. A ULIP bundles cover with market-linked investing, but the cover drops to 7–10 times the premium and IRDAI mandates a 5-year lock-in.',
+    anchor: 'Head-to-Head Comparison',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'Term insurance against ULIP',
+        leftTitle: 'Term insurance',
+        rightTitle: 'ULIP',
+        rows: [
+          { label: 'Primary purpose', left: 'Pure life protection', right: 'Life protection plus investment' },
+          { label: 'Premium', left: 'Very low — about ₹10,000 a year for ₹1 crore of cover', right: 'Higher — ₹50,000 or more for similar cover' },
+          { label: 'Sum assured', left: 'Very high, 500–1,000x the annual premium', right: 'Lower, 7–10x the premium in many cases' },
+          { label: 'Returns', left: 'None — it is a risk product', right: 'Market-linked, and can go negative' },
+          { label: 'Lock-in', left: 'None', right: '5 years, mandated by IRDAI' },
+          { label: 'Flexibility', left: 'Limited', right: 'High — switch funds, top up, withdraw after year 5' },
+          { label: 'Transparency', left: 'Simple and transparent', right: 'Layered with allocation, fund, mortality and admin charges' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'The multiples that decide it',
+        columns: 3,
+        items: [
+          { value: '500–1,000x', label: 'Sum assured as a multiple of annual premium — term insurance', tone: 'accent' },
+          { value: '7–10x', label: 'The same multiple on a ULIP', tone: 'warn' },
+          { value: '5 years', label: 'IRDAI-mandated ULIP lock-in', note: 'Partial withdrawals and 4–12 free fund switches a year, after that', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'decision',
+        heading: 'So which one?',
+        question: 'What are you actually trying to buy?',
+        branches: [
+          { condition: 'Maximum family protection per rupee', outcome: 'Term insurance', detail: 'Around ₹10,000 a year buys ₹1 crore of cover.', tone: 'accent' },
+          { condition: 'One product for cover and investing together', outcome: 'ULIP', detail: 'Accept materially less cover per rupee and a 5-year lock-in.', tone: 'primary' },
+          { condition: 'You may need the money inside 5 years', outcome: 'Term plus a mutual fund', detail: 'A ULIP locks the money in; a mutual fund does not.', tone: 'accent' },
+          { condition: 'You want the simplest, most transparent product', outcome: 'Term insurance', detail: 'A ULIP layers four separate charges on top of the premium.', tone: 'neutral' },
+          { condition: 'You are comfortable watching the value fall', outcome: 'Either', detail: 'ULIP returns are market-linked and can be negative.', tone: 'warn' },
+        ],
+        note: 'Both get Section 80C on premiums and Section 10(10D) on the proceeds.',
+      },
+    ],
+  },
+  {
+    slug: 'insurance-in-tier-2-cities-india-vellore-coimbatore-vizag-surat-lucknow-more-2026',
+    eyebrow: 'Tier-2 India',
+    title: 'What Each Tier-2 Cluster Actually Needs Insured',
+    source:
+      'Regional priorities, IRDAI grievance routes and coverage gaps as published in this 2026 guide.',
+    summary:
+      'Insurance need in tier-2 India tracks the local economy: marine and transit cover around Vizag’s port, fire and SME packages in Surat’s textile and diamond trades, health and term life in the Tamil Nadu education and hospital belt.',
+    anchor: 'Table: Regional Focus',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'Five city clusters and their priorities',
+        items: [
+          { tier: 'Tamil Nadu', title: 'Vellore, Coimbatore, Salem, Madurai', detail: 'Education, textiles, engineering and healthcare. Priorities: health insurance, term life, and SME fire and burglary cover.', meta: 'LIC, Star Health', tone: 'primary' },
+          { tier: 'AP / Telangana', title: 'Vizag, Vijayawada, Tirupati, Warangal', detail: 'Ports, IT, agriculture, pharma and tourism. Priorities: marine and transit, family health floater, motor comprehensive.', meta: 'New India, Care', tone: 'primary' },
+          { tier: 'Gujarat', title: 'Surat, Vadodara, Rajkot', detail: 'Textiles, diamonds, chemicals and manufacturing. Priorities: Bharat Laghu Udyam package, fire, health.', meta: 'Tata AIG, ICICI', tone: 'primary' },
+          { tier: 'UP / North', title: 'Lucknow, Kanpur, Agra, Ludhiana', detail: 'Commerce, trading, hosiery and agriculture. Priorities: term life, family health, commercial liability.', meta: 'LIC, Max Life', tone: 'primary' },
+          { tier: 'Karnataka / Kerala', title: 'Mysore, Hubli, Kochi, Kozhikode', detail: 'Tourism, IT, spices, remittances and fisheries. Priorities: health, motor and home insurance.', meta: 'HDFC Ergo, Star', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Tier-2 realities against the metro assumption',
+        leftTitle: 'What guide says about tier-2',
+        rightTitle: 'The metro comparison',
+        rows: [
+          { label: 'Life and health premiums', left: 'Set by age, medical history and occupation — not city tier', right: 'Same basis' },
+          { label: 'Motor own-damage rates', left: 'Zone B, often marginally lower', right: 'Zone A metros' },
+          { label: 'Cashless hospital network', left: 'Extensive in tier-2 and tier-3 cities', right: 'Widest choice of hospitals' },
+          { label: 'Grievance route', left: 'IGMS and Bima Bharosa work from anywhere in India', right: 'Local branch plus the same portals' },
+          { label: 'Buying online', left: 'Safe through licensed platforms, and often better comparison than a local agent', right: 'Same' },
+          { label: 'Most neglected covers', left: 'Health top-up, cyber for small business, professional indemnity', right: 'The same gaps, with more advisors around' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'Two portals worth knowing',
+        columns: 3,
+        items: [
+          { value: 'IGMS', label: 'IRDAI’s Integrated Grievance Management System — file and track at igms.irdai.gov.in', tone: 'accent' },
+          { value: 'Bima Bharosa', label: 'IRDAI’s complaint portal, at bimabharosa.irdai.gov.in', tone: 'accent' },
+          { value: '3', label: 'Covers most often neglected in tier-2: health top-up, cyber for small business, professional indemnity', tone: 'warn' },
+        ],
+        note: 'You do not have to rely on a local branch to file a complaint.',
+      },
+    ],
+  },
 ];
 
 /* -------------------------------------------------------------------------- */

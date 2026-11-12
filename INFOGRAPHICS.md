@@ -87,28 +87,31 @@ A standalone page can also be placed before a non-heading element (for example t
 CSR table on `term-insurance-claim-settlement-ratio-2026`) — pick whatever reads best
 in the article body.
 
-## Coverage so far — 55 English articles + 5 Hindi
+## Coverage so far — 65 English articles + 5 Hindi
 
 **Claim rejection and appeal** — insurance claim rejection rates · how to appeal a
 rejected claim · 15 real rejection reasons · health claim rejection rights · the
 legal-and-practical fight-back guide · LIC claim rejection appeal
 
 **IRDAI and Ombudsman** — grievance process · IGMS portal filing · Ombudsman guide ·
-30-day settlement rule and ACK forms · IRDAI cashless pre-authorisation
+30-day settlement rule and ACK forms · IRDAI cashless pre-authorisation ·
+standardised health policy wordings
 
 **Health insurance** — claim settlement ratio · pre-existing disease waiting periods ·
 family floater vs individual · restoration benefit · portability guide · portability
 rejected · tax benefits under 80D · cashless claim denied at hospital · group policy
-claim issues · best plans for parents above 60
+claim issues · best plans for parents above 60 · buyer's guide
 
 **LIC** — policy revival · revival after 5 years · lapsed-policy revival interest
-and loan options · maturity claim process · maturity amount calculator and bonus
-rates · death claim rejected or delayed · how to file a death claim · accidental
-death and permanent disability riders · premium payment modes and grace periods ·
-joint life policies · 2026 flagship plans
+and loan options · the 2026 revival norms · revival after lapse (modes, fees,
+documents) · maturity claim process · maturity amount calculator and bonus rates ·
+death claim rejected or delayed · how to file a death claim · claim status check
+online · claim rejection appeal · accidental death and permanent disability
+riders · premium payment modes and grace periods · joint life policies · 2026
+flagship plans
 
 **Business and niche** — SME insurance portfolios · loan against an insurance
-policy
+policy · cyber insurance · travel insurance · insurance in tier-2 cities
 
 **Motor** — claim process · surveyor dispute · how to calculate IDV · zero
 depreciation add-on · engine protection for bikes · car and two-wheeler guide
@@ -118,6 +121,8 @@ depreciation add-on · engine protection for bikes · car and two-wheeler guide
 premium · NPS 80CCD(1B) · deferred vs immediate annuity under 80CCC and 10(10A) ·
 pension plans
 
+**ULIPs** — how ULIPs work and what they cost · ULIP vs term insurance
+
 **Choosing cover** — life insurance buyer's guide · money-back policy vs term
 insurance plus SIP · term vs whole life vs endowment · term vs traditional life
 insurance · term life insurance guide · critical illness cover
@@ -126,6 +131,12 @@ insurance · term life insurance guide · critical illness cover
 insurance claim settlement ratio · health insurance portability (switching
 insurers)
 
+- **Measure text with the same weight it is drawn in.** `statsBlock` and
+  `barsBlock` both wrapped their bold labels using the regular width factor,
+  so any label long enough to reach the wrap limit rendered about 7% wider
+  than measured and overran its card. Both now pass `true` for `bold` to
+  `wrap()`, matching the `bold: true` they render with. The other six blocks
+  already matched — worth re-checking if a new block is added.
 - **Bar values must be right-aligned.** `barsBlock` used to left-align the
   value in a fixed 66px gutter, so any `display` string longer than about nine
   characters ran off the canvas. The gutter is now 96px and the value is
@@ -213,10 +224,10 @@ policy revival · health claim settlement ratio · how to appeal a rejected clai
 - **Scale translations.** 20 English articles have translations in all 8 languages,
   so full coverage is 160 translated specs. Hindi is the pilot; the remaining
   15 Hindi specs and the other 7 languages are outstanding.
-- **Remaining English articles:** ULIP guides and the ULIP-vs-term comparison,
-  IRDAI standardised policy wordings, claim-status and revival how-tos,
-  cyber / travel / wedding cover, city pages, and seven hub roundups. Five
-  further slugs are empty stubs with no body text to illustrate.
+- **Remaining English articles:** wedding insurance, insurance support
+  services by city, the IRDAI policyholder guide, car insurance renewal in
+  Bengaluru, and seven hub roundups. Five further slugs are empty stubs with
+  no body text to illustrate.
 
 ## Verifying changes
 

@@ -366,7 +366,7 @@ function statsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: '
   // Measure first so every card in a row can share one height — labels wrap
   // unpredictably, so a fixed card height would let long ones spill out.
   const m = b.items.map((item) => {
-    const labelLines = wrap(item.label, cardW - pad * 2, 12.5);
+    const labelLines = wrap(item.label, cardW - pad * 2, 12.5, true);
     const noteLines = item.note ? wrap(item.note, cardW - pad * 2, 11) : [];
     const noteH = noteLines.length ? noteLines.length * 14 + 4 : 0;
     return { labelLines, noteLines, h: TOP + VALUE_H + 6 + labelLines.length * 16 + noteH + 16 };
@@ -437,7 +437,7 @@ function barsBlock(x: number, y: number, b: Extract<InfographicBlock, { kind: 'b
     const ry = y + i * rowH;
     const p = tone(item.tone);
     const barW = Math.max(3, (item.value / max) * trackW);
-    const labelLines = wrap(item.label, labelW - 10, 12);
+    const labelLines = wrap(item.label, labelW - 10, 12, true);
 
     out.push(
       textBlock(x, ry + (labelLines.length > 1 ? 12 : 19), labelLines, {
