@@ -4,10 +4,10 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
 ---
 
 <BaseLayout 
-  title="Contact Us | Insurance Support by Hari Kotian" 
-  description="Get in touch with Hari Kotian, IRDAI-certified insurance advisor in Bengaluru with 25+ years experience. Free consultation for all insurance needs."
+  title="Contact an Insurance Advisor in Bengaluru | 99866 34506" 
+  description="Call or WhatsApp +91 99866 34506. IRDAI-registered advisor in Bengaluru — free first review of a rejected claim, a policy or a renewal. Office in Jalahalli."
   pageType="contact"
-  keywords="contact insurance advisor Bengaluru, Hari Kotian IRDAI advisor, insurance consultation free, claim help contact, LIC agent contact Bangalore, insurance help phone number"
+  keywords="contact insurance advisor Bangalore, insurance agent phone number Bengaluru, claim help contact Bangalore, Hari Kotian contact, insurance advisor near me Bengaluru"
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -26,6 +26,39 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
       "jobTitle": "IRDAI Certified Insurance Advisor"
     }
   })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://insurancesupport.online/contact/#contactpage",
+    "url": "https://insurancesupport.online/contact/",
+    "name": "Contact an insurance advisor in Bengaluru",
+    "about": { "@id": "https://insurancesupport.online/#organization" },
+    "mainEntity": {
+      "@type": "InsuranceAgency",
+      "@id": "https://insurancesupport.online/#organization",
+      "name": "Insurance Support",
+      "telephone": "+919986634506",
+      "email": "hari@insurancesupport.online",
+      "url": "https://insurancesupport.online/",
+      "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bahubali Nagar, Jalahalli",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560013",
+        "addressCountry": "IN"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 13.0159, "longitude": 77.5522 },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }],
+      "availableLanguage": ["English", "Hindi", "Kannada"]
+    }
+  })} />
   <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden py-16 lg:py-24">
     <!-- Decorative background glows -->
     <div class="absolute top-10 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[140px] pointer-events-none" />
@@ -40,10 +73,15 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
           Get in Touch With Us
         </span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-          Let’s Discuss Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Insurance Needs</span>
+          Contact an <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">insurance advisor in Bengaluru</span>
         </h1>
         <p class="text-lg text-slate-300 leading-relaxed">
-          Have a stuck claim, need policy revival, or looking for expert guidance on life, health, or motor insurance? Hari Kotian is here to help with free, no-obligation consultations.
+          A stuck claim, a policy that lapsed, a renewal you do not understand — call, message or write.
+          Hari Kotian answers personally, and the first review of your documents is free.
+        </p>
+        <p class="mt-5 text-slate-300">
+          <a href="tel:+919986634506" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 border border-white/25 font-semibold hover:bg-white/20 transition-colors">Call +91 99866 34506</a>
+          <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20I%20need%20insurance%20help." target="_blank" rel="noopener noreferrer" class="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-400 transition-colors">WhatsApp</a>
         </p>
       </div>
 
@@ -164,10 +202,145 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
           heading="Already a client? Leave a Google review"
           body="If we have already helped with a claim, a policy review or a rejection, a short Google review is the most useful thing you can give us — it is how the next family decides whether to call."
         />
-
       </div>
+
+      <!-- What to send -->
+      <section class="mt-20" aria-labelledby="what-to-send">
+        <h2 id="what-to-send" class="text-3xl font-bold text-white mb-3">What to send, so the first call is useful</h2>
+        <p class="text-slate-300 max-w-3xl mb-8">
+          You do not need a complete file to start. These three documents answer most questions on their own,
+          and anything missing can follow.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <h3 class="font-bold text-white mb-2">If a claim was rejected</h3>
+            <ul class="text-sm text-slate-300 space-y-1.5 list-disc list-inside">
+              <li>the rejection letter, every version</li>
+              <li>the policy schedule and wording</li>
+              <li>the claim form you submitted</li>
+            </ul>
+          </article>
+          <article class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <h3 class="font-bold text-white mb-2">If it is a LIC policy</h3>
+            <ul class="text-sm text-slate-300 space-y-1.5 list-disc list-inside">
+              <li>policy number and issue date</li>
+              <li>any revival endorsement</li>
+              <li>premium receipts for the last three years</li>
+            </ul>
+          </article>
+          <article class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <h3 class="font-bold text-white mb-2">If you are only planning</h3>
+            <ul class="text-sm text-slate-300 space-y-1.5 list-disc list-inside">
+              <li>age of the people to be covered</li>
+              <li>existing policies and sums insured</li>
+              <li>the hospitals you would use</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- What happens next -->
+      <section class="mt-16" aria-labelledby="what-happens">
+        <h2 id="what-happens" class="text-3xl font-bold text-white mb-6">What happens after you get in touch</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <p class="text-amber-300 font-bold mb-2">1 · The same day, usually</p>
+            <p class="text-sm text-slate-300">A call or a written reply, whichever you asked for. You deal with Hari Kotian, not a call centre.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <p class="text-amber-300 font-bold mb-2">2 · A plain read of the file</p>
+            <p class="text-sm text-slate-300">Whether the decision holds, what the clause actually says, and which forum applies — the Ombudsman, Bima Bharosa or a consumer commission.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <p class="text-amber-300 font-bold mb-2">3 · A decision, in writing</p>
+            <p class="text-sm text-slate-300">What the next step is, what it costs if anything, and what you would have to do yourself. No fee is charged for the first read.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NAP -->
+      <section class="mt-16 rounded-2xl bg-white/5 border border-white/10 p-8" aria-labelledby="office">
+        <h2 id="office" class="text-2xl font-bold text-white mb-6">Office, hours and languages</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+          <div>
+            <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Address</p>
+            <address class="not-italic text-slate-200 leading-relaxed">
+              Insurance Support<br />
+              Bahubali Nagar, Jalahalli<br />
+              Bengaluru, Karnataka 560013<br />
+              India
+            </address>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Phone and email</p>
+            <p class="text-slate-200 leading-relaxed">
+              <a href="tel:+919986634506" class="hover:text-amber-300">+91 99866 34506</a><br />
+              <a href="mailto:hari@insurancesupport.online" class="hover:text-amber-300 break-all">hari@insurancesupport.online</a>
+            </p>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Hours</p>
+            <p class="text-slate-200 leading-relaxed">Monday to Saturday<br />9:00 am – 9:00 pm IST<br />Sunday: messages only</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Languages</p>
+            <p class="text-slate-200 leading-relaxed">English, Hindi, Kannada<br />IRDAI Reg. No. 0149161D<br /><a href="https://g.page/r/CRDgJanrKjRhEBM" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300">Google listing</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mt-16" aria-labelledby="contact-faq">
+        <h2 id="contact-faq" class="text-3xl font-bold text-white mb-6">Before you call</h2>
+        <div class="space-y-3 max-w-3xl">
+          <details class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <summary class="cursor-pointer font-semibold text-white list-none">Is the first consultation really free?</summary>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">Yes. Send the documents and you get an answer about whether the decision holds and which route applies. Any fee after that is agreed in writing before work starts.</p>
+          </details>
+          <details class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <summary class="cursor-pointer font-semibold text-white list-none">Do I have to come to Bengaluru?</summary>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">No. Most files are handled remotely by email and WhatsApp, and the Ombudsman increasingly hears matters by video. If you prefer to meet, the office is in Jalahalli, north Bengaluru.</p>
+          </details>
+          <details class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <summary class="cursor-pointer font-semibold text-white list-none">What if my policy is from another city or state?</summary>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">The rules are national. What changes is the Ombudsman zone, which follows your address and the insurer's office handling the claim — so a policy bought elsewhere is still handled from where you live.</p>
+          </details>
+          <details class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <summary class="cursor-pointer font-semibold text-white list-none">Can you guarantee my claim will be paid?</summary>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">No, and nobody honestly can. The insurer decides the claim; the Ombudsman or a consumer commission decides a dispute. What can be guaranteed is that the file is put together properly and the right forum is used.</p>
+          </details>
+        </div>
+      </section>
+
     </div>
   </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the first consultation really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send the documents and you get an answer about whether the decision holds and which route applies. Any fee after that is agreed in writing before work starts." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to come to Bengaluru?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Most files are handled remotely by email and WhatsApp, and the Ombudsman increasingly hears matters by video. If you prefer to meet, the office is in Jalahalli, north Bengaluru." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my policy is from another city or state?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The rules are national. What changes is the Ombudsman zone, which follows your address and the insurer's office handling the claim, so a policy bought elsewhere is still handled from where you live." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you guarantee my claim will be paid?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The insurer decides the claim; the Ombudsman or a consumer commission decides a dispute. What can be done is to put the file together properly and use the right forum." }
+      }
+    ]
+  })} />
 
   <script is:inline>
     document.getElementById('contactForm')?.addEventListener('submit', async function(e) {

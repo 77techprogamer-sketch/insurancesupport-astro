@@ -121,7 +121,11 @@ async function generateSitemaps() {
             url === '/resources' || url === '/expert-insights' || url === '/support' ||
             url === '/policy-review-checklist' || url === '/terms' || url === '/privacy-policy' ||
             url === '/disclaimer') {
-            categories.core.push({ ...sitemapEntry, changefreq: url === '/' ? 'daily' : 'weekly', priority: url === '/' ? 1.0 : 0.7 });
+            categories.core.push({
+                ...sitemapEntry,
+                changefreq: url === '/' ? 'daily' : 'weekly',
+                priority: url === '/' ? 1.0 : url === '/contact' ? 0.9 : 0.7,
+            });
         } else if (url.startsWith('/blog/')) {
             categories.blog.push({ ...sitemapEntry, priority: 0.8 });
         } else if (url.startsWith('/locations/')) {

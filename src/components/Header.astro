@@ -11,6 +11,7 @@ const navItems = [
   { label: 'Resources', href: '/blog', icon: 'book-open' },
   { label: 'Claim Help', href: '/claim-recovery', icon: 'shield-check' },
   { label: 'About', href: '/about-hari-kotian', icon: 'user' },
+  { label: 'Contact', href: '/contact', icon: 'phone' },
 ];
 ---
 
@@ -139,9 +140,9 @@ const navItems = [
     gap: var(--space-1);
   }
 
-  /* Seven items now that Bengaluru is in the nav: tighten the gaps before the
-     mobile menu takes over at 768px, so the row never overflows its 64px bar. */
-  @media (max-width: 1120px) {
+  /* Eight items now (Bengaluru and Contact joined): tighten the gaps well before
+     the mobile menu takes over at 768px, so the row never overflows its 64px bar. */
+  @media (max-width: 1280px) {
     .header-inner { gap: var(--space-3); }
     .nav { gap: 0; }
     .nav-link { padding: var(--space-2); font-size: 0.875rem; }

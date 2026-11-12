@@ -47,21 +47,20 @@ Full list: `seo/noindex-urls.csv`. This is the honest reason the indexable count
 
 These are the candidates for "Crawled — currently not indexed" or "Discovered — currently not indexed" in Search Console. They are indexable, but each has a property Google uses to decide a page is not worth the slot.
 
-### Under 500 words (13)
+### Under 500 words (12)
 
-- `/blog/lic-jeevan-anand-vs-jeevan-labh-comparison/` — 416 words — LIC Jeevan Anand vs Jeevan Labh 2026
-- `/about-hari-kotian/` — 208 words — About Hari Kotian | Insurance Support
-- `/about/` — 431 words — About Hari Kotian | Insurance Support
-- `/contact/` — 376 words — Contact Us | Insurance Support by Hari Kotian
-- `/disclaimer/` — 170 words — Disclaimer
-- `/expert-insights/` — 357 words — Expert Insights | Insurance Support by Hari Kotian
-- `/policy-review-checklist/` — 392 words — Printable Insurance Policy Review Checklist
-- `/resources/how-it-works/` — 460 words — How It Works | Insurance Support | Insurance Support
-- `/tools/` — 450 words — Free Insurance Tools & Calculators | Insurance Support
-- `/tools/human-life-value-calculator/` — 488 words — Human Life Value (HLV) Calculator | Free Tool
-- `/tools/policy-recovery/` — 423 words — LIC Policy Recovery | Find Lost & Lapsed Policies
-- `/tools/risk-scorecard/` — 462 words — Free Insurance Risk Scorecard | Is Your Family Underinsured?
-- `/guides/` — 466 words — Insurance Guides by Topic (2026) | Insurance Support
+- `/blog/lic-jeevan-anand-vs-jeevan-labh-comparison/` — 418 words — LIC Jeevan Anand vs Jeevan Labh 2026
+- `/about-hari-kotian/` — 210 words — About Hari Kotian | Insurance Support
+- `/about/` — 433 words — About Hari Kotian | Insurance Support
+- `/disclaimer/` — 172 words — Disclaimer
+- `/expert-insights/` — 359 words — Expert Insights | Insurance Support by Hari Kotian
+- `/policy-review-checklist/` — 394 words — Printable Insurance Policy Review Checklist
+- `/resources/how-it-works/` — 462 words — How It Works | Insurance Support | Insurance Support
+- `/tools/` — 452 words — Free Insurance Tools & Calculators | Insurance Support
+- `/tools/human-life-value-calculator/` — 490 words — Human Life Value (HLV) Calculator | Free Tool
+- `/tools/policy-recovery/` — 425 words — LIC Policy Recovery | Find Lost & Lapsed Policies
+- `/tools/risk-scorecard/` — 464 words — Free Insurance Risk Scorecard | Is Your Family Underinsured?
+- `/guides/` — 468 words — Insurance Guides by Topic (2026) | Insurance Support
 
 
 ### No internal links pointing at them (0)
