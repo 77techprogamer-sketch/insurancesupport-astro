@@ -327,3 +327,40 @@ Two additions on top of that:
 This pass improves three measurable things: the JavaScript a phone must download and execute (a real LCP and INP win), whether a long article can be read and scanned at all, and how easy it is to call from a phone. None of those is a ranking factor in themselves. If the goal is to outrank `insurancesamadhan.com`, the work is still what sections 6, 10 and 13 describe: reviews, links, and answers that are better than theirs.
 
 Blocked on the same input as before: photographs of Hari would fill the visual gap that CSS cannot.
+
+## 16. The Google Business Profile, read and wired in
+
+The profile is **LIC - Hari Kotian**, Bahubali Nagar, Jalahalli, Bengaluru 560013 — 4.3 from **24 reviews**, "Insurance agency", open Monday to Saturday 9:30 am–6 pm, closed Sunday, five photos. Verified on 12 November 2026 at `g.page/r/CRDgJanrKjRhEBM`, which resolves to the Maps place with CID `0x61342aeba925e010`.
+
+### What the profile exposed
+
+Reading it against the site turned up a set of mismatches that no amount of copywriting fixes, because they tell Google the site and the listing are two different businesses:
+
+| Field | Site said | Profile says | Now |
+|---|---|---|---|
+| Coordinates | 13.0159, 77.5522 (central Bengaluru) | 13.0464, 77.5508 (Jalahalli) | profile |
+| Hours | 9:00 am–6:00 pm, and 9:00 am–9:00 pm on `/contact` | 9:30 am–6:00 pm, Sunday closed | profile |
+| Street address | Bahubali Nagar, Jalahalli | Bahubali Nagar, Jalahalli **Village**, Jalahalli | profile |
+| `sameAs` | g.page + LinkedIn + Twitter | — | Maps place URL + g.page |
+| `servesCuisine` | "Insurance Services" | — | removed (restaurant property) |
+| 57 location pages | `maps/place/Insurance+Support+Bangalore` — a listing that does not exist | — | real profile |
+
+### What replaced the testimonials
+
+The homepage, `/insurance-support/` and `/bangalore/` carried three testimonials about an angioplasty called pre-existing, a repudiated term claim, and an IDV revised in six weeks, credited to "R. Sharma", "M. Patel" and "A. Reddy". There was no source for any of them — the same problem as the invented statistics removed in §7, in a more persuasive form.
+
+They are now the three reviews that actually exist, quoted verbatim: John, Prashanth S, Ayush Kandoi. They are narrower — "explains the policy", "answers for all the policies made with him", "genuine and kind hearted person" — and that is the point. Every one is clickable through to the profile, so a reader can check instead of believing.
+
+Placed at: homepage (§ "On Google"), `/about/`, `/contact/` (rating plus a Directions link), `/bangalore/`, `/insurance-support/`, and a compact version in the footer with the hours.
+
+### Why there is no star rating in the search result
+
+`aggregateRating` was deliberately not added. Google's review-snippet rules disallow self-serving reviews for `LocalBusiness` and `Organization` — a business marking up its own rating on its own site is exactly that, so it earns no stars and risks a structured-data penalty. The rating is visible text with a link, which is what a cautious buyer actually wants anyway.
+
+### Three things on the profile that need the owner, not the site
+
+1. **The "Learn more" link points off-site.** The profile's owner description ends with a bracketed keyword dump — `[insurance, financial advisory, health insurance, wealth protection, …]` — and a "Learn more" button to `chattybao.com/Insurance-Support`, a domain that is not yours. That is sending profile visitors to someone else. Check business.google.com → Edit profile → description and links.
+2. **Every review is about LIC policy advice.** Not one mentions a rejected claim, which is what this site sells. The reviews are real and now displayed, but they prove a different competence than the one being ranked for. Two or three reviews from claim clients would change what the page can honestly say.
+3. **Five photos, mostly street view.** Real interior and portrait photos would fill the visual gap noted in §15; Google-hosted images cannot be reused on the site.
+
+One file holds all of this — `src/data/google-profile.ts`. When the review count changes, that line changes and every page follows.
