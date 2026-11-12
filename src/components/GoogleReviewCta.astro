@@ -1,0 +1,138 @@
+---
+/**
+ * "Leave a Google review" prompt.
+ *
+ * Only shown to people who have actually dealt with us — the contact page
+ * after a conversation, and the footer. Nothing here claims a rating, a review
+ * count or a satisfaction figure: the link opens Google's own review box, and
+ * Google is the only party that can vouch for what is in it.
+ */
+import { GOOGLE_REVIEW_URL } from '../data/site';
+
+interface Props {
+  variant?: 'inline' | 'card';
+  heading?: string;
+  body?: string;
+}
+
+const {
+  variant = 'card',
+  heading = 'Worked with us? Leave a Google review',
+  body = 'Reviews are the only proof we cannot write ourselves. If we helped with a claim, a policy or a rejection, two minutes on Google helps the next family find us.',
+} = Astro.props;
+---
+
+{variant === 'inline' ? (
+  <p class="review-inline">
+    <span aria-hidden="true">★</span>
+    Worked with us? <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">Leave a Google review</a>.
+  </p>
+) : (
+  <aside class="review-card" aria-label="Leave a Google review">
+    <div class="review-card-icon" aria-hidden="true">★</div>
+    <div>
+      <h3>{heading}</h3>
+      <p>{body}</p>
+      <a class="review-card-button" href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+        Write a review on Google
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      <p class="review-card-note">Opens Google — sign in with the account you use on your phone.</p>
+    </div>
+  </aside>
+)}
+
+<style>
+  .review-inline {
+    margin: 0;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-sans);
+  }
+
+  .review-inline span {
+    color: #f5b942;
+    margin-right: 0.35rem;
+  }
+
+  .review-inline a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .review-inline a:hover {
+    color: #f5b942;
+  }
+
+  .review-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    max-width: 48rem;
+    margin: 2.5rem auto 0;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  }
+
+  .review-card-icon {
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    border-radius: 9999px;
+    background: #f59e0b;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .review-card h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .review-card p {
+    margin: 0 0 0.9rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #475569;
+  }
+
+  .review-card-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 0.6rem;
+    background: #0f172a;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 150ms ease;
+  }
+
+  .review-card-button:hover {
+    background: #1e293b;
+  }
+
+  .review-card-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.75rem;
+    color: #737373;
+  }
+
+  @media (max-width: 640px) {
+    .review-card {
+      padding: 1.25rem;
+    }
+  }
+</style>

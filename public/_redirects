@@ -1481,3 +1481,6 @@
 /blog/ta-:slug/ /blog/:slug/ 301
 /blog/te-:slug /blog/:slug/ 301
 /blog/te-:slug/ /blog/:slug/ 301
+
+# Convenience short link for messages: insurancesupport.online/review
+/review https://g.page/r/CRDgJanrKjRhEBM/review 302

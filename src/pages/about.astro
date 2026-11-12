@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
+import GoogleReviewCta from '../components/GoogleReviewCta.astro';
 import brandFaqSchema from '../data/brand-faq.json';
 const brandFaqJson = JSON.stringify(brandFaqSchema);
 ---
@@ -61,5 +62,10 @@ const brandFaqJson = JSON.stringify(brandFaqSchema);
     <div class="text-center">
       <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg">Contact Insurance Support</a>
     </div>
+
+    <GoogleReviewCta
+      heading="Have we worked together before?"
+      body="A Google review takes two minutes and is the only client proof on this site that we do not write ourselves. Reviews are published by Google under your own account, and you can edit or delete yours at any time."
+    />
   </main>
 </BaseLayout>

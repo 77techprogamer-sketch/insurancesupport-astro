@@ -2,6 +2,7 @@
 const currentYear = new Date().getFullYear();
 
 import Icon from '../components/icons/Icon.astro';
+import GoogleReviewCta from '../components/GoogleReviewCta.astro';
 
 const footerLinks = {
   quick: [
@@ -128,6 +129,10 @@ const socialLinks = [
     <p class="footer-note" style="font-family: var(--font-sans); font-size: 0.8125rem; line-height: 1.6; color: rgba(255,255,255,0.65); margin: 0.5rem 0 0;">
       GST on insurance premiums depends on the product and the policy type. <a href="https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Check current GST Council guidance</a>.
     </p>
+
+    <div style="margin-top: var(--space-6); text-align: center;">
+      <GoogleReviewCta variant="inline" />
+    </div>
 
     <!-- Social Links -->
         <div class="flex items-center justify-center gap-4" style="margin-top: var(--space-8); padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
