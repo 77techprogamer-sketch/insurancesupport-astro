@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/sections/ContactSection.astro';
+
+const tools = [
+  {
+    title: 'Insurance Risk Scorecard',
+    href: '/tools/risk-scorecard/',
+    blurb: 'A 30-second check for gaps in life, health and claim-protection cover — before a hospital bill finds them for you.',
+    label: 'Start the check',
+  },
+  {
+    title: 'Human Life Value Calculator',
+    href: '/tools/human-life-value-calculator/',
+    blurb: 'Work out how much term cover your family would actually need to replace your income, clear debts and keep the household running.',
+    label: 'Calculate cover',
+  },
+  {
+    title: 'Policy Recovery Planner',
+    href: '/tools/policy-recovery/',
+    blurb: 'For a lapsed or surrendered policy: what can be revived, what is lost and what it costs to restore cover.',
+    label: 'Plan recovery',
+  },
+];
+---
+
+<BaseLayout
+  title="Free Insurance Tools & Calculators | Insurance Support"
+  description="Free, no-signup insurance tools: check whether your family is underinsured, calculate the term cover you need, and plan the revival of a lapsed policy."
+  keywords="insurance calculator India, human life value calculator, underinsurance check, policy revival calculator, free insurance tools"
+  canonical="https://insurancesupport.online/tools/"
+>
+  <main id="main" class="min-h-screen bg-slate-900 text-white relative overflow-hidden py-16 lg:py-24">
+    <div class="absolute top-10 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute bottom-10 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <nav class="text-sm text-slate-400 mb-10" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-amber-300">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/resources/" class="hover:text-amber-300">Resources</a>
+        <span class="mx-2">›</span>
+        <span class="text-slate-200" aria-current="page">Tools</span>
+      </nav>
+
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-sm font-semibold mb-4 border border-amber-400/30">
+          Free · No signup · No email required
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+          Insurance <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">tools that answer a question</span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Three calculators built from the same question we get asked every week: is my cover actually enough, and what happens to my family if a claim is refused?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {tools.map((tool) => (
+          <a href={tool.href} class="group bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-amber-400/50 hover:bg-white/10 transition-all duration-300 shadow-xl">
+            <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">{tool.title}</h2>
+            <p class="text-slate-300 leading-relaxed mb-6">{tool.blurb}</p>
+            <span class="inline-flex items-center gap-2 text-amber-300 font-semibold">
+              {tool.label}
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-16 bg-white/5 border border-white/10 rounded-2xl p-8 max-w-3xl mx-auto text-center">
+        <p class="text-slate-300">
+          A calculator tells you whether the numbers work. If you are already dealing with a rejection, the
+          <a href="/claim-recovery/" class="text-amber-300 underline">claim recovery playbook</a> is the page to read next — or download the
+          <a href="/resources/" class="text-amber-300 underline">free claim checklists</a>.
+        </p>
+      </div>
+    </div>
+
+    <ContactSection />
+  </main>
+</BaseLayout>
