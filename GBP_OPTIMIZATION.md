@@ -1,7 +1,7 @@
 # Google Business Profile (GBP) Optimization + Review-Growth Kit
 
 > For **Hari Kotian — Insurance Support** (insurancesupport.online), Bengaluru.
-> Goal: turn the 23 existing reviews / 4.2★ into the #1 local-traffic engine for claim recovery & insurance advisory.
+> Goal: turn the 4.3★ / 24 reviews already on the profile into the #1 local-traffic engine for claim recovery & insurance advisory. (Figures read from the live profile on 12 Nov 2026 — see Part D.)
 > This is the single highest-leverage organic channel for a local insurance advisor.
 
 ---
@@ -22,7 +22,7 @@
 - [ ] **Phone:** use the same number everywhere: **+91 99866 34506**.
 - [ ] **Website:** `https://insurancesupport.online/`
 - [ ] **Categories** finalized (above).
-- [ ] **Business hours** set correctly (09:00–21:00 daily per your site's schema).
+- [x] **Business hours** on the profile: Monday–Saturday 09:30–18:00, Sunday closed. The website now matches this exactly.
 
 ### A3. Services (add the specific services you sell)
 - [ ] Add all services as individual GBP **"Services"** entries so people find you for each:
@@ -197,3 +197,45 @@ Please reply here or call +91 99866 34506 so we can resolve this for you.
 7. Reply to all existing reviews.
 
 *Part of RECOVERY_PLAN.md — last updated 2026-09-29*
+
+---
+
+## Part D — The "Learn more" button that leaves the profile (found 12 Nov 2026)
+
+### What it actually is
+
+On the live profile, under **From the owner**, there is an entry dated **25 Aug 2026** titled "Secure Your Future with Expert Insurance Advisory", ending with a bracketed keyword dump — `[insurance, financial advisory, health insurance, wealth protection, …]` — and a **Learn more** button pointing to `chattybao.com/Insurance-Support`.
+
+That is **not** your business description. Descriptions have no button and no date. A dated block with a button is a **Google post** (the old "What's new", now **Updates** in the GBP dashboard). That is why you cannot find it under *Edit profile* — it lives in a different menu, and it sends anyone who taps it to a third party instead of to you.
+
+`chattybao.com` is a WhatsApp-marketing tool that publishes a hosted "Insurance Support" page. A tool or agency with Manager access to the profile can publish posts to it — which is how a post with auto-generated keywords and an off-site button appeared without you writing it.
+
+### Steps to make that button dial 99866 34506
+
+1. Open **business.google.com** and select the *LIC - Hari Kotian* profile.
+2. Left menu → **Posts** (newer dashboard: **Add updates**, sometimes filed under **Content**). Do not look in Edit profile.
+3. Find the post dated **25 Aug 2026**, "Secure Your Future with Expert Insurance Advisory".
+4. Open it, then either:
+   - **Edit the button** to **Call now** — this dials the profile's primary phone, +91 99866 34506 — or
+   - **Delete the post** (⋮ → Delete) and publish a clean one (below).
+5. **"Learn more" cannot hold a phone number.** Google only accepts an `https://` web address for that button; `tel:` links are rejected. **Call now** is the only button type that dials directly.
+
+If the post is no longer listed in the dashboard, an old post can keep showing in Maps for a while. Publish a fresh post with the **Call now** button — the newest post takes the top slot. If the old one still shows after a week, use **Report a post on my business** on the profile.
+
+### Then close the door behind it
+
+- **Settings → People and access**: remove any agency, freelancer or tool account you do not recognise. Whoever posted once will post again.
+- **Edit profile → About**: check the description field too. It should be plain prose, no bracketed keyword list.
+- If you do use ChattyBao deliberately, keep the account but disconnect its Google Business Profile publishing permission.
+
+### Replacement post — copy, paste, publish with **Call now**
+
+> **Bengaluru: what to do with a rejected claim**
+>
+> If a health, motor or LIC claim has been rejected, cut down or left unpaid, the first step costs nothing. Send the rejection letter and you get a written read on which ground the decision turns on.
+>
+> The route is fixed: the insurer's grievance officer answers within 14 days, then IRDAI's Bima Bharosa, then the Insurance Ombudsman in Bengaluru — free, no lawyer needed, up to ₹50 lakh, one year to file.
+>
+> Office in Jalahalli, Monday to Saturday 9:30 am – 6 pm. Call 99866 34506.
+
+No keyword list, no outcome promises, and the button dials the phone rather than handing the visitor to someone else's site.
