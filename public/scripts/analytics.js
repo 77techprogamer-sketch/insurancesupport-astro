@@ -91,4 +91,43 @@
       fontsCss.media = 'all';
     }
   }
+
+  // ---- Contact intent events ---------------------------------------------
+  // Until now the site counted form conversions only. A phone call or a
+  // WhatsApp message — which is how most of these enquiries actually arrive —
+  // left no trace in GA4 at all, so "how many people called" could not be
+  // answered even in principle. One delegated listener covers every page.
+  //
+  // Events: call_click, whatsapp_click. The page path is attached by GA4
+  // automatically; the link's visible text is sent as the label so it is clear
+  // which button on which part of the page produced the call.
+  (function () {
+    if (!document.addEventListener) return;
+
+    function label(el) {
+      var text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      return text.slice(0, 80) || el.getAttribute('aria-label') || 'unknown';
+    }
+
+    document.addEventListener('click', function (event) {
+      var el = event.target;
+      while (el && el.tagName !== 'A') el = el.parentElement;
+      if (!el || !el.getAttribute) return;
+
+      var href = el.getAttribute('href') || '';
+      var name = null;
+
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) name = 'whatsapp_click';
+      else if (href.indexOf('mailto:') === 0) name = 'email_click';
+
+      if (!name || typeof window.gtag !== 'function') return;
+
+      window.gtag('event', name, {
+        event_category: 'contact',
+        event_label: label(el),
+        link_url: href
+      });
+    }, { passive: true });
+  })();
 })();
