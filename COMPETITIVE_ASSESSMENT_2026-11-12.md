@@ -95,3 +95,26 @@ Ordered by impact per rupee, assuming no paid links:
 | Is it a good business asset as it stands? | It is a good library with no door on it. The content will keep compounding if the trust and link gaps are closed within the next three months |
 
 The uncomfortable summary: **we have built the best reference work in this niche and given nobody a reason to open it.** The next 90 days should be about faces, proof and links — not more articles.
+
+---
+
+## 8. Follow-up: what changed the same day
+
+**Review markup removed.** 57 location pages and 12 service pages carried a hard-coded 4.8 rating with 127 reviews, plus invented reviews attributed to named people and to "Google Reviews". All of it is gone — 0 pages now carry `AggregateRating`. The trade-off is real: no star ratings in search results until there are genuine reviews to mark up. That is the correct order of events, not a loss.
+
+**Pillars built.** Six clusters now exist as real pages, with deterministic assignment so new posts file themselves:
+
+| Pillar | Hub | Guides |
+|---|---|---|
+| Claim rejection and appeals | `/guides/claim-rejection/` | 11 |
+| Escalation: Ombudsman, IRDAI, consumer forums | `/guides/escalation/` | 10 |
+| Life insurance, LIC and Section 45 | `/guides/life-lic/` | 32 |
+| Health and cashless claims | `/guides/health-cashless/` | 14 |
+| Motor and travel claims | `/guides/motor-travel/` | 7 |
+| NRI, business and specialist cover | `/guides/nri-business/` | 4 |
+
+Every blog post now links up to its hub and across to four siblings. 78 of 81 English posts are filed; the three site-navigation pages are excluded deliberately.
+
+Site after the change: **857 HTML files, 234 indexable pages, 0 orphan pages, 0 titles over 60 characters, 0 broken relative links.**
+
+What has *not* changed — and will decide whether any of this works — is the list in section 6: a photograph, five real reviews, ten real links, and an answer-first rewrite of the twenty pages that matter most. The structure is now in place to carry that work; it cannot substitute for it.
