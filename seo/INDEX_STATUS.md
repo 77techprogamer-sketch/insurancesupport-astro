@@ -50,16 +50,16 @@ These are the candidates for "Crawled — currently not indexed" or "Discovered 
 ### Under 500 words (12)
 
 - `/blog/lic-jeevan-anand-vs-jeevan-labh-comparison/` — 418 words — LIC Jeevan Anand vs Jeevan Labh 2026
-- `/about-hari-kotian/` — 210 words — About Hari Kotian | Insurance Support
-- `/about/` — 433 words — About Hari Kotian | Insurance Support
+- `/about-hari-kotian/` — 210 words — Hari Kotian: IRDAI-Registered Advisor in Bengaluru
+- `/about/` — 433 words — Insurance Support: IRDAI-Registered Advisor in Bengaluru
 - `/disclaimer/` — 172 words — Disclaimer
 - `/expert-insights/` — 359 words — Expert Insights | Insurance Support by Hari Kotian
 - `/policy-review-checklist/` — 394 words — Printable Insurance Policy Review Checklist
 - `/resources/how-it-works/` — 462 words — How It Works | Insurance Support | Insurance Support
 - `/tools/` — 452 words — Free Insurance Tools & Calculators | Insurance Support
 - `/tools/human-life-value-calculator/` — 490 words — Human Life Value (HLV) Calculator | Free Tool
-- `/tools/policy-recovery/` — 425 words — LIC Policy Recovery | Find Lost & Lapsed Policies
-- `/tools/risk-scorecard/` — 464 words — Free Insurance Risk Scorecard | Is Your Family Underinsured?
+- `/tools/policy-recovery/` — 430 words — LIC Policy Recovery | Find Lost & Lapsed Policies
+- `/tools/risk-scorecard/` — 466 words — Free Insurance Risk Scorecard | Is Your Family Underinsured?
 - `/guides/` — 468 words — Insurance Guides by Topic (2026) | Insurance Support
 
 
@@ -68,10 +68,9 @@ These are the candidates for "Crawled — currently not indexed" or "Discovered 
 _None._
 
 
-### Duplicate titles (10 groups)
+### Duplicate titles (9 groups)
 
 - *IRDAI Complete Guide for Indian Policyholders (2026)* — 2 pages: `/blog/irdai-complete-guide-policyholders-india-2026/`, `/blog/irdai-policyholders-guide-india-2026/`
-- *About Hari Kotian | Insurance Support* — 2 pages: `/about-hari-kotian/`, `/about/`
 - *Insurance Advisor in Bellandur, Bangalore | Hari Kotian* — 2 pages: `/cities/bellandur/`, `/locations/bangalore-bellandur/`
 - *Insurance Advisor in HSR Layout, Bangalore | Hari Kotian* — 2 pages: `/cities/hsr-layout/`, `/locations/bangalore-hsr-layout/`
 - *Insurance Advisor in Indiranagar, Bangalore | Hari Kotian* — 2 pages: `/cities/indiranagar/`, `/locations/bangalore-indiranagar/`
