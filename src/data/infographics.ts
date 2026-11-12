@@ -1001,7 +1001,7 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
     title: 'Claim Settlement Ratio: Top Term Insurers',
     source: 'Insurer disclosures for 2026 as compiled in this guide. Verify the latest CSR with the insurer directly before you buy.',
     summary:
-      'Every insurer on this list settles above 99%, and the private-industry average is around 99%. At that level the gap between first and fifth is under one percentage point — so read the ratio as a hygiene check, not a tie-breaker.',
+      'Every insurer on this list settles above 99%, and the private-industry average is around 99%. At that level the gap between first and fourth is under one percentage point — so read the ratio as a hygiene check, not a tie-breaker.',
     anchor: 'Claim Settlement Ratio (2026)',
     blocks: [
       {
@@ -1012,7 +1012,6 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
           { value: '99.72%', label: 'HDFC Life', note: 'Highest CSR in this comparison', tone: 'accent' },
           { value: '99.71%', label: 'Axis Max Life', note: 'Claim resolution and service', tone: 'accent' },
           { value: '99.45%', label: 'Tata AIA', note: 'Digital-first settlement', tone: 'primary' },
-          { value: '99.34%', label: 'Max Life', note: 'Financial stability, claim handling', tone: 'primary' },
           { value: '99.09%', label: 'Bajaj Allianz', note: 'Customer support', tone: 'primary' },
           { value: '~99%', label: 'Private-industry average, 2026', note: 'The spread is narrow — see below', tone: 'warn' },
         ],

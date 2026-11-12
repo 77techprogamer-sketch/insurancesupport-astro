@@ -1,8 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import { AREAS } from '../../data/areas';
 
 const siteUrl = "https://insurancesupport.online";
+
+// The neighbourhood chips below are editorial names; /cities/ pages are
+// generated from AREAS, so a name that does not match an area slug produced
+// a link to a page that was never built. Resolve each name against AREAS and
+// drop the ones with no real destination rather than emitting a 404.
+const AREA_SLUGS = new Set(AREAS.map((a) => a.slug));
+const slugFor = (name: string) => name.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '');
+const NEIGHBOURHOODS = ["Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "HSR Layout", "Marathahalli", "MG Road", "JP Nagar", "BTM Layout", "Malleswaram", "Yelahanka", "Electronic City", "Hebbal", "Bannerghatta", "Bellandur", "Sarjapur", "Kengeri", "Rajajinagar", "RT Nagar", "Kalyan Nagar", "HRBR Layout", "Cooke Town", "Frazer Town", "Cox Town", "Richmond Town", "Wilson Garden", "Jayanagar 4th Block", "Jayanagar 9th Block", "Banaswadi", "Kammanahalli", "Lingarajapuram", "Hoodi", "ITPL", "KR Puram", "Ramamurthy Nagar", "Bommanahalli", "Kudlu Gate", "Attibele", "Hosur Road", "Mysore Road", "Magadi Road", "Tumkur Road", "Yeshwantpur", "Peenya", "Dasarahalli"];
+const linkedAreas = NEIGHBOURHOODS
+  .map((name) => ({ name, slug: slugFor(name) }))
+  .filter((a) => AREA_SLUGS.has(a.slug));
 const breadcrumbs = [
   { label: 'Home', url: siteUrl },
   { label: 'Insurance Support Bangalore', url: `${siteUrl}/brand/insurance-support-bangalore` }
@@ -186,11 +198,11 @@ const localBusinessSchema = {
       <h2 class="text-3xl font-bold text-slate-900 text-center mb-6">We Serve All Bangalore Neighborhoods</h2>
       <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">From Koramangala to Yelahanka, Whitefield to Jayanagar — Insurance Support helps Bangalore families with claims, policies, and unbiased advice.</p>
       <div class="flex flex-wrap justify-center gap-2 mb-8">
-        {["Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "HSR Layout", "Marathahalli", "MG Road", "JP Nagar", "BTM Layout", "Malleswaram", "Yelahanka", "Electronic City", "Hebbal", "Bannerghatta", "Bellandur", "Sarjapur", "Kengeri", "Rajajinagar", "RT Nagar", "Kalyan Nagar", "HRBR Layout", "Cooke Town", "Frazer Town", "Cox Town", "Richmond Town", "Wilson Garden", "Jayanagar 4th Block", "Jayanagar 9th Block", "Banaswadi", "Kammanahalli", "Lingarajapuram", "Hoodi", "ITPL", "KR Puram", "Ramamurthy Nagar", "Bommanahalli", "Kudlu Gate", "Attibele", "Hosur Road", "Mysore Road", "Magadi Road", "Tumkur Road", "Yeshwantpur", "Peenya", "Dasarahalli"].map(area => (
-          <a href={`/cities/${area.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')}`} class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors">{area}</a>
+        {linkedAreas.map(area => (
+          <a href={`/cities/${area.slug}`} class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors">{area.name}</a>
         ))}
       </div>
-      <p class="text-center text-slate-500">View all <a href="/cities" class="text-blue-600 font-medium underline">46+ Bangalore areas →</a></p>
+      <p class="text-center text-slate-500">View all <a href="/cities" class="text-blue-600 font-medium underline">{AREAS.length} Bangalore areas →</a></p>
     </section>
 
     <!-- CTA -->
