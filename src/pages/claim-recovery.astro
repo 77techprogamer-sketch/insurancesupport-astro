@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 import SectionLinks from '../components/SectionLinks.astro';
+import RuleQuote from '../components/RuleQuote.astro';
 
 const TITLE = "Insurance Claim Support: Guides for Rejected, Delayed, or Reduced Claims";
 const DESCRIPTION = "Insurance claim rejection help in India: understand a denied, delayed, or short-paid claim, organize evidence, contact the insurer, and check official escalation routes.";
@@ -309,5 +310,13 @@ const FAQ = [
 
     </div>
     <SectionLinks current="/claim-recovery/" />
-  </main>
+    <div class="max-w-4xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-bold text-slate-900 mb-3">The sentence that decides most rejections</h2>
+    <RuleQuote rule="noRejectionForDocuments" />
+    <RuleQuote rule="interestForDelay" />
+    <p class="mt-4 text-slate-600">
+      Every deadline these rules set is collected on <a href="/insurance-claim-timelines/" class="text-blue-700 font-semibold hover:underline">the claim timelines page</a>, each with the circular it comes from.
+    </p>
+  </div>
+</main>
 </BaseLayout>

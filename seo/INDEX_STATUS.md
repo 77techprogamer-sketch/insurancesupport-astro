@@ -6,10 +6,10 @@ What it does give you is the other half of the comparison: every page the site p
 
 ## The numbers
 
-- HTML pages published: **866**
-- Pages asking to be indexed: **236**
+- HTML pages published: **867**
+- Pages asking to be indexed: **237**
 - Pages deliberately noindexed: **630**
-- URLs in the sitemaps: **234**
+- URLs in the sitemaps: **235**
 - Indexable pages kept out of the sitemaps because they canonicalise elsewhere: **2** (by design)
 
 ## What Google is being asked to index
@@ -18,7 +18,7 @@ What it does give you is the other half of the comparison: every page the site p
 |---|---|
 | Blog | 98 |
 | Location pages | 45 |
-| Core / brand | 31 |
+| Core / brand | 32 |
 | Service pages | 12 |
 | Case studies | 11 |
 | Comparisons | 10 |

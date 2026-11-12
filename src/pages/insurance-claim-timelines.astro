@@ -1,0 +1,263 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
+import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
+import RuleQuote from '../components/RuleQuote.astro';
+import SectionLinks from '../components/SectionLinks.astro';
+
+const PAGE_URL = 'https://insurancesupport.online/insurance-claim-timelines/';
+const TITLE = 'Every Insurance Claim Deadline in India, Quoted';
+const DESCRIPTION =
+  'Cashless in 1 hour, discharge in 3, death claims in 15 days, interest at bank rate plus 2%. Each clock with the IRDAI sentence that sets it.';
+const UPDATED = '2026-11-12';
+
+// Every row is either quoted in this file or set by an instrument named in it.
+// No row is here because it "sounds right".
+const clocks = [
+  {
+    event: 'Cashless authorisation at admission',
+    clock: '1 hour from the hospital’s request',
+    owed: 'Insurer or TPA',
+    source: 'Health circular, 29 May 2024',
+  },
+  {
+    event: 'Final authorisation at discharge',
+    clock: '3 hours from the hospital’s request',
+    owed: 'Insurer or TPA',
+    source: 'Health circular, 29 May 2024',
+  },
+  {
+    event: 'Delay beyond those three hours',
+    clock: 'Extra hospital charge borne by the insurer from shareholder funds',
+    owed: 'Insurer',
+    source: 'Health circular, 29 May 2024',
+  },
+  {
+    event: 'Death claim, no investigation',
+    clock: '15 days from intimation',
+    owed: 'Insurer',
+    source: 'PPI master circular, 5 Sep 2024',
+  },
+  {
+    event: 'Death claim under investigation',
+    clock: '45 days from intimation',
+    owed: 'Insurer',
+    source: 'PPI master circular, 5 Sep 2024',
+  },
+  {
+    event: 'Claim paid late',
+    clock: 'Interest at bank rate + 2%, intimation to payment, paid without being asked',
+    owed: 'Insurer',
+    source: 'PPI master circular, 5 Sep 2024',
+  },
+  {
+    event: 'Complaint to the Grievance Redressal Officer',
+    clock: 'Resolution within 14 days',
+    owed: 'Insurer',
+    source: 'Master circular, 5 Sep 2024',
+  },
+  {
+    event: 'Ombudsman complaint window',
+    clock: 'Within one year of the rejection or final reply',
+    owed: 'You',
+    source: 'Ombudsman Rules 2017, rule 14(3)(b)',
+  },
+  {
+    event: 'Ombudsman award',
+    clock: 'Within three months of receiving what it asked for',
+    owed: 'Ombudsman',
+    source: 'Ombudsman Rules 2017, rule 17(4)',
+  },
+  {
+    event: 'Insurer pays the award',
+    clock: '30 days, then ₹5,000 a day to the complainant',
+    owed: 'Insurer',
+    source: 'Rule 17(6) and PPI master circular',
+  },
+  {
+    event: 'Consumer commission limitation',
+    clock: 'Two years from the cause of action',
+    owed: 'You',
+    source: 'Consumer Protection Act 2019, section 69',
+  },
+  {
+    event: 'Policy open to challenge for non-disclosure',
+    clock: 'Not after three years — and revival restarts the clock',
+    owed: 'Insurer',
+    source: 'Section 45, Insurance Act 1938',
+  },
+  {
+    event: 'Health cover open to contest',
+    clock: 'Not after 60 months of continuous cover',
+    owed: 'Insurer',
+    source: 'Health circular, 29 May 2024',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long does an insurer have to settle a claim in India?',
+    answer:
+      'A death claim is due within 15 days of intimation, or 45 days where the insurer is investigating. Health claims run on the cashless clocks: one hour to decide an authorisation at admission, three hours to clear discharge. If any of these are missed, the claimant is entitled to interest at 2% above the bank rate from intimation until payment, which the insurer must pay on its own.',
+  },
+  {
+    question: 'Can an insurer reject a claim because a document is missing?',
+    answer:
+      'Not on that ground alone. The IRDAI master circular of 5 September 2024 says in terms that no claim shall be rejected or closed for want of documents or for delayed intimation, and that once a claim is intimated the insurer and its TPA must collect the records from the hospital. A rejection letter citing missing documents is contradicting the regulator.',
+  },
+  {
+    question: 'What if the hospital charges me for the delay in discharge approval?',
+    answer:
+      'If final authorisation takes longer than three hours from the hospital’s discharge request, the additional amount charged by the hospital is to be borne by the insurer from its shareholder funds. Ask the hospital desk for the timestamp of its request and get the extra charge itemised in writing.',
+  },
+  {
+    question: 'How long do I have to go to the Ombudsman?',
+    answer:
+      'One year from the insurer’s rejection or final reply, or from one month after your written complaint if no reply comes. The one-year limit in rule 14(3)(b) is the deadline most policyholders miss, because they spend that year re-explaining the case to a call centre.',
+  },
+  {
+    question: 'Is this list of deadlines exhaustive?',
+    answer:
+      'No. It covers the clocks that decide ordinary claim disputes: settlement, cashless, grievance, Ombudsman and consumer commission. Product-specific conditions in your policy schedule — waiting periods, sub-limits, moratorium — also apply, and the policy wording governs where it is more favourable to you.',
+  },
+];
+---
+
+<BaseLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  keywords="insurance claim timeline India, IRDAI claim settlement time limit, cashless 1 hour rule, discharge 3 hours, insurance ombudsman time limit, interest bank rate plus 2 percent"
+  canonical={PAGE_URL}
+  pageType="guide"
+  dateModified={UPDATED}
+>
+  <BreadcrumbJsonLd
+    items={[
+      { label: 'Home', url: 'https://insurancesupport.online' },
+      { label: 'Claim timelines', url: PAGE_URL },
+    ]}
+  />
+  <FAQPageJsonLd questions={faqs} />
+
+  <main id="main" role="main">
+    <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white">
+      <div class="max-w-4xl mx-auto px-4 py-16 lg:py-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300 mb-4">Reference · Updated 12 November 2026</p>
+        <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-5">
+          Every insurance claim deadline in India, with the sentence that sets it
+        </h1>
+        <p class="text-lg text-slate-200 max-w-3xl mb-4">
+          <strong class="text-white">Most pages tell you there is a deadline. This one quotes the rule.</strong> One hour for a cashless decision, three hours to clear a discharge, fifteen days for a death claim, interest at 2% above the bank rate when any of it slips.
+        </p>
+        <p class="text-slate-300 max-w-3xl">
+          Each clock below is either quoted verbatim from the IRDAI circular that created it, or tied to the rule in the Ombudsman Rules, the Insurance Act or the Consumer Protection Act. If a page ever tells you a different figure, check it against the regulator’s text.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 py-14">
+      <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">The clocks, in one table</h2>
+      <p class="text-slate-600 mb-6">Scroll sideways on a phone; the source column is the part that matters.</p>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-100 text-slate-900">
+            <tr>
+              <th class="px-4 py-3 font-semibold">What happens</th>
+              <th class="px-4 py-3 font-semibold">The clock</th>
+              <th class="px-4 py-3 font-semibold">Owed by</th>
+              <th class="px-4 py-3 font-semibold">Set by</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-600">
+            {clocks.map((row) => (
+              <tr class="border-t border-slate-100 align-top">
+                <td class="px-4 py-3 font-medium text-slate-900">{row.event}</td>
+                <td class="px-4 py-3">{row.clock}</td>
+                <td class="px-4 py-3">{row.owed}</td>
+                <td class="px-4 py-3 text-xs text-slate-500">{row.source}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 border-y border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 py-14">
+        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">The four that decide most disputes</h2>
+
+        <h3 class="text-lg font-bold text-slate-900 mb-1">1. A missing document is not a reason to refuse</h3>
+        <RuleQuote rule="noRejectionForDocuments" />
+
+        <h3 class="text-lg font-bold text-slate-900 mb-1">2. Gathering hospital records is their job</h3>
+        <RuleQuote rule="tpaCollectsDocuments" />
+
+        <h3 class="text-lg font-bold text-slate-900 mb-1">3. Cashless has two clocks, not one</h3>
+        <RuleQuote rule="cashlessOneHour" />
+        <RuleQuote rule="dischargeThreeHours" />
+
+        <h3 class="text-lg font-bold text-slate-900 mb-1">4. When it slips, interest is automatic</h3>
+        <RuleQuote rule="interestForDelay" />
+
+        <p class="text-slate-600 mt-8">
+          The last one is the most useful and the least claimed. Interest at 2% above the bank rate from intimation to payment is owed
+          <em>suo moto</em> — the insurer is meant to add it without being asked. Almost nobody asks. If a claim was paid months late, that
+          is a separate, documentable claim on its own.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 py-14">
+      <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">Why you may have read “30 days” elsewhere</h2>
+      <p class="text-slate-600 mb-4">
+        Because it used to be the number. The IRDAI (Protection of Policyholders’ Interests) Regulations, 2017 required claim settlement within
+        30 days of receiving the last necessary document, and a great deal of what is published on the internet — including older pages on this
+        site — was written under that rule.
+      </p>
+      <p class="text-slate-600 mb-4">
+        The 2024 master circular tightened the clocks for life claims to 15 days (45 where the insurer is investigating) and made interest at
+        2% above the bank rate automatic when a timeline slips. The health circular of 29 May 2024 replaced the health timelines entirely with
+        the one-hour and three-hour cashless clocks.
+      </p>
+      <p class="text-slate-600">
+        So where a page still says 30 days, treat it as the 2017 floor rather than the current obligation. The regulator’s current text is what
+        an insurer has to answer to, and it is stricter than the old figure.
+      </p>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 py-14">
+      <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">How to use this page</h2>
+      <ol class="space-y-3 text-slate-700">
+        <li><strong>1. Date everything.</strong> Claim intimation, document submission, hospital requests, the day the rejection arrived. Every clock above starts from one of those dates, and none of them can be reconstructed later.</li>
+        <li><strong>2. Name the clock in writing.</strong> A complaint that says “you took five hours at discharge, against the three hours in the 29 May 2024 circular” is harder to answer than one that says “my claim was delayed”.</li>
+        <li><strong>3. Claim the interest.</strong> If a settlement ran late, the 2%-above-bank-rate interest is a separate entitlement. It belongs in the same letter, not in a later complaint.</li>
+      </ol>
+      <p class="mt-8 text-slate-600">
+        The escalation route these clocks feed into is on
+        <a href="/claim-recovery/" class="text-blue-700 font-semibold hover:underline">the claim recovery page</a>.
+        The specific filings are covered in
+        <a href="/blog/insurance-ombudsman-india-guide" class="text-blue-700 hover:underline">the Ombudsman guide</a> and
+        <a href="/blog/irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026" class="text-blue-700 hover:underline">the cashless authorisation guide</a>.
+      </p>
+    </section>
+
+    <section class="bg-slate-50 border-t border-slate-200">
+      <div class="max-w-3xl mx-auto px-4 py-14">
+        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">Questions</h2>
+        <div class="space-y-3">
+          {faqs.map((faq) => (
+            <details class="rounded-xl border border-slate-200 bg-white p-5">
+              <summary class="cursor-pointer font-semibold text-slate-900 list-none">{faq.question}</summary>
+              <p class="mt-3 text-slate-600 leading-relaxed">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+        <p class="mt-8 text-slate-600">
+          If your claim ran past one of these clocks, <a href="/contact/" class="text-blue-700 font-semibold hover:underline">send the dates and the rejection letter</a> — the first read is free.
+        </p>
+      </div>
+    </section>
+
+    <SectionLinks current="/insurance-claim-timelines/" />
+  </main>
+</BaseLayout>

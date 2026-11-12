@@ -1,0 +1,65 @@
+---
+/**
+ * One verbatim provision, set as a quotation with its instrument underneath.
+ *
+ * Deliberately plain: no background gradient, no icon. The point of the block is
+ * that the words are the regulator's, so the design should not compete with them.
+ */
+import { RULES } from '../data/rules';
+
+interface Props {
+  /** Key into RULES. */
+  rule: keyof typeof RULES;
+  /** Hide the plain-English gloss where the surrounding text already covers it. */
+  compact?: boolean;
+}
+
+const { rule, compact = false } = Astro.props;
+const r = RULES[rule];
+---
+
+<figure class="rule-quote">
+  <blockquote>{r.quote}</blockquote>
+  <figcaption>
+    <span class="rule-quote__source">{r.instrument}</span>
+    <span class="rule-quote__meta"> · {r.date}</span>
+  </figcaption>
+  {!compact && <p class="rule-quote__plain">{r.plain}</p>}
+</figure>
+
+<style>
+  .rule-quote {
+    margin: 1.75rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--color-primary, #2563eb);
+    background: var(--color-bg-alt, #f8fafc);
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-family: var(--font-sans);
+  }
+
+  .rule-quote blockquote {
+    margin: 0;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--color-text, #0f172a);
+    font-weight: 500;
+  }
+
+  .rule-quote figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #64748b);
+  }
+
+  .rule-quote__source {
+    font-weight: 600;
+    color: var(--color-text-secondary, #475569);
+  }
+
+  .rule-quote__plain {
+    margin: 0.75rem 0 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary, #475569);
+  }
+</style>

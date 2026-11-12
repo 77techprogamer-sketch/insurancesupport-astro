@@ -8,6 +8,7 @@ import { ogImageForSlug } from '../../utils/ogImage';
 import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
 import { bucketFor } from '../../data/topic-links';
 import { sourcesFor } from '../../data/sources';
+import RuleQuote from '../../components/RuleQuote.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
@@ -126,6 +127,17 @@ const htmlContent = withAnswerBox.replace(
   },
 );
 
+
+// Posts that argue from a specific provision get that provision quoted in full.
+// Deliberately a short list: a quote on every post would be decoration.
+const RULE_QUOTES: Record<string, (keyof typeof import('../../data/rules').RULES)[]> = {
+  'irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026': ['cashlessOneHour', 'dischargeThreeHours', 'insurerPaysDelayCost'],
+  'insurance-ombudsman-india-guide': ['awardPenalty'],
+  'section-45-insurance-act-three-year-rule-2026': ['tenableEvidence'],
+  'health-insurance-pre-existing-disease-waiting-period-guide-2026': ['noRejectionForDocuments'],
+  'lic-claim-rejection-appeal-process-2026': ['tenableEvidence', 'interestForDelay'],
+};
+const ruleQuotes = RULE_QUOTES[post.slug as string] || [];
 
 const topic = bucketFor(post.title, post.summary || '', articleContent as string);
 const sources = sourcesFor(articleContent as string);
@@ -265,6 +277,18 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
       )}
 
       <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
+
+      {ruleQuotes.length > 0 && (
+        <div class="max-w-3xl mx-auto px-4 mt-12">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">The rule itself</h2>
+          <p class="text-sm text-slate-500 mb-2">Quoted, so you can use it word for word in a complaint.</p>
+          {ruleQuotes.map((id) => <RuleQuote rule={id} />)}
+          <p class="text-sm text-slate-600 mt-4">
+            Every deadline in the claim route, with its source, is on
+            <a href="/insurance-claim-timelines/" class="text-blue-700 font-semibold hover:underline">the claim timelines page</a>.
+          </p>
+        </div>
+      )}
 
       <!-- Contextual links: descriptive anchors to the pages that go deeper -->
       <aside class="max-w-3xl mx-auto px-4 mt-12" aria-labelledby="go-deeper">
