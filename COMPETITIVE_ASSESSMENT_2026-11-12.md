@@ -178,7 +178,7 @@ The exemptions matter more than the rule:
 | Crawlers (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot…) | They fetch from US IPs. Gating them hides the whole site from search. |
 | Link previews (WhatsApp, Slack, LinkedIn, Facebook) | Otherwise every shared link shows no title or image. |
 | Assets, sitemaps, robots.txt, `/api` | Not pages; gating them breaks rendering or discovery. |
-| `/guides/nri-business/` and NRI posts | That audience is outside India on purpose. |
+| The NRI and business cluster — hub plus its four posts (NRI payout, SME, cyber, wedding) | That audience is outside India on purpose. |
 | Requests with no country code | Serve normally rather than guess. |
 
 Emergency switch: set `GEO_GATE=off` in Cloudflare Pages → Settings → Environment variables and redeploy. The gate then does nothing.
@@ -190,3 +190,9 @@ Emergency switch: set `GEO_GATE=off` in Cloudflare Pages → Settings → Enviro
 **What not to do.** Do not serve `noindex` based on country: Googlebot is American, so that would de-index the site. Do not block by IP range in robots.txt: robots.txt has no geography. Do not remove the English content or the translated pages believing that causes foreign impressions; it does not.
 
 **Expectation.** The gate removes foreign *sessions*, not foreign *impressions*. Impressions in Google's worldwide report may barely move. The metric that should improve is the ratio of India to non-India sessions in analytics, and the quality of the leads that arrive.
+
+**NRI exemption, widened.** The first cut exempted only paths containing "nri", which covered the hub and one post. The cluster is actually five pages — the hub plus NRI claim payout, SME, cyber and wedding cover — so the exemption is now that list rather than a substring match, with `nri`, `non-resident` and `overseas` in any path still caught.
+
+The button on the notice page now passes `?stay=1`, so an NRI who chooses it gets the 30-day cookie and can then read any page. Without that, the exemption let them read the hub and then put them back in front of the notice on the first ordinary article — a worse experience than gating the hub itself.
+
+When the pillar gains or loses a post, its slug goes in `NRI_PREFIXES` in `functions/_middleware.ts`. That is a two-line edit and the only maintenance the gate needs.
