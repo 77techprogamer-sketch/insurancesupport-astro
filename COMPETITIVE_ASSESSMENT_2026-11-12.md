@@ -196,3 +196,30 @@ Emergency switch: set `GEO_GATE=off` in Cloudflare Pages → Settings → Enviro
 The button on the notice page now passes `?stay=1`, so an NRI who chooses it gets the 30-day cookie and can then read any page. Without that, the exemption let them read the hub and then put them back in front of the notice on the first ordinary article — a worse experience than gating the hub itself.
 
 When the pillar gains or loses a post, its slug goes in `NRI_PREFIXES` in `functions/_middleware.ts`. That is a two-line edit and the only maintenance the gate needs.
+
+---
+
+## 12. Bengaluru first, India second
+
+The instruction: Bengaluru is priority one, the rest of India is priority two. The site had 83 locality pages, 14 Bengaluru area pages and two Bengaluru blog posts — and **no single page that a search for "insurance claim help Bangalore" could sensibly land on.** Everything local was one click deep and nothing tied it together. That page now exists at `/bangalore/`.
+
+**What is on it.** 1,300 words, answer-first, built on the four things that are genuinely different here: the Karnataka Ombudsman sits in JP Nagar; LIC files live with a divisional office, not the branch that sold the policy; cashless is refused at the hospital desk before a planned procedure; and motor claims fail on renewal gaps and surveyor estimates. Then the document route, the area grid, six local guides and five Bengaluru FAQs.
+
+**How it is wired.** Priority is a plumbing problem before it is a copy problem:
+
+| Placement | Reach |
+|---|---|
+| Header navigation | Every page |
+| Footer quick links ("Bengaluru (HQ)") | 854 pages |
+| Strip under the homepage hero | Homepage |
+| Priority banner | `/locations/` |
+| Breadcrumb (Bengaluru → Locality) | 83 locality pages |
+| Breadcrumb (Bengaluru → Location) | 56 location pages |
+
+**One compromise.** Seven items do not fit a 64px bar at 900px wide, so "Insurance Support Hub" became "Support Hub" and the nav tightens below 1120px. If the row looks wrong on your laptop, say so and the item moves to the footer only.
+
+**Schema.** Bengaluru now leads `areaServed` (city, country, state). The page-level duplicate business node was dropped — one address, one entity, no conflicting NAP for Google to choose between.
+
+**Build:** 859 HTML files, 235 indexable (+1), 0 broken links.
+
+**What this does not do.** A hub page does not by itself rank a local query. `insurance advisor bangalore` is won with the Google Business Profile, reviews in Bengaluru, citations in local directories, and links from Bengaluru sites. The first of those exists and is now linked from every page; the second is the five reviews still outstanding; the third and fourth are the next piece of work, and neither can be faked.
