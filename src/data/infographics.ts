@@ -1372,7 +1372,7 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
         items: [
           { title: 'Written reasons citing the clause', detail: 'The insurer cannot simply say “claim denied” — it must point to the specific policy provision relied on.', tone: 'primary' },
           { title: 'Settlement within 30 days', detail: 'From receipt of all documents. Miss it and interest at 2% above bank rate becomes payable.', tone: 'accent' },
-          { title: 'The moratorium on pre-existing disease', detail: 'After continuous coverage — 2 to 4 years depending on the policy — a PED denial is no longer open to the insurer.', tone: 'accent' },
+          { title: 'The moratorium on pre-existing disease', detail: 'After 8 continuous years of coverage, no claim can be contested at all, except for proven fraud or a permanent exclusion in the policy contract.', tone: 'accent' },
           { title: 'Protection from rescission after 2 years', detail: 'Under the Insurance Act, a policy cannot be voided for non-disclosure after two years unless it was fraudulent.', tone: 'primary' },
           { title: 'Escalation to IRDAI and the Ombudsman', detail: 'Free, and no lawyer is required at the Ombudsman.', tone: 'primary' },
         ],
