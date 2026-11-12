@@ -78,10 +78,50 @@ const rawHtml = renderMarkdown(articleContent);
  * disappears into the article; boxed, it reads as the answer — which is both an
  * honest reading aid and the shape Google's snippet extractor prefers.
  */
-const htmlContent = rawHtml.replace(
+const withAnswerBox = rawHtml.replace(
   /<h2[^>]*>\s*The short answer\s*<\/h2>([\s\S]*?)(<h2[^>]*>)/i,
   (_m, body, nextHeading) =>
     `<section class="answer-box"><p class="answer-box-label">The short answer</p>${body.trim()}</section>${nextHeading}`,
+);
+
+/**
+ * Give every H2 an id and build "On this page" from them.
+ *
+ * A 1,500-word article with a dozen headings is unscannable without a contents
+ * list, and headings that carry ids become jump links that Google shows as
+ * sitelinks under the result. Ids are slugified from the heading text and
+ * de-duplicated, since a few posts repeat a heading ("What you need to gather").
+ */
+const toc: { id: string; label: string }[] = [];
+const usedIds = new Set<string>();
+const htmlContent = withAnswerBox.replace(
+  /<h2([^>]*)>([\s\S]*?)<\/h2>/g,
+  (_m: string, attrs: string, inner: string) => {
+    const label = inner
+      .replace(/<[^>]+>/g, '')
+      // Headings arrive HTML-encoded; decode once so JSX does not escape the
+      // entity again and print "&#39;" in the contents list.
+      .replace(/&#(\d+);/g, (_e: string, code: string) => String.fromCharCode(Number(code)))
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&nbsp;/g, ' ')
+      .trim();
+    let id = label
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-')
+      .slice(0, 60) || 'section';
+    let unique = id;
+    let n = 2;
+    while (usedIds.has(unique)) unique = `${id}-${n++}`;
+    usedIds.add(unique);
+    if (toc.length < 12) toc.push({ id: unique, label });
+    const withId = /\sid=/.test(attrs) ? attrs : `${attrs} id="${unique}"`;
+    return `<h2${withId}>${inner}</h2>`;
+  },
 );
 
 
@@ -208,6 +248,17 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 
     <!-- Article Body -->
     <article class="py-12 lg:py-16 bg-white">
+      {toc.length >= 3 && (
+        <nav class="article-toc" aria-labelledby="toc-label">
+          <p class="article-toc-label" id="toc-label">On this page</p>
+          <ol>
+            {toc.map((item) => (
+              <li><a href={`#${item.id}`}>{item.label}</a></li>
+            ))}
+          </ol>
+        </nav>
+      )}
+
       <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
 
       {pillar && (
@@ -390,6 +441,62 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
   }
   .blog-content pre code {
     @apply bg-transparent text-slate-100 p-0;
+  }
+
+  /* Contents list: scannable entry into a long article. */
+  .article-toc {
+    margin: 2.5rem auto 0.5rem;
+    max-width: 48rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.875rem;
+    background: #f8fafc;
+  }
+
+  .article-toc-label {
+    margin: 0 0 0.75rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.35rem 1.5rem;
+    counter-reset: toc;
+  }
+
+  .article-toc li {
+    counter-increment: toc;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+
+  .article-toc li::before {
+    content: counter(toc);
+    margin-right: 0.6rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: #94a3b8;
+  }
+
+  .article-toc a {
+    color: #334155;
+    text-decoration: none;
+  }
+
+  .article-toc a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  @media (min-width: 640px) {
+    .article-toc ol { grid-template-columns: 1fr 1fr; }
   }
 
   /* The answer-first block, boxed. */
