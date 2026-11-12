@@ -118,3 +118,30 @@ Every blog post now links up to its hub and across to four siblings. 78 of 81 En
 Site after the change: **857 HTML files, 234 indexable pages, 0 orphan pages, 0 titles over 60 characters, 0 broken relative links.**
 
 What has *not* changed — and will decide whether any of this works — is the list in section 6: a photograph, five real reviews, ten real links, and an answer-first rewrite of the twenty pages that matter most. The structure is now in place to carry that work; it cannot substitute for it.
+
+---
+
+## 9. Follow-up: the answer-first pass, and what it uncovered
+
+The plan for this pass was cosmetic — put a direct answer in the first sixty words of the twenty highest-intent pages, the way the pages that currently own the featured snippet do. Two things surfaced on the way in, and both mattered more than the rewrite.
+
+**Six pages had no body at all.** Five English posts rendered a hero, a byline, a pillar card and a call to action around *nothing* — roughly 600 words of chrome and no content. A sixth was an 85-word stub. Their slugs are the highest-intent on the site: LIC claim rejection, ICICI Lombard cashless denial, Care Health settlement ratio, the Bangalore Ombudsman, Bima Bharosa filing, the complaint toolkit. These were live, indexed, internally linked pages competing for exactly the queries we want. All six are now written in full (950–1,250 words each), with the answer in the first sentence, a source table, the steps, and an FAQ. A seventh page, the claim rejection *data* page, was rebuilt as a methodology piece, because its original content was a table of rates attributed to IRDAI that IRDAI does not publish.
+
+**The site was carrying invented social proof.** Not a stray line — a pattern, across English posts, translated duplicates, blog summaries, the lead-magnet page, and author bylines:
+
+| Claim found on site | Where | Status |
+|---|---|---|
+| "78% overturn rate since 2018" | 11 posts, summaries, bylines, lead magnet | Removed |
+| "Rs 50Cr+ recovered for clients" | 13 posts, bylines, translated duplicates | Removed |
+| "95% success rate on health appeals", "98% approval" | hub translations | Removed |
+| "100+ Ombudsman filings assisted" | bylines | Removed |
+| "IRDAI data: 15–20% of claims rejected" | 43 pages including translations | Replaced with a sourced statement that no such figure is published |
+| Named client case studies with amounts and durations | 16 posts | Relabelled as composite examples |
+
+This is the same error as the fabricated reviews removed earlier in section 8, and the same reason to remove it: unverifiable numbers are not an asset that survives contact with a regulator, a journalist or a competitor's complaint. The stories that remain are now labelled as illustrative, and the facts that do the persuading are sourced instead — G.S.R. 828(E) for the ₹50 lakh limit, Rule 17(6) for ₹5,000 a day on a delayed award, 30 days and 45 days under the 2017 regulations, 14 days for a grievance under the September 2024 Master Circular.
+
+**Answer-first coverage after the pass:** 35 of 105 top-level blog pages now open with an explicit answer block, up from 6. That is every page in the top twenty by intent, the six previously empty ones, and the three pillar hubs. The remaining 70 are mid-tail and can follow the same pattern as they are reviewed.
+
+**Site after the change:** 857 HTML files, 234 indexable pages, 232 sitemap URLs, 0 orphan pages, 0 titles over 60 characters, 0 broken internal links, 0 pages carrying invented performance claims.
+
+**What this does not change.** Section 6 stands. A page that answers the question in sixty words still needs a face, five real reviews and a handful of links before it outranks a content farm. The difference is that the content is now fit to be ranked — the sentences a stranger would check are the ones we can now defend.
