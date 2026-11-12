@@ -223,3 +223,29 @@ The instruction: Bengaluru is priority one, the rest of India is priority two. T
 **Build:** 859 HTML files, 235 indexable (+1), 0 broken links.
 
 **What this does not do.** A hub page does not by itself rank a local query. `insurance advisor bangalore` is won with the Google Business Profile, reviews in Bengaluru, citations in local directories, and links from Bengaluru sites. The first of those exists and is now linked from every page; the second is the five reviews still outstanding; the third and fourth are the next piece of work, and neither can be faked.
+
+---
+
+## 13. Making /contact a page that can rank
+
+The instruction: `/contact` should be a top-priority page in Google, not an afterthought.
+
+**The honest limit first.** A contact page will not outrank a 2,000-word guide for "how to appeal a rejected claim" — nobody searching that wants a phone number. Where a contact page *can* and should win is contact intent: "insurance advisor Bangalore contact", "insurance agent phone number Bengaluru", "claim help Bangalore phone", and the brand query. It was losing those to its own thinness: 376 words, a generic title, no address, no hours, no schema beyond a generic WebPage.
+
+**What changed**
+
+| Lever | Before | After |
+|---|---|---|
+| Title | Contact Us \| Insurance Support by Hari Kotian | Contact an Insurance Advisor in Bengaluru \| 99866 34506 (55 chars) |
+| H1 | "Let's Discuss Your Insurance Needs" | "Contact an insurance advisor in Bengaluru" |
+| Words | 376 | 785 |
+| Schema | WebPage | ContactPage + InsuranceAgency + FAQPage |
+| In the header nav | No | Yes (8 items; compact-nav breakpoint moved to 1280px) |
+| Sitemap priority | 0.7 | 0.9, behind only the homepage |
+| Pages linking to it | — | 854 |
+
+**Added to the page:** what to send for a rejection, a LIC policy or a planning question; what happens after contact; a visible NAP block (address, phone, email, hours, languages, IRDAI number, Google listing); and four FAQs that answer the questions people actually ring up with — is it free, do I have to come to Bengaluru, what if the policy is from another state, can you guarantee the claim.
+
+**NAPs must match.** The address, phone and hours on this page now match the organisation schema and the Google Business Profile. If those three drift apart, Google trusts all of them less — that is the one thing to keep in step manually.
+
+**What is still missing for contact-intent ranking:** the Google Business Profile needs its own posts and photos, the site needs a handful of Bengaluru citations, and the reviews have to be real. A page cannot signal local trust on its own.
