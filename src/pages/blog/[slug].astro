@@ -9,6 +9,9 @@ import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
 import LanguageSidebar from '../../components/LanguageSidebar.astro';
+import Infographic from '../../components/Infographic.astro';
+import { getInfographic } from '../../data/infographics';
+import { splitAtHeading } from '../../lib/infographic';
 import { marked } from 'marked';
 import claimRecoveryPillar from '../../content/pillars/claim-recovery-hub.md?raw';
 import healthInsurancePillar from '../../content/pillars/health-insurance-hub.md?raw';
@@ -103,7 +106,10 @@ renderer.image = function({ href, title, text }) {
 };
 
 // Headings
-renderer.heading = function({ text, depth }) {
+renderer.heading = function({ tokens, depth }) {
+  // `tokens` must be rendered inline, otherwise headings print raw markdown
+  // (e.g. "Claim [Settlement Ratio](/blog/x)" instead of a real link).
+  const text = this.parser.parseInline(tokens);
   const cls = {
     1: 'text-3xl font-extrabold text-slate-900 mt-12 mb-5 leading-tight',
     2: 'text-2xl font-bold text-slate-900 mt-12 mb-4 pb-3 border-b border-slate-100',
@@ -137,6 +143,14 @@ renderer.paragraph = function({ text }) {
 marked.use({ renderer });
 
 const htmlContent = marked.parse(articleContent);
+
+// ---- Article infographic -------------------------------------------------
+// If an infographic is registered for this slug, split the rendered article at a
+// safe heading boundary and drop the figure in between the two halves.
+const infographic = getInfographic(post.slug);
+const articleParts = infographic
+  ? splitAtHeading(htmlContent, infographic.anchor)
+  : { before: htmlContent, after: '' };
 
 // Parse FAQ section from markdown: "## FAQ" followed by **Q: ...** / answer paragraphs
 const faqs = [];
@@ -265,7 +279,11 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 
     <!-- Article Body -->
     <article class="py-12 lg:py-16 bg-white">
-      <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
+      {articleParts.before && <div class="max-w-3xl mx-auto px-4 blog-content" set:html={articleParts.before} />}
+
+      {infographic && <Infographic slug={post.slug} />}
+
+      {articleParts.after && <div class="max-w-3xl mx-auto px-4 blog-content" set:html={articleParts.after} />}
 
       <!-- Claim Review CTA (high-intent posts only) -->
       {isClaimIntent && <ClaimReviewCTA />}

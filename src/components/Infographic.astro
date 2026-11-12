@@ -1,0 +1,157 @@
+---
+/**
+ * Infographic.astro
+ * -----------------------------------------------------------------------------
+ * Renders the article-specific infographic registered for a slug.
+ *
+ *   <Infographic slug={post.slug} />
+ *
+ * Output is a self-contained <figure>: inline SVG (responsive, accessible) plus
+ * a visible figcaption summary and a machine-readable data table in a <details>
+ * so the same facts are exposed to crawlers and LLM answer engines.
+ */
+import { getInfographic } from '../data/infographics';
+import { renderInfographicSvg } from '../lib/infographic';
+
+export interface Props {
+  /** Article slug — must match an entry in src/data/infographics.ts */
+  slug: string;
+  /** Override the <figcaption> summary (defaults to the spec's summary). */
+  caption?: string;
+  /** Extra classes for the <figure> wrapper. */
+  class?: string;
+}
+
+const {
+  slug,
+  caption,
+  class: className = 'max-w-3xl mx-auto px-4',
+} = Astro.props;
+const spec = getInfographic(slug);
+
+let svg = '';
+let height = 0;
+if (spec) {
+  const out = renderInfographicSvg(spec);
+  svg = out.svg;
+  height = out.height;
+}
+
+/** Flatten a spec into label/value rows for the accessible data table. */
+function tableRows(spec: NonNullable<typeof spec>) {
+  const rows: { group: string; label: string; value: string }[] = [];
+  for (const block of spec.blocks) {
+    const group = block.heading ?? spec.title;
+    switch (block.kind) {
+      case 'stats':
+        block.items.forEach((i) => rows.push({ group, label: i.label, value: i.value + (i.note ? ` (${i.note})` : '') }));
+        break;
+      case 'bars':
+        block.items.forEach((i) => rows.push({ group, label: i.label, value: i.display ?? String(i.value) }));
+        break;
+      case 'timeline':
+        block.items.forEach((i) => rows.push({ group, label: `${i.marker} — ${i.title}`, value: i.detail }));
+        break;
+      case 'steps':
+        block.items.forEach((i, n) => rows.push({ group, label: `Step ${n + 1} — ${i.title}`, value: i.detail }));
+        break;
+      case 'ladder':
+        block.items.forEach((i) => rows.push({ group, label: `${i.tier} — ${i.title}`, value: i.detail + (i.meta ? ` (${i.meta})` : '') }));
+        break;
+      case 'compare':
+        block.rows.forEach((r) => rows.push({ group, label: r.label, value: `${block.leftTitle}: ${r.left} · ${block.rightTitle}: ${r.right}` }));
+        break;
+      case 'donut':
+        block.items.forEach((i) => rows.push({ group, label: i.label, value: `${i.value}` }));
+        break;
+      case 'decision':
+        block.branches.forEach((b) => rows.push({ group, label: `${b.condition} — ${b.outcome}`, value: b.detail }));
+        break;
+    }
+  }
+  return rows;
+}
+
+const rows = spec ? tableRows(spec) : [];
+const captionText = caption ?? spec?.summary ?? '';
+const tableId = `ig-data-${slug.replace(/[^a-zA-Z0-9]/g, '-').slice(0, 48)}`;
+---
+
+{
+  spec && (
+    <figure
+      class:list={['infographic not-prose my-10 scroll-mt-24', className]}
+      data-infographic={spec.slug}
+    >
+      <div class="infographic__frame overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        {svg && <Fragment set:html={svg} />}
+      </div>
+
+      {(captionText || spec.source) && (
+        <figcaption class="mt-3 px-1 text-[13px] leading-relaxed text-slate-500">
+          {captionText && <span class="text-slate-600">{captionText}</span>}
+          {spec.source && <span class="text-slate-400"> Source: {spec.source}</span>}
+          <span class="mt-1 block text-[11px] text-slate-400 sm:hidden">
+            Scroll the graphic sideways to see it full size →
+          </span>
+        </figcaption>
+      )}
+
+      {rows.length > 0 && (
+        <details class="infographic__data mt-3 group">
+          <summary class="inline-flex cursor-pointer list-none items-center gap-1.5 text-[12px] font-semibold text-blue-600 hover:text-blue-800 transition-colors">
+            <svg class="h-3.5 w-3.5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+            View this infographic as data
+          </summary>
+          <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200">
+            <table id={tableId} class="w-full border-collapse text-left text-[13px]">
+              <caption class="sr-only">{spec.title} — data table</caption>
+              <thead class="bg-slate-50">
+                <tr>
+                  <th scope="col" class="px-3 py-2 font-semibold text-slate-500">Section</th>
+                  <th scope="col" class="px-3 py-2 font-semibold text-slate-500">Item</th>
+                  <th scope="col" class="px-3 py-2 font-semibold text-slate-500">Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r) => (
+                  <tr class="border-t border-slate-100">
+                    <td class="px-3 py-2 align-top text-slate-500">{r.group}</td>
+                    <td class="px-3 py-2 align-top font-medium text-slate-800">{r.label}</td>
+                    <td class="px-3 py-2 align-top text-slate-600">{r.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      )}
+    </figure>
+  )
+}
+
+<style>
+  /* Inline SVG scales fluidly; cap the width so sparse charts stay readable. */
+  .infographic__frame :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Below the tablet breakpoint an 800px-wide graphic would shrink its body
+     text below ~7px, so let it scroll sideways at a readable minimum width. */
+  @media (max-width: 640px) {
+    .infographic__frame {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .infographic__frame :global(svg) {
+      min-width: 640px;
+      max-width: 640px;
+    }
+  }
+</style>
