@@ -160,3 +160,33 @@ Hari supplied the link he sends to clients by message: `https://g.page/r/CRDgJan
 **What this does and does not fix.** It makes it easy for a satisfied client to leave a review, which is the cheapest trust signal available and the one section 6 identified as missing. It does **not** put stars in search results: that needs real reviews plus `AggregateRating` markup, and the markup stays off until the reviews exist. The earlier fabricated 4.8/127 is still gone, and it stays gone.
 
 **One cleanup this forced.** The organisation schema's `sameAs` array contained four URLs that resolved to nothing real — a Google Maps place link with a duplicated hex identifier, a YouTube channel ID of repeating characters, and three brand handles that appear nowhere on the site. They are replaced with the real listing plus the two handles the footer actually displays. Structured data that describes imaginary profiles is the same error as the fake reviews, in a less visible place.
+
+---
+
+## 11. India-only traffic
+
+The request: traffic from search engines outside India should not land here.
+
+**The honest part first.** No search engine offers a switch that says "rank me in India only." Google retired country targeting in Search Console; there is no equivalent to a geo-restriction you can declare. A site written in English about insurance can surface in Manchester as easily as in Mangalore, and Googlebot's crawler has no country. Three things actually move the needle, and only the first one changes today's numbers:
+
+**1. Stop serving human visitors outside India.** Done, in `functions/_middleware.ts`. A non-India visitor asking for an HTML page is sent to `/outside-india/`, a one-screen notice explaining that the site covers Indian insurance, with two exits: continue (sets a 30-day cookie) or the NRI section, which is written for Indians abroad. Built and rendering; 858 pages, 234 indexable, 0 broken links.
+
+The exemptions matter more than the rule:
+
+| Exempt | Why |
+|---|---|
+| Crawlers (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot…) | They fetch from US IPs. Gating them hides the whole site from search. |
+| Link previews (WhatsApp, Slack, LinkedIn, Facebook) | Otherwise every shared link shows no title or image. |
+| Assets, sitemaps, robots.txt, `/api` | Not pages; gating them breaks rendering or discovery. |
+| `/guides/nri-business/` and NRI posts | That audience is outside India on purpose. |
+| Requests with no country code | Serve normally rather than guess. |
+
+Emergency switch: set `GEO_GATE=off` in Cloudflare Pages → Settings → Environment variables and redeploy. The gate then does nothing.
+
+**2. Tell the engines the audience is Indian.** Most of this was already in place and is now reinforced: `<html lang="en-IN">`, self-referential `hreflang="en-IN"` plus `x-default`, geo meta tags (`IN-KA`, Bengaluru, coordinates), a postal address in Karnataka, `+91` phone, ₹ amounts, and organisation schema with `areaServed` now naming **India** (Karnataka as a sub-area) and `currenciesAccepted: INR`. Content does the rest — IRDAI, the Ombudsman, Bima Bharosa and Section 45 are Indian by definition, which no generic international insurance site can imitate.
+
+**3. Measure India separately.** In Search Console, filter Performance by country = India before drawing conclusions; the worldwide average hides the number that matters. In analytics, exclude the noise bots. If a large share of the "outside India" traffic turns out to be scrapers and AI crawlers, the gate will not change it — but nothing that matters is lost either.
+
+**What not to do.** Do not serve `noindex` based on country: Googlebot is American, so that would de-index the site. Do not block by IP range in robots.txt: robots.txt has no geography. Do not remove the English content or the translated pages believing that causes foreign impressions; it does not.
+
+**Expectation.** The gate removes foreign *sessions*, not foreign *impressions*. Impressions in Google's worldwide report may barely move. The metric that should improve is the ratio of India to non-India sessions in analytics, and the quality of the leads that arrive.
