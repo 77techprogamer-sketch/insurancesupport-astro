@@ -36,9 +36,25 @@ const AUTOMATED = /(bot|crawler|spider|crawl|slurp|preview|fetcher|validator|mon
 
 const ASSET = /\.(?:css|js|mjs|json|map|png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf|eot|mp4|webm|pdf|xlsx|docx|txt|xml|zip|gz|webmanifest)$/i;
 
-// Pages written for Indians living abroad. Gating these would close the one
-// audience that is outside India on purpose.
-const NRI_PATH = /(?:^|\/)(?:nri|guides\/nri-business|blog\/nri)/i;
+// The NRI and business cluster — the one part of the site written for people
+// who are outside India on purpose. Gating it would close the only audience
+// that crosses the gate legitimately.
+//
+// The hub plus its four members. If the pillar gains or loses a post, add or
+// remove its slug here; anything with "nri" in the path is caught by the regex.
+const NRI_PREFIXES = [
+  '/guides/nri-business',
+  '/blog/nri-insurance-claim-india-documents-payout-2026',
+  '/blog/sme-insurance-in-india-2026-complete-guide-for-small-and-medium-businesses',
+  '/blog/cyber-insurance-india-2026-protect-your-business-from-digital-threats',
+  '/blog/wedding-insurance-india-2026-protect-your-big-day-from-unexpected-disruptions',
+];
+const NRI_PATH = /(?:^|\/)nri|non-resident|overseas/i;
+
+function isNriPath(path: string): boolean {
+  const p = path.length > 1 && path.endsWith('/') ? path.slice(0, -1) : path;
+  return NRI_PATH.test(p) || NRI_PREFIXES.some((prefix) => p === prefix || p.startsWith(prefix + '/'));
+}
 
 function hasCookie(header: string | null, name: string, value: string): boolean {
   if (!header) return false;
@@ -61,15 +77,6 @@ export const onRequest = async (context: any) => {
 
   if (ASSET.test(path) || path.startsWith('/api/') || path === '/robots.txt') return next();
   if (path === NOTICE_PATH || path === NOTICE_PATH.slice(0, -1)) return next();
-  if (NRI_PATH.test(path)) return next();
-
-  // Human page navigation only.
-  const accept = request.headers.get('Accept') || '';
-  if (!accept.includes('text/html')) return next();
-
-  const userAgent = request.headers.get('User-Agent') || '';
-  if (!userAgent || AUTOMATED.test(userAgent)) return next();
-
   // "Continue anyway" from the notice page: remember the choice for 30 days.
   if (url.searchParams.get('stay') === '1') {
     const target = new URL(url.toString());
@@ -84,6 +91,15 @@ export const onRequest = async (context: any) => {
       },
     });
   }
+
+  if (isNriPath(path)) return next();
+
+  // Human page navigation only.
+  const accept = request.headers.get('Accept') || '';
+  if (!accept.includes('text/html')) return next();
+
+  const userAgent = request.headers.get('User-Agent') || '';
+  if (!userAgent || AUTOMATED.test(userAgent)) return next();
 
   if (hasCookie(request.headers.get('Cookie'), OVERRIDE_COOKIE, '1')) return next();
 
