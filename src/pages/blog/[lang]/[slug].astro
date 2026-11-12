@@ -4,6 +4,7 @@ import { PAGE_KEYWORDS } from '../../../data/page-keywords';
 import posts from '../../../data/blogs.json';
 import languagesData from '../../../data/languages.json';
 import { INDIAN_LANGUAGES } from '../../../data/languages';
+import { translatedLangs } from '../../../lib/translations';
 import ArticleJsonLd from '../../../components/ArticleJsonLd.astro';
 import LanguageSidebar from '../../../components/LanguageSidebar.astro';
 import BreadcrumbJsonLd from '../../../components/BreadcrumbJsonLd.astro';
@@ -202,7 +203,7 @@ const ogLocaleMap: Record<string, string> = {
   <link rel="alternate" hreflang={langRegion[lang] || "en-IN"} href={canonical} />
   <link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${translatedfrom}/`} />
   <link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${translatedfrom}/`} />
-  {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => (
+  {INDIAN_LANGUAGES.filter(l => l !== lang && translatedLangs(translatedfrom).has(l)).map(l => (
     <link rel="alternate" hreflang={langRegion[l] || `${l}-IN`} href={`https://insurancesupport.online/blog/${l}/${translatedfrom}/`} />
   ))}
 

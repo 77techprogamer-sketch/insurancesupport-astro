@@ -1,13 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import { INDIAN_LANGUAGES } from '../../data/languages';
+import { translatedLangs } from '../../lib/translations';
 import Infographic from '../../components/Infographic.astro';
 import HowToJsonLd from '../../components/HowToJsonLd.astro';
 
 const TITLE = 'Motor Insurance Claim Process in India (Step-by-Step 2026)';
 const DESCRIPTION = 'Complete motor insurance claim process in India. Documentation, survey, settlement, rejection reasons, and how to ensure claim approval.';
 const KEYWORDS = 'motor insurance claim process, car insurance claim process, bike insurance claim, third party claim, own damage claim, IRDAI motor claim settlement, motor claim documents, surveyor report';
-const CANONICAL_URL = 'https://insurancesupport.online/blog/motor-insurance-claim-process-guide-2026/';
+const SLUG = 'motor-insurance-claim-process-guide-2026';
+const CANONICAL_URL = `https://insurancesupport.online/blog/${SLUG}/`;
 const AUTHOR_NAME = 'Hari Kotian';
 const PUBLISH_DATE = '2026-06-28';
 const MODIFIED_DATE = '2026-06-28';
@@ -64,7 +67,15 @@ const HOW_TO_DATA = {
 };
 ---
 
-<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL}>
+<BaseLayout title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} canonical={CANONICAL_URL} skipDefaultHreflang={true}>
+{/* This article is translated, so it needs the full bidirectional cluster —
+    its eight translations all declare this page as the en-IN alternate, and
+    without the return tags the cluster is one-way. */}
+<link rel="alternate" hreflang="en-IN" href={CANONICAL_URL} />
+<link rel="alternate" hreflang="x-default" href={CANONICAL_URL} />
+{INDIAN_LANGUAGES.filter(l => translatedLangs(SLUG).has(l)).map(l => (
+  <link rel="alternate" hreflang={`${l}-IN`} href={`https://insurancesupport.online/blog/${l}/${SLUG}/`} />
+))}
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' },
     { label: 'Blog', url: 'https://insurancesupport.online/blog' },
