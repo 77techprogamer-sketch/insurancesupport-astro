@@ -74,16 +74,48 @@ import Infographic from '../../components/Infographic.astro';
 <Infographic slug="<slug>" class="not-prose my-10" />
 ```
 
-Currently hand-placed: `motor-insurance-claim-process-guide-2026`,
-`nominee-vs-legal-heirs-claim-dispute-2026`.
+Currently hand-placed (12): `motor-insurance-claim-process-guide-2026`,
+`nominee-vs-legal-heirs-claim-dispute-2026`, `insurance-mis-selling-complaint-refund-2026`,
+`lic-death-claim-rejected-nominee-guide-2026`, `term-insurance-claim-settlement-ratio-2026`,
+`motor-insurance-claim-denied-surveyor-dispute-2026`,
+`cashless-health-insurance-claim-denied-hospital-2026`, `group-health-policy-claim-issues-2026`,
+`health-insurance-portability-rejected-2026`, `best-health-insurance-for-parents-above-60-india-2026`,
+`lic-policy-revival-after-5-years-guide-2026`.
+
+A standalone page can also be placed before a non-heading element (for example the
+CSR table on `term-insurance-claim-settlement-ratio-2026`) — pick whatever reads best
+in the article body.
+
+## Coverage so far — 31 of ~75 English articles
+
+**Claim rejection and appeal** — insurance claim rejection rates · how to appeal a
+rejected claim · 15 real rejection reasons · health claim rejection rights · the
+legal-and-practical fight-back guide · LIC claim rejection appeal
+
+**IRDAI and Ombudsman** — grievance process · IGMS portal filing · Ombudsman guide ·
+30-day settlement rule and ACK forms · IRDAI cashless pre-authorisation
+
+**Health insurance** — claim settlement ratio · pre-existing disease waiting periods ·
+family floater vs individual · restoration benefit · portability guide · portability
+rejected · tax benefits under 80D · cashless claim denied at hospital · group policy
+claim issues · best plans for parents above 60
+
+**LIC** — policy revival · revival after 5 years · maturity claim process · death
+claim rejected or delayed · how to file a death claim
+
+**Motor** — claim process · surveyor dispute · how to calculate IDV
+
+**Other** — nominee vs legal heirs · mis-selling complaints and refunds · term
+insurance claim settlement ratio
 
 ## Not yet done
 
-- **Translated posts** (`/blog/<lang>/<slug>/`) do not render infographics yet. The
-  specs are English; wiring them up needs translated spec variants.
-- Coverage is 19 of ~75 English articles. Priority so far: claim rejection and appeal,
-  IRDAI grievance and Ombudsman, health insurance mechanics, LIC policy servicing,
-  motor claims, and tax benefits.
+- **Translated posts** (`/blog/<lang>/<slug>/`) do not render infographics yet. This is
+  the next piece of work: the specs are English, so it needs translated spec variants
+  keyed off `post.translatedFrom` in `src/pages/blog/[lang]/[slug].astro`.
+- Remaining English articles: term insurance and ULIP comparisons, life insurance
+  buyer's guides, pension and annuity planning, rider and add-on guides, tax sections
+  80C and 80CCD(1B).
 
 ## Verifying changes
 

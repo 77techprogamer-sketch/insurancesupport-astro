@@ -891,6 +891,604 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
       },
     ],
   },
+
+  /* ---------------------------------------------------------------------- */
+  /* 20. Mis-Sold a Policy? Complaint & Refund Guide (static page)           */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'insurance-mis-selling-complaint-refund-2026',
+    eyebrow: 'Mis-selling',
+    title: 'Two Routes Back to Your Money After a Mis-Sale',
+    source: 'IRDAI free-look rules and the Protection of Policyholders’ Interests Regulations, 2017. Escalation eligibility follows each forum’s current rules.',
+    summary:
+      'Inside the free-look window, cancel and take the refund — no reason needed. Outside it, build the complaint on documents: the gap between what was promised and what was signed.',
+    anchor: 'Remedy 1: the free-look window',
+    blocks: [
+      {
+        kind: 'timeline',
+        heading: 'The free-look clock',
+        items: [
+          { marker: 'Day 0', title: 'You receive the policy document', detail: 'The clock starts on receipt — not on issuance. Say so in writing if the agent delayed handing it over.', tone: 'primary' },
+          { marker: 'Day 15', title: 'Standard free-look closes', detail: 'Cancel for any reason. Refund = premium less stamp duty, proportionate risk premium and medical-test fee.', tone: 'warn' },
+          { marker: 'Day 30', title: 'Many digital sales', detail: 'IRDAI has clarified longer windows for several distribution channels — check your policy document.', tone: 'warn' },
+          { marker: 'After that', title: 'Mis-selling complaint', detail: 'Refund is no longer automatic. The case rests on documentary contrast.', tone: 'danger' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'The pitch vs the policy document',
+        leftTitle: 'What you were told',
+        rightTitle: 'What the contract says',
+        rows: [
+          { label: 'Guaranteed returns', left: '“Guaranteed 8% returns, tax-free”', right: 'Unit-linked plan — returns track the markets' },
+          { label: 'Full cover', left: '“This health plan covers everything”', right: 'Sub-limits, room caps, disease-wise exclusions' },
+          { label: 'Early exit', left: '“Single premium, money back in 3 years”', right: 'Lock-in of 5–15 years with surrender losses' },
+          { label: 'Form filling', left: '“Just sign, I will fill the form”', right: 'Fabricated health and income declarations' },
+          { label: 'Product choice', left: '“Endowment is better than term”', right: 'Agent commission is 10–20x higher on endowment' },
+        ],
+        note: 'For each row above, the evidence is different: the chat promising the figure, the brochure against the policy wording, and the proposal form copy for handwriting mismatches.',
+      },
+      {
+        kind: 'steps',
+        heading: 'Building a complaint that survives the first “regret to inform”',
+        items: [
+          { title: 'Preserve everything before confronting anyone', detail: 'WhatsApp chats, call recordings, emails, brochures — save originals with metadata. Confrontation is when they get deleted.', tone: 'danger' },
+          { title: 'Request the proposal form copy', detail: 'If answers on income, existing cover or health are not in your handwriting or style, name exactly which entries are fabricated.', tone: 'primary' },
+          { title: 'Complain in one shot, with a specific ask', detail: 'Insurer GRO email with all evidence attached, asking for a refund or reissue of a suitable policy. A specific ask gets a file number.', tone: 'primary' },
+          { title: 'Escalate on the reply', detail: 'Bima Bharosa and the Insurance Ombudsman, subject to each forum’s eligibility rules. If the insurer does not reply, the Ombudsman route generally opens after one month.', tone: 'accent' },
+        ],
+        note: 'Complaints anchored in documents succeed; complaints anchored in memory rarely do. With only your word against the agent’s, the realistic best case is often a conversion, not a refund.',
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 21. LIC Death Claim Rejected or Delayed — Nominee's Guide (static page)  */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'lic-death-claim-rejected-nominee-guide-2026',
+    eyebrow: 'LIC death claims',
+    title: 'The Death Claim File: Forms, Deadlines, Grounds',
+    source: 'LIC claim practice as handled at branch level, 2026. Award limits follow the amended Redressal of Public Grievances Rules.',
+    summary:
+      'Use the right form — 3783 for routine claims, 3801 for deaths within three years of commencement. A complete submission with a dated acknowledgment beats five follow-ups.',
+    anchor: 'The claim forms, decoded',
+    blocks: [
+      {
+        kind: 'stats',
+        columns: 3,
+        items: [
+          { value: '3783', label: 'Standard claim form — death after the first 3 years', note: 'The routine path for most families', tone: 'accent' },
+          { value: '3801', label: 'Early claim form — death within 3 years', note: 'Triggers verification of proposal details', tone: 'danger' },
+          { value: '~30', label: 'Days for a non-early claim from complete documents', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Documents that actually decide the claim',
+        items: [
+          { title: 'Original policy document (bond)', detail: 'Without it the branch cannot open the file cleanly.', tone: 'primary' },
+          { title: 'Death certificate', detail: 'Certified copy from the municipal authority.', tone: 'primary' },
+          { title: 'Claim form signed by the nominee', detail: '3783 or 3801 as applicable — the wrong form is the #1 cause of returned files.', tone: 'warn' },
+          { title: 'Nominee’s photo ID and address proof', detail: 'Aadhaar or PAN, plus address proof.', tone: 'primary' },
+          { title: 'NEFT mandate + cancelled cheque or passbook copy', detail: 'Get the account title exactly right — ideally the nominee’s own account.', tone: 'primary' },
+          { title: 'Early-claim extras', detail: 'Hospital treatment records, discharge or death summary, and employer certificate — LIC verifies health declarations in this window.', tone: 'danger' },
+        ],
+        note: 'Carry two photocopy sets and get every page date-stamped with a receipt. Files that vanish for weeks are almost always files without a dated acknowledgment.',
+      },
+      {
+        kind: 'compare',
+        heading: 'Reading a repudiation letter',
+        leftTitle: 'The ground cited',
+        rightTitle: 'How to test it',
+        rows: [
+          { label: 'Non-disclosure', left: '“Non-disclosure of material facts”', right: 'Insurer must show the fact was material and would have changed underwriting' },
+          { label: 'Lapse', left: '“Policy was lapsed”', right: 'Check premium receipts and grace-period rules — factually challengeable if premiums were current' },
+          { label: 'Suicide clause', left: 'Plan-specific exclusion window', right: 'Read the exact policy condition; 12–13 months for most plans' },
+          { label: 'Title defect', left: 'No valid nomination', right: 'Not a rejection of the claim — complete heirship or succession papers and re-submit' },
+        ],
+        note: 'Escalation: Branch Manager → Senior Divisional Office → LIC central grievance → Bima Bharosa → Ombudsman. Awards up to ₹50 lakh, subject to eligibility.',
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 22. Term Insurance Claim Settlement Ratio (static page)                 */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'term-insurance-claim-settlement-ratio-2026',
+    eyebrow: 'Term insurance',
+    title: 'Claim Settlement Ratio: Top Term Insurers',
+    source: 'Insurer disclosures for 2026 as compiled in this guide. Verify the latest CSR with the insurer directly before you buy.',
+    summary:
+      'Every insurer on this list settles above 99%, and the private-industry average is around 99%. At that level the gap between first and fifth is under one percentage point — so read the ratio as a hygiene check, not a tie-breaker.',
+    anchor: 'Claim Settlement Ratio (2026)',
+    blocks: [
+      {
+        kind: 'stats',
+        heading: 'CSR by insurer, 2026',
+        columns: 3,
+        items: [
+          { value: '99.72%', label: 'HDFC Life', note: 'Highest CSR in this comparison', tone: 'accent' },
+          { value: '99.71%', label: 'Axis Max Life', note: 'Claim resolution and service', tone: 'accent' },
+          { value: '99.45%', label: 'Tata AIA', note: 'Digital-first settlement', tone: 'primary' },
+          { value: '99.34%', label: 'Max Life', note: 'Financial stability, claim handling', tone: 'primary' },
+          { value: '99.09%', label: 'Bajaj Allianz', note: 'Customer support', tone: 'primary' },
+          { value: '~99%', label: 'Private-industry average, 2026', note: 'The spread is narrow — see below', tone: 'warn' },
+        ],
+        note: 'Ranked by CSR. Differences of a fraction of a percent are well inside year-on-year movement.',
+      },
+      {
+        kind: 'steps',
+        heading: 'What a 99% CSR does and does not tell you',
+        items: [
+          { title: 'It counts claims, not rupees', detail: 'Read it alongside the amount settlement ratio, which exposes heavy deductions on large claims.', tone: 'warn' },
+          { title: 'It lags the present', detail: 'A published CSR describes a past year. Underwriting, TPA panels and product mix all move.', tone: 'warn' },
+          { title: 'It says nothing about your disclosure', detail: 'Most term repudiations trace back to the proposal form, not to the insurer’s Settlement philosophy.', tone: 'danger' },
+          { title: 'Use it as a floor, then look at process', detail: 'Digital intimation, document upload and how quickly the insurer asks for what it needs matter more in practice.', tone: 'accent' },
+        ],
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 23. Motor Claim Denied? Dispute the Surveyor Report (static page)       */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'motor-insurance-claim-denied-surveyor-dispute-2026',
+    eyebrow: 'Motor disputes',
+    title: 'Where Your Motor Claim Money Actually Goes',
+    source: 'Standard motor policy depreciation schedules and add-on wordings, 2026. Award limit follows the amended Ombudsman Rules.',
+    summary:
+      'Most motor disputes are not about whether damage happened — they are about which deduction head the surveyor applied. Almost every head has an add-on that neutralises it.',
+    anchor: 'Why motor claims actually get denied',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'Deduction heads decoded',
+        leftTitle: 'How it is calculated',
+        rightTitle: 'Neutralised by',
+        rows: [
+          { label: 'Metal parts', left: 'Age-linked percentage — a 5-year-old car often 40–50%', right: 'Zero-depreciation add-on' },
+          { label: 'Plastic, rubber, glass', left: 'Fixed percentage by part type', right: 'Zero-depreciation add-on' },
+          { label: 'Consumables', left: 'Lubricants, bolts, coolants excluded from the base policy', right: 'Consumables cover' },
+          { label: 'Engine hydrostatic lock', left: 'Argued as “consequential” in the base policy', right: 'Engine-protect add-on' },
+          { label: 'Salvage', left: 'Value assigned to replaced damaged parts', right: 'Negotiable — challenge the valuation' },
+          { label: 'Compulsory excess', left: 'Fixed per policy schedule', right: 'Non-negotiable, but small' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Why motor claims get denied in the first place',
+        items: [
+          { title: 'Intimation delay', detail: 'Reporting days later with no written reason. Even a same-day WhatsApp message with photos creates a timestamp.', tone: 'danger' },
+          { title: 'Repair before inspection', detail: 'The classic self-inflicted denial. Never repair before the surveyor sees the vehicle.', tone: 'danger' },
+          { title: 'Driver issues', detail: 'Invalid or expired licence for the vehicle class, drink driving, or the name not being on record where required.', tone: 'danger' },
+          { title: 'Consequential damage', detail: 'Engine hydrostatic lock after driving through water, unless you carry engine-protect.', tone: 'warn' },
+          { title: 'Geographical limits', detail: 'Accident outside the policy’s coverage territory.', tone: 'warn' },
+          { title: 'Commercial use', detail: 'A private car used for hire or cab aggregation without the right cover.', tone: 'warn' },
+        ],
+        note: 'Some of these are fatal to a claim. Many are not — the difference is usually documentation plus a written challenge.',
+      },
+      {
+        kind: 'stats',
+        columns: 3,
+        items: [
+          { value: '~75%', label: 'Repair cost, as a share of IDV, that makes it a total loss', tone: 'warn' },
+          { value: '30', label: 'Days to demand a reasoned response before escalating', note: 'Put the Ombudsman trigger in writing', tone: 'primary' },
+          { value: '₹50L', label: 'Ombudsman award ceiling, subject to eligibility', tone: 'accent' },
+        ],
+        note: 'Demand a copy of the surveyor’s report in writing, then rebut it line by line with timestamped photos and a workshop assessment.',
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 24. Cashless Health Insurance Claim Denied at Hospital (static page)     */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'cashless-health-insurance-claim-denied-hospital-2026',
+    eyebrow: 'Cashless denials',
+    title: 'Why the Cashless Desk Says No',
+    source: 'Denial reasons and TPA turnaround data compiled on this page, plus settled cases from advisory practice.',
+    summary:
+      'Most “rejections” at the hospital desk are actually queries — a missing document the TPA is waiting on. Getting the TPA reference number and pushing the hospital to upload closes many of them in under an hour.',
+    anchor: 'Top 15 Cashless Denial Reasons',
+    blocks: [
+      {
+        kind: 'stats',
+        columns: 3,
+        items: [
+          { value: '6 hrs', label: 'Auto-rejection window when a query goes unanswered', note: 'From the case studies on this page', tone: 'danger' },
+          { value: '45 min', label: 'Re-approval time once the missing document was uploaded', tone: 'accent' },
+          { value: '₹4.2L', label: 'Cardiac procedure approved after re-submission', tone: 'accent' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'The ten denial reasons you will actually meet',
+        items: [
+          { title: 'Pre-existing disease not declared', detail: 'The first thing the TPA checks against the proposal form.', tone: 'danger' },
+          { title: 'Waiting period not completed', detail: 'Initial 30-day, PED, or specific-disease waits still running.', tone: 'warn' },
+          { title: 'Room rent or category violation', detail: 'A higher-category room triggers proportionate deduction across the whole bill.', tone: 'warn' },
+          { title: 'Insufficient clinical justification for admission', detail: 'The TPA disputes whether hospitalisation was medically necessary.', tone: 'primary' },
+          { title: 'Incomplete pre-authorisation documentation', detail: 'The most common cause — and the easiest to fix.', tone: 'primary' },
+          { title: 'Treatment at a non-network hospital', detail: 'Cashless needs an empanelled hospital; reimbursement may still be available.', tone: 'primary' },
+          { title: 'Sum insured exhausted, no restoration benefit', detail: 'The cover is genuinely used up for the policy year.', tone: 'danger' },
+          { title: 'Procedure sub-limit exceeded', detail: 'Cataract, maternity and ICU charges often carry their own caps.', tone: 'warn' },
+          { title: 'Policy lapsed or premium overdue', detail: 'No live cover at the time of admission.', tone: 'danger' },
+          { title: 'Excluded treatment category', detail: 'Read the exclusion list before admission, not after.', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'TPA comparison — who processes your cashless',
+        leftTitle: 'Network and settlement',
+        rightTitle: 'Speed and strength',
+        rows: [
+          { label: 'Medi Assist', left: '7,000+ hospitals · 94% settlement', right: '~45 min approval — largest network, good app' },
+          { label: 'Paramount', left: '5,500+ hospitals · 92% settlement', right: '~60 min — strong in South and West, senior-friendly' },
+          { label: 'MDIndia', left: '6,000+ hospitals · 91% settlement', right: '~55 min — government schemes, PSU insurer partner' },
+          { label: 'Vidal / Raksha', left: '4,500+ hospitals · 90% settlement', right: '~70 min — in-house TPA for HDFC and ICICI' },
+          { label: 'Family Health Plan', left: '5,000+ hospitals · 93% settlement', right: '~50 min — Star Health in-house, high approval rate' },
+          { label: 'Heritage / Good Health', left: '3,500+ hospitals · 88% settlement', right: '~80 min — regional strength, personalised service' },
+        ],
+        note: 'Ask for the TPA reference number on every query. Without one, there is nothing to chase.',
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 25. Group (Employer) Policy Claim Problems (static page)                */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'group-health-policy-claim-issues-2026',
+    eyebrow: 'Group cover',
+    title: 'Why Group Health Claims Fail — and the Exit Trap',
+    source: 'Group health policy practice as handled through TPAs and HR brokers, 2026.',
+    summary:
+      'A group policy is a contract between your employer and the insurer; you are not a party to it. That single fact explains almost every group-claim surprise — and why cover ends the day employment does.',
+    anchor: 'Why group claims actually get denied',
+    blocks: [
+      {
+        kind: 'steps',
+        heading: 'Five reasons group claims get denied',
+        items: [
+          { title: 'Dependant not on the roster', detail: 'You added your parents in the HR portal, but the enrolment window closed or the addition starts next policy year. Claims are judged against the insurer’s member file.', tone: 'danger' },
+          { title: 'The annual reset', detail: 'Group terms are renegotiated every year. Waiting periods, room caps, co-pays and exclusions can change silently at renewal.', tone: 'warn' },
+          { title: 'Insurer switched mid-treatment', detail: 'Treatment spanning a change of group insurer lands in a jurisdiction war between two TPAs.', tone: 'warn' },
+          { title: 'Corporate buffer confusion', detail: 'When the employer-funded buffer is exhausted the claim bounces instead of moving to the base policy.', tone: 'primary' },
+          { title: 'PED exclusions in group underwriting', detail: 'Employees assume group means no PED exclusions. True in generous policies, false in most mid-market ones.', tone: 'warn' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'The structural fix: own your foundation cover',
+        leftTitle: 'Group policy',
+        rightTitle: 'Individual policy',
+        rows: [
+          { label: 'Who holds the contract', left: 'Your employer and the insurer — you are a beneficiary', right: 'You and the insurer' },
+          { label: 'Terms', left: 'Renegotiated every renewal', right: 'Fixed at purchase, renewable for life' },
+          { label: 'Continuity', left: 'Ends the day employment does', right: 'Continues through job changes and retirement' },
+          { label: 'Waiting periods', left: 'Reset if you buy fresh later', right: 'Expire once and stay expired' },
+          { label: 'Best role', left: 'Top-up cover', right: 'The foundation' },
+        ],
+        note: 'On exit, in order of preference: port to an individual policy, use the group-exit conversion window (usually 30–60 days), then a fresh purchase as the last resort.',
+      },
+      {
+        kind: 'stats',
+        columns: 3,
+        items: [
+          { value: '30–60', label: 'Days in the group-exit conversion window', note: 'Ask the broker before you lose HR access', tone: 'warn' },
+          { value: '4', label: 'Grievance route: GRO, Bima Bharosa, Ombudsman — and HR', note: 'Route it to the insurer, not just HR', tone: 'accent' },
+          { value: '1', label: 'Fact that explains nearly every surprise', note: 'You are not party to the contract', tone: 'danger' },
+        ],
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 26. Health Portability Rejected or Delayed (static page)                */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'health-insurance-portability-rejected-2026',
+    eyebrow: 'Portability',
+    title: 'The Porting Clock — and What Kills a Port',
+    source: 'IRDAI health insurance portability norms, 2026, including the data-exchange and decision timelines.',
+    summary:
+      'Apply 45–60 days before renewal. The new insurer has 15 days from receiving your data to decide — and no decision in time means the port is treated as accepted.',
+    anchor: 'The porting clock',
+    blocks: [
+      {
+        kind: 'timeline',
+        items: [
+          { marker: '45–60 days', title: 'Apply to the new insurer', detail: 'On the portability form. Late applications are the number one self-inflicted failure.', tone: 'danger' },
+          { marker: '7 days', title: 'Data request', detail: 'The new insurer pulls your claims and underwriting data from the old one via IIB.', tone: 'primary' },
+          { marker: '15 days', title: 'Decision deadline', detail: 'From data receipt. No decision in time = the port is treated as accepted under IRDAI norms.', tone: 'accent' },
+          { marker: 'Renewal date', title: 'Do not let the old policy lapse', detail: 'Pay the renewal if needed — a lapsed policy kills the credit you are porting.', tone: 'danger' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Why a port gets rejected or loaded — and the counter',
+        leftTitle: 'What the insurer sees',
+        rightTitle: 'What you can do',
+        rows: [
+          { label: 'Claims-heavy history', left: 'Premium loaded 15–50%, or the condition excluded', right: 'Negotiate the loading with current normal reports or a higher voluntary deductible' },
+          { label: 'Chronic condition declared', left: 'Diabetes or hypertension surfaces in underwriting', right: 'Documented remission history — loadings are offers, not laws' },
+          { label: 'Data gaps', left: 'Incomplete transmission priced conservatively', right: 'File a data-correction request through the old insurer and re-apply' },
+          { label: 'Low to high sum insured', left: '₹5 lakh porting to ₹50 lakh triggers full fresh underwriting', right: 'Port the base first, raise the sum insured in later renewals' },
+          { label: 'Missed deadlines', left: 'No room for the data round-trip', right: 'Apply at 45–60 days; parallel-apply to two insurers' },
+        ],
+        note: '“Underwriting decline” is not a reason. Ask in writing which factor drove it, then attack the data rather than the decision.',
+      },
+      {
+        kind: 'steps',
+        heading: 'If the port stalls',
+        items: [
+          { title: 'Grievance to both insurers’ GROs', detail: 'Cite the IRDAI portability timelines and attach every acknowledgement.', tone: 'primary' },
+          { title: 'Bima Bharosa, then the Ombudsman', detail: 'Escalate if unresolved in 30 days.', tone: 'warn' },
+          { title: 'Never let the old policy lapse while negotiating', detail: 'If the port fails this year, renewal preserves continuity for next year’s attempt.', tone: 'accent' },
+        ],
+        note: 'Portability complaints are among the few categories where the paper trail alone often settles the matter.',
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 27. Best Health Insurance for Parents Above 60 (static page)            */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'best-health-insurance-for-parents-above-60-india-2026',
+    eyebrow: 'Senior cover',
+    title: 'Senior Health Plans Compared — Premium and Payout Track Record',
+    source: 'Plan comparison as published on this page for 2026. Premiums are indicative for a 65-year-old male, ₹10 lakh cover, metro. CSR is 2024-25.',
+    summary:
+      'Premiums for a 65-year-old at ₹10 lakh span ₹19,500 to ₹31,200 a year, and claim settlement ratios span 94.5% to 98.5%. The tie-breaker is usually the PED waiting period and the co-pay, not the price.',
+    anchor: 'Quick Comparison: Top 6 Senior Health Plans',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'Indicative annual premium — 65-year-old male, ₹10 lakh, metro',
+        max: 32000,
+        items: [
+          { label: 'Niva Bupa Senior First', value: 31200, display: '₹31,200', tone: 'warn' },
+          { label: 'HDFC ERGO Optima Secure', value: 28500, display: '₹28,500', tone: 'primary' },
+          { label: 'Care Senior Health Advantage', value: 26800, display: '₹26,800', tone: 'primary' },
+          { label: 'Aditya Birla Activ Health Senior', value: 25600, display: '₹25,600', tone: 'primary' },
+          { label: 'Star Senior Care', value: 24200, display: '₹24,200', tone: 'primary' },
+          { label: 'Acko Senior Care', value: 19500, display: '₹19,500', tone: 'accent' },
+        ],
+        note: 'Acko is the cheapest here but carries a 20% mandatory co-pay for 60+ and the smallest network (6,500+ hospitals).',
+      },
+      {
+        kind: 'stats',
+        heading: 'The two clauses that decide a senior claim',
+        columns: 3,
+        items: [
+          { value: '30 days', label: 'PED wait on HDFC ERGO Optima Secure', note: 'With the Secure benefit, ~15–20% loading', tone: 'accent' },
+          { value: '48 mths', label: 'PED wait on every other plan compared here', note: 'The IRDAI cap', tone: 'danger' },
+          { value: '₹1,00,000', label: 'Maximum Section 80D deduction when you and both parents are 60+', tone: 'accent' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Which plan fits which situation',
+        items: [
+          { title: 'Parents have diabetes, BP or cardiac history', detail: 'HDFC ERGO Optima Secure with the Secure benefit — the 30-day PED wait is unmatched. One cardiac hospitalisation can cost ₹5–15 lakh.', tone: 'accent' },
+          { title: 'Budget is the binding constraint', detail: 'Star Senior Care or Acko. Star has the better network and claim record; Acko is cheaper but has a 20% co-pay and a smaller network.', tone: 'warn' },
+          { title: 'You want zero out-of-pocket at claim time', detail: 'Care Senior Health Advantage — no co-payment at any age, but you accept the 48-month PED wait.', tone: 'primary' },
+          { title: 'You want cover that grows and includes OPD', detail: 'Niva Bupa Senior First with the OPD add-on — 20% no-claim bonus a year means ₹10 lakh becomes ₹20 lakh in five claim-free years.', tone: 'primary' },
+        ],
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 28. LIC Policy Revival After 5 Years (static page)                      */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'lic-policy-revival-after-5-years-guide-2026',
+    eyebrow: 'Lapsed beyond 5 years',
+    title: 'Five Routes Back From a Lapsed LIC Policy',
+    source: 'LIC revival rules, Special Revival Scheme campaign terms and loan-cum-revival practice as published on this page, 2026.',
+    summary:
+      'Standard revival closes five years from the first unpaid premium. Beyond that, the Special Revival Scheme is the only revival route — discretionary, campaign-only, with mandatory medicals and Central Office approval.',
+    anchor: 'LIC Revival Rules at a Glance',
+    blocks: [
+      {
+        kind: 'stats',
+        columns: 3,
+        items: [
+          { value: '5 yrs', label: 'Standard revival window from first unpaid premium', note: 'After this it closes', tone: 'danger' },
+          { value: '9%', label: 'Interest charged on arrears, p.a.', note: 'Loan interest currently 9–10%', tone: 'warn' },
+          { value: '2–3', label: 'Years of premiums before a paid-up value accrues', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Revival routes compared',
+        leftTitle: 'Window, cost and medicals',
+        rightTitle: 'Approval',
+        rows: [
+          { label: 'Standard, within 3 years', left: 'Up to 3 years · 9% p.a. · medical may be waived for small premiums', right: 'Branch level, usually 7–15 days' },
+          { label: 'Standard, 3–5 years', left: '3–5 years · 9% p.a. · medical mandatory', right: 'Branch plus Divisional Office, 15–30 days' },
+          { label: 'Special Revival Scheme', left: 'Campaign periods only · 9% p.a., sometimes reduced · mandatory plus extra tests', right: 'Central Office, 60–90 days, discretionary' },
+          { label: 'Loan-cum-revival', left: 'Policy must have surrender value · loan interest 9–10% · no medical', right: 'Quick, 3–7 days — the loan clears the arrears' },
+          { label: 'Installment revival', left: 'Within 5 years, branch discretion · 9% p.a. on each instalment', right: 'Branch level, arrears cleared over 6–12 months' },
+        ],
+      },
+      {
+        kind: 'decision',
+        question: 'Revive, surrender, or make it paid-up?',
+        branches: [
+          {
+            condition: 'Revive if',
+            outcome: 'Keep the original contract',
+            detail: 'High reversionary bonuses, close to maturity, revival cost is manageable, or you can no longer get equivalent term cover on health grounds.',
+            tone: 'accent',
+          },
+          {
+            condition: 'Surrender if',
+            outcome: 'Take the special surrender value',
+            detail: 'Revival cost is high against the surrender value plus a new term premium; early in the term with low bonuses; or money-back survival benefits were missed and will not be restored.',
+            tone: 'danger',
+          },
+          {
+            condition: 'Paid-up if',
+            outcome: 'Reduced cover, no more premiums',
+            detail: 'You cannot afford revival but do not want to lose everything. Bonuses earned up to the lapse date stay attached.',
+            tone: 'warn',
+          },
+        ],
+        note: 'Surrender plus a pure term plan is the usual alternative: a healthy buyer can get ₹1 crore of term cover for roughly ₹15,000–25,000 a year.',
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 29. Health Insurance Claim Rejection: Your Legal Rights                 */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'health-insurance-claim-rejection-rights-2026',
+    eyebrow: 'Your rights',
+    title: 'What the Law Gives You When a Health Claim Is Rejected',
+    source: 'IRDAI (Protection of Policyholders’ Interests) Regulations, 2017 and the Insurance Act, 1938.',
+    summary:
+      'Roughly 15–20% of health claims are denied at first instance, and most are reversible. The insurer must give written reasons citing the specific clause, and must settle within 30 days or pay interest at 2% above bank rate.',
+    anchor: 'Why Health Insurance Claims Get Rejected',
+    blocks: [
+      {
+        kind: 'stats',
+        columns: 3,
+        items: [
+          { value: '15–20%', label: 'Health claims denied at first instance', note: 'IRDAI data, as cited here', tone: 'danger' },
+          { value: '30', label: 'Days to settle once all documents are in', note: 'Regulation 36', tone: 'warn' },
+          { value: '2%', label: 'Interest above bank rate payable on delayed settlement', tone: 'accent' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Your rights, in the order you use them',
+        items: [
+          { title: 'Written reasons citing the clause', detail: 'The insurer cannot simply say “claim denied” — it must point to the specific policy provision relied on.', tone: 'primary' },
+          { title: 'Settlement within 30 days', detail: 'From receipt of all documents. Miss it and interest at 2% above bank rate becomes payable.', tone: 'accent' },
+          { title: 'The moratorium on pre-existing disease', detail: 'After continuous coverage — 2 to 4 years depending on the policy — a PED denial is no longer open to the insurer.', tone: 'accent' },
+          { title: 'Protection from rescission after 2 years', detail: 'Under the Insurance Act, a policy cannot be voided for non-disclosure after two years unless it was fraudulent.', tone: 'primary' },
+          { title: 'Escalation to IRDAI and the Ombudsman', detail: 'Free, and no lawyer is required at the Ombudsman.', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'The waiting periods behind most denials',
+        columns: 3,
+        items: [
+          { value: '30', label: 'Days initial waiting period', note: 'Accidents covered immediately', tone: 'warn' },
+          { value: '2–4', label: 'Years for pre-existing conditions', tone: 'warn' },
+          { value: '2', label: 'Years for specific diseases such as cataract and hernia', tone: 'warn' },
+        ],
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 30. Health Insurance Restoration Benefit                                */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'health-insurance-restoration-benefit-reclaim-sum-insured-2026',
+    eyebrow: 'Restoration benefit',
+    title: 'How Restoration Refills an Exhausted Sum Insured',
+    source: 'Standard restoration benefit wordings across Indian health policies, 2026.',
+    summary:
+      'Restoration only triggers after the base sum insured is fully used, covers future claims in the same policy year, and any unused restored amount expires at renewal.',
+    anchor: 'How Does Restoration Benefit Actually Work',
+    blocks: [
+      {
+        kind: 'timeline',
+        heading: 'A ₹10 lakh family floater with restoration',
+        items: [
+          { marker: 'March', title: '₹9.5 lakh cardiac claim paid', detail: 'The base sum insured is nearly exhausted.', tone: 'warn' },
+          { marker: 'April', title: 'Restoration activates', detail: 'A ₹4 lakh accident claim is paid from the restored cover, not from your pocket.', tone: 'accent' },
+          { marker: 'Renewal', title: 'Unused restored cover expires', detail: 'It does not carry forward into the next policy year.', tone: 'danger' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'The four rules that govern it',
+        items: [
+          { title: 'The base cover must be exhausted first', detail: 'You cannot claim restoration while you still have balance cover.', tone: 'primary' },
+          { title: 'It happens automatically', detail: 'Once claims equal the sum insured, the insurer restores — usually 100% of the base sum insured.', tone: 'accent' },
+          { title: 'It does not carry forward', detail: 'Any unused restored amount expires at the end of the policy year.', tone: 'warn' },
+          { title: 'It applies to future claims only', detail: 'Restoration covers claims arising after exhaustion — it does not reimburse claims already paid.', tone: 'warn' },
+        ],
+        note: 'Not every policy offers restoration, and those that do differ on how many times it can be triggered in a year. Check the wording before you rely on it.',
+      },
+      {
+        kind: 'compare',
+        heading: 'Who should prioritise it',
+        leftTitle: 'Restoration matters most',
+        rightTitle: 'Restoration matters less',
+        rows: [
+          { label: 'Household', left: 'Family floater covering several generations', right: 'Single member, low claim likelihood' },
+          { label: 'Cover size', left: 'Modest sum insured against high treatment costs', right: 'Sum insured already well above likely claims' },
+          { label: 'Health profile', left: 'Multiple members with ongoing conditions', right: 'Young, healthy, no chronic conditions' },
+          { label: 'Alternative', left: 'No top-up or super top-up in place', right: 'A super top-up already covers the same gap' },
+        ],
+      },
+    ],
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* 31. How to Calculate IDV for Your Vehicle                               */
+  /* ---------------------------------------------------------------------- */
+  {
+    slug: 'how-to-calculate-idv-insured-declared-value-vehicle-2026',
+    eyebrow: 'Motor cover',
+    title: 'IDV: What Your Insurer Will Actually Pay on a Total Loss',
+    source: 'IRDAI standardised depreciation rates for IDV, and the negotiated basis used for vehicles older than five years.',
+    summary:
+      'IDV is the current market value after depreciation — the ceiling on any theft or total-loss payout. Set it too low and you are under-insured; too high and you pay premium you cannot claim.',
+    anchor: 'How Is IDV Calculated',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'IRDAI standard depreciation by vehicle age',
+        max: 55,
+        items: [
+          { label: 'Not exceeding 6 months', value: 5, display: '5%', tone: 'accent' },
+          { label: '6 months – 1 year', value: 15, display: '15%', tone: 'primary' },
+          { label: '1 – 2 years', value: 20, display: '20%', tone: 'primary' },
+          { label: '2 – 3 years', value: 30, display: '30%', tone: 'warn' },
+          { label: '3 – 4 years', value: 40, display: '40%', tone: 'warn' },
+          { label: '4 – 5 years', value: 50, display: '50%', tone: 'danger' },
+        ],
+        note: 'Beyond 5 years there is no fixed rate — IDV is agreed between you and the insurer, guided by a surveyor and local market value, typically 40–60% of ex-showroom.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The formula, worked on a ₹10 lakh ex-showroom car',
+        columns: 3,
+        items: [
+          { value: '₹9.5L', label: '3 months old — 5% depreciation', tone: 'accent' },
+          { value: '₹7.0L', label: '2.5 years old — 30% depreciation', tone: 'primary' },
+          { value: '₹6.0L', label: '4 years old — 40% depreciation', tone: 'warn' },
+        ],
+        note: 'IDV = (ex-showroom price − depreciation) + (accessories value − depreciation on accessories).',
+      },
+      {
+        kind: 'compare',
+        heading: 'Getting the number right',
+        leftTitle: 'Setting IDV too low',
+        rightTitle: 'Setting IDV too high',
+        rows: [
+          { label: 'Premium', left: 'Cheaper every renewal', right: 'Higher premium for cover you cannot claim' },
+          { label: 'At total loss', left: 'Payout falls short of replacement cost', right: 'Payout is still capped at the real market value' },
+          { label: 'Who it suits', left: 'Nobody — it is a silent under-insurance', right: 'Nobody — you overpay for years' },
+        ],
+        note: 'Factory-fitted accessories depreciate at the vehicle rate; after-market accessories are depreciated at a flat 50% regardless of age.',
+      },
+    ],
+  },
 ];
 
 /* -------------------------------------------------------------------------- */
