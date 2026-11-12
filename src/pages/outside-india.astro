@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="This site covers insurance in India only | Insurance Support"
+  description="Insurance Support explains Indian insurance rules — IRDAI, the Insurance Ombudsman, Bima Bharosa and Indian policy wordings. It is written for policyholders in India."
+  pageType="core"
+  noIndex={true}
+>
+  <main id="main" class="max-w-2xl mx-auto px-4 py-16 lg:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wider text-blue-700 mb-3">Outside India</p>
+    <h1 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">This guide is about Indian insurance</h1>
+    <p class="text-lg text-slate-700 mb-6">
+      Everything on this site is written for policyholders in India: the Insurance Act, IRDAI's regulations,
+      the Insurance Ombudsman's ₹50 lakh limit, Bima Bharosa, and hospital and insurer behaviour under Indian rules.
+      None of it applies to a policy bought in another country.
+    </p>
+    <p class="text-slate-600 mb-8">
+      If you are in India and landed here by mistake, the button below takes you back to the page you wanted.
+      If you are an Indian policyholder living abroad, the NRI section is written for exactly your situation.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/?stay=1" class="inline-flex justify-center items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+        I'm in India — continue to the site
+      </a>
+      <a href="/guides/nri-business/" class="inline-flex justify-center items-center gap-2 px-6 py-3 bg-white text-slate-800 font-semibold rounded-lg border border-slate-300 hover:bg-slate-50 transition-colors">
+        I'm an NRI — start here
+      </a>
+    </div>
+
+    <p class="text-sm text-slate-500 mt-10">
+      Continuing sets a cookie for 30 days so this notice does not appear again. We do not store the country
+      we detected, or anything else about the visit, on our side.
+    </p>
+  </main>
+</BaseLayout>

@@ -150,3 +150,11 @@
 /api/geo
   Cache-Control: public, max-age=900, s-maxage=900, stale-while-revalidate=3600
   Access-Control-Allow-Origin: https://insurancesupport.online
+
+# ---------------------------------------------------------------------------
+# Country gate (functions/_middleware.ts)
+# The notice page is a way-station, never a landing page.
+# ---------------------------------------------------------------------------
+/outside-india/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
