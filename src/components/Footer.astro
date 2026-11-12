@@ -12,6 +12,7 @@ const footerLinks = {
     { label: 'Resources', href: '/blog' },
     { label: 'Claim Help', href: '/claim-recovery' },
     { label: 'About Hari Kotian', href: '/about-hari-kotian' },
+    { label: 'Get Started', href: '/get-started/' },
   ],
   services: [
     { label: 'Health Insurance', href: '/services/health-insurance' },
@@ -28,6 +29,10 @@ const footerLinks = {
     { label: 'Insurance Ombudsman', href: '/blog/insurance-ombudsman-bangalore-guide-2026' },
     { label: 'Bima Bharosa', href: '/blog/irdai-bima-bharosa-complaint-filing-2026' },
     { label: 'LIC Policy Guide', href: '/blog/lic-policy-hub-complete-guide-2026' },
+    { label: 'Compare Insurers', href: '/compare/' },
+    { label: 'Risk Scorecard', href: '/tools/risk-scorecard/' },
+    { label: 'Search the Site', href: '/search/' },
+    { label: 'Loans & Finance', href: '/loans/' },
   ],
   legal: [
       { label: 'Privacy Policy', href: '/privacy-policy' },
@@ -119,6 +124,10 @@ const socialLinks = [
       </div>
     </div>
 
+    <p class="footer-note" style="font-family: var(--font-sans); font-size: 0.8125rem; line-height: 1.6; color: rgba(255,255,255,0.65); margin: 0.5rem 0 0;">
+      GST on insurance premiums depends on the product and the policy type. <a href="https://gstcouncil.gov.in/sites/default/files/2025-09/faq_0.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Check current GST Council guidance</a>.
+    </p>
+
     <!-- Social Links -->
         <div class="flex items-center justify-center gap-4" style="margin-top: var(--space-8); padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
           {socialLinks.map(social => (
@@ -126,7 +135,7 @@ const socialLinks = [
               <Icon name={social.icon} size="sm" />
             </a>
           ))}
-        </div>
+      </div>
   </div>
 </footer>
 

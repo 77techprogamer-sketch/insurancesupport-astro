@@ -53,10 +53,31 @@
   loadScript('https://www.googletagmanager.com/gtm.js?id=' + 'GTM-P8DZ6MRQ');
 
   // ---- Microsoft Clarity ---------------------------------------------------
+  // Session recording is heavy and nobody needs it before they have interacted,
+  // so it is deferred to first interaction, or 8s of idle after load, whichever
+  // comes first. Queries are queued by the stub and replayed by clarity.js.
   window.clarity = window.clarity || function () {
     (window.clarity.q = window.clarity.q || []).push(arguments);
   };
-  loadScript('https://www.clarity.ms/tag/' + 'v9dto5m10l');
+  (function () {
+    var loaded = false;
+    function start() {
+      if (loaded) return;
+      loaded = true;
+      loadScript('https://www.clarity.ms/tag/' + 'v9dto5m10l');
+      removeListeners();
+    }
+    function removeListeners() {
+      ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (evt) {
+        window.removeEventListener(evt, start, { passive: true });
+      });
+    }
+    ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (evt) {
+      window.addEventListener(evt, start, { passive: true, once: true });
+    });
+    if (document.readyState === 'complete') { setTimeout(start, 8000); }
+    else { window.addEventListener('load', function () { setTimeout(start, 8000); }); }
+  })();
 
   // ---- Google Fonts stylesheet flip ---------------------------------------
   // BaseLayout loads the fonts stylesheet with media="print" for non-blocking

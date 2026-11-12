@@ -15,6 +15,9 @@ CREATE TABLE IF NOT EXISTS leads (
   user_agent  TEXT,
   referer     TEXT,
   data        TEXT,                             -- full JSON payload
+  category    TEXT,                             -- contact/enquiry category chosen in the form
+  message     TEXT,                             -- free-text enquiry body
+  notified    INTEGER DEFAULT 0,                -- 1 when a webhook/email alert went out
   created_at  TEXT NOT NULL
 );
 

@@ -1,10 +1,25 @@
 ---
+import fs from 'node:fs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 import Icon from '../components/icons/Icon.astro';
 import CallbackForm from '../components/CallbackForm.astro';
+
+// Optional portrait. Drop a file at public/images/hari-kotian.(jpg|jpeg|png|webp)
+// and the hero shows the photo; otherwise it falls back to a monogram card.
+const portraitCandidates = ['jpg', 'jpeg', 'png', 'webp'].map(
+  (ext) => `public/images/hari-kotian.${ext}`,
+);
+const portrait = portraitCandidates.find((file) => {
+  try {
+    return fs.existsSync(new URL('../../' + file, import.meta.url));
+  } catch {
+    return false;
+  }
+});
+const portraitSrc = portrait ? '/' + portrait.replace('public/', '') : null;
 
 const pageTitle = 'Insurance Support | Insurance Claim Help & Advisory India | Free Review by IRDAI Advisor';
 const pageDescription = 'Insurance claim rejected, delayed or underpaid? Get free case review from Hari Kotian, IRDAI-certified advisor (Reg No: 0149161D). We handle health, life, motor, term claim disputes across India. No fee for first review.';
@@ -162,6 +177,22 @@ const faqs = [
                     </div>
                   ))}
                 </div>
+
+                <!-- Advisor card: the person behind the advice -->
+                <div class="hero-advisor animate-slide-up stagger-4" style="font-family: var(--font-sans);">
+                  <div class="hero-advisor-photo" aria-hidden="true">
+                    {portraitSrc ? (
+                      <img src={portraitSrc} alt="" width="64" height="64" loading="eager" decoding="async" />
+                    ) : (
+                      <span>HK</span>
+                    )}
+                  </div>
+                  <div class="hero-advisor-copy">
+                    <p class="hero-advisor-name">Hari Kotian</p>
+                    <p class="hero-advisor-role">IRDAI-registered advisor · Reg No: 0149161D · Bengaluru</p>
+                    <p class="hero-advisor-note">Every case is read and answered by him personally. The first review is free and there is no obligation.</p>
+                  </div>
+                </div>
       </div>
     </section>
 
@@ -303,7 +334,7 @@ const faqs = [
       <div class="container">
         <div style="max-width: 720px; margin: 0 auto; text-align: center;">
           <h2 id="cta-title" class="section-title" style="color: var(--color-text-inverse); font-family: var(--font-display);">Ready to challenge the rejection?</h2>
-          <p class="section-desc" style="color: rgba(255,255,255,0.9); font-family: var(--font-sans);">Get your free case review within 24 hours. No obligation, no pressure — just an honest assessment.</p>
+          <p class="section-desc" style="color: rgba(255,255,255,0.9); font-family: var(--font-sans);">Get your free case review within 24 hours. No obligation, no pressure — just an honest assessment. Prefer to write it down first? <a href="/get-started/" style="color: inherit; text-decoration: underline;">Use the step-by-step enquiry form</a>.</p>
           <div class="hero-actions" style="margin-top: var(--space-8);">
                                 <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20my%20claim%20was%20rejected.%20I%20need%20help." target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-lg" style="font-family: var(--font-sans);">
                                   <Icon name="whatsapp" size="sm" />
