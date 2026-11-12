@@ -4,8 +4,9 @@ const currentYear = new Date().getFullYear();
 import Icon from '../components/icons/Icon.astro';
 
 const navItems = [
-  { label: 'Insurance Support Hub', href: '/insurance-support/', icon: 'shield-check' },
+  { label: 'Support Hub', href: '/insurance-support/', icon: 'shield-check' },
   { label: 'Services', href: '/services', icon: 'briefcase' },
+  { label: 'Bengaluru', href: '/bangalore/', icon: 'map-pin' },
   { label: 'Locations', href: '/locations', icon: 'map-pin' },
   { label: 'Resources', href: '/blog', icon: 'book-open' },
   { label: 'Claim Help', href: '/claim-recovery', icon: 'shield-check' },
@@ -136,6 +137,14 @@ const navItems = [
     display: flex;
     align-items: center;
     gap: var(--space-1);
+  }
+
+  /* Seven items now that Bengaluru is in the nav: tighten the gaps before the
+     mobile menu takes over at 768px, so the row never overflows its 64px bar. */
+  @media (max-width: 1120px) {
+    .header-inner { gap: var(--space-3); }
+    .nav { gap: 0; }
+    .nav-link { padding: var(--space-2); font-size: 0.875rem; }
   }
 
   .nav-link {
