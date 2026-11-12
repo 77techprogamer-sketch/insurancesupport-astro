@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import { KARNATAKA_BY_SLUG } from '../../data/karnataka-cities';
+import SectionLinks from '../../components/SectionLinks.astro';
 
 
 const allCitiesCollection = await getCollection('cities');
@@ -129,6 +130,7 @@ const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
       </div>
     </section>
 
+    <SectionLinks current="/locations/" />
   </main>
 
 </BaseLayout>

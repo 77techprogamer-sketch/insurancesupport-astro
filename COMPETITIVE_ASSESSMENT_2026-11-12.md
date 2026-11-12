@@ -403,3 +403,50 @@ The twelve old URLs 301 to the new ones in `public/_redirects`, and the pages th
 ### What this is worth, and what it is not
 
 Twelve city pages do not create twelve ranking signals by themselves — they create twelve *places where the same proof can be seen*. The constraint is the one from §16: the profile's reviews are about LIC policy advice, and a Kalaburagi policyholder searching "claim rejected" has no reason yet to believe this office is better than the local agent. What the pages can do is be the only result for that query that tells the truth about the route and the deadline.
+
+## 18. Ranking signals: what was missing, and what only the owner can supply
+
+"Build the strongest ranking signals" splits into two jobs: the ones a codebase can hold, and the ones only a business can earn. This section covers the first and routes to the second.
+
+### Internal links were the weakest thing on the site
+
+Two measurements before any change, counting links in page bodies only (not nav, not footer):
+
+- **Six indexable pages had no contextual inlinks at all**: `/tools/`, `/compare/`, `/loans/`, and the legal pages. `/guides/` had two, `/cities/` one, `/insurance-support/` one. Google treats an unlinked page as unimportant, and these were the money pages.
+- **Every article's outbound links were either the post title or "Read more".** Anchor text is how a link teaches a destination what it is for; titles and CTAs teach nothing.
+
+**What fixed it.**
+
+1. `src/data/topic-links.ts` — eight topic buckets (ombudsman, health, motor, life/LIC, non-disclosure, documents, loans, buying), each with the destination pages *and the anchor text to use*. A scorer reads each post's title, summary and opening 2,000 characters and picks the bucket. 79 posts now carry a "Where this goes next" block with three descriptive links.
+2. `src/components/SectionLinks.astro` — a hub mesh rendered on 16 hub pages, listing every section except the current one. Each anchor is the section's own search phrasing, with a one-line note.
+3. Karnataka city pages link to the three claim guides that apply statewide.
+
+**After:**
+
+| Page | Contextual inlinks before | After |
+|---|---|---|
+| `/loans/` | 0 | 15 |
+| `/cities/` | 1 | 25 |
+| `/insurance-support/` | 1 | 16 |
+| `/guides/` | 2 | 23 |
+| `/bangalore/` | 4 | 72 |
+| `/locations/` | 11 | 70 |
+| `/tools/` | 19 | 34 |
+
+Pages with fewer than two contextual inlinks fell from 27 to 25, and the three that remain at zero are legal pages linked from the footer.
+
+### Sources, and the schema that records them
+
+Competitors in this niche assert the Ombudsman limit, the 30-day clock and Section 45 without ever naming the instrument. **67 articles now end with a Sources block** naming the actual document — Ombudsman Rules 2017 as amended by G.S.R. 828(E), IRDAI's master circular of 5 September 2024, Section 45 of the Insurance Act, the Consumer Protection Act 2019 — linking the regulator.
+
+The same URLs are emitted as schema `citation` on the Article, and the author node now resolves to `#person` on `/about/` rather than the consolidated `/about-hari-kotian/` page. Service pages reference the business by `@id` instead of re-declaring a slightly different copy of it, so the entity graph has one business, not three.
+
+### A visible standard, not a claim about one
+
+`/about/#editorial-standards` now states the rules: rules are cited, no unsourced statistics, reviews quoted and never invented, no promised outcomes, real review dates, corrections accepted. Every article's author box links to it. This is the E-E-A-T equivalent of the honesty work already done on the copy — it is only worth anything because the pages behind it follow it.
+
+### The part that decides the outcome
+
+Sections 1–18 have taken the on-site side close to its ceiling. What remains is off-site and cannot be engineered: **who links to you, and how many real reviews you have.** `seo/link-building-plan.md` sets that out with a weekly schedule, the exact NAP string to paste into each directory, an association-pitch outline, a media pitch, and the things not to do.
+
+The short version: 12–20 genuinely relevant local links and 30 reviews — three of them about claims — would move this further than any remaining work on the pages.

@@ -32,18 +32,19 @@ const pageKeywords = `${serviceKeyLower} in Bengaluru, best ${serviceKeyLower} p
     serviceType: service.title,
     description: service.desc,
     provider: {
-      "@type": "LocalBusiness",
+      // Entity reference rather than a second, slightly different copy of the
+      // business: both this and the LocalBusiness node now resolve to one @id.
+      "@id": "https://insurancesupport.online/#local-business",
+      "@type": "InsuranceAgency",
       name: "Insurance Support",
       url: "https://insurancesupport.online",
-      telephone: "+91-9986634506",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "KA",
-        addressCountry: "IN"
-      }
+      telephone: "+919986634506"
     },
-    areaServed: "Bengaluru, Karnataka, India",
+    areaServed: [
+      { "@type": "City", name: "Bengaluru" },
+      { "@type": "State", name: "Karnataka" },
+      { "@type": "Country", name: "India" }
+    ],
     url: serviceUrl,
     category: "Insurance Advisory",
     hasOfferCatalog: {

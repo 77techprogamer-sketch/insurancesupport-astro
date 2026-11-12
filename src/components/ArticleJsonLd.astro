@@ -10,9 +10,11 @@ export interface Props {
   imageUrl?: string;
   authorName?: string;
   isPartOf?: { "@type": string; "@id": string; name?: string };
+  /** Official sources the article relies on — emitted as schema `citation`. */
+  citations?: string[];
 }
 
-const { title, description, url, date, modifiedDate, imageUrl, authorName = "Hari Kotian", isPartOf } = Astro.props;
+const { title, description, url, date, modifiedDate, imageUrl, authorName = "Hari Kotian", isPartOf, citations = [] } = Astro.props;
 const defaultImage = "https://insurancesupport.online/og-image.png";
 const siteName = "Insurance Support";
 
@@ -27,9 +29,9 @@ const effectiveModified = modifiedDate || date;
   description: description,
   author: {
     "@type": "Person",
-    "@id": "https://insurancesupport.online/about-hari-kotian/#person",
+    "@id": "https://insurancesupport.online/about/#person",
     name: authorName,
-    url: "https://insurancesupport.online/about-hari-kotian/",
+    url: "https://insurancesupport.online/about/",
     jobTitle: "IRDAI-Registered Insurance Advisor",
     description: "IRDAI-registered insurance advisor (Reg No: 0149161D) with 25+ years of experience helping families and businesses across India with insurance planning, policy review, and claim support.",
     knowsAbout: ["Insurance Planning", "Claim Assistance", "Policy Review", "IRDAI Compliance", "Health Insurance", "Life Insurance", "Motor Insurance", "Insurance Grievance Redressal"],
@@ -55,6 +57,7 @@ const effectiveModified = modifiedDate || date;
   },
   datePublished: date,
   dateModified: effectiveModified,
+  ...(citations.length ? { citation: citations.map((c) => ({ "@type": "CreativeWork", url: c })) } : {}),
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": url

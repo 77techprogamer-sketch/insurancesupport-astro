@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionLinks from '../components/SectionLinks.astro';
 
 const PAGE_TITLE = "LIC Agent Bangalore — All Areas Served | Insurance Support";
 const PAGE_DESCRIPTION = "Hari Kotian provides LIC insurance advisory across 83+ Bangalore areas. Find your local expert for life, health, term insurance and claim recovery. IRDAI Reg No: 0149161D.";
@@ -177,5 +178,6 @@ const AREAS = [
     <footer class="mt-12 text-center text-sm text-slate-500">
       <p>Insurance guidance and claim assistance from Insurance Support, led by Hari Kotian.</p>
     </footer>
+    <SectionLinks current="/cities/" />
   </main>
 </BaseLayout>

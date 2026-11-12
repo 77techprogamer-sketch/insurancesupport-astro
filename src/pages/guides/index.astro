@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import posts from '../../data/blogs.json';
 import { PILLARS, postsInPillar } from '../../utils/pillars';
+import SectionLinks from '../../components/SectionLinks.astro';
 
 const pillars = PILLARS.map((pillar) => {
   const members = postsInPillar(pillar, posts);
@@ -69,5 +70,6 @@ const totalGuides = pillars.reduce((n, p) => n + p.count, 0);
         </a>
       </div>
     </div>
+    <SectionLinks current="/guides/" />
   </main>
 </BaseLayout>

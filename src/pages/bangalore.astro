@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import GoogleReviewCta from '../components/GoogleReviewCta.astro';
+import SectionLinks from '../components/SectionLinks.astro';
 
 const pageUrl = 'https://insurancesupport.online/bangalore/';
 
@@ -294,5 +295,6 @@ const faqSchema = faqs.map((f) => ({ question: f.question, answer: f.answer }));
         </div>
       </div>
     </section>
+    <SectionLinks current="/bangalore/" />
   </main>
 </BaseLayout>

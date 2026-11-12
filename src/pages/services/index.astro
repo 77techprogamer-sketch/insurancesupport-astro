@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { DEFAULT_OG } from '../../utils/ogImage';
 import TrustStrip from '../../components/TrustStrip';
 import InsuranceCalculator from '../../components/InsuranceCalculator';
+import SectionLinks from '../../components/SectionLinks.astro';
 ---
 
 <BaseLayout
@@ -461,6 +462,7 @@ import InsuranceCalculator from '../../components/InsuranceCalculator';
 
       <InsuranceCalculator client:load />
     </div>
+    <SectionLinks current="/services/" />
   </main>
 </BaseLayout>
 

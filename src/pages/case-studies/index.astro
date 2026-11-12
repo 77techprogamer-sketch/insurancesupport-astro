@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import caseStudies from '../../data/case-studies.json';
+import SectionLinks from '../../components/SectionLinks.astro';
 
 const featured = caseStudies.filter(c => c.featured);
 const all = caseStudies;
@@ -121,6 +122,7 @@ const all = caseStudies;
         </div>
       </div>
     </section>
+    <SectionLinks current="/case-studies/" />
   </main>
 
 </BaseLayout>

@@ -48,7 +48,7 @@ Full list: `seo/noindex-urls.csv`. This is the honest reason the indexable count
 
 These are the candidates for "Crawled — currently not indexed" or "Discovered — currently not indexed" in Search Console. They are indexable, but each has a property Google uses to decide a page is not worth the slot.
 
-### Under 500 words (10)
+### Under 500 words (6)
 
 - `/blog/lic-jeevan-anand-vs-jeevan-labh-comparison/` — 442 words — LIC Jeevan Anand vs Jeevan Labh 2026
 - `/about-hari-kotian/` — 234 words — Hari Kotian: IRDAI-Registered Advisor in Bengaluru
@@ -56,10 +56,6 @@ These are the candidates for "Crawled — currently not indexed" or "Discovered 
 - `/expert-insights/` — 383 words — Expert Insights | Insurance Support by Hari Kotian
 - `/policy-review-checklist/` — 418 words — Printable Insurance Policy Review Checklist
 - `/resources/how-it-works/` — 486 words — How It Works | Insurance Support | Insurance Support
-- `/tools/` — 476 words — Free Insurance Tools & Calculators | Insurance Support
-- `/tools/policy-recovery/` — 454 words — LIC Policy Recovery | Find Lost & Lapsed Policies
-- `/tools/risk-scorecard/` — 490 words — Free Insurance Risk Scorecard | Is Your Family Underinsured?
-- `/guides/` — 492 words — Insurance Guides by Topic (2026) | Insurance Support
 
 
 ### No internal links pointing at them (0)

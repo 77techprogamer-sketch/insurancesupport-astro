@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
+import SectionLinks from '../components/SectionLinks.astro';
 
 const TITLE = "Insurance Claim Support: Guides for Rejected, Delayed, or Reduced Claims";
 const DESCRIPTION = "Insurance claim rejection help in India: understand a denied, delayed, or short-paid claim, organize evidence, contact the insurer, and check official escalation routes.";
@@ -307,5 +308,6 @@ const FAQ = [
       </div>
 
     </div>
+    <SectionLinks current="/claim-recovery/" />
   </main>
 </BaseLayout>

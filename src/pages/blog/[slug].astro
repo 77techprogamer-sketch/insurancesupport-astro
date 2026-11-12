@@ -6,6 +6,8 @@ import { ogImageForSlug } from '../../utils/ogImage';
 
 
 import ArticleJsonLd from '../../components/ArticleJsonLd.astro';
+import { bucketFor } from '../../data/topic-links';
+import { sourcesFor } from '../../data/sources';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
 import ClaimReviewCTA from '../../components/ClaimReviewCTA.astro';
@@ -125,6 +127,9 @@ const htmlContent = withAnswerBox.replace(
 );
 
 
+const topic = bucketFor(post.title, post.summary || '', articleContent as string);
+const sources = sourcesFor(articleContent as string);
+
 // Parse FAQ section from markdown: "## FAQ" followed by **Q: ...** / answer paragraphs
 const faqs = [];
 const faqSection = articleContent.split(/^##\s*FAQ\s*$/im)[1];
@@ -194,7 +199,7 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 <link rel="alternate" hreflang="en-IN" href={canonical} />
 <link rel="alternate" hreflang="x-default" href={canonical} />
 
-  <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} isPartOf={postIsHubArticle ? { "@type": "WebPage", "@id": CLAIM_HUB_URL, name: 'Insurance Claim Recovery Hub' } : undefined} />
+  <ArticleJsonLd citations={sources.map((s) => s.url)} title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${post.slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} isPartOf={postIsHubArticle ? { "@type": "WebPage", "@id": CLAIM_HUB_URL, name: 'Insurance Claim Recovery Hub' } : undefined} />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}
   <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'Blog', url: 'https://insurancesupport.online/blog/' }, { label: post.title, url: `https://insurancesupport.online/blog/${post.slug}/` }]} />
 
@@ -261,6 +266,21 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
 
       <div class="max-w-3xl mx-auto px-4 blog-content" set:html={htmlContent} />
 
+      <!-- Contextual links: descriptive anchors to the pages that go deeper -->
+      <aside class="max-w-3xl mx-auto px-4 mt-12" aria-labelledby="go-deeper">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-4" id="go-deeper">Where this goes next</p>
+          <ul class="space-y-3">
+            {topic.links.map((link) => (
+              <li class="text-sm leading-relaxed">
+                <a href={link.href} class="font-semibold text-blue-700 hover:text-blue-900 hover:underline">{link.anchor}</a>
+                <span class="text-slate-500"> — {link.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+
       {pillar && (
         <PillarNav pillar={pillar} siblings={pillarSiblings} total={pillarMembers.length} />
       )}
@@ -278,6 +298,9 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
               <p class="text-sm text-blue-600 font-medium mb-3">Insurance advisor | Bengaluru</p>
               <p class="text-slate-600 text-sm leading-relaxed">Hari Kotian leads Insurance Support, which provides insurance guidance and claim assistance from Bengaluru.</p>
               <p class="text-xs text-blue-600 font-medium mt-2">IRDAI Registration No. 0149161D</p>
+              <p class="text-xs text-slate-500 mt-2">
+                <a href="/about/#editorial-standards" class="underline hover:text-blue-700">How these pages are written</a> — sources cited, no unsourced statistics.
+              </p>
               <a href="/contact" class="inline-flex items-center gap-2 mt-4 px-5 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors">
                 Book Free Consultation
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -286,6 +309,26 @@ const canonical = `https://insurancesupport.online/blog/${post.slug}/`;
           </div>
         </div>
       </div>
+
+      <!-- Sources -->
+      {sources.length > 0 && (
+        <div class="max-w-3xl mx-auto px-4 mt-10">
+          <div class="border-t border-slate-200 pt-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500 mb-3">Sources</p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              {sources.map((source) => (
+                <li>
+                  <a href={source.url} target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">{source.name}</a>
+                  <span class="text-slate-400"> · {source.issuer}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-xs text-slate-400 mt-3">
+              These are the instruments the article relies on. Where the rules change, the regulator’s current text wins over anything written here.
+            </p>
+          </div>
+        </div>
+      )}
 
       <!-- Keyword Tags (SEO + User Signal) -->
       {post.tags && post.tags.length > 0 && (

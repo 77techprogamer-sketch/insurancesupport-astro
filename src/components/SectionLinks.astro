@@ -1,0 +1,109 @@
+---
+/**
+ * The hub mesh.
+ *
+ * Hubs are the pages that carry the site's internal link equity, and most of them
+ * were reachable only through the nav — which Google weights far less than a link
+ * inside the body of a page. This block puts every section one click from every
+ * other section, skipping whichever page it is rendered on.
+ *
+ * Anchors are the section's own search phrasing, not "click here": that is what
+ * the destination learns from the link.
+ */
+interface Props {
+  /** Path of the page rendering the block, so it is left out. */
+  current: string;
+  heading?: string;
+}
+
+const { current, heading = 'Sections' } = Astro.props;
+
+const SECTIONS = [
+  { href: '/claim-recovery/', label: 'Claim recovery', note: 'the full escalation route' },
+  { href: '/insurance-support/', label: 'Insurance support hub', note: 'everything on one page' },
+  { href: '/services/', label: 'Insurance services in Bengaluru', note: 'what is actually done, and how' },
+  { href: '/tools/', label: 'Free insurance calculators', note: 'no sign-up' },
+  { href: '/compare/', label: 'Compare plans and claim records', note: 'side by side' },
+  { href: '/guides/', label: 'Guides by topic', note: 'rejection, escalation, LIC, health' },
+  { href: '/case-studies/', label: 'Case patterns', note: 'how a dispute of this shape is argued' },
+  { href: '/faq/', label: 'Insurance questions answered', note: 'short answers' },
+  { href: '/bangalore/', label: 'Insurance claim help in Bengaluru', note: 'the priority city' },
+  { href: '/karnataka/', label: 'Karnataka, city by city', note: 'twelve districts' },
+  { href: '/cities/', label: 'Bengaluru neighbourhoods', note: 'where people search from' },
+  { href: '/locations/', label: 'All locations', note: 'the full list' },
+  { href: '/loans/', label: 'Loans and the cover attached', note: 'credit life, group cover' },
+];
+
+const links = SECTIONS.filter((s) => s.href !== current);
+---
+
+<nav class="section-links" aria-label={heading}>
+  <div class="section-links__inner">
+    <p class="section-links__label">{heading}</p>
+    <ul>
+      {links.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+          <span>{link.note}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .section-links {
+    border-top: 1px solid var(--color-border, #e2e8f0);
+    background: var(--color-surface, #fff);
+    padding: 2.5rem 0;
+  }
+
+  .section-links__inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-links__label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-muted, #64748b);
+    margin-bottom: 1rem;
+    font-family: var(--font-sans);
+  }
+
+  .section-links ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.5rem 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .section-links li {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    font-family: var(--font-sans);
+  }
+
+  .section-links a {
+    font-weight: 600;
+    color: var(--color-primary, #2563eb);
+    text-decoration: none;
+  }
+
+  .section-links a:hover {
+    text-decoration: underline;
+  }
+
+  .section-links span {
+    color: var(--color-text-muted, #64748b);
+  }
+
+  .section-links span::before {
+    content: ' — ';
+  }
+</style>
