@@ -450,3 +450,37 @@ The same URLs are emitted as schema `citation` on the Article, and the author no
 Sections 1–18 have taken the on-site side close to its ceiling. What remains is off-site and cannot be engineered: **who links to you, and how many real reviews you have.** `seo/link-building-plan.md` sets that out with a weekly schedule, the exact NAP string to paste into each directory, an association-pitch outline, a media pitch, and the things not to do.
 
 The short version: 12–20 genuinely relevant local links and 30 reviews — three of them about claims — would move this further than any remaining work on the pages.
+
+## 19. Closing the one gap the competitors had
+
+Section 18 said the best competitor — a GitHub Pages explainer, of all things — quotes the IRDAI circulars line by line while this site summarised them. That was the only place they had more substance. It is now closed at the source rather than patched page by page.
+
+### Quoted, not paraphrased
+
+`src/data/rules.ts` holds nine provisions read off the regulator's own text on 12 November 2026, each with its instrument and date. `RuleQuote.astro` renders them as quotations with a plain-English gloss. What now appears verbatim on the site:
+
+| Provision | Instrument |
+|---|---|
+| "No claim shall be repudiated by the insurer without obtaining legally tenable evidence…" | PPI master circular, 5 Sep 2024 |
+| "No claim shall be rejected or closed for want of documents or for delayed intimation of claim." | same |
+| "…Insurers and Third-Party Administrators (TPAs), shall collect the required documents from the Hospitals. Policyholder shall not be required to submit the documents." | same |
+| "…interest at bank rate plus 2 percent from the date of receipt of intimation till the date of payment… paid by the insurers suo-moto" | same |
+| Death claim within 15 days; 45 days where investigating | same |
+| "…decide on the request for cashless authorization immediately but not more than one hour…" | Health circular, 29 May 2024 |
+| "…final authorization within three hours of the receipt of discharge authorization request…" | same |
+| "…additional amount… shall be borne by the insurer from shareholder's fund." | same |
+| "30 days, a penalty of Rs. 5000/- per day shall be payable to the complainant…" | PPI master circular |
+
+### The page that should earn the links
+
+`/insurance-claim-timelines/` — 1,746 words, every clock in one table with the instrument beside it, the four provisions that decide most disputes quoted in full, and a section headed **"Why you may have read 30 days elsewhere"**.
+
+That last section matters more than it looks. Thirteen articles on this site still say 30 days, because that is what the 2017 regulations said. Rather than leave a contradiction, the page says plainly that 30 days is the 2017 floor, that the 2024 circular tightened life claims to 15/45 and replaced health timelines with the cashless clocks, and that the older number is not the current obligation. A competitor cannot write that without first noticing it.
+
+### Where it now stands
+
+- Quotes on `/claim-recovery/`, the Karnataka hub and five flagship articles, plus the reference page.
+- In the hub mesh, the sitemap and the keyword map — 24 keyword flags unchanged, none new.
+- 873 pages, 0 broken links, 0 invalid JSON-LD blocks, 0 titles over 60 characters.
+
+The content gap is closed. What remains is the one from §18 that no page can close: links, and reviews from claim clients.
