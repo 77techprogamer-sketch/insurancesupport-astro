@@ -6,6 +6,13 @@ import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import LanguageSidebar from '../../components/LanguageSidebar.astro';
 import cityClaimData from '../../data/city-claim-data.json';
 
+export function getStaticPaths() {
+  return Object.keys(cityClaimData).map(key => ({
+    params: { city: key },
+    props: { cityKey: key }
+  }));
+}
+
 const { city } = Astro.params;
 const cityKey = city.toLowerCase();
 const cityData = cityClaimData[cityKey];
