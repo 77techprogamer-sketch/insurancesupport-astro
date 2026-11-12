@@ -87,7 +87,7 @@ A standalone page can also be placed before a non-heading element (for example t
 CSR table on `term-insurance-claim-settlement-ratio-2026`) — pick whatever reads best
 in the article body.
 
-## Coverage so far — 43 English articles + 5 Hindi
+## Coverage so far — 44 English articles + 5 Hindi
 
 **Claim rejection and appeal** — insurance claim rejection rates · how to appeal a
 rejected claim · 15 real rejection reasons · health claim rejection rights · the
@@ -109,8 +109,9 @@ death and permanent disability riders · premium payment modes and grace periods
 **Motor** — claim process · surveyor dispute · how to calculate IDV · zero
 depreciation add-on
 
-**Tax and retirement** — Section 80C insurance deduction · NPS 80CCD(1B) ·
-deferred vs immediate annuity under 80CCC and 10(10A) · pension plans
+**Tax and retirement** — Section 80C insurance deduction · GST on life insurance
+premium · NPS 80CCD(1B) · deferred vs immediate annuity under 80CCC and 10(10A) ·
+pension plans
 
 **Choosing cover** — life insurance buyer's guide · money-back policy vs term
 insurance plus SIP
@@ -118,6 +119,31 @@ insurance plus SIP
 **Other** — nominee vs legal heirs · mis-selling complaints and refunds · term
 insurance claim settlement ratio · health insurance portability (switching
 insurers)
+
+### Correcting the source article
+
+Infographics are built from the article, so a wrong article produces a wrong
+graphic. `gst-on-life-insurance-premium-2026-input-tax-cost-explained` claimed
+0% GST in its update box and 18% everywhere else — 21 mentions of 18%, six of
+them in headings. The 0% figure was confirmed as correct (56th GST Council,
+effective 22 Sep 2025), so the article was rewritten around it rather than the
+other way round:
+
+- Individual life (term, whole life, endowment, ULIP) and individual health
+  (family floater, senior citizen), plus the reinsurance services thereof — 0%.
+- Group life and group health are **not** exempt and stay at 18%, with ITC
+  available to GST-registered employers.
+- The rate table, 80C section, history, strategies, FAQ and conclusion were all
+  rewritten to match. The 18/118 split survives as the way to check a policy
+  that *does* still carry GST.
+- Individual annuity and pension plans are not named separately in the
+  Council's list, so the article tells readers to check the invoice instead of
+  asserting a rate.
+
+**Watch for translations drifting out of date.** This article has versions in
+all 8 languages, and they still carry the pre-correction 18% content. Fixing
+translated prose is a separate job — do not port an English correction into
+them automatically.
 
 ### Renderer invariants
 

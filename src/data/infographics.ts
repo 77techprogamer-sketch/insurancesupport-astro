@@ -2042,6 +2042,53 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
       },
     ],
   },
+  {
+    slug: 'gst-on-life-insurance-premium-2026-input-tax-cost-explained',
+    eyebrow: 'GST on premiums',
+    title: 'One Question Decides Your GST Rate: Individual or Group?',
+    source:
+      '56th GST Council decision effective 22 September 2025, per the Ministry of Finance statement: individual life and individual health premiums, and reinsurance thereof, are exempt. Group policies are not.',
+    summary:
+      'Since 22 September 2025 individual life and health premiums carry 0% GST, while group cover stays at 18%. New policies are GST-free from the first payment; existing ones shed the tax at the next renewal falling on or after that date.',
+    anchor: 'GST Rates for Different Types of Life Insurance',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'The Individual / Group Split',
+        leftTitle: 'Individual policy',
+        rightTitle: 'Group policy',
+        rows: [
+          { label: 'GST since 22 Sep 2025', left: '0% — fully exempt', right: '18% — not exempt' },
+          { label: 'What falls under it', left: 'Term, whole life, endowment, ULIP, family floater, senior citizen', right: 'Employer or association group life and group health cover' },
+          { label: 'Reinsurance of those policies', left: 'Also exempt', right: 'Not exempt' },
+          { label: 'Input tax credit', left: 'Nothing to claim — no GST is charged', right: 'Employer can claim ITC if GST-registered' },
+          { label: 'Section 80C deduction', left: 'The full premium qualifies, within the ₹1.5 lakh cap', right: 'Only the net premium, excluding GST' },
+        ],
+        note: 'Individual annuity and pension plans are not named separately in the Council’s list — check the GST line on your invoice.',
+      },
+      {
+        kind: 'timeline',
+        heading: 'When the exemption reaches you',
+        items: [
+          { marker: '3 Sep 2025', title: 'Council recommends it', detail: 'The 56th GST Council recommends exempting individual life and individual health insurance premiums.', tone: 'primary' },
+          { marker: '22 Sep 2025', title: 'Exemption takes effect', detail: '0% GST on individual life and health cover, including the reinsurance services thereof.', tone: 'accent' },
+          { marker: 'Next renewal', title: 'Existing policies catch up', detail: 'On a policy you already hold, the GST component drops off at the renewal falling on or after 22 Sep 2025.', tone: 'accent' },
+          { marker: '2026', title: 'Still in force', detail: 'The exemption stands. Group cover — the main place 18% GST still bites — has not been brought into it.', tone: 'warn' },
+        ],
+        note: 'Buy a fresh policy on or after 22 Sep 2025 and it is GST-free from your first payment. GST already charged before that date is not refunded.',
+      },
+      {
+        kind: 'stats',
+        heading: 'What the exemption takes off your premium',
+        columns: 3,
+        items: [
+          { value: '18% → 0%', label: 'GST on individual life and health premiums', note: 'Group cover unchanged at 18%', tone: 'accent' },
+          { value: '₹2,288', label: 'A year removed from a ₹15,000 term premium', note: 'About ₹68,800 across a 30-year term', tone: 'primary' },
+          { value: '₹7,627', label: 'A year removed from a ₹50,000 endowment premium', note: 'Now stays in the policy instead of going out as tax', tone: 'primary' },
+        ],
+      },
+    ],
+  },
 ];
 
 /* -------------------------------------------------------------------------- */
