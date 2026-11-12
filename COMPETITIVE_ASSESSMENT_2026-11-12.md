@@ -145,3 +145,18 @@ This is the same error as the fabricated reviews removed earlier in section 8, a
 **Site after the change:** 857 HTML files, 234 indexable pages, 232 sitemap URLs, 0 orphan pages, 0 titles over 60 characters, 0 broken internal links, 0 pages carrying invented performance claims.
 
 **What this does not change.** Section 6 stands. A page that answers the question in sixty words still needs a face, five real reviews and a handful of links before it outranks a content farm. The difference is that the content is now fit to be ranked — the sentences a stranger would check are the ones we can now defend.
+
+---
+
+## 10. The Google review link
+
+Hari supplied the link he sends to clients by message: `https://g.page/r/CRDgJanrKjRhEBM/review`. It is now wired in properly rather than pasted in one place:
+
+- **One constant.** `src/data/site.ts` holds `GOOGLE_REVIEW_URL` and `GOOGLE_PROFILE_URL`. If the listing is ever re-created, one line changes.
+- **Footer, every page** — a single inline line: "Worked with us? Leave a Google review." 852 pages carry it.
+- **`/contact` and `/about`** — a card in the amber palette, addressed to people who have already been served, not to a first-time enquirer.
+- **`/review`** — a 302 in `public/_redirects` to the same review box, so the link can be given as `insurancesupport.online/review` in a message or a WhatsApp reply. Cloudflare Pages reads `_redirects` at deploy time.
+
+**What this does and does not fix.** It makes it easy for a satisfied client to leave a review, which is the cheapest trust signal available and the one section 6 identified as missing. It does **not** put stars in search results: that needs real reviews plus `AggregateRating` markup, and the markup stays off until the reviews exist. The earlier fabricated 4.8/127 is still gone, and it stays gone.
+
+**One cleanup this forced.** The organisation schema's `sameAs` array contained four URLs that resolved to nothing real — a Google Maps place link with a duplicated hex identifier, a YouTube channel ID of repeating characters, and three brand handles that appear nowhere on the site. They are replaced with the real listing plus the two handles the footer actually displays. Structured data that describes imaginary profiles is the same error as the fake reviews, in a less visible place.
