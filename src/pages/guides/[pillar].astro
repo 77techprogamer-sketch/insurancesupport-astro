@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import posts from '../../data/blogs.json';
+import { PILLARS, postsInPillar } from '../../utils/pillars';
+
+export function getStaticPaths() {
+  return PILLARS.map((pillar) => ({ params: { pillar: pillar.slug }, props: { pillar } }));
+}
+
+const { pillar } = Astro.props;
+const members = postsInPillar(pillar, posts);
+const others = PILLARS.filter((p) => p.slug !== pillar.slug);
+const canonical = `https://insurancesupport.online/guides/${pillar.slug}/`;
+
+const pageTitle = pillar.seoTitle;
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pillar.title,
+  description: pillar.description,
+  url: canonical,
+  isPartOf: { '@type': 'WebSite', '@id': 'https://insurancesupport.online/#website' },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: members.length,
+    itemListElement: members.slice(0, 20).map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.title,
+      url: `https://insurancesupport.online/blog/${p.slug}/`,
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://insurancesupport.online/' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://insurancesupport.online/guides/' },
+    { '@type': 'ListItem', position: 3, name: pillar.title, item: canonical },
+  ],
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pillar.description}
+  keywords={`${pillar.navLabel.toLowerCase()} guides, insurance claims India, ${pillar.slug.replace('-', ' ')}`}
+  canonical={canonical}
+  pageType="guide-hub"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <main id="main" class="bg-white">
+    <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-14">
+      <div class="max-w-4xl mx-auto px-4">
+        <nav class="text-sm text-blue-200/70 mb-6" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-white">Home</a>
+          <span class="mx-2">›</span>
+          <a href="/guides/" class="hover:text-white">Guides</a>
+          <span class="mx-2">›</span>
+          <span class="text-white" aria-current="page">{pillar.navLabel}</span>
+        </nav>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">{pillar.title}</h1>
+        <p class="text-lg text-blue-100/85 max-w-3xl leading-relaxed">{pillar.description}</p>
+        <p class="mt-5 text-sm text-blue-200/70">{members.length} guides in this cluster</p>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      {pillar.intro.map((para) => (
+        <p class="text-slate-700 leading-relaxed mb-4">{para}</p>
+      ))}
+
+      {(pillar.startHere || (pillar.related && pillar.related.length > 0)) && (
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+          {pillar.startHere && (
+            <a href={pillar.startHere.url} class="sm:col-span-1 rounded-xl border border-blue-200 bg-blue-50 p-5 hover:border-blue-400 transition-colors">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-blue-600 mb-2">Start here</span>
+              <span class="block text-sm font-bold text-slate-900 leading-snug">{pillar.startHere.title}</span>
+            </a>
+          )}
+          {(pillar.related || []).map((r) => (
+            <a href={r.url} class="rounded-xl border border-slate-200 bg-white p-5 hover:border-blue-300 transition-colors">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Resource</span>
+              <span class="block text-sm font-semibold text-slate-800 leading-snug">{r.title}</span>
+            </a>
+          ))}
+        </div>
+      )}
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-6">All {members.length} guides</h2>
+      <ul class="divide-y divide-slate-100">
+        {members.map((p) => (
+          <li class="py-5">
+            <a href={`/blog/${p.slug}/`} class="group block">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug mb-1">
+                {p.title}
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-2">{p.summary}</p>
+              <span class="text-xs text-slate-400">{p.date}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="mt-12 rounded-2xl bg-slate-900 text-white p-8">
+        <h2 class="text-xl font-bold mb-2">Stuck on a specific file?</h2>
+        <p class="text-blue-100/80 mb-5 text-sm leading-relaxed">
+          Reading is free and so is the first review. Send the rejection letter and the policy schedule, and you will get back a plain answer about whether the decision holds and which route applies.
+        </p>
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-bold rounded-full hover:scale-105 transition-transform">
+          Free case review
+        </a>
+      </div>
+
+      <div class="mt-12">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Other clusters</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {others.map((o) => (
+            <a href={`/guides/${o.slug}/`} class="rounded-lg border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 hover:border-blue-300 hover:text-blue-700 transition-colors">
+              {o.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

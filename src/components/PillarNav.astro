@@ -1,0 +1,46 @@
+---
+// Cluster navigation for a blog post: links up to the pillar hub and across to
+// its nearest siblings. Every English post belongs to exactly one pillar.
+interface Sibling {
+  title: string;
+  url: string;
+  date?: string;
+}
+
+interface Props {
+  pillar: { slug: string; title: string; navLabel: string };
+  siblings: Sibling[];
+  total: number;
+}
+
+const { pillar, siblings, total } = Astro.props;
+const hubUrl = `/guides/${pillar.slug}/`;
+---
+
+<aside class="max-w-3xl mx-auto px-4 mt-12" aria-label={`More guides in ${pillar.title}`}>
+  <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-6">
+    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Part of this guide</p>
+    <p class="mb-4">
+      <a href={hubUrl} class="text-lg font-bold text-slate-900 hover:text-blue-700 underline decoration-blue-300/60">
+        {pillar.title}
+      </a>
+      <span class="text-slate-500 text-sm"> — {total} guides in this cluster</span>
+    </p>
+
+    {siblings.length > 0 && (
+      <ul class="space-y-2 mb-4">
+        {siblings.map((s) => (
+          <li class="flex gap-2 text-sm leading-snug">
+            <span class="text-blue-500" aria-hidden="true">→</span>
+            <a href={s.url} class="text-slate-700 hover:text-blue-700 hover:underline">{s.title}</a>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <a href={hubUrl} class="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-900">
+      See every {pillar.navLabel.toLowerCase()} guide
+      <span aria-hidden="true">›</span>
+    </a>
+  </div>
+</aside>
