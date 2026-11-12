@@ -287,3 +287,43 @@ So the work went there.
 **The map.** `seo/keyword-map.csv` assigns every indexable page a primary query, an intent and a check: does the title contain it, does the H1 contain it. 235 pages mapped, 28 flagged at the start, 24 now — and roughly twenty of the remaining flags are artefacts of the script deriving a query from a hub URL ("blog", "case studies"), not real gaps.
 
 **What this is worth.** Titles and H1s decide whether a page can rank; they do not decide whether it will. That still comes down to links, reviews and being the best answer — sections 6, 10 and 13.
+
+## 15. The visual pass — and what it is actually worth
+
+The ask was to make the site look better than the competitors so it ranks above them. Worth stating plainly before the numbers: **appearance alone does not move rankings.** What it does move is Core Web Vitals, how long someone stays on the page, and whether they call. Those are real, and they are what this pass targeted. Links and reviews are still the ranking lever.
+
+### The big one: 270 KB of JavaScript to fade in three buttons
+
+Every page on the site loaded React, Framer Motion and an icon library so that a floating "call / WhatsApp / get a quote" bar could slide in after 300 pixels of scroll. Measured from the built output: `FloatingCTA.*.js` 132 KB plus the shared `client.*.js` 136 KB — about 270 KB of JavaScript, parsed and executed on a phone, to animate a div.
+
+It is now an `.astro` component: static markup, a CSS transition and fourteen lines of inline script that toggles one class. Same appearance, same behaviour.
+
+| Per page, measured from `dist/` | Before | After |
+|---|---|---|
+| JavaScript on the homepage | ~270 KB | **2.2 KB** |
+| JavaScript on a blog article | ~270 KB | **2.2 KB** |
+| JavaScript on `/contact/` | ~270 KB | **2.2 KB** |
+| Pages still loading React | 859 | **2** (trust strip and calculator) |
+
+This is the single largest performance change made to the site so far, and it costs nothing visually.
+
+### Articles that read like articles
+
+The blog template styled tables, images, links and code — but not `h2`, `h3`, `p`, `ul` or `ol`. Tailwind's reset had removed the browser defaults and nothing put the rhythm back, so 105 posts rendered as a wall of paragraphs with headings floating above them. Now: 17px at 1.75 line height, real space above each heading, list spacing, and wide tables that scroll sideways on a phone instead of shrinking to eight-point type.
+
+Two additions on top of that:
+
+- **The answer box.** 35 posts open with "The short answer" as a heading, which visually disappears. It is now a tinted panel with a blue rule and a small label — the reading aid it was meant to be, and the shape an extractor prefers to quote.
+- **On this page.** 73 posts have three or more sections and now carry a two-column contents card. Every `h2` gets a slugified, de-duplicated id, so each section is directly linkable and Google has jump targets to show as sitelinks.
+
+### What was deliberately not done
+
+- **No stock photography.** The pages are thin on imagery — the homepage has no `<img>` at all — but pasting generic stock of shaking hands over a caption is the visual equivalent of the invented statistics already removed from this site. Real photographs of Hari, or none.
+- **No new fonts or animation libraries.** Two families and seven weights already load; adding a third for visual effect would undo the 270 KB win above.
+- **No carousel, parallax, scroll-jacking or gradient text.** All three cost LCP or accessibility, and class-A competitors win on plain, fast pages — being calmer and better set than them is the advantage, not out-animating them.
+
+### Honest expectations
+
+This pass improves three measurable things: the JavaScript a phone must download and execute (a real LCP and INP win), whether a long article can be read and scanned at all, and how easy it is to call from a phone. None of those is a ranking factor in themselves. If the goal is to outrank `insurancesamadhan.com`, the work is still what sections 6, 10 and 13 describe: reviews, links, and answers that are better than theirs.
+
+Blocked on the same input as before: photographs of Hari would fill the visual gap that CSS cannot.
