@@ -1,5 +1,10 @@
 ## Health Insurance in India: A Practical Guide to Choosing Cover and Using It
 
+## The short answer
+
+**A health policy is worth what its wording pays, not what its brochure promises.** Read four things before buying — waiting periods, the room-rent limit, sub-limits and co-payment. In a dispute, four clocks matter: 30 days to settle a claim, 14 days to answer a grievance, one hour to authorise a planned admission, three hours at discharge.
+
+
 Health insurance is a contract that pays eligible medical expenses under stated terms, limits, exclusions, and procedures. A policy is useful only when the cover matches the people insured, the hospitals they may use, and the costs they need protection from. This guide explains how Indian families can compare policies, prepare for a claim, and handle a dispute without relying on headline benefit names alone.
 
 There is no single “best” sum insured or policy for every household. Age, existing illnesses, city, family structure, employer cover, budget, and access to savings all matter. Read the policy wording and customer information sheet for the exact product before buying; brochures and comparison tables are summaries.

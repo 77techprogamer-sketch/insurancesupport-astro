@@ -1,5 +1,10 @@
 ## LIC Policies in India: A Practical Guide to Choosing, Managing, and Claiming
 
+## The short answer
+
+**Choose a LIC policy by the need it has to meet, then read what is actually guaranteed.** Term cover protects dependants, endowment and money-back plans mix cover with savings, and annuities buy income. If a claim is disputed, the Section 45 three-year rule and the revival date decide more files than any assurance given at the counter.
+
+
 The Life Insurance Corporation of India (LIC) sells several kinds of life insurance and annuity products. The right way to compare them is to start with the financial need—income protection, long-term savings, a defined maturity benefit, or retirement income—and then read the specific policy terms. A product name or illustration alone is not enough to understand what is guaranteed, what depends on bonuses or investment performance, and what happens if premiums stop.
 
 This guide is a map to LIC policy decisions and services. It does not rank current plans or predict returns. LIC changes products and servicing procedures; use LIC's current documents and your issued policy for plan-specific details.

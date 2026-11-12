@@ -1,5 +1,10 @@
 ## Insurance Claim Recovery in India: A Policyholder's Complete Guide
 
+## The short answer
+
+**A rejection is decided on the policy wording, the facts of the loss and the documents in the file — so the first job is to get the reason in writing and test it against those three.** Then the ladder: the insurer's Grievance Redressal Officer (14 days to resolve), IRDAI Bima Bharosa, and the Insurance Ombudsman — free, within one year, up to ₹50 lakh.
+
+
 An insurer's decision should be assessed against the policy wording, the facts of the loss, and the documents in the claim file. A claim marked “pending,” reduced, or rejected is not automatically correct or incorrect; the next step is to identify the exact reason and test it against the contract and evidence. This guide explains how to do that for health, life, motor, and other insurance claims in India.
 
 The process below is a practical guide, not a promise that every disputed claim will be paid. The insurer decides claims under the policy and applicable rules. A representative can help organize and present a case, but cannot guarantee an outcome or replace legal advice where a court or tribunal issue arises.
