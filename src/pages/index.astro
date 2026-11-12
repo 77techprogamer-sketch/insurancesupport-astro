@@ -4,6 +4,7 @@ import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import ClaimRejectionQuiz from '../components/ClaimRejectionQuiz.astro';
 import Icon from '../components/icons/Icon.astro';
+import CallbackForm from '../components/CallbackForm.astro';
 
 const pageTitle = 'Insurance Support | Insurance Claim Help & Advisory India | Free Review by IRDAI Advisor';
 const pageDescription = 'Insurance claim rejected, delayed or underpaid? Get free case review from Hari Kotian, IRDAI-certified advisor (Reg No: 0149161D). We handle health, life, motor, term claim disputes across India. No fee for first review.';
@@ -313,6 +314,16 @@ const faqs = [
                                   Call +91 99866 34506
                                 </a>
                               </div>
+          <div style="max-width: 520px; margin: var(--space-8) auto 0; text-align: left;">
+            <CallbackForm
+              source="homepage:cta"
+              heading="Or ask for a callback"
+              subheading="Leave your number and we will call you back the same working day."
+              buttonLabel="Request my callback"
+              variant="card"
+              showTimeSlot={false}
+            />
+          </div>
         </div>
       </div>
     </section>

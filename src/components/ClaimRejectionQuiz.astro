@@ -3,6 +3,34 @@
 // Interactive quiz to assess claim appeal potential.
 import Icon from '../components/icons/Icon.astro';
 import CallbackForm from './CallbackForm.astro';
+
+// The quiz used to render five numbered boxes with no question text and empty
+// selects (the "inject via JS" placeholder was never implemented). Questions and
+// options now render server-side so the form is usable, indexable and accessible.
+const questions = [
+  {
+    n: 1, name: 'insurer', label: 'Which insurer rejected the claim?',
+    options: ['LIC of India', 'Star Health', 'HDFC ERGO', 'ICICI Lombard', 'Niva Bupa',
+              'New India Assurance', 'Bajaj Allianz', 'Care Health', 'SBI General',
+              'Tata AIG', 'Max Life', 'Other insurer'],
+  },
+  {
+    n: 2, name: 'policyType', label: 'What kind of policy is it?',
+    options: ['Health Insurance', 'Life Insurance', 'Term Insurance', 'Motor Insurance'],
+  },
+  {
+    n: 3, name: 'rejectionReason', label: 'What reason did the insurer give?',
+    options: ['Non-disclosure', 'Exclusion', 'Waiting Period', 'Lapse', 'Documentation', 'Other'],
+  },
+  {
+    n: 4, name: 'claimAmount', label: 'Roughly how much was the claim for?',
+    options: ['Under 1L', '1-5L', '5-20L', '20L+'],
+  },
+  {
+    n: 5, name: 'rejectionDate', label: 'When was the rejection?',
+    options: ['<30 days', '30-90 days', '>90 days'],
+  },
+];
 ---
 
 <div id="claimRejectionQuiz" class="max-w-xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border mb-12 bg-surface">
@@ -24,14 +52,17 @@ import CallbackForm from './CallbackForm.astro';
   <div class="p-8" style={{ fontFamily: "'Inter', sans-serif" }}>
     <form id="quizForm" class="space-y-6">
       <!-- Questions -->
-      {[1,2,3,4,5].map((n) => (
-        <div class="card p-5" key={n}>
-          <label for={`q${n}`} class="block font-semibold text-dark mb-3">
-            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-white text-sm font-bold mr-2 flex-shrink-0" style={{ fontFamily: "'Inter', sans-serif" }}>{n}</span>
-            <span class="text-secondary"><!-- question text injected via JS --></span>
+      {questions.map((q) => (
+        <div class="card p-5" key={q.name}>
+          <label for={`q${q.n}`} class="block font-semibold text-dark mb-3">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-white text-sm font-bold mr-2 flex-shrink-0" style={{ fontFamily: "'Inter', sans-serif" }}>{q.n}</span>
+            <span class="text-secondary">{q.label}</span>
           </label>
-          <select id={`q${n}`} name={`q${n}`} required class="input w-full">
+          <select id={`q${q.n}`} name={q.name} required class="input w-full">
             <option value="">Select...</option>
+            {q.options.map((opt) => (
+              <option value={opt}>{opt}</option>
+            ))}
           </select>
         </div>
       ))}
@@ -71,6 +102,10 @@ import CallbackForm from './CallbackForm.astro';
           <Icon name="whatsapp" size="md" />
           Get Expert Help on WhatsApp
         </a>
+        <p class="mt-4 text-xs text-muted leading-relaxed">
+          This is an indication based on your answers, not a prediction or a guarantee. The policy
+          wording and the claim file decide the outcome.
+        </p>
       </div>
     </div>
   </div>
@@ -120,13 +155,14 @@ import CallbackForm from './CallbackForm.astro';
       else if (rejectionDate === '30-90 days') score += 20;
       else if (rejectionDate === '>90 days') score += 10;
 
-      // Adjust message based on score
+      // Cap at 100 and describe the grounds, never a promised outcome.
+      score = Math.min(score, 100);
       if (score >= 80) {
-        message = "High potential for successful appeal! Your case has strong grounds for review.";
+        message = "Strong grounds to review: the rejection reason, the policy type and the timing all work in your favour.";
       } else if (score >= 50) {
-        message = "Good potential. With expert guidance, your chances of appeal are promising.";
+        message = "Worth reviewing: there are points here that a clause-level check could challenge.";
       } else {
-        message = "Moderate potential. While challenging, we can still review your case for any hidden opportunities.";
+        message = "Fewer obvious grounds on these answers — but the documents often tell a different story. A review is still free.";
       }
 
       if (potentialScore) potentialScore.textContent = `${score}%`;

@@ -144,6 +144,7 @@ export function clampTitle(raw: string | undefined | null, max: number = META_TI
 // Hand-written titles for pages where a mechanical clamp reads badly.
 // Keyed by pathname so the template keeps its full, descriptive title.
 export const TITLE_OVERRIDES: Record<string, string> = {
+  '/': 'Insurance Claim Rejected? Free Review by an IRDAI Advisor',
   '/insurance-support/': 'Insurance Support | IRDAI Claim Advisory',
   '/claim-recovery/': 'Insurance Claim Recovery Hub: 2026 Guides',
   '/tools/human-life-value-calculator/': 'Human Life Value (HLV) Calculator | Free Tool',
