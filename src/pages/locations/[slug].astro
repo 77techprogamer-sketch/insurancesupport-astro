@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+import { KARNATAKA_BY_SLUG } from '../../data/karnataka-cities';
 
 export async function getStaticPaths() {
   const allCitiesCollection = await getCollection('cities');
@@ -27,10 +28,16 @@ const branchDets = city.branch_dets;
 const localFaqs = city.local_faqs;
 
 const pageUrl = `https://insurancesupport.online/locations/${city.slug}/`;
+
+// The twelve largest Karnataka cities have a purpose-built page under /karnataka/.
+// This one stays reachable — links and old bookmarks keep working — but it is the
+// thinner of the two, so it consolidates there instead of competing with it.
+const karnatakaTwin = KARNATAKA_BY_SLUG[city.slug];
+const canonicalUrl = karnatakaTwin ? `https://insurancesupport.online/karnataka/${city.slug}/` : pageUrl;
 const phoneFormatted = phone.replace(/\s/g, '');
 ---
 
-<BaseLayout pageType="location" title={`Insurance Advisor in ${cityName} | Hari Kotian`} description={description} keywords={`insurance advisor ${cityName}, ${cityName} insurance agent, insurance claim help ${cityName}, buy insurance ${cityName}, LIC agent ${cityName}, health insurance ${cityName}, insurance agent in ${stateName}`} skipGlobalLocationSchema={true} skipGlobalOrgSchema={true}>
+<BaseLayout pageType="location" noIndex={Boolean(karnatakaTwin)} canonical={canonicalUrl} title={`Insurance Advisor in ${cityName} | Hari Kotian`} description={description} keywords={`insurance advisor ${cityName}, ${cityName} insurance agent, insurance claim help ${cityName}, buy insurance ${cityName}, LIC agent ${cityName}, health insurance ${cityName}, insurance agent in ${stateName}`} skipGlobalLocationSchema={true} skipGlobalOrgSchema={true}>
   <BreadcrumbJsonLd items={[
     { label: 'Home', url: 'https://insurancesupport.online' },
     { label: 'Locations', url: 'https://insurancesupport.online/locations' },

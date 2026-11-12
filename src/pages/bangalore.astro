@@ -73,7 +73,7 @@ const faqs = [
   {
     question: 'Which Insurance Ombudsman office covers Bangalore?',
     answer:
-      'Complaints from Karnataka go to the Bengaluru office of the Insurance Ombudsman, which also covers Goa. Jurisdiction follows your address and the insurer\'s office involved, so confirm the current zone on the Council for Insurance Ombudsmen site before filing. The office address and contact details are in the Bangalore Ombudsman guide on this site.',
+      'Complaints from Karnataka go to the Bengaluru office of the Insurance Ombudsman, whose jurisdiction is Karnataka. Jurisdiction follows your address and the insurer\'s office involved, so confirm the current zone on the Council for Insurance Ombudsmen site before filing. The office address and contact details are in the Bangalore Ombudsman guide on this site.',
   },
   {
     question: 'Do I have to visit in person, or can this be handled remotely?',
@@ -246,6 +246,37 @@ const faqSchema = faqs.map((f) => ({ question: f.question, answer: f.answer }));
         heading="Helped in Bengaluru? Leave a Google review"
         body="Most people find this service by searching their own city. A short review is what lets the next Bengaluru family find it."
       />
+    </section>
+
+    <!-- Rest of Karnataka -->
+    <section class="max-w-5xl mx-auto px-4 py-14 border-t border-slate-200">
+      <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">The rest of Karnataka</h2>
+      <p class="text-slate-600 mb-6 max-w-3xl">
+        The same Ombudsman at Bengaluru covers every district in the state, and every step can be filed from your own city. The district pages carry the local consumer commission, the LIC divisional office that holds the file, and what usually goes wrong there.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {[
+          ['mysore', 'Mysuru'],
+          ['mangalore', 'Mangaluru'],
+          ['hubli', 'Hubballi-Dharwad'],
+          ['belgaum', 'Belagavi'],
+          ['gulbarga', 'Kalaburagi'],
+          ['bellary', 'Ballari'],
+          ['davangere', 'Davanagere'],
+          ['tumkur', 'Tumakuru'],
+          ['shimoga', 'Shivamogga'],
+          ['bijapur', 'Vijayapura'],
+          ['bidar', 'Bidar'],
+          ['raichur', 'Raichur'],
+        ].map(([slug, name]) => (
+          <a href={`/karnataka/${slug}/`} class="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:border-blue-400 hover:text-blue-700 transition-colors">
+            {name}
+          </a>
+        ))}
+      </div>
+      <p class="mt-5">
+        <a href="/karnataka/" class="text-blue-700 font-semibold hover:underline">Karnataka: the full route and every forum →</a>
+      </p>
     </section>
 
     <!-- Rest of India -->

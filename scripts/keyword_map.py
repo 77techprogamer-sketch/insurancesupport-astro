@@ -38,11 +38,22 @@ FIXED = {
     "/tools/": ("free insurance calculators", "tool"),
     "/compare/": ("compare insurance plans India", "commercial"),
     "/locations/": ("insurance advisor locations India", "local"),
+    "/karnataka/": ("insurance claim help Karnataka", "local"),
     "/cities/": ("LIC agent Bangalore areas", "local"),
     "/services/": ("insurance services Bangalore", "commercial"),
     "/claim-recovery/": ("insurance claim recovery help", "transactional"),
     "/resources/": ("insurance resources and checklists", "informational"),
     "/expert-insights/": ("insurance expert insights", "informational"),
+}
+
+
+# Official name for each /karnataka/ slug, so the check does not flag a page for
+# "missing" a keyword when it uses the name people actually know it by today.
+CITY_NAMES = {
+    "mysore": "Mysuru", "mangalore": "Mangaluru", "hubli": "Hubballi-Dharwad",
+    "belgaum": "Belagavi", "gulbarga": "Kalaburagi", "bellary": "Ballari",
+    "davangere": "Davanagere", "tumkur": "Tumakuru", "shimoga": "Shivamogga",
+    "bijapur": "Vijayapura", "bidar": "Bidar", "raichur": "Raichur",
 }
 
 
@@ -56,6 +67,12 @@ def primary_for(url: str, title: str) -> tuple[str, str]:
     path = url.replace(SITE, "") or "/"
     if path in FIXED:
         return FIXED[path]
+    if path.startswith("/karnataka/"):
+        # City pages are titled with the current official name (Belagavi) but the
+        # URL and half the searches use the older one (Belgaum) — accept either.
+        slug = path.strip("/").split("/")[-1]
+        name = CITY_NAMES.get(slug, slug.replace("-", " ").title())
+        return f"insurance claim rejected {name}", "local"
     if path.startswith("/locations/"):
         city = path.strip("/").split("/")[-1].replace("-", " ").title()
         return f"insurance advisor {city}", "local"

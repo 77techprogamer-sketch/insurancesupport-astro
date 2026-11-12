@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+import { KARNATAKA_BY_SLUG } from '../../data/karnataka-cities';
 
 
 const allCitiesCollection = await getCollection('cities');
@@ -92,7 +93,7 @@ const totalAreas = cities.reduce((sum, c) => sum + (c.areas?.length || 0), 0);
             <span class="text-sm font-normal text-slate-500 bg-slate-100 px-3 py-1 rounded-full">{states[state].length} neighborhoods</span>
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 city-grid">
-            {states[state].map(city => <a href={`/locations/${city.slug}`} class="city-card block p-5 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group">
+            {states[state].map(city => <a href={KARNATAKA_BY_SLUG[city.slug] ? `/karnataka/${city.slug}/` : `/locations/${city.slug}`} class="city-card block p-5 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group">
               <div class="flex items-start gap-3">
                 <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
                 </div>

@@ -1484,3 +1484,19 @@
 
 # Convenience short link for messages: insurancesupport.online/review
 /review https://g.page/r/CRDgJanrKjRhEBM/review 302
+
+# The twelve largest Karnataka cities now have purpose-built pages under /karnataka/.
+# The old /locations/ pages were templated for all 56 cities and said the same thing
+# everywhere; these 301s send both readers and crawlers to the specific page.
+/locations/mysore/ /karnataka/mysore/ 301
+/locations/mangalore/ /karnataka/mangalore/ 301
+/locations/hubli/ /karnataka/hubli/ 301
+/locations/belgaum/ /karnataka/belgaum/ 301
+/locations/gulbarga/ /karnataka/gulbarga/ 301
+/locations/bellary/ /karnataka/bellary/ 301
+/locations/davangere/ /karnataka/davangere/ 301
+/locations/tumkur/ /karnataka/tumkur/ 301
+/locations/shimoga/ /karnataka/shimoga/ 301
+/locations/bijapur/ /karnataka/bijapur/ 301
+/locations/bidar/ /karnataka/bidar/ 301
+/locations/raichur/ /karnataka/raichur/ 301

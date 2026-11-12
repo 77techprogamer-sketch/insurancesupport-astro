@@ -6,10 +6,10 @@ What it does give you is the other half of the comparison: every page the site p
 
 ## The numbers
 
-- HTML pages published: **853**
-- Pages asking to be indexed: **235**
-- Pages deliberately noindexed: **618**
-- URLs in the sitemaps: **233**
+- HTML pages published: **866**
+- Pages asking to be indexed: **236**
+- Pages deliberately noindexed: **630**
+- URLs in the sitemaps: **234**
 - Indexable pages kept out of the sitemaps because they canonicalise elsewhere: **2** (by design)
 
 ## What Google is being asked to index
@@ -17,8 +17,8 @@ What it does give you is the other half of the comparison: every page the site p
 | Section | Pages |
 |---|---|
 | Blog | 98 |
-| Location pages | 57 |
-| Core / brand | 18 |
+| Location pages | 45 |
+| Core / brand | 31 |
 | Service pages | 12 |
 | Case studies | 11 |
 | Comparisons | 10 |
@@ -39,6 +39,7 @@ Full URL list with titles, word counts and internal link counts: `seo/indexable-
 |---|---|
 | Blog | 542 |
 | Locality pages | 74 |
+| Location pages | 12 |
 | Core / brand | 2 |
 
 Full list: `seo/noindex-urls.csv`. This is the honest reason the indexable count is 235 and not 859: the locality pages beyond the nine with unique content, the machine-translated duplicates and the utility pages are all noindexed on purpose. Publishing 859 competing pages would thin the site, not deepen it.
@@ -47,20 +48,18 @@ Full list: `seo/noindex-urls.csv`. This is the honest reason the indexable count
 
 These are the candidates for "Crawled — currently not indexed" or "Discovered — currently not indexed" in Search Console. They are indexable, but each has a property Google uses to decide a page is not worth the slot.
 
-### Under 500 words (12)
+### Under 500 words (10)
 
-- `/blog/lic-jeevan-anand-vs-jeevan-labh-comparison/` — 418 words — LIC Jeevan Anand vs Jeevan Labh 2026
-- `/about-hari-kotian/` — 210 words — Hari Kotian: IRDAI-Registered Advisor in Bengaluru
-- `/about/` — 433 words — Insurance Support: IRDAI-Registered Advisor in Bengaluru
-- `/disclaimer/` — 172 words — Disclaimer
-- `/expert-insights/` — 359 words — Expert Insights | Insurance Support by Hari Kotian
-- `/policy-review-checklist/` — 394 words — Printable Insurance Policy Review Checklist
-- `/resources/how-it-works/` — 462 words — How It Works | Insurance Support | Insurance Support
-- `/tools/` — 452 words — Free Insurance Tools & Calculators | Insurance Support
-- `/tools/human-life-value-calculator/` — 490 words — Human Life Value (HLV) Calculator | Free Tool
-- `/tools/policy-recovery/` — 430 words — LIC Policy Recovery | Find Lost & Lapsed Policies
-- `/tools/risk-scorecard/` — 466 words — Free Insurance Risk Scorecard | Is Your Family Underinsured?
-- `/guides/` — 468 words — Insurance Guides by Topic (2026) | Insurance Support
+- `/blog/lic-jeevan-anand-vs-jeevan-labh-comparison/` — 442 words — LIC Jeevan Anand vs Jeevan Labh 2026
+- `/about-hari-kotian/` — 234 words — Hari Kotian: IRDAI-Registered Advisor in Bengaluru
+- `/disclaimer/` — 196 words — Disclaimer
+- `/expert-insights/` — 383 words — Expert Insights | Insurance Support by Hari Kotian
+- `/policy-review-checklist/` — 418 words — Printable Insurance Policy Review Checklist
+- `/resources/how-it-works/` — 486 words — How It Works | Insurance Support | Insurance Support
+- `/tools/` — 476 words — Free Insurance Tools & Calculators | Insurance Support
+- `/tools/policy-recovery/` — 454 words — LIC Policy Recovery | Find Lost & Lapsed Policies
+- `/tools/risk-scorecard/` — 490 words — Free Insurance Risk Scorecard | Is Your Family Underinsured?
+- `/guides/` — 492 words — Insurance Guides by Topic (2026) | Insurance Support
 
 
 ### No internal links pointing at them (0)

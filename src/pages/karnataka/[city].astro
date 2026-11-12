@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd.astro';
+import FAQPageJsonLd from '../../components/FAQPageJsonLd.astro';
+import { KARNATAKA_CITIES, type KarnatakaCity } from '../../data/karnataka-cities';
+
+export function getStaticPaths() {
+  return KARNATAKA_CITIES.map((city) => ({ params: { city: city.slug }, props: { city } }));
+}
+
+interface Props {
+  city: KarnatakaCity;
+}
+
+const { city } = Astro.props;
+const PAGE_URL = `https://insurancesupport.online/karnataka/${city.slug}/`;
+const altNames = city.former ? `${city.name} (${city.former})` : city.name;
+
+const TITLE = `Insurance Claim Rejected in ${city.name}? What Next`;
+const DESCRIPTION =
+  `A claim refused in ${city.name} goes to the insurer’s grievance officer, then Bima Bharosa, then the Ombudsman at Bengaluru — free, up to ₹50 lakh, one year to file.`.slice(0, 158);
+
+const sharedFaqs = [
+  {
+    question: `Does a complaint from ${city.name} have to be filed in Bengaluru?`,
+    answer:
+      'The insurer’s grievance officer and Bima Bharosa are online, so no. The Insurance Ombudsman for Karnataka sits in Bengaluru and covers every district; filing is by post, email or online form, and travelling is optional rather than required.',
+  },
+  {
+    question: 'Where is the district consumer commission for this district?',
+    answer: `${city.district} district has its District Consumer Disputes Redressal Commission at the district headquarters, ${city.name}, hearing claims up to ₹50 lakh. Above that, the State Commission sits in Bengaluru.`,
+  },
+  {
+    question: 'What does the first review cost?',
+    answer:
+      'Nothing. Send the rejection letter and policy schedule and you get a written answer on whether the decision holds and which route applies. Any fee after that is agreed in writing before work starts.',
+  },
+];
+
+const faqs = [...city.faqs.map((f) => ({ question: f.q, answer: f.a })), ...sharedFaqs];
+
+// Three other cities, rotated so every page links to a different set.
+const idx = KARNATAKA_CITIES.findIndex((c) => c.slug === city.slug);
+const others = [1, 2, 3].map((n) => KARNATAKA_CITIES[(idx + n) % KARNATAKA_CITIES.length]);
+
+const panel = 'rounded-2xl border border-slate-200 bg-white p-6';
+---
+
+<BaseLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  keywords={`insurance claim rejected ${city.name}, claim help ${city.district}, insurance advisor ${city.name}, insurance ombudsman ${city.name}, LIC claim ${city.name}, health insurance claim ${city.name}`}
+  canonical={PAGE_URL}
+  pageType="city"
+  geoPlaceName={city.name}
+  dateModified="2026-11-12"
+>
+  <BreadcrumbJsonLd
+    items={[
+      { label: 'Home', url: 'https://insurancesupport.online' },
+      { label: 'Karnataka', url: 'https://insurancesupport.online/karnataka/' },
+      { label: `${city.name}`, url: PAGE_URL },
+    ]}
+  />
+  <FAQPageJsonLd questions={faqs} />
+
+  <main id="main" role="main">
+    <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white">
+      <div class="max-w-5xl mx-auto px-4 py-16 lg:py-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300 mb-4">
+          {city.district} district · Karnataka
+        </p>
+        <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-5">
+          Insurance claim rejected in {city.name}?
+        </h1>
+        <p class="text-lg text-slate-200 max-w-3xl mb-4">
+          <strong class="text-white">Then the date on the rejection letter is the clock.</strong> The insurer’s Grievance Redressal Officer must reply within 14 days; IRDAI’s Bima Bharosa is online; and the Insurance Ombudsman for the whole state — including {altNames} — sits at Bengaluru, hears claims up to ₹50 lakh, costs nothing, and needs no lawyer.
+        </p>
+        <p class="text-slate-300 max-w-3xl mb-8">
+          You have one year from the rejection to file. That deadline, not the argument, is what loses most cases in this district.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/contact" class="inline-flex justify-center items-center gap-2 px-6 py-3 bg-amber-400 text-slate-900 font-bold rounded-lg hover:bg-amber-300 transition-colors">
+            Send the rejection letter — first read free
+          </a>
+          <a href="tel:+919986634506" class="inline-flex justify-center items-center gap-2 px-6 py-3 bg-white/10 border border-white/25 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors">
+            Call +91 99866 34506
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local reality -->
+    <section class="max-w-5xl mx-auto px-4 py-14">
+      <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">What is specific to {city.name}</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class={panel}>
+          <h3 class="font-bold text-slate-900 mb-2">The policy base</h3>
+          <p class="text-slate-600">{city.context}</p>
+        </article>
+        <article class={panel}>
+          <h3 class="font-bold text-slate-900 mb-2">How claims go wrong here</h3>
+          <p class="text-slate-600">{city.angle}</p>
+        </article>
+        <article class={panel}>
+          <h3 class="font-bold text-slate-900 mb-2">Which forum hears it</h3>
+          <ul class="space-y-2 text-slate-600 text-sm">
+            <li><strong class="text-slate-900">Ombudsman:</strong> Bengaluru, covering all of Karnataka. Free, up to ₹50 lakh, one year to file.</li>
+            <li><strong class="text-slate-900">District Commission:</strong> {city.district}, up to ₹50 lakh.</li>
+            <li><strong class="text-slate-900">State Commission:</strong> Bengaluru, ₹50 lakh to ₹2 crore.</li>
+          </ul>
+        </article>
+        <article class={panel}>
+          <h3 class="font-bold text-slate-900 mb-2">Where the policy file sits</h3>
+          {city.licDo ? (
+            <p class="text-slate-600">
+              LIC services {city.district} district through its divisional office at {city.licDo}; that is where a policy’s record, revival calculation or maturity file is dealt with. For other insurers, the branch on the policy schedule holds the file, wherever that branch now is.
+            </p>
+          ) : (
+            <p class="text-slate-600">
+              LIC services {city.district} district through the divisional office that holds the policy rather than one in the city itself — the policy schedule or the branch that sold it will say which. For other insurers, the branch named on the schedule holds the file.
+            </p>
+          )}
+        </article>
+      </div>
+    </section>
+
+    <!-- Route -->
+    <section class="bg-slate-50 border-y border-slate-200">
+      <div class="max-w-5xl mx-auto px-4 py-14">
+        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">The four steps, for a {city.name} policyholder</h2>
+        <ol class="space-y-3">
+          <li class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="font-semibold text-slate-900 mb-1">1 · Get the refusal and its clause in writing</p>
+            <p class="text-slate-600 text-sm">A rejection must name the reason and the clause. Ask for the claim notes and the opinion relied on; that reply is the whole case later.</p>
+          </li>
+          <li class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="font-semibold text-slate-900 mb-1">2 · Grievance Redressal Officer — 14 days</p>
+            <p class="text-slate-600 text-sm">Mandatory before any forum, and it is done by email and post from {city.name}. No visit to the insurer’s office is needed.</p>
+          </li>
+          <li class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="font-semibold text-slate-900 mb-1">3 · Bima Bharosa — online</p>
+            <p class="text-slate-600 text-sm">IRDAI’s portal, filed from anywhere in the state. The reference number it gives you is what you quote to the Ombudsman.</p>
+          </li>
+          <li class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="font-semibold text-slate-900 mb-1">4 · Ombudsman at Bengaluru — within one year</p>
+            <p class="text-slate-600 text-sm">Post, email or the online form. An award binds the insurer, which must pay within 30 days or ₹5,000 a day after that.</p>
+          </li>
+        </ol>
+        <p class="mt-6 text-slate-600">
+          The full route with every deadline: <a href="/karnataka/" class="text-blue-700 font-semibold hover:underline">insurance claim help across Karnataka →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Remote model -->
+    <section class="max-w-5xl mx-auto px-4 py-14">
+      <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">Working with us from {city.name}</h2>
+      <p class="text-slate-600 mb-6 max-w-3xl">
+        There is one office, at Jalahalli in Bengaluru, and no branch in {city.name}. Everything else is remote, which is how these filings are done anyway — every step above is by email, post or portal.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class={panel}>
+          <h3 class="font-bold text-slate-900 mb-3">What you get remotely</h3>
+          <ul class="space-y-2 text-slate-600 text-sm">
+            <li>The rejection read and the ground identified, in writing.</li>
+            <li>The grievance to the insurer drafted for your signature.</li>
+            <li>Bima Bharosa and Ombudsman filings prepared and submitted.</li>
+            <li>Documents shared by WhatsApp, email or speed post.</li>
+          </ul>
+        </div>
+        <div class={panel}>
+          <h3 class="font-bold text-slate-900 mb-3">What we will not claim</h3>
+          <ul class="space-y-2 text-slate-600 text-sm">
+            <li>No doorstep visit in {city.name} — that would need an office here.</li>
+            <li>No promised outcome, amount or date beyond the regulator’s.</li>
+            <li>No filing in your name without your signature.</li>
+            <li>No fee before the free first read.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-6 text-slate-600">
+        If you are ever in Bengaluru, the office is open Monday to Saturday, 9:30 am to 6 pm, closed Sunday.
+        <a href="/contact/" class="text-blue-700 font-semibold hover:underline">Contact details →</a>
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-slate-50 border-t border-slate-200">
+      <div class="max-w-3xl mx-auto px-4 py-14">
+        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">{city.name} questions</h2>
+        <div class="space-y-3">
+          {faqs.map((faq) => (
+            <details class="rounded-xl border border-slate-200 bg-white p-5">
+              <summary class="cursor-pointer font-semibold text-slate-900 list-none">{faq.question}</summary>
+              <p class="mt-3 text-slate-600 leading-relaxed">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Other cities -->
+    <section class="max-w-5xl mx-auto px-4 py-14">
+      <h2 class="text-xl font-bold text-slate-900 mb-4">Elsewhere in Karnataka</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        {others.map((other) => (
+          <a href={`/karnataka/${other.slug}/`} class="rounded-xl border border-slate-200 bg-white p-4 hover:border-blue-400 transition-colors">
+            <p class="font-semibold text-slate-900">{other.name}</p>
+            <p class="text-sm text-slate-600">{other.district} district</p>
+          </a>
+        ))}
+      </div>
+      <p class="mt-4 text-sm text-slate-600">
+        All twelve cities and the Bengaluru hub: <a href="/karnataka/" class="text-blue-700 hover:underline">Karnataka</a>.
+      </p>
+    </section>
+  </main>
+</BaseLayout>
