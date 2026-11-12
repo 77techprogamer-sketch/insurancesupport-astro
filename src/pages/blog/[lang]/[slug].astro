@@ -172,6 +172,11 @@ const altLangText: Record<string, string> = {
 };
 const canonical = `https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`;
 const translatedfrom = post.translatedFrom || slug;
+
+// Find which languages have translations for this post (including the current one)
+const translatedPosts = posts.filter(p => p.translatedFrom === translatedfrom);
+const availableLanguages = new Set(translatedPosts.map(p => p.lang).filter(Boolean));
+availableLanguages.add(lang); // Ensure current language is included
 const langRegion: Record<string, string> = {
   hi: "hi-IN", bn: "bn-IN", ta: "ta-IN", te: "te-IN",
   mr: "mr-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN"
@@ -187,13 +192,13 @@ const ogLocaleMap: Record<string, string> = {
   <link rel="alternate" hreflang={langRegion[lang] || "en-IN"} href={canonical} />
   <link rel="alternate" hreflang="en-IN" href={`https://insurancesupport.online/blog/${translatedfrom}/`} />
   <link rel="alternate" hreflang="x-default" href={`https://insurancesupport.online/blog/${translatedfrom}/`} />
-  {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => (
+  {INDIAN_LANGUAGES.filter(l => availableLanguages.has(l) && l !== lang).map(l => (
     <link rel="alternate" hreflang={langRegion[l] || `${l}-IN`} href={`https://insurancesupport.online/blog/${l}/${translatedfrom}/`} />
   ))}
 
-  <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} pageType="blog-post" />
+  <ArticleJsonLd title={post.title} description={post.summary} url={`https://insurancesupport.online/blog/${lang}/${post.translatedFrom || slug}/`} date={post.date} modifiedDate={post.modifiedDate || post.date} authorName={post.author || 'Hari Kotian'} inLanguage={langRegion[lang] || "en-IN"} pageType="blog-post" />
   {faqs.length > 0 && <FAQPageJsonLd questions={faqs} />}
-  <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'Blog', url: 'https://insurancesupport.online/blog/' }, { label: `${langName} Blog`, url: `https://insurancesupport.online/blog/${lang}/` }, { label: post.title, url: `https://insurancesupport.online/blog/${lang}/${slug}/` }]} />
+  <BreadcrumbJsonLd items={[{ label: 'Home', url: 'https://insurancesupport.online/' }, { label: 'Blog', url: 'https://insurancesupport.online/blog/' }, { label: `${langName} Blog`, url: `https://insurancesupport.online/blog/${lang}/` }, { label: post.title, url: `https://insurancesupport.online/blog/${lang}/${translatedfrom}/` }]} />
 
   <main id="main" class="page-transition">
     <!-- Hero Banner -->
@@ -295,11 +300,11 @@ const ogLocaleMap: Record<string, string> = {
         <h3 class="text-lg font-bold text-slate-900 mb-3">{altLangText[lang] || 'Read in other languages'}</h3>
         <p class="text-sm text-slate-600 mb-4">This article is available in multiple Indian languages.</p>
         <div class="flex flex-wrap gap-2">
-          <a href={`/blog/${post.translatedFrom || slug}/`} class="px-4 py-2 bg-white text-blue-600 font-medium rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-sm">English</a>
-          {INDIAN_LANGUAGES.filter(l => l !== lang).map(l => {
+          <a href={`/blog/${translatedfrom}/`} class="px-4 py-2 bg-white text-blue-600 font-medium rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors text-sm">English</a>
+          {INDIAN_LANGUAGES.filter(l => availableLanguages.has(l) && l !== lang).map(l => {
           const li = languagesData.languages.find(x => x.code === l);
             return (
-              <a href={`/blog/${l}/${slug}/`} class="px-4 py-2 bg-slate-100 text-slate-600 font-medium rounded-lg border border-slate-200 text-sm" key={l}>{li ? li.nativeName : l}</a>
+              <a href={`/blog/${l}/${translatedfrom}/`} class="px-4 py-2 bg-slate-100 text-slate-600 font-medium rounded-lg border border-slate-200 text-sm" key={l}>{li ? li.nativeName : l}</a>
             );
           })}
         </div>

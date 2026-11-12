@@ -20,13 +20,13 @@ function formatDate(dateStr: string) {
 }
 ---
 
-<BaseLayout title="Insurance Guides & Claim Tips | Expert Blog | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience."pageType="blog-index"
-  keywords="insurance guides India, insurance claim tips, IRDAI updates, term insurance guides, health insurance guides, LIC claim guides" skipDefaultHreflang={true}>
+<BaseLayout title="Insurance Guides & Claim Tips | Expert Blog | Hari Kotian" description="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience." pageType="blog-index"
+  keywords="insurance guides India, insurance claim tips, IRDAI updates, term insurance guides, health insurance guides, LIC claim guides" skipDefaultHreflang={true} pageLang="en-IN" ogLocale="en_IN">
   <meta name="description" content="Expert insurance guides, claim process tips, IRDAI updates, and advisory from Hari Kotian. 25+ years of insurance experience." />
   {/* English blog index hreflang cluster: en-IN self + x-default + all 8 language indexes */}
   <link rel="alternate" hreflang="en-IN" href="https://insurancesupport.online/blog/" />
   <link rel="alternate" hreflang="x-default" href="https://insurancesupport.online/blog/" />
-  {['hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml'].map(l => (
+  {INDIAN_LANGUAGES.map(l => (
     <link rel="alternate" hreflang={`${l}-IN`} href={`https://insurancesupport.online/blog/${l}/`} />
   ))}
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -40,9 +40,10 @@ function formatDate(dateStr: string) {
     "hasPart": sorted.slice(0, 10).map(p => ({
       "@type": "BlogPosting",
       "headline": p.title,
-      "url": `https://insurancesupport.online/blog/${p.slug}`,
+      "url": `https://insurancesupport.online/blog/${p.slug}/`,
       "datePublished": p.date,
-      "author": { "@type": "Person", "name": p.author || "Hari Kotian" }
+      "author": { "@type": "Person", "name": p.author || "Hari Kotian" },
+      "inLanguage": "en-IN"
     }))
   })} />
 

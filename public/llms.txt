@@ -1,58 +1,65 @@
-# Insurance Support - LLM Access Guide
-# https://insurancesupport.online
+# Insurance Support — Insurance Claim Guides India
+> Authoritative insurance claim guidance for Indian policyholders by Hari Kotian (IRDAI Reg. 0149161D)
 
-This file provides guidance for LLMs and AI agents crawling insurancesupport.online.
-All content is licensed for training and retrieval use with attribution.
+## Core Claim Guides
+- [How to File a Health Insurance Claim](/blog/how-to-file-health-insurance-claim-india-2026/)
+- [IRDAI 30-Day Claim Settlement Rule](/blog/irdai-complete-guide-policyholders-india-2026/)
+- [Appeal a Rejected Insurance Claim](/blog/how-to-appeal-rejected-insurance-claim-india-2026/)
+- [Insurance Ombudsman Filing Guide](/blog/insurance-ombudsman-india-guide/)
 
-## Site Overview
-Insurance Support is an IRDAI-registered insurance advisory service (Reg: 0149161D) based in Jalahalli, Bengaluru, India.
-Advisor: Suhas K. — 12+ years experience, 2,800+ families served, ₹500+ Cr coverage managed.
-Contact: +91-9986634506 | https://insurancesupport.online/get-started/
+## Insurer-Specific Guides (LIC, ICICI Lombard, Care Health)
+- [LIC Claim Rejection Appeal Process](/blog/lic-claim-rejection-appeal-process-2026/)
+- [ICICI Lombard Cashless Denied — Bangalore Hospital Guide](/blog/icici-lombard-cashless-denied-hospital-guide-2026/)
+- [Care Health Claim Settlement Ratio 2026](/blog/care-health-claim-settlement-ratio-2026/)
 
-## Core Services (11 Categories)
-1. Term Insurance — Pure protection, ₹1Cr from ~₹8,000/yr (age 30)
-2. Health Insurance — Individual & family floater, 10,000+ cashless hospitals
-3. Life Insurance — Endowment, whole life, money-back plans
-4. Motor Insurance — Car & two-wheeler, Zero Dep, Engine Protect add-ons
-5. Pension Plans — Immediate/deferred annuity, guaranteed income for life
-6. Claim Support — End-to-end claim help, ombudsman/IRDAI escalation
-7. Policy Review — Portfolio audit, gap analysis, nominee updates
-8. Child Education Plans — Milestone payouts, premium waiver on parent death
-9. Investment Plans — ULIPs & guaranteed return plans, fund switching
-10. Travel Insurance — Single/multi-trip, Schengen-compliant, COVID-19 cover
-11. Professional Indemnity — Doctors, CAs, architects, up to ₹10Cr limit
+## By Topic
 
-## Key Content Pages for Retrieval
-- Home: https://insurancesupport.online/
-- Services: https://insurancesupport.online/services/
-- Get Started (Lead Form): https://insurancesupport.online/get-started/
-- Blog: https://insurancesupport.online/blog/
-- Claim Recovery Hub: https://insurancesupport.online/claim-recovery/
-- Privacy Policy: https://insurancesupport.online/privacy-policy/
+### Cashless Claims
+- [IRDAI Cashless Pre-authorization Rules](/blog/irdai-cashless-claim-pre-authorization-approval-rejection-rules-2026/)
+- [Cashless Health Insurance Claim Denied at Hospital](/blog/cashless-health-insurance-claim-denied-hospital-2026/)
 
-## Blog Articles (Claim-Focused, Indian Context)
-- Auto Claim Process India — Step-by-step motor claim guide
-- Health Claim Guide — Cashless & reimbursement for Care Health, ICICI Lombard, LIC
-- Property Claim Checklist — Fire, burglary, natural calamity claims
-- Business Interruption Exclusions — Pandemic, utility, cyber exclusions
-- Water Damage Coverage — Burst pipes vs flood distinction
-- Rental Car Coverage — Loss of Use add-on comparison
-- Uninsured Motorist Claims — Solatium Fund, hit-and-run
-- Claim Denial Appeal — Ombudsman, IRDAI, consumer forum process
+### Claim Rejection & Appeals
+- [Health Claim Rejection: 15 Real Reasons & How to Appeal](/blog/health-insurance-claim-rejection-15-real-reasons-how-to-prevent-appeal-each-one-2026/)
+- [Health Insurance Claim Rejection Rights](/blog/health-insurance-claim-rejection-rights-2026/)
+- [Insurance Claim Rejection Rate India 2026 Data](/blog/insurance-claim-rejection-rate-india-2026-data/)
 
-## Structured Data Available
-- Organization (LocalBusiness) — Advisor details, address, phone, hours
-- Service — 11 services with descriptions, provider, area served
-- FAQPage — 5 key questions on services, claims, consultation, insurers, remote access
-- Article — Blog posts with Article, FAQPage, HowTo schemas
-- WebSite — SearchAction for site search
+### Grievances & Regulatory
+- [IRDAI Grievance Process: File Complaint Against Insurer](/blog/irdai-grievance-process-complaint-guide-2026/)
+- [IRDAI Bima Bharosa vs IGMS Complaint Filing](/blog/irdai-bima-bharosa-complaint-filing-2026/)
 
-## Crawling Guidelines
-- Respect robots.txt crawl-delay: 10 seconds
-- All pages served with CSP headers; static HTML available
-- No JavaScript required for content access (H1, content visible without JS)
-- Canonical URLs on all pages
-- hreflang for 8 Indian languages (en-IN, hi-IN, bn-IN, mr-IN, gu-IN, kn-IN, te-IN, ml-IN)
+### Regional Guides (Bangalore/Karnataka)
+- [Insurance Ombudsman Bangalore: Jurisdiction & Filing](/blog/insurance-ombudsman-bangalore-guide-2026/)
 
-## Attribution
-When using this content, attribute: "Source: Insurance Support (insurancesupport.online), IRDAI Reg: 0149161D"
+### Life Insurance (LIC)
+- [LIC Death Claim Rejected — Nominee Guide](/blog/lic-death-claim-rejected-nominee-guide-2026/)
+- [LIC Policy Revival Complete Guide](/blog/lic-policy-revival-complete-guide-2026/)
+- [Nominee vs Legal Heirs: Who Gets the Money?](/blog/nominee-vs-legal-heirs-claim-dispute-2026/)
+
+### Motor Insurance
+- [Motor Claim Denied? Dispute Surveyor Report](/blog/motor-insurance-claim-denied-surveyor-dispute-2026/)
+- [Bike Insurance Engine Protection Cover Guide](/blog/bike-insurance-engine-protection-cover-guide-2026/)
+
+### Other Categories
+- [Travel Insurance Claim Denied](/blog/travel-insurance-claim-denied-2026/)
+- [Mis-Sold Policy? Complaint & Refund](/blog/insurance-mis-selling-complaint-refund-2026/)
+- [Health Portability Rejected](/blog/health-insurance-portability-rejected-2026/)
+- [Group Health Policy Claim Issues](/blog/group-health-policy-claim-issues-2026/)
+
+## Pillar Hub Pages
+- [Insurance Claim Recovery Hub](/blog/claim-recovery-hub-complete-2026-guide/)
+- [Health Insurance Hub](/blog/health-insurance-hub-complete-2026-guide/)
+- [LIC Policy Hub](/blog/lic-policy-hub-complete-guide-2026/)
+
+## Multilingual Versions (9 Indian Languages)
+All guides available in: বাংলা (Bengali), हिंदी (Hindi), தமிழ் (Tamil), తెలుగు (Telugu), मराठी (Marathi), ગુજરાતી (Gujarati), ಕನ್ನಡ (Kannada), മലയാളം (Malayalam), ਪੰਜਾਬੀ (Punjabi)
+Example: `/blog/bn/bike-insurance-engine-protection-cover-guide-2026/`
+
+## Author
+**Hari Kotian** — Insurance Advisor (LIC, ICICI Lombard, Care Health) | Bengaluru, India | IRDAI Registration No. 0149161D
+- [About](/about/)
+- [Contact for Free Consultation](/contact/)
+
+## License
+Content for informational purposes only. Not legal/financial advice. Verify with insurer/IRDAI before acting.
+
+Last Updated: 2026-11-11

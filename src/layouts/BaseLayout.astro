@@ -330,16 +330,9 @@ const combinedKeywords = mergedKeywords.length > 0 && pageKeywords
     <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={pageOgImage} />
     <meta name="google-site-verification" content="V1MQKb60VcWmP7f4u2x7yN1zR5aJ9bL0kD" />
-    <meta name="msvalidate.01" content="551FF3A8CD7B8225D53FAB718B3051E2" />
-    {combinedKeywords.length > 0 && <meta name="keywords" content={combinedKeywords} />}
-    {pageLangCode !== 'en-IN' && <link rel="alternate" hreflang="en-IN" href={pageCanonical} />}
-    {pageLangCode !== 'en-IN' && <link rel="alternate" hreflang="x-default" href={pageCanonical} />}
-    {!pageSkipDefaultHreflang && <link rel="alternate" hreflang="en-IN" href={pageCanonical} />}
-    {!pageSkipDefaultHreflang && <link rel="alternate" hreflang="x-default" href={pageCanonical} />}
-    {INDIAN_LANGUAGES.map((lang: string) => (
-      <link rel="alternate" hreflang={langRegion[lang as keyof typeof langRegion] || `${lang}-IN`} href={`https://insurancesupport.online/blog/${lang}/${pageCanonical.split('/').pop() || ''}`} />
-    ))}
-    {Astro.head}
+        <meta name="msvalidate.01" content="551FF3A8CD7B8225D53FAB718B3051E2" />
+        {combinedKeywords.length > 0 && <meta name="keywords" content={combinedKeywords} />}
+        {Astro.head}
         {!pageSkipGlobalOrgSchema && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
         <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
         <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />

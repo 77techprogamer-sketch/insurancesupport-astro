@@ -1,0 +1,66 @@
+{
+  "faq_schema_template": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I file a cashless health insurance claim in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To file a cashless health insurance claim: 1) Get admitted to a network hospital, 2) Show your insurance ID card/TPA card, 3) Hospital sends pre-authorization to insurer/TPA, 4) Insurer approves (usually within 1-4 hours), 5) Treatment begins cashless, 6) At discharge, final bill sent to insurer for settlement. Keep all documents: discharge summary, bills, prescriptions, investigation reports."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the IRDAI 30-day claim settlement rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IRDAI mandates insurers must settle or reject claims within 30 days of receiving all documents. If delayed beyond 30 days, insurer pays 2% above bank rate as penal interest. For health claims: cashless pre-auth within 1 hour, final authorization within 3 hours. For life claims: 30 days from document submission. Exceptions: fraud investigation (90 days), missing documents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to appeal a rejected health insurance claim in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Appeal process: 1) Write to insurer's grievance redressal officer (15 days), 2) If unsatisfied, escalate to IRDAI IGMS/Bima Bharosa portal, 3) Approach Insurance Ombudsman (if claim ≤ ₹30 lakh, no court case filed), 4) Consumer Commission (District/State/National based on value), 5) Civil Court as last resort. Time limit: Ombudsman within 1 year of rejection, Consumer Commission within 2 years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What documents are needed for a death claim on LIC policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Death claim documents: 1) Claim form (Form 3783), 2) Original policy bond, 3) Death certificate (municipal), 4) Claimant's ID proof (Aadhaar/PAN), 5) Bank details (cancelled cheque), 6) Nominee's KYC, 7) Medical cause of death certificate, 8) Post-mortem report (if accidental/unnatural), 9) FIR/panchnama (if accidental), 10) Employer certificate (if service death). Submit to nearest LIC branch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Insurance Ombudsman and how to file complaint?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Insurance Ombudsman is a quasi-judicial body for resolving insurance disputes up to ₹30 lakh without lawyers. Eligibility: claim rejected/partially settled, delay > 30 days, premium disputes, policy terms. File online at cioins.co.in or offline at jurisdictional office. Required: policy copy, rejection letter, claim docs, ID proof. Hearing within 30 days. Award binding on insurer, appealable in Consumer Commission within 30 days."
+        }
+      }
+    ]
+  },
+  "speakable_schema": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".claim-answer", ".key-takeaway", ".quick-answer"]
+    }
+  },
+  "ai_citation_patterns": [
+    "Direct answer in first paragraph (40-60 words)",
+    "Numbered steps for procedures",
+    "Tables for comparisons (CSR, features, timelines)",
+    "Definition lists for terms",
+    "FAQ schema with concise answers",
+    "Authoritative citations (IRDAI circulars, Ombudsman orders)",
+    "Last-updated dates prominently displayed",
+    "Expert author bylines with credentials"
+  ]
+}

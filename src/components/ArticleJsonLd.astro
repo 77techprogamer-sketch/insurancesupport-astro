@@ -9,10 +9,11 @@ export interface Props {
   modifiedDate?: string;
   imageUrl?: string;
   authorName?: string;
+  inLanguage?: string;
   isPartOf?: { "@type": string; "@id": string; name?: string };
 }
 
-const { title, description, url, date, modifiedDate, imageUrl, authorName = "Hari Kotian", isPartOf } = Astro.props;
+const { title, description, url, date, modifiedDate, imageUrl, authorName = "Hari Kotian", inLanguage, isPartOf } = Astro.props;
 const defaultImage = "https://insurancesupport.online/og-image.png";
 const siteName = "Insurance Support";
 
@@ -25,6 +26,7 @@ const effectiveModified = modifiedDate || date;
   "@type": "Article",
   headline: title,
   description: description,
+  inLanguage: inLanguage || "en-IN",
   author: {
     "@type": "Person",
     "@id": "https://insurancesupport.online/about-hari-kotian/#person",
