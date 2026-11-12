@@ -1,0 +1,63 @@
+---
+/**
+ * What policyholders actually wrote on Google, quoted verbatim.
+ *
+ * The homepage used to carry three testimonials about angioplasties overturned
+ * and IDVs revised, credited to "R. Sharma" and "M. Patel" with no source. Real
+ * reviews are narrower — they praise explaining the policy and answering the
+ * phone — but they are checkable, and a reader who can click through to the
+ * profile believes them.
+ */
+import { GBP, GOOGLE_REVIEW_QUOTES } from '../data/google-profile';
+import GoogleRating from './GoogleRating.astro';
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+}
+
+const {
+  id = 'google-reviews',
+  eyebrow = 'On Google',
+  heading = 'What policyholders say on Google',
+  intro = 'Verbatim from our Google Business Profile, where anyone can read all of them. No outcomes promised and no edited quotes.',
+} = Astro.props;
+---
+
+<section class="section" style="background: var(--color-bg-alt);" aria-labelledby={`${id}-title`}>
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label" style="font-family: var(--font-sans);">{eyebrow}</span>
+      <h2 id={`${id}-title`} class="section-title" style="font-family: var(--font-display);">{heading}</h2>
+      <p class="section-desc" style="font-family: var(--font-sans);">{intro}</p>
+      <div style="margin-top: var(--space-4, 1rem);">
+        <GoogleRating variant="card" />
+      </div>
+    </header>
+
+    <div class="grid-3">
+      {GOOGLE_REVIEW_QUOTES.map((review) => (
+        <article class="testimonial">
+          <p class="testimonial-content" style="font-family: var(--font-sans);">“{review.text}”</p>
+          <div class="testimonial-author" style="font-family: var(--font-sans);">
+            <div class="testimonial-avatar" aria-hidden="true">{review.name.charAt(0)}</div>
+            <div>
+              <div class="testimonial-name">{review.name}</div>
+              <div class="testimonial-role">{review.meta}</div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p style="text-align: center; margin-top: var(--space-6, 1.5rem); font-size: 0.9375rem; font-family: var(--font-sans);">
+      <a href={GBP.mapsUrl} target="_blank" rel="noopener noreferrer" style="font-weight: 600;">
+        Read all {GBP.reviewCount} reviews on Google →
+      </a>
+      <span style="color: var(--color-text-muted);"> · Already a client? </span>
+      <a href={GBP.reviewUrl} target="_blank" rel="noopener noreferrer">Leave a review</a>
+    </p>
+  </div>
+</section>

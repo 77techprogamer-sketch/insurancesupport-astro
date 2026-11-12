@@ -1,4 +1,5 @@
 ---
+import GoogleRating from '../components/GoogleRating.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
@@ -133,6 +134,9 @@ const faqSchema = faqs.map((f) => ({ question: f.question, answer: f.answer }));
           <a href="tel:+919986634506" class="inline-flex justify-center items-center gap-2 px-6 py-3 bg-white/10 border border-white/25 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors">
             Call +91 99866 34506
           </a>
+        </div>
+        <div class="mt-8 text-slate-200">
+          <GoogleRating />
         </div>
       </div>
     </section>

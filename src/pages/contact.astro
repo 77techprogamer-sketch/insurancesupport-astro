@@ -1,4 +1,5 @@
 ---
+import GoogleRating from '../components/GoogleRating.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GoogleReviewCta from '../components/GoogleReviewCta.astro';
 ---
@@ -40,7 +41,7 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
       "telephone": "+919986634506",
       "email": "hari@insurancesupport.online",
       "url": "https://insurancesupport.online/",
-      "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM"],
+      "sameAs": ["https://g.page/r/CRDgJanrKjRhEBM", "https://www.google.com/maps/place/LIC+-+Hari+Kotian/@13.0464375,77.5508125,17z/data=!4m6!3m5!1s0x3bae3d5028b4c20b:0x61342aeba925e010!8m2!3d13.0464375!4d77.5508125!16s%2Fg%2F1pv16s2jp"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Bahubali Nagar, Jalahalli",
@@ -49,11 +50,11 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
         "postalCode": "560013",
         "addressCountry": "IN"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 13.0159, "longitude": 77.5522 },
+      "geo": { "@type": "GeoCoordinates", "latitude": 13.0464375, "longitude": 77.5508125 },
       "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "09:00",
+        "opens": "09:30",
         "closes": "21:00"
       }],
       "availableLanguage": ["English", "Hindi", "Kannada"]
@@ -83,6 +84,9 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
           <a href="tel:+919986634506" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 border border-white/25 font-semibold hover:bg-white/20 transition-colors">Call +91 99866 34506</a>
           <a href="https://wa.me/919986634506?text=Hi%20Hari%20Kotian%2C%20I%20need%20insurance%20help." target="_blank" rel="noopener noreferrer" class="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-400 transition-colors">WhatsApp</a>
         </p>
+        <div class="mt-6 text-slate-200">
+          <GoogleRating />
+        </div>
       </div>
 
       <!-- Main Contact Grid -->
@@ -280,11 +284,11 @@ import GoogleReviewCta from '../components/GoogleReviewCta.astro';
           </div>
           <div>
             <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Hours</p>
-            <p class="text-slate-200 leading-relaxed">Monday to Saturday<br />9:00 am – 9:00 pm IST<br />Sunday: messages only</p>
+            <p class="text-slate-200 leading-relaxed">Monday to Saturday<br />9:30 am – 6:00 pm IST<br />Sunday: closed</p>
           </div>
           <div>
             <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Languages</p>
-            <p class="text-slate-200 leading-relaxed">English, Hindi, Kannada<br />IRDAI Reg. No. 0149161D<br /><a href="https://g.page/r/CRDgJanrKjRhEBM" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300">Google listing</a></p>
+            <p class="text-slate-200 leading-relaxed">English, Hindi, Kannada<br />IRDAI Reg. No. 0149161D<br /><a href="https://g.page/r/CRDgJanrKjRhEBM" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300">Google listing</a> · <a href="https://www.google.com/maps/place/LIC+-+Hari+Kotian/@13.0464375,77.5508125,17z/data=!4m6!3m5!1s0x3bae3d5028b4c20b:0x61342aeba925e010!8m2!3d13.0464375!4d77.5508125!16s%2Fg%2F1pv16s2jp" target="_blank" rel="noopener noreferrer" class="hover:text-amber-300">Directions</a></p>
           </div>
         </div>
       </section>

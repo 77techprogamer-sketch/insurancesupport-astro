@@ -31,7 +31,7 @@ const pageLocale = Astro.props.ogLocale || 'en_IN';
 const pageLangCode = Astro.props.pageLang || Astro.props.lang || 'en-IN';
 const pageMetaRegion = Astro.props.geoRegion || 'IN-KA';
 const pageMetaPlace = Astro.props.geoPlaceName || 'Bengaluru';
-const pageMetaPosition = Astro.props.geoPosition || '13.0159;77.5522';
+const pageMetaPosition = Astro.props.geoPosition || '13.0464375;77.5508125';
 const pageDescription = Astro.props.description || 'Insurance Support by Hari Kotian provides insurance guidance and claim assistance from Bengaluru.';
 const pageOgImage = Astro.props.ogImage || 'https://insurancesupport.online/og-image.png';
 const pageNoIndex = Astro.props.noIndex || false;
@@ -80,12 +80,15 @@ const organizationSchema = {
   "@type": "InsuranceAgency",
   "@id": `${siteUrl}/#organization`,
   "name": siteName,
+  // The Google Business Profile reads "LIC - Hari Kotian"; naming it here is how
+  // Google ties this site to that listing rather than treating them as strangers.
+  "alternateName": "LIC - Hari Kotian",
+  "hasMap": "https://www.google.com/maps/place/LIC+-+Hari+Kotian/@13.0464375,77.5508125,17z/data=!4m6!3m5!1s0x3bae3d5028b4c20b:0x61342aeba925e010!8m2!3d13.0464375!4d77.5508125!16s%2Fg%2F1pv16s2jp",
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "sameAs": [
-    "https://g.page/r/CRDgJanrKjRhEBM",
-    "https://www.linkedin.com/in/hari-kotian",
-    "https://twitter.com/harikotian"
+    "https://www.google.com/maps/place/LIC+-+Hari+Kotian/@13.0464375,77.5508125,17z/data=!4m6!3m5!1s0x3bae3d5028b4c20b:0x61342aeba925e010!8m2!3d13.0464375!4d77.5508125!16s%2Fg%2F1pv16s2jp",
+    "https://g.page/r/CRDgJanrKjRhEBM"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
@@ -95,7 +98,7 @@ const organizationSchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013",
+    "streetAddress": "Bahubali Nagar, Jalahalli Village, Jalahalli, Bengaluru, Karnataka 560013",
     "addressLocality": "Bengaluru",
     "addressRegion": "Karnataka",
     "postalCode": "560013",
@@ -176,7 +179,7 @@ const personSchema = {
   "email": "hari@insurancesupport.online",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013",
+    "streetAddress": "Bahubali Nagar, Jalahalli Village, Jalahalli, Bengaluru, Karnataka 560013",
     "addressLocality": "Bengaluru",
     "addressRegion": "Karnataka",
     "postalCode": "560013",
@@ -184,13 +187,12 @@ const personSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 13.0159,
-    "longitude": 77.5522,
+    "latitude": 13.0464375,
+    "longitude": 77.5508125,
   },
   "sameAs": [
-    "https://g.page/r/CRDgJanrKjRhEBM",
-    "https://www.linkedin.com/in/hari-kotian",
-    "https://twitter.com/harikotian"
+    "https://www.google.com/maps/place/LIC+-+Hari+Kotian/@13.0464375,77.5508125,17z/data=!4m6!3m5!1s0x3bae3d5028b4c20b:0x61342aeba925e010!8m2!3d13.0464375!4d77.5508125!16s%2Fg%2F1pv16s2jp",
+    "https://g.page/r/CRDgJanrKjRhEBM"
   ],
   "knowsAbout": [
     "Insurance Planning",
@@ -222,13 +224,15 @@ const locationSchema = {
   "@type": "LocalBusiness",
   "@id": `${siteUrl}/#local-business`,
   "name": "Insurance Support",
+  "alternateName": "LIC - Hari Kotian",
+  "hasMap": "https://www.google.com/maps/place/LIC+-+Hari+Kotian/@13.0464375,77.5508125,17z/data=!4m6!3m5!1s0x3bae3d5028b4c20b:0x61342aeba925e010!8m2!3d13.0464375!4d77.5508125!16s%2Fg%2F1pv16s2jp",
   "description": "Insurance guidance and claim assistance provided by Hari Kotian from Bengaluru.",
   "url": siteUrl,
   "telephone": phoneE164,
   "email": "hari@insurancesupport.online",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013",
+    "streetAddress": "Bahubali Nagar, Jalahalli Village, Jalahalli, Bengaluru, Karnataka 560013",
     "addressLocality": "Bengaluru",
     "addressRegion": "Karnataka",
     "postalCode": "560013",
@@ -236,8 +240,8 @@ const locationSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 13.0159,
-    "longitude": 77.5522,
+    "latitude": 13.0464375,
+    "longitude": 77.5508125,
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -249,12 +253,11 @@ const locationSchema = {
       "Friday",
       "Saturday",
     ],
-    "opens": "09:00",
+    "opens": "09:30",
     "closes": "18:00",
   },
   "priceRange": "₹1000 - ₹50000",
   "paymentAccepted": "Cash, Credit Card, Debit Card, Net Banking, UPI",
-  "servesCuisine": "Insurance Services",
   "areaServed": [
     {
       "@type": "City",

@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
 import GoogleReviewCta from '../components/GoogleReviewCta.astro';
+import GoogleRating from '../components/GoogleRating.astro';
+import { GBP } from '../data/google-profile';
 import brandFaqSchema from '../data/brand-faq.json';
 const brandFaqJson = JSON.stringify(brandFaqSchema);
 ---
@@ -9,7 +11,7 @@ const brandFaqJson = JSON.stringify(brandFaqSchema);
   title="Insurance Support: IRDAI-Registered Advisor in Bengaluru"
   description="Learn about Hari Kotian (IRDAI registration number 0149161D) and Insurance Support, a Bengaluru-based insurance guidance and claim assistance service."
   canonical="https://insurancesupport.online/about/"
-  dateModified="2026-10-05"
+  dateModified="2026-11-12"
   pageType="contact"
   keywords="about Hari Kotian insurance advisor, IRDAI advisor 0149161D, Insurance Support Bengaluru, insurance guidance claim assistance, insurance advisor about"
 >
@@ -54,6 +56,14 @@ const brandFaqJson = JSON.stringify(brandFaqSchema);
         <div><dt class="font-semibold">IRDAI registration number</dt><dd>0149161D</dd></div>
         <div><dt class="font-semibold">Location</dt><dd>Bahubali Nagar, Jalahalli, Bengaluru, Karnataka 560013, India</dd></div>
         <div><dt class="font-semibold">Phone</dt><dd><a class="text-blue-700 underline" href="tel:+919986634506">+91 99866 34506</a></dd></div>
+        <div><dt class="font-semibold">Office hours</dt><dd>Monday to Saturday, 9:30 am – 6:00 pm IST. Sunday closed.</dd></div>
+        <div>
+          <dt class="font-semibold">Google listing</dt>
+          <dd>
+            <a class="text-blue-700 underline" href={GBP.mapsUrl} target="_blank" rel="noopener noreferrer">{GBP.name}</a>
+            <span class="block text-sm text-slate-500">Rated {GBP.rating} of 5 from {GBP.reviewCount} reviews, read on Google on 12 November 2026.</span>
+          </dd>
+        </div>
       </dl>
     </section>
 
@@ -61,6 +71,10 @@ const brandFaqJson = JSON.stringify(brandFaqSchema);
 
     <div class="text-center">
       <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg hover:bg-blue-700 transition-colors shadow-lg">Contact Insurance Support</a>
+    </div>
+
+    <div class="mb-10 flex justify-center">
+      <GoogleRating variant="card" />
     </div>
 
     <GoogleReviewCta

@@ -43,15 +43,15 @@ const {
   telephone = "+919986634506",
   email = "hari@insurancesupport.online",
   address = {
-    streetAddress: "Bahubali Nagar, Jalahalli",
+    streetAddress: "Bahubali Nagar, Jalahalli Village, Jalahalli",
     addressLocality: "Bengaluru",
     addressRegion: "Karnataka",
     postalCode: "560013",
     addressCountry: "IN"
   },
-  geo = { latitude: 13.0159, longitude: 77.5522 },
+  geo = { latitude: 13.0464375, longitude: 77.5508125 },
   openingHours = [
-    { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "18:00" }
+    { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:30", closes: "18:00" }
   ],
   priceRange = "₹1000 - ₹50000",
   areaServed = "India",
@@ -108,6 +108,7 @@ const {
     closes: h.closes
   })),
   priceRange,
+  hasMap: "https://www.google.com/maps/place/LIC+-+Hari+Kotian/@13.0464375,77.5508125,17z/data=!4m6!3m5!1s0x3bae3d5028b4c20b:0x61342aeba925e010!8m2!3d13.0464375!4d77.5508125!16s%2Fg%2F1pv16s2jp",
   paymentAccepted: "Cash, Credit Card, Debit Card, Net Banking, UPI",
   areaServed: Array.isArray(areaServed) ? areaServed.map(a => ({ "@type": "City", name: a })) : { "@type": "Country", name: areaServed },
   knowsAbout,

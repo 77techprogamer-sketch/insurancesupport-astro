@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 import FAQPageJsonLd from '../components/FAQPageJsonLd.astro';
 import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
 import Icon from '../components/icons/Icon.astro';
@@ -113,11 +114,7 @@ const processSteps = [
   { number: '05', title: 'Resolution & Follow-up', desc: 'We track every hearing and reminder until settlement lands in your account.' },
 ];
 
-const testimonials = [
-  { content: 'The insurer said my angioplasty was a pre-existing condition after four years of clean renewals. Insurance Support pulled my old records, drafted the representation, and the amount was credited before the Ombudsman hearing.', name: 'R. Sharma', role: 'Health Insurance Claim, Bangalore' },
-  { content: 'After my husband\'s death the claim was repudiated for non-disclosure. I had given up. Hari Kotian\'s team handled the Ombudsman filing end to end and explained every step in simple language.', name: 'M. Patel', role: 'Term Insurance Claim, Mumbai' },
-  { content: 'The surveyor\'s IDV was far below market. They challenged the deductions with valuation evidence and the insurer revised the settlement in six weeks.', name: 'A. Reddy', role: 'Motor Insurance Claim, Hyderabad' },
-];
+
 
 ---
 
@@ -234,30 +231,7 @@ const testimonials = [
     </section>
 
     <!-- Testimonials -->
-    <section class="section" style="background: var(--color-bg-alt);" aria-labelledby="testimonials-title">
-      <div class="container">
-        <header class="section-header">
-          <span class="section-label" style="font-family: var(--font-sans);">Case Outcomes</span>
-          <h2 id="testimonials-title" class="section-title" style="font-family: var(--font-display);">Policyholders who were told no — and did not stop there</h2>
-          <p class="section-desc" style="font-family: var(--font-sans);">Names changed on request. Past outcomes do not predict the result of your claim.</p>
-        </header>
-
-        <div class="grid-3">
-          {testimonials.map((testimonial, i) => (
-            <article class="testimonial animate-slide-up" style={`animation-delay: ${(i + 1) * 100}ms`}>
-              <p class="testimonial-content" style="font-family: var(--font-sans);">"{testimonial.content}"</p>
-              <div class="testimonial-author" style="font-family: var(--font-sans);">
-                <div class="testimonial-avatar" aria-hidden="true">{testimonial.name.charAt(0)}</div>
-                <div>
-                  <div class="testimonial-name">{testimonial.name}</div>
-                  <div class="testimonial-role">{testimonial.role}</div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    <GoogleReviews />
 
     <!-- LocalBusiness Schema for this specific page -->
     <LocalBusinessJsonLd 
@@ -267,18 +241,18 @@ const testimonials = [
       telephone="+91-9986634506"
       email="hari@insurancesupport.online"
       address={{
-        streetAddress: "Bahubali Nagar, Jalahalli",
+        streetAddress: "Bahubali Nagar, Jalahalli Village, Jalahalli",
         addressLocality: "Bengaluru",
         addressRegion: "Karnataka",
         postalCode: "560013",
         addressCountry: "IN"
       }}
       geo={{
-        latitude: 13.0159,
-        longitude: 77.5522
+        latitude: 13.0464375,
+        longitude: 77.5508125
       }}
       openingHours={[
-        { dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "09:00", closes: "18:00" }
+        { dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "09:30", closes: "18:00" }
       ]}
       priceRange="₹1000 - ₹50000"
       areaServed="India"
