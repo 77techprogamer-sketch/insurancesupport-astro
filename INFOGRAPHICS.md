@@ -87,7 +87,7 @@ A standalone page can also be placed before a non-heading element (for example t
 CSR table on `term-insurance-claim-settlement-ratio-2026`) — pick whatever reads best
 in the article body.
 
-## Coverage so far — 65 English articles + 5 Hindi
+## Coverage so far — 72 English articles + 5 Hindi
 
 **Claim rejection and appeal** — insurance claim rejection rates · how to appeal a
 rejected claim · 15 real rejection reasons · health claim rejection rights · the
@@ -111,7 +111,8 @@ riders · premium payment modes and grace periods · joint life policies · 2026
 flagship plans
 
 **Business and niche** — SME insurance portfolios · loan against an insurance
-policy · cyber insurance · travel insurance · insurance in tier-2 cities
+policy · cyber insurance · travel insurance · wedding insurance · insurance in
+tier-2 cities · city-by-city support · the complete services guide
 
 **Motor** — claim process · surveyor dispute · how to calculate IDV · zero
 depreciation add-on · engine protection for bikes · car and two-wheeler guide
@@ -224,10 +225,12 @@ policy revival · health claim settlement ratio · how to appeal a rejected clai
 - **Scale translations.** 20 English articles have translations in all 8 languages,
   so full coverage is 160 translated specs. Hindi is the pilot; the remaining
   15 Hindi specs and the other 7 languages are outstanding.
-- **Remaining English articles:** wedding insurance, insurance support
-  services by city, the IRDAI policyholder guide, car insurance renewal in
-  Bengaluru, and seven hub roundups. Five further slugs are empty stubs with
-  no body text to illustrate.
+- **Remaining English articles:** every substantive article in `blogs.json`
+  now has a graphic. What is left is seven hub roundups, one 85-word
+  `irdai-complaint-toolkit-2026` page, and five slugs that are empty stubs
+  with no body text to illustrate at all. Hubs are link roundups, so a
+  data graphic would largely duplicate the articles they point at — worth
+  deciding case by case rather than assuming.
 
 ## Verifying changes
 

@@ -3067,6 +3067,326 @@ export const INFOGRAPHICS: ArticleInfographic[] = [
       },
     ],
   },
+  {
+    slug: 'life-insurance-death-claim-settlement-the-definitive-2026-guide-for-families-in-india',
+    eyebrow: 'Death claims',
+    title: 'Three Kinds of Death Claim, and the Papers Each One Needs',
+    source:
+      'Claim types, eligibility, forms and process as published in this 2026 guide for Indian families.',
+    summary:
+      'A death in the first three years triggers a full investigation; after three years the contestability period has passed and the claim moves faster. Either way, incomplete or inconsistent paperwork is the number one cause of delay.',
+    anchor: 'Documents Required for Death Claim',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'Which kind of claim is it?',
+        items: [
+          { tier: 'Early', title: 'Death within 3 years of commencement', detail: 'Rigorous investigation for fraud or non-disclosure. The claim is still payable if the policy terms were met.', meta: 'Investigated', tone: 'danger' },
+          { tier: 'Non-early', title: 'Death after 3 years', detail: 'Processed faster — the contestability period has passed, and insurers generally cannot deny except for a few listed exclusions.', meta: 'Faster', tone: 'accent' },
+          { tier: 'Accidental', title: 'ADB rider was attached', detail: 'An additional sum assured becomes payable. Needs an FIR, a post-mortem report and accident documentation.', meta: 'Extra payout', tone: 'primary' },
+        ],
+        note: 'If a policy was assigned as collateral, the assignee is paid before anyone else.',
+      },
+      {
+        kind: 'compare',
+        heading: 'The paperwork',
+        leftTitle: 'Required in every case',
+        rightTitle: 'Added for accidental or early death',
+        rows: [
+          { label: 'Claim forms', left: 'Form A, the claimant’s statement', right: 'Form B, the medical attendant’s certificate, on early claims' },
+          { label: 'Proof of death', left: 'Original death certificate from the municipality or panchayat', right: 'FIR, post-mortem report and the police final report' },
+          { label: 'Medical evidence', left: '—', right: 'Hospital discharge summary, treating doctor’s certificate, employer’s certificate' },
+          { label: 'Nominee identity', left: 'Aadhaar or PAN', right: '—' },
+          { label: 'Payment instruction', left: 'Bank details, a cancelled cheque and the NEFT mandate form', right: '—' },
+          { label: 'Anything else', left: 'Original policy bond', right: 'A newspaper cutting, where one is available' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Filing the claim',
+        items: [
+          { title: 'Intimate the insurer immediately', detail: 'Most insurers allow a 90-day intimation window, but earlier is always better — by toll-free number, online portal, branch, or through your advisor.', tone: 'warn' },
+          { title: 'Obtain and fill the forms', detail: 'Form A (claimant’s statement), Form B (medical attendant’s certificate), Form B1 (hospital treatment), Form C (identity and burial or cremation) and Form E (employer).', tone: 'primary' },
+          { title: 'Submit at the branch', detail: 'Submit in person at the claim processing branch and take an acknowledgement carrying the claim number.', tone: 'primary' },
+          { title: 'Cooperate with the investigation', detail: 'On early claims, a field investigator verifies cause of death, lifestyle and medical history. Answer fully and honestly.', tone: 'warn' },
+          { title: 'Settlement', detail: 'The insurer settles once documents are complete. Incomplete or inconsistent documentation is the number one reason claims stall.', tone: 'accent' },
+        ],
+        note: 'Who can file: the registered nominee has first right; if there is no nominee or the nominee has died, legal heirs claim with a succession or legal heir certificate.',
+      },
+    ],
+  },
+  {
+    slug: 'wedding-insurance-india-2026-protect-your-big-day-from-unexpected-disruptions',
+    eyebrow: 'Wedding cover',
+    title: 'What Wedding Insurance Covers, and the 1% It Costs',
+    source:
+      'Wedding insurance inclusions, exclusions and pricing as published in this 2026 guide.',
+    summary:
+      'Wedding insurance costs roughly 0.5–1% of the wedding budget — ₹5,000–10,000 on a ₹10 lakh wedding — and covers the venue, vendor failure, weather cancellation and liability. It does not cover cold feet.',
+    anchor: 'FAQ',
+    blocks: [
+      {
+        kind: 'bars',
+        heading: 'The premium, at 0.5–1% of the budget (upper end)',
+        items: [
+          { label: '₹10 lakh wedding', value: 10000, display: '₹5,000–10,000', tone: 'accent' },
+          { label: '₹25 lakh wedding', value: 25000, display: '₹12,500–25,000', tone: 'primary' },
+          { label: '₹50 lakh wedding', value: 50000, display: '₹25,000–50,000', tone: 'warn' },
+        ],
+        note: 'Cover you can buy typically runs from ₹5 lakh to ₹50 lakh. The average Indian wedding costs ₹10–50 lakh or more.',
+      },
+      {
+        kind: 'compare',
+        heading: 'Covered, and not',
+        leftTitle: 'Covered',
+        rightTitle: 'Not covered',
+        rows: [
+          { label: 'The venue', left: 'Cancellation or damage, plus property damage at a rented venue', right: '—' },
+          { label: 'Vendors', left: 'Caterer, photographer, decorator or entertainment failing to deliver', right: 'Problems with a vendor you already knew about' },
+          { label: 'Weather', left: 'Cancellation due to extreme weather', right: '—' },
+          { label: 'People', left: 'Accident or illness of the bride, groom or immediate family; guest injury at the venue', right: '—' },
+          { label: 'Property', left: 'Attire, rings and jewellery within limits, gifts, and the cake', right: '—' },
+          { label: 'Change of heart', left: '—', right: 'Cold feet, or cancelling on purpose' },
+          { label: 'Timing', left: '—', right: 'Anything outside the specified date window' },
+        ],
+        note: 'Food poisoning liability at the venue is covered too.',
+      },
+      {
+        kind: 'stats',
+        heading: 'When to buy',
+        columns: 3,
+        items: [
+          { value: '0.5–1%', label: 'The premium, as a share of the total wedding budget', tone: 'accent' },
+          { value: '12–18 months', label: 'How far before the wedding to buy — right when planning begins', tone: 'primary' },
+          { value: '3', label: 'Triggers to buy on: booking the venue, paying a significant deposit, or booking destination travel', tone: 'warn' },
+        ],
+        note: 'Destination weddings in Goa, Rajasthan, Kerala or abroad need extra cover — guest travel insurance, international vendor failure, weather cancellation for outdoor venues, and visa problems.',
+      },
+    ],
+  },
+  {
+    slug: 'lic-policy-revival-after-lapse-the-complete-2026-step-by-step-guide-modes-fees-documents',
+    eyebrow: 'LIC revival',
+    title: 'Five Ways LIC Will Take You Back',
+    source:
+      'LIC revival schemes, the 2026 interest and medical structure, and the process as published in this guide. Interest at 9.5% p.a. compounded half-yearly.',
+    summary:
+      'LIC offers five revival routes, from ordinary revival on a lapsed-under-6-months policy to shifting the policy start date so you never pay the back-dues at all. You have five years from the first unpaid premium; after that the policy can only be surrendered.',
+    anchor: 'The 5 Revival Schemes Offered by LIC',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'The five schemes',
+        items: [
+          { tier: '1', title: 'Ordinary revival', detail: 'All outstanding premiums plus interest at 9.5% a year compounded half-yearly, plus a declaration of good health. No medical tests where the lapse is under 6 months.', meta: 'Most common', tone: 'accent' },
+          { tier: '2', title: 'Special revival scheme', detail: 'Available once in the whole policy term. The commencement date shifts forward, so you pay from the new date instead of clearing every back-due. For lapses of 6 months to 3 years.', meta: 'Once only', tone: 'primary' },
+          { tier: '3', title: 'Instalment revival', detail: 'Clear the dues in instalments rather than one lump sum, for temporary cash-flow problems.', meta: 'Spreads the cost', tone: 'primary' },
+          { tier: '4', title: 'Revival by loan', detail: 'Once the policy has a surrender value — usually after 3 years of premiums — take a policy loan and use it to clear the dues.', meta: '3+ years paid', tone: 'primary' },
+          { tier: '5', title: 'Survival benefit revival', detail: 'On money-back policies, LIC adjusts a survival benefit that has fallen due against what you owe.', meta: 'Money-back plans', tone: 'neutral' },
+        ],
+      },
+      {
+        kind: 'ladder',
+        heading: 'What applies depends on how long it has lapsed',
+        items: [
+          { tier: '0–6 months', title: 'Ordinary revival, no medical', detail: 'Interest at 9.5% a year compounded half-yearly. A declaration of good health is enough.', meta: '9.5% p.a.', tone: 'accent' },
+          { tier: '6 mo – 3 yrs', title: 'Ordinary or special revival', detail: 'Medicals possibly required. The special scheme can remove the back-dues entirely.', meta: '9.5% p.a.', tone: 'warn' },
+          { tier: '3–5 years', title: 'Ordinary or instalment revival', detail: 'A medical examination is mandatory at this stage.', meta: '9.5% p.a.', tone: 'danger' },
+          { tier: 'Beyond 5 yrs', title: 'Cannot be revived', detail: 'The policy can only be surrendered.', meta: 'No revival', tone: 'danger' },
+        ],
+        note: 'Revival runs from the date of the first unpaid premium. Once the grace period passes — 30 days on annual, half-yearly and quarterly modes, 15 on monthly — all risk cover ceases.',
+      },
+      {
+        kind: 'steps',
+        heading: 'Getting it done',
+        items: [
+          { title: 'Visit the branch or servicing agent', detail: 'Carry the original policy bond. You can start on the LIC customer portal, but physical documents are still required.', tone: 'primary' },
+          { title: 'Fill the DGH form', detail: 'A simple declaration of good health for lapses under 6 months. Longer lapses may need tests at an LIC-empanelled hospital.', tone: 'primary' },
+          { title: 'Calculate the revival amount', detail: 'Outstanding premiums plus interest at 9.5% a year compounded half-yearly, plus any other charges.', tone: 'warn' },
+          { title: 'Submit the documents', detail: 'Original policy bond, Aadhaar or PAN, the signed DGH form, medical reports if required, a cheque or DD, and recent photographs.', tone: 'primary' },
+          { title: 'Collect the revival letter', detail: 'LIC confirms the policy is back in force. Keep it with your policy documents.', tone: 'accent' },
+        ],
+        note: 'Bonuses declared before the lapse are frozen rather than lost, and are restored when the policy is revived — but no new bonus accrues during the lapsed period.',
+      },
+    ],
+  },
+  {
+    slug: 'car-insurance-renewal-online-bangalore',
+    eyebrow: 'Car renewal',
+    title: 'Cutting a Bengaluru Car Renewal: NCB, IDV and the Right Add-Ons',
+    source:
+      'Renewal savings levers, NCB slabs and Bengaluru-specific add-ons as published in this 2026 guide.',
+    summary:
+      'Three levers cut a renewal: carry your no-claim bonus across (up to 50% off the own-damage premium), set the IDV near market value, and add the covers Bengaluru actually needs — zero depreciation, engine protection for monsoon flooding, and return to invoice.',
+    anchor: 'How to Maximize Your Savings During Renewal',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'The three levers',
+        items: [
+          { tier: 'NCB', title: 'Carry your no-claim bonus across', detail: '20% after one claim-free year, rising to 50% after five. It travels with you even if you switch insurers at renewal.', meta: 'Up to 50% off', tone: 'accent' },
+          { tier: 'IDV', title: 'Set it near market value', detail: 'Lowering the IDV cuts the premium but leaves you underinsured if the car is stolen or written off.', meta: 'The trade-off', tone: 'warn' },
+          { tier: 'Add-ons', title: 'Pick the ones Bengaluru needs', detail: 'Zero depreciation under 5 years, engine protection for monsoon waterlogging, and return to invoice on a newer car.', meta: 'City-specific', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Standard comprehensive against the right add-ons',
+        leftTitle: 'Standard comprehensive',
+        rightTitle: 'With the right add-ons',
+        rows: [
+          { label: 'Plastic, rubber and glass parts', left: 'Depreciation is deducted from the payout', right: 'Zero depreciation pays the full amount' },
+          { label: 'Engine damage from flooding', left: 'Not covered — water ingress is a mechanical exclusion', right: 'Engine protection covers hydrostatic lock' },
+          { label: 'New car stolen', left: 'You receive the IDV, which is below the invoice', right: 'Return to invoice pays the original invoice value' },
+          { label: 'Who it suits', left: 'Older cars on a tight budget', right: 'Cars under 5 years in flood-prone areas' },
+        ],
+        note: 'The guide names Bellandur and Whitefield specifically — sudden monsoon flooding there causes the hydrostatic lock that standard policies exclude.',
+      },
+      {
+        kind: 'stats',
+        heading: 'Three reasons to renew online',
+        columns: 3,
+        items: [
+          { value: '20–50%', label: 'No-claim bonus, from one to five claim-free years', tone: 'accent' },
+          { value: 'None', label: 'Vehicle inspection needed if you renew before the policy expires', tone: 'accent' },
+          { value: '3', label: 'Add-ons the guide singles out for Bengaluru: zero dep, engine protect, return to invoice', tone: 'primary' },
+        ],
+        note: 'Renewing online also means no paperwork — the policy PDF arrives by email — and lets you compare ICICI Lombard, HDFC ERGO and Tata AIG side by side.',
+      },
+    ],
+  },
+  {
+    slug: 'irdai-complete-guide-policyholders-india-2026',
+    eyebrow: 'IRDAI',
+    title: 'What IRDAI Does, and the Order to Complain In',
+    source:
+      'IRDAI’s role, claim expectations and the grievance sequence as published in this pillar guide.',
+    summary:
+      'IRDAI regulates the market and sets claim-handling timelines, but it is not an insurer and not a claims court. Complain to the insurer first, then Bima Bharosa, then the Ombudsman if the matter is eligible.',
+    anchor: 'Grievance channels',
+    blocks: [
+      {
+        kind: 'compare',
+        heading: 'What the regulator is, and is not',
+        leftTitle: 'What IRDAI does',
+        rightTitle: 'What IRDAI is not',
+        rows: [
+          { label: 'Licensing and supervision', left: 'Licenses and oversees insurers, agents and brokers across life, general and health', right: '—' },
+          { label: 'Rule-making', left: 'Sets rules on conduct, policy wordings, solvency and consumer protection', right: '—' },
+          { label: 'Claims', left: 'Sets expected settlement timelines and handling standards', right: 'It is not an insurer, and not a claims court' },
+          { label: 'Grievances', left: 'Runs Bima Bharosa and oversees the Ombudsman framework', right: 'Not an automatic payment mechanism' },
+          { label: 'Scope', left: 'Covers the whole insurance market', right: 'It will not adjudicate an individual claim for you' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'The order to complain in',
+        items: [
+          { title: 'Raise it with the insurer', detail: 'Use their designated grievance channel, and keep the acknowledgement — you will need it later.', tone: 'warn' },
+          { title: 'Escalate to Bima Bharosa', detail: 'The regulator’s own grievance portal, at bimabharosa.irdai.gov.in.', tone: 'primary' },
+          { title: 'Check the Ombudsman route', detail: 'Available for eligible matters with its own rule-based conditions. It is not an automatic payment mechanism.', tone: 'primary' },
+        ],
+        note: 'If a claim is delayed, ask for three things: the current status, the reason for the delay, and the expected decision date. Keep the claim reference and a copy of everything you submit.',
+      },
+      {
+        kind: 'stats',
+        heading: 'Where to check something yourself',
+        columns: 3,
+        items: [
+          { value: 'irdai.gov.in', label: 'Circulars, annual reports, policyholder guidance and statistics', tone: 'accent' },
+          { value: 'Bima Bharosa', label: 'The regulator’s grievance portal, at bimabharosa.irdai.gov.in', tone: 'accent' },
+          { value: 'Ombudsmen', label: 'The Council for Insurance Ombudsmen publishes procedures, eligibility and filing rules', tone: 'primary' },
+        ],
+        note: 'Read the policy wording rather than the marketing summary, and keep copies of proposals, receipts and policy documents.',
+      },
+    ],
+  },
+  {
+    slug: 'insurance-support-services-across-india-find-local-insurance-help-in-your-city-2026',
+    eyebrow: 'Where we help',
+    title: 'Free Insurance Advisory, City by City',
+    source:
+      'City coverage as published on this page. Advisory is provided free by Insurance Support Online.',
+    summary:
+      'Free expert insurance advisory is available in eight Indian cities, spanning life, health, motor, cyber and SME cover — with local advisors who understand each market.',
+    anchor: 'City-Wise Insurance Support',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'What each city gets help with',
+        items: [
+          { tier: 'Bangalore', title: 'Karnataka', detail: 'Life, health, motor and cyber insurance, from advisors who understand local needs.', meta: 'Full range', tone: 'primary' },
+          { tier: 'Mumbai', title: 'Maharashtra', detail: 'Comprehensive planning — term plans, ULIPs, health cover and motor insurance.', meta: 'Full range', tone: 'primary' },
+          { tier: 'Delhi NCR', title: 'Delhi', detail: 'Personalised advice across every policy type, including group health for businesses.', meta: 'Business too', tone: 'primary' },
+          { tier: 'Hyderabad', title: 'Telangana', detail: 'Tailored solutions for professionals and families.', meta: 'Tailored', tone: 'primary' },
+          { tier: 'Chennai', title: 'Tamil Nadu', detail: 'Help choosing across thousands of life, health and general insurance products.', meta: 'Full range', tone: 'primary' },
+          { tier: 'Pune', title: 'Maharashtra', detail: 'Specialist SME and personal advisory for the city’s professional and startup community.', meta: 'SME focus', tone: 'primary' },
+          { tier: 'Kolkata', title: 'West Bengal', detail: 'Complete support covering LIC policies, health plans and motor insurance.', meta: 'LIC focus', tone: 'primary' },
+          { tier: 'Ahmedabad', title: 'Gujarat', detail: 'Advisory across all major categories, for entrepreneurs and families alike.', meta: 'Full range', tone: 'primary' },
+        ],
+      },
+      {
+        kind: 'stats',
+        heading: 'At a glance',
+        columns: 3,
+        items: [
+          { value: '8', label: 'Cities covered across India', tone: 'accent' },
+          { value: 'Free', label: 'Expert insurance advisory, with no charge for the consultation', tone: 'accent' },
+          { value: '5', label: 'Categories advised on: life, health, motor, cyber and SME cover', tone: 'primary' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'complete-insurance-guide-india-2026-services-locations-expert-resources-insurancesupport-online',
+    eyebrow: 'What we cover',
+    title: 'Nine Insurance Lines, Across Metro and Tier-2 India',
+    source:
+      'Service lines, city coverage and tools as published on this page. Coverage spans major metros and tier-2 cities.',
+    summary:
+      'Advisory spans nine insurance lines — life, health, motor, SME, travel, retirement, ULIP, wedding and cyber — across eight metros and 24 tier-2 and regional cities, backed by three planning tools.',
+    anchor: 'Our Insurance Services',
+    blocks: [
+      {
+        kind: 'ladder',
+        heading: 'The nine lines we advise on',
+        items: [
+          { tier: 'Life', title: 'Life insurance', detail: 'Affordable cover for your family’s financial security.', meta: 'Core', tone: 'primary' },
+          { tier: 'Health', title: 'Health insurance', detail: 'Medical cover with cashless hospitalisation.', meta: 'Core', tone: 'primary' },
+          { tier: 'Motor', title: 'Motor insurance', detail: 'Complete protection for your vehicle.', meta: 'Core', tone: 'primary' },
+          { tier: 'SME', title: 'SME insurance', detail: 'Business cover for small and medium enterprises.', meta: 'Business', tone: 'primary' },
+          { tier: 'Travel', title: 'Travel insurance', detail: 'Cover for domestic and international trips.', meta: 'Situational', tone: 'neutral' },
+          { tier: 'Retirement', title: 'Retirement and pension', detail: 'Planning options to secure an income after work.', meta: 'Long term', tone: 'neutral' },
+          { tier: 'ULIP', title: 'ULIP plans', detail: 'Unit-linked plans combining investment with cover.', meta: 'Investment', tone: 'neutral' },
+          { tier: 'Wedding', title: 'Wedding insurance', detail: 'Protection against disruption to the big day.', meta: 'Situational', tone: 'neutral' },
+          { tier: 'Cyber', title: 'Cyber insurance', detail: 'Digital protection for individuals and businesses.', meta: 'Business', tone: 'neutral' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Metro and tier-2 coverage',
+        leftTitle: 'Metro cities',
+        rightTitle: 'Tier-2 and regional',
+        rows: [
+          { label: 'Cities listed', left: 'Bangalore, Mumbai, Delhi, Chennai, Hyderabad, Pune, Kolkata, Ahmedabad', right: 'Vellore, Hosur, Coimbatore, Mysore, Salem, Madurai, Jaipur, Lucknow, Chandigarh and more' },
+          { label: 'Lines highlighted', left: 'Each metro names three focus lines — Bangalore life, health and term; Mumbai motor, travel and cyber; Delhi SME, pension and ULIP; Chennai wedding and health', right: 'Life insurance across every listed city, with the same advisory service' },
+          { label: 'Format', left: 'Dedicated city pages per line of cover', right: 'City pages, with life insurance as the entry point' },
+        ],
+        note: 'The tier-2 list also covers Kochi, Trivandrum and Kozhikode, Vizag, Vijayawada and Warangal, Surat, Rajkot and Vadodara, Nagpur, Nashik and Thane, and Indore, Bhopal and Gwalior.',
+      },
+      {
+        kind: 'stats',
+        heading: 'The free planning tools',
+        columns: 3,
+        items: [
+          { value: 'HLV', label: 'Human Life Value Calculator — size the cover your family actually needs', tone: 'accent' },
+          { value: 'Risk', label: 'Risk Assessment Scorecard — evaluate what you are missing', tone: 'primary' },
+          { value: 'Recovery', label: 'Policy Recovery Tool — find and recover lost or forgotten policies', tone: 'primary' },
+        ],
+        note: 'Written guides cover death claim settlement and lapsed policy revival, among others.',
+      },
+    ],
+  },
 ];
 
 /* -------------------------------------------------------------------------- */
