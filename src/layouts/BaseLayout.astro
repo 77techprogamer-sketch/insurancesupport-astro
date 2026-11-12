@@ -3,7 +3,7 @@ import MobileStickyBar from '../components/MobileStickyBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
-import FloatingCTA from '../components/FloatingCTA.tsx';
+import FloatingCTA from '../components/FloatingCTA.astro';
 import Chatbot from '../components/Chatbot.astro';
 import LeadCaptureModal from '../components/LeadCaptureModal.astro';
 
@@ -362,7 +362,7 @@ const combinedKeywords = mergedKeywords.length > 0 && pageKeywords
         <slot />
       <MobileStickyBar phoneNumber={phoneNumber} />
             <Footer siteUrl={siteUrl} />
-            <FloatingCTA phoneNumber={phoneNumber} client:visible />
+            <FloatingCTA phoneNumber={phoneNumber} />
             <Chatbot />
       {LEAD_MODAL_PAGES.includes(Astro.props.pageType || '') && (
         <LeadCaptureModal pageType={Astro.props.pageType} />
