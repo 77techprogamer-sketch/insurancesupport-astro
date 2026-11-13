@@ -12,6 +12,15 @@ const footerLinks = {
     { label: 'Resources', href: '/blog' },
     { label: 'Claim Help', href: '/claim-recovery' },
     { label: 'About Hari Kotian', href: '/about-hari-kotian' },
+    { label: 'Request a Call Back', href: '/get-started' },
+  ],
+  tools: [
+    { label: 'Risk Scorecard', href: '/tools/risk-scorecard' },
+    { label: 'LIC Policy Recovery', href: '/tools/policy-recovery' },
+    { label: 'Human Life Value Calculator', href: '/tools/human-life-value-calculator' },
+    { label: 'Compare Plans', href: '/compare/insurance-claim-support-services' },
+    { label: 'Expert Insights', href: '/expert-insights' },
+    { label: 'Loans & Financial Services', href: '/loans' },
   ],
   services: [
     { label: 'Health Insurance', href: '/services/health-insurance' },
@@ -99,6 +108,18 @@ const socialLinks = [
         <h3 class="footer-heading" style="font-family: var(--font-display);">Resources</h3>
         <ul class="footer-links" style="font-family: var(--font-sans);">
           {footerLinks.resources.map(link => (
+            <li>
+              <a href={link.href} class="footer-link">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 5: Tools -->
+      <div>
+        <h3 class="footer-heading" style="font-family: var(--font-display);">Free Tools</h3>
+        <ul class="footer-links" style="font-family: var(--font-sans);">
+          {footerLinks.tools.map(link => (
             <li>
               <a href={link.href} class="footer-link">{link.label}</a>
             </li>
