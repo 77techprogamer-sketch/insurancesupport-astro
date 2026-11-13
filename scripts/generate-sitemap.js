@@ -14,6 +14,13 @@ async function generateSitemaps() {
 
     const allLinks = [];
 
+    // Each page's own og:image, collected during the walk below. The image
+    // sitemap is built from these rather than maintained by hand, so it always
+    // matches what the pages actually declare. Google requires <loc> to be the
+    // URL of the PAGE the image appears on — not the image, and not a
+    // directory — which the previous hand-written file got wrong.
+    const imageLinks = [];
+
     // Sitemaps should contain only pages that identify themselves as
     // indexable and canonical. This also catches future noindex pages without
     // needing to maintain a separate URL-pattern exclusion for each one.
@@ -63,6 +70,16 @@ async function generateSitemaps() {
                 const url = `/${urlPath}`;
                 if (isIndexableCanonical(html, url)) {
                     allLinks.push({ url, lastmod });
+
+                    const ogImage = html.match(/<meta\b[^>]*\bproperty=["']og:image["'][^>]*\bcontent=["']([^"']+)["'][^>]*>/i);
+                    if (ogImage?.[1]) {
+                        const ogTitleMeta = html.match(/<meta\b[^>]*\bproperty=["']og:title["'][^>]*\bcontent=["']([^"']+)["'][^>]*>/i);
+                        imageLinks.push({
+                            url,
+                            image: new URL(ogImage[1], siteUrl).href,
+                            title: ogTitleMeta?.[1] || '',
+                        });
+                    }
                 }
             }
         }
@@ -177,6 +194,67 @@ async function generateSitemaps() {
     }
             sitemapIndexLinks.push({ url: `${siteUrl}/sitemaps/${category}-sitemap.xml`, lastmod: new Date().toISOString() });
         }
+    }
+
+    // Image sitemap — one <url> per page, listing that page's og:image.
+    // Restricted to pages that survived the indexable/canonical filters above,
+    // so we never point Google at an image on a page we told it not to index.
+    const indexablePages = new Set(uniqueLinks.map(l => (l.url.endsWith('/') ? l.url : `${l.url}/`)));
+    const imagesByPage = new Map();
+    // Only advertise images the build actually emitted. Many translated pages
+    // declare an og:image that was never generated; listing those would point
+    // Google at 404s and waste the crawl budget it gives the file.
+    const imageFileExists = async (href) => {
+        if (!href.startsWith(siteUrl)) return false;
+        const rel = href.slice(siteUrl.length).split('?')[0].split('#')[0];
+        try {
+            const stat = await fs.stat(path.join(distPath, rel));
+            return stat.isFile();
+        } catch {
+            return false;
+        }
+    };
+
+    let skippedImages = 0;
+    for (const entry of imageLinks) {
+        const page = entry.url.endsWith('/') ? entry.url : `${entry.url}/`;
+        if (!indexablePages.has(page)) continue;
+        if (!(await imageFileExists(entry.image))) {
+            skippedImages += 1;
+            continue;
+        }
+        if (!imagesByPage.has(page)) imagesByPage.set(page, []);
+        imagesByPage.get(page).push(entry);
+    }
+
+    if (imagesByPage.size > 0) {
+        const esc = (s) => String(s)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+
+        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+        xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
+        for (const [page, images] of imagesByPage) {
+            xml += '  <url>\n';
+            xml += `    <loc>${esc(siteUrl + page)}</loc>\n`;
+            for (const img of images) {
+                xml += '    <image:image>\n';
+                xml += `      <image:loc>${esc(img.image)}</image:loc>\n`;
+                if (img.title) xml += `      <image:title>${esc(img.title)}</image:title>\n`;
+                xml += '    </image:image>\n';
+            }
+            xml += '  </url>\n';
+        }
+        xml += '</urlset>\n';
+
+        const imagesPath = path.join(sitemapsDir, 'images-sitemap.xml');
+        await fs.writeFile(imagesPath, xml);
+        const imageCount = Array.from(imagesByPage.values()).reduce((n, list) => n + list.length, 0);
+        console.log(`Images sitemap generated at ${imagesPath} with ${imagesByPage.size} pages and ${imageCount} images (${skippedImages} og:image references had no file and were skipped).`);
+        sitemapIndexLinks.push({ url: `${siteUrl}/sitemaps/images-sitemap.xml`, lastmod: new Date().toISOString() });
     }
 
     // Generate sitemap-index.xml
