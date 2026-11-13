@@ -1,7 +1,72 @@
 ---
 // src/components/ClaimRejectionQuiz.astro
 // Interactive quiz to assess claim appeal potential.
+//
+// The questions and the scoring live together so they cannot drift apart:
+// each option's `value` is the exact string the scoring block below compares
+// against. Rename an option value without updating the scoring and the marks
+// for that option silently become zero.
 import Icon from '../components/icons/Icon.astro';
+
+const QUESTIONS = [
+  {
+    name: 'insurer',
+    label: 'Which insurer rejected the claim?',
+    options: [
+      { value: 'LIC of India', label: 'LIC of India' },
+      { value: 'Star Health', label: 'Star Health' },
+      { value: 'Care Health', label: 'Care Health (formerly Religare)' },
+      { value: 'HDFC Life', label: 'HDFC Life' },
+      { value: 'ICICI Lombard', label: 'ICICI Lombard' },
+      { value: 'Bajaj Allianz', label: 'Bajaj Allianz' },
+      { value: 'Max Bupa', label: 'Max Bupa / Niva Bupa' },
+      { value: 'Tata AIG', label: 'Tata AIG' },
+      { value: 'New India Assurance', label: 'New India Assurance' },
+      { value: 'Other', label: 'Another insurer' },
+    ],
+  },
+  {
+    name: 'policyType',
+    label: 'What kind of policy was it?',
+    options: [
+      { value: 'Health Insurance', label: 'Health insurance' },
+      { value: 'Life Insurance', label: 'Life insurance (endowment / money-back)' },
+      { value: 'Term Insurance', label: 'Term insurance' },
+      { value: 'Motor Insurance', label: 'Motor insurance' },
+    ],
+  },
+  {
+    name: 'rejectionReason',
+    label: 'What reason did the insurer give for rejecting it?',
+    options: [
+      { value: 'Documentation', label: 'Missing or incomplete documents' },
+      { value: 'Waiting Period', label: 'Treatment fell inside a waiting period' },
+      { value: 'Exclusion', label: 'A policy exclusion' },
+      { value: 'Non-disclosure', label: 'Non-disclosure of a pre-existing condition' },
+      { value: 'Lapse', label: 'The policy had lapsed' },
+      { value: 'Other', label: 'Something else / not stated clearly' },
+    ],
+  },
+  {
+    name: 'claimAmount',
+    label: 'Roughly how much was the claim worth?',
+    options: [
+      { value: 'Under 1L', label: 'Under Rs 1 lakh' },
+      { value: '1-5L', label: 'Rs 1 lakh to Rs 5 lakh' },
+      { value: '5-20L', label: 'Rs 5 lakh to Rs 20 lakh' },
+      { value: '20L+', label: 'More than Rs 20 lakh' },
+    ],
+  },
+  {
+    name: 'rejectionDate',
+    label: 'How long ago was the claim rejected?',
+    options: [
+      { value: '<30 days', label: 'Less than 30 days ago' },
+      { value: '30-90 days', label: 'Between 30 and 90 days ago' },
+      { value: '>90 days', label: 'More than 90 days ago' },
+    ],
+  },
+];
 ---
 
 <div id="claimRejectionQuiz" class="max-w-xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border mb-12 bg-surface">
@@ -23,14 +88,17 @@ import Icon from '../components/icons/Icon.astro';
   <div class="p-8" style={{ fontFamily: "'Inter', sans-serif" }}>
     <form id="quizForm" class="space-y-6">
       <!-- Questions -->
-      {[1,2,3,4,5].map((n) => (
-        <div class="card p-5" key={n}>
-          <label for={`q${n}`} class="block font-semibold text-dark mb-3">
-            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-white text-sm font-bold mr-2 flex-shrink-0" style={{ fontFamily: "'Inter', sans-serif" }}>{n}</span>
-            <span class="text-secondary"><!-- question text injected via JS --></span>
+      {QUESTIONS.map((q, i) => (
+        <div class="card p-5">
+          <label for={q.name} class="block font-semibold text-dark mb-3">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-white text-sm font-bold mr-2 flex-shrink-0" style={{ fontFamily: "'Inter', sans-serif" }}>{i + 1}</span>
+            <span class="text-secondary">{q.label}</span>
           </label>
-          <select id={`q${n}`} name={`q${n}`} required class="input w-full">
+          <select id={q.name} name={q.name} required class="input w-full">
             <option value="">Select...</option>
+            {q.options.map((o) => (
+              <option value={o.value}>{o.label}</option>
+            ))}
           </select>
         </div>
       ))}
@@ -106,23 +174,26 @@ import Icon from '../components/icons/Icon.astro';
       else if (rejectionDate === '30-90 days') score += 20;
       else if (rejectionDate === '>90 days') score += 10;
 
+      // The raw weights can total 110, so cap it before showing it as a percentage.
+      const pct = Math.min(100, score);
+
       // Adjust message based on score
-      if (score >= 80) {
+      if (pct >= 80) {
         message = "High potential for successful appeal! Your case has strong grounds for review.";
-      } else if (score >= 50) {
+      } else if (pct >= 50) {
         message = "Good potential. With expert guidance, your chances of appeal are promising.";
       } else {
         message = "Moderate potential. While challenging, we can still review your case for any hidden opportunities.";
       }
 
-      if (potentialScore) potentialScore.textContent = `${score}%`;
+      if (potentialScore) potentialScore.textContent = `${pct}%`;
       if (potentialBar) {
         potentialBar.style.width = '0%';
-        requestAnimationFrame(() => requestAnimationFrame(() => { potentialBar.style.width = `${score}%`; }));
+        requestAnimationFrame(() => requestAnimationFrame(() => { potentialBar.style.width = `${pct}%`; }));
       }
       if (potentialMessage) potentialMessage.textContent = message;
 
-      const whatsappMessage = `Hi Hari, I just took the Claim Rejection Quiz. My claim from ${insurer} for a ${policyType} was rejected due to ${rejectionReason}. The amount was ${claimAmount} and it was rejected ${rejectionDate}. My appeal potential is ${score}%. Can you help?`;
+      const whatsappMessage = `Hi Hari, I just took the Claim Rejection Quiz. My claim from ${insurer} for a ${policyType} was rejected due to ${rejectionReason}. The amount was ${claimAmount} and it was rejected ${rejectionDate}. My appeal potential is ${pct}%. Can you help?`;
       if (whatsappCta) (whatsappCta as HTMLAnchorElement).href = `https://wa.me/919986634506?text=${encodeURIComponent(whatsappMessage)}`;
 
       if (quizResult) {
