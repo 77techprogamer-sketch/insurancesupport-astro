@@ -1481,3 +1481,27 @@
 /blog/ta-:slug/ /blog/:slug/ 301
 /blog/te-:slug /blog/:slug/ 301
 /blog/te-:slug/ /blog/:slug/ 301
+
+# --- Dead /services/<area>/<service>/ URLs (2026-11-12) -------------------
+# External pages link to /services/<area>/<service>/, which was never built.
+# The Bengaluru area pages live under /locations/bangalore-<area>/.
+/services/indiranagar/health-insurance /locations/bangalore-indiranagar/ 301
+/services/indiranagar/motor-insurance /locations/bangalore-indiranagar/ 301
+/services/indiranagar/life-insurance /locations/bangalore-indiranagar/ 301
+/services/indiranagar/claim-support /locations/bangalore-indiranagar/ 301
+/services/indiranagar/travel-insurance /locations/bangalore-indiranagar/ 301
+/services/bannerghatta/health-insurance /locations/bangalore-bannerghatta/ 301
+/services/bannerghatta/motor-insurance /locations/bangalore-bannerghatta/ 301
+/services/jayanagar/health-insurance /locations/bangalore-jayanagar/ 301
+/services/yelahanka/health-insurance /locations/bangalore-yelahanka/ 301
+/services/yelahanka/motor-insurance /locations/bangalore-yelahanka/ 301
+
+# Retired slug: the appeal guide now lives at the step-by-step guide.
+/blog/health-insurance-claim-rejected-appeal-guide-2026 /blog/how-to-appeal-rejected-insurance-claim-india-2026/ 301
+
+# Retired blog slugs still referenced by external pages and the old footer.
+/blog/icici-lombard-cashless-denied-hospital-guide-2026 /blog/cashless-health-insurance-claim-denied-hospital-2026/ 301
+/blog/insurance-ombudsman-bangalore-guide-2026 /blog/insurance-ombudsman-india-guide/ 301
+/blog/irdai-bima-bharosa-complaint-filing-2026 /blog/how-to-file-complaint-irdai-igms-portal-2026/ 301
+/blog/irdai-grievance-process /blog/irdai-grievance-process-complaint-guide-2026/ 301
+/blog/lic-policy-revival-guide /blog/lic-policy-revival-after-5-years-guide-2026/ 301

@@ -13,7 +13,7 @@
 
 ### 1. Quora — Insurance Ombudsman experience
 URL: https://www.quora.com/What-has-been-your-experience-with-the-insurance-Ombudsman-What-was-the-resolution-provided-and-how-long-did-they-take-before-reaching-this
-Angle: explain the actual award timeline (30-day disposal target, binding on insurer, ₹5,000/day penalty for non-compliance). Link only if natural → /blog/insurance-ombudsman-india-guide/ (verified path exists).
+Angle: the award ceiling is **₹50 lakh per claim** (Insurance Ombudsman Rules 2017 as amended 2023, raised from ₹30 lakh), the Ombudsman must issue an award within **3 months** of receipt, it is **free** and needs no lawyer, and an accepted award binds the **insurer** but not you. Link only if natural → /blog/insurance-ombudsman-india-guide/ (verified live).
 
 ### 2. Quora — How long does an insurance ombudsman take in India
 URL: https://www.quora.com/How-long-does-an-insurance-ombudsman-take-for-a-case-assignment-and-hearing-in-India
@@ -21,7 +21,7 @@ Angle: 30-day disposal norm, what delays it, docs that speed it up.
 
 ### 3. Quora — How do I file a case with insurance ombudsman in India
 URL: https://www.quora.com/How-do-I-file-a-case-with-insurance-ombudsman-in-India
-Angle: step order: GRO (15 days) → Ombudsman (within 1 year, claims ≤ ₹20 lakh) → Consumer Commission above that.
+Angle: step order — insurer GRO first, then Ombudsman within **1 year of the insurer's written rejection** (1 month if the insurer never replies), ceiling **₹50 lakh per claim**, free and binding on the insurer. Above ₹50 lakh → Consumer Commission under the Consumer Protection Act 2019 or a civil court.
 
 ### 4. Quora — Health insurance Medi-claim stuck 8 months
 URL: https://www.quora.com/How-do-I-hire-a-specialist-or-expert-to-claim-a-health-insurance-Medi-Claim-It-has-been-stuck-for-8-months-now-and-I-m-ready-to-pay-also
@@ -50,3 +50,23 @@ Angle: comment genuinely on threads where people ask what to do after rejection.
 - Never post the same link to both platforms.
 - If a platform flags or removes, STOP for that platform for 7 days (circuit breaker).
 - No automation, no bots, no multi-account.
+
+---
+
+## Verified figures — use ONLY these (checked 2026-11-12)
+
+Earlier drafts of this file said ₹20 lakh. That is out of date and must not be published under an IRDAI
+registration number. Current position:
+
+| Fact | Verified value | Source |
+|---|---|---|
+| Ombudsman award ceiling | **₹50 lakh** per claim (incl. expenses) | Insurance Ombudsman Rules 2017, as amended 2023 (raised from ₹30 lakh) |
+| Filing window | **1 year** from insurer's written rejection; **1 month** if insurer does not reply | Insurance Ombudsman Rules 2017 |
+| Award timeline | Within **3 months** of complaint receipt | Insurance Ombudsman Rules 2017 |
+| Cost | **Free**, no lawyer required | Ombudsman framework |
+| Binding? | On the **insurer**; you may still go to consumer court | Ombudsman framework |
+| Above ₹50 lakh | Consumer Commission (CPA 2019) or civil court | — |
+| IRDAI claim decision | Within **30 days**; **15 days** to raise a query; penal interest at bank rate + 2% | IRDAI PPI Regulations 2024 |
+| Life policy repudiation | Not after **3 years** | Insurance Act 1938, s.45 |
+
+If a figure is not in this table, do not state it as fact.

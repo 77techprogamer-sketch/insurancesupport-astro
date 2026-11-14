@@ -29,7 +29,7 @@
 - **URL:** https://www.sulekha.com → "List your business"
 - **Category:** Insurance Agents, Bangalore
 - **Description (unique):**
-  > Insurance Support (Bengaluru) offers IRDAI-licensed insurance advisory — Reg. No. 0149161D, advisor Hari Kotian. Special focus: claim support for rejected or delayed health and life insurance claims, policy review before renewal, and guidance through IRDAI IGMS complaints and Insurance Ombudsman filings. We serve Jalahalli, Yelahanka, Hebbal, Malleshwaram and all Bengaluru. Two decades-plus of field experience with LIC, ICICI Lombard, Care Health and other insurers. Download free claim timelines and document checklists at https://insurancesupport.online/downloads/ or WhatsApp +91-99866 34506.
+  > Insurance Support (Bengaluru) offers IRDAI-licensed insurance advisory — Reg. No. 0149161D, advisor Hari Kotian. Special focus: claim support for rejected or delayed health and life insurance claims, policy review before renewal, and guidance through IRDAI IGMS complaints and Insurance Ombudsman filings. We serve Jalahalli, Yelahanka, Hebbal, Malleshwaram and all Bengaluru. Two decades-plus of field experience with LIC, ICICI Lombard, Care Health and other insurers. Download free claim timelines and document checklists at https://insurancesupport.online/resources/ or WhatsApp +91-99866 34506.
 - **Status:** [ ] pending → [ ] listed → [ ] live URL: _______________
 
 ## 4. AskLaila
